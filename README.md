@@ -8,6 +8,22 @@ One EXE, zero dependencies, 64 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.0-purple)
 
+## Screenshots
+
+![Settings](assets/screenshots/Einstellungen.PNG)
+![Tray Menu](assets/screenshots/Taskleiste.PNG)
+![Submenu](assets/screenshots/untermenue.PNG)
+
+## Demo Videos
+
+> **Note on video quality:** BrightRaider works by adjusting display output at the GPU level — the same way your monitor brightness works. Because of this, screen recording software cannot capture the actual brightness changes. The videos were recorded with a phone camera pointed at the monitor, which is why the quality is lower than usual. This is also proof that BrightRaider is not a cheat — it only changes display settings, nothing inside the game.
+
+**Free version** — Profile switching with Numpad keys (starts at 0:06):
+[Watch: Free — Profile Switching](assets/videos/1%20bis%203.MOV)
+
+**Pro version** — Auto-Brightness in action:
+[Watch: Pro — Auto-Brightness](assets/videos/Por%20automatisch.MOV)
+
 ## Why BrightRaider?
 
 NVIDIA Game Filters are blocked by anti-cheat (EAC). Monitor OSD is slow and clunky. Alt-tabbing to adjust settings gets you killed.
