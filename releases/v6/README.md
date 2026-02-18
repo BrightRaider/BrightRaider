@@ -8,6 +8,10 @@ One EXE, zero dependencies, ~65 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.0-purple)
 
+## Before / After
+
+**[► Interactive Before/After Slider](https://imgsli.com/NDUwMzQ2)**
+
 ## What's new in V6
 
 - **Lemon Squeezy licensing** — Buy Pro, get your key instantly by email. No manual delivery.
