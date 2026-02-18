@@ -332,8 +332,9 @@ class BrightRaider : Form
     }
 
     // === License ===
-    const string LS_STORE_ID = "LS_STORE_ID_HERE";
-    const string LS_PRODUCT_ID = "LS_PRODUCT_ID_HERE";
+    const string LS_STORE_ID = "294569";
+    const string LS_PRODUCT_ID = "838048";
+    const string LS_VARIANT_ID = "1320572";
 
     // === State ===
     NotifyIcon trayIcon;
@@ -448,8 +449,9 @@ class BrightRaider : Form
                 // Check for "activated":true or "license_key"."status":"active"
                 if (json.Contains("\"activated\":true") || json.Contains("\"status\":\"active\""))
                 {
-                    // Optionally verify store/product IDs if set
-                    if (LS_STORE_ID != "LS_STORE_ID_HERE" && !json.Contains("\"store_id\":" + LS_STORE_ID))
+                    // Verify this key belongs to BrightRaider Pro
+                    if (!json.Contains("\"store_id\":" + LS_STORE_ID) ||
+                        !json.Contains("\"product_id\":" + LS_PRODUCT_ID))
                     { errorMsg = "Key belongs to a different product."; return false; }
                     return true;
                 }
