@@ -34,7 +34,7 @@ One EXE, zero dependencies, ~65 KB.
 
 ## Pro Activation
 
-1. **[Buy Pro License ($4.99)](LEMONSQUEEZY_LINK_HERE)**
+1. **[Buy Pro License ($4.99)](https://brightraider.lemonsqueezy.com/checkout/buy/a7d69bd7-a83c-40d7-828d-01851f47d317)**
 2. Check your email for the license key
 3. Right-click tray icon → **Settings** → **Enter License**
 4. Enter your email and license key
