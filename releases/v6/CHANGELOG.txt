@@ -5,9 +5,12 @@
 
 [ V6 Pro ] - Current Version
 
-  License:
-  - New: Lemon Squeezy — buy Pro, receive key instantly by email
-  - One-time online activation, offline forever after
+  License System:
+  - Switched to Lemon Squeezy for license distribution
+  - Online activation (one-time, requires internet for first activation)
+  - Offline after activation — no internet required after first use
+  - Keys issued automatically after purchase, no manual delivery
+  - Manual key generation available for gifted licenses
 
 [ V5 Pro ]
 
@@ -36,9 +39,7 @@
   General:
   - Embedded icon — single .exe, nothing else needed
   - Encrypted config and license files
-  - Individual license keys per customer
   - Single portable .exe (~65 KB), no installation needed
-  - Offline license validation — no internet required
   - Works with NVIDIA, AMD and Intel graphics
 
 [ V4 ]
