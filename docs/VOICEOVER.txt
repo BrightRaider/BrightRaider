@@ -1,0 +1,54 @@
+================================================================================
+BRIGHTRAIDER — VOICEOVER SCRIPT (30-60 Seconds)
+================================================================================
+
+TARGET: Short demo video for Reddit / YouTube / Discord
+TONE: Casual, confident, gamer-to-gamer
+SHOW: Arc Raiders gameplay switching between dark/bright in real-time
+
+--------------------------------------------------------------------------------
+
+[0s - DARK GAMEPLAY — player in cave/building, enemies barely visible]
+
+"Can't see anything in Arc Raiders? You're not alone."
+
+[5s - PRESS NUMPAD 2 — screen gets brighter, enemies visible]
+
+"One keypress. That's it."
+
+[8s - SHOW TRAY ICON briefly, then back to gameplay]
+
+"BrightRaider adjusts your display brightness, contrast and color
+with a single hotkey. No alt-tab, no game files touched."
+
+[16s - SWITCH BETWEEN PROFILES — Numpad 1, 2, 3 in quick succession]
+
+"Three profiles. Numpad 1 is normal. Numpad 2 for dark areas.
+Numpad 3 when you need maximum visibility."
+
+[24s - SHOW AUTO-BRIGHTNESS: player walks from bright outdoor into dark cave]
+
+"Pro version does it automatically. Walk into a cave — brightness goes up.
+Step outside — back to normal. Hands stay on the keyboard."
+
+[35s - QUICK FLASH: Settings menu, profile editor]
+
+"Works with NVIDIA and AMD. No installation, just one 64 KB file."
+
+[42s - FINAL SHOT: Side-by-side dark vs bright, enemy clearly visible]
+
+"Safe with all anti-cheat. EAC, BattlEye, Vanguard — no problem.
+It's just a monitor setting, but faster."
+
+[50s - END CARD: BrightRaider logo + download link]
+
+"BrightRaider. Free on GitHub. Link in the description."
+
+--------------------------------------------------------------------------------
+TOTAL: ~50 seconds
+NOTES:
+- Keep cuts fast, no dead air
+- Show the hotkey presses as on-screen overlay (Numpad 1/2/3)
+- Side-by-side comparison at the end is the money shot
+- Background music: something chill/electronic, low volume
+================================================================================

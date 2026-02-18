@@ -1,0 +1,69 @@
+================================================================
+  BrightRaider - Changelog
+================================================================
+
+
+[ V4 ] - Current Version
+  - AMD GPU support: Saturation control via AMD ADL SDK
+    (atiadlxx.dll / atiadlxy.dll)
+  - Auto-detection: Tool detects NVIDIA or AMD automatically
+  - Unified saturation control for both GPU vendors
+    NVIDIA: NvAPI Digital Vibrance (0-63 internal)
+    AMD: ADL_Display_Color_Set Saturation (0-200, default 100)
+  - GPU status shown in tray menu (NVIDIA / AMD / None)
+  - Works without any GPU API (Gamma + Contrast still function
+    via Windows API on Intel/AMD iGPU or unsupported configs)
+  - ADL cleanup on exit (resets saturation, destroys ADL context)
+  - Class renamed from BrightRaiderV3 to BrightRaider
+
+[ V3 ]
+  - Added Digital Vibrance control via NVIDIA NvAPI
+    Profile 1: DV 50 (default), Profile 2: DV 60, Profile 3: DV 70
+  - Fixed DVC value mapping (NvAPI uses 0-63 internally,
+    now correctly maps to NVIDIA Control Panel 0-100 range)
+  - Added custom app icon (Icon.png) with profile number overlay
+  - EXE now shows the custom icon in Windows Explorer
+  - Low-level keyboard hook for reliable Numpad detection
+  - Shift+Numpad now works correctly in all scenarios
+  - NumLock on/off both supported
+
+[ V2 ]
+  - Replaced RegisterHotKey with low-level keyboard hook
+  - Fixed Shift+Numpad not triggering profile switch
+  - Numpad keys detected regardless of Shift state
+  - Extended key flag used to distinguish Numpad from
+    arrow/navigation keys (End, Down, PgDn)
+
+[ V1 ]
+  - Multi-language support (English default, German available)
+  - Language switch in tray menu, setting saved to config
+  - All UI text localized (menu, notifications, error messages)
+  - Shift+Numpad hotkeys added via RegisterHotKey
+    (partially working, replaced in V2)
+
+[ V0.9 ]
+  - Monitor selection (individual or all monitors)
+  - Notifications toggle (on/off)
+  - Settings saved to BrightRaider.cfg (persists between sessions)
+  - Tray menu with monitor list, checkmarks for active selection
+
+[ V0.8 ]
+  - Fixed gamma not applying: switched from GetDC(NULL) to
+    CreateDC with per-display device names
+  - Discovered that NVIDIA GPUs require CreateDC("\\.\DISPLAY1")
+    instead of GetDC(NULL) for gamma ramp access
+  - Added automatic registry fix for GdiIcmGammaRange
+    (UAC prompt on first launch, sets HKLM key)
+
+[ V0.5 ]
+  - Initial working version
+  - System tray application with colored profile icons
+  - 3 gamma/contrast profiles switchable via Numpad 1/2/3
+  - Profile 1: Gamma 1.0, Contrast 50% (Normal)
+  - Profile 2: Gamma 1.5, Contrast 55%
+  - Profile 3: Gamma 2.0, Contrast 55%
+  - Auto-reset to normal on exit
+  - Built with .NET Framework 4.0 (no install needed)
+
+
+================================================================

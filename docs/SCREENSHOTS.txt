@@ -1,0 +1,59 @@
+================================================================================
+BRIGHTRAIDER — SCREENSHOT DESCRIPTIONS
+================================================================================
+These screenshots are needed for the GitHub README and marketing posts.
+Ionas needs to capture them from Arc Raiders gameplay.
+
+================================================================================
+
+SCREENSHOT 1: "Before/After Comparison" (HERO IMAGE — most important!)
+Filename: screenshot_comparison.png
+Description:
+    Split-screen or side-by-side:
+    LEFT:  Dark cave/building in Arc Raiders, enemies barely visible
+    RIGHT: Same scene with BrightRaider Bright profile active, enemies clearly visible
+    Add text overlay: "Normal" on left, "BrightRaider" on right
+Usage: README hero image, Reddit post, Discord
+
+SCREENSHOT 2: "Tray Menu"
+Filename: screenshot_menu.png
+Description:
+    Show the BrightRaider tray menu open, with profiles visible
+    Profile 2 (Bright) should be checked/active
+    Keep it clean — just the menu, no other windows
+Usage: README features section
+
+SCREENSHOT 3: "Profile Editor" (PRO)
+Filename: screenshot_editor.png
+Description:
+    Show the Profile Editor dialog with custom values
+    Have a few profiles with different gamma/contrast/vibrance settings
+    Shows the customization depth of Pro
+Usage: README Pro section
+
+SCREENSHOT 4: "Auto-Brightness in Action" (PRO)
+Filename: screenshot_auto.png
+Description:
+    Show the Debug Overlay active during gameplay
+    Measurement zones visible on screen
+    Brightness values displayed
+    Ideally in a transition moment (entering dark area)
+Usage: README Auto-Brightness section
+
+SCREENSHOT 5: "Dark Cave Gameplay"
+Filename: screenshot_dark.png
+Description:
+    Pure Arc Raiders screenshot — dark cave or underground area
+    Enemies or loot barely visible
+    This is the "problem" shot — shows why you need BrightRaider
+Usage: Reddit/Discord post as context
+
+================================================================================
+TIPS FOR IONAS:
+- Use Windows Snipping Tool (Win+Shift+S) or Print Screen
+- For the comparison shot: Take screenshot with Numpad 1 (Normal),
+  then same spot with Numpad 2 (Bright), combine in Paint/Photoshop
+- Resolution: at least 1920x1080
+- Save as PNG (no compression artifacts)
+- The Before/After comparison is by far the most important one!
+================================================================================

@@ -1,0 +1,75 @@
+================================================================
+  BrightRaider - Changelog
+================================================================
+
+
+[ V5 Pro ] - Current Version
+
+  Auto-Brightness (PRO):
+  - Automatic brightness adjustment based on screen content
+  - 5-zone X-pattern measurement (center weighted 2x)
+  - Smooth interpolation between profiles
+  - Calibration wizard for easy setup
+  - Configurable update interval
+
+  PRO Features:
+  - Up to 9 profiles (Numpad 1-9, free limited to 3)
+  - Custom profile editor (Gamma, Contrast, Vibrance per profile)
+  - Auto-Start with Windows
+  - Game Mute toggle via Numpad 0
+  - Debug Overlay for fine-tuning
+
+  Menu & UI:
+  - Clean, compact tray menu with Settings submenu
+  - Instant custom notifications (no Windows delay)
+  - Multi-monitor support with per-display selection
+  - Notification toggle
+  - Bilingual (English / Deutsch)
+  - PRO status displayed in menu
+
+  General:
+  - Embedded icon — single .exe, nothing else needed
+  - Encrypted config and license files
+  - Individual license keys per customer
+  - Single portable .exe (~65 KB), no installation needed
+  - Offline license validation — no internet required
+  - Works with NVIDIA, AMD and Intel graphics
+
+[ V4 ]
+  - AMD GPU support (Saturation via AMD ADL SDK)
+  - Auto-detection of NVIDIA or AMD
+  - Unified saturation control for both GPU vendors
+  - Works without GPU API (Gamma + Contrast via Windows API)
+  - Per-monitor saturation support
+
+[ V3 ]
+  - Digital Vibrance control via NVIDIA NvAPI
+  - Custom app icon with profile number overlay
+  - Low-level keyboard hook for reliable Numpad detection
+  - Shift+Numpad support
+
+[ V2 ]
+  - Replaced RegisterHotKey with low-level keyboard hook
+  - Fixed Shift+Numpad detection
+  - NumLock on/off both supported
+
+[ V1 ]
+  - Multi-language support (English / Deutsch)
+  - Language switch in tray menu
+
+[ V0.9 ]
+  - Monitor selection (individual or all)
+  - Notifications toggle
+  - Settings saved to config file
+
+[ V0.8 ]
+  - Fixed gamma not applying on NVIDIA GPUs
+  - Automatic registry fix for GdiIcmGammaRange
+
+[ V0.5 ]
+  - Initial version
+  - System tray with 3 profiles (Numpad 1/2/3)
+  - Auto-reset to normal on exit
+  - Built with .NET Framework 4.0
+
+================================================================
