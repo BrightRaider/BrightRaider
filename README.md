@@ -42,11 +42,11 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro ($4.99)
-- **Up to 9 profiles** with full customization
+- **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter.
+- **Up to 9 profiles** with full customization
 - **Calibration Wizard** — two clicks to set up auto-brightness
 - **Profile Editor** — fine-tune gamma, contrast, vibrance per profile
-- **Game Mute** — mute only the game audio with Numpad 0
 - **Auto-Start** with Windows
 
 ## Default Profiles
