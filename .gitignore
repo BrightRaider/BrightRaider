@@ -37,3 +37,4 @@ Bild und Video/*.mp4
 
 # Claude interne Dateien
 .claude/
+media/
