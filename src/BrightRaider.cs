@@ -571,8 +571,8 @@ class BrightRaider : Form
     void ShowProRequired()
     {
         MessageBox.Show(
-            L("This feature requires BrightRaider Pro.\n\nGet your license at:\nhttps://LEMONSQUEEZY_LINK_HERE",
-              "Diese Funktion erfordert BrightRaider Pro.\n\nLizenz erhalten:\nhttps://LEMONSQUEEZY_LINK_HERE"),
+            L("This feature requires BrightRaider Pro.\n\nGet your license at:\nhttps://brightraider.lemonsqueezy.com/checkout/buy/a7d69bd7-a83c-40d7-828d-01851f47d317",
+              "Diese Funktion erfordert BrightRaider Pro.\n\nLizenz erhalten:\nhttps://brightraider.lemonsqueezy.com/checkout/buy/a7d69bd7-a83c-40d7-828d-01851f47d317"),
             "BrightRaider Pro",
             MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
