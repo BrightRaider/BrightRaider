@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Net;
 using Microsoft.Win32;
 
 class BrightRaider : Form
@@ -331,7 +332,8 @@ class BrightRaider : Form
     }
 
     // === License ===
-    const string RSA_PUBLIC_KEY = "PFJTQUtleVZhbHVlPjxNb2R1bHVzPnRyLzBjTnBwS3g3VkdZMTQzMCtnbHdVRm85d3B3bGZRbmxaN245dm9vY1NIaE1CSWt4bTVWUlRrUnlJSUpRYzY5K2YxQ3FqTmk4OVFNQTBvQVZRelUzRUMzNzVLZmVBTk5kVHFnMm13aTVrZkhQMkR2VkkvcytzZVRYOVRmd3Y4MngybUNYaHpqNWhsV292bnFxcTBjOUozK3JQN3pabjZVVGg2bk5qcEQ4NjRxbW9aYnhZUFVMSkJFQTh4ZktTMVVuckhnc0dHSnIxckdEN2VZQjNtZFB0aXJoYkhpWWhIemcvUjA0TXcvRE9jOVVjRVhleFZlNE1FUStRTjZlSmx3NjlPTk5jLzlsRE9JV00xWVdjYk1xbTViRi9WK2dXVlJrNlpFMjJaVEs1WW1mS0tNbTY5QVdWVndHWmFpS0pXQVBhNWlzK2FEOW5aa2hucW5Tc0ViUT09PC9Nb2R1bHVzPjxFeHBvbmVudD5BUUFCPC9FeHBvbmVudD48L1JTQUtleVZhbHVlPg==";
+    const string LS_STORE_ID = "LS_STORE_ID_HERE";
+    const string LS_PRODUCT_ID = "LS_PRODUCT_ID_HERE";
 
     // === State ===
     NotifyIcon trayIcon;
@@ -420,30 +422,81 @@ class BrightRaider : Form
     }
 
     // === License Validation ===
-    static bool ValidateLicense(string email, string key)
+
+    // Activate online via Lemon Squeezy API (called once when user enters key)
+    static bool ActivateLicenseOnline(string key, out string errorMsg)
     {
-        // Key format: NNNNN-<base64signature>
-        // NNNNN is the key number, signature signs "BRIGHTRAIDER-PRO:NNNNN"
-        // Email is displayed but NOT validated (psychological lock)
+        errorMsg = "";
         try
         {
-            int dashPos = key.IndexOf('-');
-            if (dashPos < 1) return false;
-            string keyNumber = key.Substring(0, dashPos);
-            string sigBase64 = key.Substring(dashPos + 1);
+            string url = "https://api.lemonsqueezy.com/v1/licenses/activate";
+            string body = "license_key=" + Uri.EscapeDataString(key) +
+                          "&instance_name=" + Uri.EscapeDataString("BrightRaider-" + Environment.MachineName);
 
-            string payload = "BRIGHTRAIDER-PRO:" + keyNumber;
-            string xmlKey = Encoding.UTF8.GetString(Convert.FromBase64String(RSA_PUBLIC_KEY));
-            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.Timeout = 10000;
+            byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
+            req.ContentLength = bodyBytes.Length;
+            using (Stream s = req.GetRequestStream()) s.Write(bodyBytes, 0, bodyBytes.Length);
+
+            using (System.Net.HttpWebResponse resp = (System.Net.HttpWebResponse)req.GetResponse())
+            using (StreamReader sr = new StreamReader(resp.GetResponseStream()))
             {
-                rsa.PersistKeyInCsp = false;
-                rsa.FromXmlString(xmlKey);
-                byte[] data = Encoding.UTF8.GetBytes(payload);
-                byte[] sig = Convert.FromBase64String(sigBase64);
-                return rsa.VerifyData(data, new SHA256CryptoServiceProvider(), sig);
+                string json = sr.ReadToEnd();
+                // Check for "activated":true or "license_key"."status":"active"
+                if (json.Contains("\"activated\":true") || json.Contains("\"status\":\"active\""))
+                {
+                    // Optionally verify store/product IDs if set
+                    if (LS_STORE_ID != "LS_STORE_ID_HERE" && !json.Contains("\"store_id\":" + LS_STORE_ID))
+                    { errorMsg = "Key belongs to a different product."; return false; }
+                    return true;
+                }
+                // Extract error message from JSON if present
+                int errIdx = json.IndexOf("\"error\":\"");
+                if (errIdx >= 0)
+                {
+                    int start = errIdx + 9;
+                    int end = json.IndexOf('"', start);
+                    if (end > start) errorMsg = json.Substring(start, end - start);
+                }
+                if (errorMsg.Length == 0) errorMsg = "Key not valid or already used.";
+                return false;
             }
         }
-        catch { return false; }
+        catch (System.Net.WebException ex)
+        {
+            // Try to read error body
+            if (ex.Response != null)
+            {
+                try
+                {
+                    using (StreamReader sr = new StreamReader(ex.Response.GetResponseStream()))
+                    {
+                        string json = sr.ReadToEnd();
+                        int errIdx = json.IndexOf("\"error\":\"");
+                        if (errIdx >= 0)
+                        {
+                            int start = errIdx + 9;
+                            int end = json.IndexOf('"', start);
+                            if (end > start) { errorMsg = json.Substring(start, end - start); return false; }
+                        }
+                    }
+                }
+                catch { }
+            }
+            errorMsg = "No internet connection. Please try again.";
+            return false;
+        }
+        catch { errorMsg = "Activation failed. Please try again."; return false; }
+    }
+
+    // Validate locally from saved .lic file (no internet needed)
+    static bool ValidateLicenseLocal(string key)
+    {
+        // Key must be non-empty and match what was saved
+        return key.Length > 8;
     }
 
     // AES encryption for files (.lic and .cfg)
@@ -489,7 +542,7 @@ class BrightRaider : Form
                 return;
             }
             string payload = licenseEmail + "\n" + licenseKey;
-            File.WriteAllBytes(licFilePath, AesEncrypt(Encoding.UTF8.GetBytes(payload), "BrightRaider-v5-Pro-2025-LicFile"));
+            File.WriteAllBytes(licFilePath, AesEncrypt(Encoding.UTF8.GetBytes(payload), "BrightRaider-v6-Pro-2025-LicFile"));
         }
         catch { }
     }
@@ -500,14 +553,14 @@ class BrightRaider : Form
         {
             if (!File.Exists(licFilePath)) return;
             byte[] cipher = File.ReadAllBytes(licFilePath);
-            string payload = Encoding.UTF8.GetString(AesDecrypt(cipher, "BrightRaider-v5-Pro-2025-LicFile"));
+            string payload = Encoding.UTF8.GetString(AesDecrypt(cipher, "BrightRaider-v6-Pro-2025-LicFile"));
             int nl = payload.IndexOf('\n');
             if (nl > 0)
             {
                 licenseEmail = payload.Substring(0, nl);
                 licenseKey = payload.Substring(nl + 1);
-                if (licenseEmail.Length > 0 && licenseKey.Length > 0)
-                    isProLicensed = ValidateLicense(licenseEmail, licenseKey);
+                if (licenseKey.Length > 0)
+                    isProLicensed = ValidateLicenseLocal(licenseKey);
             }
         }
         catch { }
@@ -551,26 +604,43 @@ class BrightRaider : Form
         {
             string email = txtEmail.Text.Trim();
             string key = txtKey.Text.Trim();
-            if (ValidateLicense(email, key))
+            if (key.Length < 8)
             {
-                isProLicensed = true;
-                licenseEmail = email;
-                licenseKey = key;
-                SaveLicenseFile();
-                BuildMenu();
                 MessageBox.Show(
-                    L("License activated!\nRegistered to: ",
-                      "Lizenz aktiviert!\nRegistriert auf: ") + email + "\n\n" +
-                    L("All Pro features are now unlocked.",
-                      "Alle Pro-Funktionen sind freigeschaltet."),
-                    "BrightRaider Pro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    L("Please enter your license key.",
+                      "Bitte Lizenzschlüssel eingeben."),
+                    "BrightRaider", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show(
-                    L("Invalid license key. Please check your email and key.",
-                      "Ungültiger Lizenzschlüssel. Bitte Email und Key prüfen."),
-                    "BrightRaider", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Show a brief "checking..." message (no blocking dialog, just cursor)
+                dialog.Cursor = Cursors.WaitCursor;
+                string errMsg;
+                bool ok = ActivateLicenseOnline(key, out errMsg);
+                dialog.Cursor = Cursors.Default;
+
+                if (ok)
+                {
+                    isProLicensed = true;
+                    licenseEmail = email;
+                    licenseKey = key;
+                    SaveLicenseFile();
+                    BuildMenu();
+                    MessageBox.Show(
+                        L("License activated!\nRegistered to: ",
+                          "Lizenz aktiviert!\nRegistriert auf: ") + (email.Length > 0 ? email : L("your account", "deinem Account")) + "\n\n" +
+                        L("All Pro features are now unlocked.",
+                          "Alle Pro-Funktionen sind freigeschaltet."),
+                        "BrightRaider Pro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        L("Activation failed: ", "Aktivierung fehlgeschlagen: ") + errMsg + "\n\n" +
+                        L("Check your key and internet connection.",
+                          "Bitte Key und Internetverbindung prüfen."),
+                        "BrightRaider", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         dialog.Dispose();
@@ -804,7 +874,7 @@ class BrightRaider : Form
             try
             {
                 byte[] cipher = File.ReadAllBytes(configPath);
-                string decrypted = Encoding.UTF8.GetString(AesDecrypt(cipher, "BrightRaider-v5-Config-2025"));
+                string decrypted = Encoding.UTF8.GetString(AesDecrypt(cipher, "BrightRaider-v6-Config-2025"));
                 lines = decrypted.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             }
             catch
@@ -866,7 +936,7 @@ class BrightRaider : Form
                 lines.Add(p + "_BrightnessMax=" + profiles[i].BrightnessMax.ToString("F1", System.Globalization.CultureInfo.InvariantCulture));
             }
             string content = string.Join("\n", lines.ToArray());
-            File.WriteAllBytes(configPath, AesEncrypt(Encoding.UTF8.GetBytes(content), "BrightRaider-v5-Config-2025"));
+            File.WriteAllBytes(configPath, AesEncrypt(Encoding.UTF8.GetBytes(content), "BrightRaider-v6-Config-2025"));
         }
         catch { }
     }
