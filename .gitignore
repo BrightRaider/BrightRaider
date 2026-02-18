@@ -1,0 +1,39 @@
+# Sensible Dateien - NIEMALS committen!
+keys/private.key
+keys/keys.txt
+keys/*.lic
+keys/public.key
+
+# Key-Generator (privat)
+src/GenKey.cs
+build/GenKey.exe
+build/GenKey.cs
+
+# Interne Dokumente
+docs/MASTERBRIEFING.txt
+docs/CHANGELOG.txt
+
+# Build-Artefakte
+build/*.exe
+build/*.png
+
+# Config mit persönlichen Daten
+config/
+test/
+releases/v4-free/BrightRaider.cfg
+releases/v4-free/BrightRaider.exe
+
+# EXE Dateien (ausser Release)
+*.exe
+
+# License Dateien
+*.lic
+
+# Videos (zu gross fuer GitHub)
+Bild und Video/*.MOV
+Bild und Video/*.MP4
+Bild und Video/*.mov
+Bild und Video/*.mp4
+
+# Claude interne Dateien
+.claude/

@@ -1,0 +1,327 @@
+================================================================
+  BrightRaider V5 Pro
+  Switch Gamma, Contrast & Digital Vibrance with one keypress
+================================================================
+
+
+[ ENGLISH ]
+
+WHAT IS BRIGHTRAIDER?
+  BrightRaider is a lightweight tool for NVIDIA and AMD graphics
+  cards that lets you instantly switch between display profiles
+  using your Numpad keys. Each profile changes gamma, contrast,
+  and digital vibrance / saturation - perfect for gaming
+  (especially Arc Raiders!), video editing, or quickly boosting
+  visibility in dark scenes.
+
+  The tool auto-detects your GPU (NVIDIA or AMD) and uses the
+  correct driver API automatically. On systems without a
+  supported GPU, gamma and contrast still work via Windows API.
+
+  The app runs silently in your system tray and uses almost
+  no resources. No installation required.
+
+FREE FEATURES
+  - 3 switchable display profiles via Numpad 1/2/3
+  - Adjusts Gamma, Contrast, and Digital Vibrance/Saturation
+  - Supports NVIDIA (NvAPI) and AMD (ADL SDK) graphics cards
+  - Auto-detects GPU - no configuration needed
+  - Works with Shift held down (no conflicts)
+  - Per-monitor control (choose one or all monitors)
+  - Notifications can be turned on/off
+  - English and German language support
+  - Custom icon with profile number indicator
+  - All settings saved automatically
+  - Resets everything to normal on exit
+  - Portable: no installation, just one EXE + icon file
+
+PRO FEATURES ($4.99 one-time)
+  - Up to 9 profiles (Numpad 1-9)
+  - Custom profile editor: set your own Gamma, Contrast
+    and Vibrance values for each profile
+  - Auto-Start with Windows: launches on boot
+  - Game Mute toggle (Numpad 0): instantly mute/unmute
+    game audio
+  - Auto-Brightness: screen analysis detects dark scenes
+    and automatically switches to a brighter profile
+  - Offline license: no internet required after activation
+
+PROFILES (Default)
+  Num 1:  Normal    - Gamma 1.0, Contrast 100%, Vibrance 50%
+  Num 2:  Bright    - Gamma 1.5, Contrast 110%, Vibrance 60%
+  Num 3:  Brighter  - Gamma 2.0, Contrast 110%, Vibrance 70%
+  Num 4-9: Custom   - Pro users can edit all values
+
+SYSTEM REQUIREMENTS
+  - Windows 10 or 11
+  - NVIDIA (GeForce, RTX, Quadro) or AMD (Radeon, RX) GPU
+  - .NET Framework 4.0 (pre-installed on Windows 10/11)
+  - Also works on Intel/other GPUs (Gamma + Contrast only)
+
+FIRST LAUNCH - IMPORTANT
+  On first launch, BrightRaider needs to make a small, safe
+  change to your Windows registry. Here is exactly what
+  happens and why:
+
+  1. You double-click BrightRaider.exe
+  2. Windows shows a UAC prompt ("Do you want to allow
+     this app to make changes?") - click YES
+  3. This creates ONE registry entry:
+
+     Location: HKLM\SOFTWARE\Microsoft\Windows NT\
+               CurrentVersion\ICM
+     Name:     GdiIcmGammaRange
+     Value:    256
+
+     WHAT DOES THIS DO?
+     Windows has a built-in restriction that blocks apps
+     from adjusting display gamma. This registry entry
+     simply tells Windows: "Allow gamma adjustments."
+     It does NOT change any display settings itself.
+     It does NOT affect system stability or security.
+     It is used by many display calibration tools.
+     It can be safely removed at any time.
+
+  4. RESTART YOUR PC (only needed once!)
+  5. Start BrightRaider.exe again - done!
+
+  The UAC prompt only appears ONCE. After that, the app
+  runs without any admin rights.
+
+USAGE
+  Hotkeys:
+    Numpad 1-3  ->  Profile 1-3 (Free)
+    Numpad 4-9  ->  Profile 4-9 (Pro)
+    Numpad 0    ->  Mute/Unmute game audio (Pro)
+
+    Works with or without Shift, NumLock on or off.
+
+  Tray Icon (right-click):
+    - Switch profiles
+    - Edit Profiles [PRO] - customize all values
+    - Auto-Start with Windows [PRO]
+    - Auto-Brightness (Screen Analysis) [PRO]
+    - Game Mute info [PRO]
+    - Select monitor (one or all)
+    - Toggle notifications
+    - Switch language (English/Deutsch)
+    - Enter License / License status
+    - Exit
+
+  The tray icon shows the app logo with a small profile
+  number overlay in different colors per profile.
+
+PRO ACTIVATION
+  1. Purchase a license at the BrightRaider website
+  2. You receive an email + license key
+  3. Right-click tray icon -> "Enter License..."
+  4. Enter your email and license key
+  5. All Pro features are instantly unlocked
+  6. License is saved locally - no internet needed
+
+AUTO-BRIGHTNESS (Pro)
+  When enabled, BrightRaider captures the center 30% of your
+  screen every 3 seconds and calculates the average brightness.
+  If the screen is dark (below threshold), it automatically
+  switches to a brighter profile. When the screen brightens
+  again, it switches back. Uses hysteresis to prevent
+  flickering between profiles.
+
+  Enable via: Tray Menu -> Auto-Brightness (Screen Analysis)
+
+MONITOR SELECTION
+  By default, all monitors change together. To change only
+  one monitor: right-click the tray icon and select the
+  specific display. Your choice is saved automatically.
+
+NOTES
+  - Numpad 1-9 are captured while the tool is running.
+    Regular number keys (above letters) are NOT affected.
+  - Digital Vibrance (NVIDIA) / Saturation (AMD) changes are
+    visible in the respective GPU control panel.
+    Gamma/Contrast changes are NOT shown there
+    (this is normal - they work via a different API).
+  - The tray menu shows your detected GPU at the bottom
+    (NVIDIA, AMD, or None).
+  - If something looks wrong: just exit the app. Everything
+    resets to normal automatically.
+
+UNINSTALL
+  1. Exit BrightRaider (right-click tray -> Exit)
+  2. Delete the folder
+  3. Optional: Remove the registry entry:
+     HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM
+     -> Delete "GdiIcmGammaRange"
+  4. Optional: Remove auto-start entry:
+     HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+     -> Delete "BrightRaider"
+
+
+================================================================
+
+
+[ DEUTSCH ]
+
+WAS IST BRIGHTRAIDER?
+  BrightRaider ist ein schlankes Tool fuer NVIDIA und AMD
+  Grafikkarten, mit dem du per Tastendruck zwischen Display-
+  Profilen wechseln kannst. Jedes Profil aendert Gamma,
+  Kontrast und Digitale Farbanpassung/Saettigung gleichzeitig
+  - perfekt fuer Gaming (besonders Arc Raiders!),
+  Videobearbeitung oder um in dunklen Szenen mehr zu erkennen.
+
+  Das Tool erkennt automatisch deine GPU (NVIDIA oder AMD)
+  und nutzt die richtige Treiber-API. Auf Systemen ohne
+  unterstuetzte GPU funktionieren Gamma und Kontrast trotzdem
+  ueber die Windows-API.
+
+  Die App laeuft leise im System-Tray und verbraucht kaum
+  Ressourcen. Keine Installation noetig.
+
+KOSTENLOSE FUNKTIONEN
+  - 3 umschaltbare Display-Profile ueber Numpad 1/2/3
+  - Aendert Gamma, Kontrast und Digitale Farbanpassung/Saettigung
+  - Unterstuetzt NVIDIA (NvAPI) und AMD (ADL SDK) Grafikkarten
+  - Automatische GPU-Erkennung - keine Konfiguration noetig
+  - Funktioniert auch mit gedrueckter Shift-Taste
+  - Einzelne Monitore oder alle gleichzeitig steuerbar
+  - Benachrichtigungen ein/ausschaltbar
+  - Englisch und Deutsch
+  - App-Icon mit Profilnummer-Anzeige
+  - Alle Einstellungen werden automatisch gespeichert
+  - Setzt beim Beenden alles auf Normal zurueck
+  - Portabel: nur eine EXE + Icon-Datei, keine Installation
+
+PRO FUNKTIONEN (4,99 EUR einmalig)
+  - Bis zu 9 Profile (Numpad 1-9)
+  - Profil-Editor: eigene Gamma-, Kontrast- und
+    Farbanpassungswerte fuer jedes Profil einstellen
+  - Auto-Start mit Windows: startet beim Hochfahren
+  - Spiel stumm schalten (Numpad 0): sofort Ton an/aus
+  - Auto-Helligkeit: Bildschirmanalyse erkennt dunkle
+    Szenen und wechselt automatisch das Profil
+  - Offline-Lizenz: nach Aktivierung kein Internet noetig
+
+PROFILE (Standard)
+  Num 1:  Normal  - Gamma 1.0, Kontrast 100%, Farbanpassung 50%
+  Num 2:  Hell    - Gamma 1.5, Kontrast 110%, Farbanpassung 60%
+  Num 3:  Heller  - Gamma 2.0, Kontrast 110%, Farbanpassung 70%
+  Num 4-9: Benutzerdefiniert - Pro-Nutzer koennen alle Werte aendern
+
+SYSTEMVORAUSSETZUNGEN
+  - Windows 10 oder 11
+  - NVIDIA (GeForce, RTX, Quadro) oder AMD (Radeon, RX) GPU
+  - .NET Framework 4.0 (auf Windows 10/11 vorinstalliert)
+  - Funktioniert auch auf Intel/anderen GPUs (nur Gamma + Kontrast)
+
+ERSTER START - WICHTIG
+  Beim ersten Start muss BrightRaider eine kleine, sichere
+  Aenderung in der Windows-Registry vornehmen. Hier ist genau
+  erklaert was passiert und warum:
+
+  1. Du doppelklickst BrightRaider.exe
+  2. Windows zeigt eine UAC-Abfrage ("Moechten Sie zulassen,
+     dass diese App Aenderungen vornimmt?") - klicke JA
+  3. Es wird EIN Registry-Eintrag erstellt:
+
+     Ort:   HKLM\SOFTWARE\Microsoft\Windows NT\
+            CurrentVersion\ICM
+     Name:  GdiIcmGammaRange
+     Wert:  256
+
+     WAS MACHT DIESER EINTRAG?
+     Windows hat eine eingebaute Beschraenkung, die Apps
+     daran hindert, die Display-Gamma-Werte zu aendern.
+     Dieser Registry-Eintrag sagt Windows einfach:
+     "Erlaube Gamma-Anpassungen."
+     Er aendert KEINE Bildschirmeinstellungen selbst.
+     Er beeinflusst NICHT die Systemstabilitaet.
+     Er ist KEIN Sicherheitsrisiko.
+     Er wird von vielen Kalibrierungs-Tools verwendet.
+     Er kann jederzeit wieder entfernt werden.
+
+  4. PC NEU STARTEN (nur einmalig noetig!)
+  5. BrightRaider.exe erneut starten - fertig!
+
+  Die UAC-Abfrage kommt nur EINMAL. Danach laeuft die App
+  ohne Admin-Rechte.
+
+BEDIENUNG
+  Hotkeys:
+    Numpad 1-3  ->  Profil 1-3 (Kostenlos)
+    Numpad 4-9  ->  Profil 4-9 (Pro)
+    Numpad 0    ->  Spiel stumm schalten (Pro)
+
+    Funktioniert mit und ohne Shift, NumLock an oder aus.
+
+  Tray-Icon (Rechtsklick):
+    - Profile wechseln
+    - Profile bearbeiten [PRO] - alle Werte anpassen
+    - Auto-Start mit Windows [PRO]
+    - Auto-Helligkeit (Bildschirmanalyse) [PRO]
+    - Spiel stumm [PRO]
+    - Monitor auswaehlen (einzeln oder alle)
+    - Benachrichtigungen umschalten
+    - Sprache wechseln (English/Deutsch)
+    - Lizenz eingeben / Lizenzstatus
+    - Beenden
+
+PRO AKTIVIERUNG
+  1. Lizenz auf der BrightRaider-Website kaufen
+  2. Du erhaeltst eine Email + Lizenzschluessel
+  3. Rechtsklick Tray -> "Lizenz eingeben..."
+  4. Email und Lizenzschluessel eingeben
+  5. Alle Pro-Funktionen sofort freigeschaltet
+  6. Lizenz lokal gespeichert - kein Internet noetig
+
+AUTO-HELLIGKEIT (Pro)
+  Wenn aktiviert, erfasst BrightRaider alle 3 Sekunden die
+  mittleren 30% des Bildschirms und berechnet die durchschnitt-
+  liche Helligkeit. Ist der Bildschirm dunkel (unter Schwelle),
+  wechselt es automatisch zu einem helleren Profil. Wird es
+  wieder heller, wechselt es zurueck. Hysterese verhindert
+  staendiges Umschalten.
+
+  Aktivieren: Tray-Menue -> Auto-Helligkeit (Bildschirmanalyse)
+
+MONITOR-AUSWAHL
+  Standardmaessig wechseln alle Monitore gleichzeitig. Um nur
+  einen Monitor zu aendern: Rechtsklick auf das Tray-Icon und
+  den gewuenschten Monitor auswaehlen. Die Auswahl wird
+  automatisch gespeichert.
+
+HINWEISE
+  - Numpad 1-9 sind belegt solange das Tool laeuft.
+    Die normalen Zahlentasten (ueber den Buchstaben) sind
+    NICHT betroffen.
+  - Digitale Farbanpassung (NVIDIA) / Saettigung (AMD) wird
+    im jeweiligen GPU Control Panel angezeigt.
+    Gamma/Kontrast-Aenderungen werden dort NICHT angezeigt
+    (das ist normal - sie nutzen eine andere API).
+  - Im Tray-Menue wird unten die erkannte GPU angezeigt
+    (NVIDIA, AMD oder Keiner).
+  - Falls etwas komisch aussieht: einfach die App beenden.
+    Alles wird automatisch auf Normal zurueckgesetzt.
+
+DEINSTALLATION
+  1. BrightRaider beenden (Rechtsklick Tray -> Beenden)
+  2. Den Ordner loeschen
+  3. Optional: Registry-Eintrag entfernen:
+     HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM
+     -> "GdiIcmGammaRange" loeschen
+  4. Optional: Auto-Start Eintrag entfernen:
+     HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+     -> "BrightRaider" loeschen
+
+
+================================================================
+  FILES / DATEIEN
+  BrightRaider.exe  - The program / Das Programm
+  BrightRaider.cs   - Source code / Quellcode
+  Icon.png          - App icon / App-Symbol
+  Icon.ico          - Icon for EXE / Icon fuer EXE
+  BrightRaider.cfg  - Settings (auto) / Einstellungen
+  GenKey.cs         - Key generator (dev) / Key-Generator (Dev)
+  CHANGELOG.txt     - Version history / Versionshistorie
+  V4_Free/          - Free version backup / Kostenlose Version
+================================================================
