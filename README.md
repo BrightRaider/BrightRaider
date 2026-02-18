@@ -14,13 +14,13 @@ One EXE, zero dependencies, 64 KB.
 
 | Without BrightRaider | With BrightRaider |
 |---|---|
-| ![Before](assets/screenshots/vorher.JPG) | ![After](assets/screenshots/Nacher.JPG) |
+| ![Before](assets/screenshots/before.jpg) | ![After](assets/screenshots/after.jpg) |
 
 ## Screenshots
 
-![Settings](assets/screenshots/Einstellungen.PNG)
-![Tray Menu](assets/screenshots/Taskleiste.PNG)
-![Submenu](assets/screenshots/untermenue.PNG)
+![Settings](assets/screenshots/settings.png)
+![Tray Menu](assets/screenshots/tray.png)
+![Submenu](assets/screenshots/submenu.png)
 
 ## Demo Videos
 
