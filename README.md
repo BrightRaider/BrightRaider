@@ -10,6 +10,8 @@ One EXE, zero dependencies, 64 KB.
 
 ## Before / After
 
+**[► Interactive Before/After Slider](https://imgsli.com/NDUwMzQ2)**
+
 | Without BrightRaider | With BrightRaider |
 |---|---|
 | ![Before](assets/screenshots/vorher.JPG) | ![After](assets/screenshots/Nacher.JPG) |
