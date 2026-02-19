@@ -92,7 +92,7 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 
 ## Pro Activation
 
-1. **[Buy Pro License ($4.99)](https://brightraider.lemonsqueezy.com/checkout/buy/a7d69bd7-a83c-40d7-828d-01851f47d317)**
+1. **[Buy Pro License ($4.99)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
 2. Right-click tray icon → **Settings** → **Enter License**
 3. Enter your email and the license key from the purchase confirmation
 4. Done — all Pro features unlocked permanently. No subscription. Requires internet once for activation, offline forever after.
