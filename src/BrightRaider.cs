@@ -424,6 +424,53 @@ class BrightRaider : Form
 
     // === License Validation ===
 
+    // Check if JSON contains a key with numeric value (handles spaces after colon)
+    static bool JsonContainsId(string json, string key, string value)
+    {
+        // Match "key":value or "key": value or "key" : value
+        int idx = json.IndexOf("\"" + key + "\"");
+        if (idx < 0) return false;
+        int colon = json.IndexOf(':', idx + key.Length + 2);
+        if (colon < 0) return false;
+        // Skip whitespace after colon
+        int start = colon + 1;
+        while (start < json.Length && json[start] == ' ') start++;
+        return json.Substring(start).StartsWith(value);
+    }
+
+    // Validate key via Lemon Squeezy validate endpoint
+    static bool ValidateLicenseOnline(string key)
+    {
+        try
+        {
+            string url = "https://api.lemonsqueezy.com/v1/licenses/validate";
+            string body = "license_key=" + Uri.EscapeDataString(key);
+
+            System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.Timeout = 10000;
+            byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
+            req.ContentLength = bodyBytes.Length;
+            using (Stream s = req.GetRequestStream()) s.Write(bodyBytes, 0, bodyBytes.Length);
+
+            using (System.Net.HttpWebResponse resp = (System.Net.HttpWebResponse)req.GetResponse())
+            using (StreamReader sr = new StreamReader(resp.GetResponseStream()))
+            {
+                string json = sr.ReadToEnd();
+                if (json.Contains("\"valid\":true") && json.Contains("\"status\":\"active\""))
+                {
+                    if (!JsonContainsId(json, "store_id", LS_STORE_ID) ||
+                        !JsonContainsId(json, "product_id", LS_PRODUCT_ID))
+                        return false;
+                    return true;
+                }
+            }
+        }
+        catch { }
+        return false;
+    }
+
     // Activate online via Lemon Squeezy API (called once when user enters key)
     static bool ActivateLicenseOnline(string key, out string errorMsg)
     {
@@ -446,16 +493,17 @@ class BrightRaider : Form
             using (StreamReader sr = new StreamReader(resp.GetResponseStream()))
             {
                 string json = sr.ReadToEnd();
-                // Check for "activated":true or "license_key"."status":"active"
                 if (json.Contains("\"activated\":true") || json.Contains("\"status\":\"active\""))
                 {
-                    // Verify this key belongs to BrightRaider Pro
-                    if (!json.Contains("\"store_id\":" + LS_STORE_ID) ||
-                        !json.Contains("\"product_id\":" + LS_PRODUCT_ID))
+                    if (!JsonContainsId(json, "store_id", LS_STORE_ID) ||
+                        !JsonContainsId(json, "product_id", LS_PRODUCT_ID))
                     { errorMsg = "Key belongs to a different product."; return false; }
                     return true;
                 }
-                // Extract error message from JSON if present
+                // Activation failed — maybe already activated? Try validate as fallback
+                if (ValidateLicenseOnline(key)) return true;
+
+                // Extract error message
                 int errIdx = json.IndexOf("\"error\":\"");
                 if (errIdx >= 0)
                 {
@@ -463,15 +511,17 @@ class BrightRaider : Form
                     int end = json.IndexOf('"', start);
                     if (end > start) errorMsg = json.Substring(start, end - start);
                 }
-                if (errorMsg.Length == 0) errorMsg = "Key not valid or already used.";
+                if (errorMsg.Length == 0) errorMsg = "Key not valid.";
                 return false;
             }
         }
         catch (System.Net.WebException ex)
         {
-            // Try to read error body
+            // HTTP error (400, 403, etc.) — try validate as fallback
             if (ex.Response != null)
             {
+                if (ValidateLicenseOnline(key)) return true;
+
                 try
                 {
                     using (StreamReader sr = new StreamReader(ex.Response.GetResponseStream()))
