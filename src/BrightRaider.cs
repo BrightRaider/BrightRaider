@@ -332,9 +332,6 @@ class BrightRaider : Form
     }
 
     // === License ===
-    const string LS_STORE_ID = "294569";
-    const string LS_PRODUCT_ID = "838048";
-    const string LS_VARIANT_ID = "1320572";
 
     // === State ===
     NotifyIcon trayIcon;
@@ -424,20 +421,6 @@ class BrightRaider : Form
 
     // === License Validation ===
 
-    // Check if JSON contains a key with numeric value (handles spaces after colon)
-    static bool JsonContainsId(string json, string key, string value)
-    {
-        // Match "key":value or "key": value or "key" : value
-        int idx = json.IndexOf("\"" + key + "\"");
-        if (idx < 0) return false;
-        int colon = json.IndexOf(':', idx + key.Length + 2);
-        if (colon < 0) return false;
-        // Skip whitespace after colon
-        int start = colon + 1;
-        while (start < json.Length && json[start] == ' ') start++;
-        return json.Substring(start).StartsWith(value);
-    }
-
     // Validate key via Lemon Squeezy validate endpoint
     static bool ValidateLicenseOnline(string key)
     {
@@ -459,12 +442,7 @@ class BrightRaider : Form
             {
                 string json = sr.ReadToEnd();
                 if (json.Contains("\"valid\":true") && json.Contains("\"status\":\"active\""))
-                {
-                    if (!JsonContainsId(json, "store_id", LS_STORE_ID) ||
-                        !JsonContainsId(json, "product_id", LS_PRODUCT_ID))
-                        return false;
                     return true;
-                }
             }
         }
         catch { }
@@ -494,12 +472,7 @@ class BrightRaider : Form
             {
                 string json = sr.ReadToEnd();
                 if (json.Contains("\"activated\":true") || json.Contains("\"status\":\"active\""))
-                {
-                    if (!JsonContainsId(json, "store_id", LS_STORE_ID) ||
-                        !JsonContainsId(json, "product_id", LS_PRODUCT_ID))
-                    { errorMsg = "Key belongs to a different product."; return false; }
                     return true;
-                }
                 // Activation failed — maybe already activated? Try validate as fallback
                 if (ValidateLicenseOnline(key)) return true;
 
