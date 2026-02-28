@@ -332,6 +332,7 @@ class BrightRaider : Form
     }
 
     // === License ===
+    // (store_id/product_id checks removed — Lemon Squeezy API validates key ownership)
 
     // === State ===
     NotifyIcon trayIcon;
@@ -975,29 +976,15 @@ class BrightRaider : Form
             int profile = 0;
             bool isMute = false;
 
-            // Numpad with NumLock ON
-            if ((int)kb.vkCode >= VK_NUMPAD0 && (int)kb.vkCode <= VK_NUMPAD9)
-            {
-                int num = (int)kb.vkCode - VK_NUMPAD0;
-                if (num == 0) isMute = true;
-                else profile = num;
-            }
-            // Numpad with NumLock OFF (non-extended = numpad)
-            // Also catches Shift+Numpad which sends VK_INSERT/VK_END etc.
-            else if ((kb.flags & LLKHF_EXTENDED) == 0)
+            // Arrow keys (extended = real arrow keys, not numpad)
+            if ((kb.flags & LLKHF_EXTENDED) != 0)
             {
                 switch ((int)kb.vkCode)
                 {
-                    case VK_INSERT: isMute = true; break; // Numpad 0 (NumLock OFF or Shift+Numpad0)
-                    case VK_END: profile = 1; break;
-                    case VK_DOWN: profile = 2; break;
-                    case VK_NEXT: profile = 3; break;
-                    case VK_LEFT: profile = 4; break;
-                    case VK_CLEAR: profile = 5; break;
-                    case VK_RIGHT: profile = 6; break;
-                    case VK_HOME: profile = 7; break;
-                    case VK_UP: profile = 8; break;
-                    case VK_PRIOR: profile = 9; break;
+                    case VK_LEFT:  profile = 1; break; // Arrow Left  = Profile 1
+                    case VK_DOWN:  profile = 2; break; // Arrow Down  = Profile 2
+                    case VK_RIGHT: profile = 3; break; // Arrow Right = Profile 3
+                    case VK_UP:    isMute = true; break; // Arrow Up    = Mute
                 }
             }
 

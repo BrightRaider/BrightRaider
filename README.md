@@ -70,7 +70,12 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 
 **[Download Latest Release](../../releases/latest)**
 
-Just download `BrightRaider.exe` and run it. No installation needed.
+| File | Controls | For |
+|------|----------|-----|
+| `BrightRaider.exe` | Numpad 1-9, Numpad 0 | Standard keyboards with numpad |
+| `BrightRaider_Arrows.exe` | Arrow keys | Laptops & TKL keyboards without numpad |
+
+Just download and run. No installation needed.
 
 ## Quick Start
 
@@ -99,6 +104,8 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 
 ## Hotkeys
 
+### Numpad version (`BrightRaider.exe`)
+
 | Key | Action | Version |
 |-----|--------|---------|
 | Numpad 1-3 | Switch profile | Free |
@@ -106,6 +113,15 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad 0 | Mute/unmute game | Pro |
 
 Works with NumLock on or off, with or without Shift.
+
+### Arrow Keys version (`BrightRaider_Arrows.exe`)
+
+| Key | Action | Version |
+|-----|--------|---------|
+| Arrow Left | Profile 1 (Normal) | Free |
+| Arrow Down | Profile 2 (Bright) | Free |
+| Arrow Right | Profile 3 (Brighter) | Free |
+| Arrow Up | Mute/unmute game | Pro |
 
 ## How It Works
 
