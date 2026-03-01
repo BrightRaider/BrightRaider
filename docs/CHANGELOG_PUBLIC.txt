@@ -3,7 +3,7 @@
 ================================================================
 
 
-[ V7.2 Pro ] - Current Version
+[ V7.2 ] - Current Version
 
   Security & Compatibility:
   - Added assembly metadata (version info visible in file properties)
@@ -11,14 +11,14 @@
   - Optimized build — reduced antivirus false positives
   - Thanks to @bedub for reporting the VirusTotal flags
 
-[ V7.1 Pro ]
+[ V7.1 ]
 
   Multi-Monitor:
   - Fixed: Debug overlay, calibration wizard and toast now appear on the selected display
   - Fixed: Brightness measurement now targets the correct monitor
   - Fixed: Switching monitors no longer requires app restart
 
-[ V7 Pro ]
+[ V7 ]
 
   License Activation:
   - Fixed "Key belongs to a different product" error
@@ -33,13 +33,13 @@
   - Arrow Up = Mute/unmute game (Pro)
   - Same features, same license — just different hotkeys
 
-[ V6 Pro ]
+[ V6 ]
 
   License:
   - New: Lemon Squeezy — buy Pro, receive key instantly by email
   - One-time online activation, offline forever after
 
-[ V5 Pro ]
+[ V5 ]
 
   Auto-Brightness (PRO):
   - Automatic brightness adjustment based on screen content
