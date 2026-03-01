@@ -11,7 +11,16 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using System.Net;
+using System.Reflection;
 using Microsoft.Win32;
+
+[assembly: AssemblyTitle("BrightRaider")]
+[assembly: AssemblyDescription("Display brightness, contrast and vibrance switcher for gaming")]
+[assembly: AssemblyCompany("BrightRaider")]
+[assembly: AssemblyProduct("BrightRaider")]
+[assembly: AssemblyCopyright("Copyright \u00a9 BrightRaider 2025")]
+[assembly: AssemblyVersion("7.2.0.0")]
+[assembly: AssemblyFileVersion("7.2.0.0")]
 
 class BrightRaider : Form
 {

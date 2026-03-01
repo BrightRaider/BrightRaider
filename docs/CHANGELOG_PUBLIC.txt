@@ -3,7 +3,15 @@
 ================================================================
 
 
-[ V7.1 Pro ] - Current Version
+[ V7.2 Pro ] - Current Version
+
+  Security & Compatibility:
+  - Added assembly metadata (version info visible in file properties)
+  - Added Windows compatibility manifest (Windows 10/11)
+  - Optimized build — reduced antivirus false positives
+  - Thanks to @bedub for reporting the VirusTotal flags
+
+[ V7.1 Pro ]
 
   Multi-Monitor:
   - Fixed: Debug overlay, calibration wizard and toast now appear on the selected display
