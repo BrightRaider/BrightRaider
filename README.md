@@ -169,6 +169,10 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:winexe /win32ico
 
 Single file, no dependencies, no NuGet, no Visual Studio needed.
 
+## Changelog
+
+**[View full changelog](docs/CHANGELOG_PUBLIC.txt)**
+
 ## Uninstall
 
 1. Exit BrightRaider (right-click tray → Exit)
