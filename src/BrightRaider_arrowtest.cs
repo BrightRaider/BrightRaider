@@ -406,8 +406,8 @@ class BrightRaider : Form
             toastForm.Size = new Size((int)sz.Width + 30, (int)sz.Height + 16);
         }
 
-        // Position: bottom-right above taskbar
-        Rectangle workArea = Screen.PrimaryScreen.WorkingArea;
+        // Position: bottom-right above taskbar on selected display
+        Rectangle workArea = GetTargetScreen().WorkingArea;
         toastForm.Location = new Point(workArea.Right - toastForm.Width - 10, workArea.Bottom - toastForm.Height - 10);
 
         toastForm.Show();
@@ -1098,8 +1098,10 @@ class BrightRaider : Form
             return;
         }
 
-        int screenW = GetSystemMetrics(SM_CXSCREEN);
-        int screenH = GetSystemMetrics(SM_CYSCREEN);
+        Screen targetScreen = GetTargetScreen();
+        Rectangle bounds = targetScreen.Bounds;
+        int screenW = bounds.Width;
+        int screenH = bounds.Height;
 
         // Create measurement zone overlay (5 zones, click-through)
         if (measureFrameOverlay == null || measureFrameOverlay.IsDisposed)
@@ -1110,14 +1112,14 @@ class BrightRaider : Form
             measureFrameOverlay.ShowInTaskbar = false;
             measureFrameOverlay.TransparencyKey = Color.Magenta;
             measureFrameOverlay.BackColor = Color.Magenta;
-            // Full screen overlay so we can draw all 5 zones
-            measureFrameOverlay.Location = new Point(0, 0);
+            // Full screen overlay on selected display
+            measureFrameOverlay.Location = new Point(bounds.X, bounds.Y);
             measureFrameOverlay.Size = new Size(screenW, screenH);
             measureFrameOverlay.StartPosition = FormStartPosition.Manual;
 
-            // Draw 5 measurement zone rectangles
+            // Draw 5 measurement zone rectangles (local coordinates, no offset)
             measureFrameOverlay.Paint += delegate(object s, PaintEventArgs pe) {
-                int[][] zones = GetMeasurementZones(screenW, screenH);
+                int[][] zones = GetMeasurementZones(screenW, screenH, 0, 0);
                 string[] zoneNames = new string[] { "C", "TL", "TR", "BL", "BR" };
                 Color[] zoneColors = new Color[] { Color.Red, Color.Orange, Color.Orange, Color.Orange, Color.Orange };
                 using (Font f = new Font("Consolas", 9f, FontStyle.Bold))
@@ -1154,7 +1156,7 @@ class BrightRaider : Form
             brightnessOverlay.ShowInTaskbar = false;
             brightnessOverlay.Size = new Size(320, 145);
             brightnessOverlay.StartPosition = FormStartPosition.Manual;
-            brightnessOverlay.Location = new Point(screenW - 330, 10);
+            brightnessOverlay.Location = new Point(bounds.Right - 330, bounds.Top + 10);
 
             overlayLabel = new Label();
             overlayLabel.ForeColor = Color.FromArgb(0, 255, 100);
@@ -1251,7 +1253,8 @@ class BrightRaider : Form
 
     // Returns 5 measurement zone rectangles: [x, y, width, height]
     // Tiny 3% zones in X-pattern: center + 4 corners
-    static int[][] GetMeasurementZones(int screenW, int screenH)
+    // offsetX/offsetY shift zones to target display (use 0,0 for local/overlay coordinates)
+    static int[][] GetMeasurementZones(int screenW, int screenH, int offsetX, int offsetY)
     {
         int zW = (int)(screenW * 0.03);
         int zH = (int)(screenH * 0.03);
@@ -1259,11 +1262,11 @@ class BrightRaider : Form
         int marginY = (int)(screenH * 0.15);
 
         return new int[][] {
-            new int[] { screenW / 2 - zW / 2, screenH / 2 - zH / 2, zW, zH },                   // 0: Center
-            new int[] { marginX, marginY, zW, zH },                                                // 1: Top-Left
-            new int[] { screenW - marginX - zW, marginY, zW, zH },                                 // 2: Top-Right
-            new int[] { marginX, screenH - marginY - zH, zW, zH },                                 // 3: Bottom-Left
-            new int[] { screenW - marginX - zW, screenH - marginY - zH, zW, zH }                   // 4: Bottom-Right
+            new int[] { offsetX + screenW / 2 - zW / 2, offsetY + screenH / 2 - zH / 2, zW, zH },                   // 0: Center
+            new int[] { offsetX + marginX, offsetY + marginY, zW, zH },                                                // 1: Top-Left
+            new int[] { offsetX + screenW - marginX - zW, offsetY + marginY, zW, zH },                                 // 2: Top-Right
+            new int[] { offsetX + marginX, offsetY + screenH - marginY - zH, zW, zH },                                 // 3: Bottom-Left
+            new int[] { offsetX + screenW - marginX - zW, offsetY + screenH - marginY - zH, zW, zH }                   // 4: Bottom-Right
         };
     }
 
@@ -1271,9 +1274,11 @@ class BrightRaider : Form
     {
         try
         {
-            int screenW = GetSystemMetrics(SM_CXSCREEN);
-            int screenH = GetSystemMetrics(SM_CYSCREEN);
-            int[][] zones = GetMeasurementZones(screenW, screenH);
+            Screen targetScreen = GetTargetScreen();
+            Rectangle bounds = targetScreen.Bounds;
+            int screenW = bounds.Width;
+            int screenH = bounds.Height;
+            int[][] zones = GetMeasurementZones(screenW, screenH, bounds.X, bounds.Y);
 
             // Measure all 5 zones
             IntPtr hdcScreen = GetDC(IntPtr.Zero);
@@ -1431,9 +1436,11 @@ class BrightRaider : Form
     {
         try
         {
-            int screenW = GetSystemMetrics(SM_CXSCREEN);
-            int screenH = GetSystemMetrics(SM_CYSCREEN);
-            int[][] zones = GetMeasurementZones(screenW, screenH);
+            Screen targetScreen = GetTargetScreen();
+            Rectangle bounds = targetScreen.Bounds;
+            int screenW = bounds.Width;
+            int screenH = bounds.Height;
+            int[][] zones = GetMeasurementZones(screenW, screenH, bounds.X, bounds.Y);
             IntPtr hdcScreen = GetDC(IntPtr.Zero);
             List<double> values = new List<double>();
             for (int i = 0; i < zones.Length; i++)
@@ -1453,7 +1460,11 @@ class BrightRaider : Form
         wizard.FormBorderStyle = FormBorderStyle.None;
         wizard.BackColor = Color.FromArgb(20, 20, 20);
         wizard.Size = new Size(420, 200);
-        wizard.StartPosition = FormStartPosition.CenterScreen;
+        wizard.StartPosition = FormStartPosition.Manual;
+        Screen targetScreen = GetTargetScreen();
+        wizard.Location = new Point(
+            targetScreen.Bounds.X + (targetScreen.Bounds.Width - 420) / 2,
+            targetScreen.Bounds.Y + (targetScreen.Bounds.Height - 200) / 2);
         wizard.TopMost = true;
         wizard.Opacity = 0.92;
 
@@ -1842,9 +1853,24 @@ class BrightRaider : Form
     void SelectDisplay(string deviceName)
     {
         selectedDisplay = deviceName;
+        // Dispose cached overlay forms so they get recreated on the new display
+        if (measureFrameOverlay != null && !measureFrameOverlay.IsDisposed)
+        { measureFrameOverlay.Dispose(); measureFrameOverlay = null; }
+        if (brightnessOverlay != null && !brightnessOverlay.IsDisposed)
+        { brightnessOverlay.Dispose(); brightnessOverlay = null; }
         SaveConfig();
         BuildMenu();
         if (currentProfile > 1) ApplyProfile(currentProfile);
+    }
+
+    Screen GetTargetScreen()
+    {
+        if (selectedDisplay != null)
+        {
+            foreach (Screen s in Screen.AllScreens)
+                if (s.DeviceName == selectedDisplay) return s;
+        }
+        return Screen.PrimaryScreen;
     }
 
     static void LoadBaseIcon()

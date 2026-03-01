@@ -3,7 +3,14 @@
 ================================================================
 
 
-[ V7 Pro ] - Current Version
+[ V7.1 Pro ] - Current Version
+
+  Multi-Monitor:
+  - Fixed: Debug overlay, calibration wizard and toast now appear on the selected display
+  - Fixed: Brightness measurement now targets the correct monitor
+  - Fixed: Switching monitors no longer requires app restart
+
+[ V7 Pro ]
 
   License Activation:
   - Fixed "Key belongs to a different product" error
