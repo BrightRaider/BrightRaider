@@ -193,4 +193,143 @@ Free is fully functional. Pro adds automatic switching so you never take your ha
 
 ---
 
+<details>
+<summary><strong>Deutsche Version</strong></summary>
+
+## BrightRaider
+
+**Feinde im Dunkeln sehen. Kein Alt-Tab, keine Spieldateien verändert.**
+
+BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
+
+Eine EXE, keine Abhängigkeiten, 64 KB.
+
+## Warum BrightRaider?
+
+NVIDIA Game Filter werden vom Anti-Cheat (EAC) blockiert. Das Monitor-OSD ist langsam und umständlich. Alt-Tab zum Einstellen bringt dich um.
+
+BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel oder deine Monitor-Einstellungen. **Sicher mit allen Anti-Cheat-Systemen** (EAC, BattlEye, Vanguard).
+
+## Features
+
+### Free
+- **3 Helligkeitsprofile** — Normal, Hell, Heller
+- **Sofortiges Umschalten per Hotkey** — Numpad 1/2/3, funktioniert im Vollbild
+- **Gamma + Kontrast + Digital Vibrance** Steuerung
+- **NVIDIA + AMD + Intel** Unterstützung (GDI-Fallback für jede GPU)
+- **Multi-Monitor** Unterstützung
+- **Englisch / Deutsch** Oberfläche
+- Portabel — keine Installation, nur eine EXE
+
+### Pro (4,99 €)
+- **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
+- **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
+- **Bis zu 9 Profile** mit voller Anpassung
+- **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
+- **Profil-Editor** — Gamma, Kontrast, Vibrance pro Profil feintunen
+- **Autostart** mit Windows
+
+## Download
+
+**[Neueste Version herunterladen](../../releases/latest)**
+
+| Datei | Steuerung | Für |
+|-------|-----------|-----|
+| `BrightRaider.exe` | Numpad 1-9, Numpad 0 | Standard-Tastaturen mit Numpad |
+| `BrightRaider_Arrows.exe` | Pfeiltasten | Laptops & TKL-Tastaturen ohne Numpad |
+
+Einfach herunterladen und starten. Keine Installation nötig.
+
+## Schnellstart
+
+1. `BrightRaider.exe` starten — ein Tray-Icon erscheint
+2. **Numpad 1** drücken — Normale Helligkeit
+3. **Numpad 2** drücken — Hell (bessere Sicht in dunklen Bereichen)
+4. **Numpad 3** drücken — Heller (maximale Sicht)
+5. Fertig. Jederzeit umschalten, auch im Vollbild.
+
+## Erster Start
+
+Beim ersten Start setzt BrightRaider einen Registry-Eintrag, um Gamma-Anpassungen freizuschalten:
+
+```
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM → GdiIcmGammaRange = 256
+```
+
+Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrierungs-Tools genutzt, harmlos, jederzeit entfernbar. Ein UAC-Fenster erscheint einmalig. **PC nach dem ersten Start neu starten** (nur einmal nötig).
+
+## Pro-Aktivierung
+
+1. **[Pro-Lizenz kaufen (4,99 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+2. Rechtsklick auf Tray-Icon → **Einstellungen** → **Lizenz eingeben**
+3. E-Mail und Lizenzschlüssel aus der Kaufbestätigung eingeben
+4. Fertig — alle Pro-Features dauerhaft freigeschaltet. Kein Abo. Einmalig Internet nötig, danach offline für immer.
+
+## Tastenbelegung
+
+### Numpad-Version (`BrightRaider.exe`)
+
+| Taste | Aktion | Version |
+|-------|--------|---------|
+| Numpad 1-3 | Profil wechseln | Free |
+| Numpad 4-9 | Profil wechseln | Pro |
+| Numpad 0 | Spiel stumm/laut | Pro |
+
+Funktioniert mit NumLock an oder aus, mit oder ohne Shift.
+
+### Pfeiltasten-Version (`BrightRaider_Arrows.exe`)
+
+| Taste | Aktion | Version |
+|-------|--------|---------|
+| Pfeil Links | Profil 1 (Normal) | Free |
+| Pfeil Unten | Profil 2 (Hell) | Free |
+| Pfeil Rechts | Profil 3 (Heller) | Free |
+| Pfeil Hoch | Spiel stumm/laut | Pro |
+
+## Funktionsweise
+
+BrightRaider passt die Bildschirmausgabe über Standard-Windows-APIs an:
+
+- **GDI** (`SetDeviceGammaRamp`) — Gamma & Kontrast, funktioniert mit jeder GPU
+- **NvAPI** — NVIDIA Digital Vibrance (Hardware-Sättigung)
+- **ADL** — AMD Radeon Sättigungssteuerung
+
+Es wird nichts am Spiel verändert. Es wird nichts injiziert. Es ist das Gleiche wie die Monitor-Helligkeit zu ändern — nur schneller und mit Voreinstellungen.
+
+### Auto-Helligkeit (Pro)
+
+Analysiert 5 kleine Zonen auf dem Bildschirm (Mitte + 4 Ecken) per Median-Helligkeitsmessung. Basierend auf dem Ergebnis wird sanft zwischen deinen Profilen interpoliert. Dunklerer Bildschirm = mehr Boost, hellerer Bildschirm = weniger. Der Übergang ist nahtlos.
+
+Kalibrierung in zwei Schritten: Dunkelste Stelle messen, hellste Stelle messen, fertig.
+
+## Anti-Cheat Sicherheit
+
+BrightRaider verändert **KEINE**:
+- Spieldateien oder Speicher
+- DLL-Injektionen in Spielprozesse
+- Hooks ins Spiel
+- Auslesen von Spieldaten
+
+BrightRaider nutzt **NUR**:
+- Windows GDI — wie deine Monitor-Einstellungen
+- NVIDIA NvAPI — wie das NVIDIA Control Panel
+- AMD ADL — wie AMD Radeon Software
+
+Anti-Cheat-Systeme erkennen keine Bildschirm-Anpassungen.
+
+## FAQ
+
+**Funktioniert das auch mit anderen Spielen?**
+Ja. BrightRaider passt den Bildschirm an, nicht das Spiel.
+
+**Werde ich gebannt?**
+Nein. Es nutzt die gleichen Windows-APIs wie deine Monitor-Einstellungen.
+
+**Brauche ich Pro?**
+Free ist voll funktionsfähig. Pro fügt automatisches Umschalten hinzu, damit du nie die Hand von der Maus nehmen musst.
+
+</details>
+
+---
+
 Made for the Arc Raiders community.
