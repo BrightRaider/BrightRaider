@@ -19,8 +19,8 @@ using Microsoft.Win32;
 [assembly: AssemblyCompany("BrightRaider")]
 [assembly: AssemblyProduct("BrightRaider")]
 [assembly: AssemblyCopyright("Copyright \u00a9 BrightRaider 2025")]
-[assembly: AssemblyVersion("7.2.0.0")]
-[assembly: AssemblyFileVersion("7.2.0.0")]
+[assembly: AssemblyVersion("8.0.0.0")]
+[assembly: AssemblyFileVersion("8.0.0.0")]
 
 class BrightRaider : Form
 {
@@ -301,6 +301,8 @@ class BrightRaider : Form
     const int VK_RIGHT = 0x27; const int VK_HOME = 0x24; const int VK_UP = 0x26;
     const int VK_PRIOR = 0x21;
     const uint LLKHF_EXTENDED = 0x01;
+    const int VK_ADD = 0x6B;                                     // Numpad + (Crosshair-Toggle)
+    const string GUMROAD_PERMALINK = "YOUR_PERMALINK_HERE";
 
     [StructLayout(LayoutKind.Sequential)]
     struct KBDLLHOOKSTRUCT { public uint vkCode; public uint scanCode; public uint flags; public uint time; public IntPtr dwExtraInfo; }
@@ -350,6 +352,8 @@ class BrightRaider : Form
     bool isProLicensed = false;
     string licenseKey = "";
     string licenseEmail = "";
+    string licensePlatform = "ls";        // "ls" = Lemon Squeezy, "gr" = Gumroad
+    string licenseToken = "";             // instance_id (LS) or purchase_id (GR)
 
     string selectedDisplay = null;
     bool showNotifications = true;
@@ -373,6 +377,13 @@ class BrightRaider : Form
     Form toastForm;
     Label toastLabel;
     System.Windows.Forms.Timer toastTimer;
+    bool crosshairVisible = false;
+    Color crosshairColor = Color.Red;
+    int crosshairSize = 20;
+    int crosshairStyle = 0;               // 0=Cross 1=DotRing 2=TShape 3=Dot
+    CrosshairOverlay crosshairOverlay = null;
+    bool checkForUpdates = true;
+    string updateAvailableVersion = "";
 
     string L(string en, string de) { return language == "de" ? de : en; }
 
@@ -527,6 +538,151 @@ class BrightRaider : Form
         catch { errorMsg = "Activation failed. Please try again."; return false; }
     }
 
+    // === New LS method that also returns email + instanceId for V8 .lic format ===
+    static bool ActivateLicenseSqueezeLemon(string key, out string outEmail, out string outInstanceId, out string errorMsg)
+    {
+        outEmail = ""; outInstanceId = ""; errorMsg = "";
+        try
+        {
+            string url = "https://api.lemonsqueezy.com/v1/licenses/activate";
+            string body = "license_key=" + Uri.EscapeDataString(key)
+                        + "&instance_name=" + Uri.EscapeDataString("BrightRaider-" + Environment.MachineName);
+            System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            req.Method = "POST"; req.ContentType = "application/x-www-form-urlencoded"; req.Timeout = 10000;
+            byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
+            req.ContentLength = bodyBytes.Length;
+            using (Stream s = req.GetRequestStream()) s.Write(bodyBytes, 0, bodyBytes.Length);
+            try
+            {
+                using (System.Net.HttpWebResponse resp = (System.Net.HttpWebResponse)req.GetResponse())
+                using (StreamReader sr = new StreamReader(resp.GetResponseStream()))
+                {
+                    string json = sr.ReadToEnd();
+                    if (json.Contains("\"activated\":true") || json.Contains("\"status\":\"active\""))
+                    {
+                        // Extract instance id
+                        int instIdx = json.IndexOf("\"instance\":{");
+                        if (instIdx >= 0) outInstanceId = ExtractJsonString(json.Substring(instIdx), "id");
+                        // Extract email
+                        outEmail = ExtractJsonString(json, "user_email");
+                        if (outEmail.Length == 0) outEmail = ExtractJsonString(json, "customer_email");
+                        return true;
+                    }
+                    // Fallback: try validate
+                    if (ValidateLicenseOnline(key)) return true;
+                    errorMsg = ExtractJsonString(json, "error");
+                    if (errorMsg.Length == 0) errorMsg = "Key not valid.";
+                    return false;
+                }
+            }
+            catch (System.Net.WebException ex)
+            {
+                if (ex.Response != null)
+                {
+                    if (ValidateLicenseOnline(key)) return true;
+                    try
+                    {
+                        using (StreamReader sr = new StreamReader(ex.Response.GetResponseStream()))
+                        {
+                            string errJson = sr.ReadToEnd();
+                            errorMsg = ExtractJsonString(errJson, "error");
+                            if (errorMsg.Length == 0) errorMsg = "Key not valid.";
+                        }
+                    }
+                    catch { }
+                    return false;
+                }
+                errorMsg = "No internet connection. Please try again.";
+                return false;
+            }
+        }
+        catch { errorMsg = "Activation failed. Please try again."; return false; }
+    }
+
+    // === Gumroad License ===
+    static bool ValidateGumroad(string key)
+    {
+        if (GUMROAD_PERMALINK == "YOUR_PERMALINK_HERE") return false;
+        try
+        {
+            string url = "https://api.gumroad.com/v2/licenses/verify";
+            string body = "product_permalink=" + Uri.EscapeDataString(GUMROAD_PERMALINK)
+                        + "&license_key=" + Uri.EscapeDataString(key)
+                        + "&increment_uses_count=false";
+            System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            req.Method = "POST"; req.ContentType = "application/x-www-form-urlencoded"; req.Timeout = 10000;
+            byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
+            req.ContentLength = bodyBytes.Length;
+            using (Stream s = req.GetRequestStream()) s.Write(bodyBytes, 0, bodyBytes.Length);
+            using (System.Net.HttpWebResponse resp = (System.Net.HttpWebResponse)req.GetResponse())
+            using (StreamReader sr = new StreamReader(resp.GetResponseStream()))
+            {
+                string json = sr.ReadToEnd();
+                return json.Contains("\"success\":true");
+            }
+        }
+        catch { return false; }
+    }
+
+    static bool ActivateGumroad(string key, out string outEmail, out string outPurchaseId, out string errorMsg)
+    {
+        outEmail = ""; outPurchaseId = ""; errorMsg = "";
+        if (GUMROAD_PERMALINK == "YOUR_PERMALINK_HERE")
+        {
+            errorMsg = "Gumroad support coming soon. Please use Lemon Squeezy for now.";
+            return false;
+        }
+        try
+        {
+            string url = "https://api.gumroad.com/v2/licenses/verify";
+            string body = "product_permalink=" + Uri.EscapeDataString(GUMROAD_PERMALINK)
+                        + "&license_key=" + Uri.EscapeDataString(key)
+                        + "&increment_uses_count=true";
+            System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            req.Method = "POST"; req.ContentType = "application/x-www-form-urlencoded"; req.Timeout = 10000;
+            byte[] bodyBytes = Encoding.UTF8.GetBytes(body);
+            req.ContentLength = bodyBytes.Length;
+            using (Stream s = req.GetRequestStream()) s.Write(bodyBytes, 0, bodyBytes.Length);
+            try
+            {
+                using (System.Net.HttpWebResponse resp = (System.Net.HttpWebResponse)req.GetResponse())
+                using (StreamReader sr = new StreamReader(resp.GetResponseStream()))
+                {
+                    string json = sr.ReadToEnd();
+                    if (!json.Contains("\"success\":true"))
+                    {
+                        errorMsg = ExtractJsonString(json, "message");
+                        if (errorMsg.Length == 0) errorMsg = "Key not valid.";
+                        return false;
+                    }
+                    outEmail = ExtractJsonString(json, "email");
+                    outPurchaseId = ExtractJsonString(json, "id");
+                    return true;
+                }
+            }
+            catch (System.Net.WebException ex)
+            {
+                if (ex.Response != null)
+                {
+                    try
+                    {
+                        using (StreamReader sr = new StreamReader(ex.Response.GetResponseStream()))
+                        {
+                            string errJson = sr.ReadToEnd();
+                            errorMsg = ExtractJsonString(errJson, "message");
+                            if (errorMsg.Length == 0) errorMsg = "Key not valid.";
+                        }
+                    }
+                    catch { errorMsg = "Key not valid."; }
+                    return false;
+                }
+                errorMsg = "No internet connection. Please try again.";
+                return false;
+            }
+        }
+        catch { errorMsg = "Activation failed. Please try again."; return false; }
+    }
+
     // Validate locally from saved .lic file (no internet needed)
     static bool ValidateLicenseLocal(string key)
     {
@@ -567,6 +723,47 @@ class BrightRaider : Form
         }
     }
 
+    // === V8 Crypto Seeds ===
+    const string LIC_SEED_V7 = "BrightRaider-v7-Pro-2025-LicFile"; // Migration only
+    const string CFG_SEED_V7 = "BrightRaider-v7-Config-2025";      // Migration only
+    const string LIC_SEED_V8 = "BrightRaider-v8-Pro-2026-LicFile";
+    const string CFG_SEED_V8 = "BrightRaider-v8-Config-2026";
+
+    static byte[] GetHmacSeedBytes()
+    {
+        // Encodes "BrightRaider-v8-Pro-HMAC-2026" XOR 0xA5
+        // No readable string literal in decompiled output
+        byte[] x = new byte[] {
+            0xE7,0xD7,0xCC,0xC2,0xCD,0xD1,0xF7,0xC4,0xCC,0xC1,0xC0,0xD7,
+            0x88,0xD3,0x9D,0x88,0xF5,0xD7,0xCA,0x88,0xED,0xE8,0xE4,0xE6,
+            0x88,0x97,0x95,0x97,0x93
+        };
+        byte[] r = new byte[x.Length];
+        for (int i = 0; i < x.Length; i++) r[i] = (byte)(x[i] ^ 0xA5);
+        return r;
+    }
+
+    static string ComputeLicenseHmac(string email, string key, string platform, string token)
+    {
+        byte[] seed = GetHmacSeedBytes();
+        string payload = email + "|" + key + "|" + platform + "|" + token;
+        using (System.Security.Cryptography.HMACSHA256 hmac = new System.Security.Cryptography.HMACSHA256(seed))
+        {
+            byte[] hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(payload));
+            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+        }
+    }
+
+    static string ExtractJsonString(string json, string field)
+    {
+        string needle = "\"" + field + "\":\"";
+        int idx = json.IndexOf(needle);
+        if (idx < 0) return "";
+        int start = idx + needle.Length;
+        int end = json.IndexOf('"', start);
+        return end > start ? json.Substring(start, end - start) : "";
+    }
+
     void SaveLicenseFile()
     {
         try
@@ -576,8 +773,13 @@ class BrightRaider : Form
                 if (File.Exists(licFilePath)) File.Delete(licFilePath);
                 return;
             }
-            string payload = licenseEmail + "\n" + licenseKey;
-            File.WriteAllBytes(licFilePath, AesEncrypt(Encoding.UTF8.GetBytes(payload), "BrightRaider-v7-Pro-2025-LicFile"));
+            string hmac = ComputeLicenseHmac(licenseEmail, licenseKey, licensePlatform, licenseToken);
+            string payload = licenseEmail + "\n"
+                           + licenseKey + "\n"
+                           + licensePlatform + "\n"
+                           + licenseToken + "\n"
+                           + hmac;
+            File.WriteAllBytes(licFilePath, AesEncrypt(Encoding.UTF8.GetBytes(payload), LIC_SEED_V8));
         }
         catch { }
     }
@@ -588,14 +790,63 @@ class BrightRaider : Form
         {
             if (!File.Exists(licFilePath)) return;
             byte[] cipher = File.ReadAllBytes(licFilePath);
-            string payload = Encoding.UTF8.GetString(AesDecrypt(cipher, "BrightRaider-v7-Pro-2025-LicFile"));
-            int nl = payload.IndexOf('\n');
-            if (nl > 0)
+
+            string payload = null;
+            bool isV7Migration = false;
+
+            // Try V8 seed first
+            try { payload = Encoding.UTF8.GetString(AesDecrypt(cipher, LIC_SEED_V8)); }
+            catch { }
+
+            // Fall back to V7 seed (migration)
+            if (payload == null)
             {
-                licenseEmail = payload.Substring(0, nl);
-                licenseKey = payload.Substring(nl + 1);
-                if (licenseKey.Length > 0)
-                    isProLicensed = ValidateLicenseLocal(licenseKey);
+                try
+                {
+                    payload = Encoding.UTF8.GetString(AesDecrypt(cipher, LIC_SEED_V7));
+                    isV7Migration = true;
+                }
+                catch { return; }
+            }
+
+            string[] parts = payload.Split('\n');
+
+            if (isV7Migration)
+            {
+                // Old format: email\nkey — trust once, re-save in V8 format immediately
+                if (parts.Length >= 2 && parts[1].Trim().Length > 8)
+                {
+                    licenseEmail    = parts[0].Trim();
+                    licenseKey      = parts[1].Trim();
+                    licensePlatform = "ls";
+                    licenseToken    = "";
+                    isProLicensed   = true;
+                    SaveLicenseFile(); // re-save in V8 format with HMAC
+                }
+                return;
+            }
+
+            // V8 format: email\nkey\nplatform\ntoken\nhmac
+            if (parts.Length < 5) return;
+
+            string email       = parts[0].Trim();
+            string key         = parts[1].Trim();
+            string platform    = parts[2].Trim();
+            string token       = parts[3].Trim();
+            string storedHmac  = parts[4].Trim();
+
+            // HMAC verification — reject tampered .lic files
+            string expectedHmac = ComputeLicenseHmac(email, key, platform, token);
+            if (!string.Equals(storedHmac, expectedHmac, StringComparison.OrdinalIgnoreCase))
+                return; // HMAC mismatch → reject
+
+            if (key.Length > 8)
+            {
+                licenseEmail    = email;
+                licenseKey      = key;
+                licensePlatform = platform;
+                licenseToken    = token;
+                isProLicensed   = true;
             }
         }
         catch { }
@@ -613,67 +864,84 @@ class BrightRaider : Form
     void PromptLicenseKey()
     {
         Form dialog = new Form();
-        dialog.Text = "BrightRaider - " + L("Enter License", "Lizenz eingeben");
-        dialog.Size = new Size(420, 220);
+        dialog.Text = "BrightRaider — " + L("Enter License", "Lizenz eingeben");
+        dialog.Size = new System.Drawing.Size(440, 310);
         dialog.FormBorderStyle = FormBorderStyle.FixedDialog;
         dialog.StartPosition = FormStartPosition.CenterScreen;
-        dialog.MaximizeBox = false;
-        dialog.MinimizeBox = false;
+        dialog.MaximizeBox = false; dialog.MinimizeBox = false;
 
-        Label lblEmail = new Label() { Text = "Email:", Location = new Point(15, 20), AutoSize = true };
-        TextBox txtEmail = new TextBox() { Location = new Point(15, 40), Size = new Size(370, 22) };
-        txtEmail.Text = licenseEmail;
+        // Platform selection
+        Label lblPlatform = new Label() { Text = L("Purchase platform:", "Kaufplattform:"), Location = new System.Drawing.Point(15, 15), AutoSize = true };
+        RadioButton rbLS = new RadioButton() { Text = "Lemon Squeezy", Location = new System.Drawing.Point(15, 35), AutoSize = true, Checked = (licensePlatform != "gr") };
+        RadioButton rbGR = new RadioButton() { Text = "Gumroad", Location = new System.Drawing.Point(165, 35), AutoSize = true, Checked = (licensePlatform == "gr") };
 
-        Label lblKey = new Label() { Text = L("License Key:", "Lizenzschlüssel:"), Location = new Point(15, 70), AutoSize = true };
-        TextBox txtKey = new TextBox() { Location = new Point(15, 90), Size = new Size(370, 22) };
-        txtKey.Text = licenseKey;
+        Label lblEmail = new Label() { Text = "Email:", Location = new System.Drawing.Point(15, 70), AutoSize = true };
+        TextBox txtEmail = new TextBox() { Location = new System.Drawing.Point(15, 90), Size = new System.Drawing.Size(395, 22), Text = licenseEmail };
 
-        Button btnOk = new Button() { Text = "OK", Location = new Point(220, 130), Size = new Size(80, 30), DialogResult = DialogResult.OK };
-        Button btnCancel = new Button() { Text = L("Cancel", "Abbrechen"), Location = new Point(305, 130), Size = new Size(80, 30), DialogResult = DialogResult.Cancel };
+        Label lblKey = new Label() { Text = L("License Key:", "Lizenzschlüssel:"), Location = new System.Drawing.Point(15, 122), AutoSize = true };
+        TextBox txtKey = new TextBox() { Location = new System.Drawing.Point(15, 142), Size = new System.Drawing.Size(395, 22), Text = licenseKey };
 
-        dialog.Controls.AddRange(new Control[] { lblEmail, txtEmail, lblKey, txtKey, btnOk, btnCancel });
-        dialog.AcceptButton = btnOk;
-        dialog.CancelButton = btnCancel;
+        Label lblBuyLS = new Label() { Text = L("Buy on Lemon Squeezy: https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156", "Kaufen auf Lemon Squeezy: https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156"), Location = new System.Drawing.Point(15, 175), Size = new System.Drawing.Size(395, 34), ForeColor = System.Drawing.Color.Gray };
+        lblBuyLS.Font = new System.Drawing.Font(lblBuyLS.Font.FontFamily, 7.5f);
+
+        Button btnOk = new Button() { Text = "OK", Location = new System.Drawing.Point(245, 230), Size = new System.Drawing.Size(75, 28), DialogResult = DialogResult.OK };
+        Button btnCancel = new Button() { Text = L("Cancel", "Abbrechen"), Location = new System.Drawing.Point(330, 230), Size = new System.Drawing.Size(90, 28), DialogResult = DialogResult.Cancel };
+
+        dialog.Controls.AddRange(new System.Windows.Forms.Control[] { lblPlatform, rbLS, rbGR, lblEmail, txtEmail, lblKey, txtKey, lblBuyLS, btnOk, btnCancel });
+        dialog.AcceptButton = btnOk; dialog.CancelButton = btnCancel;
 
         if (dialog.ShowDialog() == DialogResult.OK)
         {
             string email = txtEmail.Text.Trim();
             string key = txtKey.Text.Trim();
+            bool useGR = rbGR.Checked;
+
             if (key.Length < 8)
             {
-                MessageBox.Show(
-                    L("Please enter your license key.",
-                      "Bitte Lizenzschlüssel eingeben."),
-                    "BrightRaider", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(L("Please enter your license key.", "Bitte Lizenzschlüssel eingeben."), "BrightRaider", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                // Show a brief "checking..." message (no blocking dialog, just cursor)
                 dialog.Cursor = Cursors.WaitCursor;
-                string errMsg;
-                bool ok = ActivateLicenseOnline(key, out errMsg);
+                bool ok = false;
+                string errMsg = "", outEmail = email, outToken = "";
+
+                if (useGR)
+                {
+                    string purchaseId;
+                    ok = ActivateGumroad(key, out outEmail, out purchaseId, out errMsg);
+                    outToken = purchaseId;
+                    if (ok && outEmail.Length == 0) outEmail = email;
+                }
+                else
+                {
+                    string instanceId;
+                    ok = ActivateLicenseSqueezeLemon(key, out outEmail, out instanceId, out errMsg);
+                    outToken = instanceId;
+                    if (ok && outEmail.Length == 0) outEmail = email;
+                }
+
                 dialog.Cursor = Cursors.Default;
 
                 if (ok)
                 {
                     isProLicensed = true;
-                    licenseEmail = email;
+                    licenseEmail = outEmail.Length > 0 ? outEmail : email;
                     licenseKey = key;
+                    licensePlatform = useGR ? "gr" : "ls";
+                    licenseToken = outToken;
                     SaveLicenseFile();
                     BuildMenu();
                     MessageBox.Show(
-                        L("License activated!\nRegistered to: ",
-                          "Lizenz aktiviert!\nRegistriert auf: ") + (email.Length > 0 ? email : L("your account", "deinem Account")) + "\n\n" +
-                        L("All Pro features are now unlocked.",
-                          "Alle Pro-Funktionen sind freigeschaltet."),
+                        L("License activated!\nRegistered to: ", "Lizenz aktiviert!\nRegistriert auf: ") + licenseEmail + "\n\n" +
+                        L("All Pro features are now unlocked.", "Alle Pro-Funktionen sind freigeschaltet."),
                         "BrightRaider Pro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show(
                         L("Activation failed: ", "Aktivierung fehlgeschlagen: ") + errMsg + "\n\n" +
-                        L("Check your key and internet connection.",
-                          "Bitte Key und Internetverbindung prüfen."),
+                        L("Check your key and internet connection.", "Bitte Key und Internetverbindung prüfen."),
                         "BrightRaider", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -909,7 +1177,9 @@ class BrightRaider : Form
             try
             {
                 byte[] cipher = File.ReadAllBytes(configPath);
-                string decrypted = Encoding.UTF8.GetString(AesDecrypt(cipher, "BrightRaider-v7-Config-2025"));
+                string decrypted;
+                try { decrypted = Encoding.UTF8.GetString(AesDecrypt(cipher, CFG_SEED_V8)); }
+                catch { decrypted = Encoding.UTF8.GetString(AesDecrypt(cipher, CFG_SEED_V7)); }
                 lines = decrypted.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             }
             catch
@@ -944,6 +1214,11 @@ class BrightRaider : Form
                         else if (parts[1] == "BrightnessMax") { double bm; if (double.TryParse(v, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out bm)) profiles[pIdx].BrightnessMax = bm; }
                     }
                 }
+                else if (k == "CrosshairVisible") crosshairVisible = v == "1";
+                else if (k == "CrosshairColor") { int argb; if (int.TryParse(v, out argb)) crosshairColor = System.Drawing.Color.FromArgb(argb); }
+                else if (k == "CrosshairSize") { int sz; if (int.TryParse(v, out sz) && sz >= 10 && sz <= 50) crosshairSize = sz; }
+                else if (k == "CrosshairStyle") { int st; if (int.TryParse(v, out st) && st >= 0 && st <= 3) crosshairStyle = st; }
+                else if (k == "CheckForUpdates") checkForUpdates = v == "1";
             }
         }
         catch { }
@@ -970,8 +1245,13 @@ class BrightRaider : Form
                 lines.Add(p + "_BrightnessMin=" + profiles[i].BrightnessMin.ToString("F1", System.Globalization.CultureInfo.InvariantCulture));
                 lines.Add(p + "_BrightnessMax=" + profiles[i].BrightnessMax.ToString("F1", System.Globalization.CultureInfo.InvariantCulture));
             }
+            lines.Add("CrosshairVisible=" + (crosshairVisible ? "1" : "0"));
+            lines.Add("CrosshairColor=" + crosshairColor.ToArgb().ToString());
+            lines.Add("CrosshairSize=" + crosshairSize.ToString());
+            lines.Add("CrosshairStyle=" + crosshairStyle.ToString());
+            lines.Add("CheckForUpdates=" + (checkForUpdates ? "1" : "0"));
             string content = string.Join("\n", lines.ToArray());
-            File.WriteAllBytes(configPath, AesEncrypt(Encoding.UTF8.GetBytes(content), "BrightRaider-v7-Config-2025"));
+            File.WriteAllBytes(configPath, AesEncrypt(Encoding.UTF8.GetBytes(content), CFG_SEED_V8));
         }
         catch { }
     }
@@ -984,6 +1264,7 @@ class BrightRaider : Form
             KBDLLHOOKSTRUCT kb = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
             int profile = 0;
             bool isMute = false;
+            bool isCrosshair = false;
 
             // Arrow keys (extended = real arrow keys, not numpad)
             if ((kb.flags & LLKHF_EXTENDED) != 0)
@@ -994,6 +1275,7 @@ class BrightRaider : Form
                     case VK_DOWN:  profile = 2; break; // Arrow Down  = Profile 2
                     case VK_RIGHT: profile = 3; break; // Arrow Right = Profile 3
                     case VK_UP:    isMute = true; break; // Arrow Up    = Mute
+                    case VK_INSERT: isCrosshair = true; break; // Real Insert key (extended) = Crosshair toggle
                 }
             }
 
@@ -1012,6 +1294,12 @@ class BrightRaider : Form
                 this.BeginInvoke(new Action(delegate { ToggleGameMute(); }));
                 return (IntPtr)1;
             }
+
+                if (isCrosshair && isProLicensed)
+                {
+                    this.BeginInvoke(new Action(delegate { ToggleCrosshair(); }));
+                    return (IntPtr)1;
+                }
         }
         return CallNextHookEx(hookId, nCode, wParam, lParam);
     }
@@ -1194,6 +1482,182 @@ class BrightRaider : Form
         {
             StartAutoBrightness();
         }
+    }
+
+    void ToggleCrosshair()
+    {
+        if (!isProLicensed) { ShowProRequired(); return; }
+        crosshairVisible = !crosshairVisible;
+        if (crosshairVisible)
+        {
+            if (crosshairOverlay == null || crosshairOverlay.IsDisposed)
+                crosshairOverlay = new CrosshairOverlay(GetTargetScreen(), crosshairColor, crosshairSize, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+            crosshairOverlay.Show();
+        }
+        else
+        {
+            if (crosshairOverlay != null && !crosshairOverlay.IsDisposed)
+                crosshairOverlay.Hide();
+        }
+        ShowToast(crosshairVisible ? L("Crosshair ON", "Fadenkreuz AN") : L("Crosshair OFF", "Fadenkreuz AUS"));
+        SaveConfig();
+        BuildMenu();
+    }
+
+    void ShowCrosshairSettings()
+    {
+        // Ensure overlay exists for live preview
+        bool hadOverlay = crosshairOverlay != null && !crosshairOverlay.IsDisposed && crosshairOverlay.Visible;
+        if (crosshairVisible && (crosshairOverlay == null || crosshairOverlay.IsDisposed))
+        {
+            crosshairOverlay = new CrosshairOverlay(GetTargetScreen(), crosshairColor, crosshairSize, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+            crosshairOverlay.Show();
+        }
+
+        // Working copies for live preview (only commit on OK)
+        System.Drawing.Color previewColor = crosshairColor;
+
+        System.Windows.Forms.Form dlg = new System.Windows.Forms.Form();
+        dlg.Text = "BrightRaider — " + L("Crosshair Settings", "Fadenkreuz-Einstellungen");
+        dlg.Size = new System.Drawing.Size(370, 270);
+        dlg.FormBorderStyle = FormBorderStyle.FixedDialog;
+        dlg.StartPosition = FormStartPosition.CenterScreen;
+        dlg.MaximizeBox = false; dlg.MinimizeBox = false;
+
+        System.Windows.Forms.CheckBox chkEnable = new System.Windows.Forms.CheckBox() {
+            Text = L("Enable Crosshair", "Fadenkreuz aktivieren"),
+            Location = new System.Drawing.Point(15, 15), AutoSize = true, Checked = crosshairVisible
+        };
+
+        System.Windows.Forms.Button btnColor = new System.Windows.Forms.Button() {
+            Text = L("Color...", "Farbe..."), Location = new System.Drawing.Point(15, 50),
+            Size = new System.Drawing.Size(90, 28), BackColor = crosshairColor
+        };
+        btnColor.Click += delegate {
+            using (System.Windows.Forms.ColorDialog cd = new System.Windows.Forms.ColorDialog()) {
+                cd.Color = previewColor;
+                if (cd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+                    previewColor = cd.Color;
+                    btnColor.BackColor = cd.Color;
+                    if (crosshairOverlay != null) crosshairOverlay.UpdateSettings(previewColor, crosshairSize, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+                }
+            }
+        };
+
+        System.Windows.Forms.Label lblSize = new System.Windows.Forms.Label() {
+            Text = L("Size:", "Größe:"), Location = new System.Drawing.Point(15, 95), AutoSize = true
+        };
+        System.Windows.Forms.TrackBar tbSize = new System.Windows.Forms.TrackBar() {
+            Location = new System.Drawing.Point(15, 112), Size = new System.Drawing.Size(220, 40),
+            Minimum = 10, Maximum = 50, Value = Math.Max(10, Math.Min(50, crosshairSize)),
+            TickFrequency = 5, TickStyle = System.Windows.Forms.TickStyle.BottomRight
+        };
+        System.Windows.Forms.Label lblSizeVal = new System.Windows.Forms.Label() {
+            Location = new System.Drawing.Point(240, 118), AutoSize = true, Text = tbSize.Value + "px"
+        };
+        tbSize.ValueChanged += delegate {
+            lblSizeVal.Text = tbSize.Value + "px";
+            if (crosshairOverlay != null) crosshairOverlay.UpdateSettings(previewColor, tbSize.Value, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+        };
+
+        System.Windows.Forms.Label lblStyle = new System.Windows.Forms.Label() {
+            Text = L("Style:", "Stil:"), Location = new System.Drawing.Point(15, 162), AutoSize = true
+        };
+        string[] styleNames = new string[] { "Cross", "Dot + Ring", "T-Shape", "Dot" };
+        System.Windows.Forms.ComboBox cboStyle = new System.Windows.Forms.ComboBox() {
+            Location = new System.Drawing.Point(15, 180), Size = new System.Drawing.Size(150, 22),
+            DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        };
+        cboStyle.Items.AddRange(styleNames);
+        cboStyle.SelectedIndex = Math.Max(0, Math.Min(3, crosshairStyle));
+        cboStyle.SelectedIndexChanged += delegate {
+            if (crosshairOverlay != null) crosshairOverlay.UpdateSettings(previewColor, tbSize.Value, (CrosshairOverlay.CrosshairStyle)cboStyle.SelectedIndex);
+        };
+
+        System.Windows.Forms.Button btnOk = new System.Windows.Forms.Button() {
+            Text = "OK", Location = new System.Drawing.Point(185, 195),
+            Size = new System.Drawing.Size(75, 28), DialogResult = System.Windows.Forms.DialogResult.OK
+        };
+        System.Windows.Forms.Button btnCancel = new System.Windows.Forms.Button() {
+            Text = L("Cancel", "Abbrechen"), Location = new System.Drawing.Point(268, 195),
+            Size = new System.Drawing.Size(85, 28), DialogResult = System.Windows.Forms.DialogResult.Cancel
+        };
+
+        // On cancel: restore preview to original
+        dlg.FormClosing += delegate(object s2, System.Windows.Forms.FormClosingEventArgs e2) {
+            if (dlg.DialogResult != System.Windows.Forms.DialogResult.OK)
+                if (crosshairOverlay != null) crosshairOverlay.UpdateSettings(crosshairColor, crosshairSize, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+        };
+
+        dlg.Controls.AddRange(new System.Windows.Forms.Control[] {
+            chkEnable, btnColor, lblSize, tbSize, lblSizeVal, lblStyle, cboStyle, btnOk, btnCancel
+        });
+        dlg.AcceptButton = btnOk; dlg.CancelButton = btnCancel;
+
+        if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        {
+            crosshairColor = previewColor;
+            crosshairSize = tbSize.Value;
+            crosshairStyle = cboStyle.SelectedIndex;
+            bool wasVisible = crosshairVisible;
+            crosshairVisible = chkEnable.Checked;
+
+            // Rebuild overlay with final settings
+            if (crosshairOverlay != null && !crosshairOverlay.IsDisposed)
+            { crosshairOverlay.Close(); crosshairOverlay.Dispose(); crosshairOverlay = null; }
+
+            if (crosshairVisible)
+            {
+                crosshairOverlay = new CrosshairOverlay(GetTargetScreen(), crosshairColor, crosshairSize, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+                crosshairOverlay.Show();
+            }
+            SaveConfig();
+            BuildMenu();
+        }
+        else
+        {
+            // Cancelled — if overlay wasn't visible before, hide it
+            if (!hadOverlay && crosshairOverlay != null && !crosshairOverlay.IsDisposed)
+                crosshairOverlay.Hide();
+        }
+        dlg.Dispose();
+    }
+
+    void CheckForUpdatesAsync()
+    {
+        if (!checkForUpdates) return;
+        System.Threading.Thread t = new System.Threading.Thread(delegate()
+        {
+            try
+            {
+                System.Net.HttpWebRequest req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(
+                    "https://api.github.com/repos/BrightRaider/BrightRaider/releases/latest");
+                req.UserAgent = "BrightRaider/8.0";
+                req.Timeout = 8000;
+                using (System.Net.HttpWebResponse resp = (System.Net.HttpWebResponse)req.GetResponse())
+                using (System.IO.StreamReader sr = new System.IO.StreamReader(resp.GetResponseStream()))
+                {
+                    string json = sr.ReadToEnd();
+                    string tag = ExtractJsonString(json, "tag_name"); // e.g. "v8.1"
+                    string latest = tag.TrimStart('v');               // "8.1"
+                    Version current = new Version("8.0");
+                    Version remote;
+                    if (Version.TryParse(latest, out remote) && remote > current)
+                    {
+                        updateAvailableVersion = tag;
+                        this.BeginInvoke(new Action(delegate { BuildMenu(); ShowUpdateToast(tag); }));
+                    }
+                }
+            }
+            catch { } // No internet or API error — silently ignore
+        });
+        t.IsBackground = true;
+        t.Start();
+    }
+
+    void ShowUpdateToast(string version)
+    {
+        ShowToast(L("Update available: ", "Update verfügbar: ") + version);
     }
 
     void UpdateBrightnessOverlay(double brightness, double gamma, double contrast, int vibrance, string interpInfo, List<double> zoneValues)
@@ -1428,6 +1892,12 @@ class BrightRaider : Form
         trayIcon.Text = "BrightRaider - Profile 1 (" + profiles[0].Name + ")";
         trayIcon.Icon = MakeIcon("1", Color.White);
         trayIcon.Visible = true;
+
+            // Update check — delayed 5s so app fully starts first
+            System.Windows.Forms.Timer updateTimer = new System.Windows.Forms.Timer();
+            updateTimer.Interval = 5000;
+            updateTimer.Tick += delegate { updateTimer.Stop(); updateTimer.Dispose(); CheckForUpdatesAsync(); };
+            updateTimer.Start();
 
         BuildMenu();
 
@@ -1702,6 +2172,19 @@ class BrightRaider : Form
     {
         var menu = new ContextMenuStrip();
 
+                // Update available notice (shown at top if available)
+                if (updateAvailableVersion != "")
+                {
+                    ToolStripMenuItem updateNotice = new ToolStripMenuItem("⬆ " + L("Update available: ", "Update verfügbar: ") + updateAvailableVersion);
+                    updateNotice.Font = new System.Drawing.Font(updateNotice.Font, System.Drawing.FontStyle.Bold);
+                    updateNotice.ForeColor = System.Drawing.Color.DarkOrange;
+                    updateNotice.Click += delegate {
+                        System.Diagnostics.Process.Start("https://github.com/BrightRaider/BrightRaider/releases/latest");
+                    };
+                    menu.Items.Add(updateNotice);
+                    menu.Items.Add(new ToolStripSeparator());
+                }
+
         // Profiles
         int count = isProLicensed ? profileCount : 3;
         for (int i = 0; i < count; i++)
@@ -1764,6 +2247,21 @@ class BrightRaider : Form
         };
         settingsMenu.DropDownItems.Add(overlayItem);
 
+                // Crosshair
+                ToolStripMenuItem crosshairItem;
+                if (isProLicensed)
+                {
+                    crosshairItem = new ToolStripMenuItem(L("Crosshair...", "Fadenkreuz..."));
+                    crosshairItem.Checked = crosshairVisible;
+                    crosshairItem.Click += delegate { ShowCrosshairSettings(); };
+                }
+                else
+                {
+                    crosshairItem = new ToolStripMenuItem(L("Crosshair... [PRO]", "Fadenkreuz... [PRO]"));
+                    crosshairItem.Click += delegate { ShowProRequired(); };
+                }
+                settingsMenu.DropDownItems.Add(crosshairItem);
+
         if (activeDisplays.Count > 1)
         {
             settingsMenu.DropDownItems.Add(new ToolStripSeparator());
@@ -1791,6 +2289,17 @@ class BrightRaider : Form
         ToolStripMenuItem langItem = new ToolStripMenuItem(L("Deutsch", "English"));
         langItem.Click += delegate { language = (language == "en") ? "de" : "en"; SaveConfig(); BuildMenu(); };
         settingsMenu.DropDownItems.Add(langItem);
+
+                // Update Check toggle
+                settingsMenu.DropDownItems.Add(new ToolStripSeparator());
+                ToolStripMenuItem updateCheckItem = new ToolStripMenuItem(L("Check for Updates", "Nach Updates suchen"));
+                updateCheckItem.Checked = checkForUpdates;
+                updateCheckItem.Click += delegate {
+                    checkForUpdates = !checkForUpdates;
+                    SaveConfig();
+                    BuildMenu();
+                };
+                settingsMenu.DropDownItems.Add(updateCheckItem);
 
         // Force submenu RIGHT using native SetWindowPos (bypasses .NET layout completely)
         settingsMenu.DropDownOpened += delegate {
@@ -1867,6 +2376,18 @@ class BrightRaider : Form
         { measureFrameOverlay.Dispose(); measureFrameOverlay = null; }
         if (brightnessOverlay != null && !brightnessOverlay.IsDisposed)
         { brightnessOverlay.Dispose(); brightnessOverlay = null; }
+        if (crosshairOverlay != null && !crosshairOverlay.IsDisposed)
+        {
+            crosshairOverlay.Close();
+            crosshairOverlay.Dispose();
+            crosshairOverlay = null;
+        }
+        // If crosshair was visible, re-create it on new monitor
+        if (crosshairVisible)
+        {
+            crosshairOverlay = new CrosshairOverlay(GetTargetScreen(), crosshairColor, crosshairSize, (CrosshairOverlay.CrosshairStyle)crosshairStyle);
+            crosshairOverlay.Show();
+        }
         SaveConfig();
         BuildMenu();
         if (currentProfile > 1) ApplyProfile(currentProfile);
@@ -1998,6 +2519,11 @@ class BrightRaider : Form
         StopAutoBrightness();
         if (brightnessOverlay != null) { try { brightnessOverlay.Close(); brightnessOverlay.Dispose(); } catch { } }
         if (measureFrameOverlay != null) { try { measureFrameOverlay.Close(); measureFrameOverlay.Dispose(); } catch { } }
+            if (crosshairOverlay != null && !crosshairOverlay.IsDisposed)
+            {
+                try { crosshairOverlay.Close(); crosshairOverlay.Dispose(); } catch { }
+                crosshairOverlay = null;
+            }
         if (hookId != IntPtr.Zero) { UnhookWindowsHookEx(hookId); hookId = IntPtr.Zero; }
 
         string savedDisplay = selectedDisplay;
@@ -2036,5 +2562,81 @@ class BrightRaider : Form
                 "BrightRaider - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         Application.Run(new BrightRaider());
+    }
+
+    // === Crosshair Overlay (Pro only) ===
+    class CrosshairOverlay : System.Windows.Forms.Form
+    {
+        public enum CrosshairStyle { Cross = 0, DotRing = 1, TShape = 2, Dot = 3 }
+
+        System.Drawing.Color _color;
+        int _size;
+        CrosshairStyle _style;
+
+        public CrosshairOverlay(System.Windows.Forms.Screen screen, System.Drawing.Color color, int size, CrosshairStyle style)
+        {
+            _color = color; _size = size; _style = style;
+            FormBorderStyle = FormBorderStyle.None;
+            TopMost = true;
+            ShowInTaskbar = false;
+            BackColor = System.Drawing.Color.Black;
+            TransparencyKey = System.Drawing.Color.Black;
+            StartPosition = FormStartPosition.Manual;
+            System.Drawing.Rectangle b = screen.Bounds;
+            Location = new System.Drawing.Point(b.X, b.Y);
+            Size = new System.Drawing.Size(b.Width, b.Height);
+        }
+
+        protected override System.Windows.Forms.CreateParams CreateParams
+        {
+            get
+            {
+                System.Windows.Forms.CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x80000 | 0x20 | 0x8000000; // WS_EX_LAYERED | WS_EX_TRANSPARENT | WS_EX_NOACTIVATE
+                return cp;
+            }
+        }
+
+        public void UpdateSettings(System.Drawing.Color color, int size, CrosshairStyle style)
+        {
+            _color = color; _size = size; _style = style;
+            Invalidate();
+        }
+
+        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        {
+            System.Drawing.Graphics g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            int cx = Width / 2, cy = Height / 2, half = _size / 2;
+            using (System.Drawing.Pen pen = new System.Drawing.Pen(_color, 2f))
+            using (System.Drawing.SolidBrush brush = new System.Drawing.SolidBrush(_color))
+            {
+                switch (_style)
+                {
+                    case CrosshairStyle.Cross:
+                        g.DrawLine(pen, cx - half, cy, cx + half, cy);
+                        g.DrawLine(pen, cx, cy - half, cx, cy - 3);
+                        g.DrawLine(pen, cx, cy + 3, cx, cy + half);
+                        break;
+                    case CrosshairStyle.DotRing:
+                        g.FillEllipse(brush, cx - 2, cy - 2, 4, 4);
+                        g.DrawEllipse(pen, cx - half, cy - half, _size, _size);
+                        break;
+                    case CrosshairStyle.TShape:
+                        g.DrawLine(pen, cx - half, cy, cx + half, cy);
+                        g.DrawLine(pen, cx, cy - half, cx, cy);
+                        break;
+                    case CrosshairStyle.Dot:
+                        g.FillEllipse(brush, cx - 3, cy - 3, 6, 6);
+                        break;
+                }
+            }
+        }
+
+        protected override void WndProc(ref System.Windows.Forms.Message m)
+        {
+            if (m.Msg == 0x84) { m.Result = (System.IntPtr)(-1); return; } // WM_NCHITTEST → HTTRANSPARENT
+            base.WndProc(ref m);
+        }
     }
 }

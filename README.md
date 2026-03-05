@@ -51,6 +51,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 
 ### Pro (€4.99)
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
+- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter.
 - **Up to 9 profiles** with full customization
 - **Calibration Wizard** — two clicks to set up auto-brightness
@@ -97,10 +98,12 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 
 ## Pro Activation
 
-1. **[Buy Pro License ($4.99)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+1. Buy your license:
+   - **[Lemon Squeezy ($4.99)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+   - **[Gumroad ($4.99)](https://brightraid.gumroad.com/l/pro)** *(coming soon)*
 2. Right-click tray icon → **Settings** → **Enter License**
-3. Enter your email and the license key from the purchase confirmation
-4. Done — all Pro features unlocked permanently. No subscription. Requires internet once for activation, offline forever after.
+3. Select your platform (Lemon Squeezy or Gumroad), enter your email and license key
+4. Done — all Pro features unlocked permanently. No subscription. Internet required once for activation, offline forever after.
 
 ## Hotkeys
 
@@ -111,6 +114,7 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad 1-3 | Switch profile | Free |
 | Numpad 4-9 | Switch profile | Pro |
 | Numpad 0 | Mute/unmute game | Pro |
+| Numpad + | Toggle crosshair | Pro |
 
 Works with NumLock on or off, with or without Shift.
 
@@ -122,6 +126,7 @@ Works with NumLock on or off, with or without Shift.
 | Arrow Down | Profile 2 (Bright) | Free |
 | Arrow Right | Profile 3 (Brighter) | Free |
 | Arrow Up | Mute/unmute game | Pro |
+| Insert | Toggle crosshair | Pro |
 
 ## How It Works
 
@@ -154,6 +159,14 @@ BrightRaider **ONLY** uses:
 
 Anti-cheat systems do not flag display adjustments.
 
+### Crosshair Overlay
+
+BrightRaider's crosshair works via a transparent Windows overlay — the exact same mechanism used by Discord, GeForce Experience, and TeamSpeak overlays.
+
+EAC (Easy Anti-Cheat) **explicitly allows** this type of overlay. It is not injected into the game, does not read game memory, and is not rendered inside the game engine. It is simply a transparent window drawn on top by Windows.
+
+If you have concerns, the full source code is on GitHub for verification.
+
 ## System Requirements
 
 - Windows 10 / 11
@@ -164,7 +177,7 @@ Anti-cheat systems do not flag display adjustments.
 ## Build from Source
 
 ```cmd
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:winexe /win32icon:Icon.ico /out:BrightRaider.exe BrightRaider.cs
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:winexe /optimize+ /win32icon:assets\Icon.ico /win32manifest:src\app.manifest /out:BrightRaider.exe src\BrightRaider.cs
 ```
 
 Single file, no dependencies, no NuGet, no Visual Studio needed.
@@ -223,6 +236,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 
 ### Pro (4,99 €)
 - **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
+- **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
 - **Bis zu 9 Profile** mit voller Anpassung
 - **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
@@ -260,9 +274,11 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 
 ## Pro-Aktivierung
 
-1. **[Pro-Lizenz kaufen (4,99 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+1. Lizenz kaufen:
+   - **[Lemon Squeezy (4,99 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+   - **[Gumroad (4,99 €)](https://brightraid.gumroad.com/l/pro)** *(demnächst)*
 2. Rechtsklick auf Tray-Icon → **Einstellungen** → **Lizenz eingeben**
-3. E-Mail und Lizenzschlüssel aus der Kaufbestätigung eingeben
+3. Plattform auswählen (Lemon Squeezy oder Gumroad), E-Mail und Lizenzschlüssel eingeben
 4. Fertig — alle Pro-Features dauerhaft freigeschaltet. Kein Abo. Einmalig Internet nötig, danach offline für immer.
 
 ## Tastenbelegung
@@ -274,6 +290,7 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 | Numpad 1-3 | Profil wechseln | Free |
 | Numpad 4-9 | Profil wechseln | Pro |
 | Numpad 0 | Spiel stumm/laut | Pro |
+| Numpad + | Fadenkreuz an/aus | Pro |
 
 Funktioniert mit NumLock an oder aus, mit oder ohne Shift.
 
@@ -285,6 +302,7 @@ Funktioniert mit NumLock an oder aus, mit oder ohne Shift.
 | Pfeil Unten | Profil 2 (Hell) | Free |
 | Pfeil Rechts | Profil 3 (Heller) | Free |
 | Pfeil Hoch | Spiel stumm/laut | Pro |
+| Einfg | Fadenkreuz an/aus | Pro |
 
 ## Funktionsweise
 
@@ -316,6 +334,14 @@ BrightRaider nutzt **NUR**:
 - AMD ADL — wie AMD Radeon Software
 
 Anti-Cheat-Systeme erkennen keine Bildschirm-Anpassungen.
+
+### Crosshair-Overlay
+
+Das BrightRaider-Fadenkreuz nutzt ein transparentes Windows-Overlay — denselben Mechanismus wie Discord, GeForce Experience und TeamSpeak-Overlays.
+
+EAC (Easy Anti-Cheat) **erlaubt** diese Art von Overlay ausdrücklich. Es wird nichts ins Spiel injiziert, kein Spielspeicher gelesen, und es wird nicht in der Spiel-Engine gerendert. Es ist lediglich ein transparentes Fenster, das Windows über das Spiel legt.
+
+Der vollständige Quellcode ist auf GitHub zur Überprüfung verfügbar.
 
 ## FAQ
 
