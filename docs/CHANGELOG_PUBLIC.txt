@@ -3,7 +3,27 @@
 ================================================================
 
 
-[ V7.2 ] - Current Version
+[ V8 ] - Current Version
+
+  Crosshair Overlay (Pro):
+  - New: Click-through crosshair directly on your screen
+  - 4 styles: Cross, DotRing, TShape, Dot
+  - Customizable color and size (10-50px)
+  - Toggle: Numpad+ (Numpad version) / Insert (Arrow version)
+  - Live preview in settings
+  - EAC-safe — same mechanism as Discord overlay
+
+  Gumroad Support:
+  - Pro license now available on Gumroad (coming soon)
+
+  Update Check:
+  - Automatic update notification on startup (can be disabled in Settings)
+
+  Security:
+  - Hardened license validation — tampered .lic files are now rejected
+  - Note: One-time re-activation required for existing Pro users
+
+[ V7.2 ]
 
   Security & Compatibility:
   - Added assembly metadata (version info visible in file properties)
