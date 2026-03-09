@@ -47,16 +47,16 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **NVIDIA + AMD + Intel** support (GDI fallback for any GPU)
 - **Multi-monitor** support
 - **English / German** interface
+- **Auto-Start with Windows**
 - Portable — no installation, just one EXE
 
-### Pro (€4.99)
+### Pro (€6.99)
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter.
 - **Up to 9 profiles** with full customization
 - **Calibration Wizard** — two clicks to set up auto-brightness
 - **Profile Editor** — fine-tune gamma, contrast, vibrance per profile
-- **Auto-Start** with Windows
 
 ## Default Profiles
 
@@ -99,10 +99,9 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 ## Pro Activation
 
 1. Buy your license:
-   - **[Lemon Squeezy ($4.99)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
-   - **[Gumroad ($4.99)](https://brightraid.gumroad.com/l/pro)** *(coming soon)*
+   - **[Lemon Squeezy (€6.99)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
 2. Right-click tray icon → **Settings** → **Enter License**
-3. Select your platform (Lemon Squeezy or Gumroad), enter your email and license key
+3. Enter your email and license key
 4. Done — all Pro features unlocked permanently. No subscription. Internet required once for activation, offline forever after.
 
 ## Hotkeys
@@ -165,7 +164,7 @@ BrightRaider's crosshair works via a transparent Windows overlay — the exact s
 
 EAC (Easy Anti-Cheat) **explicitly allows** this type of overlay. It is not injected into the game, does not read game memory, and is not rendered inside the game engine. It is simply a transparent window drawn on top by Windows.
 
-If you have concerns, the full source code is on GitHub for verification.
+EAC-safe — no injection, no game memory access, no rendering inside the engine.
 
 ## System Requirements
 
@@ -173,14 +172,6 @@ If you have concerns, the full source code is on GitHub for verification.
 - .NET Framework 4.0 (pre-installed on every Windows)
 - NVIDIA or AMD GPU recommended (Intel works with gamma-only)
 - Numpad or numpad-emulating keyboard
-
-## Build from Source
-
-```cmd
-C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /target:winexe /optimize+ /win32icon:assets\Icon.ico /win32manifest:src\app.manifest /out:BrightRaider.exe src\BrightRaider.cs
-```
-
-Single file, no dependencies, no NuGet, no Visual Studio needed.
 
 ## Changelog
 
@@ -232,16 +223,16 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - **NVIDIA + AMD + Intel** Unterstützung (GDI-Fallback für jede GPU)
 - **Multi-Monitor** Unterstützung
 - **Englisch / Deutsch** Oberfläche
+- **Autostart mit Windows**
 - Portabel — keine Installation, nur eine EXE
 
-### Pro (4,99 €)
+### Pro (6,99 €)
 - **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
 - **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
 - **Bis zu 9 Profile** mit voller Anpassung
 - **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
 - **Profil-Editor** — Gamma, Kontrast, Vibrance pro Profil feintunen
-- **Autostart** mit Windows
 
 ## Download
 
@@ -275,10 +266,9 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 ## Pro-Aktivierung
 
 1. Lizenz kaufen:
-   - **[Lemon Squeezy (4,99 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
-   - **[Gumroad (4,99 €)](https://brightraid.gumroad.com/l/pro)** *(demnächst)*
+   - **[Lemon Squeezy (6,99 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
 2. Rechtsklick auf Tray-Icon → **Einstellungen** → **Lizenz eingeben**
-3. Plattform auswählen (Lemon Squeezy oder Gumroad), E-Mail und Lizenzschlüssel eingeben
+3. E-Mail und Lizenzschlüssel eingeben
 4. Fertig — alle Pro-Features dauerhaft freigeschaltet. Kein Abo. Einmalig Internet nötig, danach offline für immer.
 
 ## Tastenbelegung
@@ -341,7 +331,7 @@ Das BrightRaider-Fadenkreuz nutzt ein transparentes Windows-Overlay — denselbe
 
 EAC (Easy Anti-Cheat) **erlaubt** diese Art von Overlay ausdrücklich. Es wird nichts ins Spiel injiziert, kein Spielspeicher gelesen, und es wird nicht in der Spiel-Engine gerendert. Es ist lediglich ein transparentes Fenster, das Windows über das Spiel legt.
 
-Der vollständige Quellcode ist auf GitHub zur Überprüfung verfügbar.
+EAC-sicher — keine Injektion, kein Spielspeicher-Zugriff, keine Spiel-Engine-Darstellung.
 
 ## FAQ
 
