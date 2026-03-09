@@ -19,9 +19,9 @@ One EXE, zero dependencies, 80 KB.
 
 ## Screenshots
 
-![Settings](assets/screenshots/settings.png)
-![Tray Menu](assets/screenshots/tray.png)
-![Submenu](assets/screenshots/submenu.png)
+| | | |
+|---|---|---|
+| ![Settings](assets/screenshots/settings.png) | ![Tray Menu](assets/screenshots/tray.png) | ![Submenu](assets/screenshots/submenu.png) |
 
 ## Demo Videos
 
