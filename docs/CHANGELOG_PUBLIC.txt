@@ -13,8 +13,8 @@
   - Live preview in settings
   - EAC-safe — same mechanism as Discord overlay
 
-  Gumroad Support:
-  - Pro license now available on Gumroad (coming soon)
+  Auto-Start (free for all):
+  - Auto-Start with Windows is now available for all users, not just Pro
 
   Update Check:
   - Automatic update notification on startup (can be disabled in Settings)
@@ -22,6 +22,10 @@
   Security:
   - Hardened license validation — tampered .lic files are now rejected
   - Note: One-time re-activation required for existing Pro users
+
+  UI:
+  - Monitor selection moved from Settings submenu to main menu
+  - Settings submenu is now compact (no overflow on small screens)
 
 [ V7.2 ]
 
@@ -71,7 +75,7 @@
   PRO Features:
   - Up to 9 profiles (Numpad 1-9, free limited to 3)
   - Custom profile editor (Gamma, Contrast, Vibrance per profile)
-  - Auto-Start with Windows
+  - Auto-Start with Windows *(free for all users as of V8)*
   - Game Mute toggle via Numpad 0
   - Debug Overlay for fine-tuning
 
