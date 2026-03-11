@@ -3,7 +3,20 @@
 ================================================================
 
 
-[ V8 ] - Current Version
+[ V8.1 ] - Current Version
+
+  Vibrance Restore:
+  - New: BrightRaider now reads your current Digital Vibrance on startup
+  - Profile 1 "Normal" restores your personal vibrance setting (not default 50)
+  - On exit, your original vibrance is fully restored
+  - Works with NVIDIA and AMD GPUs
+
+  Hotkey Pause:
+  - New: Pause hotkeys in Settings when you need your numpad/arrow keys elsewhere
+  - BrightRaider stays running, just stops intercepting keys
+  - Setting is saved and persists across restarts
+
+[ V8 ]
 
   Crosshair Overlay (Pro):
   - New: Click-through crosshair directly on your screen

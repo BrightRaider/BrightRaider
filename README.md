@@ -4,7 +4,7 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, 80 KB.
+One EXE, zero dependencies, 82 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.0-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
@@ -207,7 +207,7 @@ Free is fully functional. Pro adds automatic switching so you never take your ha
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, 80 KB.
+Eine EXE, keine Abhängigkeiten, 82 KB.
 
 ## Warum BrightRaider?
 
