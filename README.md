@@ -51,7 +51,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **Auto-Start with Windows**
 - Portable — no installation, just one EXE
 
-### Pro (€6.99)
+### Pro (€5.49)
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter.
@@ -100,7 +100,7 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 ## Pro Activation
 
 1. Buy your license:
-   - **[Lemon Squeezy (€6.99)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+   - **[Lemon Squeezy (€5.49)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
 2. Right-click tray icon → **Settings** → **Enter License**
 3. Enter your email and license key
 4. Done — all Pro features unlocked permanently. No subscription. Internet required once for activation, offline forever after.
@@ -227,7 +227,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - **Autostart mit Windows**
 - Portabel — keine Installation, nur eine EXE
 
-### Pro (6,99 €)
+### Pro (5,49 €)
 - **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
 - **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
