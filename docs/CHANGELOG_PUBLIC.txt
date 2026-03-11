@@ -16,6 +16,9 @@
   - BrightRaider stays running, just stops intercepting keys
   - Setting is saved and persists across restarts
 
+  Fixes:
+  - Fixed: Update check now works reliably (TLS 1.2 for GitHub/Lemon Squeezy)
+
 [ V8 ]
 
   Crosshair Overlay (Pro):

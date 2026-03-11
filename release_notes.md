@@ -11,4 +11,8 @@
 - Keep BrightRaider running while using your numpad/arrow keys for other apps
 - Setting is saved across restarts
 
+**Fixes:**
+- Update check now works reliably (was broken due to TLS 1.0 default)
+- License activation connectivity improved
+
 Both editions included: **Numpad** and **Arrow Keys**.
