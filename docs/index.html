@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightRaider — See in the Dark. No Ban.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --bg2: #0f1114;
+    --bg3: #141619;
+    --accent: #f5a623;
+    --accent2: #ff6b35;
+    --text: #e8e9ea;
+    --muted: #6b7280;
+    --border: #1e2124;
+    --green: #22c55e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,11,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--text); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: #fbbf24 !important; color: #000 !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,107,53,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 2px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    max-width: 900px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 .highlight {
+    color: var(--accent);
+    position: relative;
+  }
+
+  .hero h1 .dim {
+    color: var(--muted);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .hero-sub strong { color: var(--text); }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #fbbf24;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(245,166,35,0.3);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--muted);
+    color: var(--text);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-num span { color: var(--accent); }
+
+  .stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  /* BEFORE/AFTER SECTION */
+  .section { padding: 100px 40px; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 60px);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 540px;
+    margin-bottom: 60px;
+  }
+
+  /* SLIDER */
+  .slider-container {
+    position: relative;
+    max-width: 900px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    cursor: col-resize;
+    user-select: none;
+  }
+
+  .slider-after, .slider-before {
+    width: 100%;
+    display: block;
+  }
+
+  .slider-after {
+    position: relative;
+    z-index: 1;
+  }
+
+  .slider-before {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0s;
+  }
+
+  .slider-line {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--accent);
+    z-index: 10;
+    transform: translateX(-50%);
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px; height: 44px;
+    background: var(--accent);
+    border-radius: 50%;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(245,166,35,0.5);
+    font-size: 18px;
+    color: #000;
+    font-weight: 900;
+  }
+
+  .slider-label {
+    position: absolute;
+    bottom: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 3px;
+    z-index: 12;
+  }
+
+  .slider-label.before {
+    left: 16px;
+    background: rgba(0,0,0,0.7);
+    color: var(--muted);
+  }
+
+  .slider-label.after {
+    right: 16px;
+    background: rgba(245,166,35,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(245,166,35,0.3);
+  }
+
+  /* Fake before/after images using CSS gradients */
+  .fake-scene {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fake-scene-dark {
+    background: linear-gradient(135deg, #060608 0%, #0d0e10 30%, #080910 60%, #050607 100%);
+  }
+
+  .fake-scene-bright {
+    background: linear-gradient(135deg, #1a1e24 0%, #252b35 30%, #1e2530 60%, #171d26 100%);
+  }
+
+  /* DARK CAVE SIMULATION */
+  .cave-element {
+    position: absolute;
+    border-radius: 2px;
+  }
+
+  /* HOW IT WORKS */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 900px;
+    margin-top: 60px;
+  }
+
+  .how-item {
+    background: var(--bg2);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .how-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--border);
+  }
+
+  .how-item:first-child::before {
+    background: var(--accent);
+  }
+
+  .how-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .how-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+  }
+
+  .how-text {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 760px;
+  }
+
+  .pricing-card {
+    background: var(--bg2);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-card.pro {
+    background: var(--bg3);
+    border: 1px solid rgba(245,166,35,0.2);
+  }
+
+  .pricing-card.pro::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: 20px; right: -28px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 4px 40px;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+
+  .plan-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .plan-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 56px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .plan-price .currency {
+    font-size: 24px;
+    vertical-align: top;
+    margin-top: 8px;
+    display: inline-block;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .plan-price-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  .plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .plan-features li {
+    font-size: 15px;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .plan-features li.active { color: var(--text); }
+
+  .plan-features li::before {
+    content: '—';
+    color: var(--border);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .plan-features li.active::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .plan-features li.pro-only::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .plan-features li.pro-only { color: var(--text); }
+
+  .btn-plan {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+
+  .btn-plan.free {
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .btn-plan.free:hover { border-color: var(--muted); }
+
+  .btn-plan.paid {
+    background: var(--accent);
+    color: #000;
+  }
+
+  .btn-plan.paid:hover {
+    background: #fbbf24;
+    box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+  }
+
+  /* CHEAT SECTION */
+  .cheat-section {
+    padding: 80px 40px;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cheat-inner {
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .cheat-icon {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .cheat-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .cheat-title span { color: var(--green); }
+
+  .cheat-text {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .cheat-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    list-style: none;
+  }
+
+  .cheat-list li {
+    font-size: 14px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cheat-list li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* HOTKEYS */
+  .hotkeys-section {
+    padding: 100px 40px;
+    background: var(--bg);
+  }
+
+  .hotkeys-table {
+    max-width: 600px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .hotkeys-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hotkeys-row:last-child { border-bottom: none; }
+
+  .hotkeys-row.header {
+    background: var(--bg3);
+  }
+
+  .hotkeys-cell {
+    padding: 14px 20px;
+    font-size: 14px;
+    color: var(--muted);
+    border-right: 1px solid var(--border);
+  }
+
+  .hotkeys-cell:last-child { border-right: none; }
+
+  .hotkeys-row.header .hotkeys-cell {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  kbd {
+    display: inline-block;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .badge-pro {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: rgba(245,166,35,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(245,166,35,0.3);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .badge-free {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: rgba(34,197,94,0.1);
+    color: var(--green);
+    border: 1px solid rgba(34,197,94,0.2);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--accent);
+  }
+
+  .footer-logo span { color: var(--muted); }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text); }
+
+  .footer-copy {
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 40px;
+  }
+
+  /* DOWNLOAD SECTION */
+  .download-section {
+    padding: 120px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .download-section .section-title { font-size: clamp(48px, 7vw, 80px); }
+  .download-section .section-sub { max-width: 440px; margin: 0 auto 40px; }
+  .download-section .hero-buttons { justify-content: center; }
+
+  /* FAKE BEFORE/AFTER using CSS art */
+  .scene-wrapper {
+    position: relative;
+    max-width: 900px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    cursor: col-resize;
+    user-select: none;
+  }
+
+  .scene-canvas {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .fade-up-1 { animation-delay: 0.1s; }
+  .fade-up-2 { animation-delay: 0.2s; }
+  .fade-up-3 { animation-delay: 0.3s; }
+  .fade-up-4 { animation-delay: 0.4s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    .section { padding: 60px 20px; }
+    .how-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .cheat-inner { grid-template-columns: 1fr; gap: 20px; }
+    .cheat-list { grid-template-columns: 1fr; }
+    .footer { padding: 30px 20px; flex-direction: column; align-items: flex-start; }
+    .hero-stats { gap: 24px; }
+    .download-section { padding: 80px 20px; }
+    .hotkeys-section { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Bright<span>Raider</span></a>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#safe">Anti-Cheat Safe</a></li>
+    <li><a href="https://github.com/BrightRaider/BrightRaider" target="_blank">GitHub</a></li>
+    <li><a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="nav-cta">Download Free</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow fade-up">Built for Arc Raiders</div>
+  <h1 class="fade-up fade-up-1">
+    See enemies<br>
+    <span class="highlight">in the dark.</span><br>
+    <span class="dim">No ban.</span>
+  </h1>
+  <p class="hero-sub fade-up fade-up-2">
+    Arc Raiders has <strong>no brightness slider</strong>. Dark caves, underground tunnels, night raids — you're flying blind. BrightRaider fixes that. <strong>One keypress. Any game. 64 KB.</strong>
+  </p>
+  <div class="hero-buttons fade-up fade-up-3">
+    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-primary">
+      ↓ Download Free
+    </a>
+    <a href="#pricing" class="btn-secondary">
+      View Pro — €5.49
+    </a>
+  </div>
+  <div class="hero-stats fade-up fade-up-4">
+    <div class="stat">
+      <span class="stat-num">2<span>,</span>377<span>+</span></span>
+      <span class="stat-label">Downloads</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">64<span>KB</span></span>
+      <span class="stat-label">File Size</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Bans Reported</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">EAC <span>✓</span></span>
+      <span class="stat-label">Anti-Cheat Safe</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BEFORE/AFTER -->
+<section class="section" id="demo">
+  <div class="section-label">See the difference</div>
+  <h2 class="section-title">Before <span style="color:var(--muted);">/</span> After</h2>
+  <p class="section-sub">Drag the slider. This is what Arc Raiders looks like at night — and what it looks like with BrightRaider.</p>
+
+  <div class="scene-wrapper" id="slider">
+    <!-- AFTER (bright) -->
+    <div style="width:100%; height:360px; background: linear-gradient(160deg, #1c232e 0%, #232d3a 40%, #1a2530 70%, #1e2a36 100%); position:relative; overflow:hidden;">
+      <!-- Floor grid lines -->
+      <div style="position:absolute; bottom:0; left:0; right:0; height:160px; background: linear-gradient(to top, rgba(30,40,55,0.8), transparent);"></div>
+      <!-- Structural elements - visible -->
+      <div style="position:absolute; left:60px; top:40px; width:8px; height:220px; background:#2a3545; border-radius:2px;"></div>
+      <div style="position:absolute; left:220px; top:20px; width:6px; height:240px; background:#253040;"></div>
+      <div style="position:absolute; right:100px; top:60px; width:8px; height:200px; background:#2a3545;"></div>
+      <div style="position:absolute; right:240px; top:30px; width:5px; height:230px; background:#233040;"></div>
+      <!-- Horizontal bars -->
+      <div style="position:absolute; left:0; right:0; top:80px; height:4px; background: rgba(40,55,70,0.6);"></div>
+      <div style="position:absolute; left:0; right:0; top:140px; height:3px; background: rgba(35,50,65,0.4);"></div>
+      <!-- Crates -->
+      <div style="position:absolute; bottom:30px; left:80px; width:70px; height:55px; background:#1e2b38; border:1px solid #2a3a4a; border-radius:2px;"></div>
+      <div style="position:absolute; bottom:30px; left:160px; width:50px; height:42px; background:#1d2935; border:1px solid #273545;"></div>
+      <!-- Enemy silhouette - VISIBLE -->
+      <div style="position:absolute; bottom:30px; right:120px; width:22px; height:70px; background:#e84040; border-radius:4px 4px 0 0; opacity:0.9; box-shadow: 0 0 15px rgba(232,64,64,0.4);"></div>
+      <div style="position:absolute; bottom:98px; right:116px; width:30px; height:30px; background:#d63a3a; border-radius:50%; opacity:0.9;"></div>
+      <!-- Ambient light pools -->
+      <div style="position:absolute; top:0; left:200px; width:300px; height:300px; background:radial-gradient(circle, rgba(80,120,160,0.12) 0%, transparent 70%); pointer-events:none;"></div>
+      <div style="position:absolute; top:-50px; right:150px; width:250px; height:250px; background:radial-gradient(circle, rgba(100,140,180,0.08) 0%, transparent 70%); pointer-events:none;"></div>
+    </div>
+
+    <!-- BEFORE (dark) - clipped -->
+    <div id="before-panel" style="position:absolute; top:0; left:0; width:100%; height:360px; clip-path: inset(0 50% 0 0); overflow:hidden;">
+      <div style="width:100%; height:360px; background: linear-gradient(160deg, #040506 0%, #060809 40%, #050708 70%, #040607 100%); position:relative; overflow:hidden;">
+        <!-- Same structure but nearly invisible -->
+        <div style="position:absolute; left:60px; top:40px; width:8px; height:220px; background:#0a0d10; border-radius:2px;"></div>
+        <div style="position:absolute; left:220px; top:20px; width:6px; height:240px; background:#090c0f;"></div>
+        <div style="position:absolute; right:100px; top:60px; width:8px; height:200px; background:#0a0d10;"></div>
+        <div style="position:absolute; right:240px; top:30px; width:5px; height:230px; background:#08090b;"></div>
+        <div style="position:absolute; left:0; right:0; top:80px; height:4px; background: rgba(12,16,20,0.8);"></div>
+        <div style="position:absolute; left:0; right:0; top:140px; height:3px; background: rgba(10,14,18,0.6);"></div>
+        <div style="position:absolute; bottom:30px; left:80px; width:70px; height:55px; background:#070a0d; border:1px solid #0d1015; border-radius:2px;"></div>
+        <div style="position:absolute; bottom:30px; left:160px; width:50px; height:42px; background:#060809; border:1px solid #0b0e12;"></div>
+        <!-- Enemy silhouette - BARELY VISIBLE -->
+        <div style="position:absolute; bottom:30px; right:120px; width:22px; height:70px; background:#0f1215; border-radius:4px 4px 0 0; opacity:0.7;"></div>
+        <div style="position:absolute; bottom:98px; right:116px; width:30px; height:30px; background:#0e1114; border-radius:50%; opacity:0.7;"></div>
+        <!-- Minimal ambient -->
+        <div style="position:absolute; top:0; left:200px; width:300px; height:300px; background:radial-gradient(circle, rgba(20,30,45,0.15) 0%, transparent 70%); pointer-events:none;"></div>
+      </div>
+    </div>
+
+    <!-- Divider line -->
+    <div id="slider-line" style="position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--accent); z-index:10; transform:translateX(-50%); pointer-events:none;"></div>
+    
+    <!-- Handle -->
+    <div id="slider-handle" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:var(--accent); border-radius:50%; z-index:11; display:flex; align-items:center; justify-content:center; box-shadow: 0 0 24px rgba(245,166,35,0.5); font-size:16px; pointer-events:none; color:#000; font-weight:900;">⟺</div>
+
+    <!-- Labels -->
+    <div style="position:absolute; bottom:16px; left:16px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:3px; z-index:12; background:rgba(0,0,0,0.7); color:var(--muted);">Without</div>
+    <div style="position:absolute; bottom:16px; right:16px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:3px; z-index:12; background:rgba(245,166,35,0.15); color:var(--accent); border:1px solid rgba(245,166,35,0.3);">BrightRaider</div>
+  </div>
+  <p style="color:var(--muted); font-size:13px; margin-top:12px;">↑ The enemy on the right. Can you see them without BrightRaider?</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-label">Simple by design</div>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub">No installation. No game modification. Just display settings — like your monitor OSD, but instant.</p>
+
+  <div class="how-grid">
+    <div class="how-item">
+      <div class="how-num">01</div>
+      <div class="how-title">Run the EXE</div>
+      <p class="how-text">Double-click. A tray icon appears. Nothing installed, nothing in startup unless you want it. 64 KB total.</p>
+    </div>
+    <div class="how-item">
+      <div class="how-num">02</div>
+      <div class="how-title">Press Numpad 2</div>
+      <p class="how-text">Instant profile switch. Works in fullscreen, in-game, during a raid. No alt-tab, no OSD delay, no dying while you fiddle with settings.</p>
+    </div>
+    <div class="how-item">
+      <div class="how-num">03</div>
+      <div class="how-title">See clearly</div>
+      <p class="how-text">Dark tunnels, night raids, Buried City — enemies that were invisible are now readable. Press Numpad 1 to go back for bright outdoor areas.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ANTI-CHEAT -->
+<section class="cheat-section" id="safe">
+  <div class="cheat-inner">
+    <div class="cheat-icon">🛡️</div>
+    <div>
+      <h2 class="cheat-title">Is this cheating? <span>No.</span></h2>
+      <p class="cheat-text">BrightRaider only touches your display output — the same thing as adjusting your monitor brightness or using NVIDIA Control Panel. Nothing is read from the game, nothing is written to game memory, nothing is injected. Every anti-cheat system can verify this.</p>
+      <ul class="cheat-list">
+        <li>No game file modification</li>
+        <li>No DLL injection</li>
+        <li>No memory reading or writing</li>
+        <li>No hooks into game processes</li>
+        <li>EAC — Safe ✓</li>
+        <li>BattlEye — Safe ✓</li>
+        <li>Vanguard — Safe ✓</li>
+        <li>0 bans reported</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOTKEYS -->
+<section class="hotkeys-section">
+  <div class="section-label">Controls</div>
+  <h2 class="section-title">Hotkeys</h2>
+  <p class="section-sub">Works in fullscreen. NumLock on or off. No game focus required.</p>
+  <div class="hotkeys-table">
+    <div class="hotkeys-row header">
+      <div class="hotkeys-cell">Key</div>
+      <div class="hotkeys-cell">Action</div>
+      <div class="hotkeys-cell">Version</div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 1</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);">Normal brightness</div>
+      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 2</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);">Bright — better in dark areas</div>
+      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 3</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);">Brighter — maximum visibility</div>
+      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 4–9</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);">Custom profiles</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 0</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);">Mute game only (Discord stays on)</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+  </div>
+  <p style="color:var(--muted); font-size:13px; margin-top:16px;">No numpad? Download <code style="color:var(--text); font-size:13px;">BrightRaider_Arrows.exe</code> for arrow key control.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title">Free forever.<br>Pro if you want more.</h2>
+  <p class="section-sub">Free is fully functional. Pro adds automatic switching so you never take your hand off the mouse. One-time payment, no subscription.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">€<span style="font-size:56px; color:var(--text);">0</span></div>
+      <div class="plan-price-sub">Forever. No strings.</div>
+      <ul class="plan-features">
+        <li class="active">3 brightness profiles (Normal, Bright, Brighter)</li>
+        <li class="active">Hotkey switching in fullscreen</li>
+        <li class="active">Gamma + Contrast + Digital Vibrance</li>
+        <li class="active">NVIDIA + AMD + Intel support</li>
+        <li class="active">Multi-monitor support</li>
+        <li class="active">Auto-Start with Windows</li>
+        <li class="active">Crosshair Overlay (basic)</li>
+        <li>Auto-Brightness</li>
+        <li>Up to 9 profiles</li>
+        <li>Game Mute</li>
+      </ul>
+      <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-plan free">Download Free</a>
+    </div>
+
+    <div class="pricing-card pro">
+      <div class="plan-name">Pro</div>
+      <div class="plan-price"><span class="currency">€</span>5<span style="font-size:32px; color:var(--muted);">.49</span></div>
+      <div class="plan-price-sub">One-time. Yours forever.</div>
+      <ul class="plan-features">
+        <li class="active">Everything in Free</li>
+        <li class="pro-only">Auto-Brightness — adapts to dark/bright areas automatically</li>
+        <li class="pro-only">Up to 9 fully customizable profiles</li>
+        <li class="pro-only">Game Mute — mute only Arc Raiders, keep Discord on</li>
+        <li class="pro-only">Crosshair Overlay — fully customizable</li>
+        <li class="pro-only">Profile Editor — fine-tune gamma, contrast, vibrance</li>
+        <li class="pro-only">Calibration Wizard</li>
+        <li class="pro-only">Auto-Update</li>
+      </ul>
+      <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-plan paid">Buy Pro — €5.49</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section class="download-section">
+  <div class="section-label">Ready?</div>
+  <h2 class="section-title" style="text-align:center;">Stop dying<br>in the dark.</h2>
+  <p class="section-sub">2,377+ players already use BrightRaider. One EXE, zero install, 64 KB.</p>
+  <div class="hero-buttons">
+    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-primary">↓ Download Free</a>
+    <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-secondary">Get Pro — €5.49</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bright<span>Raider</span></div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/BrightRaider/BrightRaider" target="_blank">GitHub</a></li>
+    <li><a href="https://github.com/BrightRaider/BrightRaider/releases/latest">Download</a></li>
+    <li><a href="#safe">Anti-Cheat Info</a></li>
+  </ul>
+  <div class="footer-copy">Made for the Arc Raiders community.</div>
+</footer>
+
+<script>
+  // Before/After Slider
+  const container = document.getElementById('slider');
+  const beforePanel = document.getElementById('before-panel');
+  const sliderLine = document.getElementById('slider-line');
+  const sliderHandle = document.getElementById('slider-handle');
+  let isDragging = false;
+
+  function updateSlider(x) {
+    const rect = container.getBoundingClientRect();
+    let pct = (x - rect.left) / rect.width;
+    pct = Math.max(0.02, Math.min(0.98, pct));
+    const pctRight = (1 - pct) * 100;
+    beforePanel.style.clipPath = `inset(0 ${pctRight}% 0 0)`;
+    sliderLine.style.left = (pct * 100) + '%';
+    sliderHandle.style.left = (pct * 100) + '%';
+  }
+
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    updateSlider(e.clientX);
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    updateSlider(e.clientX);
+  });
+
+  document.addEventListener('mouseup', () => { isDragging = false; });
+
+  container.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    updateSlider(e.touches[0].clientX);
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    updateSlider(e.touches[0].clientX);
+  }, { passive: true });
+
+  document.addEventListener('touchend', () => { isDragging = false; });
+
+  // Animate slider on load
+  let progress = 0.5;
+  let dir = -1;
+  let autoAnim = true;
+
+  function autoSlide() {
+    if (!autoAnim) return;
+    progress += dir * 0.003;
+    if (progress <= 0.2) dir = 1;
+    if (progress >= 0.8) dir = -1;
+    updateSlider(container.getBoundingClientRect().left + progress * container.getBoundingClientRect().width);
+    requestAnimationFrame(autoSlide);
+  }
+
+  container.addEventListener('mousedown', () => { autoAnim = false; });
+  container.addEventListener('touchstart', () => { autoAnim = false; }, { passive: true });
+
+  setTimeout(() => {
+    autoSlide();
+  }, 1200);
+</script>
+
+</body>
+</html>
