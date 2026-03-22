@@ -17,6 +17,10 @@
   - Powered by Windows built-in OCR — takes a screenshot, reads timers from it (no game files or memory touched)
   - Works on any resolution (auto-scales from 1080p baseline)
 
+  Update Check:
+  - Now checks once on startup and once every 24 hours while the app is running
+  - Users who never restart their PC will now see update notifications too
+
   Timer Overlay:
   - Toggle timer overlay on/off: Numpad* (Numpad version) / Delete/Entf (Arrow version)
   - Toast notification when toggling (consistent with other toggles)
