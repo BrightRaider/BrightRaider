@@ -31,6 +31,8 @@
 - Fixed pixel-perfect centering on all resolutions
 - Fixed style/size settings reverting to previous values
 
+*Thanks to @be-dub for spotting the one-pixel crosshair offset — that kind of eye takes serious dedication.*
+
 ---
 
 > ⚠️ **Existing Pro users:** No re-activation needed — your license carries over from V8.x.
