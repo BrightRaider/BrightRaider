@@ -25,9 +25,47 @@ releases/v4-free/BrightRaider.exe
 
 # EXE Dateien (ausser Release)
 *.exe
+!releases/*/BrightRaider.exe
+!releases/*/BrightRaider_Arrows.exe
+
+# Build-Artefakte in Release-Ordnern
+*.pdb
+*.exe.config
+releases/*/ocr_debug/
+
+# Source-Code (nur lokal, nicht auf GitHub)
+src/v9/*.cs
+src/*.cs
+src/stable/
+src/v8.1/
+src/ocr_test/
+src/v9/obj/
+src/v9/*.csproj
+
+# Build-Dependencies (zu gross fuer GitHub)
+tools/packages/
+tools/
+
+# Build-Script (lokale Pfade, nicht fuer GitHub)
+build_v9.ps1
+build_v*.ps1
+
+# Interne Dev-Dateien
+docs/Maps.txt
+docs/Timer_Rects.txt
+releases/ocr_test/
+
+# Persönliche Daten in Release-Ordnern
+releases/*/*.cfg
+releases/*/*.lic
 
 # License Dateien
 *.lic
+
+# Screenshots (nur bestehende, neue lokal behalten)
+assets/screenshots/*.jpg
+assets/screenshots/*.JPG
+assets/screenshots/*neu*
 
 # Videos (zu gross fuer GitHub)
 Bild und Video/*.MOV

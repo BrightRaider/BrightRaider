@@ -3,7 +3,34 @@
 ================================================================
 
 
-[ V8.1 ] - Current Version
+[ V9 ] - Current Version
+
+  Map Scanner (Pro):
+  - New: Hold M on the map to scan all evacuation timers automatically
+  - Zooms out, reads all evac points via OCR, starts countdown overlay
+  - Supports 5 maps: Buried City, Stella Montis, Space Port, Blue Gate, Damm
+  - Color-coded countdown: green (>10 min), yellow (>5 min), orange (>1 min), red (<1 min), gray (closed)
+  - Auto-calculates missing timers when one point is partially obstructed
+  - Adjustable hold duration (how long to press M) in Map Scanner settings
+  - Overlay position: 6 screen positions to choose from
+  - Customizable overlay color and font size with live preview
+  - Powered by Windows built-in OCR — takes a screenshot, reads timers from it (no game files or memory touched)
+  - Works on any resolution (auto-scales from 1080p baseline)
+
+  Timer Overlay:
+  - Toggle timer overlay on/off: Numpad* (Numpad version) / Delete/Entf (Arrow version)
+  - Toast notification when toggling (consistent with other toggles)
+
+  Arrow Keys Edition:
+  - Arrow version now also includes Map Scanner (previously unchanged from V8.1)
+  - Hold M on map to scan timers (same as Numpad version)
+  - Delete/Entf to toggle the timer overlay on/off
+
+  Crosshair Fixes:
+  - Fixed: Crosshair now pixel-perfectly centered on all resolutions
+  - Fixed: Changing style or size in settings no longer reverts to previous values
+
+[ V8.1 ]
 
   Vibrance Restore:
   - New: BrightRaider now reads your current Digital Vibrance on startup
