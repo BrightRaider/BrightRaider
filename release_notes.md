@@ -35,4 +35,6 @@
 
 ---
 
+> 💡 **Numpad version tip:** Keep NumLock **off** while playing. With NumLock on, Windows briefly interrupts the Shift key during profile switches — this can slow your character if Shift is your sprint key.
+
 > ⚠️ **Existing Pro users:** No re-activation needed — your license carries over from V8.x.
