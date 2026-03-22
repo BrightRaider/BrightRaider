@@ -18,6 +18,15 @@
 - Arrow Keys version now also includes full Map Scanner support
 - Same M long-press to scan, Delete/Entf to toggle overlay
 
+**Update Check:**
+- BrightRaider now checks for updates once on startup **and once every 24 hours** while running
+- Users who never restart their PC will now see update notifications too *(yes, the developer is one of them)*
+
+**Auto-Brightness Zone Weights (Pro):**
+- New: Configure how much each measurement zone influences the brightness reading
+- Right-click tray → Settings → Zones... — adjust the weight of Center, Top Left, Top Right, Bottom Left, Bottom Right (0–10)
+- Default: Center counts double — useful if your game's HUD covers the corners
+
 **Crosshair Fixes:**
 - Fixed pixel-perfect centering on all resolutions
 - Fixed style/size settings reverting to previous values

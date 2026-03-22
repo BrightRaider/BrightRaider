@@ -188,6 +188,12 @@ AUTO-BRIGHTNESS (Pro)
   Enable via: Tray Menu -> Auto-Brightness (Screen Analysis)
   Calibrate: two steps — measure darkest spot, measure brightest.
 
+  Zone Weights: Tray Menu -> Settings -> Zones...
+    Each of the 5 zones (Center, Top Left, Top Right, Bottom Left, Bottom Right)
+    has a weight from 0 to 10. Higher = more influence on the result.
+    Set a zone to 0 to ignore it entirely (useful when HUD elements cover a corner).
+    Default: Center=2, all corners=1.
+
 HOTKEY PAUSE (Pro)
   Temporarily disables all BrightRaider hotkeys. The app keeps
   running — it just stops intercepting key presses.
@@ -415,6 +421,12 @@ AUTO-HELLIGKEIT (Pro)
   Aktivieren: Tray-Menue -> Auto-Helligkeit (Bildschirmanalyse)
   Kalibrierung: zwei Schritte — dunkelste Stelle messen,
   hellste Stelle messen, fertig.
+
+  Zonen-Gewichtung: Tray-Menue -> Einstellungen -> Zonen...
+    Jede der 5 Zonen (Mitte, oben links, oben rechts, unten links, unten rechts)
+    hat einen Faktor von 0 bis 10. Hoeher = mehr Einfluss auf das Ergebnis.
+    0 = Zone wird ignoriert (nuetzlich wenn HUD-Elemente eine Ecke verdecken).
+    Standard: Mitte=2, alle Ecken=1.
 
 HOTKEY-PAUSE (Pro)
   Deaktiviert voruebergehend alle BrightRaider-Hotkeys.

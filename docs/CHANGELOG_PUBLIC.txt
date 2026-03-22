@@ -30,6 +30,12 @@
   - Hold M on map to scan timers (same as Numpad version)
   - Delete/Entf to toggle the timer overlay on/off
 
+  Auto-Brightness (Pro):
+  - New: Configurable zone weights — Settings → Zones...
+  - Set how much each of the 5 measurement zones influences the brightness reading (0–10)
+  - Default: Center weighted 2x, corners 1x each
+  - Useful when HUD elements cover certain zones — set those to 0 to ignore them
+
   Crosshair Fixes:
   - Fixed: Crosshair now pixel-perfectly centered on all resolutions
   - Fixed: Changing style or size in settings no longer reverts to previous values
