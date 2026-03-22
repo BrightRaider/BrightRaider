@@ -1,18 +1,27 @@
-## BrightRaider V8.1 — Vibrance Restore & Hotkey Pause
+## BrightRaider V9 — Map Scanner
 
-**Vibrance Restore:**
-- BrightRaider now reads your Digital Vibrance on startup and remembers it
-- Profile 1 "Normal" restores your personal setting (not a hardcoded default)
-- On exit, your original vibrance is fully restored — no more manual resetting
-- Works with NVIDIA and AMD GPUs
+**Map Scanner (Pro):**
+- Hold **M** on the map to automatically read all evacuation timers
+- BrightRaider zooms out, scans the map via OCR, and starts a live countdown overlay
+- Supports 5 maps: **Buried City, Stella Montis, Space Port, Blue Gate, Damm**
+- Color-coded countdown: green (>10 min), yellow (>5 min), orange (>1 min), red (<1 min), gray (closed/unknown)
+- Smart fallback: calculates missing timers when a point is partially obstructed by UI elements
+- Adjustable hold duration, overlay position (6 options), color and font size
+- Powered by Windows built-in OCR — no extra software needed
 
-**Hotkey Pause:**
-- New toggle in Settings to pause all hotkeys
-- Keep BrightRaider running while using your numpad/arrow keys for other apps
-- Setting is saved across restarts
+**Timer Overlay Toggle:**
+- **Numpad*** — toggle timer overlay on/off (Numpad version)
+- **Delete / Entf** — toggle timer overlay on/off (Arrow Keys version)
+- Toast notification confirms the toggle (consistent with other toggles)
 
-**Fixes:**
-- Update check now works reliably (was broken due to TLS 1.0 default)
-- License activation connectivity improved
+**Arrow Keys Edition:**
+- Arrow Keys version now also includes full Map Scanner support
+- Same M long-press to scan, Delete/Entf to toggle overlay
 
-Both editions included: **Numpad** and **Arrow Keys**.
+**Crosshair Fixes:**
+- Fixed pixel-perfect centering on all resolutions
+- Fixed style/size settings reverting to previous values
+
+---
+
+> ⚠️ **Existing Pro users:** No re-activation needed — your license carries over from V8.x.

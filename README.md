@@ -4,9 +4,9 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, 82 KB.
+One EXE, zero dependencies, 104 KB.
 
-![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.0-purple)
+![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.7.2-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
 
 ## Before / After
@@ -50,6 +50,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro (€5.49)
+- **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter.
@@ -113,6 +114,8 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad 4-9 | Switch profile | Pro |
 | Numpad 0 | Mute/unmute game | Pro |
 | Numpad + | Toggle crosshair | Pro |
+| Numpad * | Toggle timer overlay | Pro |
+| M (hold on map) | Scan evacuation timers | Pro |
 
 Works with NumLock on or off, with or without Shift.
 
@@ -125,6 +128,8 @@ Works with NumLock on or off, with or without Shift.
 | Arrow Right | Profile 3 (Brighter) | Free |
 | Arrow Up | Mute/unmute game | Pro |
 | Insert | Toggle crosshair | Pro |
+| Delete / Entf | Toggle timer overlay | Pro |
+| M (hold on map) | Scan evacuation timers | Pro |
 
 ## How It Works
 
@@ -148,7 +153,9 @@ BrightRaider does **NOT**:
 - Modify game files or memory
 - Inject DLLs into game processes
 - Hook into the game in any way
-- Read game data
+- Read game data or game memory
+
+The Map Scanner takes a **screenshot of your screen** and reads it with Windows built-in OCR — the same as taking a photo of your monitor. No game files, no game memory, no game process is accessed.
 
 BrightRaider **ONLY** uses:
 - Windows GDI — same as your monitor settings
@@ -168,13 +175,17 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 ## System Requirements
 
 - Windows 10 / 11
-- .NET Framework 4.0 (pre-installed on every Windows)
+- .NET Framework 4.7.2 (pre-installed on Windows 10/11)
 - NVIDIA or AMD GPU recommended (Intel works with gamma-only)
-- Numpad or numpad-emulating keyboard
+- Numpad keys (`BrightRaider.exe`) or standard keyboard (`BrightRaider_Arrows.exe`)
 
 ## Changelog
 
 **[View full changelog](docs/CHANGELOG_PUBLIC.txt)**
+
+## Manual
+
+**[View full manual](docs/Manual.txt)**
 
 ## Uninstall
 
@@ -205,7 +216,7 @@ Free is fully functional. Pro adds automatic switching so you never take your ha
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, 82 KB.
+Eine EXE, keine Abhängigkeiten, 104 KB.
 
 ## Warum BrightRaider?
 
@@ -226,6 +237,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
+- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig. Funktioniert in den meisten Situationen zuverlässig — falls ein Scan daneben liegt, M einfach nochmal drücken.
 - **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
 - **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
@@ -292,6 +304,8 @@ Funktioniert mit NumLock an oder aus, mit oder ohne Shift.
 | Pfeil Rechts | Profil 3 (Heller) | Free |
 | Pfeil Hoch | Spiel stumm/laut | Pro |
 | Einfg | Fadenkreuz an/aus | Pro |
+| Entf | Timer-Overlay an/aus | Pro |
+| M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
 ## Funktionsweise
 
@@ -312,10 +326,12 @@ Kalibrierung in zwei Schritten: Dunkelste Stelle messen, hellste Stelle messen, 
 ## Anti-Cheat Sicherheit
 
 BrightRaider verändert **KEINE**:
-- Spieldateien oder Speicher
+- Spieldateien oder Spielspeicher
 - DLL-Injektionen in Spielprozesse
 - Hooks ins Spiel
-- Auslesen von Spieldaten
+- Lesen von Spieldaten oder Spielspeicher
+
+Der Map Scanner macht einen **Screenshot des Bildschirms** und liest ihn per Windows-OCR aus — wie ein Foto vom Monitor. Keine Spieldateien, kein Spielspeicher, kein Spielprozess wird berührt.
 
 BrightRaider nutzt **NUR**:
 - Windows GDI — wie deine Monitor-Einstellungen
