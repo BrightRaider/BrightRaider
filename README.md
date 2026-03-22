@@ -117,7 +117,7 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad * | Toggle timer overlay | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
-Works with NumLock on or off, with or without Shift.
+Works with NumLock on or off. **Tip: keep NumLock off while playing** — with NumLock on, Windows briefly interrupts the Shift key when you switch profiles, which can slow your character if Shift is your sprint key.
 
 ### Arrow Keys version (`BrightRaider_Arrows.exe`)
 
@@ -293,7 +293,7 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 | Numpad 0 | Spiel stumm/laut | Pro |
 | Numpad + | Fadenkreuz an/aus | Pro |
 
-Funktioniert mit NumLock an oder aus, mit oder ohne Shift.
+Funktioniert mit NumLock an oder aus. **Tipp: NumLock beim Spielen ausschalten** — bei aktivem NumLock unterbricht Windows kurz die Shift-Taste beim Profilwechsel, was den Charakter verlangsamen kann, wenn Shift die Sprint-Taste ist.
 
 ### Pfeiltasten-Version (`BrightRaider_Arrows.exe`)
 
