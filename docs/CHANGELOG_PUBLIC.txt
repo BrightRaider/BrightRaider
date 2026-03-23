@@ -3,7 +3,14 @@
 ================================================================
 
 
-[ V9 ] - Current Version
+[ V9.1 ] - Current Version
+
+  Map Scanner (Pro):
+  - Fixed: OCR coordinates now correct on ultrawide screens (21:9, e.g. 3440x1440)
+  - Map timer regions are now calculated within the game's centered 16:9 viewport
+
+
+[ V9 ]
 
   Map Scanner (Pro):
   - New: Hold M on the map to scan all evacuation timers automatically
