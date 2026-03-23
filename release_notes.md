@@ -1,9 +1,9 @@
-## BrightRaider V9.1 — Ultrawide Fix
+## BrightRaider V9.1 — Map Scanner Accuracy + Ultrawide Fix
 
 **Map Scanner (Pro):**
+- **OCR Upscaling** — timer regions are now upscaled 3× before OCR. This should have been in V9.0 from the start. Windows OCR needs a minimum font size to read reliably — without upscaling, small timer numbers on high-res screens were often missed or misread. With 3× upscaling the scanner is significantly more accurate and robust across all resolutions.
 - Fixed: OCR coordinates now correct on ultrawide screens (21:9 — e.g. 3440×1440, 2560×1080)
-- The scanner now detects the game's centered 16:9 viewport and reads timer positions from within it
-- No action needed — works automatically on all screen ratios
+- The scanner now reads from the selected monitor, not always the primary
 
 *Thanks to @seanthespartan for reporting the ultrawide map scanner issue.*
 
