@@ -21,6 +21,10 @@ One EXE, zero dependencies, 104 KB.
 |---|---|---|
 | ![Settings](assets/screenshots/settings.png) | ![Tray Menu](assets/screenshots/tray.png) | ![Submenu](assets/screenshots/submenu.png) |
 
+**Map Scanner — live evacuation timer overlay (Pro):**
+
+![Map Scanner](assets/screenshots/Map%20Scanner.PNG)
+
 ## Demo Videos
 
 > **Note on video quality:** BrightRaider works by adjusting display output at the GPU level — the same way your monitor brightness works. Because of this, screen recording software cannot capture the actual brightness changes. The videos were recorded with a phone camera pointed at the monitor, which is why the quality is lower than usual. This is also proof that BrightRaider is not a cheat — it only changes display settings, nothing inside the game.
