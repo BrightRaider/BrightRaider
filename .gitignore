@@ -34,14 +34,14 @@ releases/v4-free/BrightRaider.exe
 releases/*/ocr_debug/
 
 # Source-Code (nur lokal, nicht auf GitHub)
-src/v9/*.cs
+src/**/*.cs
 src/*.cs
 src/stable/
 src/v8.1/
 src/ocr_test/
 src/v*/obj/
 src/v*/bin/
-src/v9/*.csproj
+src/v*/*.csproj
 
 # Build-Dependencies (zu gross fuer GitHub)
 tools/packages/
