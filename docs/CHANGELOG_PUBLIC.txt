@@ -3,7 +3,22 @@
 ================================================================
 
 
-[ V9.1 ] - Current Version
+[ V9.2 ] - Current Version
+
+  Autorun (Pro):
+  - New: Press CapsLock to start autorun — character walks forward automatically
+  - Shift toggles sprint while autorunning (hold forward + sprint simultaneously)
+  - W, S or C cancels autorun; C triggers a slide first (forward momentum)
+  - Rebind the autorun key: Settings → Autorun [CapsLock]...
+
+  Audio Ducking (Pro):
+  - New: Hold Numpad 0 (Arrow version: hold ↑) for 600ms to duck game audio
+  - Game volume drops to configurable percentage (default: 20%)
+  - Short press (under 600ms) still mutes/unmutes as before
+  - Configure duck volume and hold duration: Settings → Audio Ducking: 20%...
+
+
+[ V9.1 ]
 
   Map Scanner (Pro):
   - Fixed: OCR coordinates now correct on ultrawide screens (21:9, e.g. 3440x1440)

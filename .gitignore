@@ -1,80 +1,46 @@
-# Sensible Dateien - NIEMALS committen!
-keys/private.key
-keys/keys.txt
-keys/*.lic
-keys/public.key
+# Private keys + licenses
+keys/
+*.lic
 
-# Key-Generator (privat)
-src/GenKey.cs
-build/GenKey.exe
-build/GenKey.cs
-
-# Interne Dokumente
+# Internal documents
 docs/MASTERBRIEFING.txt
 docs/CHANGELOG.txt
+docs/Maps.txt
+docs/Timer_Rects.txt
 
-# Build-Artefakte
-build/*.exe
-build/*.png
+# Source code (local only)
+src/
+releases/v4-free/*.cs
 
-# Config mit persönlichen Daten
-config/
-test/
-releases/v4-free/BrightRaider.cfg
-releases/v4-free/BrightRaider.exe
+# Build scripts + artifacts
+build/
+tools/
+build_v*.ps1
+*.pdb
+*.exe.config
 
-# EXE Dateien (ausser Release)
+# EXE files — only release EXEs are tracked
 *.exe
 !releases/*/BrightRaider.exe
 !releases/*/BrightRaider_Arrows.exe
 
-# Build-Artefakte in Release-Ordnern
-*.pdb
-*.exe.config
-releases/*/ocr_debug/
-
-# Source-Code (nur lokal, nicht auf GitHub)
-src/**/*.cs
-src/*.cs
-src/stable/
-src/v8.1/
-src/ocr_test/
-src/v*/obj/
-src/v*/bin/
-src/v*/*.csproj
-
-# Build-Dependencies (zu gross fuer GitHub)
-tools/packages/
-tools/
-
-# Build-Script (lokale Pfade, nicht fuer GitHub)
-build_v9.ps1
-build_v*.ps1
-
-# Interne Dev-Dateien
-docs/Maps.txt
-docs/Timer_Rects.txt
-releases/ocr_test/
-releases/v*/Test/
-
-# Persönliche Daten in Release-Ordnern
+# Config + test data
+config/
+test/
 releases/*/*.cfg
-releases/*/*.lic
+releases/*/ocr_debug/
+releases/v*/Test/
+releases/ocr_test/
 
-# License Dateien
-*.lic
+# Personal files
+releases/v4-free/BrightRaider.cfg
 
-# Screenshots (nur bestehende, neue lokal behalten)
+# Screenshots / videos (local only)
 assets/screenshots/*.jpg
 assets/screenshots/*.JPG
 assets/screenshots/*neu*
+Bild und Video/
 
-# Videos (zu gross fuer GitHub)
-Bild und Video/*.MOV
-Bild und Video/*.MP4
-Bild und Video/*.mov
-Bild und Video/*.mp4
-
-# Claude interne Dateien
+# Claude internal
 .claude/
 media/

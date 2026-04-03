@@ -101,23 +101,27 @@ FIRST LAUNCH - IMPORTANT
 
 USAGE
   Numpad version (BrightRaider.exe):
-    Numpad 1-3  ->  Profile 1-3 (Free)
-    Numpad 4-9  ->  Profile 4-9 (Pro)
-    Numpad 0    ->  Mute/Unmute game audio (Pro)
-    Numpad +    ->  Toggle crosshair overlay (Pro)
-    Numpad *    ->  Toggle timer overlay on/off (Pro)
-    M (hold)    ->  Scan evacuation timers on map (Pro)
+    Numpad 1-3       ->  Profile 1-3 (Free)
+    Numpad 4-9       ->  Profile 4-9 (Pro)
+    Numpad 0 (short) ->  Mute/Unmute game audio (Pro)
+    Numpad 0 (hold)  ->  Audio Ducking on/off (Pro)
+    Numpad +         ->  Toggle crosshair overlay (Pro)
+    Numpad *         ->  Toggle timer overlay on/off (Pro)
+    CapsLock         ->  Toggle autorun (Pro)
+    M (hold)         ->  Scan evacuation timers on map (Pro)
 
     Works with or without Shift, NumLock on or off.
 
   Arrow Keys version (BrightRaider_Arrows.exe):
-    Arrow Left  ->  Profile 1 (Free)
-    Arrow Down  ->  Profile 2 (Free)
-    Arrow Right ->  Profile 3 (Free)
-    Arrow Up    ->  Mute/Unmute game audio (Pro)
-    Insert      ->  Toggle crosshair overlay (Pro)
-    Delete/Entf ->  Toggle timer overlay on/off (Pro)
-    M (hold)    ->  Scan evacuation timers on map (Pro)
+    Arrow Left         ->  Profile 1 (Free)
+    Arrow Down         ->  Profile 2 (Free)
+    Arrow Right        ->  Profile 3 (Free)
+    Arrow Up (short)   ->  Mute/Unmute game audio (Pro)
+    Arrow Up (hold)    ->  Audio Ducking on/off (Pro)
+    Insert             ->  Toggle crosshair overlay (Pro)
+    Delete/Entf        ->  Toggle timer overlay on/off (Pro)
+    CapsLock           ->  Toggle autorun (Pro)
+    M (hold)           ->  Scan evacuation timers on map (Pro)
 
   Tray Icon (right-click):
     - Switch profiles
@@ -144,6 +148,32 @@ PRO ACTIVATION
   4. Enter your email and license key
   5. All Pro features are instantly unlocked
   6. License is saved locally - no internet needed after activation
+
+AUTORUN (Pro)
+  Press CapsLock to start autorunning. BrightRaider holds the W key for you
+  so your character walks forward without you touching the keyboard.
+
+  While autorunning:
+    CapsLock again  ->  Stop autorun
+    Shift           ->  Toggle sprint (press again to go back to walk)
+    W or S          ->  Cancel autorun, key passes through to game
+    C               ->  Slide first (while still moving forward), then stop
+
+  Rebind the autorun key: right-click tray -> Settings -> Autorun [CapsLock]...
+  Press any key to rebind, Esc to cancel.
+
+AUDIO DUCKING (Pro)
+  The mute key (Numpad 0 / Arrow Up) has two modes:
+
+    Short press (under hold duration)  ->  Mute/unmute game audio
+    Hold (default: 600ms)              ->  Duck game audio to configured volume
+
+  Ducking reduces game volume to a set percentage (default: 20%) so you can
+  hear Discord or music without fully muting the game. Hold again to restore.
+
+  Configure: right-click tray -> Settings -> Audio Ducking: 20%...
+    - Volume: 0-100% (how loud the game is while ducked)
+    - Hold duration: 200-2000ms (how long to hold before ducking triggers)
 
 MAP SCANNER (Pro)
   Hold M while viewing the in-game map. BrightRaider automatically
@@ -338,23 +368,27 @@ ERSTER START - WICHTIG
 
 BEDIENUNG
   Numpad-Version (BrightRaider.exe):
-    Numpad 1-3  ->  Profil 1-3 (Kostenlos)
-    Numpad 4-9  ->  Profil 4-9 (Pro)
-    Numpad 0    ->  Spiel stumm/laut (Pro)
-    Numpad +    ->  Fadenkreuz-Overlay an/aus (Pro)
-    Numpad *    ->  Timer-Overlay an/aus (Pro)
-    M (halten)  ->  Evakuierungs-Timer auf Karte scannen (Pro)
+    Numpad 1-3       ->  Profil 1-3 (Kostenlos)
+    Numpad 4-9       ->  Profil 4-9 (Pro)
+    Numpad 0 (kurz)  ->  Spiel stumm/laut (Pro)
+    Numpad 0 (halten)->  Audio Ducking an/aus (Pro)
+    Numpad +         ->  Fadenkreuz-Overlay an/aus (Pro)
+    Numpad *         ->  Timer-Overlay an/aus (Pro)
+    CapsLock         ->  Autorun an/aus (Pro)
+    M (halten)       ->  Evakuierungs-Timer auf Karte scannen (Pro)
 
     Funktioniert mit und ohne Shift, NumLock an oder aus.
 
   Pfeiltasten-Version (BrightRaider_Arrows.exe):
-    Pfeil Links ->  Profil 1 (Kostenlos)
-    Pfeil Unten ->  Profil 2 (Kostenlos)
-    Pfeil Rechts -> Profil 3 (Kostenlos)
-    Pfeil Hoch  ->  Spiel stumm/laut (Pro)
-    Einfg       ->  Fadenkreuz-Overlay an/aus (Pro)
-    Entf        ->  Timer-Overlay an/aus (Pro)
-    M (halten)  ->  Evakuierungs-Timer auf Karte scannen (Pro)
+    Pfeil Links         ->  Profil 1 (Kostenlos)
+    Pfeil Unten         ->  Profil 2 (Kostenlos)
+    Pfeil Rechts        ->  Profil 3 (Kostenlos)
+    Pfeil Hoch (kurz)   ->  Spiel stumm/laut (Pro)
+    Pfeil Hoch (halten) ->  Audio Ducking an/aus (Pro)
+    Einfg               ->  Fadenkreuz-Overlay an/aus (Pro)
+    Entf                ->  Timer-Overlay an/aus (Pro)
+    CapsLock            ->  Autorun an/aus (Pro)
+    M (halten)          ->  Evakuierungs-Timer auf Karte scannen (Pro)
 
   Tray-Icon (Rechtsklick):
     - Profile wechseln
@@ -378,6 +412,33 @@ PRO AKTIVIERUNG
   4. Email und Lizenzschluessel eingeben
   5. Alle Pro-Funktionen sofort freigeschaltet
   6. Lizenz lokal gespeichert - kein Internet noetig nach Aktivierung
+
+AUTORUN (Pro)
+  CapsLock druecken um Autorun zu starten. BrightRaider haelt die W-Taste
+  fuer dich — dein Charakter laeuft vorwaerts ohne dass du die Tastatur bedienenmusst.
+
+  Waehrend Autorun aktiv:
+    CapsLock nochmal  ->  Autorun stoppen
+    Shift             ->  Sprint an/aus (nochmal druecken fuer Gehen)
+    W oder S          ->  Autorun abbrechen, Taste wird ans Spiel weitergegeben
+    C                 ->  Slide ausloesen (waehrend noch Bewegung vorwaerts), dann stoppen
+
+  Taste neu belegen: Rechtsklick Tray -> Einstellungen -> Autorun [CapsLock]...
+  Beliebige Taste druecken zum Belegen, Esc zum Abbrechen.
+
+AUDIO DUCKING (Pro)
+  Die Stumm-Taste (Numpad 0 / Pfeil Hoch) hat zwei Modi:
+
+    Kurzer Druck (unter Haltezeit)  ->  Spiel stumm/laut
+    Halten (Standard: 600ms)        ->  Spiel-Audio auf eingestellten Prozentsatz reduzieren
+
+  Ducking reduziert die Spiel-Lautstaerke auf einen einstellbaren Prozentsatz
+  (Standard: 20%), damit du Discord oder Musik hoerst ohne das Spiel komplett
+  zu stummschalten. Nochmals halten stellt die normale Lautstaerke wieder her.
+
+  Konfigurieren: Rechtsklick Tray -> Einstellungen -> Audio Ducking: 20%...
+    - Lautstaerke: 0-100% (wie laut das Spiel im gedaempften Zustand ist)
+    - Haltezeit: 200-2000ms (wie lange halten bis Ducking ausgeloest wird)
 
 MAP SCANNER (Pro)
   M auf der Karte gedrückt halten. BrightRaider zoomt

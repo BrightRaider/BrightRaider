@@ -4,7 +4,7 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, 104 KB.
+One EXE, zero dependencies, ~113 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.7.2-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
@@ -54,6 +54,8 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro (€5.49)
+- **Autorun** — press CapsLock to hold W automatically. Shift toggles sprint. C triggers a slide. Press CapsLock again or W/S/C to stop. Rebind in Settings.
+- **Audio Ducking** — hold Numpad 0 (or ↑) for 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
 - **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
@@ -116,9 +118,11 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 |-----|--------|---------|
 | Numpad 1-3 | Switch profile | Free |
 | Numpad 4-9 | Switch profile | Pro |
-| Numpad 0 | Mute/unmute game | Pro |
+| Numpad 0 (short) | Mute/unmute game | Pro |
+| Numpad 0 (hold 600ms) | Audio Ducking on/off | Pro |
 | Numpad + | Toggle crosshair | Pro |
 | Numpad * | Toggle timer overlay | Pro |
+| CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
 Works with NumLock on or off. **Tip: keep NumLock off while playing** — with NumLock on, Windows briefly interrupts the Shift key when you switch profiles, which can slow your character if Shift is your sprint key.
@@ -130,9 +134,11 @@ Works with NumLock on or off. **Tip: keep NumLock off while playing** — with N
 | Arrow Left | Profile 1 (Normal) | Free |
 | Arrow Down | Profile 2 (Bright) | Free |
 | Arrow Right | Profile 3 (Brighter) | Free |
-| Arrow Up | Mute/unmute game | Pro |
+| Arrow Up (short) | Mute/unmute game | Pro |
+| Arrow Up (hold 600ms) | Audio Ducking on/off | Pro |
 | Insert | Toggle crosshair | Pro |
 | Delete / Entf | Toggle timer overlay | Pro |
+| CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
 ## How It Works
@@ -220,7 +226,7 @@ Free is fully functional. Pro adds automatic switching so you never take your ha
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, 104 KB.
+Eine EXE, keine Abhängigkeiten, ~113 KB.
 
 ## Warum BrightRaider?
 
@@ -241,6 +247,8 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
+- **Autorun** — CapsLock drücken um W automatisch zu halten. Shift togglet Sprint. C löst einen Slide aus. Nochmals CapsLock oder W/S/C stoppt. Taste in Einstellungen belegbar.
+- **Audio Ducking** — Numpad 0 (oder ↑) 600ms halten um Spiel-Audio auf 20% zu reduzieren. Kurzer Druck schaltet weiterhin stumm/an. Lautstärke und Haltezeit in Einstellungen konfigurierbar.
 - **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig. Funktioniert in den meisten Situationen zuverlässig — falls ein Scan daneben liegt, M einfach nochmal drücken.
 - **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
 - **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
@@ -281,7 +289,7 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 ## Pro-Aktivierung
 
 1. Lizenz kaufen:
-   - **[Lemon Squeezy (6,99 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
+   - **[Lemon Squeezy (5,49 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
 2. Rechtsklick auf Tray-Icon → **Einstellungen** → **Lizenz eingeben**
 3. E-Mail und Lizenzschlüssel eingeben
 4. Fertig — alle Pro-Features dauerhaft freigeschaltet. Kein Abo. Einmalig Internet nötig, danach offline für immer.
@@ -294,8 +302,12 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 |-------|--------|---------|
 | Numpad 1-3 | Profil wechseln | Free |
 | Numpad 4-9 | Profil wechseln | Pro |
-| Numpad 0 | Spiel stumm/laut | Pro |
+| Numpad 0 (kurz) | Spiel stumm/laut | Pro |
+| Numpad 0 (600ms halten) | Audio Ducking an/aus | Pro |
 | Numpad + | Fadenkreuz an/aus | Pro |
+| Numpad * | Timer-Overlay an/aus | Pro |
+| CapsLock | Autorun an/aus | Pro |
+| M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
 Funktioniert mit NumLock an oder aus. **Tipp: NumLock beim Spielen ausschalten** — bei aktivem NumLock unterbricht Windows kurz die Shift-Taste beim Profilwechsel, was den Charakter verlangsamen kann, wenn Shift die Sprint-Taste ist.
 
@@ -306,9 +318,11 @@ Funktioniert mit NumLock an oder aus. **Tipp: NumLock beim Spielen ausschalten**
 | Pfeil Links | Profil 1 (Normal) | Free |
 | Pfeil Unten | Profil 2 (Hell) | Free |
 | Pfeil Rechts | Profil 3 (Heller) | Free |
-| Pfeil Hoch | Spiel stumm/laut | Pro |
+| Pfeil Hoch (kurz) | Spiel stumm/laut | Pro |
+| Pfeil Hoch (600ms halten) | Audio Ducking an/aus | Pro |
 | Einfg | Fadenkreuz an/aus | Pro |
 | Entf | Timer-Overlay an/aus | Pro |
+| CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
 ## Funktionsweise
