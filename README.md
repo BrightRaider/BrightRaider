@@ -56,12 +56,12 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro (€5.49)
-- **Autorun** — short press CapsLock to hold W (walk or sprint). Hold CapsLock 600ms for **Tap Mode** — pulses W at intervals, perfect for the **Looting Mk. 3 (Survivor)** augment (keeps health at 75% while moving). Shift toggles sprint. C triggers a slide. CapsLock/W/S/C stops. Rebind in Settings.
-- **Audio Ducking** — hold Numpad 0 (or ↑) for 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
-- **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
-- **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
-- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter. Zone weights configurable (Settings → Zones...) — reduce corner influence if your HUD covers them.
+- **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
+- **Autorun** — short press CapsLock to hold W (walk or sprint). Hold CapsLock 600ms for **Tap Mode** — pulses W at intervals, perfect for the **Looting Mk. 3 (Survivor)** augment (keeps health at 75% while moving). Shift toggles sprint. C triggers a slide. CapsLock/W/S/C stops. Rebind in Settings.
+- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
+- **Audio Ducking** — hold Numpad 0 (or ↑) for 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
+- **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Up to 9 profiles** with full customization
 - **Calibration Wizard** — two clicks to set up auto-brightness
 - **Profile Editor** — fine-tune gamma, contrast, vibrance per profile
@@ -249,12 +249,12 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
-- **Autorun** — kurz CapsLock drücken um W zu halten (Gehen oder Rennen). CapsLock 600ms halten für **Tap-Modus** — W wird in Intervallen gedrückt, ideal für das **Looting Mk. 3 (Survivor)**-Augment (Leben bleibt bei 75% während du dich bewegst). Shift togglet Sprint. C löst Slide aus. CapsLock/W/S/C stoppt. Taste belegbar.
-- **Audio Ducking** — Numpad 0 (oder ↑) 600ms halten um Spiel-Audio auf 20% zu reduzieren. Kurzer Druck schaltet weiterhin stumm/an. Lautstärke und Haltezeit in Einstellungen konfigurierbar.
-- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig. Funktioniert in den meisten Situationen zuverlässig — falls ein Scan daneben liegt, M einfach nochmal drücken.
-- **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.
+- **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln. Zonen-Gewichtung konfigurierbar (Einstellungen → Zonen...).
+- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig.
+- **Autorun** — kurz CapsLock drücken um W zu halten (Gehen oder Rennen). CapsLock 600ms halten für **Tap-Modus** — W wird in Intervallen gedrückt, ideal für das **Looting Mk. 3 (Survivor)**-Augment (Leben bleibt bei 75% während du dich bewegst). Shift togglet Sprint. C löst Slide aus. Taste belegbar.
 - **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
-- **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
+- **Audio Ducking** — Numpad 0 (oder ↑) 600ms halten um Spiel-Audio auf 20% zu reduzieren. Kurzer Druck schaltet weiterhin stumm/an. Lautstärke und Haltezeit konfigurierbar.
+- **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Funktioniert sofort, auch im Vollbild.
 - **Bis zu 9 Profile** mit voller Anpassung
 - **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
 - **Profil-Editor** — Gamma, Kontrast, Vibrance pro Profil feintunen
