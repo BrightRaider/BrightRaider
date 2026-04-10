@@ -28,6 +28,7 @@ Both timings are fully configurable to the millisecond under **Settings → Auto
 - **Slide fix** — C key now correctly triggers a slide while autorunning
 - **CapsLock state fix** — holding CapsLock to activate Tap Mode no longer accidentally toggles CapsLock (uppercase/lowercase bug)
 - **Multi-monitor fix** — all settings dialogs now open on the correct screen
+- **Calibration wizard fix** — the wizard window previously appeared in the center of the screen and was picked up by the brightness measurement zones, skewing calibration results. It now opens at the bottom of the screen, outside all 5 measurement zones. Thanks to **@KaerPaiku** for the hint.
 
 ### Other
 

@@ -240,6 +240,8 @@ AUTO-BRIGHTNESS (Pro)
 
   Enable via: Tray Menu -> Auto-Brightness (Screen Analysis)
   Calibrate: two steps — measure darkest spot, measure brightest.
+  The calibration window appears at the bottom of the screen,
+  outside all 5 measurement zones — so it does not skew results.
 
   Zone Weights: Tray Menu -> Settings -> Zones...
     Each of the 5 zones (Center, Top Left, Top Right, Bottom Left, Bottom Right)
@@ -530,6 +532,9 @@ AUTO-HELLIGKEIT (Pro)
   Aktivieren: Tray-Menue -> Auto-Helligkeit (Bildschirmanalyse)
   Kalibrierung: zwei Schritte — dunkelste Stelle messen,
   hellste Stelle messen, fertig.
+  Das Kalibrierungsfenster erscheint unten am Bildschirm,
+  ausserhalb aller 5 Messzonen — damit es das Ergebnis
+  nicht verfaelscht.
 
   Zonen-Gewichtung: Tray-Menue -> Einstellungen -> Zonen...
     Jede der 5 Zonen (Mitte, oben links, oben rechts, unten links, unten rechts)
