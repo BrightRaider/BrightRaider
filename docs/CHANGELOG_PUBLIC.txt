@@ -25,6 +25,10 @@
     It now opens at the bottom of the screen, fully outside all 5 measurement zones.
     Thanks to @KaerPaiku for the report.
 
+  Security:
+  - License encryption updated — previously cracked licenses no longer work.
+    Your original key is still valid: enter it once when prompted after updating.
+
   General:
   - Crosshair default color is now white
 
