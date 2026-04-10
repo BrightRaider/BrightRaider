@@ -4,7 +4,7 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, ~113 KB.
+One EXE, zero dependencies, ~290 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.7.2-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
@@ -56,7 +56,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro (€5.49)
-- **Autorun** — press CapsLock to hold W automatically. Shift toggles sprint. C triggers a slide. Press CapsLock again or W/S/C to stop. Rebind in Settings.
+- **Autorun** — short press CapsLock to hold W (walk or sprint). Hold CapsLock 600ms for **Tap Mode** — pulses W at intervals, perfect for the **Looting Mk. 3 (Survivor)** augment (keeps health at 75% while moving). Shift toggles sprint. C triggers a slide. CapsLock/W/S/C stops. Rebind in Settings.
 - **Audio Ducking** — hold Numpad 0 (or ↑) for 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
 - **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
@@ -228,7 +228,7 @@ Free is fully functional. Pro adds automatic switching so you never take your ha
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, ~113 KB.
+Eine EXE, keine Abhängigkeiten, ~290 KB.
 
 ## Warum BrightRaider?
 
@@ -249,7 +249,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
-- **Autorun** — CapsLock drücken um W automatisch zu halten. Shift togglet Sprint. C löst einen Slide aus. Nochmals CapsLock oder W/S/C stoppt. Taste in Einstellungen belegbar.
+- **Autorun** — kurz CapsLock drücken um W zu halten (Gehen oder Rennen). CapsLock 600ms halten für **Tap-Modus** — W wird in Intervallen gedrückt, ideal für das **Looting Mk. 3 (Survivor)**-Augment (Leben bleibt bei 75% während du dich bewegst). Shift togglet Sprint. C löst Slide aus. CapsLock/W/S/C stoppt. Taste belegbar.
 - **Audio Ducking** — Numpad 0 (oder ↑) 600ms halten um Spiel-Audio auf 20% zu reduzieren. Kurzer Druck schaltet weiterhin stumm/an. Lautstärke und Haltezeit in Einstellungen konfigurierbar.
 - **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig. Funktioniert in den meisten Situationen zuverlässig — falls ein Scan daneben liegt, M einfach nochmal drücken.
 - **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Ein Druck zum Fokussieren, ein Druck zum Wiederhören. Funktioniert sofort, auch im Vollbild.

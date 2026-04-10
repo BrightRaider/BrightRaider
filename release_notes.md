@@ -1,21 +1,38 @@
-## BrightRaider V9.2 — Autorun + Audio Ducking
+## BrightRaider V9.3 — Autorun Upgrade
 
-### Autorun (Pro)
+### Autorun Sprint Mode (Pro)
 
-Press **CapsLock** to start autorunning — BrightRaider holds W for you so you can take your hand off the keyboard. Press **Shift** to toggle sprint while autorunning. Press **CapsLock** again to stop. W, S, or C cancels autorun. C is special: it triggers a slide first (since you were running forward), then stops.
-
-Rebind the autorun key to anything you want: **Settings → Autorun [CapsLock]...**
-
-> **How it works:** BrightRaider sends the key directly to the game window — compatible with Arc Raiders' Raw Input system.
-
-### Audio Ducking (Pro)
-
-The mute key (Numpad 0 / ↑) now has two functions:
-- **Short press** — mute/unmute game audio (same as before)
-- **Hold 600ms** — duck game audio to 20% (configurable). Hold again to restore.
-
-This lets you drop the game audio in the background while you're typing or talking, without fully muting it. Configure the duck volume and hold duration via **Settings → Audio Ducking: 20%...**
+While autorunning, press **Shift** to toggle sprint — BrightRaider holds both W and Shift simultaneously. Press Shift again to drop back to walking. Enable Sprint Mode under **Settings → Autorun → Mode: Sprint** to always start in sprint.
 
 ---
 
-> ⚠️ **Existing Pro users:** No re-activation needed — your license carries over.
+### Autorun Tap Mode (Pro) — Built for Looting Mk. 3 (Survivor)
+
+Hold **CapsLock for 600ms** to activate Tap Mode. Instead of holding W continuously, BrightRaider pulses W at timed intervals:
+
+- W is pressed for **169ms** (configurable)
+- Then released for **990ms** (configurable)
+- Repeat
+
+**Why?** The **Looting Mk. 3 (Survivor)** augment regenerates up to 75% of max downed health while downed and stationary. During the 990ms pause between taps your character is stationary — the Survivor augment regenerates your health. The brief W tap keeps you moving just enough. Result: your health stays consistently near **75%** while you move through the map.
+
+Both timings are fully configurable to the millisecond under **Settings → Autorun → Tap Interval...** — future-proof by design: if the developers adjust the augment's stationary threshold or timing, just tweak the numbers to match.
+
+- Short press CapsLock → toggle normal Walk/Sprint autorun
+- Hold CapsLock (600ms) → Tap Mode
+
+---
+
+### Bug Fixes
+
+- **Slide fix** — C key now correctly triggers a slide while autorunning
+- **CapsLock state fix** — holding CapsLock to activate Tap Mode no longer accidentally toggles CapsLock (uppercase/lowercase bug)
+- **Multi-monitor fix** — all settings dialogs now open on the correct screen
+
+### Other
+
+- Crosshair default color changed to white
+
+---
+
+> 🔑 **Existing Pro users:** No re-activation needed — your license carries over.

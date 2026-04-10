@@ -3,7 +3,27 @@
 ================================================================
 
 
-[ V9.2 ] - Current Version
+[ V9.3 ] - Current Version
+
+  Autorun (Pro):
+  - New: Sprint Mode — autorun can now start directly in sprint.
+    Enable under Settings → Autorun → Mode: Sprint.
+    Press Shift while autorunning to toggle between walk and sprint on the fly.
+  - New: Tap Mode — hold CapsLock for 600ms instead of a short press.
+    BrightRaider taps W briefly, pauses, taps again — instead of holding it.
+    Built for the Looting Mk. 3 (Survivor) augment: health regenerates to 75%
+    while stationary. The pause between taps gives the augment time to regen.
+    Your health stays near 75% while you keep moving.
+    Adjust timing under Settings → Autorun → Tap Interval...
+  - Fixed: C key (slide) now always works correctly during autorun
+  - Fixed: Holding CapsLock for Tap Mode no longer accidentally toggles CapsLock
+  - Fixed: Settings dialogs now open on the correct screen (multi-monitor setups)
+
+  General:
+  - Crosshair default color is now white
+
+
+[ V9.2 ]
 
   Autorun (Pro):
   - New: Press CapsLock to start autorun — character walks forward automatically

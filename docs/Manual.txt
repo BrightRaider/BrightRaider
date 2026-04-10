@@ -1,5 +1,5 @@
 ================================================================
-  BrightRaider V9
+  BrightRaider V9.3
   Switch Gamma, Contrast & Digital Vibrance with one keypress
 ================================================================
 
@@ -39,6 +39,12 @@ FREE FEATURES
   - Portable: no installation, just one EXE
 
 PRO FEATURES (€5.49 one-time)
+  - Autorun: press CapsLock to hold W automatically. Sprint Mode
+    starts in sprint directly. Tap Mode (hold CapsLock 600ms) pulses
+    W at intervals — built for Looting Mk. 3 (Survivor) to keep
+    health at 75% while moving. Fully configurable timing.
+  - Audio Ducking: hold mute key 600ms to reduce game audio to a
+    set percentage. Short press still mutes/unmutes as before.
   - Map Scanner: hold M on the in-game map to automatically
     scan all evacuation timers via OCR. Live color-coded
     countdown overlay directly on your screen.
@@ -150,14 +156,31 @@ PRO ACTIVATION
   6. License is saved locally - no internet needed after activation
 
 AUTORUN (Pro)
-  Press CapsLock to start autorunning. BrightRaider holds the W key for you
-  so your character walks forward without you touching the keyboard.
+  Press CapsLock briefly to start autorunning. BrightRaider holds W for you
+  so your character walks (or sprints) forward automatically.
 
   While autorunning:
     CapsLock again  ->  Stop autorun
     Shift           ->  Toggle sprint (press again to go back to walk)
     W or S          ->  Cancel autorun, key passes through to game
     C               ->  Slide first (while still moving forward), then stop
+
+  Sprint Mode: Settings -> Autorun -> Mode: Sprint
+    Autorun starts in sprint immediately instead of walking.
+
+  TAP MODE — hold CapsLock for 600ms:
+    Instead of holding W continuously, BrightRaider pulses W at timed intervals.
+    W is pressed briefly (default: 169ms), then released (default: 990ms pause).
+
+    Built for the Looting Mk. 3 (Survivor) augment:
+    The augment regenerates health up to 75% while downed and stationary.
+    During the 990ms pause your character is stationary — health regens.
+    The brief W tap keeps you moving. Result: health stays near 75%.
+
+    Configure: Settings -> Autorun -> Tap Interval...
+      - W press duration (ms) — how long W is held per tap
+      - Pause between taps (ms) — stationary time between taps
+      Enter exact millisecond values.
 
   Rebind the autorun key: right-click tray -> Settings -> Autorun [CapsLock]...
   Press any key to rebind, Esc to cancel.
@@ -303,7 +326,15 @@ KOSTENLOSE FUNKTIONEN
   - Portabel: nur eine EXE, keine Installation
 
 PRO FUNKTIONEN (5,49 EUR einmalig)
-  - Map Scanner: M auf der Karte gedrückt halten → alle
+  - Autorun: CapsLock kurz druecken um W automatisch zu halten.
+    Sprint-Modus startet direkt im Sprint. Tap-Modus (CapsLock 600ms
+    halten) tippt W in Intervallen — gebaut fuer Looting Mk. 3
+    (Survivor) um das Leben bei 75% zu halten waehrend du dich
+    bewegst. Timing vollstaendig einstellbar.
+  - Audio Ducking: Stumm-Taste 600ms halten um Spiel-Audio auf
+    einen einstellbaren Prozentsatz zu reduzieren. Kurzer Druck
+    schaltet wie gewohnt stumm/laut.
+  - Map Scanner: M auf der Karte gedrueckt halten → alle
     Evakuierungs-Timer werden automatisch per OCR ausgelesen.
     Farbkodierter Live-Countdown direkt auf dem Bildschirm.
   - Crosshair-Overlay: Click-through Fadenkreuz auf dem
@@ -414,14 +445,31 @@ PRO AKTIVIERUNG
   6. Lizenz lokal gespeichert - kein Internet noetig nach Aktivierung
 
 AUTORUN (Pro)
-  CapsLock druecken um Autorun zu starten. BrightRaider haelt die W-Taste
-  fuer dich — dein Charakter laeuft vorwaerts ohne dass du die Tastatur bedienenmusst.
+  CapsLock kurz druecken um Autorun zu starten. BrightRaider haelt W fuer
+  dich — dein Charakter laeuft (oder rennt) automatisch vorwaerts.
 
   Waehrend Autorun aktiv:
     CapsLock nochmal  ->  Autorun stoppen
     Shift             ->  Sprint an/aus (nochmal druecken fuer Gehen)
     W oder S          ->  Autorun abbrechen, Taste wird ans Spiel weitergegeben
     C                 ->  Slide ausloesen (waehrend noch Bewegung vorwaerts), dann stoppen
+
+  Sprint-Modus: Einstellungen -> Autorun -> Modus: Sprint
+    Autorun startet sofort im Sprint statt im Gehen.
+
+  TAP-MODUS — CapsLock 600ms halten:
+    Statt W durchgehend zu halten, wird W in Intervallen getippt.
+    W wird kurz gedrueckt (Standard: 169ms), dann losgelassen (Standard: 990ms Pause).
+
+    Gebaut fuer das Looting Mk. 3 (Survivor) Augment:
+    Das Augment regeneriert Leben bis 75% waehrend du zu Boden bist und stillstehst.
+    In der 990ms Pause steht dein Charakter still — Leben regeneriert.
+    Der kurze W-Tipp bewegt dich weiter. Ergebnis: Leben bleibt bei ~75%.
+
+    Konfigurieren: Einstellungen -> Autorun -> Tap-Abstand...
+      - W-Haltezeit (ms) — wie lange W pro Tipp gedrueckt bleibt
+      - Pause zwischen Tipps (ms) — Stillstandszeit zwischen Tipps
+      Exakte Millisekunden-Werte eingebbar.
 
   Taste neu belegen: Rechtsklick Tray -> Einstellungen -> Autorun [CapsLock]...
   Beliebige Taste druecken zum Belegen, Esc zum Abbrechen.
