@@ -26,8 +26,8 @@
     Thanks to @KaerPaiku for the report.
 
   Security:
-  - License encryption updated — previously cracked licenses no longer work.
-    Your original key is still valid: enter it once when prompted after updating.
+  - License system updated. A one-time re-activation is required:
+    enter your key when prompted after updating.
 
   General:
   - Crosshair default color is now white

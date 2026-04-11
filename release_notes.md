@@ -36,4 +36,4 @@ Both timings are fully configurable to the millisecond under **Settings → Auto
 
 ---
 
-> 🔑 **Pro users: one-time re-activation required.** This update includes a security fix that invalidates previously cracked licenses. Your original license key is still valid — simply enter it again when prompted. If you no longer have your key, check your original purchase email from Lemon Squeezy.
+> 🔑 **Pro users: one-time re-activation required.** The license system has been updated. Simply enter your key again when prompted — your license is still fully valid. Can't find your key? Check your original purchase email from Lemon Squeezy.
