@@ -588,6 +588,6 @@ DEINSTALLATION
   FILES / DATEIEN
   BrightRaider.exe         - Numpad version / Numpad-Version
   BrightRaider_Arrows.exe  - Arrow keys version / Pfeiltasten-Version
-  BrightRaider.cfg         - Settings (auto) / Einstellungen
-  BrightRaider.lic         - License file / Lizenzdatei
+  %APPDATA%\BrightRaider\BrightRaider.cfg  - Settings (auto) / Einstellungen
+  %APPDATA%\BrightRaider\BrightRaider.lic  - License file / Lizenzdatei
 ================================================================
