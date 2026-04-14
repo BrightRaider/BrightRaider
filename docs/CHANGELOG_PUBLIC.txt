@@ -3,7 +3,26 @@
 ================================================================
 
 
-[ V9.3 ] - Current Version
+[ V9.4 ] - Current Version
+
+  Break Reminder (Free):
+  - New: Configurable break reminder — shows an orange toast after a set interval
+    Default: every 45 minutes. Configure under Settings → Break Reminder.
+    Does not steal focus or interrupt gameplay.
+
+  Evac Alarm (Pro):
+  - New: Alert when an evac timer drops below a configurable threshold
+    Set threshold in minutes + seconds (e.g. 2 min 30 sec)
+    Red toast + sound when threshold is crossed. Resets automatically on re-scan.
+    Configure inside Settings → Map Scanner → Settings (Evac Alarm section)
+
+  General:
+  - Version number now shown in the Exit menu item
+  - Toast notifications no longer steal focus while a game is in the foreground
+  - Seamless upgrade: V9.3 license is automatically migrated — no re-activation needed
+
+
+[ V9.3 ]
 
   Autorun (Pro):
   - New: Sprint Mode — autorun can now start directly in sprint.

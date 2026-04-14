@@ -1,5 +1,5 @@
 ================================================================
-  BrightRaider V9.3
+  BrightRaider V9.4
   Switch Gamma, Contrast & Digital Vibrance with one keypress
 ================================================================
 
@@ -221,6 +221,28 @@ MAP SCANNER (Pro)
     - Hold duration (how long to press M before scan starts)
     - Overlay position (6 screen positions)
     - Font size and color
+    - Evac Alarm threshold (minutes + seconds)
+
+EVAC ALARM (Pro)
+  Get an alert when an evacuation timer drops below a threshold.
+  When triggered: a red toast notification appears and a sound plays.
+  The alert fires once per timer and resets automatically if the
+  timer is re-scanned (e.g. you hold M again).
+
+  Configure inside: Map Scanner Settings -> Evac Alarm section
+    - Enable/disable checkbox (Pro only)
+    - Threshold: separate minute (0-59) and second (0-59) fields
+
+  Note: Map Scanner must be active for Evac Alarm to work.
+
+BREAK REMINDER (Free)
+  Shows an orange toast notification after a configurable interval
+  to remind you to take a break. Does not steal focus or interrupt
+  gameplay in any way.
+
+  Configure: right-click tray -> Settings -> Break Reminder
+    - Set interval in minutes (5-240)
+    - Set to 0 to disable
 
 CROSSHAIR OVERLAY (Pro)
   A transparent, click-through crosshair drawn directly on your
@@ -326,6 +348,7 @@ KOSTENLOSE FUNKTIONEN
   - Alle Einstellungen werden automatisch gespeichert
   - Setzt beim Beenden alles auf Normal zurueck
   - Portabel: nur eine EXE, keine Installation
+  - Pausen-Erinnerung: oranger Toast nach einstellbarem Intervall
 
 PRO FUNKTIONEN (5,49 EUR einmalig)
   - Autorun: CapsLock kurz druecken um W automatisch zu halten.
@@ -339,6 +362,9 @@ PRO FUNKTIONEN (5,49 EUR einmalig)
   - Map Scanner: M auf der Karte gedrueckt halten → alle
     Evakuierungs-Timer werden automatisch per OCR ausgelesen.
     Farbkodierter Live-Countdown direkt auf dem Bildschirm.
+  - Evac-Alarm: roter Toast + Sound wenn ein Timer unter den
+    Schwellwert faellt. Schwellwert in Min + Sek einstellbar.
+    Konfiguration: Map Scanner Einstellungen → Evac Alarm
   - Crosshair-Overlay: Click-through Fadenkreuz auf dem
     Bildschirm, 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt),
     freie Farbwahl und Groesse
