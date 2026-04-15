@@ -20,6 +20,11 @@
   - Version number now shown in the Exit menu item
   - Toast notifications no longer steal focus while a game is in the foreground
   - Seamless upgrade: V9.3 license is automatically migrated — no re-activation needed
+  - Reduced antivirus false positives (fewer detections on VirusTotal)
+    Some detections will always remain — BrightRaider uses a low-level keyboard hook
+    and screen capture, which are the same APIs malware uses. Without an expensive
+    code signing certificate (~$150/year), a small number of AV engines will always
+    flag tools like this. The app is safe; source behavior explains every detection.
 
 
 [ V9.3 ]

@@ -32,3 +32,14 @@ No re-activation required. BrightRaider V9.4 automatically finds and migrates yo
 
 - Version number now visible in the Exit menu item
 - Toast notifications no longer steal focus when a game is in the foreground
+- Reduced antivirus false positives compared to V9.3
+
+---
+
+### ⚠️ Antivirus Note
+
+Some AV engines will always flag BrightRaider regardless of version. This is a **false positive**, not malware.
+
+BrightRaider uses a **low-level keyboard hook** (to read Numpad/Arrow keys globally) and **screen capture** (for Auto-Brightness and Map Scanner). These are the same OS APIs that keyloggers and screenshot malware use — so AV heuristics flag them by design, no matter how clean the code is.
+
+The only real fix is an Authenticode **code signing certificate** from a trusted CA (~$150/year). That's not economical for a €5.49 tool. Every detection on VirusTotal traces back to one of these two APIs or the obfuscation layer that protects the license system — nothing else.
