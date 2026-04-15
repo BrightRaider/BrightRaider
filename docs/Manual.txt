@@ -37,6 +37,8 @@ FREE FEATURES
   - All settings saved automatically
   - Resets everything to normal on exit
   - Portable: no installation, just one EXE
+  - Break Reminder: orange toast after a configurable interval
+    to remind you to take a break. Does not interrupt gameplay.
 
 PRO FEATURES (€5.49 one-time)
   - Autorun: press CapsLock to hold W automatically. Sprint Mode
@@ -48,6 +50,9 @@ PRO FEATURES (€5.49 one-time)
   - Map Scanner: hold M on the in-game map to automatically
     scan all evacuation timers via OCR. Live color-coded
     countdown overlay directly on your screen.
+  - Evac Alarm: red toast + sound when a timer drops below a
+    configurable threshold (minutes + seconds). Configured
+    inside Map Scanner Settings.
   - Crosshair Overlay: click-through crosshair on screen,
     4 styles (Cross, DotRing, TShape, Dot), custom color/size
   - Up to 9 profiles (Numpad 1-9)
