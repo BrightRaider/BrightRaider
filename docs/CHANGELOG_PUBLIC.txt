@@ -24,7 +24,8 @@
     Some detections will always remain — BrightRaider uses a low-level keyboard hook
     and screen capture, which are the same APIs malware uses. Without an expensive
     code signing certificate (~$150/year), a small number of AV engines will always
-    flag tools like this. The app is safe; source behavior explains every detection.
+    flag tools like this. V9.3 was downloaded 1,400+ times — if something were wrong,
+    the internet would know. The app is safe; source behavior explains every detection.
 
 
 [ V9.3 ]
