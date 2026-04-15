@@ -42,6 +42,6 @@ Some AV engines will always flag BrightRaider regardless of version. This is a *
 
 BrightRaider uses a **low-level keyboard hook** (to read Numpad/Arrow keys globally) and **screen capture** (for Auto-Brightness and Map Scanner). These are the same OS APIs that keyloggers and screenshot malware use — so AV heuristics flag them by design, no matter how clean the code is.
 
-V9.3 was downloaded over **1,400 times** — if something were actually wrong, the internet would know about it by now. You can verify the V9.4 EXE yourself: [VirusTotal scan →](VIRUSTOTAL_LINK_HERE)
+V9.3 was downloaded over [**1,400 times**](https://github.com/BrightRaider/BrightRaider/releases/tag/v9.3) — if something were actually wrong, the internet would know about it by now. You can verify the V9.4 EXE yourself: [VirusTotal scan →](VIRUSTOTAL_LINK_HERE)
 
 The only real fix is an Authenticode **code signing certificate** from a trusted CA (~$150/year). That's not economical for a €5.49 tool. Every detection on VirusTotal traces back to one of these two APIs or the obfuscation layer that protects the license system — nothing else.
