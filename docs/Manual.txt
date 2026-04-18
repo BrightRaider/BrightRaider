@@ -1,5 +1,5 @@
 ================================================================
-  BrightRaider V9.4
+  BrightRaider V9.5
   Switch Gamma, Contrast & Digital Vibrance with one keypress
 ================================================================
 
@@ -66,6 +66,9 @@ PRO FEATURES (€5.49 one-time)
     when you need your keys for something else
   - Vibrance Restore: your original vibrance is read on
     startup and restored when you exit
+  - QuickSelect: press a key to automatically use a quick-wheel item
+    (Q-hold → slot → LMB hold → H to free hand). 5 configurable slots,
+    6 LMB timer presets for different item durations. [PRO]
   - Offline license: no internet required after activation
 
 PROFILES (Default)
@@ -120,6 +123,8 @@ USAGE
     Numpad *         ->  Toggle timer overlay on/off (Pro)
     CapsLock         ->  Toggle autorun (Pro)
     M (hold)         ->  Scan evacuation timers on map (Pro)
+    3/4/5 (default)  ->  QuickSelect: auto-use slot item (Pro)
+    Numpad -         ->  Toggle QuickSelect on/off (Pro)
 
     Works with or without Shift, NumLock on or off.
 
@@ -133,6 +138,8 @@ USAGE
     Delete/Entf        ->  Toggle timer overlay on/off (Pro)
     CapsLock           ->  Toggle autorun (Pro)
     M (hold)           ->  Scan evacuation timers on map (Pro)
+    3/4/5 (default)    ->  QuickSelect: auto-use slot item (Pro)
+    Pos1 (Home)        ->  Toggle QuickSelect on/off (Pro)
 
   Tray Icon (right-click):
     - Switch profiles
@@ -167,7 +174,8 @@ AUTORUN (Pro)
   While autorunning:
     CapsLock again  ->  Stop autorun
     Shift           ->  Toggle sprint (press again to go back to walk)
-    W or S          ->  Cancel autorun, key passes through to game
+    W               ->  Stops injection — character keeps running until you release W
+    S               ->  Cancel autorun fully, key passes through to game
     C               ->  Slide first (while still moving forward), then stop
 
   Sprint Mode: Settings -> Autorun -> Mode: Sprint
@@ -248,6 +256,55 @@ BREAK REMINDER (Free)
   Configure: right-click tray -> Settings -> Break Reminder
     - Set interval in minutes (5-240)
     - Set to 0 to disable
+
+QUICKSELECT (Pro)
+  Press a single key to automatically use an item from your quick-use wheel.
+  BrightRaider handles the entire sequence:
+    1. Hold Q (wheel opens)
+    2. Press your slot key (item selected)
+    3. Release Q (item goes to hand)
+    4. Hold Left Mouse Button for the configured duration (item used)
+    5. Press H (holster / free hand) — optional, per slot
+
+  Default trigger keys: 3, 4, 5 (keys above the letter row, not numpad)
+  The keys are intercepted while QuickSelect is active — the game does NOT
+  receive them directly (Q handles the slot selection internally).
+
+  SETUP:
+    1. Right-click tray -> Settings -> QuickSelect... [PRO]
+    2. Check "Enable QuickSelect"
+    3. Click a bind button and press your desired trigger key for each slot
+    4. Set the wheel slot number (1-9, matching your in-game slot assignment)
+    5. Choose an LMB timer matching your item type (see presets below)
+    6. Enable H-key per slot if you want the hand freed after use
+    7. Click OK
+
+  LMB TIMER PRESETS (how long Left Mouse Button is held):
+    T1  1150ms  —  Adrenalin Syringe
+    T2  1650ms  —  Herb Bandage / Bandage
+    T3  2150ms  —  Shield Charger
+    T4  4150ms  —  Vita Syringe
+    T5  5150ms  —  Instant Shield Charger
+    T6  custom  —  set your own value (default 1000ms, max 8000ms)
+
+  CONFIGURATION OPTIONS:
+    Toggle Key     — pause/resume QuickSelect (default: Numpad Minus)
+    Q-Key          — the key that opens your quick-use wheel (default: Q)
+    H-Key          — the key that frees your hand after use (default: H)
+    Q-Hold         — how long Q is held before slot selection (50-2000ms)
+    Active (✓)     — enable/disable each slot individually
+    Trigger key    — the key you press to trigger this slot
+    Slot           — which wheel slot to select (1-9)
+    Timer          — which LMB duration preset to use for this slot
+    H              — whether to press H after item use for this slot
+
+  TIPS:
+    - Test with a low-value item first before using in-game.
+    - If the item is only partially used, increase the LMB timer (T+1 or T+2).
+    - If the wheel closes too fast, increase Q-Hold by 50ms increments.
+    - Toggle QuickSelect off (toggle key) when typing in chat to avoid
+      accidentally triggering slots.
+    - The Arrow version uses Pos1 (Home) as the toggle key by default.
 
 CROSSHAIR OVERLAY (Pro)
   A transparent, click-through crosshair drawn directly on your
@@ -384,6 +441,9 @@ PRO FUNKTIONEN (5,49 EUR einmalig)
     wenn du die Tasten anderweitig brauchst
   - Vibrance Restore: Eigene Vibrance wird beim Start
     gespeichert und beim Beenden wiederhergestellt
+  - QuickSelect: Taste druecken → Item automatisch nutzen
+    (Q halten → Slot → LMB halten → H fuer freie Hand).
+    5 Slots, 6 LMB-Timer-Voreinstellungen. [PRO]
   - Offline-Lizenz: nach Aktivierung kein Internet noetig
 
 PROFILE (Standard)
@@ -440,6 +500,8 @@ BEDIENUNG
     Numpad *         ->  Timer-Overlay an/aus (Pro)
     CapsLock         ->  Autorun an/aus (Pro)
     M (halten)       ->  Evakuierungs-Timer auf Karte scannen (Pro)
+    3/4/5 (Standard) ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
+    Numpad -         ->  QuickSelect an/aus (Pro)
 
     Funktioniert mit und ohne Shift, NumLock an oder aus.
 
@@ -453,6 +515,8 @@ BEDIENUNG
     Entf                ->  Timer-Overlay an/aus (Pro)
     CapsLock            ->  Autorun an/aus (Pro)
     M (halten)          ->  Evakuierungs-Timer auf Karte scannen (Pro)
+    3/4/5 (Standard)    ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
+    Pos1 (Home)         ->  QuickSelect an/aus (Pro)
 
   Tray-Icon (Rechtsklick):
     - Profile wechseln
@@ -484,7 +548,8 @@ AUTORUN (Pro)
   Waehrend Autorun aktiv:
     CapsLock nochmal  ->  Autorun stoppen
     Shift             ->  Sprint an/aus (nochmal druecken fuer Gehen)
-    W oder S          ->  Autorun abbrechen, Taste wird ans Spiel weitergegeben
+    W                 ->  Stoppt Injektion — Charakter laeuft weiter bis W losgelassen
+    S                 ->  Autorun komplett abbrechen, Taste ans Spiel weitergegeben
     C                 ->  Slide ausloesen (waehrend noch Bewegung vorwaerts), dann stoppen
 
   Sprint-Modus: Einstellungen -> Autorun -> Modus: Sprint
@@ -544,6 +609,42 @@ MAP SCANNER (Pro)
     - Haltedauer (wie lange M gehalten werden muss)
     - Position des Overlays (6 Optionen)
     - Schriftgroesse und Farbe
+
+QUICKSELECT (Pro)
+  Druecke eine Taste um automatisch ein Item aus dem Schnellradzusatz zu benutzen.
+  BrightRaider fuehrt die gesamte Sequenz aus:
+    1. Q halten (Rad oeffnet sich)
+    2. Slot-Taste druecken (Item ausgewaehlt)
+    3. Q loslassen (Item in der Hand)
+    4. Linke Maustaste halten fuer die eingestellte Dauer (Item benutzt)
+    5. H druecken (Waffe/Hand freimachen) — optional, pro Slot einstellbar
+
+  Standard-Trigger-Tasten: 3, 4, 5 (Zahlentasten ueber den Buchstaben, nicht Numpad)
+  Diese Tasten werden abgefangen waehrend QuickSelect aktiv ist.
+
+  EINRICHTEN:
+    1. Rechtsklick Tray -> Einstellungen -> QuickSelect... [PRO]
+    2. "QuickSelect aktivieren" ankreuzen
+    3. Auf Bind-Schaltflaeche klicken und Taste fuer jeden Slot druecken
+    4. Rad-Slot-Nummer eintragen (1-9, entspricht deiner Spielzuordnung)
+    5. LMB-Timer passend zum Item-Typ auswaehlen (T1-T6)
+    6. H-Taste per Slot aktivieren falls erwuenscht
+    7. OK klicken
+
+  LMB-TIMER VOREINSTELLUNGEN:
+    T1  1150ms  —  Adrenalinspritze
+    T2  1650ms  —  Kraeuterverband / Verband
+    T3  2150ms  —  Schildauflader
+    T4  4150ms  —  Vita-Spritze
+    T5  5150ms  —  Sofort-Schildauflader
+    T6  frei    —  eigenen Wert einstellen (Standard 1000ms, max 8000ms)
+
+  TIPPS:
+    - Erst mit einem guenstigen Item testen bevor du es im Spiel nutzt.
+    - Item nur teilweise benutzt? LMB-Timer erhoehen (naechsten T nehmen).
+    - Rad schliesst zu frueh? Q-Haltezeit um 50ms erhoehen.
+    - QuickSelect per Toggle-Taste pausieren wenn du in der Lobby
+      oder im Chat tipps.
 
 CROSSHAIR-OVERLAY (Pro)
   Ein transparentes, click-through Fadenkreuz direkt auf dem

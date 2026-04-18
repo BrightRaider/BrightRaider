@@ -16,8 +16,14 @@ releases/v4-free/*.cs
 build/
 tools/
 build_v*.ps1
+build_*_test.ps1
+build_numpad_only.ps1
+build_lmb_test.ps1
 *.pdb
 *.exe.config
+
+# Internal checklists
+docs/RELEASE_CHECKLIST.md
 
 # EXE files — only release EXEs are tracked
 *.exe

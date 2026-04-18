@@ -4,7 +4,7 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, ~300 KB.
+One EXE, zero dependencies, ~330 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.7.2-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
@@ -57,6 +57,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro (€5.49)
+- **QuickSelect** — press a single key to automatically use an item from your quick-use wheel. Handles everything: hold Q → select slot → release Q → hold LMB → press H. 5 independent slots, 6 LMB timer presets (Adrenalin Syringe, Bandage, Shield Charger…), Q and H keys freely rebindable. Toggle with Numpad− or Pos1. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter. Zone weights configurable (Settings → Zones...) — reduce corner influence if your HUD covers them.
 - **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
 - **Evac Alarm** — get a red toast + sound alert when an evac timer drops below your configured threshold (set in minutes + seconds). Configure inside Settings → Map Scanner → Settings.
@@ -126,6 +127,8 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad 0 (hold 600ms) | Audio Ducking on/off | Pro |
 | Numpad + | Toggle crosshair | Pro |
 | Numpad * | Toggle timer overlay | Pro |
+| Numpad − | Toggle QuickSelect on/off | Pro |
+| 3 / 4 / 5 | QuickSelect slot 1/2/3 | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
@@ -142,6 +145,8 @@ Works with NumLock on or off. **Tip: keep NumLock off while playing** — with N
 | Arrow Up (hold 600ms) | Audio Ducking on/off | Pro |
 | Insert | Toggle crosshair | Pro |
 | Delete / Entf | Toggle timer overlay | Pro |
+| Pos1 / Home | Toggle QuickSelect on/off | Pro |
+| 3 / 4 / 5 | QuickSelect slot 1/2/3 | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
@@ -217,7 +222,7 @@ Yes. BrightRaider adjusts your display, not the game.
 No. It uses the same Windows APIs as your monitor settings.
 
 **Do I need Pro?**
-Free is fully functional. Pro adds automatic switching so you never take your hand off the mouse.
+Free is fully functional. Pro adds QuickSelect (auto-use items with one key), auto-brightness, map scanner, and more — so you never take your hand off the mouse.
 
 ---
 
@@ -230,7 +235,7 @@ Free is fully functional. Pro adds automatic switching so you never take your ha
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, ~300 KB.
+Eine EXE, keine Abhängigkeiten, ~330 KB.
 
 ## Warum BrightRaider?
 
@@ -252,6 +257,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
+- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Führt alles automatisch aus: Q halten → Slot wählen → Q loslassen → LMB halten → H drücken. 5 Slots, 6 LMB-Timer-Presets (Adrenalinspritze, Verband, Schildauflader…), Q- und H-Taste frei belegbar. Toggle: Numpad− oder Pos1. 📖 [Anleitung](docs/QuickSelect_Guide.md)
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln. Zonen-Gewichtung konfigurierbar (Einstellungen → Zonen...).
 - **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig.
 - **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt (in Minuten + Sekunden). Einstellungen → Map Scanner → Einstellungen.
@@ -312,6 +318,8 @@ Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrier
 | Numpad 0 (600ms halten) | Audio Ducking an/aus | Pro |
 | Numpad + | Fadenkreuz an/aus | Pro |
 | Numpad * | Timer-Overlay an/aus | Pro |
+| Numpad − | QuickSelect an/aus | Pro |
+| 3 / 4 / 5 | QuickSelect Slot 1/2/3 | Pro |
 | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
@@ -328,6 +336,8 @@ Funktioniert mit NumLock an oder aus. **Tipp: NumLock beim Spielen ausschalten**
 | Pfeil Hoch (600ms halten) | Audio Ducking an/aus | Pro |
 | Einfg | Fadenkreuz an/aus | Pro |
 | Entf | Timer-Overlay an/aus | Pro |
+| Pos1 / Home | QuickSelect an/aus | Pro |
+| 3 / 4 / 5 | QuickSelect Slot 1/2/3 | Pro |
 | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
@@ -381,7 +391,7 @@ Ja. BrightRaider passt den Bildschirm an, nicht das Spiel.
 Nein. Es nutzt die gleichen Windows-APIs wie deine Monitor-Einstellungen.
 
 **Brauche ich Pro?**
-Free ist voll funktionsfähig. Pro fügt automatisches Umschalten hinzu, damit du nie die Hand von der Maus nehmen musst.
+Free ist voll funktionsfähig. Pro fügt QuickSelect (Items mit einer Taste benutzen), Auto-Helligkeit, Map Scanner und mehr hinzu — damit du nie die Hand von der Maus nehmen musst.
 
 </details>
 

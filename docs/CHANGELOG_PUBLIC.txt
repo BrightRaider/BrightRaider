@@ -3,7 +3,49 @@
 ================================================================
 
 
-[ V9.4 ] - Current Version
+[ V9.5 ] - Current Version
+
+  QuickSelect (Pro):
+  - New: Press a configurable key to automatically use an item from your
+    quick-use wheel — no manual wheel-opening or clicks needed.
+    Sequence: hold Q → press slot key → release Q → hold LMB → press H to free hand.
+  - 5 independent action slots, each with its own trigger key, wheel slot,
+    LMB hold duration, and optional H-key (holster) toggle.
+  - Slot names are freely editable — label each slot with the item name.
+    Default setup: Slot 1 = Verband (key 4), Slot 2 = Schildauflader (key 5),
+    Slot 3 = Adrenalin (key 3).
+  - 6 configurable LMB timers (T1–T6) with item presets:
+    T1 Adrenalin Syringe (1150ms), T2 Herb Bandage/Bandage (1650ms),
+    T3 Shield Charger (2150ms), T4 Vita Syringe (4150ms),
+    T5 Instant Shield Charger (5150ms), T6 custom (1000ms default).
+  - Q-key and H-key freely rebindable in dialog.
+    Q-Hold duration configurable (50–2000ms, default 200ms).
+  - Toggle key (default Numpad Minus / Pos1) pauses/resumes QuickSelect
+    with a toast notification.
+  - QuickSelect is now enabled by default.
+  - Configure under Settings → QuickSelect... [PRO]
+
+  Map Scanner (Pro):
+  - Fixed: 4:3 resolutions (e.g. 1920×1440) now work correctly.
+    The game renders in a letterboxed 16:9 area on 4:3 screens — OCR regions
+    are now offset accordingly. (Thanks @ggvelloso for the report!)
+
+  Autorun:
+  - Fixed: pressing W while autorun is active now stops the injection
+    but does NOT release W from the game. Character keeps running/sprinting
+    until you physically release W yourself.
+
+  Performance:
+  - Reduced CPU usage during rapid profile switching. Tray icons for all 9
+    profiles are now pre-rendered at startup instead of redrawn on every switch.
+
+  General:
+  - Toast notifications now appear slightly closer to the taskbar.
+  - Settings are now stored in AppData\Roaming\BrightRaider\ (visible folder).
+    Existing settings from older versions are migrated automatically.
+
+
+[ V9.4 ]
 
   Break Reminder (Free):
   - New: Configurable break reminder — shows an orange toast after a set interval
