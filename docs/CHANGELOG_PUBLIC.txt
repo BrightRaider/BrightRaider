@@ -42,7 +42,8 @@
   General:
   - Toast notifications now appear slightly closer to the taskbar.
   - Settings are now stored in AppData\Roaming\BrightRaider\ (visible folder).
-    Existing settings from older versions are migrated automatically.
+  - V9.3 users: please re-enter your license key once after upgrading
+    (right-click → Enter License). Your key is in the Lemon Squeezy purchase email.
 
 
 [ V9.4 ]
@@ -61,7 +62,7 @@
   General:
   - Version number now shown in the Exit menu item
   - Toast notifications no longer steal focus while a game is in the foreground
-  - Seamless upgrade: V9.3 license is automatically migrated — no re-activation needed
+  - V9.5 supersedes V9.4 — all V9.4 features are included in V9.5
   - Reduced antivirus false positives: removed obfuscation layer that triggered
     packer heuristics. Some detections will always remain — BrightRaider uses a
     low-level keyboard hook and screen capture, the same APIs malware uses.
