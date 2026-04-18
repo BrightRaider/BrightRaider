@@ -10,20 +10,20 @@ Instead of manually opening the wheel, selecting an item, and holding Left Mouse
 
 When you press a QuickSelect trigger key, BrightRaider automatically performs this sequence:
 
-1. **Hold Q** — your quick-use wheel opens
-2. **Press slot key** — the correct item is selected
-3. **Release Q** — item is now in your hand
-4. **Hold Left Mouse Button** — item is used for the configured duration
+1. **Hold Q** — your quick-use wheel opens *(optional, per slot)*
+2. **Press slot key** — the correct item is selected *(optional, per slot)*
+3. **Release Q** — item is now in your hand *(optional, per slot)*
+4. **Hold Left Mouse Button** — item is used for the configured duration *(optional, per slot)*
 5. **Press H** (optional, per slot) — hand is freed after use
 
-All timings are configurable. Everything happens in the background while you stay in control of your mouse and view.
+Each step is independently controllable. Everything happens in the background while you stay in control of your mouse and view.
 
 ---
 
 ## Requirements
 
 - **BrightRaider Pro license** (€5.49 one-time)
-- BrightRaider V9.5 or later
+- BrightRaider V9.5.1 or later
 
 ---
 
@@ -37,6 +37,8 @@ All timings are configurable. Everything happens in the background while you sta
    - Set the **Slot** number — this must match your in-game quick-use wheel slot
    - Pick an **LMB Timer** that matches your item type (see table below)
    - Check the **Active** box (✓) to enable this slot
+   - Check **Q** if you want BrightRaider to open the wheel (uncheck if item is already in hand)
+   - Check **Use** if you want the item auto-used after selection (uncheck for select-only)
    - Check **H** if you want your hand freed after item use
 5. Click **OK** — QuickSelect is active immediately
 
@@ -74,6 +76,8 @@ Pick the timer that matches your item:
 | **Slot** | Which wheel slot to select (1–9) |
 | **Timer** | Which LMB duration preset to use |
 | **H (per slot)** | Whether to press H after item use for this specific slot |
+| **Q (per slot)** | Whether to open the wheel with Q + slot key. Uncheck if the item is already in hand. |
+| **Use (per slot)** | Whether to auto-use the item (LMB hold + H). Uncheck for select-only — picks the item without triggering use. |
 
 ---
 
@@ -119,6 +123,12 @@ A: Check the Slot number — it must match your in-game quick-wheel assignment. 
 
 **Q: I don't want to press H every time.**  
 A: Uncheck the H box for that slot in the settings dialog.
+
+**Q: I just want to select the item without using it.**  
+A: Uncheck the **Use** box for that slot. BrightRaider will open the wheel and select the item, but won't press LMB.
+
+**Q: The item is already in my hand — I just want to use it without going through the wheel.**  
+A: Uncheck the **Q** box for that slot. BrightRaider will skip wheel selection and go straight to LMB + H.
 
 **Q: Can I use a different key than Q to open the wheel?**  
 A: Yes. In the dialog, click the **Q-Key** bind button and press your preferred key.
