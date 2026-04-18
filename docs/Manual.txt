@@ -123,7 +123,7 @@ USAGE
     Numpad *         ->  Toggle timer overlay on/off (Pro)
     CapsLock         ->  Toggle autorun (Pro)
     M (hold)         ->  Scan evacuation timers on map (Pro)
-    3/4/5 (default)  ->  QuickSelect: auto-use slot item (Pro)
+    4/5/6 (default)  ->  QuickSelect: auto-use slot item (Pro)
     Numpad -         ->  Toggle QuickSelect on/off (Pro)
 
     Works with or without Shift, NumLock on or off.
@@ -266,7 +266,7 @@ QUICKSELECT (Pro)
     4. Hold Left Mouse Button for the configured duration (item used)
     5. Press H (holster / free hand) — optional, per slot
 
-  Default trigger keys: 3, 4, 5 (keys above the letter row, not numpad)
+  Default trigger keys: 4, 5, 6 (keys above the letter row, not numpad)
   The keys are intercepted while QuickSelect is active — the game does NOT
   receive them directly (Q handles the slot selection internally).
 
@@ -500,7 +500,7 @@ BEDIENUNG
     Numpad *         ->  Timer-Overlay an/aus (Pro)
     CapsLock         ->  Autorun an/aus (Pro)
     M (halten)       ->  Evakuierungs-Timer auf Karte scannen (Pro)
-    3/4/5 (Standard) ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
+    4/5/6 (Standard) ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
     Numpad -         ->  QuickSelect an/aus (Pro)
 
     Funktioniert mit und ohne Shift, NumLock an oder aus.
@@ -619,7 +619,7 @@ QUICKSELECT (Pro)
     4. Linke Maustaste halten fuer die eingestellte Dauer (Item benutzt)
     5. H druecken (Waffe/Hand freimachen) — optional, pro Slot einstellbar
 
-  Standard-Trigger-Tasten: 3, 4, 5 (Zahlentasten ueber den Buchstaben, nicht Numpad)
+  Standard-Trigger-Tasten: 4, 5, 6 (Zahlentasten ueber den Buchstaben, nicht Numpad)
   Diese Tasten werden abgefangen waehrend QuickSelect aktiv ist.
 
   EINRICHTEN:

@@ -4,7 +4,7 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, ~330 KB.
+One EXE, zero dependencies, ~140 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.7.2-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
@@ -128,7 +128,7 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad + | Toggle crosshair | Pro |
 | Numpad * | Toggle timer overlay | Pro |
 | Numpad − | Toggle QuickSelect on/off | Pro |
-| 3 / 4 / 5 | QuickSelect slot 1/2/3 | Pro |
+| 4 / 5 / 6 | QuickSelect slot 1/2/3 | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
@@ -146,7 +146,7 @@ Works with NumLock on or off. **Tip: keep NumLock off while playing** — with N
 | Insert | Toggle crosshair | Pro |
 | Delete / Entf | Toggle timer overlay | Pro |
 | Pos1 / Home | Toggle QuickSelect on/off | Pro |
-| 3 / 4 / 5 | QuickSelect slot 1/2/3 | Pro |
+| 4 / 5 / 6 | QuickSelect slot 1/2/3 | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 

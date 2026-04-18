@@ -12,8 +12,8 @@
   - 5 independent action slots, each with its own trigger key, wheel slot,
     LMB hold duration, and optional H-key (holster) toggle.
   - Slot names are freely editable — label each slot with the item name.
-    Default setup: Slot 1 = Verband (key 4), Slot 2 = Schildauflader (key 5),
-    Slot 3 = Adrenalin (key 3).
+    Default setup: Slot 1 = Bandage (key D4 / T2, wheel pos 3), Slot 2 = Shield Charger (key D5 / T3, wheel pos 4),
+    Slot 3 = Adrenalin (key D6 / T1, wheel pos 5).
   - 6 configurable LMB timers (T1–T6) with item presets:
     T1 Adrenalin Syringe (1150ms), T2 Herb Bandage/Bandage (1650ms),
     T3 Shield Charger (2150ms), T4 Vita Syringe (4150ms),
@@ -39,10 +39,15 @@
   - Reduced CPU usage during rapid profile switching. Tray icons for all 9
     profiles are now pre-rendered at startup instead of redrawn on every switch.
 
+  Security:
+  - Improved license verification.
+  - License file is now stored in AppData\Roaming\BrightRaider\ (clean, visible path).
+    Note: V9.3/V9.4 users need to re-enter their license key once after updating.
+
   General:
   - Toast notifications now appear slightly closer to the taskbar.
-  - Settings are now stored in AppData\Roaming\BrightRaider\ (visible folder).
-    Existing settings from older versions are migrated automatically.
+  - Config is now stored in AppData\Roaming\BrightRaider\ (visible folder).
+    Config from older versions is migrated automatically.
 
 
 [ V9.4 ]

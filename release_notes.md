@@ -58,7 +58,7 @@ Arc Raiders renders in a letterboxed 16:9 area on 4:3 screens. BrightRaider now 
 
 - **Slot names are editable** — type a custom label for each slot directly in the settings dialog
 - **Enabled by default** — no need to manually enable after install
-- **New default setup:** Slot 1 = Verband (key 4 / T2), Slot 2 = Schildauflader (key 5 / T3), Slot 3 = Adrenalin (key 3 / T1)
+- **New default setup:** Slot 1 = Bandage (key D4 / T2, wheel pos 3), Slot 2 = Shield Charger (key D5 / T3, wheel pos 4), Slot 3 = Adrenalin (key D6 / T1, wheel pos 5) — the way the game should have had it from the start.
 
 ---
 
@@ -68,11 +68,22 @@ Arc Raiders renders in a letterboxed 16:9 area on 4:3 screens. BrightRaider now 
 
 ---
 
+### Security & Antivirus
+
+- **Improved license verification.**
+- **License file moved** to `AppData\Roaming\BrightRaider\` (clean, visible path — no more hidden folder).  
+  ⚠️ **V9.3/V9.4 users: one-time re-activation required** — enter your key when prompted after updating.
+- **Fewer antivirus false positives** compared to previous versions.  
+  BrightRaider uses a low-level keyboard hook and screen capture — the same APIs that malware uses, which is why some AV engines flag tools like this. There is no way around this without a code signing certificate (~$150/year). V9.3 was downloaded 1,400+ times without any reports of harm.  
+  🔍 **[View V9.5 VirusTotal scan](https://www.virustotal.com/gui/file/179dda28e6f8ec36b48f00442f7660a0acb65386293d0fc64ae43bed5ed4e29a?nocache=1)**
+
+---
+
 ### Also in V9.5
 
 - Version number shown in the Exit menu item
 - Toast notifications appear slightly closer to the taskbar
-- Settings now stored in a visible `AppData\Roaming\BrightRaider\` folder — migrated automatically from older versions
+- Config now stored in a visible `AppData\Roaming\BrightRaider\` folder — migrated automatically from older versions
 
 ---
 
