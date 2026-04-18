@@ -1,17 +1,4 @@
-## V9.5.1 — QuickSelect Q + Use toggles
-
-### QuickSelect: Q and Use toggles (per slot)
-
-Two new per-slot checkboxes in the QuickSelect settings:
-
-- **Q** — uncheck to skip the wheel selection (Q hold → slot key → Q release). Useful if the item is already in hand.
-- **Use** — uncheck to skip auto-using the item (LMB hold + H). Useful if you only want to select from the wheel without triggering use.
-
-Both default to enabled — no change in behavior for existing setups.
-
----
-
-## V9.5 — QuickSelect, Evac Alarm, Break Reminder
+## V9.5.1 — QuickSelect, Evac Alarm, Break Reminder
 
 > **Includes all features previously planned for V9.4**, which was merged into this release.
 
@@ -32,6 +19,8 @@ BrightRaider handles the full sequence: hold Q → select slot → release Q →
 - **Q-Hold duration** configurable (50–2000ms, default 200ms)
 - **Toggle key** — pause/resume QuickSelect instantly (Numpad: `Numpad Minus`, Arrow version: `Pos1`)
 - **Per-slot on/off** — enable or disable individual slots without rebinding
+- **Per-slot Q toggle** — uncheck to skip wheel selection (useful if item is already in hand)
+- **Per-slot Use toggle** — uncheck to skip auto-using the item (select only, no LMB+H)
 
 📖 **[QuickSelect Setup Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/QuickSelect_Guide.md)**
 
