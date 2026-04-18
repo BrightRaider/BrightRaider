@@ -72,9 +72,7 @@ Arc Raiders renders in a letterboxed 16:9 area on 4:3 screens. BrightRaider now 
 
 - Version number shown in the Exit menu item
 - Toast notifications appear slightly closer to the taskbar
-- Settings now stored in `AppData\Roaming\BrightRaider\`
-
-> **Note for V9.3 users:** You will need to re-enter your license key once after upgrading (right-click tray icon → Enter License). Your key and email are in the original purchase email from Lemon Squeezy.
+- Settings now stored in a visible `AppData\Roaming\BrightRaider\` folder — migrated automatically from older versions
 
 ---
 
