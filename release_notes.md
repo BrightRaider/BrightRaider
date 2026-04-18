@@ -20,7 +20,7 @@ BrightRaider handles the full sequence: hold Q → select slot → release Q →
 - **Toggle key** — pause/resume QuickSelect instantly (Numpad: `Numpad Minus`, Arrow version: `Pos1`)
 - **Per-slot on/off** — enable or disable individual slots without rebinding
 
-📖 **[QuickSelect Setup Guide](https://github.com/BrightRaider/BrightRaider/releases/download/v9.5/QuickSelect_Guide.md)**
+📖 **[QuickSelect Setup Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/QuickSelect_Guide.md)**
 
 ---
 
