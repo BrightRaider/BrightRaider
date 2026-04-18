@@ -1,3 +1,16 @@
+## V9.5.1 — QuickSelect Q + Use toggles
+
+### QuickSelect: Q and Use toggles (per slot)
+
+Two new per-slot checkboxes in the QuickSelect settings:
+
+- **Q** — uncheck to skip the wheel selection (Q hold → slot key → Q release). Useful if the item is already in hand.
+- **Use** — uncheck to skip auto-using the item (LMB hold + H). Useful if you only want to select from the wheel without triggering use.
+
+Both default to enabled — no change in behavior for existing setups.
+
+---
+
 ## V9.5 — QuickSelect, Evac Alarm, Break Reminder
 
 > **Includes all features previously planned for V9.4**, which was merged into this release.
@@ -74,7 +87,7 @@ Arc Raiders renders in a letterboxed 16:9 area on 4:3 screens. BrightRaider now 
 - **License file moved** to `AppData\Roaming\BrightRaider\` (clean, visible path — no more hidden folder).  
   ⚠️ **V9.3/V9.4 users: one-time re-activation required** — enter your key when prompted after updating.
 - **Fewer antivirus false positives** compared to previous versions.  
-  BrightRaider uses a low-level keyboard hook and screen capture — the same APIs that malware uses, which is why some AV engines flag tools like this. There is no way around this without a code signing certificate (~$150/year). V9.3 was downloaded 1,400+ times without any reports of harm.  
+  BrightRaider uses a low-level keyboard hook and screen capture — the same APIs that malware uses, which is why some AV engines flag tools like this. There is no way around this without a code signing certificate (~$150/year). V9.3 was downloaded 2,000+ times without any reports of harm.  
   🔍 **[View V9.5 VirusTotal scan](https://www.virustotal.com/gui/file/179dda28e6f8ec36b48f00442f7660a0acb65386293d0fc64ae43bed5ed4e29a?nocache=1)**
 
 ---
