@@ -137,7 +137,7 @@ A: Yes. In the dialog, click the **Q-Key** bind button and press your preferred 
 
 ## In-Game Wheel Slot Numbers
 
-In Arc Raiders, your quick-use wheel slots are numbered 1–9.  
+In Arc Raiders, your quick-use wheel slots are numbered 4–6.  
 The number corresponds to the position on the wheel. Check your in-game keybindings  
 to see which number maps to which item slot, then set the Slot field accordingly.
 
