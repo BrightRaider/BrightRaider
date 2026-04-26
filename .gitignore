@@ -45,6 +45,7 @@ releases/v4-free/BrightRaider.cfg
 assets/screenshots/*.jpg
 assets/screenshots/*.JPG
 assets/screenshots/*neu*
+!assets/screenshots/Quicksave.jpg
 Bild und Video/
 
 # Claude internal
