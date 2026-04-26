@@ -36,6 +36,8 @@ QuickSave can drag items between any of these positions:
 | Slot 1–8 | Fast Swap Slots (Quick-Wechsel-Slots) |
 | Pocket 1–3 | Safe Pocket slots 1–3 (Sicherheitstasche) |
 
+![QuickSave Slot Overview](../assets/screenshots/Quicksave.jpg)
+
 > **Tip:** Use it to move consumables (bandages, syringes) into your Safe Pocket before an extraction, or retrieve them quickly at the start of a raid.
 
 ---
