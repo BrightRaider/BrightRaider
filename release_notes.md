@@ -80,9 +80,13 @@ Two new styles added:
 
 ---
 
-### Bug Fix
+### Bug Fixes
 
 - **Profile 1 settings reset on restart** — vibrance (and other values) set for Profile 1 were overwritten with the hardware default on every launch. Profiles 2–9 were not affected. (Thanks to the GitHub reporter!)
+- **QuickSave — cursor drift during drag** — during Hover and Drop phases, BrightRaider now continuously corrects the cursor position every ~8 ms. Mouse movement no longer shifts the cursor off the target slot before the click registers.
+- **Crosshair Dot — pixel artefact at even sizes** — switched from GDI+ FillEllipse (inconsistent at small even sizes) to FillRectangle. Dot is now pixel-perfect and symmetric at all sizes.
+- **Crosshair — minimum size reduced to 1px** (was 4px).
+- **Crosshair — Arc Raiders center dot** — renamed from "−1px offset" to "Arc Raiders center dot (2×2px)". Fixed visual gap: crosshair arms now connect directly to the 2×2 center block with no floating gap.
 
 ---
 

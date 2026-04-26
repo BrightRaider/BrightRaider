@@ -133,6 +133,9 @@ A: Uncheck the **Q** box for that slot. BrightRaider will skip wheel selection a
 **Q: Can I use a different key than Q to open the wheel?**  
 A: Yes. In the dialog, click the **Q-Key** bind button and press your preferred key.
 
+**Q: After pressing H to cancel, QuickSelect just pulls the item out without using it.**  
+A: The game keeps the item in a transitional state briefly after an H-cancel. Wait a moment before triggering QuickSelect again — this is game-side behavior, not a BrightRaider issue.
+
 ---
 
 ## In-Game Wheel Slot Numbers

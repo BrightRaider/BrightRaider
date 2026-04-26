@@ -323,6 +323,10 @@ QUICKSELECT (Pro)
       position, Q is released. No key press needed for slot selection.
     - H-Key can be bound to MB3, MB4, or MB5 in addition to keyboard keys.
     - Apply button saves settings without closing the dialog.
+    - After pressing H to cancel an item mid-use, wait a moment before
+      triggering QuickSelect again. The game keeps the item in a transitional
+      state briefly — retriggering immediately will pull the item out without
+      using it. This is game-side behavior.
 
 QUICKSAVE (Pro)
   QuickSave automatically drags items between your inventory and your Safe Pocket
@@ -734,6 +738,10 @@ QUICKSELECT (Pro)
       die Rad-Position, Q wird losgelassen. Kein Tastendruck noetig.
     - H-Taste kann auch mit MB3, MB4 oder MB5 belegt werden.
     - Apply-Schaltflaeche speichert Einstellungen ohne Dialog zu schliessen.
+    - Nach H-Druck (Holster) waehrend einer Nutzung kurz warten bevor
+      QuickSelect erneut getriggert wird. Das Spiel haelt das Item kurz in
+      einem Uebergangszustand — sofortiges Retriggern zieht das Item nur raus
+      ohne es zu benutzen. Dies ist spiel-seitiges Verhalten.
 
 QUICKSAVE (Pro)
   QuickSave zieht automatisch Items zwischen Inventar und Sicherheitstasche —
