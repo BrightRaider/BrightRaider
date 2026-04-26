@@ -302,35 +302,6 @@ nav {
   line-height: 1.7;
 }
 
-/* ── BEFORE/AFTER ── */
-.scene-wrapper {
-  position: relative;
-  max-width: 900px;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  cursor: col-resize;
-  user-select: none;
-}
-
-#slider-handle {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  width: 44px; height: 44px;
-  background: var(--accent);
-  border-radius: 50%;
-  z-index: 11;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 24px rgba(245,166,35,0.5);
-  font-size: 16px;
-  pointer-events: none;
-  color: #000;
-  font-weight: 900;
-}
-
 /* ── HOW IT WORKS ── */
 .how-grid {
   display: grid;
@@ -1528,6 +1499,7 @@ footer {
         <li class="on"><span class="icon">✓</span> <span data-en="Everything in Free" data-de="Alles aus Free">Everything in Free</span></li>
         <li class="pro-on"><span class="icon">★</span> <span data-en="Auto-Brightness — adapts automatically" data-de="Auto-Helligkeit — passt sich automatisch an">Auto-Brightness — adapts automatically</span></li>
         <li class="pro-on"><span class="icon">★</span> <span data-en="QuickSelect — one key item usage" data-de="QuickSelect — Item-Nutzung per Tastendruck">QuickSelect — one key item usage</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="QuickSave — drag items to Safe Pocket" data-de="QuickSave — Items in die Safe Pocket ziehen">QuickSave — drag items to Safe Pocket</span></li>
         <li class="pro-on"><span class="icon">★</span> <span data-en="Map Scanner + Evac Alarm" data-de="Karten-Scanner + Evak-Alarm">Map Scanner + Evac Alarm</span></li>
         <li class="pro-on"><span class="icon">★</span> <span data-en="Autorun (CapsLock)" data-de="Autorun (CapsLock)">Autorun (CapsLock)</span></li>
         <li class="pro-on"><span class="icon">★</span> <span data-en="Crosshair Overlay — 6 styles, EAC-safe" data-de="Crosshair-Overlay — 6 Stile, EAC-sicher">Crosshair Overlay — 6 styles, EAC-safe</span></li>
@@ -1710,44 +1682,6 @@ footer {
     resolveImgs();
   }
 })();
-
-// ── BEFORE/AFTER SLIDER ──
-const container = document.getElementById('slider');
-const beforePanel = document.getElementById('before-panel');
-const sliderLine = document.getElementById('slider-line');
-const sliderHandle = document.getElementById('slider-handle');
-let isDragging = false;
-
-function updateSlider(x) {
-  const rect = container.getBoundingClientRect();
-  let pct = (x - rect.left) / rect.width;
-  pct = Math.max(0.02, Math.min(0.98, pct));
-  const pctRight = (1 - pct) * 100;
-  beforePanel.style.clipPath = `inset(0 ${pctRight}% 0 0)`;
-  sliderLine.style.left = (pct * 100) + '%';
-  sliderHandle.style.left = (pct * 100) + '%';
-}
-
-container.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); });
-document.addEventListener('mousemove', (e) => { if (!isDragging) return; updateSlider(e.clientX); });
-document.addEventListener('mouseup', () => { isDragging = false; });
-container.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); }, { passive: true });
-document.addEventListener('touchmove', (e) => { if (!isDragging) return; updateSlider(e.touches[0].clientX); }, { passive: true });
-document.addEventListener('touchend', () => { isDragging = false; });
-
-let progress = 0.5, dir = -1, autoAnim = true;
-function autoSlide() {
-  if (!autoAnim) return;
-  progress += dir * 0.003;
-  if (progress <= 0.2) dir = 1;
-  if (progress >= 0.8) dir = -1;
-  const rect = container.getBoundingClientRect();
-  updateSlider(rect.left + progress * rect.width);
-  requestAnimationFrame(autoSlide);
-}
-container.addEventListener('mousedown', () => { autoAnim = false; });
-container.addEventListener('touchstart', () => { autoAnim = false; }, { passive: true });
-setTimeout(autoSlide, 1200);
 
 // ── FAQ ──
 function toggleFaq(btn) {
