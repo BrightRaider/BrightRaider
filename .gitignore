@@ -44,8 +44,30 @@ releases/v4-free/BrightRaider.cfg
 # Screenshots / videos (local only)
 assets/screenshots/*.jpg
 assets/screenshots/*.JPG
+assets/screenshots/*.png
+assets/screenshots/*.PNG
 assets/screenshots/*neu*
 !assets/screenshots/Quicksave.jpg
+
+# Release archives + debug output
+releases/*.7z
+releases/*.zip
+releases/v9.6-debug/
+
+# Old release EXEs (already on GitHub as release assets, not needed in repo)
+releases/v4-free/*.exe
+releases/v5/
+releases/v6/
+releases/v7/
+releases/v8/
+releases/v8.1/
+releases/v9/
+releases/v9.1/
+releases/v9.2/
+releases/v9.3/
+releases/v9.4/
+releases/v9.5/
+releases/v9.5.1/
 Bild und Video/
 
 # Claude internal
