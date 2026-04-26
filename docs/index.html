@@ -4,1107 +4,1681 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BrightRaider — See in the Dark. No Ban.</title>
+<meta name="ext-resource-dependency" content="assets/map-scanner.png" data-resource-id="imgMapScanner" />
+<meta name="ext-resource-dependency" content="assets/tray.png" data-resource-id="imgTray" />
+<meta name="ext-resource-dependency" content="assets/submenu.png" data-resource-id="imgSubmenu" />
+<meta name="ext-resource-dependency" content="assets/settings-new.png" data-resource-id="imgSettings" />
+<meta name="ext-resource-dependency" content="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/after.png" data-resource-id="imgAfter" />
+<meta name="ext-resource-dependency" content="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/befor.png" data-resource-id="imgBefore" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0b0d;
-    --bg2: #0f1114;
-    --bg3: #141619;
-    --accent: #f5a623;
-    --accent2: #ff6b35;
-    --text: #e8e9ea;
-    --muted: #9ca3af;
-    --border: #1e2124;
-    --green: #22c55e;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Barlow', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* NOISE TEXTURE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 16px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10,11,13,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 22px;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--text); }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--text); }
-
-  .nav-cta {
-    background: var(--accent);
-    color: #000 !important;
-    padding: 8px 20px;
-    border-radius: 3px;
-    font-weight: 600 !important;
-    transition: background 0.2s !important;
-  }
-
-  .nav-cta:hover { background: #fbbf24 !important; color: #000 !important; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 120px 40px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -200px; right: -200px;
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; left: -100px;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(255,107,53,0.04) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 30px; height: 2px;
-    background: var(--accent);
-  }
-
-  .hero h1 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(52px, 8vw, 96px);
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    max-width: 900px;
-    margin-bottom: 24px;
-  }
-
-  .hero h1 .highlight {
-    color: var(--accent);
-    position: relative;
-  }
-
-  .hero h1 .dim {
-    color: var(--muted);
-  }
-
-  .hero-sub {
-    font-size: 18px;
-    color: var(--muted);
-    max-width: 540px;
-    margin-bottom: 40px;
-    line-height: 1.7;
-  }
-
-  .hero-sub strong { color: var(--text); }
-
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 60px;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--accent);
-    color: #000;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 14px 32px;
-    border-radius: 3px;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-
-  .btn-primary:hover {
-    background: #fbbf24;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(245,166,35,0.3);
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: transparent;
-    color: var(--text);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 14px 24px;
-    border-radius: 3px;
-    text-decoration: none;
-    border: 1px solid var(--border);
-    transition: all 0.2s;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--muted);
-    color: var(--text);
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .stat-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: var(--text);
-    letter-spacing: -0.02em;
-  }
-
-  .stat-num span { color: var(--accent); }
-
-  .stat-label {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-
-  /* BEFORE/AFTER SECTION */
-  .section { padding: 100px 40px; }
-
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: clamp(36px, 5vw, 60px);
-    text-transform: uppercase;
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-
-  .section-sub {
-    color: var(--muted);
-    font-size: 17px;
-    max-width: 540px;
-    margin-bottom: 60px;
-  }
-
-  /* SLIDER */
-  .slider-container {
-    position: relative;
-    max-width: 900px;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    cursor: col-resize;
-    user-select: none;
-  }
-
-  .slider-after, .slider-before {
-    width: 100%;
-    display: block;
-  }
-
-  .slider-after {
-    position: relative;
-    z-index: 1;
-  }
-
-  .slider-before {
-    position: absolute;
-    top: 0; left: 0;
-    z-index: 2;
-    clip-path: inset(0 50% 0 0);
-    transition: clip-path 0s;
-  }
-
-  .slider-line {
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: var(--accent);
-    z-index: 10;
-    transform: translateX(-50%);
-  }
-
-  .slider-handle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 44px; height: 44px;
-    background: var(--accent);
-    border-radius: 50%;
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 20px rgba(245,166,35,0.5);
-    font-size: 18px;
-    color: #000;
-    font-weight: 900;
-  }
-
-  .slider-label {
-    position: absolute;
-    bottom: 16px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 3px;
-    z-index: 12;
-  }
-
-  .slider-label.before {
-    left: 16px;
-    background: rgba(0,0,0,0.7);
-    color: var(--muted);
-  }
-
-  .slider-label.after {
-    right: 16px;
-    background: rgba(245,166,35,0.15);
-    color: var(--accent);
-    border: 1px solid rgba(245,166,35,0.3);
-  }
-
-  /* Fake before/after images using CSS gradients */
-  .fake-scene {
-    width: 100%;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .fake-scene-dark {
-    background: linear-gradient(135deg, #060608 0%, #0d0e10 30%, #080910 60%, #050607 100%);
-  }
-
-  .fake-scene-bright {
-    background: linear-gradient(135deg, #1a1e24 0%, #252b35 30%, #1e2530 60%, #171d26 100%);
-  }
-
-  /* DARK CAVE SIMULATION */
-  .cave-element {
-    position: absolute;
-    border-radius: 2px;
-  }
-
-  /* HOW IT WORKS */
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    max-width: 900px;
-    margin-top: 60px;
-  }
-
-  .how-item {
-    background: var(--bg2);
-    padding: 40px 32px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .how-item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--border);
-  }
-
-  .how-item:first-child::before {
-    background: var(--accent);
-  }
-
-  .how-num {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 64px;
-    color: var(--border);
-    line-height: 1;
-    margin-bottom: 16px;
-    letter-spacing: -0.03em;
-  }
-
-  .how-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-bottom: 12px;
-  }
-
-  .how-text {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* PRICING */
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    max-width: 760px;
-  }
-
-  .pricing-card {
-    background: var(--bg2);
-    padding: 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .pricing-card.pro {
-    background: var(--bg3);
-    border: 1px solid rgba(245,166,35,0.2);
-  }
-
-  .pricing-card.pro::before {
-    content: 'MOST POPULAR';
-    position: absolute;
-    top: 20px; right: -28px;
-    background: var(--accent);
-    color: #000;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    padding: 4px 40px;
-    transform: rotate(45deg);
-    transform-origin: center;
-  }
-
-  .plan-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 16px;
-  }
-
-  .plan-price {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 56px;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .plan-price .currency {
-    font-size: 24px;
-    vertical-align: top;
-    margin-top: 8px;
-    display: inline-block;
-    color: var(--muted);
-    font-weight: 600;
-  }
-
-  .plan-price-sub {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 32px;
-  }
-
-  .plan-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 32px;
-  }
-
-  .plan-features li {
-    font-size: 15px;
-    color: var(--muted);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .plan-features li.active { color: var(--text); }
-
-  .plan-features li::before {
-    content: '—';
-    color: var(--border);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .plan-features li.active::before {
-    content: '✓';
-    color: var(--green);
-    font-weight: 700;
-  }
-
-  .plan-features li.pro-only::before {
-    content: '✓';
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  .plan-features li.pro-only { color: var(--text); }
-
-  .btn-plan {
-    display: block;
-    text-align: center;
-    padding: 14px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: all 0.2s;
-  }
-
-  .btn-plan.free {
-    border: 1px solid var(--border);
-    color: var(--text);
-  }
-
-  .btn-plan.free:hover { border-color: var(--muted); }
-
-  .btn-plan.paid {
-    background: var(--accent);
-    color: #000;
-  }
-
-  .btn-plan.paid:hover {
-    background: #fbbf24;
-    box-shadow: 0 4px 20px rgba(245,166,35,0.3);
-  }
-
-  /* CHEAT SECTION */
-  .cheat-section {
-    padding: 80px 40px;
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .cheat-inner {
-    max-width: 760px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-
-  .cheat-icon {
-    font-size: 48px;
-    line-height: 1;
-  }
-
-  .cheat-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 36px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
-  .cheat-title span { color: var(--green); }
-
-  .cheat-text {
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .cheat-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    list-style: none;
-  }
-
-  .cheat-list li {
-    font-size: 14px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .cheat-list li::before {
-    content: '✓';
-    color: var(--green);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  /* HOTKEYS */
-  .hotkeys-section {
-    padding: 100px 40px;
-    background: var(--bg);
-  }
-
-  .hotkeys-table {
-    max-width: 600px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-
-  .hotkeys-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hotkeys-row:last-child { border-bottom: none; }
-
-  .hotkeys-row.header {
-    background: var(--bg3);
-  }
-
-  .hotkeys-cell {
-    padding: 14px 20px;
-    font-size: 14px;
-    color: var(--muted);
-    border-right: 1px solid var(--border);
-  }
-
-  .hotkeys-cell:last-child { border-right: none; }
-
-  .hotkeys-row.header .hotkeys-cell {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  kbd {
-    display: inline-block;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 2px 8px;
-    font-family: monospace;
-    font-size: 13px;
-    color: var(--text);
-  }
-
-  .badge-pro {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    background: rgba(245,166,35,0.15);
-    color: var(--accent);
-    border: 1px solid rgba(245,166,35,0.3);
-    padding: 2px 8px;
-    border-radius: 2px;
-  }
-
-  .badge-free {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    background: rgba(34,197,94,0.1);
-    color: var(--green);
-    border: 1px solid rgba(34,197,94,0.2);
-    padding: 2px 8px;
-    border-radius: 2px;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 40px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .footer-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
-    color: var(--accent);
-  }
-
-  .footer-logo span { color: var(--muted); }
-
-  .footer-links {
-    display: flex;
-    gap: 24px;
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--text); }
-
-  .footer-copy {
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  /* DIVIDER */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0 40px;
-  }
-
-  /* DOWNLOAD SECTION */
-  .download-section {
-    padding: 120px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .download-section::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(245,166,35,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .download-section .section-title { font-size: clamp(48px, 7vw, 80px); }
-  .download-section .section-sub { max-width: 440px; margin: 0 auto 40px; }
-  .download-section .hero-buttons { justify-content: center; }
-
-  /* FAKE BEFORE/AFTER using CSS art */
-  .scene-wrapper {
-    position: relative;
-    max-width: 900px;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    cursor: col-resize;
-    user-select: none;
-  }
-
-  .scene-canvas {
-    width: 100%;
-    height: 360px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .fade-up {
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .fade-up-1 { animation-delay: 0.1s; }
-  .fade-up-2 { animation-delay: 0.2s; }
-  .fade-up-3 { animation-delay: 0.3s; }
-  .fade-up-4 { animation-delay: 0.4s; }
-
-  @media (max-width: 768px) {
-    nav { padding: 12px 20px; }
-    .nav-links { display: none; }
-    .hero { padding: 100px 20px 60px; }
-    .section { padding: 60px 20px; }
-    .how-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .cheat-inner { grid-template-columns: 1fr; gap: 20px; }
-    .cheat-list { grid-template-columns: 1fr; }
-    .footer { padding: 30px 20px; flex-direction: column; align-items: flex-start; }
-    .hero-stats { gap: 24px; }
-    .download-section { padding: 80px 20px; }
-    .hotkeys-section { padding: 60px 20px; }
-  }
+:root {
+  --bg: #0a0b0d;
+  --bg2: #0f1114;
+  --bg3: #141619;
+  --accent: #f5a623;
+  --accent-hover: #fbbf24;
+  --text: #e8e9ea;
+  --muted: #9ca3af;
+  --border: #1e2124;
+  --green: #22c55e;
+  --red: #ef4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10,11,13,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--text); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  background: var(--accent) !important;
+  color: #000 !important;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-weight: 700 !important;
+}
+.nav-cta:hover { background: var(--accent-hover) !important; }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.lang-btn.active {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 30px; height: 2px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  max-width: 900px;
+  margin-bottom: 24px;
+}
+.hero h1 .highlight { color: var(--accent); }
+.hero h1 .dim { color: var(--muted); }
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 560px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.hero-sub strong { color: var(--text); }
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #000;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(245,166,35,0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.stat { display: flex; flex-direction: column; gap: 2px; }
+
+.stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.stat-num .accent { color: var(--accent); }
+.stat-num .green { color: var(--green); }
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── SHARED ── */
+.divider { height: 1px; background: var(--border); margin: 0 40px; }
+.section { padding: 100px 40px; }
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 60px);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.section-sub {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 540px;
+  margin-bottom: 56px;
+  line-height: 1.7;
+}
+
+/* ── BEFORE/AFTER ── */
+.scene-wrapper {
+  position: relative;
+  max-width: 900px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: col-resize;
+  user-select: none;
+}
+
+#slider-handle {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 44px; height: 44px;
+  background: var(--accent);
+  border-radius: 50%;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px rgba(245,166,35,0.5);
+  font-size: 16px;
+  pointer-events: none;
+  color: #000;
+  font-weight: 900;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 900px;
+}
+
+.how-item {
+  background: var(--bg2);
+  padding: 40px 32px;
+  position: relative;
+}
+
+.how-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--border);
+}
+.how-item:first-child::before { background: var(--accent); }
+
+.how-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.how-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.how-text { color: var(--muted); font-size: 15px; line-height: 1.65; }
+
+/* ── PRO FEATURES ── */
+.pro-section {
+  padding: 100px 40px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 960px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.pro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  max-width: 960px;
+}
+
+.pro-card {
+  background: var(--bg);
+  padding: 32px 28px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.pro-card:hover { border-color: rgba(245,166,35,0.3); }
+
+.pro-card-icon {
+  font-size: 11px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.2);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.pro-card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.pro-card-text { color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+/* ── ANTI-CHEAT ── */
+.cheat-section {
+  padding: 80px 40px;
+  background: var(--bg);
+}
+
+.cheat-inner {
+  max-width: 860px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.cheat-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 4vw, 48px);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.cheat-title .green { color: var(--green); }
+
+.cheat-text { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+.check-list li {
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.check-list li .ck {
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.check-list li .cr {
+  color: var(--red);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+
+.cheat-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cheat-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg2);
+  padding: 16px 24px;
+  border: 1px solid var(--border);
+}
+.cheat-badge-row:first-child { border-radius: 4px 4px 0 0; }
+.cheat-badge-row:last-child { border-radius: 0 0 4px 4px; }
+
+.cheat-badge-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-safe {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: rgba(34,197,94,0.1);
+  color: var(--green);
+  border: 1px solid rgba(34,197,94,0.25);
+  padding: 3px 12px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+/* ── PRICING ── */
+.pricing-section {
+  padding: 100px 40px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2px;
+  max-width: 820px;
+}
+
+.pricing-card {
+  background: var(--bg);
+  padding: 40px;
+  border: 1px solid var(--border);
+}
+.pricing-card.pro {
+  background: var(--bg3);
+  border: 1px solid rgba(245,166,35,0.3);
+  position: relative;
+}
+
+.pro-tag {
+  position: absolute;
+  top: -1px; right: 28px;
+  background: var(--accent);
+  color: #000;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 4px 14px;
+  text-transform: uppercase;
+}
+
+.plan-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.plan-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.plan-price .currency {
+  font-size: 24px;
+  color: var(--muted);
+  font-weight: 600;
+  vertical-align: top;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.plan-price-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.plan-divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.plan-features li {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.plan-features li.off { color: var(--muted); }
+.plan-features li.on { color: var(--text); }
+.plan-features li.pro-on { color: var(--text); }
+
+.plan-features li .icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 14px;
+  text-align: center;
+  font-size: 12px;
+}
+.plan-features li.off .icon { color: var(--border); }
+.plan-features li.on .icon { color: var(--green); }
+.plan-features li.pro-on .icon { color: var(--accent); }
+
+.btn-plan {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.btn-plan.free { border: 1px solid var(--border); color: var(--muted); }
+.btn-plan.free:hover { border-color: var(--muted); color: var(--text); }
+.btn-plan.paid { background: var(--accent); color: #000; }
+.btn-plan.paid:hover { background: var(--accent-hover); box-shadow: 0 4px 24px rgba(245,166,35,0.35); }
+
+/* ── FAQ ── */
+.faq-section { padding: 100px 40px; }
+
+.faq-list {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  overflow: hidden;
+}
+.faq-item:first-child { border-radius: 4px 4px 0 0; }
+.faq-item:last-child { border-radius: 0 0 4px 4px; }
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.faq-q-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.faq-icon {
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 0 24px 20px;
+}
+.faq-a a { color: var(--accent); text-decoration: none; }
+.faq-a a:hover { text-decoration: underline; }
+
+/* ── HOTKEYS ── */
+.hotkeys-section { padding: 100px 40px; background: var(--bg2); border-top: 1px solid var(--border); }
+
+.hotkeys-table {
+  max-width: 640px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.hotkeys-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 80px;
+  border-bottom: 1px solid var(--border);
+}
+.hotkeys-row:last-child { border-bottom: none; }
+.hotkeys-row.header { background: var(--bg3); }
+
+.hotkeys-cell {
+  padding: 13px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  border-right: 1px solid var(--border);
+}
+.hotkeys-cell:last-child { border-right: none; text-align: center; }
+.hotkeys-row.header .hotkeys-cell {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+kbd {
+  display: inline-block;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.badge-pro {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(245,166,35,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(245,166,35,0.25);
+  padding: 2px 7px; border-radius: 2px;
+}
+
+.badge-free {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(34,197,94,0.1);
+  color: var(--green);
+  border: 1px solid rgba(34,197,94,0.2);
+  padding: 2px 7px; border-radius: 2px;
+}
+
+/* ── DOWNLOAD CTA ── */
+.cta-section {
+  padding: 120px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section .hero-buttons { justify-content: center; }
+.cta-section .section-sub { max-width: 400px; margin-left: auto; margin-right: auto; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 36px 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--accent);
+}
+.footer-logo span { color: var(--muted); }
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--text); }
+
+.footer-copy { color: var(--muted); font-size: 13px; }
+
+/* ── V9.5 BANNER ── */
+.version-banner {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.version-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(245,166,35,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(245,166,35,0.3);
+  padding: 3px 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.version-items {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.version-item {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.version-item strong { color: var(--text); font-weight: 600; }
+.version-item::before { content: '—'; color: var(--border); }
+.version-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.version-link:hover { text-decoration: underline; }
+
+/* ── SCREENSHOTS ── */
+.screenshots-section {
+  padding: 100px 40px;
+  background: var(--bg);
+}
+.screenshots-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 960px;
+}
+.screenshot-thumb {
+  position: relative;
+  cursor: zoom-in;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.screenshot-thumb:hover {
+  border-color: rgba(245,166,35,0.4);
+  transform: translateY(-2px);
+}
+.screenshot-thumb img {
+  display: block;
+  height: 120px;
+  width: auto;
+  max-width: 220px;
+  object-fit: cover;
+}
+.screenshot-thumb-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  padding: 20px 10px 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.screenshot-thumb:hover .screenshot-thumb-label { opacity: 1; }
+.screenshot-thumb-badge {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.screenshot-thumb-badge.pro {
+  background: rgba(245,166,35,0.2);
+  color: var(--accent);
+  border: 1px solid rgba(245,166,35,0.3);
+}
+.screenshot-thumb-badge.free {
+  background: rgba(34,197,94,0.15);
+  color: var(--green);
+  border: 1px solid rgba(34,197,94,0.25);
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  padding: 40px;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-shadow: 0 0 80px rgba(0,0,0,0.8);
+}
+.lightbox-caption {
+  position: absolute;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px; right: 32px;
+  background: none; border: none;
+  color: var(--muted); font-size: 28px;
+  cursor: pointer; line-height: 1;
+  transition: color 0.2s;
+}
+.lightbox-close:hover { color: var(--text); }
+.lightbox-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 12px 16px;
+  transition: all 0.2s;
+}
+.lightbox-nav:hover { color: var(--text); border-color: var(--muted); }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+/* ── TESTIMONIALS ── */
+.testimonials-section {
+  padding: 100px 40px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 960px;
+  margin-top: 56px;
+}
+.testimonial-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+.testimonial-card:hover { border-color: rgba(245,166,35,0.25); }
+.testimonial-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.testimonial-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.testimonial-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+.testimonial-time {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: auto;
+}
+.testimonial-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+}
+.testimonial-text strong { color: var(--text); }
+.testimonial-source {
+  font-size: 11px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--border);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.testimonial-source::before {
+  content: '';
+  display: inline-block;
+  width: 10px; height: 10px;
+  background: #6e7681;
+  border-radius: 50%;
+}
+.testimonial-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(245,166,35,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(245,166,35,0.25);
+  padding: 2px 7px; border-radius: 2px;
+  margin-left: auto;
+}
+
+/* ── STICKY CTA ── */
+.sticky-cta {
+  position: fixed;
+  bottom: -80px;
+  left: 0; right: 0;
+  z-index: 200;
+  background: rgba(10,11,13,0.95);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(245,166,35,0.2);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: bottom 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.sticky-cta.visible { bottom: 0; }
+.sticky-cta-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.sticky-cta-text span { color: var(--accent); }
+.sticky-cta-sub { font-size: 13px; color: var(--muted); margin-top: 1px; }
+.sticky-cta-buttons { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+.sticky-close {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 20px; padding: 4px 8px; line-height: 1; flex-shrink: 0;
+  transition: color 0.2s;
+}
+.sticky-close:hover { color: var(--text); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.2s; }
+.fade-up-3 { animation-delay: 0.3s; }
+.fade-up-4 { animation-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 12px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .section, .faq-section, .hotkeys-section, .cta-section { padding: 60px 20px; }
+  .pro-section, .cheat-section, .pricing-section { padding: 60px 20px; }
+  .how-grid, .pro-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .cheat-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { gap: 24px; }
+  footer { padding: 30px 20px; flex-direction: column; align-items: flex-start; }
+  .pro-header { flex-direction: column; align-items: flex-start; }
+}
 </style>
+</head>
+<template id="__bundler_thumbnail" data-bg-color="#0a0b0d">
+  <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="500" fill="#0a0b0d"/>
+    <rect x="40" y="40" width="120" height="8" rx="2" fill="#f5a623" opacity="0.9"/>
+    <text x="40" y="130" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#e8e9ea" letter-spacing="-2">BRIGHT</text>
+    <text x="40" y="200" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#f5a623" letter-spacing="-2">RAIDER</text>
+    <rect x="40" y="230" width="340" height="3" rx="1" fill="#1e2124"/>
+    <rect x="40" y="255" width="260" height="8" rx="2" fill="#1e2124"/>
+    <rect x="40" y="273" width="200" height="8" rx="2" fill="#1e2124"/>
+    <rect x="40" y="310" width="140" height="40" rx="3" fill="#f5a623"/>
+    <rect x="196" y="310" width="120" height="40" rx="3" fill="none" stroke="#1e2124" stroke-width="1.5"/>
+  </svg>
+</template>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Bright<span>Raider</span></a>
-  <ul class="nav-links">
-    <li><a href="#how">How it works</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#safe">Anti-Cheat Safe</a></li>
-    <li><a href="https://github.com/BrightRaider/BrightRaider" target="_blank">GitHub</a></li>
-    <li><a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="nav-cta">Download Free</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#how" data-en="How it works" data-de="Funktionsweise">How it works</a></li>
+      <li><a href="#pro" data-en="Pro Features" data-de="Pro Features">Pro Features</a></li>
+      <li><a href="#pricing" data-en="Pricing" data-de="Preise">Pricing</a></li>
+      <li><a href="https://github.com/BrightRaider/BrightRaider" target="_blank">GitHub</a></li>
+      <li><a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="nav-cta" data-en="Get Pro — €5.49" data-de="Pro kaufen — €5.49">Get Pro — €5.49</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="lang-de" onclick="setLang('de')">DE</button>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow fade-up">Built for Arc Raiders</div>
+  <div class="hero-eyebrow fade-up" data-en="The PC layer Arc Raiders is missing" data-de="Die PC-Schicht, die Arc Raiders fehlt">The PC layer Arc Raiders is missing</div>
   <h1 class="fade-up fade-up-1">
-    See enemies<br>
-    <span class="highlight">in the dark.</span><br>
-    <span class="dim">No ban.</span>
+    <span data-en="Arc Raiders.<br><span class='highlight'>Finally</span><br><span class='dim'>complete.</span>" data-de="Arc Raiders.<br><span class='highlight'>Endlich</span><br><span class='dim'>komplett.</span>">Arc Raiders.<br><span class="highlight">Finally</span><br><span class="dim">complete.</span></span>
   </h1>
   <p class="hero-sub fade-up fade-up-2">
-    Arc Raiders has <strong>no brightness slider</strong>. Dark caves, underground tunnels, night raids — you're flying blind. BrightRaider fixes that. <strong>One keypress. Any game. ~180 KB.</strong>
+    <span data-en="No brightness slider. A quick-select wheel built for controllers. No evac timer overlay. No way to mute just the game. BrightRaider adds everything PC players are missing — <strong>without touching a single game file.</strong>" data-de="Kein Helligkeitsregler. Ein Schnellauswahlrad für Controller. Kein Evakuierungs-Timer-Overlay. Keine Möglichkeit, nur das Spiel stummzuschalten. BrightRaider fügt alles hinzu, was PC-Spielern fehlt — <strong>ohne eine einzige Spieldatei zu berühren.</strong>">No brightness slider. A quick-select wheel built for controllers. No evac timer overlay. No way to mute just the game. BrightRaider adds everything PC players are missing — <strong>without touching a single game file.</strong></span>
   </p>
   <div class="hero-buttons fade-up fade-up-3">
-    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-primary">
-      ↓ Download Free
+    <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-primary">
+      <span data-en="Get Pro — €5.49" data-de="Pro kaufen — €5.49">Get Pro — €5.49</span>
     </a>
-    <a href="#pricing" class="btn-secondary">
-      View Pro — €5.49
+    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-secondary">
+      <span data-en="↓ Download Free" data-de="↓ Kostenlos laden">↓ Download Free</span>
     </a>
   </div>
-  <p class="hero-sub fade-up fade-up-3" style="font-size:0.78rem; opacity:0.6; margin-top:-8px;">
-    ⚠️ Antivirus false positive? Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. 100–200 downloads daily, zero reports — <a href="https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider" target="_blank" style="color:inherit;">see stats</a>.
-  </p>
   <div class="hero-stats fade-up fade-up-4">
     <div class="stat">
-      <span class="stat-num">2<span>,</span>377<span>+</span></span>
-      <span class="stat-label">Downloads</span>
+      <span class="stat-num">2,377<span class="accent">+</span></span>
+      <span class="stat-label" data-en="Downloads" data-de="Downloads">Downloads</span>
     </div>
     <div class="stat">
-      <span class="stat-num">180<span>KB</span></span>
-      <span class="stat-label">File Size</span>
+      <span class="stat-num">~330<span class="accent">KB</span></span>
+      <span class="stat-label" data-en="File Size" data-de="Dateigröße">File Size</span>
     </div>
     <div class="stat">
       <span class="stat-num">0</span>
-      <span class="stat-label">Bans Reported</span>
+      <span class="stat-label" data-en="Bans Reported" data-de="Gemeldete Bans">Bans Reported</span>
     </div>
     <div class="stat">
-      <span class="stat-num">EAC <span>✓</span></span>
-      <span class="stat-label">Anti-Cheat Safe</span>
+      <span class="stat-num">EAC <span class="green">✓</span></span>
+      <span class="stat-label" data-en="Anti-Cheat Safe" data-de="Anti-Cheat Sicher">Anti-Cheat Safe</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">€5<span class="accent">.49</span></span>
+      <span class="stat-label" data-en="One-Time Payment" data-de="Einmalzahlung">One-Time Payment</span>
     </div>
   </div>
 </section>
+
+<!-- V9.6 BANNER -->
+<div class="version-banner">
+  <span class="version-tag">V9.6 — Pre-Release</span>
+  <div class="version-items">
+    <span class="version-item"><strong data-en="New" data-de="Neu">New</strong> <span data-en="QuickSave — drag items to Safe Pocket with one key" data-de="QuickSave — Items per Tastendruck in die Safe Pocket ziehen">QuickSave — drag items to Safe Pocket with one key</span></span>
+    <span class="version-item"><strong data-en="New" data-de="Neu">New</strong> <span data-en="Map Scanner — Night / Hurricane / Storm event detection" data-de="Map Scanner — Nacht / Hurrikan / Sturm Erkennung">Map Scanner — event detection</span></span>
+    <span class="version-item"><strong data-en="New" data-de="Neu">New</strong> <span data-en="Crosshair outline + 2 new styles" data-de="Crosshair Outline + 2 neue Stile">Crosshair outline + 2 new styles</span></span>
+  </div>
+  <a href="https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt" target="_blank" class="version-link" data-en="Full Changelog →" data-de="Vollständiger Changelog →">Full Changelog →</a>
+</div>
 
 <div class="divider"></div>
 
 <!-- BEFORE/AFTER -->
 <section class="section" id="demo">
-  <div class="section-label">See the difference</div>
-  <h2 class="section-title">Before <span style="color:var(--muted);">/</span> After</h2>
-  <p class="section-sub">Drag the slider. This is what Arc Raiders looks like at night — and what it looks like with BrightRaider.</p>
+  <div class="section-label" data-en="See the difference" data-de="Den Unterschied sehen">See the difference</div>
+  <h2 class="section-title" data-en="Before / After" data-de="Vorher / Nachher">Before / After</h2>
+  <p class="section-sub" data-en="Drag the slider. This is what Arc Raiders looks like in dark areas — and what it looks like with BrightRaider." data-de="Schieberegler ziehen. So sieht Arc Raiders in dunklen Bereichen aus — und so mit BrightRaider.">Drag the slider. This is what Arc Raiders looks like in dark areas — and what it looks like with BrightRaider.</p>
 
-  <div class="scene-wrapper" id="slider">
-    <!-- AFTER (bright) -->
-    <img src="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/after.png" style="width:100%; display:block;" alt="BrightRaider — Bright">
-
-    <!-- BEFORE (normal) - clipped -->
-    <div id="before-panel" style="position:absolute; top:0; left:0; width:100%; height:100%; clip-path: inset(0 50% 0 0); overflow:hidden;">
-      <img src="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/befor.png" style="width:100%; display:block;" alt="BrightRaider — Normal">
-    </div>
-
-    <!-- Divider line -->
-    <div id="slider-line" style="position:absolute; top:0; bottom:0; left:50%; width:2px; background:var(--accent); z-index:10; transform:translateX(-50%); pointer-events:none;"></div>
-
-    <!-- Handle -->
-    <div id="slider-handle" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:var(--accent); border-radius:50%; z-index:11; display:flex; align-items:center; justify-content:center; box-shadow: 0 0 24px rgba(245,166,35,0.5); font-size:16px; pointer-events:none; color:#000; font-weight:900;">⟺</div>
-
-    <!-- Labels -->
-    <div style="position:absolute; bottom:16px; left:16px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:3px; z-index:12; background:rgba(0,0,0,0.7); color:var(--muted);">Normal</div>
-    <div style="position:absolute; bottom:16px; right:16px; font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 12px; border-radius:3px; z-index:12; background:rgba(245,166,35,0.15); color:var(--accent); border:1px solid rgba(245,166,35,0.3);">Bright</div>
+  <div style="position:relative; max-width:900px; border-radius:6px; overflow:hidden; border:1px solid var(--border);">
+    <img src="assets/comparison.png" style="width:100%; display:block;" alt="Before / After — Arc Raiders with BrightRaider">
+    <div style="position:absolute;bottom:16px;left:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:3px;background:rgba(0,0,0,0.75);color:var(--muted);" data-en="Without BrightRaider" data-de="Ohne BrightRaider">Without BrightRaider</div>
+    <div style="position:absolute;bottom:16px;right:16px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:3px;background:rgba(245,166,35,0.15);color:var(--accent);border:1px solid rgba(245,166,35,0.3);" data-en="BrightRaider" data-de="BrightRaider">BrightRaider</div>
   </div>
-  <p style="color:var(--muted); font-size:13px; margin-top:12px;">Screenshots by <a href="https://www.youtube.com/watch?v=XX_tYYqnB7w" target="_blank" style="color:var(--accent); text-decoration:none;">Jags95</a> — thank you!</p>
+  <p style="color:var(--muted);font-size:13px;margin-top:12px;" data-en='Screenshots by <a href="https://www.youtube.com/watch?v=XX_tYYqnB7w" target="_blank" style="color:var(--accent);text-decoration:none;">Jags95</a> — thank you!' data-de='Screenshots von <a href="https://www.youtube.com/watch?v=XX_tYYqnB7w" target="_blank" style="color:var(--accent);text-decoration:none;">Jags95</a> — danke!'>Screenshots by <a href="https://www.youtube.com/watch?v=XX_tYYqnB7w" target="_blank" style="color:var(--accent);text-decoration:none;">Jags95</a> — thank you!</p>
 </section>
+
+<div class="divider"></div>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots-section" id="screenshots">
+  <div class="section-label" data-en="The tool" data-de="Das Tool">The tool</div>
+  <h2 class="section-title" data-en="See what you get" data-de="Was du bekommst">See what you get</h2>
+  <p class="section-sub" data-en="Lightweight, native Windows UI. Sits in your system tray and stays out of your way." data-de="Leicht, native Windows-UI. Sitzt im System-Tray und bleibt unsichtbar.">Lightweight, native Windows UI. Sits in your system tray and stays out of your way.</p>
+
+  <div class="screenshots-grid" id="screenshots-grid">
+    <div class="screenshot-thumb" onclick="openLightbox(0)" data-caption="Map Scanner — live evac timers">
+      <span class="screenshot-thumb-badge pro">PRO</span>
+      <img src="assets/map-scanner.png" data-res="imgMapScanner" alt="Map Scanner in-game overlay" loading="lazy">
+      <div class="screenshot-thumb-label" data-en="Map Scanner overlay" data-de="Map Scanner Overlay">Map Scanner overlay</div>
+    </div>
+    <div class="screenshot-thumb" onclick="openLightbox(1)" data-caption="Tray menu — instant profile switch">
+      <span class="screenshot-thumb-badge free">FREE</span>
+      <img src="assets/tray.png" data-res="imgTray" alt="BrightRaider tray menu" loading="lazy">
+      <div class="screenshot-thumb-label" data-en="Tray menu" data-de="Tray-Menü">Tray menu</div>
+    </div>
+    <div class="screenshot-thumb" onclick="openLightbox(2)" data-caption="Settings submenu — Pro features">
+      <span class="screenshot-thumb-badge pro">PRO</span>
+      <img src="assets/submenu.png" data-res="imgSubmenu" alt="Settings submenu" loading="lazy">
+      <div class="screenshot-thumb-label" data-en="Settings submenu" data-de="Einstellungen-Untermenü">Settings submenu</div>
+    </div>
+    <div class="screenshot-thumb" onclick="openLightbox(3)" data-caption="Settings — profile editor">
+      <span class="screenshot-thumb-badge pro">PRO</span>
+      <img src="assets/settings-new.png" data-res="imgSettings" alt="Settings window" loading="lazy">
+      <div class="screenshot-thumb-label" data-en="Profile editor" data-de="Profil-Editor">Profile editor</div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">‹</button>
+  <img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); shiftLightbox(1)">›</button>
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
 
 <div class="divider"></div>
 
 <!-- HOW IT WORKS -->
 <section class="section" id="how">
-  <div class="section-label">Simple by design</div>
-  <h2 class="section-title">How it works</h2>
-  <p class="section-sub">No installation. No game modification. Just display settings — like your monitor OSD, but instant.</p>
+  <div class="section-label" data-en="Simple by design" data-de="Einfach">Simple by design</div>
+  <h2 class="section-title" data-en="How it works" data-de="Funktionsweise">How it works</h2>
+  <p class="section-sub" data-en="No installation. No game modification. Just display settings — like your monitor OSD, but instant." data-de="Keine Installation. Keine Spieländerung. Nur Display-Einstellungen — wie dein Monitor-OSD, aber sofort.">No installation. No game modification. Just display settings — like your monitor OSD, but instant.</p>
 
   <div class="how-grid">
     <div class="how-item">
       <div class="how-num">01</div>
-      <div class="how-title">Run the EXE</div>
-      <p class="how-text">Double-click. A tray icon appears. Nothing installed, nothing in startup unless you want it. ~180 KB total.</p>
+      <div class="how-title" data-en="Run the EXE" data-de="EXE starten">Run the EXE</div>
+      <p class="how-text" data-en="Double-click. A tray icon appears. Nothing installed, nothing in startup unless you want it. ~180 KB total." data-de="Doppelklick. Ein Tray-Icon erscheint. Nichts installiert, nichts beim Start — wenn du es nicht willst. ~180 KB gesamt.">Double-click. A tray icon appears. Nothing installed, nothing in startup unless you want it. ~180 KB total.</p>
     </div>
     <div class="how-item">
       <div class="how-num">02</div>
-      <div class="how-title">Press Numpad 2</div>
-      <p class="how-text">Instant profile switch. Works in fullscreen, in-game, during a raid. No alt-tab, no OSD delay, no dying while you fiddle with settings.</p>
+      <div class="how-title" data-en="Press Numpad 2" data-de="Numpad 2 drücken">Press Numpad 2</div>
+      <p class="how-text" data-en="Instant profile switch. Works in fullscreen, in-game, during a raid. No alt-tab, no OSD delay." data-de="Sofortiger Profilwechsel. Funktioniert im Vollbild, während des Spiels, während eines Raids. Kein Alt-Tab, keine OSD-Verzögerung.">Instant profile switch. Works in fullscreen, in-game, during a raid. No alt-tab, no OSD delay.</p>
     </div>
     <div class="how-item">
       <div class="how-num">03</div>
-      <div class="how-title">See clearly</div>
-      <p class="how-text">Dark tunnels, night raids, Buried City — enemies that were invisible are now readable. Press Numpad 1 to go back for bright outdoor areas.</p>
+      <div class="how-title" data-en="See clearly" data-de="Klar sehen">See clearly</div>
+      <p class="how-text" data-en="Dark tunnels, night raids, Buried City — enemies that were invisible are now readable. Press Numpad 1 to reset for bright outdoor areas." data-de="Dunkle Tunnel, Nacht-Raids, Buried City — Feinde, die unsichtbar waren, sind jetzt lesbar. Numpad 1 drücken für helle Außenbereiche.">Dark tunnels, night raids, Buried City — enemies that were invisible are now readable. Press Numpad 1 to reset for bright outdoor areas.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ANTI-CHEAT -->
-<section class="cheat-section" id="safe">
-  <div class="cheat-inner">
-    <div class="cheat-icon">🛡️</div>
+<!-- PRO FEATURES -->
+<section class="pro-section" id="pro">
+  <div class="pro-header">
     <div>
-      <h2 class="cheat-title">Is this cheating? <span>No.</span></h2>
-      <p class="cheat-text">BrightRaider only touches your display output — the same thing as adjusting your monitor brightness or using NVIDIA Control Panel. Nothing is read from the game, nothing is written to game memory, nothing is injected. Every anti-cheat system can verify this.</p>
-      <ul class="cheat-list">
-        <li>No game file modification</li>
-        <li>No DLL injection</li>
-        <li>No memory reading or writing</li>
-        <li>No hooks into game processes</li>
-        <li>Map Scanner = screenshot + Windows OCR only</li>
-        <li>EAC — Safe ✓</li>
-        <li>BattlEye — Safe ✓</li>
-        <li>Vanguard — Safe ✓</li>
-        <li>0 bans reported</li>
-      </ul>
+      <div class="section-label" data-en="Pro — €5.49 one-time" data-de="Pro — €5.49 einmalig">Pro — €5.49 one-time</div>
+      <h2 class="section-title" data-en="The PC features<br>Arc Raiders forgot." data-de="Die PC-Features, die<br>Arc Raiders vergessen hat.">The PC features<br>Arc Raiders forgot.</h2>
+    </div>
+    <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">
+      <span data-en="Get Pro — €5.49" data-de="Pro kaufen — €5.49">Get Pro — €5.49</span>
+    </a>
+  </div>
+
+  <div class="pro-grid">
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="Visibility" data-de="Sicht">Visibility</div>
+      <div class="pro-card-title" data-en="Auto-Brightness" data-de="Auto-Helligkeit">Auto-Brightness</div>
+      <p class="pro-card-text" data-en="Walk into a dark cave — brightness goes up automatically. Step outside — back to normal. No keypress, no looking away. Calibrated in two clicks, runs silently in the background." data-de="Du läufst in eine dunkle Höhle — Helligkeit geht automatisch hoch. Du gehst raus — zurück auf Normal. Kein Tastendruck, kein Wegsehen. In zwei Klicks kalibriert, läuft still im Hintergrund.">Walk into a dark cave — brightness goes up automatically. Step outside — back to normal. No keypress, no looking away. Calibrated in two clicks, runs silently in the background.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="Inventory" data-de="Inventar">Inventory</div>
+      <div class="pro-card-title" data-en="QuickSave" data-de="QuickSave">QuickSave</div>
+      <p class="pro-card-text" data-en="One keypress drags an item from your inventory straight to your Safe Pocket — or back. Handles everything: open inventory → drag → close. 5 presets, configurable slots, toggle direction per preset. Never fumble the Safe Pocket under pressure again." data-de="Ein Tastendruck zieht ein Item direkt aus dem Inventar in deine Safe Pocket — oder zurück. Erledigt alles: Inventar öffnen → ziehen → schließen. 5 Presets, konfigurierbare Slots, Richtung pro Preset umschaltbar.">One keypress drags an item from your inventory straight to your Safe Pocket — or back. Handles everything: open inventory → drag → close. 5 presets, configurable slots, toggle direction per preset. Never fumble the Safe Pocket under pressure again.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="PC Fix" data-de="PC-Fix">PC Fix</div>
+      <div class="pro-card-title" data-en="QuickSelect" data-de="QuickSelect">QuickSelect</div>
+      <p class="pro-card-text" data-en="The quick-select wheel was designed for a controller thumbstick. QuickSelect makes it work like a PC player would expect — one key, item used, hand freed. 8 independent slots, 6 built-in LMB timer presets per item type, Q and H keys freely rebindable." data-de="Das Schnellauswahlrad wurde für einen Controller-Stick entworfen. QuickSelect macht es so, wie ein PC-Spieler es erwarten würde — eine Taste, Item benutzt, Hand frei. 8 unabhängige Slots, 6 LMB-Timer-Presets pro Item-Typ.">The quick-select wheel was designed for a controller thumbstick. QuickSelect makes it work like a PC player would expect — one key, item used, hand freed. 8 independent slots, 6 built-in LMB timer presets per item type, Q and H keys freely rebindable.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="Timer" data-de="Timer">Timer</div>
+      <div class="pro-card-title" data-en="Map Scanner" data-de="Karten-Scanner">Map Scanner</div>
+      <p class="pro-card-text" data-en="Hold M on the map — Windows OCR reads all evac timers instantly, no game files touched. Live color-coded countdown overlay. Detects active events (Night, Hurricane, EM Storm) and adjusts evac points automatically. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. Evac Alarm: red toast + sound when a timer drops below your threshold." data-de="M auf der Karte halten — Windows-OCR liest alle Evak-Timer sofort, keine Spieldateien berührt. Farbkodiertes Live-Countdown-Overlay. Erkennt aktive Events (Nacht, Hurrikan, EM-Sturm) und passt Evak-Punkte automatisch an. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm.">Hold M on the map — Windows OCR reads all evac timers instantly, no game files touched. Live color-coded countdown overlay. Detects active events (Night, Hurricane, EM Storm) and adjusts evac points automatically. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="Move" data-de="Bewegung">Move</div>
+      <div class="pro-card-title" data-en="Autorun" data-de="Autorun">Autorun</div>
+      <p class="pro-card-text" data-en="CapsLock holds W for you — sprint or walk. Hold CapsLock 600ms for Tap Mode: pulses W at intervals for the Looting Mk.3 Survivor augment. Shift toggles sprint, C triggers a slide. Loot with both hands on the mouse. Fully rebindable." data-de="CapsLock hält W für dich — Sprint oder Gehen. CapsLock 600ms halten für Tap-Modus: pulsiert W in Intervallen für den Looting Mk.3 Survivor-Augment. Shift schaltet Sprint, C löst einen Slide aus. Vollständig neubelegbar.">CapsLock holds W for you — sprint or walk. Hold CapsLock 600ms for Tap Mode: pulses W at intervals for the Looting Mk.3 Survivor augment. Shift toggles sprint, C triggers a slide. Loot with both hands on the mouse. Fully rebindable.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="Visual" data-de="Visuell">Visual</div>
+      <div class="pro-card-title" data-en="Crosshair Overlay" data-de="Crosshair-Overlay">Crosshair Overlay</div>
+      <p class="pro-card-text" data-en="A persistent crosshair, always centered, click-through so it never gets in the way. 6 styles: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optional outline for visibility on bright backgrounds. Rendered above the game — EAC-safe, same mechanism as Discord and GeForce overlays." data-de="Ein dauerhaftes Fadenkreuz, immer zentriert, click-through damit es nie stört. 6 Stile: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optionaler Outline für Sichtbarkeit auf hellen Hintergründen. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Overlays.">A persistent crosshair, always centered, click-through so it never gets in the way. 6 styles: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optional outline for bright backgrounds. EAC-safe — same mechanism as Discord and GeForce overlays.</p>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon" data-en="Audio" data-de="Audio">Audio</div>
+      <div class="pro-card-title" data-en="Game Mute & Ducking" data-de="Spielton & Ducking">Game Mute & Ducking</div>
+      <p class="pro-card-text" data-en="Watch something on your second screen, mute Arc Raiders with one key — Discord and music stay on. In a tense situation? Long-press to duck the game to 20% instead. Your call, per moment." data-de="Video auf dem zweiten Bildschirm, Arc Raiders mit einer Taste stummschalten — Discord und Musik bleiben an. Angespannte Situation? Lang drücken um das Spiel auf 20% zu ducken. Deine Entscheidung, pro Moment.">Watch something on your second screen, mute Arc Raiders with one key — Discord and music stay on. In a tense situation? Long-press to duck the game to 20% instead. Your call, per moment.</p>
     </div>
   </div>
 </section>
 
-<!-- HOTKEYS -->
-<section class="hotkeys-section">
-  <div class="section-label">Controls</div>
-  <h2 class="section-title">Hotkeys</h2>
-  <p class="section-sub">Works in fullscreen. NumLock on or off. No game focus required.</p>
-  <div class="hotkeys-table">
-    <div class="hotkeys-row header">
-      <div class="hotkeys-cell">Key</div>
-      <div class="hotkeys-cell">Action</div>
-      <div class="hotkeys-cell">Version</div>
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-label" data-en="Community" data-de="Community">Community</div>
+  <h2 class="section-title" data-en="What players say" data-de="Was Spieler sagen">What players say</h2>
+  <p class="section-sub" data-en="Real comments from the GitHub community — unedited." data-de="Echte Kommentare aus der GitHub-Community — unbearbeitet.">Real comments from the GitHub community — unedited.</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-meta">
+        <div class="testimonial-avatar">I</div>
+        <span class="testimonial-name">Incubus32</span>
+        <span class="testimonial-badge">PRO</span>
+        <span class="testimonial-time" data-en="3 days ago" data-de="vor 3 Tagen">3 days ago</span>
+      </div>
+      <p class="testimonial-text" data-en="<strong>Currently using pro and it helps me so much in game!</strong> Just need help on how to number the quick use items." data-de="<strong>Nutze aktuell Pro und es hilft mir so viel im Spiel!</strong> Brauche nur Hilfe bei der Nummerierung der Schnell-Items."><strong>Currently using pro and it helps me so much in game!</strong> Just need help on how to number the quick use items.</p>
+      <div class="testimonial-source">GitHub Issue</div>
     </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num 1</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Normal brightness</div>
-      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-meta">
+        <div class="testimonial-avatar">D</div>
+        <span class="testimonial-name">dawuus</span>
+        <span class="testimonial-badge">PRO</span>
+        <span class="testimonial-time" data-en="5 days ago" data-de="vor 5 Tagen">5 days ago</span>
+      </div>
+      <p class="testimonial-text" data-en="i just searched far and wide for my login info to request this feature but <strong>ur too fast. got pro after reading through the additions u made on the 9.5 update and icl ur cooking with these features</strong>" data-de="habe überall nach meinen Login-Daten gesucht um dieses Feature anzufragen, aber <strong>du warst schneller. Pro gekauft nach dem Lesen der 9.5-Updates — du kochst wirklich mit diesen Features</strong>">i just searched far and wide for my login info to request this feature but <strong>ur too fast. got pro after reading through the additions u made on the 9.5 update and icl ur cooking with these features</strong></p>
+      <div class="testimonial-source">GitHub Issue</div>
     </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num 2</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Bright — better in dark areas</div>
-      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-meta">
+        <div class="testimonial-avatar">G</div>
+        <span class="testimonial-name">ggvelloso</span>
+        <span class="testimonial-badge">PRO</span>
+        <span class="testimonial-time" data-en="5 days ago" data-de="vor 5 Tagen">5 days ago</span>
+      </div>
+      <p class="testimonial-text" data-en="First, thanks for fixing the 4:3 mapscan issue — I can confirm it's working! <strong>I love this new QuickSelect feature. Amazing work on V9.5, and looking forward to V1.0!</strong>" data-de="Erstmal danke für den Fix des 4:3-Mapscan-Problems — ich kann bestätigen, es funktioniert! <strong>Ich liebe das neue QuickSelect-Feature. Tolle Arbeit bei V9.5, freue mich auf V1.0!</strong>">First, thanks for fixing the 4:3 mapscan issue — I can confirm it's working! <strong>I love this new QuickSelect feature. Amazing work on V9.5, and looking forward to V1.0!</strong></p>
+      <div class="testimonial-source">GitHub Issue</div>
     </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num 3</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Brighter — maximum visibility</div>
-      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    <div class="testimonial-card">
+      <div class="testimonial-meta">
+        <div class="testimonial-avatar">S</div>
+        <span class="testimonial-name">seanthespartan</span>
+        <span class="testimonial-time">Mar 24</span>
+      </div>
+      <p class="testimonial-text" data-en='Works perfectly, thanks! <strong>Hopefully the map isn't bannable as I feel it is a quality of life improvement</strong>' data-de='Funktioniert perfekt, danke! <strong>Hoffe der Map Scanner ist nicht bannable, denn es ist wirklich eine Lebensqualitäts-Verbesserung</strong>'>Works perfectly, thanks! <strong>Hopefully the map isn't bannable as I feel it is a quality of life improvement</strong></p>
+      <div class="testimonial-source">GitHub Issue</div>
     </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num 4–9</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Custom profiles</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
-    </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num 0</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Mute game only (Discord stays on)</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
-    </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num +</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Toggle crosshair overlay</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
-    </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Num *</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Toggle timer overlay</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
-    </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>M</kbd> (hold)</div>
-      <div class="hotkeys-cell" style="color:var(--text);">Scan evacuation timers on map</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
-    </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>CapsLock</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Autorun — walk/sprint (hold 600ms for Tap Mode)</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
-    </div>
-    <div class="hotkeys-row">
-      <div class="hotkeys-cell"><kbd>Shift</kbd></div>
-      <div class="hotkeys-cell" style="color:var(--text);">Toggle sprint while autorunning</div>
-      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-meta">
+        <div class="testimonial-avatar">C</div>
+        <span class="testimonial-name">CleanJack3</span>
+        <span class="testimonial-badge">PRO</span>
+        <span class="testimonial-time">Mar 13</span>
+      </div>
+      <p class="testimonial-text"><strong>work like a charm now, thanks for the amazing tool !</strong></p>
+      <div class="testimonial-source">GitHub Issue</div>
     </div>
   </div>
-  <p style="color:var(--muted); font-size:13px; margin-top:16px;">No numpad? Download <code style="color:var(--text); font-size:13px;">BrightRaider_Arrows.exe</code> for arrow key control (Insert = crosshair, Delete = timer overlay, Home = QuickSelect, End = QuickSave, Page Down = all hotkeys on/off, M = map scan, ↑ = mute/duck).</p>
+</section>
+
+<div class="divider"></div>
+
+<section class="cheat-section" id="safe">
+  <div class="cheat-inner">
+    <div>
+      <div class="section-label" data-en="Safety" data-de="Sicherheit">Safety</div>
+      <h2 class="cheat-title" data-en="Is this cheating?<br><span class='green'>No.</span>" data-de="Ist das Cheaten?<br><span class='green'>Nein.</span>">Is this cheating?<br><span class="green">No.</span></h2>
+      <p class="cheat-text" data-en="BrightRaider adjusts your display output — the same as changing your monitor brightness or using NVIDIA Control Panel. Nothing is read from the game, nothing is written to game memory, nothing is injected." data-de="BrightRaider passt deine Display-Ausgabe an — dasselbe wie das Ändern der Monitor-Helligkeit oder die Verwendung des NVIDIA Control Panels. Nichts wird aus dem Spiel gelesen, nichts in den Spielspeicher geschrieben, nichts injiziert.">BrightRaider adjusts your display output — the same as changing your monitor brightness or using NVIDIA Control Panel. Nothing is read from the game, nothing is written to game memory, nothing is injected.</p>
+      <ul class="check-list">
+        <li><span class="cr">✕</span> <span data-en="No game file modification" data-de="Keine Spieldatei-Änderung">No game file modification</span></li>
+        <li><span class="cr">✕</span> <span data-en="No DLL injection" data-de="Keine DLL-Injektion">No DLL injection</span></li>
+        <li><span class="cr">✕</span> <span data-en="No memory reading or writing" data-de="Kein Speicher lesen oder schreiben">No memory reading or writing</span></li>
+        <li><span class="cr">✕</span> <span data-en="No hooks into game processes" data-de="Keine Hooks in Spielprozesse">No hooks into game processes</span></li>
+        <li><span class="ck">✓</span> <span data-en="Windows GDI — same as monitor settings" data-de="Windows GDI — wie Monitor-Einstellungen">Windows GDI — same as monitor settings</span></li>
+        <li><span class="ck">✓</span> <span data-en="NVIDIA NvAPI — same as Control Panel" data-de="NVIDIA NvAPI — wie das Control Panel">NVIDIA NvAPI — same as Control Panel</span></li>
+        <li><span class="ck">✓</span> <span data-en="Map Scanner uses Windows built-in OCR only" data-de="Karten-Scanner nutzt nur Windows-internes OCR">Map Scanner uses Windows built-in OCR only</span></li>
+        <li><span class="ck">✓</span> <span data-en="0 bans reported" data-de="0 Bans gemeldet">0 bans reported</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="cheat-badges">
+        <div class="cheat-badge-row">
+          <span class="cheat-badge-name">Easy Anti-Cheat</span>
+          <span class="badge-safe" data-en="✓ Safe" data-de="✓ Sicher">✓ Safe</span>
+        </div>
+        <div class="cheat-badge-row">
+          <span class="cheat-badge-name">BattlEye</span>
+          <span class="badge-safe" data-en="✓ Safe" data-de="✓ Sicher">✓ Safe</span>
+        </div>
+        <div class="cheat-badge-row">
+          <span class="cheat-badge-name">Vanguard</span>
+          <span class="badge-safe" data-en="✓ Safe" data-de="✓ Sicher">✓ Safe</span>
+        </div>
+        <div class="cheat-badge-row" style="margin-top: 2px; border-radius: 0 0 4px 4px;">
+          <span class="cheat-badge-name" style="color: var(--muted); font-size: 13px;" data-en="0 bans across 2,377+ users" data-de="0 Bans bei 2.377+ Nutzern">0 bans across 2,377+ users</span>
+          <span class="badge-safe" data-en="✓ Verified" data-de="✓ Bestätigt">✓ Verified</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="divider"></div>
 
 <!-- PRICING -->
-<section class="section" id="pricing">
-  <div class="section-label">Pricing</div>
-  <h2 class="section-title">Free forever.<br>Pro if you want more.</h2>
-  <p class="section-sub">Free is fully functional. Pro adds automatic switching so you never take your hand off the mouse. One-time payment, no subscription.</p>
+<section class="pricing-section" id="pricing">
+  <div class="section-label" data-en="Pricing" data-de="Preise">Pricing</div>
+  <h2 class="section-title" data-en="One-time. Yours forever." data-de="Einmalig. Für immer deins.">One-time. Yours forever.</h2>
+  <p class="section-sub" data-en="Free is fully functional. Pro adds automatic brightness switching, QuickSelect, Map Scanner, and more — so you never take your hand off the mouse." data-de="Free ist voll funktionsfähig. Pro fügt automatisches Helligkeits-Umschalten, QuickSelect, Karten-Scanner und mehr hinzu.">Free is fully functional. Pro adds automatic brightness switching, QuickSelect, Map Scanner, and more — so you never take your hand off the mouse.</p>
 
   <div class="pricing-grid">
+    <!-- FREE -->
     <div class="pricing-card">
-      <div class="plan-name">Free</div>
-      <div class="plan-price">€<span style="font-size:56px; color:var(--text);">0</span></div>
-      <div class="plan-price-sub">Forever. No strings.</div>
+      <div class="plan-name" data-en="Free" data-de="Kostenlos">Free</div>
+      <div class="plan-price"><span style="font-size:56px; color:var(--text);">€0</span></div>
+      <div class="plan-price-sub" data-en="Forever. No strings." data-de="Für immer. Ohne Bedingungen.">Forever. No strings.</div>
+      <div class="plan-divider"></div>
       <ul class="plan-features">
-        <li class="active">3 brightness profiles (Normal, Bright, Brighter)</li>
-        <li class="active">Hotkey switching in fullscreen</li>
-        <li class="active">Gamma + Contrast + Digital Vibrance</li>
-        <li class="active">NVIDIA + AMD + Intel support</li>
-        <li class="active">Multi-monitor support</li>
-        <li class="active">Break Reminder — orange toast after configurable interval</li>
-        <li class="active">Auto-Start with Windows</li>
-        <li>Auto-Brightness</li>
-        <li>Up to 9 profiles</li>
-        <li>Game Mute</li>
+        <li class="on"><span class="icon">✓</span> <span data-en="3 brightness profiles (Normal, Bright, Brighter)" data-de="3 Helligkeitsprofile (Normal, Hell, Heller)">3 brightness profiles</span></li>
+        <li class="on"><span class="icon">✓</span> <span data-en="Hotkey switching in fullscreen" data-de="Hotkey-Umschalten im Vollbild">Hotkey switching in fullscreen</span></li>
+        <li class="on"><span class="icon">✓</span> <span data-en="Gamma + Contrast + Digital Vibrance" data-de="Gamma + Kontrast + Digital Vibrance">Gamma + Contrast + Digital Vibrance</span></li>
+        <li class="on"><span class="icon">✓</span> <span data-en="NVIDIA + AMD + Intel support" data-de="NVIDIA + AMD + Intel Unterstützung">NVIDIA + AMD + Intel support</span></li>
+        <li class="on"><span class="icon">✓</span> <span data-en="Multi-monitor support" data-de="Multi-Monitor-Unterstützung">Multi-monitor support</span></li>
+        <li class="on"><span class="icon">✓</span> <span data-en="Break Reminder" data-de="Pause-Erinnerung">Break Reminder</span></li>
+        <li class="off"><span class="icon">—</span> <span data-en="Auto-Brightness" data-de="Auto-Helligkeit">Auto-Brightness</span></li>
+        <li class="off"><span class="icon">—</span> <span data-en="QuickSelect, Map Scanner, Autorun…" data-de="QuickSelect, Karten-Scanner, Autorun…">QuickSelect, Map Scanner, Autorun…</span></li>
       </ul>
-      <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-plan free">Download Free</a>
+      <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-plan free" data-en="Download Free" data-de="Kostenlos laden">Download Free</a>
     </div>
 
+    <!-- PRO -->
     <div class="pricing-card pro">
-      <div class="plan-name">Pro</div>
+      <div class="pro-tag" data-en="Recommended" data-de="Empfohlen">Recommended</div>
+      <div class="plan-name" data-en="Pro" data-de="Pro">Pro</div>
       <div class="plan-price"><span class="currency">€</span>5<span style="font-size:32px; color:var(--muted);">.49</span></div>
-      <div class="plan-price-sub">One-time. Yours forever.</div>
+      <div class="plan-price-sub" data-en="One-time. Yours forever. No subscription." data-de="Einmalig. Für immer deins. Kein Abo.">One-time. Yours forever. No subscription.</div>
+      <div class="plan-divider"></div>
       <ul class="plan-features">
-        <li class="active">Everything in Free</li>
-        <li class="pro-only">Auto-Brightness — adapts to dark/bright areas automatically. Smooth transitions, no stutter. Zone weights configurable.</li>
-        <li class="pro-only">QuickSelect — press one key to auto-use a quick-wheel item. Q-hold → slot → LMB hold → H to free hand. 5 slots, 6 item-specific timer presets (Adrenalin Syringe, Shield Charger, Vita Syringe…). Fully configurable.</li>
-        <li class="pro-only">Map Scanner — hold M on map to read all evac timers. Windows built-in OCR, no game files touched, live countdown overlay.</li>
-        <li class="pro-only">Evac Alarm — red toast + sound when a timer drops below your threshold. Set in minutes + seconds. Configure in Map Scanner settings.</li>
-        <li class="pro-only">Autorun — CapsLock to walk/sprint automatically. Hold CapsLock 600ms for Tap Mode: pulses W at timed intervals (built for Looting Mk. 3 Survivor — keeps health near 75% while moving). Timings configurable.</li>
-        <li class="pro-only">Crosshair Overlay — click-through, 4 styles, fully customizable. EAC-safe.</li>
-        <li class="pro-only">Audio Ducking — hold Numpad 0 (or ↑) 600ms to duck game audio to 20%. Short press still mutes.</li>
-        <li class="pro-only">Game Mute — mute only Arc Raiders, keep Discord on</li>
-        <li class="pro-only">Up to 9 fully customizable profiles</li>
-        <li class="pro-only">Profile Editor — fine-tune gamma, contrast, vibrance</li>
-        <li class="pro-only">Calibration Wizard</li>
-        <li class="pro-only">Auto-Update</li>
+        <li class="on"><span class="icon">✓</span> <span data-en="Everything in Free" data-de="Alles aus Free">Everything in Free</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Auto-Brightness — adapts automatically" data-de="Auto-Helligkeit — passt sich automatisch an">Auto-Brightness — adapts automatically</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="QuickSelect — one key item usage" data-de="QuickSelect — Item-Nutzung per Tastendruck">QuickSelect — one key item usage</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Map Scanner + Evac Alarm" data-de="Karten-Scanner + Evak-Alarm">Map Scanner + Evac Alarm</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Autorun (CapsLock)" data-de="Autorun (CapsLock)">Autorun (CapsLock)</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Crosshair Overlay — 6 styles, EAC-safe" data-de="Crosshair-Overlay — 6 Stile, EAC-sicher">Crosshair Overlay — 6 styles, EAC-safe</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Game Mute + Audio Ducking" data-de="Spielton + Audio Ducking">Game Mute + Audio Ducking</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Up to 9 custom profiles + Profile Editor" data-de="Bis zu 9 Profile + Profil-Editor">Up to 9 custom profiles + Profile Editor</span></li>
+        <li class="pro-on"><span class="icon">★</span> <span data-en="Calibration Wizard + Auto-Update" data-de="Kalibrierungs-Assistent + Auto-Update">Calibration Wizard + Auto-Update</span></li>
       </ul>
-      <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-plan paid">Buy Pro — €5.49</a>
+      <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-plan paid" data-en="Get Pro — €5.49" data-de="Pro kaufen — €5.49">Get Pro — €5.49</a>
     </div>
   </div>
 </section>
 
+<div class="divider"></div>
+
+<!-- HOTKEYS -->
+<section class="hotkeys-section" id="hotkeys">
+  <div class="section-label" data-en="Controls" data-de="Steuerung">Controls</div>
+  <h2 class="section-title" data-en="Hotkeys" data-de="Hotkeys">Hotkeys</h2>
+  <p class="section-sub" data-en="Works in fullscreen. NumLock on or off. No game focus required. No numpad? Download BrightRaider_Arrows.exe — same features, arrow key control." data-de="Funktioniert im Vollbild. NumLock an oder aus. Kein Spielfokus nötig. Kein Numpad? BrightRaider_Arrows.exe herunterladen — gleiche Features, Pfeiltasten-Steuerung.">Works in fullscreen. NumLock on or off. No game focus required. No numpad? Download <code style="font-size:14px;color:var(--text);">BrightRaider_Arrows.exe</code> — same features, arrow key control.</p>
+
+  <div class="hotkeys-table">
+    <div class="hotkeys-row header">
+      <div class="hotkeys-cell" data-en="Key" data-de="Taste">Key</div>
+      <div class="hotkeys-cell" data-en="Action" data-de="Aktion">Action</div>
+      <div class="hotkeys-cell" data-en="Version" data-de="Version">Version</div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 1</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Normal brightness" data-de="Normale Helligkeit">Normal brightness</div>
+      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 2</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Bright — better in dark areas" data-de="Hell — besser in dunklen Bereichen">Bright — better in dark areas</div>
+      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 3</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Brighter — maximum visibility" data-de="Heller — maximale Sicht">Brighter — maximum visibility</div>
+      <div class="hotkeys-cell"><span class="badge-free">FREE</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 4–9</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Custom profiles" data-de="Eigene Profile">Custom profiles</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num /</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Toggle QuickSave (drag item ↔ Safe Pocket)" data-de="QuickSave umschalten (Item ↔ Safe Pocket)">Toggle QuickSave (drag item ↔ Safe Pocket)</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num 0</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Mute game / Duck audio (hold 600ms)" data-de="Spiel stumm / Audio ducken (600ms halten)">Mute game / Duck audio (hold 600ms)</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num +</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Toggle crosshair overlay" data-de="Crosshair-Overlay umschalten">Toggle crosshair overlay</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>Num *</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Toggle timer overlay" data-de="Timer-Overlay umschalten">Toggle timer overlay</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>M</kbd> <span style="font-size:12px;color:var(--muted);" data-en="hold" data-de="halten">hold</span></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Scan evac timers on map" data-de="Evak-Timer auf der Karte scannen">Scan evac timers on map</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+    <div class="hotkeys-row">
+      <div class="hotkeys-cell"><kbd>CapsLock</kbd></div>
+      <div class="hotkeys-cell" style="color:var(--text);" data-en="Autorun (hold 600ms = Tap Mode)" data-de="Autorun (600ms halten = Tap-Modus)">Autorun (hold 600ms = Tap Mode)</div>
+      <div class="hotkeys-cell"><span class="badge-pro">PRO</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label" data-en="Questions" data-de="Fragen">Questions</div>
+  <h2 class="section-title" data-en="FAQ" data-de="FAQ">FAQ</h2>
+  <br>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text" data-en="Will I get banned?" data-de="Werde ich gebannt?">Will I get banned?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a" data-en="No. BrightRaider only adjusts display output via Windows APIs — the same method your monitor settings and NVIDIA Control Panel use. Anti-cheat systems do not flag display adjustments. 2,377+ users, zero bans reported." data-de="Nein. BrightRaider passt nur die Display-Ausgabe über Windows-APIs an — dieselbe Methode wie deine Monitor-Einstellungen und das NVIDIA Control Panel. Anti-Cheat-Systeme erkennen keine Display-Anpassungen. 2.377+ Nutzer, null gemeldete Bans.">No. BrightRaider only adjusts display output via Windows APIs — the same method your monitor settings and NVIDIA Control Panel use. Anti-cheat systems do not flag display adjustments. 2,377+ users, zero bans reported.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text" data-en="Why does my antivirus flag it?" data-de="Warum erkennt mein Antivirus es?">Why does my antivirus flag it?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a" data-en="BrightRaider uses a low-level keyboard hook — the same mechanism as Logitech GHub, Razer Synapse, and Discord Push-to-Talk. Without an expensive code signing certificate (~€150/yr), some AV engines flag any tool that uses this. No data is logged or transmitted. You can verify this yourself by building from source on GitHub." data-de="BrightRaider nutzt einen Low-Level-Tastatur-Hook — denselben Mechanismus wie Logitech GHub, Razer Synapse und Discord Push-to-Talk. Ohne teures Code-Signing-Zertifikat (~150 €/Jahr) erkennen einige AV-Engines jedes Tool das dies nutzt. Es werden keine Daten protokolliert oder übertragen. Du kannst das selbst überprüfen, indem du aus dem Quellcode auf GitHub baust.">BrightRaider uses a low-level keyboard hook — the same mechanism as Logitech GHub, Razer Synapse, and Discord Push-to-Talk. Without an expensive code signing certificate (~€150/yr), some AV engines flag any tool that uses this. No data is logged or transmitted. You can verify this yourself by building from source on GitHub.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text" data-en="Does it work with other games?" data-de="Funktioniert es mit anderen Spielen?">Does it work with other games?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a" data-en="Yes. BrightRaider adjusts your display, not the game. Brightness and contrast profiles work with any game or application. Some Pro features like QuickSelect and Map Scanner are specifically tuned for Arc Raiders." data-de="Ja. BrightRaider passt deinen Bildschirm an, nicht das Spiel. Helligkeits- und Kontrast-Profile funktionieren mit jedem Spiel oder jeder Anwendung. Einige Pro-Features wie QuickSelect und Karten-Scanner sind speziell auf Arc Raiders abgestimmt.">Yes. BrightRaider adjusts your display, not the game. Brightness and contrast profiles work with any game or application. Some Pro features like QuickSelect and Map Scanner are specifically tuned for Arc Raiders.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text" data-en="Do I need a numpad?" data-de="Brauche ich ein Numpad?">Do I need a numpad?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a" data-en="No. Download BrightRaider_Arrows.exe for arrow key control. All features are identical — Left/Down/Right switch profiles, Up mutes/ducks audio, Insert toggles crosshair, Delete toggles timer overlay." data-de="Nein. BrightRaider_Arrows.exe für Pfeiltasten-Steuerung herunterladen. Alle Features sind identisch — Links/Unten/Rechts wechseln Profile, Oben stumm/duckt Audio, Einfg schaltet Crosshair, Entf schaltet Timer-Overlay.">No. Download <code>BrightRaider_Arrows.exe</code> for arrow key control. All features are identical — Left/Down/Right switch profiles, Up mutes/ducks audio, Insert toggles crosshair, Delete toggles timer overlay.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text" data-en="How do I activate Pro?" data-de="Wie aktiviere ich Pro?">How do I activate Pro?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a" data-en="Buy Pro via the button on this page. You'll receive a license key by email. Right-click the tray icon → Settings → Enter License. Enter your email and key. Done — all Pro features unlocked permanently. No subscription, no internet required after activation." data-de="Pro über den Button auf dieser Seite kaufen. Du erhältst einen Lizenzschlüssel per E-Mail. Rechtsklick auf das Tray-Icon → Einstellungen → Lizenz eingeben. E-Mail und Schlüssel eingeben. Fertig — alle Pro-Features dauerhaft freigeschaltet. Kein Abo, kein Internet nach Aktivierung nötig.">Buy Pro via the button on this page. You'll receive a license key by email. Right-click the tray icon → Settings → Enter License. Enter your email and key. Done — all Pro features unlocked permanently. No subscription, no internet required after activation.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text" data-en="Why does it ask for a UAC prompt on first launch?" data-de="Warum erscheint beim ersten Start eine UAC-Abfrage?">Why does it ask for a UAC prompt on first launch?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a" data-en="BrightRaider sets one registry entry on first launch to unlock gamma adjustment (GdiIcmGammaRange = 256 under HKLM). This is the same entry used by display calibration software. This happens once — after that, no UAC prompts. You can inspect and remove this entry at any time." data-de="BrightRaider setzt beim ersten Start einen Registry-Eintrag, um Gamma-Anpassungen freizuschalten (GdiIcmGammaRange = 256 unter HKLM). Dieser Eintrag wird auch von Display-Kalibrierungssoftware verwendet. Dies passiert einmalig — danach keine UAC-Abfragen mehr. Du kannst diesen Eintrag jederzeit einsehen und entfernen.">BrightRaider sets one registry entry on first launch to unlock gamma adjustment (GdiIcmGammaRange = 256 under HKLM). This is the same entry used by display calibration software. This happens once — after that, no UAC prompts. You can inspect and remove this entry at any time.</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- DOWNLOAD CTA -->
-<section class="download-section">
-  <div class="section-label">Ready?</div>
-  <h2 class="section-title" style="text-align:center;">Stop dying<br>in the dark.</h2>
-  <p class="section-sub">2,377+ players already use BrightRaider. One EXE, zero install, ~333 KB.</p>
+<section class="cta-section">
+  <div class="section-label" data-en="Ready?" data-de="Bereit?">Ready?</div>
+  <h2 class="section-title" style="font-size:clamp(48px,7vw,80px);" data-en="Stop dying<br>in the dark." data-de="Hör auf, im<br>Dunkeln zu sterben.">Stop dying<br>in the dark.</h2>
+  <p class="section-sub" data-en="2,377+ players already see the difference. One EXE, zero install, ~180 KB." data-de="2.377+ Spieler sehen den Unterschied bereits. Eine EXE, keine Installation, ~180 KB.">2,377+ players already see the difference. One EXE, zero install, ~180 KB.</p>
   <div class="hero-buttons">
-    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-primary">↓ Download Free</a>
-    <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-secondary">Get Pro — €5.49</a>
+    <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-primary">
+      <span data-en="Get Pro — €5.49" data-de="Pro kaufen — €5.49">Get Pro — €5.49</span>
+    </a>
+    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-secondary">
+      <span data-en="↓ Download Free" data-de="↓ Kostenlos laden">↓ Download Free</span>
+    </a>
   </div>
 </section>
 
@@ -1113,75 +1687,163 @@
   <div class="footer-logo">Bright<span>Raider</span></div>
   <ul class="footer-links">
     <li><a href="https://github.com/BrightRaider/BrightRaider" target="_blank">GitHub</a></li>
-    <li><a href="https://github.com/BrightRaider/BrightRaider/releases/latest">Download</a></li>
-    <li><a href="#safe">Anti-Cheat Info</a></li>
+    <li><a href="https://github.com/BrightRaider/BrightRaider/releases/latest" data-en="Download" data-de="Download">Download</a></li>
+    <li><a href="#safe" data-en="Anti-Cheat Info" data-de="Anti-Cheat Info">Anti-Cheat Info</a></li>
+    <li><a href="#faq" data-en="FAQ" data-de="FAQ">FAQ</a></li>
   </ul>
-  <div class="footer-copy">Made for the Arc Raiders community.</div>
+  <div class="footer-copy" data-en="Made for the Arc Raiders community." data-de="Für die Arc Raiders Community.">Made for the Arc Raiders community.</div>
 </footer>
 
 <script>
-  // Before/After Slider
-  const container = document.getElementById('slider');
-  const beforePanel = document.getElementById('before-panel');
-  const sliderLine = document.getElementById('slider-line');
-  const sliderHandle = document.getElementById('slider-handle');
-  let isDragging = false;
-
-  function updateSlider(x) {
-    const rect = container.getBoundingClientRect();
-    let pct = (x - rect.left) / rect.width;
-    pct = Math.max(0.02, Math.min(0.98, pct));
-    const pctRight = (1 - pct) * 100;
-    beforePanel.style.clipPath = `inset(0 ${pctRight}% 0 0)`;
-    sliderLine.style.left = (pct * 100) + '%';
-    sliderHandle.style.left = (pct * 100) + '%';
+// ── RESOLVE RESOURCES ──
+(function() {
+  function resolveImgs() {
+    if (!window.__resources) return;
+    document.querySelectorAll('img[data-res]').forEach(img => {
+      const key = img.getAttribute('data-res');
+      if (window.__resources[key]) img.src = window.__resources[key];
+    });
   }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', resolveImgs);
+  } else {
+    resolveImgs();
+  }
+})();
 
-  container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    updateSlider(e.clientX);
+// ── BEFORE/AFTER SLIDER ──
+const container = document.getElementById('slider');
+const beforePanel = document.getElementById('before-panel');
+const sliderLine = document.getElementById('slider-line');
+const sliderHandle = document.getElementById('slider-handle');
+let isDragging = false;
+
+function updateSlider(x) {
+  const rect = container.getBoundingClientRect();
+  let pct = (x - rect.left) / rect.width;
+  pct = Math.max(0.02, Math.min(0.98, pct));
+  const pctRight = (1 - pct) * 100;
+  beforePanel.style.clipPath = `inset(0 ${pctRight}% 0 0)`;
+  sliderLine.style.left = (pct * 100) + '%';
+  sliderHandle.style.left = (pct * 100) + '%';
+}
+
+container.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); });
+document.addEventListener('mousemove', (e) => { if (!isDragging) return; updateSlider(e.clientX); });
+document.addEventListener('mouseup', () => { isDragging = false; });
+container.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); }, { passive: true });
+document.addEventListener('touchmove', (e) => { if (!isDragging) return; updateSlider(e.touches[0].clientX); }, { passive: true });
+document.addEventListener('touchend', () => { isDragging = false; });
+
+let progress = 0.5, dir = -1, autoAnim = true;
+function autoSlide() {
+  if (!autoAnim) return;
+  progress += dir * 0.003;
+  if (progress <= 0.2) dir = 1;
+  if (progress >= 0.8) dir = -1;
+  const rect = container.getBoundingClientRect();
+  updateSlider(rect.left + progress * rect.width);
+  requestAnimationFrame(autoSlide);
+}
+container.addEventListener('mousedown', () => { autoAnim = false; });
+container.addEventListener('touchstart', () => { autoAnim = false; }, { passive: true });
+setTimeout(autoSlide, 1200);
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ── LIGHTBOX ──
+const lightboxImages = [
+  { src: window.__resources && window.__resources.imgMapScanner || 'assets/map-scanner.png', caption: 'Map Scanner — live evac timers in-game' },
+  { src: window.__resources && window.__resources.imgTray || 'assets/tray.png', caption: 'Tray menu — instant profile switch' },
+  { src: window.__resources && window.__resources.imgSubmenu || 'assets/submenu.png', caption: 'Settings submenu — Pro features' },
+  { src: window.__resources && window.__resources.imgSettings || 'assets/settings-new.png', caption: 'Settings — profile editor' },
+];
+let currentLightboxIndex = 0;
+
+function openLightbox(idx) {
+  currentLightboxIndex = idx;
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = lightboxImages[idx].src;
+  document.getElementById('lightbox-caption').textContent = lightboxImages[idx].caption;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function shiftLightbox(dir) {
+  currentLightboxIndex = (currentLightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+  document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex].src;
+  document.getElementById('lightbox-caption').textContent = lightboxImages[currentLightboxIndex].caption;
+}
+
+document.addEventListener('keydown', (e) => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  if (e.key === 'ArrowRight') shiftLightbox(1);
+  if (e.key === 'ArrowLeft') shiftLightbox(-1);
+});
+
+// ── STICKY CTA ──
+const stickyCta = document.getElementById('sticky-cta');
+let stickyDismissed = false;
+window.addEventListener('scroll', () => {
+  if (stickyDismissed) return;
+  if (window.scrollY > 500) {
+    stickyCta.classList.add('visible');
+  } else {
+    stickyCta.classList.remove('visible');
+  }
+});
+
+// ── LANGUAGE ──
+let currentLang = localStorage.getItem('br-lang') || 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('br-lang', lang);
+
+  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+  document.getElementById('lang-de').classList.toggle('active', lang === 'de');
+
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (!text) return;
+    // For elements that are links or have nested structure, use innerHTML only for non-input elements
+    if (el.tagName !== 'INPUT' && el.tagName !== 'BUTTON') {
+      el.innerHTML = text;
+    }
   });
 
-  document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    updateSlider(e.clientX);
-  });
+  document.documentElement.lang = lang;
+}
 
-  document.addEventListener('mouseup', () => { isDragging = false; });
-
-  container.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    updateSlider(e.touches[0].clientX);
-  }, { passive: true });
-
-  document.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    updateSlider(e.touches[0].clientX);
-  }, { passive: true });
-
-  document.addEventListener('touchend', () => { isDragging = false; });
-
-  // Animate slider on load
-  let progress = 0.5;
-  let dir = -1;
-  let autoAnim = true;
-
-  function autoSlide() {
-    if (!autoAnim) return;
-    progress += dir * 0.003;
-    if (progress <= 0.2) dir = 1;
-    if (progress >= 0.8) dir = -1;
-    updateSlider(container.getBoundingClientRect().left + progress * container.getBoundingClientRect().width);
-    requestAnimationFrame(autoSlide);
-  }
-
-  container.addEventListener('mousedown', () => { autoAnim = false; });
-  container.addEventListener('touchstart', () => { autoAnim = false; }, { passive: true });
-
-  setTimeout(() => {
-    autoSlide();
-  }, 1200);
+// Init
+setLang(currentLang);
 </script>
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div>
+    <div class="sticky-cta-text" data-en="Arc Raiders. <span>Finally complete.</span>" data-de="Arc Raiders. <span>Endlich komplett.</span>">Arc Raiders. <span>Finally complete.</span></div>
+    <div class="sticky-cta-sub" data-en="€5.49 one-time — no subscription, yours forever." data-de="€5.49 einmalig — kein Abo, für immer deins.">€5.49 one-time — no subscription, yours forever.</div>
+  </div>
+  <div class="sticky-cta-buttons">
+    <a href="https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156" class="btn-primary" style="font-size:16px; padding:10px 24px;" data-en="Get Pro — €5.49" data-de="Pro kaufen — €5.49">Get Pro — €5.49</a>
+    <a href="https://github.com/BrightRaider/BrightRaider/releases/latest" class="btn-secondary" style="font-size:14px; padding:10px 18px;" data-en="Free Download" data-de="Kostenlos laden">Free Download</a>
+    <button class="sticky-close" onclick="document.getElementById('sticky-cta').classList.remove('visible'); document.getElementById('sticky-cta').style.display='none';">×</button>
+  </div>
+</div>
 
 </body>
 </html>
