@@ -6,6 +6,8 @@ labels: bug
 assignees: ''
 ---
 
+> This is a solo hobby project maintained in my free time. I read every report, but response times vary. No SLA, no support contract — just one person trying to make the tool better.
+
 **BrightRaider version**
 e.g. V9.5.1 — Numpad / Arrow Keys
 

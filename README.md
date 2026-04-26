@@ -223,6 +223,12 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 3. Optional: Remove `GdiIcmGammaRange` from `HKLM\...\ICM`
 4. Optional: Remove auto-start from `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
 
+## Feedback & Issues
+
+Found a bug or have an idea? [Open an issue](https://github.com/BrightRaider/BrightRaider/issues/new/choose).
+
+> This is a solo hobby project maintained in my free time. I read everything, but response times vary — there is no support contract.
+
 ## FAQ
 
 **Does this work with other games?**

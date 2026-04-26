@@ -6,6 +6,8 @@ labels: enhancement
 assignees: ''
 ---
 
+> This is a solo hobby project. Feature requests are read and considered, but there is no guarantee anything gets built. "Thanks, noted" is a complete answer.
+
 **What would you like to see?**
 A clear description of the feature or improvement.
 
