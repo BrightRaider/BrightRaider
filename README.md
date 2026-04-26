@@ -11,9 +11,7 @@ One EXE, zero dependencies, ~180 KB.
 
 ## Before / After
 
-![Normal vs Bright](assets/screenshots/comparison.png)
-
-*Screenshot courtesy of [Jags95](https://www.youtube.com/watch?v=XX_tYYqnB7w)*
+![Normal vs Bright](assets/screenshots/comparison2.png)
 
 ## Screenshots
 

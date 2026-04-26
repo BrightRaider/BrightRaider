@@ -48,6 +48,7 @@ assets/screenshots/*.png
 assets/screenshots/*.PNG
 assets/screenshots/*neu*
 !assets/screenshots/Quicksave.jpg
+!assets/screenshots/comparison2.png
 
 # Release archives + debug output
 releases/*.7z
