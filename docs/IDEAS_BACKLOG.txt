@@ -1,0 +1,41 @@
+================================================================================
+BRIGHTRAIDER — IDEEN-BACKLOG
+================================================================================
+
+Ideen die zu aufwendig für die aktuelle Version sind, aber nicht vergessen
+werden sollen. Kein festes Release-Ziel.
+
+================================================================================
+
+BLUEPRINT FINDER (Arc Raiders)
+================================
+
+Idee:
+- Nutzer wählt einen Blueprint aus einer Liste aus
+- BrightRaider öffnet die Karte, zoomt raus (wie Map Scanner)
+- Markiert die Position des Blueprints auf der Karte (Punkt/Kreis im Overlay)
+- Zeigt unten einen Hinweis: in welchen Behältern/Spots das Blueprint zu finden ist
+
+Datenquelle: Blueprint Atlas (Community-Website mit Blueprint-Positionen)
+- Daten per HttpClient fetchen (in .NET 4.7.2 verfügbar)
+- Alternativ: lokale JSON-Datei die periodisch aktualisiert wird
+
+Technische Machbarkeit:
+- Map Scanner zoomt bereits automatisch auf Maximum raus (M halten)
+- Bei vollem Rauszoomen sind die Kartenkoordinaten fix → einmalig einmessen
+- Overlay-Infrastruktur existiert bereits (Map Scanner Overlay)
+- Marker-Punkt wäre ein zusätzliches DrawEllipse im bestehenden Overlay
+- Blueprint-Daten einmalig pro Karte einmessen (Weltposition → Bildschirmpixel)
+
+Aufwand:
+- Blueprint-Positionen für alle Karten einmessen (einmalig, viel Arbeit)
+- UI: Suchfeld oder Dropdown im Tray-Menü
+- Web-Fetch oder lokale Datenpflege
+- Abhängigkeit von Blueprint Atlas Struktur (bricht bei Website-Änderungen)
+
+Einordnung:
+- Sinnvoll wenn Plugin-System existiert → Blueprint Finder als eigenes AR-Modul
+- Oder als eigenständiges Arc-Raiders-spezifisches Pro-Feature
+- Voraussetzung: V1.0 Map-Overlay-Infrastruktur ist vorhanden
+
+================================================================================

@@ -54,7 +54,8 @@ PRO FEATURES (€5.49 one-time)
     configurable threshold (minutes + seconds). Configured
     inside Map Scanner Settings.
   - Crosshair Overlay: click-through crosshair on screen,
-    4 styles (Cross, DotRing, TShape, Dot), custom color/size
+    6 styles (Cross, DotRing, TShape, Dot, Ring, CrossGap),
+    custom color, size (4–50px), optional outline with own color
   - Up to 9 profiles (Numpad 1-9)
   - Custom profile editor: set your own Gamma, Contrast
     and Vibrance values for each profile
@@ -67,8 +68,9 @@ PRO FEATURES (€5.49 one-time)
   - Vibrance Restore: your original vibrance is read on
     startup and restored when you exit
   - QuickSelect: press a key to automatically use a quick-wheel item
-    (Q-hold → slot → LMB hold → H to free hand). 5 configurable slots,
-    6 LMB timer presets for different item durations. [PRO]
+    (Q-hold → slot → LMB hold → H to free hand). 8 configurable slots
+    (slots 7–8 via mouse movement), 6 LMB timer presets. H-key bindable
+    to MB3/4/5. Apply button in settings. [PRO]
   - Offline license: no internet required after activation
 
 PROFILES (Default)
@@ -234,6 +236,14 @@ MAP SCANNER (Pro)
     Numpad* (Numpad version) / Delete/Entf (Arrow version)
     A toast notification confirms the toggle.
 
+  Event detection:
+    When an in-game event is active, BrightRaider detects it automatically
+    and adjusts the number of active evacuation points shown:
+      Night              — 2 active points, Raider Hatches closed warning
+      Hurricane          — all points active
+      Electromagnetic Storm — 3 active points, Raider Hatches closed warning
+    The event name appears in the overlay below the map name.
+
   Configure via: right-click tray -> Map Scanner Settings
     - Hold duration (how long to press M before scan starts)
     - Overlay position (6 screen positions)
@@ -309,8 +319,10 @@ QUICKSELECT (Pro)
     - Toggle QuickSelect off (toggle key) when typing in chat to avoid
       accidentally triggering slots.
     - The Arrow version uses Pos1 (Home) as the toggle key by default.
-    - Slots 7–10 use mouse-wheel positioning: Q is held, mouse moves to
-      the wheel position, Q is released. Bind Wheel↑/↓ as trigger keys too.
+    - Slots 7–8 use mouse movement: Q is held, cursor moves to the wheel
+      position, Q is released. No key press needed for slot selection.
+    - H-Key can be bound to MB3, MB4, or MB5 in addition to keyboard keys.
+    - Apply button saves settings without closing the dialog.
 
 QUICKSAVE (Pro)
   QuickSave automatically drags items between your inventory and your Safe Pocket
@@ -368,8 +380,10 @@ CROSSHAIR OVERLAY (Pro)
 
   Toggle: Numpad+ (Numpad version) / Insert (Arrow version)
   Configure: right-click tray -> Crosshair Settings
-    4 styles: Cross, DotRing, TShape, Dot
-    Custom color and size (10-50px)
+    6 styles: Cross, DotRing, TShape, Dot, Ring, CrossGap
+    Custom color and size (4–50px)
+    Optional outline: separate outline color, independently toggleable
+    Dot style: size is fully controlled by the size slider (not fixed)
 
 AUTO-BRIGHTNESS (Pro)
   When enabled, BrightRaider analyzes 5 zones on your screen
@@ -396,9 +410,10 @@ HOTKEY PAUSE (Pro)
   A toast confirms when hotkeys are paused or resumed.
 
 VIBRANCE RESTORE
-  BrightRaider reads your current GPU vibrance on startup.
-  Profile 1 "Normal" is set to your original vibrance value.
-  When you exit BrightRaider, your original vibrance is restored.
+  BrightRaider reads your current GPU vibrance on startup and restores
+  it when you exit — so your display always returns to its original state.
+  Profile 1 keeps whatever value you configured (it is not automatically
+  overwritten with the hardware default).
 
 MONITOR SELECTION
   By default, all monitors change together. To change only
@@ -483,8 +498,9 @@ PRO FUNKTIONEN (5,49 EUR einmalig)
     Schwellwert faellt. Schwellwert in Min + Sek einstellbar.
     Konfiguration: Map Scanner Einstellungen → Evac Alarm
   - Crosshair-Overlay: Click-through Fadenkreuz auf dem
-    Bildschirm, 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt),
-    freie Farbwahl und Groesse
+    Bildschirm, 6 Stile (Kreuz, Punkt+Ring, T-Form, Punkt, Ring,
+    Kreuz-mit-Luecke), freie Farbwahl, Groesse (4–50px),
+    optionaler Umriss mit eigener Farbe
   - Bis zu 9 Profile (Numpad 1-9)
   - Profil-Editor: eigene Gamma-, Kontrast- und Vibrance-
     werte fuer jedes Profil einstellen
@@ -498,7 +514,9 @@ PRO FUNKTIONEN (5,49 EUR einmalig)
     gespeichert und beim Beenden wiederhergestellt
   - QuickSelect: Taste druecken → Item automatisch nutzen
     (Q halten → Slot → LMB halten → H fuer freie Hand).
-    5 Slots, 6 LMB-Timer-Voreinstellungen. [PRO]
+    8 Slots (Slots 7–8 per Mausbewegung), 6 LMB-Timer-
+    Voreinstellungen. H-Taste auch mit MB3/4/5 belegbar.
+    Apply-Schaltflaeche in den Einstellungen. [PRO]
   - Offline-Lizenz: nach Aktivierung kein Internet noetig
 
 PROFILE (Standard)
@@ -664,6 +682,14 @@ MAP SCANNER (Pro)
     Numpad* (Numpad-Version) / Entf (Arrow-Version)
     Ein Toast bestaetigt das Umschalten.
 
+  Event-Erkennung:
+    Wenn ein In-Game-Event aktiv ist, erkennt BrightRaider es automatisch
+    und passt die Anzahl der angezeigten aktiven Evakuierungspunkte an:
+      Nacht                  — 2 aktive Punkte, Warnung "Raider Hatches zu"
+      Hurrikan               — alle Punkte aktiv
+      Elektromagnetischer Sturm — 3 aktive Punkte, Warnung "Raider Hatches zu"
+    Der Event-Name erscheint im Overlay unter dem Kartennamen.
+
   Konfigurieren: Rechtsklick Tray -> Map Scanner Einstellungen
     - Haltedauer (wie lange M gehalten werden muss)
     - Position des Overlays (6 Optionen)
@@ -704,9 +730,10 @@ QUICKSELECT (Pro)
     - Rad schliesst zu frueh? Q-Haltezeit um 50ms erhoehen.
     - QuickSelect per Toggle-Taste pausieren wenn du in der Lobby
       oder im Chat tipps.
-    - Slots 7–10 nutzen Mausbewegung: Q wird gehalten, Maus faehrt auf
-      die Rad-Position, Q wird losgelassen. Mausrad (Wheel↑/↓) kann
-      ebenfalls als Trigger-Taste gewaehlt werden.
+    - Slots 7–8 nutzen Mausbewegung: Q wird gehalten, Cursor faehrt auf
+      die Rad-Position, Q wird losgelassen. Kein Tastendruck noetig.
+    - H-Taste kann auch mit MB3, MB4 oder MB5 belegt werden.
+    - Apply-Schaltflaeche speichert Einstellungen ohne Dialog zu schliessen.
 
 QUICKSAVE (Pro)
   QuickSave zieht automatisch Items zwischen Inventar und Sicherheitstasche —
@@ -764,8 +791,10 @@ CROSSHAIR-OVERLAY (Pro)
 
   An/aus: Numpad+ (Numpad-Version) / Einfg (Arrow-Version)
   Konfigurieren: Rechtsklick Tray -> Fadenkreuz Einstellungen
-    4 Stile: Kreuz, Punkt+Ring, T-Form, Punkt
-    Freie Farbwahl und Groesse (10-50px)
+    6 Stile: Kreuz, Punkt+Ring, T-Form, Punkt, Ring, Kreuz-mit-Luecke
+    Freie Farbwahl und Groesse (4–50px)
+    Optionaler Umriss: eigene Umrissfarbe, unabhaengig ein/ausschaltbar
+    Punkt-Stil: Groesse vollstaendig ueber Size-Slider steuerbar
 
 AUTO-HELLIGKEIT (Pro)
   Wenn aktiviert, analysiert BrightRaider 5 Zonen auf dem
@@ -793,9 +822,10 @@ HOTKEY-PAUSE (Pro)
   Ein Toast bestaetigt das Aktivieren/Deaktivieren.
 
 VIBRANCE RESTORE
-  BrightRaider liest deine aktuelle GPU-Vibrance beim Start.
-  Profil 1 "Normal" wird auf deinen eigenen Vibrance-Wert gesetzt.
-  Beim Beenden von BrightRaider wird deine Vibrance wiederhergestellt.
+  BrightRaider liest deine aktuelle GPU-Vibrance beim Start und stellt
+  sie beim Beenden wieder her — dein Display kehrt immer in den
+  Ausgangszustand zurueck. Profil 1 behaelt den von dir konfigurierten
+  Wert (wird nicht automatisch auf den Hardware-Standard ueberschrieben).
 
 MONITOR-AUSWAHL
   Standardmaessig wechseln alle Monitore gleichzeitig. Um nur

@@ -1,0 +1,160 @@
+================================================================================
+V1.0 — PLANUNGSDOKUMENT
+================================================================================
+
+V1.0 ist kein normales Feature-Update — es ist ein kompletter Überarbeitung.
+Ziel: stabiles, poliertes Produkt das bereit ist für ein breiteres Publikum.
+Signalisiert "fertige Software" stärker als V9.x
+
+Vorherige Versionsbezeichnung: V10 → umbenannt zu V1.0 (SemVer ab jetzt)
+Alte Tags (v6–v9.x) bleiben auf GitHub unverändert.
+
+
+KERNZIEL: VIBRANCE GUI ERSETZEN
+================================
+
+Nutzer die aktuell VibranceGUI + BrightRaider parallel laufen haben,
+sollen danach nur noch BrightRaider brauchen.
+
+Klarer Hinweis in der App: "VibranceGUI nicht mehr nötig."
+
+
+FEATURES
+========
+
+[ ] Alt-Tab Vibrance Auto-Switch [FREE]
+    - WinEvent-Hook auf Foreground-Window-Change (SetWinEventHook)
+    - Spiel im Fokus → Profil-Vibrance aktiv
+    - Alt-Tab / anderes Fenster → normale Vibrance (gespeicherter Hardware-Wert)
+    - Ersetzt VibranceGUI vollständig — universell, nicht Arc Raiders-spezifisch
+    - Konfigurierbar: welches Fenster gilt als "Spiel" (Prozessname)
+    - Klarer Hinweis in der App: "VibranceGUI nicht mehr nötig"
+    - Selber Hook: Map Overlay + Crosshair automatisch ausblenden wenn Spiel nicht
+      im Vordergrund (Alt-Tab raus → weg, Alt-Tab rein → wieder da)
+
+[ ] Arc Raiders Modus — opt-in
+    - Beim ersten Start: nur universelle Features sichtbar
+      (Helligkeit, Vibrance, Alt-Tab Auto-Switch, Profile, Autorun, Audio)
+    - Haken "Arc Raiders features aktivieren" → Map Scanner, QuickSelect,
+      Evac Alarm tauchen im Menü auf
+    - Macht das Menü für Nicht-Arc-Raiders-Nutzer sauber und übersichtlich
+    - Arc Raiders-Nutzer die upgraden: Haken ist bereits gesetzt (Config-Migration)
+
+[ ] Redesigned Menus
+    - Aktuelles Tray-Menü ist gewachsen und unübersichtlich
+    - Cleaner, besser organisiert, intuitiver
+    - Einstellungen logisch gruppiert
+    - Durch Arc Raiders opt-in automatisch schlanker für alle anderen
+
+[ ] Bessere Usability & In-App-Guidance
+    - Neue Nutzer sollen ohne Anleitung zurechtkommen
+    - Tooltips / Hinweise wo nötig
+    - Erster Start: kurze Einführung oder Setup-Assistent
+
+[ ] Tray-Icon zeigt Profilname statt Nummer
+    - Statt "2" steht im Icon "AR" oder ein frei definierbares Kürzel
+    - Klein, schnell gebaut, sofort sichtbar besser
+
+[ ] Breiteres Publikum
+    - Messaging ändert sich: nicht mehr "BrightRaider für Arc Raiders"
+      sondern "BrightRaider für jeden der Digital Vibrance nutzt —
+      mit Arc Raiders Pro-Features on top"
+    - Marketing auf r/pcgaming, r/gaming, allgemeine Gaming-Foren möglich
+    - VibranceGUI hat tausende Nutzer — das ist die Zielgruppe
+
+
+STRATEGIE — SPIELUNTERSTÜTZUNG
+================================
+
+Universelle Features (Vibrance, Helligkeit, Alt-Tab Auto-Switch) skalieren
+ohne Mehraufwand auf jedes Spiel — kein Wartungsaufwand pro Spiel.
+
+Tiefe Integration (Map Scanner, QuickSelect, Evac Alarm) bleibt exklusiv
+für Arc Raiders. Gründe:
+- Jedes neue Spiel bedeutet: Koordinaten einmessen, testen, bei jedem
+  Patch nachpflegen, Support für fremde Auflösungen
+- Arc Raiders wird selbst gespielt → eigene Qualitätskontrolle möglich
+- Bei fremden Spielen: abhängig von Community-Feedback, kein eigenes Testen
+
+Kein zweites Spiel mit tiefer Integration bis:
+- Arc Raiders Potenzial vollständig ausgeschöpft ist
+  (56k aktive Spieler, 116k Spitze — erst ein Bruchteil erreicht)
+- jemand aus der Community aktiv hilft (Koordinaten einmessen, testen)
+
+Preis: Ein Pro für alles — kein Modul-System, kein separater Checkout.
+Arc Raiders opt-in ist UI-Entscheidung, kein separates Produkt.
+
+
+LANGZEIT-VISION — BRIGHTRAIDER ALS UNIVERSELLES GAMER-TOOL
+===========================================================
+
+Ziel: BrightRaider wird nicht Arc-Raiders-Tool mit Extras, sondern das
+mächtigste portable Gamer-Tool für Windows — für jedes Spiel.
+
+BrightRaiders größter Vorteil muss erhalten bleiben:
+- Eine EXE, keine Installation, keine Dependencies
+- Läuft überall, funktioniert im Fullscreen, kein Alt-Tab
+- Kein Installer, kein Store, kein Bloat
+
+Zielarchitektur: Plugin-System
+- Kern-EXE bleibt klein, universell, portable
+- Spiel-Module als separate .dll Dateien die nachgeladen werden
+- Kern wartet: Vibrance, Helligkeit, Alt-Tab Auto-Switch, Profile
+- Module liefern: Spiel-spezifische Features (Map Scanner, QuickSelect etc.)
+- Community kann eigene Module bauen für ihre Spiele
+- Du wartest nur den Kern — Spiele skalieren ohne deinen Aufwand
+
+Was NICHT funktioniert:
+- .NET Solution mit Installer → verliert "läuft überall"
+- Electron/Web → viel zu schwer für ein Tray-Tool
+- Store-App → Anti-Cheat blockiert Low-Level Hooks
+
+Wann umsteigen:
+- Nicht jetzt — V1.0 zuerst, Nutzerbasis aufbauen
+- Wenn Community aktiv Spiel-Module nachfragt
+- Wenn eine .cs Datei zu klein für den Umfang wird
+
+Vorbereitung in V1.0 — skalierbar bauen ohne zu overengineeren:
+- Arc Raiders Features sauber hinter arcRaidersMode-Flag isolieren
+  → das passiert sowieso für den opt-in
+  → ist bereits die logische Trennung die ein Plugin-System später braucht
+  → kein Mehraufwand, zahlt direkt auf V1.0 ein
+- Noch NICHT bauen: echtes .dll Plugin-System, Plugin-API, Loader
+  → Wochen Arbeit für Infrastruktur die noch niemand braucht
+  → erst wenn klar ist wie Module wirklich aussehen sollen
+- Faustregel: Kern und Spiel-Features klar trennen im Code,
+  aber keine Plugin-Infrastruktur bis die Nachfrage da ist
+
+
+CONFUSEREX — ABGESCHAFFT
+=========================
+
+ConfuserEx wird nicht mehr verwendet (abgeschafft ab V9.6).
+Die periodische Online-Lizenzvalidierung (alle 3 Tage, silent) ist die eigentliche
+Schutzschicht. ConfuserEx erhöhte AV-Detektionen ohne echten Sicherheitsmehrwert.
+
+Build-Script kompiliert direkt mit Roslyn, kein ConfuserEx-Schritt mehr.
+XOR-Verschleierung der Seeds im Code bleibt bestehen.
+
+
+CRYPTO-SEEDS — KEINE ÄNDERUNG BEI V1.0
+========================================
+
+Seeds bleiben unverändert (seit V9.3 neu, kein Leak seitdem).
+Online-Validierung macht Seeds als Angriffspunkt irrelevant:
+korrekte Seeds + gefälschte .lic → wird online abgelehnt.
+Neue Seeds = unnötiger Re-Aktivierungs-Aufwand ohne Sicherheitsgewinn.
+
+Neue Seeds nur bei konkretem Sicherheitsproblem (nachgewiesener Leak).
+
+
+TECHNISCHE HINWEISE
+===================
+
+SetWinEventHook für Alt-Tab Detection:
+- EVENT_SYSTEM_FOREGROUND (0x0003) → feuert wenn Vordergrundfenster wechselt
+- Callback prüft ob neues Fenster == Spielprozess
+- Kein Polling nötig, sehr niedrige CPU-Last
+- Funktioniert mit allen Anti-Cheat-Systemen (nur Windows-API)
+
+================================================================================
