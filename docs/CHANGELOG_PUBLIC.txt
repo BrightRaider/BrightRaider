@@ -3,7 +3,50 @@
 ================================================================
 
 
-[ V9.5 ] - Current Version
+[ V9.6 ] - Current Version
+
+  Map Scanner (Pro):
+  - New: Night, Hurricane, and Electromagnetic Storm event detection.
+    The overlay shows the active event name next to the map name.
+    Evac points are automatically adjusted per event type:
+    Night → 2 active points, Electromagnetic Storm → 3, Hurricane → all standard.
+    Excess points are shown as CLOSED immediately, without waiting for a timer scan.
+  - New: "⚠ Raider Hatches closed" warning shown during Night and Storm events.
+
+  Crosshair:
+  - New: Outline option for all crosshair styles — configurable outline color,
+    improves visibility on bright backgrounds.
+  - New styles: Ring (circle only) and Cross-with-gap (CS:GO-style with adjustable gap size).
+  - Fixed: Dot crosshair size is now fully adjustable via the size slider
+    (was previously fixed at 7×7px regardless of slider position).
+  - Minimum crosshair size reduced from 10 to 4 for all styles.
+
+  QuickSelect (Pro):
+  - New: Apply button — apply settings without closing the dialog.
+  - New: Mouse buttons MB3, MB4, MB5 can now be bound as the H-key (holster).
+  - New: 3 additional action slots (total: 8), accessing wheel positions 7–10.
+    Slots 7–10 use mouse movement to select the item while holding Q.
+  - New: "Wheel equip" delay — configurable post-Q delay (default 300ms) so the
+    item is fully in hand before use. Adjust if your item isn't used completely.
+
+  QuickSave (Pro) — New Feature:
+  - New: Automatically drag items between inventory slots and your Safe Pocket.
+    One keypress: open inventory → drag item to pocket (or reverse) → close inventory.
+  - 5 independent presets, each with: trigger key, source slot (1–8 or Pocket 1–3),
+    destination slot (1–8 or Pocket 1–3), and open/close tab toggle.
+  - Toggle mode (⇄): activate per preset — first press = forward drag,
+    second press = reverse drag. Useful for storing and retrieving the same item.
+  - All timing values configurable (open delay, hover, drag hold, drop delay, cooldown).
+  - Numpad / toggles QuickSave on/off globally with a toast notification.
+  - Configure under Settings → QuickSave... [PRO]
+
+  Bug fixes:
+  - Fixed: Profile 1 vibrance (and other settings) were reset to hardware default
+    on every EXE restart, regardless of what was saved in the profile.
+    Profiles 2–9 were not affected. (Reported by GitHub user — thank you!)
+
+
+[ V9.5 ]
 
   QuickSelect (Pro):
   - New: Press a configurable key to automatically use an item from your

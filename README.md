@@ -4,7 +4,7 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress. Built for Arc Raiders players who struggle with dark caves, shadows and low visibility — but works with any game.
 
-One EXE, zero dependencies, ~140 KB.
+One EXE, zero dependencies, ~180 KB.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET%20Framework-4.7.2-purple)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
@@ -57,12 +57,13 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - Portable — no installation, just one EXE
 
 ### Pro (€5.49)
-- **QuickSelect** — press a single key to automatically use an item from your quick-use wheel. Handles everything: hold Q → select slot → release Q → hold LMB → press H. 5 independent slots, 6 LMB timer presets (Adrenalin Syringe, Bandage, Shield Charger…), Q and H keys freely rebindable. Toggle with Numpad− or Pos1. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
+- **QuickSave** — one keypress drags an item from your inventory to your Safe Pocket (or back). Handles everything: open inventory → drag → close. 5 independent presets, configurable slots, toggle direction per preset. Toggle on/off with `Numpad /` (Arrow: `End`). 📖 [Setup Guide](docs/QuickSave_Guide.md)
+- **QuickSelect** — press a single key to automatically use an item from your quick-use wheel. Handles everything: hold Q → select slot → release Q → hold LMB → press H. 8 independent slots, 6 LMB timer presets (Adrenalin Syringe, Bandage, Shield Charger…), Q and H keys freely rebindable. Toggle with `Numpad −` or `Pos1`. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
 - **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter. Zone weights configurable (Settings → Zones...) — reduce corner influence if your HUD covers them.
-- **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm. No extra software needed. Works reliably in most situations — if a scan misses, just hold M again.
+- **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Detects active events (Night, Hurricane, Electromagnetic Storm) and adjusts active evac points automatically. Supports Buried City, Stella Montis, Space Port, Blue Gate and Damm.
 - **Evac Alarm** — get a red toast + sound alert when an evac timer drops below your configured threshold (set in minutes + seconds). Configure inside Settings → Map Scanner → Settings.
 - **Autorun** — short press CapsLock to hold W (walk or sprint). Hold CapsLock 600ms for **Tap Mode** — pulses W at intervals, perfect for the **Looting Mk. 3 (Survivor)** augment (keeps health at 75% while moving). Shift toggles sprint. C triggers a slide. CapsLock/W/S/C stops. Rebind in Settings.
-- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. Choose from 4 styles (Cross, Dot+Ring, T-Shape, Dot), pick any color and size. Toggle with Numpad+ or Insert. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
+- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. 6 styles: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optional outline for visibility on bright backgrounds. Toggle with `Numpad +` or `Insert`. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
 - **Audio Ducking** — hold Numpad 0 (or ↑) for 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
 - **Game Mute** — mute only the game audio with a single key (Numpad 0). Your Discord, music, everything else stays on. One press to focus, one press to hear the game again. Works instantly, even in fullscreen.
 - **Up to 9 profiles** with full customization
@@ -121,14 +122,16 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 
 | Key | Action | Version |
 |-----|--------|---------|
-| Numpad 1-3 | Switch profile | Free |
-| Numpad 4-9 | Switch profile | Pro |
+| Numpad 1–3 | Switch profile | Free |
+| Numpad 4–9 | Switch profile | Pro |
 | Numpad 0 (short) | Mute/unmute game | Pro |
 | Numpad 0 (hold 600ms) | Audio Ducking on/off | Pro |
 | Numpad + | Toggle crosshair | Pro |
 | Numpad * | Toggle timer overlay | Pro |
 | Numpad − | Toggle QuickSelect on/off | Pro |
-| 4 / 5 / 6 | QuickSelect slot 1/2/3 | Pro |
+| Numpad / | Toggle QuickSave on/off | Pro |
+| Numpad Entf | Toggle ALL hotkeys on/off | Pro |
+| 4 / 5 / 6 | QuickSelect slot 1/2/3 (default) | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
@@ -146,7 +149,9 @@ Works with NumLock on or off. **Tip: keep NumLock off while playing** — with N
 | Insert | Toggle crosshair | Pro |
 | Delete / Entf | Toggle timer overlay | Pro |
 | Pos1 / Home | Toggle QuickSelect on/off | Pro |
-| 4 / 5 / 6 | QuickSelect slot 1/2/3 | Pro |
+| End / Ende | Toggle QuickSave on/off | Pro |
+| Page Down / Bild↓ | Toggle ALL hotkeys on/off | Pro |
+| 4 / 5 / 6 | QuickSelect slot 1/2/3 (default) | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
 
@@ -206,6 +211,11 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 
 **[View full manual](docs/Manual.txt)**
 
+## Guides
+
+- 📖 [QuickSave Setup Guide](docs/QuickSave_Guide.md)
+- 📖 [QuickSelect Setup Guide](docs/QuickSelect_Guide.md)
+
 ## Uninstall
 
 1. Exit BrightRaider (right-click tray → Exit)
@@ -222,7 +232,7 @@ Yes. BrightRaider adjusts your display, not the game.
 No. It uses the same Windows APIs as your monitor settings.
 
 **Do I need Pro?**
-Free is fully functional. Pro adds QuickSelect (auto-use items with one key), auto-brightness, map scanner, and more — so you never take your hand off the mouse.
+Free is fully functional. Pro adds QuickSave (drag to Safe Pocket with one key), QuickSelect (auto-use items), auto-brightness, map scanner, and more — so you never take your hand off the mouse.
 
 ---
 
@@ -235,7 +245,7 @@ Free is fully functional. Pro adds QuickSelect (auto-use items with one key), au
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, ~330 KB.
+Eine EXE, keine Abhängigkeiten, ~180 KB.
 
 ## Warum BrightRaider?
 
@@ -257,14 +267,15 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
-- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Führt alles automatisch aus: Q halten → Slot wählen → Q loslassen → LMB halten → H drücken. 5 Slots, 6 LMB-Timer-Presets (Adrenalinspritze, Verband, Schildauflader…), Q- und H-Taste frei belegbar. Toggle: Numpad− oder Pos1. 📖 [Anleitung](docs/QuickSelect_Guide.md)
+- **QuickSave** — ein Tastendruck zieht ein Item aus dem Inventar in die Sicherheitstasche (oder zurück). Alles automatisch: Inventar öffnen → ziehen → schließen. 5 unabhängige Presets, Slots konfigurierbar, Richtung pro Preset umschaltbar. An/Aus: `Numpad /` (Pfeiltasten: `Ende`). 📖 [Anleitung](docs/QuickSave_Guide.md)
+- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Führt alles automatisch aus: Q halten → Slot wählen → Q loslassen → LMB halten → H drücken. 8 Slots, 6 LMB-Timer-Presets (Adrenalinspritze, Verband, Schildauflader…), Q- und H-Taste frei belegbar. Toggle: `Numpad −` oder `Pos1`. 📖 [Anleitung](docs/QuickSelect_Guide.md)
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln. Zonen-Gewichtung konfigurierbar (Einstellungen → Zonen...).
-- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Macht einen Screenshot, liest die Timer per Windows-OCR aus (keine Spieldateien oder Speicher werden berührt) und zeigt einen farbkodierten Live-Countdown auf dem Bildschirm. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm. Keine Extra-Software nötig.
-- **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt (in Minuten + Sekunden). Einstellungen → Map Scanner → Einstellungen.
-- **Autorun** — kurz CapsLock drücken um W zu halten (Gehen oder Rennen). CapsLock 600ms halten für **Tap-Modus** — W wird in Intervallen gedrückt, ideal für das **Looting Mk. 3 (Survivor)**-Augment (Leben bleibt bei 75% während du dich bewegst). Shift togglet Sprint. C löst Slide aus. Taste belegbar.
-- **Crosshair-Overlay** — Ein sauberes, click-through Fadenkreuz direkt auf dem Bildschirm. 4 Stile (Kreuz, Punkt+Ring, T-Form, Punkt), freie Farbwahl und Größe. Toggle mit Numpad+ oder Einfg. EAC-sicher — gleicher Mechanismus wie Discord und GeForce Experience.
-- **Audio Ducking** — Numpad 0 (oder ↑) 600ms halten um Spiel-Audio auf 20% zu reduzieren. Kurzer Druck schaltet weiterhin stumm/an. Lautstärke und Haltezeit konfigurierbar.
-- **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an. Funktioniert sofort, auch im Vollbild.
+- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Screenshot → Windows-OCR → farbkodierter Live-Countdown. Erkennt aktive Events (Nacht, Hurrikan, Elektr. Sturm) und passt aktive Evac-Punkte automatisch an. Unterstützt Buried City, Stella Montis, Space Port, Blue Gate und Damm.
+- **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt. Einstellungen → Map Scanner → Einstellungen.
+- **Autorun** — kurz CapsLock drücken um W zu halten (Gehen oder Rennen). CapsLock 600ms halten für **Tap-Modus** — W wird in Intervallen gedrückt, ideal für das **Looting Mk. 3 (Survivor)**-Augment. Shift togglet Sprint. C löst Slide aus. Taste belegbar.
+- **Crosshair-Overlay** — Click-through Fadenkreuz direkt auf dem Bildschirm. 6 Stile: Kreuz, Punkt+Ring, T-Form, Punkt, Ring, Kreuz-mit-Lücke. Optionaler Umriss für Sichtbarkeit auf hellem Hintergrund. Toggle: `Numpad +` oder `Einfg`. EAC-sicher.
+- **Audio Ducking** — Numpad 0 (oder ↑) 600ms halten um Spiel-Audio auf 20% zu reduzieren. Kurzer Druck schaltet weiterhin stumm/an.
+- **Game Mute** — nur das Spiel stumm schalten (Numpad 0). Discord, Musik, alles andere bleibt an.
 - **Bis zu 9 Profile** mit voller Anpassung
 - **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
 - **Profil-Editor** — Gamma, Kontrast, Vibrance pro Profil feintunen
@@ -280,50 +291,24 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 
 Einfach herunterladen und starten. Keine Installation nötig.
 
-## Schnellstart
-
-1. `BrightRaider.exe` starten — ein Tray-Icon erscheint
-2. **Numpad 1** drücken — Normale Helligkeit
-3. **Numpad 2** drücken — Hell (bessere Sicht in dunklen Bereichen)
-4. **Numpad 3** drücken — Heller (maximale Sicht)
-5. Fertig. Jederzeit umschalten, auch im Vollbild.
-
-## Erster Start
-
-Beim ersten Start setzt BrightRaider einen Registry-Eintrag, um Gamma-Anpassungen freizuschalten:
-
-```
-HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM → GdiIcmGammaRange = 256
-```
-
-Das erlaubt Windows, Gamma-Anpassungen vorzunehmen — wird von vielen Kalibrierungs-Tools genutzt, harmlos, jederzeit entfernbar. Ein UAC-Fenster erscheint einmalig. **PC nach dem ersten Start neu starten** (nur einmal nötig).
-
-## Pro-Aktivierung
-
-1. Lizenz kaufen:
-   - **[Lemon Squeezy (5,49 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**
-2. Rechtsklick auf Tray-Icon → **Einstellungen** → **Lizenz eingeben**
-3. E-Mail und Lizenzschlüssel eingeben
-4. Fertig — alle Pro-Features dauerhaft freigeschaltet. Kein Abo. Einmalig Internet nötig, danach offline für immer.
-
 ## Tastenbelegung
 
 ### Numpad-Version (`BrightRaider.exe`)
 
 | Taste | Aktion | Version |
 |-------|--------|---------|
-| Numpad 1-3 | Profil wechseln | Free |
-| Numpad 4-9 | Profil wechseln | Pro |
+| Numpad 1–3 | Profil wechseln | Free |
+| Numpad 4–9 | Profil wechseln | Pro |
 | Numpad 0 (kurz) | Spiel stumm/laut | Pro |
 | Numpad 0 (600ms halten) | Audio Ducking an/aus | Pro |
 | Numpad + | Fadenkreuz an/aus | Pro |
 | Numpad * | Timer-Overlay an/aus | Pro |
 | Numpad − | QuickSelect an/aus | Pro |
-| 3 / 4 / 5 | QuickSelect Slot 1/2/3 | Pro |
+| Numpad / | QuickSave an/aus | Pro |
+| Numpad Entf | ALLE Hotkeys an/aus | Pro |
+| 4 / 5 / 6 | QuickSelect Slot 1/2/3 (Standard) | Pro |
 | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
-
-Funktioniert mit NumLock an oder aus. **Tipp: NumLock beim Spielen ausschalten** — bei aktivem NumLock unterbricht Windows kurz die Shift-Taste beim Profilwechsel, was den Charakter verlangsamen kann, wenn Shift die Sprint-Taste ist.
 
 ### Pfeiltasten-Version (`BrightRaider_Arrows.exe`)
 
@@ -337,50 +322,17 @@ Funktioniert mit NumLock an oder aus. **Tipp: NumLock beim Spielen ausschalten**
 | Einfg | Fadenkreuz an/aus | Pro |
 | Entf | Timer-Overlay an/aus | Pro |
 | Pos1 / Home | QuickSelect an/aus | Pro |
-| 3 / 4 / 5 | QuickSelect Slot 1/2/3 | Pro |
+| Ende / End | QuickSave an/aus | Pro |
+| Bild↓ / Page Down | ALLE Hotkeys an/aus | Pro |
+| 4 / 5 / 6 | QuickSelect Slot 1/2/3 (Standard) | Pro |
 | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
-## Funktionsweise
-
-BrightRaider passt die Bildschirmausgabe über Standard-Windows-APIs an:
-
-- **GDI** (`SetDeviceGammaRamp`) — Gamma & Kontrast, funktioniert mit jeder GPU
-- **NvAPI** — NVIDIA Digital Vibrance (Hardware-Sättigung)
-- **ADL** — AMD Radeon Sättigungssteuerung
-
-Es wird nichts am Spiel verändert. Es wird nichts injiziert. Es ist das Gleiche wie die Monitor-Helligkeit zu ändern — nur schneller und mit Voreinstellungen.
-
-### Auto-Helligkeit (Pro)
-
-Analysiert 5 kleine Zonen auf dem Bildschirm (Mitte + 4 Ecken) per Median-Helligkeitsmessung. Basierend auf dem Ergebnis wird sanft zwischen deinen Profilen interpoliert. Dunklerer Bildschirm = mehr Boost, hellerer Bildschirm = weniger. Der Übergang ist nahtlos.
-
-Kalibrierung in zwei Schritten: Dunkelste Stelle messen, hellste Stelle messen, fertig.
-
 ## Anti-Cheat Sicherheit
 
-BrightRaider verändert **KEINE**:
-- Spieldateien oder Spielspeicher
-- DLL-Injektionen in Spielprozesse
-- Hooks ins Spiel
-- Lesen von Spieldaten oder Spielspeicher
+BrightRaider verändert **KEINE** Spieldateien oder den Spielspeicher. Der Map Scanner macht einen Screenshot und liest ihn per Windows-OCR aus. Keine Injektion, kein Spielzugriff.
 
-Der Map Scanner macht einen **Screenshot des Bildschirms** und liest ihn per Windows-OCR aus — wie ein Foto vom Monitor. Keine Spieldateien, kein Spielspeicher, kein Spielprozess wird berührt.
-
-BrightRaider nutzt **NUR**:
-- Windows GDI — wie deine Monitor-Einstellungen
-- NVIDIA NvAPI — wie das NVIDIA Control Panel
-- AMD ADL — wie AMD Radeon Software
-
-Anti-Cheat-Systeme erkennen keine Bildschirm-Anpassungen.
-
-### Crosshair-Overlay
-
-Das BrightRaider-Fadenkreuz nutzt ein transparentes Windows-Overlay — denselben Mechanismus wie Discord, GeForce Experience und TeamSpeak-Overlays.
-
-EAC (Easy Anti-Cheat) **erlaubt** diese Art von Overlay ausdrücklich. Es wird nichts ins Spiel injiziert, kein Spielspeicher gelesen, und es wird nicht in der Spiel-Engine gerendert. Es ist lediglich ein transparentes Fenster, das Windows über das Spiel legt.
-
-EAC-sicher — keine Injektion, kein Spielspeicher-Zugriff, keine Spiel-Engine-Darstellung.
+BrightRaider nutzt **NUR** Standard-Windows-APIs (GDI, NvAPI, ADL) — wie das NVIDIA Control Panel oder AMD Radeon Software.
 
 ## FAQ
 
@@ -391,7 +343,7 @@ Ja. BrightRaider passt den Bildschirm an, nicht das Spiel.
 Nein. Es nutzt die gleichen Windows-APIs wie deine Monitor-Einstellungen.
 
 **Brauche ich Pro?**
-Free ist voll funktionsfähig. Pro fügt QuickSelect (Items mit einer Taste benutzen), Auto-Helligkeit, Map Scanner und mehr hinzu — damit du nie die Hand von der Maus nehmen musst.
+Free ist voll funktionsfähig. Pro fügt QuickSave (Items in Sicherheitstasche mit einer Taste), QuickSelect (Items automatisch benutzen), Auto-Helligkeit, Map Scanner und mehr hinzu.
 
 </details>
 

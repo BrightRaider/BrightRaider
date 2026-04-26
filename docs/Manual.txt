@@ -1,5 +1,5 @@
 ================================================================
-  BrightRaider V9.5
+  BrightRaider V9.6
   Switch Gamma, Contrast & Digital Vibrance with one keypress
 ================================================================
 
@@ -125,6 +125,8 @@ USAGE
     M (hold)         ->  Scan evacuation timers on map (Pro)
     4/5/6 (default)  ->  QuickSelect: auto-use slot item (Pro)
     Numpad -         ->  Toggle QuickSelect on/off (Pro)
+    Numpad /         ->  Toggle QuickSave on/off (Pro)
+    Numpad Entf      ->  Toggle ALL BrightRaider hotkeys on/off (works regardless of NumLock)
 
     Works with or without Shift, NumLock on or off.
 
@@ -140,6 +142,8 @@ USAGE
     M (hold)           ->  Scan evacuation timers on map (Pro)
     3/4/5 (default)    ->  QuickSelect: auto-use slot item (Pro)
     Pos1 (Home)        ->  Toggle QuickSelect on/off (Pro)
+    End                ->  Toggle QuickSave on/off (Pro)
+    Page Down          ->  Toggle ALL BrightRaider hotkeys on/off
 
   Tray Icon (right-click):
     - Switch profiles
@@ -305,6 +309,57 @@ QUICKSELECT (Pro)
     - Toggle QuickSelect off (toggle key) when typing in chat to avoid
       accidentally triggering slots.
     - The Arrow version uses Pos1 (Home) as the toggle key by default.
+    - Slots 7–10 use mouse-wheel positioning: Q is held, mouse moves to
+      the wheel position, Q is released. Bind Wheel↑/↓ as trigger keys too.
+
+QUICKSAVE (Pro)
+  QuickSave automatically drags items between your inventory and your Safe Pocket
+  with a single keypress or mouse-wheel scroll — no manual clicking required.
+
+  WHAT YOU CAN MOVE:
+    - Any item in inventory slots 1–8 (this includes all QuickSelect slots
+      and any weapon you have equipped in your quick-use wheel)
+    - Items in Safe Pocket slots 1–3
+    - Direction is fully configurable: slot → pocket or pocket → slot
+
+  HOW IT WORKS:
+    1. You press the assigned hotkey (or scroll the mouse wheel)
+    2. BrightRaider opens your inventory (Tab)
+    3. Moves the cursor to the source slot
+    4. Holds Left Mouse Button and drags to the destination slot
+    5. Releases Left Mouse Button
+    6. Closes inventory (Tab)
+
+  SETUP:
+    1. Right-click tray → Settings → QuickSave... [PRO]
+    2. Check "On" for the preset you want to configure
+    3. Click the key button and press your trigger key (keyboard, MB3/4/5, or Wheel↑/↓)
+    4. Set "From" — the source slot (Slot 1–8 or Pocket 1–3)
+    5. Set "To" — the destination slot (Slot 1–8 or Pocket 1–3)
+    6. Enable "Open" and "Close" to have BrightRaider open/close inventory automatically
+    7. Click Apply or OK
+
+  TOGGLE DIRECTION (⇄):
+    Enable per preset. First trigger press moves From→To, second press moves To→From.
+    Useful for storing a snap hook: one press puts it in the pocket, next press takes it out.
+
+  TIMING (configure if drag fails):
+    Open  — how long to wait after Tab before moving the cursor (default 250ms)
+    Hover — extra wait after cursor arrives at source (default 0ms)
+    Hold  — how long LMB is held while dragging (default 0ms)
+    Drop  — wait before releasing LMB at destination (default 120ms)
+    Cooldown — minimum time between two triggers (default 0ms, disabled)
+
+  TOGGLE ON/OFF:
+    Numpad /  →  Toggle QuickSave on/off  (Numpad version)
+    End       →  Toggle QuickSave on/off  (Arrow version)
+    Toast confirms. Configure tab key: Settings → QuickSave → Tab Key bind button
+
+  KNOWN LIMITATION:
+    Occasional drag failures can occur. This is a known behavior of the
+    Unreal Engine Slate UI system used by Arc Raiders — the same thing
+    happens with normal manual drag-and-drop in the inventory.
+    It cannot be fixed from outside the game. If it happens, just trigger again.
 
 CROSSHAIR OVERLAY (Pro)
   A transparent, click-through crosshair drawn directly on your
@@ -502,6 +557,8 @@ BEDIENUNG
     M (halten)       ->  Evakuierungs-Timer auf Karte scannen (Pro)
     4/5/6 (Standard) ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
     Numpad -         ->  QuickSelect an/aus (Pro)
+    Numpad /         ->  QuickSave an/aus (Pro)
+    Numpad Entf      ->  ALLE BrightRaider-Hotkeys an/aus (unabhaengig von NumLock)
 
     Funktioniert mit und ohne Shift, NumLock an oder aus.
 
@@ -517,6 +574,8 @@ BEDIENUNG
     M (halten)          ->  Evakuierungs-Timer auf Karte scannen (Pro)
     3/4/5 (Standard)    ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
     Pos1 (Home)         ->  QuickSelect an/aus (Pro)
+    Ende                ->  QuickSave an/aus (Pro)
+    Bild↓               ->  ALLE BrightRaider-Hotkeys an/aus
 
   Tray-Icon (Rechtsklick):
     - Profile wechseln
@@ -645,6 +704,58 @@ QUICKSELECT (Pro)
     - Rad schliesst zu frueh? Q-Haltezeit um 50ms erhoehen.
     - QuickSelect per Toggle-Taste pausieren wenn du in der Lobby
       oder im Chat tipps.
+    - Slots 7–10 nutzen Mausbewegung: Q wird gehalten, Maus faehrt auf
+      die Rad-Position, Q wird losgelassen. Mausrad (Wheel↑/↓) kann
+      ebenfalls als Trigger-Taste gewaehlt werden.
+
+QUICKSAVE (Pro)
+  QuickSave zieht automatisch Items zwischen Inventar und Sicherheitstasche —
+  mit einem einzigen Tastendruck oder Mausradscrollen.
+
+  WAS KANN VERSCHOBEN WERDEN:
+    - Items in Inventar-Slots 1–8 (alle QuickSelect-Slots und Waffen)
+    - Items in Sicherheitstasche Slots 1–3
+    - Richtung frei konfigurierbar: Slot → Tasche oder Tasche → Slot
+
+  SO FUNKTIONIERT ES:
+    1. Du drueckst den zugewiesenen Hotkey (oder scrollst das Mausrad)
+    2. BrightRaider oeffnet das Inventar (Tab)
+    3. Bewegt den Cursor zum Quell-Slot
+    4. Haelt Linke Maustaste und zieht zum Ziel-Slot
+    5. Laesst Linke Maustaste los
+    6. Schliesst das Inventar (Tab)
+
+  EINRICHTEN:
+    1. Rechtsklick Tray → Einstellungen → QuickSave... [PRO]
+    2. "An" fuer das gewuenschte Preset ankreuzen
+    3. Auf Taste-Schaltflaeche klicken und Hotkey druecken
+       (Tastatur, MB3/4/5 oder Mausrad Wheel↑/↓)
+    4. "Von" einstellen — Quell-Slot (Slot 1–8 oder Tasche 1–3)
+    5. "Nach" einstellen — Ziel-Slot (Slot 1–8 oder Tasche 1–3)
+    6. "Oeffnen" und "Schliessen" aktivieren
+    7. Apply oder OK klicken
+
+  RICHTUNG UMKEHREN (⇄):
+    Pro Preset aktivierbar. Erster Druck: Von → Nach. Zweiter Druck: Nach → Von.
+    Nuetzlich z.B. fuer den Snap Hook: einmal in die Tasche, einmal heraus.
+
+  TIMING (anpassen wenn Drag fehlschlaegt):
+    Oeffnen   — Wartezeit nach Tab (Standard 250ms)
+    Hover     — Zusatz-Wartezeit am Quell-Slot (Standard 0ms)
+    Halten    — LMB-Haltezeit waehrend des Ziehens (Standard 0ms)
+    Ablegen   — Wartezeit vor LMB-Loslassen am Ziel (Standard 120ms)
+    Cooldown  — Mindestabstand zwischen zwei Ausloesungen (Standard 0ms)
+
+  AN/AUS:
+    Numpad /  →  QuickSave an/aus  (Numpad-Version)
+    Ende      →  QuickSave an/aus  (Pfeiltasten-Version)
+    Toast bestaetigt.
+
+  BEKANNTE EINSCHRAENKUNG:
+    Gelegentlich schlug der Drag-Vorgang fehl. Das ist ein bekanntes Verhalten
+    des Unreal Engine Slate UI-Systems das Arc Raiders verwendet — dasselbe
+    passiert auch beim normalen manuellen Ziehen im Inventar.
+    Es kann nicht von aussen behoben werden. Einfach nochmal ausloesen.
 
 CROSSHAIR-OVERLAY (Pro)
   Ein transparentes, click-through Fadenkreuz direkt auf dem
