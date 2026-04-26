@@ -20,6 +20,12 @@ One keypress automatically drags an item between your inventory and your Safe Po
 
 ---
 
+### New: Map Scanner — Text Outline
+
+OCR overlay text now has a drop shadow for better readability on any background.
+
+---
+
 ### New: Map Scanner — Event Detection
 
 The overlay now detects and displays active world events:
@@ -52,6 +58,12 @@ Two new styles added:
 
 ---
 
+### Crosshair — removed
+
+- **Shadow color setting** removed from crosshair settings — outline color is now the only color control for outlines
+
+---
+
 ### Crosshair fixes
 
 - **Dot size** is now fully adjustable via the size slider (was previously fixed at 7×7px)
@@ -63,8 +75,8 @@ Two new styles added:
 
 - **Apply button** — apply settings without closing the dialog
 - **Mouse buttons MB3, MB4, MB5** can now be bound as the H-key (holster)
-- **3 additional action slots** (total: 8) — slots 7–10 use mouse wheel position selection
-- **Wheel equip delay** — configurable post-Q delay (default 300ms) before the item is used
+- **3 additional action slots** (total: 8) — slots 7 and 8 use mouse movement instead of a key press (Q held, cursor moves to wheel position, Q released)
+- **Holding M** on the map now also toggles the overlay on — no need to press Numpad\* / Delete separately after scanning
 
 ---
 
