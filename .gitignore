@@ -22,6 +22,11 @@ build_lmb_test.ps1
 *.pdb
 *.exe.config
 
+# Release + maintenance scripts (local only)
+release.ps1
+update_banners.ps1
+sync_arrows.ps1
+
 # Internal checklists
 docs/RELEASE_CHECKLIST.md
 
