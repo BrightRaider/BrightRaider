@@ -6,6 +6,7 @@
 [ V9.6 ] - Current Version
 
   Map Scanner (Pro):
+  - New: Riven Tides map added — Coastal Lift and Customs Lift.
   - New: Night, Hurricane, and Electromagnetic Storm event detection.
     The overlay shows the active event name next to the map name.
     Evac points are automatically adjusted per event type:
@@ -16,10 +17,14 @@
   Crosshair:
   - New: Outline option for all crosshair styles — configurable outline color,
     improves visibility on bright backgrounds.
+  - New: Outline rendering rewritten (Cross, CrossGap, TShape) — now pixel-perfect
+    and symmetric at all sizes. Fixes the left-side misalignment visible at small sizes.
   - New styles: Ring (circle only) and Cross-with-gap (CS:GO-style with adjustable gap size).
-  - Fixed: Dot crosshair size is now fully adjustable via the size slider
+  - Fixed: Cross-with-gap disappeared below 6px. Also fixed: sizes 6 and 7 looked identical.
+    Arms are now visible at any size.
+  - Fixed: Dot crosshair is now a circle, fully adjustable via the size slider
     (was previously fixed at 7×7px regardless of slider position).
-  - Minimum crosshair size reduced from 10 to 4 for all styles.
+  - Minimum crosshair size reduced to 1px for all styles (was 10px).
 
   QuickSelect (Pro):
   - New: Apply button — apply settings without closing the dialog.
@@ -44,6 +49,10 @@
   - Fixed: Profile 1 vibrance (and other settings) were reset to hardware default
     on every EXE restart, regardless of what was saved in the profile.
     Profiles 2–9 were not affected. (Reported by GitHub user — thank you!)
+  - Fixed: QuickSave cursor drift — cursor position is now locked every ~8ms during
+    hover and drop phases. Mouse movement no longer shifts the item to the wrong slot.
+  - Fixed: Arc Raiders center dot renamed from "-1px offset" to "Arc Raiders center dot (2x2px)".
+    Visual gap between arms and center block is gone — arms now connect directly to the 2x2 block.
 
 
 [ V9.5 ]

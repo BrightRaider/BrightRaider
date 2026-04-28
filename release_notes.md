@@ -73,7 +73,7 @@ Two new styles added:
 ### Crosshair fixes
 
 - **Dot size** is now fully adjustable via the size slider (was previously fixed at 7×7px)
-- **Minimum size** reduced from 10 to 4 for all styles
+- **Minimum size** reduced to 1px for all styles (was 10px)
 
 ---
 
@@ -90,8 +90,6 @@ Two new styles added:
 
 - **Profile 1 settings reset on restart** — vibrance (and other values) set for Profile 1 were overwritten with the hardware default on every launch. Profiles 2–9 were not affected. (Thanks to the GitHub reporter!)
 - **QuickSave — cursor drift during drag** — during Hover and Drop phases, BrightRaider now continuously corrects the cursor position every ~8 ms. Mouse movement no longer shifts the cursor off the target slot before the click registers.
-- **Crosshair Dot — restored as circle** — reverted FillRectangle back to FillEllipse so the Dot style renders as a circle again.
-- **Crosshair — minimum size reduced to 1px** (was 4px).
 - **Crosshair — Arc Raiders center dot** — renamed from "−1px offset" to "Arc Raiders center dot (2×2px)". Fixed visual gap: crosshair arms now connect directly to the 2×2 center block with no floating gap.
 - **Crosshair — Cross with gap: disappears below 6px** — fixed gap formula so arms remain visible at any size. Also fixed: size 6 and 7 looked identical (integer rounding); odd sizes now draw 1px wider on the far end and are visually distinct.
 - **Crosshair — Outline misalignment** — replaced GDI+ wide-pen outline drawing with explicit FillRectangle calls (Cross, CrossGap, TShape). Outline is now pixel-perfect and symmetric at all sizes.
