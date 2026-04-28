@@ -87,6 +87,8 @@ Two new styles added:
 - **Crosshair Dot — pixel artefact at even sizes** — switched from GDI+ FillEllipse (inconsistent at small even sizes) to FillRectangle. Dot is now pixel-perfect and symmetric at all sizes.
 - **Crosshair — minimum size reduced to 1px** (was 4px).
 - **Crosshair — Arc Raiders center dot** — renamed from "−1px offset" to "Arc Raiders center dot (2×2px)". Fixed visual gap: crosshair arms now connect directly to the 2×2 center block with no floating gap.
+- **Crosshair — Cross with gap: disappears below 6px** — fixed gap formula so arms remain visible at any size. Also fixed: size 6 and 7 looked identical (integer rounding); odd sizes now draw 1px wider on the far end and are visually distinct.
+- **Crosshair — Outline misalignment** — replaced GDI+ wide-pen outline drawing with explicit FillRectangle calls (Cross, CrossGap, TShape). Outline is now pixel-perfect and symmetric at all sizes.
 
 ---
 
