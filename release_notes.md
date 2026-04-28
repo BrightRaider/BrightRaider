@@ -83,6 +83,7 @@ Two new styles added:
 - **Mouse buttons MB3, MB4, MB5** can now be bound as the H-key (holster)
 - **3 additional action slots** (total: 8) — slots 7 and 8 use mouse movement instead of a key press (Q held, cursor moves to wheel position, Q released)
 - **Holding M** on the map now also toggles the overlay on — no need to press Numpad\* / Delete separately after scanning
+- **Default LMB timers increased by 150ms** — T1 1150→1300ms, T2 1650→1800ms, T3 2150→2300ms, T4 4150→4300ms, T5 5150→5300ms. If you have saved values, update them manually.
 
 ---
 
@@ -93,6 +94,7 @@ Two new styles added:
 - **Crosshair — Arc Raiders center dot** — renamed from "−1px offset" to "Arc Raiders center dot (2×2px)". Fixed visual gap: crosshair arms now connect directly to the 2×2 center block with no floating gap.
 - **Crosshair — Cross with gap: disappears below 6px** — fixed gap formula so arms remain visible at any size. Also fixed: size 6 and 7 looked identical (integer rounding); odd sizes now draw 1px wider on the far end and are visually distinct.
 - **Crosshair — Outline misalignment** — replaced GDI+ wide-pen outline drawing with explicit FillRectangle calls (Cross, CrossGap, TShape). Outline is now pixel-perfect and symmetric at all sizes.
+- **Map Scanner — Riven Tides misidentified as Damm during Night** — detection now scores each map by valid reads / total points. A 2-point map with 1 hit (50%) correctly wins over a 4-point map with 1 accidental hit (25%).
 
 ---
 
