@@ -86,7 +86,7 @@ This lets you store and retrieve the same item with the same key.
 | **Open delay** | Wait after Tab before moving cursor (default: 250 ms). Increase if the inventory opens slowly. |
 | **Hover** | Extra wait after cursor arrives at source before picking up (default: 0 ms) |
 | **Hold** | How long LMB is held while dragging (default: 0 ms) |
-| **Drop** | Wait after cursor arrives at destination before releasing (default: 120 ms). Increase if items drop in the wrong slot. |
+| **Drop** | Wait after cursor arrives at destination before releasing (default: 120 ms). **Do not go below 100 ms** — the inventory needs time to register the cursor position before the drop. Values below that cause unreliable drops. |
 | **Cooldown** | Minimum time between two triggers (default: 0 ms, disabled) |
 
 ---
@@ -106,8 +106,8 @@ A toast notification confirms the state: **QuickSave ON** / **QuickSave OFF**.
 
 ## Tips & Troubleshooting
 
-**Q: The item lands in the wrong slot.**  
-A: Increase **Drop** delay (try 150–200 ms). The cursor may be arriving before the inventory finishes rendering.
+**Q: The item lands in the wrong slot / the drag fails.**  
+A: Increase **Drop** delay. Keep it at **120 ms or higher** — values below 100 ms are not reliable. The inventory needs time to register the cursor position before the drop registers.
 
 **Q: The item isn't being picked up.**  
 A: Increase **Open delay** (try 300–400 ms). The inventory may not be fully open when the cursor arrives.
