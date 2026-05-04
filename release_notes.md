@@ -96,6 +96,7 @@ Two new styles added:
 - **Crosshair — Outline misalignment** — replaced GDI+ wide-pen outline drawing with explicit FillRectangle calls (Cross, CrossGap, TShape). Outline is now pixel-perfect and symmetric at all sizes.
 - **Map Scanner — Riven Tides misidentified as Damm during Night** — detection now scores each map by valid reads / total points. A 2-point map with 1 hit (50%) correctly wins over a 4-point map with 1 accidental hit (25%).
 - **QuickSelect — slots 7 & 8 cursor offset wrong on non-1080p resolutions** — wheel slot positions are now scaled to actual screen resolution. Previously the cursor landed at the wrong position on 1440p, 4K, 5K and ultrawide screens. (Thanks to the GitHub reporter!)
+- **Autorun — AZERTY keyboard support** — new option in the Autorun menu: "AZERTY keyboard (Z = forward)". Enables Z as the forward key instead of W for French keyboard layouts.
 
 ---
 
