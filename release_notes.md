@@ -97,6 +97,8 @@ Two new styles added:
 - **Map Scanner — Riven Tides misidentified as Damm during Night** — detection now scores each map by valid reads / total points. A 2-point map with 1 hit (50%) correctly wins over a 4-point map with 1 accidental hit (25%).
 - **QuickSelect — slots 7 & 8 cursor offset wrong on non-1080p resolutions** — wheel slot positions are now scaled to actual screen resolution. Previously the cursor landed at the wrong position on 1440p, 4K, 5K and ultrawide screens. (Thanks to the GitHub reporter!)
 - **Autorun — AZERTY keyboard support** — new option in the Autorun menu: "AZERTY keyboard (Z = forward)". Enables Z as the forward key instead of W for French keyboard layouts.
+- **Crosshair — color picker ignores basic colors** — picking a color from the "Basic colors" panel in the color dialog resulted in a transparent color (alpha 0). Crosshair and outline color now always use full opacity.
+- **License reset on network error** — the background license check (every 3 days) incorrectly revoked Pro if the validation server was unreachable (e.g. no VPN, timeout, firewall). License is now only revoked when the server explicitly responds that the key is invalid.
 
 ---
 
