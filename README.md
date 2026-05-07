@@ -116,7 +116,8 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 
 ## Hotkeys
 
-### Numpad version (`BrightRaider.exe`)
+<details>
+<summary><strong>Numpad version</strong> — BrightRaider.exe</summary>
 
 | Key | Action | Version |
 |-----|--------|---------|
@@ -135,7 +136,10 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 
 Works with NumLock on or off. **Tip: keep NumLock off while playing** — with NumLock on, Windows briefly interrupts the Shift key when you switch profiles, which can slow your character if Shift is your sprint key.
 
-### Arrow Keys version (`BrightRaider_Arrows.exe`)
+</details>
+
+<details>
+<summary><strong>Arrow Keys version</strong> — BrightRaider_Arrows.exe (TKL / laptop)</summary>
 
 | Key | Action | Version |
 |-----|--------|---------|
@@ -152,6 +156,8 @@ Works with NumLock on or off. **Tip: keep NumLock off while playing** — with N
 | 4 / 5 / 6 | QuickSelect slot 1/2/3 (default) | Pro |
 | CapsLock | Toggle autorun | Pro |
 | M (hold on map) | Scan evacuation timers | Pro |
+
+</details>
 
 ## How It Works
 
@@ -297,7 +303,8 @@ Einfach herunterladen und starten. Keine Installation nötig.
 
 ## Tastenbelegung
 
-### Numpad-Version (`BrightRaider.exe`)
+<details>
+<summary><strong>Numpad-Version</strong> — BrightRaider.exe</summary>
 
 | Taste | Aktion | Version |
 |-------|--------|---------|
@@ -314,7 +321,10 @@ Einfach herunterladen und starten. Keine Installation nötig.
 | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
-### Pfeiltasten-Version (`BrightRaider_Arrows.exe`)
+</details>
+
+<details>
+<summary><strong>Pfeiltasten-Version</strong> — BrightRaider_Arrows.exe (TKL / Laptop)</summary>
 
 | Taste | Aktion | Version |
 |-------|--------|---------|
@@ -331,6 +341,8 @@ Einfach herunterladen und starten. Keine Installation nötig.
 | 4 / 5 / 6 | QuickSelect Slot 1/2/3 (Standard) | Pro |
 | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
+
+</details>
 
 ## Anti-Cheat Sicherheit
 
