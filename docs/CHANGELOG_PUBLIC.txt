@@ -50,6 +50,10 @@
     T1 1150→1300ms, T2 1650→1800ms, T3 2150→2300ms, T4 4150→4300ms, T5 5150→5300ms.
     If you have saved values, update them manually in QuickSelect settings.
 
+  Autorun:
+  - New: AZERTY keyboard support — enable "AZERTY keyboard (Z = forward)" in the Autorun menu
+    to use Z as the forward key instead of W. For French keyboard layouts.
+
   Bug fixes:
   - Fixed: Profile 1 vibrance (and other settings) were reset to hardware default
     on every EXE restart, regardless of what was saved in the profile.
@@ -61,6 +65,16 @@
   - Fixed: Map Scanner — Riven Tides could be misidentified as Damm during Night events.
     Detection now uses a ratio score (valid reads / total points) so a 2-point map with
     1 hit (50%) correctly beats a 4-point map with 1 hit (25%).
+  - Fixed: QuickSelect slots 7 & 8 cursor position wrong on non-1080p resolutions.
+    Wheel slot positions are now scaled to actual screen resolution.
+    Previously the cursor landed at the wrong position on 1440p, 4K and ultrawide screens.
+    (Reported by GitHub user — thank you!)
+  - Fixed: Crosshair color picker — picking a color from the "Basic colors" panel resulted
+    in a transparent crosshair (alpha 0). Color now always uses full opacity.
+  - Fixed: License incorrectly reset to Free when the validation server was unreachable
+    (no internet, timeout, firewall). License is now only revoked when the server explicitly
+    responds that the key is invalid.
+  - Fixed: First launch toast notification briefly stole focus from the game window.
 
 
 [ V9.5 ]
