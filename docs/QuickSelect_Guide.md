@@ -23,7 +23,7 @@ Each step is independently controllable. Everything happens in the background wh
 ## Requirements
 
 - **BrightRaider Pro license** (€5.49 one-time)
-- BrightRaider V9.5.1 or later
+- BrightRaider V9.6 or later
 
 ---
 
@@ -40,7 +40,7 @@ Each step is independently controllable. Everything happens in the background wh
    - Check **Q** if you want BrightRaider to open the wheel (uncheck if item is already in hand)
    - Check **Use** if you want the item auto-used after selection (uncheck for select-only)
    - Check **H** if you want your hand freed after item use
-5. Click **OK** — QuickSelect is active immediately
+5. Click **Apply** to save without closing, or **OK** to save and close
 
 ---
 
@@ -69,7 +69,7 @@ Pick the timer that matches your item:
 | **Enable QuickSelect** | Master on/off switch |
 | **Toggle Key** | Pause/resume QuickSelect without opening the dialog (Numpad: Numpad Minus, Arrow: Pos1/Home) |
 | **Q-Key** | The key that opens your quick-use wheel (default: Q). Rebind if your in-game binding is different. |
-| **H-Key** | The key that frees your hand after item use (default: H). |
+| **H-Key** | The key that frees your hand after item use (default: H). Can also be bound to MB3, MB4, or MB5. |
 | **Q-Hold** | How long Q is held before the slot key is pressed (50–2000 ms, default 200 ms). Increase if the wheel doesn't open reliably. |
 | **Active (✓)** | Enable/disable each slot individually without rebinding |
 | **Trigger key** | The key you press to trigger this slot |
@@ -90,8 +90,13 @@ Pick the timer that matches your item:
 | 3 | D6 (key 6) | 5 | T1 — Adrenalin Syringe |
 | 4 | (unbound) | 6 | T4 — Vita Syringe |
 | 5 | (unbound) | 7 | T5 — Instant Shield Charger |
+| 6 | (unbound) | 7 | T6 — custom |
+| 7 | (unbound) | 8 | T6 — custom |
+| 8 | (unbound) | 9 | T6 — custom |
 
-Slots 4 and 5 are disabled by default. Bind a key and check Active to use them.
+Slots 4–8 are disabled by default. Bind a key and check Active to use them.
+
+> **Note:** Slots 7 and 8 use mouse movement to select the wheel position while Q is held — no additional key press is required for slot selection.
 
 ---
 

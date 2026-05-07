@@ -201,6 +201,10 @@ AUTORUN (Pro)
       - Pause between taps (ms) — stationary time between taps
       Enter exact millisecond values.
 
+  AZERTY keyboard support:
+    Enable "AZERTY keyboard (Z = forward)" in Settings -> Autorun to use Z as
+    the forward key instead of W. For French keyboard layouts.
+
   Rebind the autorun key: right-click tray -> Settings -> Autorun [CapsLock]...
   Press any key to rebind, Esc to cancel.
 
@@ -223,7 +227,7 @@ MAP SCANNER (Pro)
   OCR, and shows a live countdown overlay on your screen.
 
   Supported maps:
-    Buried City, Stella Montis, Space Port, Blue Gate, Damm
+    Buried City, Stella Montis, Space Port, Blue Gate, Damm, Riven Tides
 
   Color coding:
     Green  = more than 10 minutes remaining
@@ -650,6 +654,10 @@ AUTORUN (Pro)
       - Pause zwischen Tipps (ms) — Stillstandszeit zwischen Tipps
       Exakte Millisekunden-Werte eingebbar.
 
+  AZERTY-Tastatur-Support:
+    "AZERTY-Tastatur (Z = vorwaerts)" in Einstellungen -> Autorun aktivieren,
+    um Z statt W als Vorwaerts-Taste zu nutzen. Fuer franzoesische Tastaturen.
+
   Taste neu belegen: Rechtsklick Tray -> Einstellungen -> Autorun [CapsLock]...
   Beliebige Taste druecken zum Belegen, Esc zum Abbrechen.
 
@@ -673,7 +681,7 @@ MAP SCANNER (Pro)
   Windows-OCR und zeigt einen Live-Countdown auf dem Bildschirm.
 
   Unterstuetzte Karten:
-    Buried City, Stella Montis, Space Port, Blue Gate, Damm
+    Buried City, Stella Montis, Space Port, Blue Gate, Damm, Riven Tides
 
   Farbkodierung:
     Gruen  = mehr als 10 Minuten
