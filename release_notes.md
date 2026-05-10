@@ -1,104 +1,28 @@
-## V9.6 — QuickSave, Events, Crosshair Styles
+## V9.6.1 — Hotfix: Mouse stutter & game input lag
 
-### New: QuickSave [PRO]
-
-One keypress automatically drags an item between your inventory and your Safe Pocket.
-
-- **5 independent presets** — each with trigger key, source slot, destination slot
-- **Source/destination:** Fast Swap Slots 1–8 or Safe Pocket 1–3
-- **Toggle direction (⇄):** first press = slot → pocket, second press = pocket → slot
-- **Open/close inventory** automatically via configurable Tab key
-- **All timing configurable:** open delay, hover, drag hold, drop delay, cooldown
-- **Global on/off toggle:**
-  - Numpad version: `Numpad /`
-  - Arrow version: `End`
-- Configure under: **Settings → QuickSave... [PRO]**
-
-📖 **[QuickSave Setup Guide](docs/QuickSave_Guide.md)** — full walkthrough, all settings explained, tips & troubleshooting.
-
-> ⚠️ Occasional drag failures can occur — this is a known behavior of the Unreal Engine Slate UI system used by Arc Raiders, the same thing that happens with manual drag-and-drop. Just trigger again if it happens.
+This is a targeted hotfix for the stutter/lag issues reported while BrightRaider is running.
 
 ---
 
-### New: Map Scanner — Text Outline
+### Fixed: Mouse stutter and input lag
 
-OCR overlay text now has a drop shadow for better readability on any background.
+**Symptom:** Games stutter, mouse movement feels laggy or freezes briefly while BrightRaider is running. Turning BrightRaider off fixes it immediately.
 
----
+**Root cause:** Config saves and tray menu rebuilds were running synchronously inside the Windows Low-Level Keyboard Hook callback. Windows enforces a hard ~300ms timeout on these callbacks — if they take longer, the entire input system stalls. This affected mouse movement, key presses, and game input globally.
 
-### New: Map Scanner — Riven Tides
+**Fix:** Both operations are now dispatched asynchronously (off the hook thread). The hook callback returns immediately, and Windows never hits the timeout.
 
-New map added with 2 extraction points: Coastal Lift and Customs Lift.
-
----
-
-### New: Map Scanner — Event Detection
-
-The overlay now detects and displays active world events:
-
-| Event | Active evac points |
-|---|---|
-| Night | 2 |
-| Electromagnetic Storm | 3 |
-| Hurricane | All standard |
-
-- Event name shown in the overlay header next to the map name
-- Excess evac points shown as **CLOSED** immediately (no timer scan needed)
-- **⚠ Raider Hatches closed** warning shown during Night and Storm events
+> This was more pronounced on high-end GPUs (RTX 5080, etc.) and 4K displays where the menu rebuild takes slightly longer.
 
 ---
 
-### New: Crosshair — Outline
+### Fixed: Auto-Brightness GPU wake-ups (Optimus laptops)
 
-All crosshair styles now support an optional **outline** for better visibility on bright backgrounds.
-Configure outline color independently. Enable/disable per checkbox.
+**Symptom:** Micro-stutter, slight CPU/GPU spike every second while Auto-Brightness is active.
 
----
+**Root cause:** `SetDeviceGammaRamp` was called on every Auto-Brightness tick (~1/sec) even when the brightness and contrast values hadn't changed. On Optimus laptops (NVIDIA dGPU + Intel iGPU), this call can wake the discrete GPU from a low-power state unnecessarily.
 
-### New: Crosshair Styles
-
-Two new styles added:
-
-- **Ring** — circle only, no dot
-- **Cross with gap** — CS:GO-style cross with adjustable center gap
-
----
-
-### Crosshair — removed
-
-- **Shadow color setting** removed from crosshair settings — outline color is now the only color control for outlines
-
----
-
-### Crosshair fixes
-
-- **Dot size** is now fully adjustable via the size slider (was previously fixed at 7×7px)
-- **Minimum size** reduced to 1px for all styles (was 10px)
-
----
-
-### QuickSelect improvements
-
-- **Apply button** — apply settings without closing the dialog
-- **Mouse buttons MB3, MB4, MB5** can now be bound as the H-key (holster)
-- **3 additional action slots** (total: 8) — slots 7 and 8 use mouse movement instead of a key press (Q held, cursor moves to wheel position, Q released)
-- **Holding M** on the map now also toggles the overlay on — no need to press Numpad\* / Delete separately after scanning
-- **Default LMB timers increased by 150ms** — T1 1150→1300ms, T2 1650→1800ms, T3 2150→2300ms, T4 4150→4300ms, T5 5150→5300ms. If you have saved values, update them manually.
-
----
-
-### Bug Fixes
-
-- **Profile 1 settings reset on restart** — vibrance (and other values) set for Profile 1 were overwritten with the hardware default on every launch. Profiles 2–9 were not affected. (Thanks to the GitHub reporter!)
-- **QuickSave — cursor drift during drag** — during Hover and Drop phases, BrightRaider now continuously corrects the cursor position every ~8 ms. Mouse movement no longer shifts the cursor off the target slot before the click registers.
-- **Crosshair — Arc Raiders center dot** — renamed from "−1px offset" to "Arc Raiders center dot (2×2px)". Fixed visual gap: crosshair arms now connect directly to the 2×2 center block with no floating gap.
-- **Crosshair — Cross with gap: disappears below 6px** — fixed gap formula so arms remain visible at any size. Also fixed: size 6 and 7 looked identical (integer rounding); odd sizes now draw 1px wider on the far end and are visually distinct.
-- **Crosshair — Outline misalignment** — replaced GDI+ wide-pen outline drawing with explicit FillRectangle calls (Cross, CrossGap, TShape). Outline is now pixel-perfect and symmetric at all sizes.
-- **Map Scanner — Riven Tides misidentified as Damm during Night** — detection now scores each map by valid reads / total points. A 2-point map with 1 hit (50%) correctly wins over a 4-point map with 1 accidental hit (25%).
-- **QuickSelect — slots 7 & 8 cursor offset wrong on non-1080p resolutions** — wheel slot positions are now scaled to actual screen resolution. Previously the cursor landed at the wrong position on 1440p, 4K, 5K and ultrawide screens. (Thanks to the GitHub reporter!)
-- **Autorun — AZERTY keyboard support** — new option in the Autorun menu: "AZERTY keyboard (Z = forward)". Enables Z as the forward key instead of W for French keyboard layouts.
-- **Crosshair — color picker ignores basic colors** — picking a color from the "Basic colors" panel in the color dialog resulted in a transparent color (alpha 0). Crosshair and outline color now always use full opacity.
-- **License reset on network error** — the background license check (every 3 days) incorrectly revoked Pro if the validation server was unreachable (e.g. no VPN, timeout, firewall). License is now only revoked when the server explicitly responds that the key is invalid.
+**Fix:** BrightRaider now caches the last applied gamma/contrast values and skips the GPU call entirely when nothing has changed.
 
 ---
 

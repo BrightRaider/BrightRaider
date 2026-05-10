@@ -3,7 +3,20 @@
 ================================================================
 
 
-[ V9.6 ] - Current Version
+[ V9.6.1 ] - Current Version
+
+  Bug fixes:
+  - Fixed: Mouse stutter and game input lag while BrightRaider is running.
+    Config saves and menu rebuilds were happening on the Windows keyboard hook
+    thread, which has a strict ~300ms OS timeout. This stalled the entire input
+    system — mouse movement, key presses — especially noticeable on fast GPUs
+    and 4K displays. Both operations are now dispatched asynchronously.
+  - Fixed: Auto-Brightness caused unnecessary GPU wake-ups on every tick
+    (every second). BrightRaider now skips the GPU call when brightness/contrast
+    hasn't changed. Fixes micro-stutter on Optimus laptops (NVIDIA dGPU + iGPU).
+
+
+[ V9.6 ]
 
   Map Scanner (Pro):
   - New: Riven Tides map added — Coastal Lift and Customs Lift.

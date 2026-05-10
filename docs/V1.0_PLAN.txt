@@ -55,6 +55,28 @@ FEATURES
     - Statt "2" steht im Icon "AR" oder ein frei definierbares Kürzel
     - Klein, schnell gebaut, sofort sichtbar besser
 
+[ ] Hue im Profil-Editor (Issue #39, dawuus)
+    - Vierte Achse neben Gamma/Contrast/Vibrance: Hue 0–359°
+    - NVIDIA: NvAPI_SetHue / NvAPI_GetHue
+    - AMD: ADL_Display_Color_Set mit ColorType=Hue
+    - Use Case: regional zensiertes Blut sichtbar machen (grün → rot)
+    - Restore on Exit (originalHue wie originalVibrance)
+    - Config: profiles[i].Hue, default 0
+    - UI: Slider/Spinner im Profil-Editor neben Vibrance
+    - Aufwand: ~1 Tag, passt zu Settings-Overhaul
+
+[ ] QuickSelect: Maus-für-alle-Slots (Issue #35, spix18 — AZERTY)
+    - Aktuell nutzen Slots 1–6 PostMessage-Tastendruck → bricht auf AZERTY
+      (und wahrscheinlich anderen Layouts mit Shift-Top-Row)
+    - Slots 7–10 nutzen SetCursorPos → funktioniert universell
+    - Lösung: SetCursorPos für ALLE Slots, Tastatur-Pfad komplett raus
+    - Erfordert: Wheel-Position-Konstanten für Slots 1–6 vermessen
+      (1 Uhr, 2 Uhr, 3 Uhr, 4 Uhr, 5 Uhr, 6 Uhr — relativ zur Bildschirmmitte)
+    - Vorhandene Konstanten als Vorlage: QS_SLOT7_DX/DY (6 Uhr)
+      bis QS_SLOT10_DX/DY (10–11 Uhr)
+    - Bonus: Layout-unabhängig, robuster gegen Anti-Cheat-Filter,
+      ein Code-Pfad statt zwei
+
 [ ] Breiteres Publikum
     - Messaging ändert sich: nicht mehr "BrightRaider für Arc Raiders"
       sondern "BrightRaider für jeden der Digital Vibrance nutzt —
@@ -156,5 +178,81 @@ SetWinEventHook für Alt-Tab Detection:
 - Callback prüft ob neues Fenster == Spielprozess
 - Kein Polling nötig, sehr niedrige CPU-Last
 - Funktioniert mit allen Anti-Cheat-Systemen (nur Windows-API)
+
+================================================================================
+
+
+CODE REVIEW — TECHNICAL DEBT FÜR V1.0
+========================================
+
+Befunde aus dem Review von src/v9.6/BrightRaider.cs (5956 Zeilen).
+Die KRITISCHEN Punkte für Issue #36 wurden bereits in V9.6.1 als Hotfix
+adressiert. Die folgenden sind für V1.0 vorgesehen — größere Refactorings
+oder Härtungen, die in einem Hotfix nicht reinpassen.
+
+
+[ ] HookCallback aufräumen — aktuell 335 Zeilen
+    - Marshal.PtrToStructure wird mehrfach pro Event allokiert → einmal parsen
+    - Logik in kleinere Dispatcher-Methoden auslagern
+    - Magic Numbers (0x6E, 0x10u, 0x101, 0x6F, …) als const extrahieren
+    - Profile-Hotkey-Code für Numpad 1-9 + TopRow 1-9 ist 9× dupliziert →
+      Lookup-Tabelle (VK → ProfileIndex), 5 Zeilen statt 60+
+
+[ ] Race Conditions absichern
+    - ocrScanRunning: Hook-Thread und Background-Thread schreiben/lesen ohne
+      volatile/Interlocked. Zwei Scans könnten parallel starten.
+      Fix: Interlocked.CompareExchange.
+    - *LongPressTimer-Pattern (M-Key, Mute, Autorun): nicht atomares
+      "if(t!=null) { x=null; t.Dispose(); }" — bei sehr schnellem Down/Up
+      doppelter Dispose möglich. Fix: Interlocked.Exchange(ref timer, null).
+
+[ ] OCR Temp-File loswerden
+    - OcrFromBitmap schreibt aktuell fixe Datei %TEMP%\br_ocr_tmp.png
+      (5–8× pro Scan). Zwei Scans parallel → File-Race.
+    - Andere User auf der Maschine können den Game-Screenshot mitlesen
+      (World-Readable Temp).
+    - Fix: WinRT direkt aus MemoryStream + RandomAccessStream.CreateFromStream,
+      keine Disk-IO.
+
+[ ] QuickSelect-Datenstruktur aufräumen
+    - 8 parallele Arrays (qsKey1..8, qsSlot1..8, qsAction1..8Timer/H/Q/Use/Active)
+    - Refactor zu QuickSelectSlot Class oder Struct[] — Config-Load/Save wird
+      30 Zeilen kürzer und Hinzufügen eines neuen Felds wird trivial.
+    - Gleiches Pattern für QuickSave-Slots (5 parallele Arrays).
+
+[ ] Icon-Handle-Leak in MakeIcon
+    - Icon.FromHandle(hIcon) ohne Dispose, nur .Clone() →
+      original GDI-Handle wird nicht freigegeben, akkumuliert bis GC.
+    - Fix: using (var tmp = Icon.FromHandle(hIcon)) return (Icon)tmp.Clone();
+
+[ ] Auto-Brightness MeasureZone optimieren
+    - Aktuell 256 GetPixel-Calls pro Zone × 5 Zonen = 1280 GDI-Roundtrips/Tick.
+    - 16×16 Bitmap macht das tolerabel, aber LockBits + Pointer-Read wäre
+      ~50× schneller und weniger DWM-Last.
+
+[ ] License-Online-Check härten
+    - Aktuell naiver Substring-Match auf "valid":true. Ein MITM mit
+      gefälschtem JSON ({"x":"valid":true,...}) würde durchkommen.
+    - Fix: echtes JSON-Parsing (System.Web.Script.Serialization oder
+      einfacher Regex auf "valid"\s*:\s*true).
+    - Optional: Cert-Pinning via ServerCertificateValidationCallback mit
+      Pinned Public-Key-Hash (Lemon Squeezy hat fixen Cert-Issuer).
+
+[ ] WinRTWait Timeout
+    - Blockiert Thread mit mre.Wait() ohne Timeout → bei OCR-Engine-Hang
+      hängt der Scan-Thread ewig.
+    - Fix: mre.Wait(5000) + Cancel-Path.
+
+[ ] BreakReminder Validierung
+    - breakReminderTimer.Interval = breakReminderIntervalMin * 60 * 1000
+      bei sehr großen Werten (> 35791 Min) Overflow auf int.
+    - Fix: clamp auf 5..240 wie in der UI-Validierung.
+
+[ ] Datei-Aufteilung erwägen
+    - 5956 Zeilen in einer .cs ist mit Roslyn-Kompile schnell, aber
+      wartbar nicht mehr. Bei V1.0-Migration auf .NET 8 / Native AOT (siehe oben)
+      ist sowieso eine .csproj nötig — dann gleich nach Bereichen splitten:
+      Hooks/, OCR/, License/, Crosshair/, Audio/, QuickSelect/, QuickSave/,
+      Display/.
 
 ================================================================================
