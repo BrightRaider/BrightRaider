@@ -180,7 +180,7 @@ Calibrate in two steps: measure the darkest spot, measure the brightest spot, do
 BrightRaider does **NOT**:
 - Modify game files or memory
 - Inject DLLs into game processes
-- Hook into the game in any way
+- Hook into the game
 - Read game data or game memory
 
 The Map Scanner takes a **screenshot of your screen** and reads it with Windows built-in OCR — the same as taking a photo of your monitor. No game files, no game memory, no game process is accessed.
