@@ -24,13 +24,22 @@ VibranceGUI was free, single-purpose, and unmaintained. BrightRaider V1.0 picks 
 | Per-game **Hue** | ❌ | ✅ | ✅ |
 | Per-game **FPS limit** | ❌ | ✅ | ✅ |
 | Alt-Tab Auto-Switch | ✅ | ✅ | ✅ |
-| 3 hotkey-switchable profiles | ❌ | ✅ | ✅ |
+| Hotkey-switchable profiles | ❌ | 3 | **9** |
 | Original-gamma restore on exit | ❌ | ✅ | ✅ |
-| Configurable hotkeys | ❌ | ✅ | ✅ |
-| Update notifier | ❌ | ✅ | ✅ |
+| Configurable hotkeys + modifiers | ❌ | ✅ | ✅ |
 | Active development | ❌ | ✅ | ✅ |
+| **Auto-Brightness** with Calibration Wizard | ❌ | ❌ | ✅ |
+| **Map Scanner** (Arc Raiders, 13 events) | ❌ | ❌ | ✅ |
+| **QuickSelect** (one-key item use) | ❌ | ❌ | ✅ |
+| **QuickSave** (one-key inventory drag) | ❌ | ❌ | ✅ |
+| **Crosshair Overlay** (6 styles) | ❌ | ❌ | ✅ |
+| **Footstep Booster** (per-process limiter) | ❌ | ❌ | ✅ |
+| **Background AutoMute** (Alt-Tab → mute) | ❌ | ❌ | ✅ |
+| **Process Optimizer** (priority + affinity) | ❌ | ❌ | ✅ |
+| **Autorun** (CapsLock → auto-W + Sprint) | ❌ | ❌ | ✅ |
+| **Audio Ducking** (hold-to-dim) | ❌ | ❌ | ✅ |
 
-Everything in the **Free** column ships with the EXE. No license, no nag screen, no time limit.
+Everything in the **Free** column ships with the EXE. No license, no nag screen, no time limit. **Pro** is a one-time €5.49 (€8.99 after launch week) — see Pro feature details below.
 
 ---
 
