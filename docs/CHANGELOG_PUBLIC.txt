@@ -12,9 +12,9 @@
   - Settings, profiles, hotkeys, and game profiles migrate automatically
     on first launch.
   - License key must be re-entered once (Settings -> App -> Enter license).
-    Lemon Squeezy re-issues the activation token instantly — same email,
-    same key, no re-purchase. One-time security rotation; V1.x updates
-    won't require it again.
+    Lemon Squeezy re-issues the activation instantly — same email, same
+    key, no re-purchase. V1.x updates after this won't require another
+    re-entry.
 
   New in V1.0:
   - Map Scanner (Pro): long-press M -> on-screen overlay with live evac

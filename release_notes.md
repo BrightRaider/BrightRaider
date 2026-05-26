@@ -98,9 +98,9 @@ Activate via *Settings → App → Enter license*.
 
 Your **settings, profiles, hotkeys, and game profiles migrate automatically** on first V1.0 launch. Nothing to re-configure.
 
-**Your license key must be re-entered once.** Open *Settings → App → Enter license*, paste your existing key. Lemon Squeezy re-issues your activation token instantly — same email, same key, no re-purchase.
+**Your license key must be re-entered once.** Open *Settings → App → Enter license*, paste your existing key. Lemon Squeezy re-issues your activation instantly — same email, same key, no re-purchase.
 
-Why: V1.0 rotates the crypto seeds used to sign license files. One-time security hardening; V1.x updates won't require it again.
+V1.x updates after this won't require another re-entry.
 
 ---
 
@@ -120,7 +120,7 @@ BrightRaider only uses standard Windows display APIs (the same ones NVIDIA Contr
 
 ```
 BrightRaider.exe              4FC24CF6DADFB517698574FEF54D4FD37471166B87BEFDC0DAF26FF22AB47B58
-BrightRaider-V1.0.0.zip       92267D199995C4146FBF1656D0FE3E0B592F068B059CC908D355A1E36F56897F
+BrightRaider-V1.0.0.zip       231BA904DB1C0C40568C79A7DB6265CCCA248695D3F8D155474BDFE8CE930C6E
 ```
 
 (The EXE bundled inside the ZIP has the same SHA-256 as the standalone EXE — they are bit-identical binaries.)
