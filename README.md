@@ -29,7 +29,7 @@ Two hero shots — the rest is one click away.
     <strong>Map Scanner overlay — in-game</strong><br>
     Long-press M → ~100 % OCR hit rate, detects all 13 current map conditions, color-coded evac timers, audible alarm below threshold.
     <br><br>
-    <img src="assets/screenshots/Map%20Scanner.PNG" alt="Map Scanner Overlay" width="500">
+    <img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner Overlay" width="500">
   </td>
 </tr>
 </table>
