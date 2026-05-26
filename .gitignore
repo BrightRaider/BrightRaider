@@ -17,6 +17,11 @@ releases/v4-free/*.cs
 # release artifacts (the published EXE) are tracked under releases/.
 BrightRaider.Avalonia/
 
+# V1.0 single-EXE launcher project (embeds the Avalonia runtime + extracts
+# it to %LOCALAPPDATA% on first launch). Source + build artifacts stay
+# local-only, same reason as BrightRaider.Avalonia/.
+BrightRaider.Launcher/
+
 # V1.0 internal planning + handoff docs — never push
 V1.0_TODO.md
 docs/V1.0_PLAN.txt

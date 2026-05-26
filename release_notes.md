@@ -113,10 +113,10 @@ V1.x updates after this won't require another re-entry.
 ## SHA-256
 
 ```
-BrightRaider-V1.0.0.zip       6FB47952230C00875725DB2ABA24C79E72EE046180B57FBE25AB588B9E82FE6A
+BrightRaider.exe              F70280A7BDD216F9EFCF459926085B130C75D6F2CC82CE9C08A1B234158DAE87
 ```
 
-Verify on Windows: `Get-FileHash BrightRaider-V1.0.0.zip -Algorithm SHA256`
+Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
 
 ---
 
@@ -134,6 +134,10 @@ Read directly on GitHub (no download needed):
 
 ## 📦 Download + install
 
-**Download `BrightRaider-V1.0.0.zip`**, extract it to any folder (e.g. `C:\Tools\BrightRaider\`), and run `BrightRaider.exe` from inside that folder. The EXE needs its sibling DLLs (`libSkiaSharp.dll`, `libHarfBuzzSharp.dll`, `av_libglesv2.dll`) to render the UI — don't separate them.
+**Download `BrightRaider.exe` and double-click it.** That's it.
 
-The ZIP also includes the Manual + 5 Guides + Changelog for offline reference.
+On first launch the EXE extracts its runtime to `%LOCALAPPDATA%\BrightRaider\runtime\v1.0.0\` and starts the app from there. Subsequent launches skip extraction and start in ~150 ms — feels like any single-EXE tool.
+
+Want to fully uninstall? Delete the EXE and the folder `%LOCALAPPDATA%\BrightRaider\`.
+
+Documentation lives online — see the Documentation section below for clickable links.
