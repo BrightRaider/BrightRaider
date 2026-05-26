@@ -432,8 +432,8 @@ QUICKSAVE (Pro)
 
 CROSSHAIR OVERLAY (Pro)
   A transparent, click-through crosshair drawn directly on your
-  screen. Works in fullscreen. EAC-safe — uses the same overlay
-  mechanism as Discord and GeForce Experience.
+  screen. Works in fullscreen. Uses the same overlay mechanism as
+  Discord and GeForce Experience.
 
   Toggle: Numpad+ (Numpad version) / Insert (Arrow version)
   Configure: right-click tray -> Crosshair Settings
@@ -939,8 +939,8 @@ QUICKSAVE (Pro)
 
 CROSSHAIR-OVERLAY (Pro)
   Ein transparentes, click-through Fadenkreuz direkt auf dem
-  Bildschirm. Funktioniert im Vollbild. EAC-sicher — nutzt
-  denselben Mechanismus wie Discord und GeForce Experience.
+  Bildschirm. Funktioniert im Vollbild. Nutzt denselben Mechanismus
+  wie Discord und GeForce Experience.
 
   An/aus: Numpad+ (Numpad-Version) / Einfg (Arrow-Version)
   Konfigurieren: Rechtsklick Tray -> Fadenkreuz Einstellungen

@@ -192,5 +192,5 @@ The H key and Q key are also only sent to the **currently focused window** (the 
 
 ---
 
-*BrightRaider — See in the Dark. No Ban.*  
+*BrightRaider — See in the Dark.*  
 *https://github.com/BrightRaider/BrightRaider*

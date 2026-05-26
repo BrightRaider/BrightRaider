@@ -22,7 +22,7 @@ A traditional fix is a hardware compressor (audio interface or VoiceMeeter). Foo
 4. When the peak drops back below threshold, BrightRaider lets the volume return to baseline (release)
 5. Only this process's session is touched — global system volume + other apps stay at their original level
 
-It's a feedback-based limiter, not a true lookahead compressor. Lookahead would require injecting into the audio pipeline (anti-cheat risk); this approach reads only the peak meter Windows already exposes.
+It's a feedback-based limiter, not a true lookahead compressor. This approach reads only the peak meter Windows already exposes — no audio-pipeline injection.
 
 ---
 
@@ -110,13 +110,11 @@ A: Any game. The compressor is process-name based — add the game in **Settings
 
 ---
 
-## Safety Note
+## How it talks to Windows
 
-Footstep Booster uses the public Windows Core Audio API (`IAudioSessionControl2`, `ISimpleAudioVolume`). It does not inject into the game, does not hook DirectSound / XAudio2, does not touch the network. It only changes the per-session output volume — the same thing the Windows Volume Mixer does when you drag a slider.
-
-EAC-safe; same mechanism used by streaming software for ducking game audio under voice tracks.
+Footstep Booster uses the public Windows Core Audio API. It only changes the per-session output volume — the same thing the Windows Volume Mixer does when you drag a slider. Same mechanism used by streaming software for ducking game audio under voice tracks.
 
 ---
 
-*BrightRaider — See in the Dark. No Ban.*
+*BrightRaider — See in the Dark.*
 *https://github.com/BrightRaider/BrightRaider*

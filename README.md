@@ -94,9 +94,9 @@ Two hero shots — the rest is one click away.
 
 ## Why BrightRaider?
 
-NVIDIA Game Filters are blocked by anti-cheat (EAC). Monitor OSD is slow and clunky. Alt-tabbing to adjust settings gets you killed.
+Monitor OSD is slow and clunky. Alt-tabbing to adjust settings gets you killed.
 
-BrightRaider uses standard Windows display APIs — the same way your NVIDIA Control Panel or monitor settings work. **Safe with all anti-cheat systems** (EAC, BattlEye, Vanguard).
+BrightRaider uses standard Windows display APIs — the same way your NVIDIA Control Panel or monitor settings work.
 
 > **VibranceGUI is no longer needed.** BrightRaider V1.0 auto-switches vibrance and FPS limits per game as you alt-tab — everything VibranceGUI does, in one place. You can uninstall it.
 
@@ -125,7 +125,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Detects active events (Night, Hurricane, Electromagnetic Storm) and adjusts active evac points automatically. Supports Buried City, Stella Montis, Space Port, Blue Gate, Damm and Riven Tides.
 - **Evac Alarm** — get a red toast + sound alert when an evac timer drops below your configured threshold (set in minutes + seconds). Configure inside Settings → Map Scanner → Settings.
 - **Autorun** — short press CapsLock to hold the forward key (walk or sprint). Hold CapsLock 600ms for **Tap Mode** — pulses forward key at intervals, perfect for the **Looting Mk. 3 (Survivor)** augment (keeps health at 75% while moving). Shift toggles sprint. C triggers a slide. Forward key is rebindable — works with any layout (QWERTZ, AZERTY, etc.).
-- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. 6 styles: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optional outline for visibility on bright backgrounds. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
+- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. 6 styles: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optional outline for visibility on bright backgrounds. Same overlay mechanism as Discord and GeForce Experience.
 - **Audio Ducking** — hold the mute key 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
 - **Game Mute** — mute only the game audio with a single key. Your Discord, music, everything else stays on.
 - **Hue per Profile** — per-profile color temperature control alongside Vibrance. AMD supported in V1.0.
@@ -220,31 +220,6 @@ Analyzes 5 small zones across your screen (center + 4 corners) using median brig
 
 Calibrate in two steps: measure the darkest spot, measure the brightest spot, done.
 
-## Anti-Cheat Safety
-
-BrightRaider does **NOT**:
-- Modify game files or memory
-- Inject DLLs into game processes
-- Hook into the game
-- Read game data or game memory
-
-The Map Scanner takes a **screenshot of your screen** and reads it with Windows built-in OCR — the same as taking a photo of your monitor. No game files, no game memory, no game process is accessed.
-
-BrightRaider **ONLY** uses:
-- Windows GDI — same as your monitor settings
-- NVIDIA NvAPI — same as NVIDIA Control Panel
-- AMD ADL / ADLX — same as AMD Radeon Software
-
-Anti-cheat systems do not flag display adjustments.
-
-### Crosshair Overlay
-
-BrightRaider's crosshair works via a transparent Windows overlay — the exact same mechanism used by Discord, GeForce Experience, and TeamSpeak overlays.
-
-EAC (Easy Anti-Cheat) **explicitly allows** this type of overlay. It is not injected into the game, does not read game memory, and is not rendered inside the game engine. It is simply a transparent window drawn on top by Windows.
-
-EAC-safe — no injection, no game memory access, no rendering inside the engine.
-
 ## System Requirements
 
 - Windows 10 / 11
@@ -282,9 +257,6 @@ Found a bug or have an idea? [Open an issue](https://github.com/BrightRaider/Bri
 **Does this work with other games?**
 Yes. BrightRaider adjusts your display, not the game.
 
-**Will I get banned?**
-No. It uses the same Windows APIs as your monitor settings.
-
 **Do I need Pro?**
 Free is fully functional. Pro adds QuickSave (drag to Safe Pocket with one key), QuickSelect (auto-use items), auto-brightness, map scanner, and more — so you never take your hand off the mouse.
 
@@ -306,9 +278,9 @@ Eine EXE, keine Abhängigkeiten, ~290 KB. Funktioniert mit jeder Tastatur — Nu
 
 ## Warum BrightRaider?
 
-NVIDIA Game Filter werden vom Anti-Cheat (EAC) blockiert. Das Monitor-OSD ist langsam und umständlich. Alt-Tab zum Einstellen bringt dich um.
+Das Monitor-OSD ist langsam und umständlich. Alt-Tab zum Einstellen bringt dich um.
 
-BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel oder deine Monitor-Einstellungen. **Sicher mit allen Anti-Cheat-Systemen** (EAC, BattlEye, Vanguard).
+BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel oder deine Monitor-Einstellungen.
 
 > **VibranceGUI wird nicht mehr benötigt.** BrightRaider V1.0 schaltet Vibrance und FPS-Limit automatisch pro Spiel beim Alt-Tab — alles was VibranceGUI macht, an einem Ort. Du kannst es deinstallieren.
 
@@ -335,7 +307,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Screenshot → Windows-OCR → farbkodierter Live-Countdown. Erkennt aktive Events (Nacht, Hurrikan, Elektr. Sturm). Unterstützt Buried City, Stella Montis, Space Port, Blue Gate, Damm und Riven Tides.
 - **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt.
 - **Autorun** — kurz CapsLock drücken um die Vorwärtstaste zu halten. 600ms halten für Tap-Modus (ideal für Looting Mk. 3). Vorwärtstaste frei belegbar — funktioniert mit QWERTZ, AZERTY usw.
-- **Crosshair-Overlay** — Click-through Fadenkreuz direkt auf dem Bildschirm. 6 Stile. EAC-sicher.
+- **Crosshair-Overlay** — Click-through Fadenkreuz direkt auf dem Bildschirm. 6 Stile.
 - **Audio Ducking** — Mute-Taste 600ms halten um Spiel-Audio auf 20% zu reduzieren.
 - **Game Mute** — nur das Spiel stumm schalten. Discord, Musik, alles andere bleibt an.
 - **Hue pro Profil** — Farbtemperatur pro Profil neben Vibrance. AMD unterstützt in V1.0.
@@ -373,19 +345,10 @@ Beim ersten Start erscheint ein kurzer Einrichtungsassistent: Tastaturtyp wähle
 | CapsLock | CapsLock | Autorun an/aus | Pro |
 | M (halten auf Karte) | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
 
-## Anti-Cheat Sicherheit
-
-BrightRaider verändert **KEINE** Spieldateien oder den Spielspeicher. Der Map Scanner macht einen Screenshot und liest ihn per Windows-OCR aus. Keine Injektion, kein Spielzugriff.
-
-BrightRaider nutzt **NUR** Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie das NVIDIA Control Panel oder AMD Radeon Software.
-
 ## FAQ
 
 **Funktioniert das auch mit anderen Spielen?**
 Ja. BrightRaider passt den Bildschirm an, nicht das Spiel.
-
-**Werde ich gebannt?**
-Nein. Es nutzt die gleichen Windows-APIs wie deine Monitor-Einstellungen.
 
 **Brauche ich Pro?**
 Free ist voll funktionsfähig. Pro fügt QuickSave, QuickSelect, Auto-Helligkeit, Map Scanner und mehr hinzu.

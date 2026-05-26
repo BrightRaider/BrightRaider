@@ -135,5 +135,5 @@ Drag-and-drop in Arc Raiders uses the Unreal Engine Slate UI system, which does 
 
 ---
 
-*BrightRaider — See in the Dark. No Ban.*  
+*BrightRaider — See in the Dark.*  
 *https://github.com/BrightRaider/BrightRaider*

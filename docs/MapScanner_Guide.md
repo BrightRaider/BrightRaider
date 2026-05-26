@@ -132,11 +132,11 @@ A: The alarm uses Windows' standard system sound — adjust via Windows Volume M
 
 ---
 
-## Safety Note
+## How it works
 
-Map Scanner is **read-only** — it captures screen pixels and runs template matching. It does not inject into the game, does not read game memory, does not touch the network connection. EAC-safe; uses the same approach as Discord overlays and OBS screen capture.
+Map Scanner is **read-only** — it captures screen pixels and runs template matching. It only looks at what's already on your screen. Same approach as Discord overlays and OBS screen capture.
 
 ---
 
-*BrightRaider — See in the Dark. No Ban.*
+*BrightRaider — See in the Dark.*
 *https://github.com/BrightRaider/BrightRaider*

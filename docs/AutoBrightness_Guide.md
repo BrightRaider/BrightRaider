@@ -122,5 +122,5 @@ Auto-Brightness is **read-only** for the screen — it uses `GetDC` + `BitBlt` t
 
 ---
 
-*BrightRaider — See in the Dark. No Ban.*
+*BrightRaider — See in the Dark.*
 *https://github.com/BrightRaider/BrightRaider*

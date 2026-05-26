@@ -48,7 +48,7 @@ Everything in the **Free** column ships with the EXE. No license, no nag screen,
 ### 🆕 New in V1.0 (Free)
 
 - **Alt-Tab Auto-Switch** — per-game profile (Gamma / Contrast / Vibrance / Hue) **and** per-game FPS limit, applied automatically when the game enters the foreground. Reverts to your original ramps on Alt-Tab out. The killer-feature that replaces VibranceGUI.
-- **Per-game FPS limit** — NVIDIA via NvAPI DRS, AMD via ADLX FRTC. No DirectX hook, no injection, EAC-safe. Saves GPU power, lowers fan noise.
+- **Per-game FPS limit** — NVIDIA via NvAPI DRS, AMD via ADLX FRTC. Saves GPU power, lowers fan noise.
 - **Per-game Hue** — fourth color axis added alongside Gamma / Contrast / Vibrance. Independent per profile and per game.
 - **Configurable hotkeys** — every key reassignable, modifier support (`Ctrl+5`, `Alt+F2`, `Shift+Numpad 3`, mouse MB3/4/5, scroll-wheel).
 - **Setup Wizard** — picks Numpad / TKL / AZERTY defaults on first launch, re-callable from Settings.
@@ -104,12 +104,6 @@ V1.x updates after this won't require another re-entry.
 
 ---
 
-## 🛡 Anti-cheat safety
-
-BrightRaider only uses standard Windows display APIs (the same ones NVIDIA Control Panel uses). No game injection, no memory reads, no game-file writes. Confirmed safe with **EAC, BattlEye, Vanguard**. Used by 5000+ Arc Raiders players over the V9.x lifetime — zero bans, zero detections.
-
----
-
 ## System requirements
 
 - Windows 10 / 11 (64-bit)
@@ -120,7 +114,7 @@ BrightRaider only uses standard Windows display APIs (the same ones NVIDIA Contr
 
 ```
 BrightRaider.exe              4FC24CF6DADFB517698574FEF54D4FD37471166B87BEFDC0DAF26FF22AB47B58
-BrightRaider-V1.0.0.zip       231BA904DB1C0C40568C79A7DB6265CCCA248695D3F8D155474BDFE8CE930C6E
+BrightRaider-V1.0.0.zip       CE0EC38D5DED93F0C86DEA723005DEE988D4D73589877727C89ED1CF45FB6FD2
 ```
 
 (The EXE bundled inside the ZIP has the same SHA-256 as the standalone EXE — they are bit-identical binaries.)

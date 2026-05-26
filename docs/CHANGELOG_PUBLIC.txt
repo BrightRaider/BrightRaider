@@ -338,7 +338,7 @@
   - Customizable color and size (10-50px)
   - Toggle: Numpad+ (Numpad version) / Insert (Arrow version)
   - Live preview in settings
-  - EAC-safe — same mechanism as Discord overlay
+  - Same overlay mechanism as Discord / GeForce Experience
 
   Auto-Start (free for all):
   - Auto-Start with Windows is now available for all users, not just Pro
