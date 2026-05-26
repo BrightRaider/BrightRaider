@@ -13,15 +13,30 @@ One EXE, zero dependencies, ~21 MB (Native AOT — no .NET runtime install requi
 
 ![Normal vs Bright](assets/screenshots/comparison2.png)
 
-## Screenshots
+## Screenshots — V1.0
 
-| | | |
+**Tray + Game Profiles** (the Killer Free Feature — per-game profiles + FPS limit, auto-switched on Alt-Tab):
+
+| Tray | Game Profiles | Display |
 |---|---|---|
-| ![Settings](assets/screenshots/settings.png) | ![Tray Menu](assets/screenshots/tray.png) | ![Submenu](assets/screenshots/submenu.png) |
+| ![Tray](assets/screenshots/v1.0/tray.png) | ![Game Profiles](assets/screenshots/v1.0/settings-gameprofiles.png) | ![Display](assets/screenshots/v1.0/settings-display.png) |
 
-**Map Scanner — live evacuation timer overlay (Pro):**
+**Pro features:**
 
-![Map Scanner](assets/screenshots/Map%20Scanner.PNG)
+| Auto-Brightness | Audio (Footstep Booster) | Crosshair |
+|---|---|---|
+| ![Auto-Brightness](assets/screenshots/v1.0/settings-autobrightness.png) | ![Audio](assets/screenshots/v1.0/settings-audio.png) | ![Crosshair](assets/screenshots/v1.0/settings-crosshair.png) |
+| ![Map Scanner](assets/screenshots/v1.0/settings-mapscanner.png) | ![QuickSelect](assets/screenshots/v1.0/settings-quickselect.png) | ![QuickSave](assets/screenshots/v1.0/settings-quicksave.png) |
+
+**Configuration:**
+
+| App | Hotkeys | Performance |
+|---|---|---|
+| ![App](assets/screenshots/v1.0/settings-app.png) | ![Hotkeys](assets/screenshots/v1.0/settings-hotkeys.png) | ![Performance](assets/screenshots/v1.0/settings-performance.png) |
+
+**Map Scanner in action** — live evacuation timer overlay (Pro):
+
+![Map Scanner Overlay](assets/screenshots/Map%20Scanner.PNG)
 
 ## Demo Videos
 
