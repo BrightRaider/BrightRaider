@@ -15,28 +15,59 @@ One EXE, zero dependencies, ~21 MB (Native AOT — no .NET runtime install requi
 
 ## Screenshots — V1.0
 
-**Tray + Game Profiles** (the Killer Free Feature — per-game profiles + FPS limit, auto-switched on Alt-Tab):
+### Tray menu
+<img src="assets/screenshots/v1.0/tray.png" alt="Tray menu" width="320">
 
-| Tray | Game Profiles | Display |
-|---|---|---|
-| ![Tray](assets/screenshots/v1.0/tray.png) | ![Game Profiles](assets/screenshots/v1.0/settings-gameprofiles.png) | ![Display](assets/screenshots/v1.0/settings-display.png) |
+### Game Profiles — the Free killer feature
+Per-game profiles (Gamma / Contrast / Vibrance / Hue) and per-game FPS limit, applied automatically when you Alt-Tab into the game. Restores neutral on Alt-Tab out.
 
-**Pro features:**
+<img src="assets/screenshots/v1.0/settings-gameprofiles.png" alt="Game Profiles tab" width="800">
 
-| Auto-Brightness | Audio (Footstep Booster) | Crosshair |
-|---|---|---|
-| ![Auto-Brightness](assets/screenshots/v1.0/settings-autobrightness.png) | ![Audio](assets/screenshots/v1.0/settings-audio.png) | ![Crosshair](assets/screenshots/v1.0/settings-crosshair.png) |
-| ![Map Scanner](assets/screenshots/v1.0/settings-mapscanner.png) | ![QuickSelect](assets/screenshots/v1.0/settings-quickselect.png) | ![QuickSave](assets/screenshots/v1.0/settings-quicksave.png) |
+### Display + Profiles
+9 profiles (3 free, 6 Pro), each with Gamma / Contrast / Vibrance / Hue and an optional brightness range for Auto-Brightness.
 
-**Configuration:**
+<img src="assets/screenshots/v1.0/settings-display.png" alt="Display tab" width="800">
 
-| App | Hotkeys | Performance |
-|---|---|---|
-| ![App](assets/screenshots/v1.0/settings-app.png) | ![Hotkeys](assets/screenshots/v1.0/settings-hotkeys.png) | ![Performance](assets/screenshots/v1.0/settings-performance.png) |
+### Auto-Brightness (Pro)
+5-zone screen sampling with per-zone weights, calibration wizard, optional debug overlay. Smoothly interpolates Gamma / Contrast / Vibrance across enabled profiles.
 
-**Map Scanner in action** — live evacuation timer overlay (Pro):
+<img src="assets/screenshots/v1.0/settings-autobrightness.png" alt="Auto-Brightness tab" width="800">
 
-![Map Scanner Overlay](assets/screenshots/Map%20Scanner.PNG)
+### Audio (Pro) — Footstep Booster + Ducking
+Per-process audio limiter so you can crank in-game volume to hear footsteps without going deaf on gunshots. Plus Audio Ducking + Background AutoMute.
+
+<img src="assets/screenshots/v1.0/settings-audio.png" alt="Audio tab" width="800">
+
+### Map Scanner (Pro)
+Long-press M in Arc Raiders → on-screen evac-timer overlay. ~100% OCR hit rate, detects all 13 current map conditions, per-state threshold colors, configurable Evac alarm.
+
+<img src="assets/screenshots/v1.0/settings-mapscanner.png" alt="Map Scanner tab" width="800">
+
+### Crosshair (Pro)
+Click-through overlay, 6 styles, custom color + outline, size 4–50 px.
+
+<img src="assets/screenshots/v1.0/settings-crosshair.png" alt="Crosshair tab" width="800">
+
+### QuickSelect + QuickSave (Pro)
+Single-key item use from the quick-wheel and inventory ↔ Safe Pocket drags. Modifier-key bindings (`Ctrl+5`, `Shift+Numpad 3`) and MB3/4/5 + wheel triggers supported.
+
+<img src="assets/screenshots/v1.0/settings-quickselect.png" alt="QuickSelect tab" width="800">
+<img src="assets/screenshots/v1.0/settings-quicksave.png" alt="QuickSave tab" width="800">
+
+### Hotkeys, App, Performance
+<details>
+<summary>Show configuration tabs</summary>
+
+<img src="assets/screenshots/v1.0/settings-hotkeys.png" alt="Hotkeys tab" width="800">
+<img src="assets/screenshots/v1.0/settings-app.png" alt="App tab" width="800">
+<img src="assets/screenshots/v1.0/settings-performance.png" alt="Performance tab" width="800">
+
+</details>
+
+### Map Scanner in action
+Live evacuation timer overlay during a Night Raid event:
+
+<img src="assets/screenshots/Map%20Scanner.PNG" alt="Map Scanner Overlay" width="800">
 
 ## Demo Videos
 
