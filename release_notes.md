@@ -55,7 +55,7 @@ Everything in the **Free** column ships with the EXE. No license, no nag screen,
 - **One EXE for everyone** — Numpad and Arrow-key versions merged. AZERTY-friendly out of the box.
 - **Update notifier in the tray** — one-line notice when a new release is published.
 - **Original gamma persistence** — your DisplayCAL / ICC calibration is saved to disk on first launch and restored on every exit, no matter how BrightRaider stops. Survives crashes.
-- **Native AOT** — single 21 MB EXE, no .NET install needed, sub-second startup.
+- **Native AOT** — no .NET runtime install needed, sub-second startup.
 - **Dark mode** — full dark theme for the Settings window. Toggle in *Settings → App → Theme* (Light / Dark / Follow OS).
 
 ### ⬆️ Improved in V1.0 (Free)
@@ -113,13 +113,10 @@ V1.x updates after this won't require another re-entry.
 ## SHA-256
 
 ```
-BrightRaider.exe              4FC24CF6DADFB517698574FEF54D4FD37471166B87BEFDC0DAF26FF22AB47B58
-BrightRaider-V1.0.0.zip       CE0EC38D5DED93F0C86DEA723005DEE988D4D73589877727C89ED1CF45FB6FD2
+BrightRaider-V1.0.0.zip       6FB47952230C00875725DB2ABA24C79E72EE046180B57FBE25AB588B9E82FE6A
 ```
 
-(The EXE bundled inside the ZIP has the same SHA-256 as the standalone EXE — they are bit-identical binaries.)
-
-Verify on Windows: `Get-FileHash <filename> -Algorithm SHA256`
+Verify on Windows: `Get-FileHash BrightRaider-V1.0.0.zip -Algorithm SHA256`
 
 ---
 
@@ -135,11 +132,8 @@ Read directly on GitHub (no download needed):
 - 💾 **[QuickSave Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/QuickSave_Guide.md)** — drag presets, toggle direction
 - 📜 **[Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt)** — public release history (V4 → V1.0)
 
-## 📦 What's in the download
+## 📦 Download + install
 
-Two assets are attached to this release:
+**Download `BrightRaider-V1.0.0.zip`**, extract it to any folder (e.g. `C:\Tools\BrightRaider\`), and run `BrightRaider.exe` from inside that folder. The EXE needs its sibling DLLs (`libSkiaSharp.dll`, `libHarfBuzzSharp.dll`, `av_libglesv2.dll`) to render the UI — don't separate them.
 
-- **`BrightRaider.exe`** — the single-EXE app. Drop it anywhere, double-click, done.
-- **`BrightRaider-V1.0.0.zip`** — same EXE plus the docs above bundled for offline use (Manual + 5 Guides + Changelog).
-
-The EXE inside the ZIP is bit-identical to the standalone download — take whichever fits.
+The ZIP also includes the Manual + 5 Guides + Changelog for offline reference.
