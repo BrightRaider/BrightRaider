@@ -1,6 +1,6 @@
-# BrightRaider V1.0.0
+# BrightRaider V1.0.0 — Pre-Release
 
-> 🎉 **Launch week:** V1.0 ships at the V9.x Pro price of **€5.49** for the first 7 days. After that the price moves to **€8.99** to reflect the new feature set (Footstep Booster, Background AutoMute, Process Optimizer, plus the upgraded Map Scanner / Auto-Brightness / QuickSelect / QuickSave).
+> 🎉 **Pre-Release week:** V1.0 launches at the V9.x Pro price of **€5.49** for the first 7 days. After that the price moves to **€8.99** to reflect the new feature set (Footstep Booster, Background AutoMute, Process Optimizer, plus the upgraded Map Scanner / Auto-Brightness / QuickSelect / QuickSave).
 >
 > **V9.x license holders:** your existing key works on V1.0 at no extra cost — just re-enter it once (see upgrade note below). The price change does not affect you either way.
 
@@ -47,6 +47,7 @@ Everything in the **Free** column ships with the EXE. No license, no nag screen,
 - **Update notifier in the tray** — one-line notice when a new release is published.
 - **Original gamma persistence** — your DisplayCAL / ICC calibration is saved to disk on first launch and restored on every exit, no matter how BrightRaider stops. Survives crashes.
 - **Native AOT** — single 21 MB EXE, no .NET install needed, sub-second startup.
+- **Dark mode** — full dark theme for the Settings window. Toggle in *Settings → App → Theme* (Light / Dark / Follow OS).
 
 ### ⬆️ Improved in V1.0 (Free)
 
