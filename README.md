@@ -105,33 +105,34 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 ## Features
 
 ### Free
-- **3 brightness profiles** — Normal, Bright, Brighter
-- **Instant hotkey switching** — works in fullscreen
-- **Gamma + Contrast + Digital Vibrance** control
-- **FPS Limit per game** — set a cap per process, BrightRaider switches it automatically as you alt-tab. Cap Arc Raiders at your monitor refresh rate, set CS2 to unlimited. Reduces GPU power draw and heat significantly — less noise, cooler hardware. Set once, forget it. → [Optimal FPS cap settings (Blur Busters gsync 101)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
-- **Automatic Vibrance Switching** — gaming vibrance when your game is in focus, normal desktop vibrance when you alt-tab. Replaces VibranceGUI entirely.
-- **Rebindable hotkeys** — all keys configurable in Settings → Input. Works with numpad, TKL, QWERTZ, AZERTY — any keyboard.
+- **3 hotkey-switchable display profiles** — fully customizable Gamma + Contrast + Vibrance + **Hue** per profile (V1.0 adds the Hue axis)
+- **Alt-Tab Auto-Switch** — per-game profile **and** per-game FPS limit applied automatically when the game enters foreground; reverts to your original ramps on Alt-Tab out. Replaces VibranceGUI completely.
+- **FPS Limit per game** — NVIDIA via NvAPI DRS, AMD via ADLX FRTC. Set Arc Raiders to 141, CS2 to unlimited — saved per profile. Saves GPU power, lowers fan noise. → [Optimal FPS cap settings (Blur Busters gsync 101)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
+- **Configurable hotkeys with modifier support** — every key reassignable, supports `Ctrl+5`, `Alt+F2`, `Shift+Numpad 3`, mouse MB3/4/5, scroll wheel. Setup wizard on first launch (Numpad / TKL / AZERTY).
+- **Original gamma persistence** — your DisplayCAL / ICC calibration is saved on first launch and restored on every exit. Survives crashes — V1.0 stores the baseline to disk, can't be poisoned by a force-kill.
+- **Dark Mode** — full dark theme for the Settings window (Light / Dark / Follow OS in *Settings → App → Theme*).
 - **NVIDIA + AMD + Intel** support (GDI fallback for any GPU)
-- **Multi-monitor** support
+- **Multi-monitor** support — apply to one specific display or all together
 - **English / German** interface
-- **Break Reminder** — shows an orange reminder toast after a configurable interval (default: 45 min). Configure under Settings → Break Reminder. Does not interrupt gameplay.
+- **Break Reminder** — configurable interval, optional audible cue, live toggle
+- **Update notifier** in the tray menu
 - **Auto-Start with Windows**
-- Portable — no installation, just one EXE
+- **Native AOT** — no .NET runtime install needed, sub-second startup, single portable EXE
 
 ### Pro (€5.49)
-- **QuickSave** — one keypress drags an item from your inventory to your Safe Pocket (or back). Handles everything: open inventory → drag → close. 5 independent presets, configurable slots, toggle direction per preset. 📖 [Setup Guide](docs/QuickSave_Guide.md)
-- **QuickSelect** — press a single key to automatically use an item from your quick-use wheel. Handles everything: hold Q → select slot via mouse → release Q → hold LMB → press H. 8 independent slots, 6 LMB timer presets (Adrenalin Syringe, Bandage, Shield Charger…), all keys freely rebindable. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
-- **Auto-Brightness** — automatically adjusts based on screen content. Dark area? Brightness goes up. Step outside? Back to normal. Smooth transitions, no stutter. Zone weights configurable (Settings → Zones...) — reduce corner influence if your HUD covers them.
-- **Map Scanner** — hold M on the map to automatically read all evacuation timers. Takes a screenshot, reads the timers via Windows built-in OCR (no game files or memory touched), and shows a live color-coded countdown overlay on screen. Detects active events (Night, Hurricane, Electromagnetic Storm) and adjusts active evac points automatically. Supports Buried City, Stella Montis, Space Port, Blue Gate, Damm and Riven Tides.
-- **Evac Alarm** — get a red toast + sound alert when an evac timer drops below your configured threshold (set in minutes + seconds). Configure inside Settings → Map Scanner → Settings.
-- **Autorun** — short press CapsLock to hold the forward key (walk or sprint). Hold CapsLock 600ms for **Tap Mode** — pulses forward key at intervals, perfect for the **Looting Mk. 3 (Survivor)** augment (keeps health at 75% while moving). Shift toggles sprint. C triggers a slide. Forward key is rebindable — works with any layout (QWERTZ, AZERTY, etc.).
-- **Crosshair Overlay** — A clean, click-through crosshair directly on your screen. 6 styles: Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap. Optional outline for visibility on bright backgrounds. EAC-safe — same mechanism as Discord and GeForce Experience overlays.
-- **Audio Ducking** — hold the mute key 600ms to duck game audio to 20%. Short press still mutes/unmutes. Configure volume and hold duration in Settings.
-- **Game Mute** — mute only the game audio with a single key. Your Discord, music, everything else stays on.
-- **Hue per Profile** — per-profile color temperature control alongside Vibrance. AMD supported in V1.0.
-- **Up to 9 profiles** with full customization
-- **Calibration Wizard** — two clicks to set up auto-brightness
-- **Profile Editor** — fine-tune gamma, contrast, vibrance, hue per profile
+- **Map Scanner** — long-press M on the in-game map → ~100 % OCR hit rate, detects all 13 current map conditions (Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, and the base no-event state). Color-coded timer overlay with per-state thresholds, configurable Evac alarm. 📖 [Setup Guide](docs/MapScanner_Guide.md)
+- **Auto-Brightness** — 5-zone screen sampling smoothly interpolates Gamma/Contrast/Vibrance across enabled profiles. Calibration Wizard sets it up in two clicks. Optional debug overlay with live zone values. 📖 [Setup Guide](docs/AutoBrightness_Guide.md)
+- **Footstep Booster** *(new in V1.0)* — per-process audio limiter so you can crank in-game volume to hear footsteps without going deaf on gunshots. Configurable threshold / attack / release. Per-game only — Discord, music, browser stay untouched. 📖 [Setup Guide](docs/FootstepBooster_Guide.md)
+- **QuickSelect** — single keypress automatically uses an item from your quick-use wheel: hold Q → select slot → release Q → hold LMB → press H. 8 independent slots, 8 LMB timer presets, modifier-key bindings (`Ctrl+5`, `Shift+Numpad 3`), MB3/4/5 + scroll-wheel triggers. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
+- **QuickSave** — single keypress drags an item between inventory slots and Safe Pocket. Handles open → drag → close. 5 presets, configurable slots, optional toggle-direction. 📖 [Setup Guide](docs/QuickSave_Guide.md)
+- **Crosshair Overlay** — click-through crosshair directly on screen. 6 styles (Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap), custom color + outline, size 4–50 px. Same overlay mechanism as Discord and GeForce Experience.
+- **Background AutoMute** *(new in V1.0)* — the game's Windows audio session is muted automatically when you Alt-Tab out, unmuted on focus return. Per-process — your music + Discord keep playing.
+- **Process Optimizer** *(new in V1.0)* — opt-in High process priority + physical-cores-only affinity (Hyperthreading off) for the foreground game. Smoother frametimes on cores fighting with background tasks.
+- **Autorun** — short press CapsLock to hold the forward key. Tap Mode (hold CapsLock 600 ms) pulses forward — built for the Looting Mk. 3 (Survivor) augment, keeps health at 75 % while moving. AZERTY support (Z forward).
+- **Audio Ducking** — hold the mute key 600 ms to duck game audio to a configurable %. Short press still mutes/unmutes.
+- **Game Mute** — mute only the game's audio session, leaves Discord / music untouched.
+- **Profiles 4–9** — six more hotkey-switchable color presets, all axes editable
+- **Calibration Wizard** — two-step capture (darkest + brightest spot) distributes profiles across the range automatically
 
 ## Default Profiles
 
@@ -247,9 +248,9 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 
 ## System Requirements
 
-- Windows 10 / 11
-- .NET Framework 4.7.2 (pre-installed on Windows 10/11)
-- NVIDIA or AMD GPU recommended (Intel works with gamma-only)
+- Windows 10 / 11 (x64)
+- **No .NET runtime install required** — V1.0 is Native AOT, single self-contained EXE
+- NVIDIA or AMD GPU recommended for full feature set (Vibrance, Hue, FPS limit). Intel + integrated GPUs work with Gamma + Contrast only.
 
 ## Changelog
 
@@ -257,12 +258,17 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 
 ## Manual
 
-**[View full manual](docs/Manual.txt)**
+**📘 [Full Manual](docs/Manual.txt)** — English + German, every feature explained.
 
 ## Guides
 
-- 📖 [QuickSave Setup Guide](docs/QuickSave_Guide.md)
-- 📖 [QuickSelect Setup Guide](docs/QuickSelect_Guide.md)
+Deep-dives for the more advanced features:
+
+- 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all 13 conditions), threshold colors, Evac alarm setup
+- 🔆 **[Auto-Brightness Guide](docs/AutoBrightness_Guide.md)** — how the 5-zone sampler works, Calibration Wizard walkthrough, zone-weight tuning, debug overlay
+- 🔊 **[Footstep Booster Guide](docs/FootstepBooster_Guide.md)** — threshold / attack / release tuning, recommended starting values, troubleshooting
+- ⚡ **[QuickSelect Guide](docs/QuickSelect_Guide.md)** — LMB timer presets, modifier-key bindings, slot 7/8 mouse-movement path
+- 💾 **[QuickSave Guide](docs/QuickSave_Guide.md)** — 5 drag presets, toggle direction, timing controls
 
 ## Uninstall
 
