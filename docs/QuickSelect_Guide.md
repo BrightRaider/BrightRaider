@@ -100,6 +100,37 @@ Slots 4–8 are disabled by default. Bind a key and check Active to use them.
 
 ---
 
+## Modifier Bindings (Ctrl / Alt / Shift)
+
+Every Key field accepts modifier + key combinations:
+
+1. Click the Key field — it shows **"Press a key… (Esc cancels)"**
+2. Hold <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, and/or <kbd>Shift</kbd>
+3. Press the trigger key — e.g. `Shift+5`, `Ctrl+Numpad 5`, `Alt+F2`
+4. The field shows the full binding (`Shift+5`); hover for the tooltip if the column truncates the label
+
+**Bindable:**
+- Letters A–Z, digits 0–9, F1–F24, Numpad keys, OEM punctuation
+- Arrow keys, nav keys (Home, End, PageUp, PageDown, Insert, Delete)
+- Mouse: <kbd>MB3</kbd> (middle), <kbd>MB4</kbd>, <kbd>MB5</kbd>
+- Wheel: scroll up, scroll down
+
+**Not bindable (modifier-only / UI-reserved):**
+- Bare <kbd>Shift</kbd>, <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Win</kbd> (use them as modifiers, not as the main key)
+- <kbd>Esc</kbd> (cancels the rebind), <kbd>Tab</kbd> (focus traversal), <kbd>Enter</kbd> (default button)
+
+**OS-reserved combos** — you can pick them, but Windows handles them before BrightRaider sees the press. A warning toast appears in these cases: <kbd>Win+L</kbd>, <kbd>Win+D</kbd>, <kbd>Win+E</kbd>, <kbd>Win+R</kbd>, <kbd>Win+S</kbd>, <kbd>Win+I</kbd>, <kbd>Win+Tab</kbd>, <kbd>Alt+F4</kbd>, <kbd>Alt+Tab</kbd>, <kbd>Ctrl+Alt+Del</kbd>, <kbd>Ctrl+Shift+Esc</kbd>.
+
+### Sprint Conflict (read this if you use Shift+ bindings)
+
+If you bind a Shift+ combo (e.g. `Shift+5`) **and** Sprint is bound to Shift (the default for many shooters incl. Arc Raiders), the binding **will fire every time you sprint in-game**. BrightRaider shows a 10-second warning toast when you create such a binding.
+
+Two ways out:
+- Use `Ctrl+` or `Alt+` instead of `Shift+`
+- Rebind Sprint to a non-Shift key in **Settings → Hotkeys → Sprint key**
+
+---
+
 ## Toggling QuickSelect On/Off
 
 Press the **Toggle Key** (default: `Numpad Minus` / `Pos1`) to pause or resume QuickSelect.  

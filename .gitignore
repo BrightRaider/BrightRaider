@@ -8,9 +8,24 @@ docs/CHANGELOG.txt
 docs/Maps.txt
 docs/Timer_Rects.txt
 
-# Source code (local only)
+# Source code (local only) — never push to the public mirror
 src/
 releases/v4-free/*.cs
+
+# V1.0 Avalonia source tree — local only. The whole subtree (code, XAML,
+# project file, build artifacts) stays out of the public repo. Only
+# release artifacts (the published EXE) are tracked under releases/.
+BrightRaider.Avalonia/
+
+# V1.0 internal planning + handoff docs — never push
+V1.0_TODO.md
+docs/V1.0_PLAN.txt
+docs/HANDOFF.md
+docs/V0_REFERENCE.md
+docs/IDEAS_BACKLOG.txt
+
+# AOT build script (lives next to the source it builds — local only)
+build_aot.ps1
 
 # Build scripts + artifacts
 build/
@@ -74,6 +89,20 @@ releases/v9.3/
 releases/v9.4/
 releases/v9.5/
 releases/v9.5.1/
+# V1.0+ release staging (build artifact for gh release create; the final
+# distribution channel is GitHub Releases, not the repo).
+releases/v1.0.0/
+releases/BrightRaider-V*.zip
+
+# Per-build EXE archive (each AOT publish writes a uniquely-named copy here)
+releases/v1.0/
+
+# ConfuserEx + obfuscation work files
+releases/v9.6.1/obf/
+releases/v9.6/obf/
+
+# Map sample images (used for OCR-template training, not for distribution)
+samples/
 Bild und Video/
 
 # Claude internal

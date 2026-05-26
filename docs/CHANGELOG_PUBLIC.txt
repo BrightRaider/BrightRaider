@@ -3,7 +3,70 @@
 ================================================================
 
 
-[ V9.6.1 ] - Current Version
+[ V1.0.0 ] - Pre-Release
+
+  The V1.0 release. Major rewrite on .NET 9 + Native AOT + Avalonia UI.
+  One EXE, no installer, no .NET runtime required.
+
+  Upgrade note for V9.x users:
+  - Settings, profiles, hotkeys, and game profiles migrate automatically
+    on first launch.
+  - License key must be re-entered once (Settings -> App -> Enter license).
+    Lemon Squeezy re-issues the activation token instantly — same email,
+    same key, no re-purchase. One-time security rotation; V1.x updates
+    won't require it again.
+
+  New in V1.0:
+  - Map Scanner (Pro): long-press M -> on-screen overlay with live evac
+    timers, map + event auto-detection, color-coded warnings, audible
+    alarm at configurable threshold.
+  - Auto-Brightness (Pro): per-profile brightness ranges, 5-zone screen
+    sampling, smooth Gamma/Contrast/Vibrance interpolation. Includes a
+    Calibration Wizard.
+  - Footstep Booster / Loudness Limiter: per-process audio compressor —
+    cap the game's audio session at a threshold so you can crank in-game
+    volume to make footsteps audible without going deaf on gunshots.
+  - Background mute: auto-mute the game's audio session when Alt-Tab'd
+    out, restore on focus return.
+  - Process Optimizer: opt-in High priority + physical-cores-only affinity
+    for the foreground game.
+  - Alt-Tab Auto-Switch: per-game color profile + FPS limit + crosshair
+    state, applied in one GPU call (no double-push / no AMD gamma-stuck).
+  - Update notifier in the tray menu.
+  - Per-profile tray icon color, ●-marker for active profile.
+  - Configurable hotkeys (no more separate Arrow EXE).
+  - Resizable Settings window with sidebar tabstrip; dark mode.
+
+  Free features stay free. Pro adds Auto-Brightness, Map Scanner,
+  QuickSelect, QuickSave, Footstep Booster.
+
+  Bug fixes vs V9.6.1:
+  - Original gamma ramp is saved to disk on first launch and reloaded
+    every startup. A crashed or force-killed BrightRaider can never
+    poison the saved baseline — your DisplayCAL / ICC calibration is
+    safe across any crash.
+  - New App-tab buttons: "Reset to neutral now" pushes a known-clean
+    gamma immediately. "Re-capture original gamma" updates the saved
+    baseline to the current state (use after recalibrating).
+  - Config saves are atomic (.tmp + replace + .bak fallback) — no more
+    corrupted config on power loss / crash.
+  - Single-instance lock — second launch raises the existing window
+    instead of running two copies.
+  - Break reminder now respects the live toggle — turning it off in
+    Settings stops the timer immediately (was: needed app restart).
+  - Calibration Wizard: buttons readable on dark theme, live value
+    updates immediately, Enter reliably confirms each step.
+  - Auto-Brightness respects the global On/Off hotkey (was: kept
+    pushing gamma even when BrightRaider was supposedly off).
+  - Tray toggles and Settings dialog stay in sync — toggling Alt-Tab
+    or Auto-Brightness via the tray no longer gets clobbered when the
+    Settings dialog is open.
+  - Settings window remembers its size between launches.
+  - Modifier-key bindings (Ctrl+, Alt+, Shift+ combinations) are
+    fully supported and documented inline in the binding tabs.
+
+
+[ V9.6.1 ] - Previous Version
 
   Bug fixes:
   - Fixed: Mouse stutter and game input lag while BrightRaider is running.

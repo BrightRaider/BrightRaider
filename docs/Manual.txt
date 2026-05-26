@@ -1,6 +1,8 @@
 ================================================================
-  BrightRaider V9.6
-  Switch Gamma, Contrast & Digital Vibrance with one keypress
+  BrightRaider V1.0
+  Switch Gamma, Contrast, Vibrance & Hue with one keypress.
+  Plus: Auto-Brightness, Alt-Tab Auto-Switch, Footstep Booster,
+        Map Scanner, QuickSelect, QuickSave.
 ================================================================
 
 
@@ -20,9 +22,8 @@ WHAT IS BRIGHTRAIDER?
   The app runs silently in your system tray and uses almost
   no resources. No installation required.
 
-  Two versions available:
-  - BrightRaider.exe         (Numpad keys)
-  - BrightRaider_Arrows.exe  (Arrow keys, for laptops / TKL keyboards)
+  One EXE — hotkeys are fully configurable. A Setup Wizard
+  picks sensible defaults on first launch (Numpad, TKL, AZERTY).
 
 FREE FEATURES
   - 3 switchable display profiles via Numpad 1/2/3 (or Arrow keys)
@@ -80,8 +81,8 @@ PROFILES (Default)
   Num 4-9: Custom   - Pro users can edit all values
 
 SYSTEM REQUIREMENTS
-  - Windows 10 or 11
-  - .NET Framework 4.7.2 (pre-installed on Windows 10/11)
+  - Windows 10 or 11 (x64)
+  - No .NET runtime required (Native AOT — single EXE)
   - NVIDIA (GeForce, RTX, Quadro) or AMD (Radeon, RX) GPU
   - Also works on Intel/other GPUs (Gamma + Contrast only)
 
@@ -115,8 +116,35 @@ FIRST LAUNCH - IMPORTANT
   The UAC prompt only appears ONCE. After that, the app
   runs without any admin rights.
 
+MODIFIER BINDINGS (Ctrl / Alt / Shift)
+  Every rebindable field accepts modifier + key combinations:
+    1. Click the field (it shows "Press a key...")
+    2. Hold Ctrl, Alt, and/or Shift
+    3. Press the trigger key — e.g. Shift+5, Ctrl+Numpad 5, Alt+F2
+    4. Esc cancels the rebind without changing anything
+
+  Bindable: A-Z, 0-9, F1-F24, Numpad keys, OEM punctuation,
+            arrow + nav keys, Mouse MB3/MB4/MB5, Wheel up/down.
+
+  NOT bindable on their own (modifier-only): Shift, Ctrl, Alt, Win,
+            left/right modifier variants, Esc, Tab, Enter — these
+            are reserved for UI navigation and modifier chording.
+
+  OS-reserved combos (you can bind them, but Windows will eat them
+  before BrightRaider sees the press): Win+L, Win+D, Win+E, Win+R,
+  Win+S, Win+I, Win+Tab, Alt+F4, Alt+Tab, Ctrl+Alt+Del,
+  Ctrl+Shift+Esc. BrightRaider shows a warning toast in these cases.
+
+  Sprint conflict: if you bind anything with Shift+ while Sprint is
+  bound to Shift, the binding will fire every time you sprint in-game.
+  A warning toast appears. Either:
+    - pick Ctrl+ or Alt+ instead, or
+    - rebind Sprint to a non-Shift key (Hotkeys tab -> Sprint key).
+
 USAGE
-  Numpad version (BrightRaider.exe):
+  All hotkeys are configurable in Settings -> Hotkeys.
+  Defaults (Numpad preset, applied by the Setup Wizard):
+
     Numpad 1-3       ->  Profile 1-3 (Free)
     Numpad 4-9       ->  Profile 4-9 (Pro)
     Numpad 0 (short) ->  Mute/Unmute game audio (Pro)
@@ -128,24 +156,20 @@ USAGE
     4/5/6 (default)  ->  QuickSelect: auto-use slot item (Pro)
     Numpad -         ->  Toggle QuickSelect on/off (Pro)
     Numpad /         ->  Toggle QuickSave on/off (Pro)
-    Numpad Entf      ->  Toggle ALL BrightRaider hotkeys on/off (works regardless of NumLock)
+    Numpad Entf      ->  Toggle ALL BrightRaider hotkeys on/off
 
     Works with or without Shift, NumLock on or off.
 
-  Arrow Keys version (BrightRaider_Arrows.exe):
-    Arrow Left         ->  Profile 1 (Free)
-    Arrow Down         ->  Profile 2 (Free)
-    Arrow Right        ->  Profile 3 (Free)
-    Arrow Up (short)   ->  Mute/Unmute game audio (Pro)
-    Arrow Up (hold)    ->  Audio Ducking on/off (Pro)
-    Insert             ->  Toggle crosshair overlay (Pro)
-    Delete/Entf        ->  Toggle timer overlay on/off (Pro)
-    CapsLock           ->  Toggle autorun (Pro)
-    M (hold)           ->  Scan evacuation timers on map (Pro)
-    3/4/5 (default)    ->  QuickSelect: auto-use slot item (Pro)
-    Pos1 (Home)        ->  Toggle QuickSelect on/off (Pro)
-    End                ->  Toggle QuickSave on/off (Pro)
-    Page Down          ->  Toggle ALL BrightRaider hotkeys on/off
+  TKL / Laptop preset (Setup Wizard option):
+    Profile keys map to F1-F9 by default. Pick this preset if your
+    keyboard has no Numpad. All keys can still be rebound individually.
+
+  AZERTY preset (Setup Wizard option):
+    Forward-key changes from W to Z (for Autorun). Profile + toggle
+    keys stay on the Numpad. Pick this for French keyboard layouts.
+
+  Re-run the Setup Wizard any time via:
+    Settings -> Hotkeys -> "Apply preset..."
 
   Tray Icon (right-click):
     - Switch profiles
@@ -220,6 +244,31 @@ AUDIO DUCKING (Pro)
   Configure: right-click tray -> Settings -> Audio Ducking: 20%...
     - Volume: 0-100% (how loud the game is while ducked)
     - Hold duration: 200-2000ms (how long to hold before ducking triggers)
+
+FOOTSTEP BOOSTER / LOUDNESS LIMITER (Pro) — NEW in V1.0
+  Caps the game's audio session at a configurable threshold so you can
+  crank in-game volume to make footsteps audible without going deaf on
+  gunshots. Per-process — only the configured game gets limited; Discord,
+  music, browser stay untouched.
+
+  Configure: Settings -> Audio -> Footstep Booster
+    - Threshold (10-90 %): volume level above which the limiter kicks in.
+      Lower = more aggressive compression. Start around 35-45 %.
+    - Attack (1-200 ms): how fast the limiter pulls volume down on a loud
+      transient. Lower = catches sharp gunshots; too low = audible clicks.
+      Start around 10-20 ms.
+    - Release (50-2000 ms): how fast volume returns to baseline after the
+      loud sound passes. Higher = smoother but slower to hear footsteps
+      again. Start around 250-400 ms.
+
+  See FootstepBooster_Guide.md for detailed tuning steps.
+
+BACKGROUND MUTE (Pro) — NEW in V1.0
+  Auto-mute the game's Windows audio session when Alt-Tab'd out, unmute
+  on focus return. Quiets the game while you browse, watch a video or
+  check Discord. Per-process — your music + Discord keep playing.
+
+  Configure: Settings -> Audio -> "Auto-mute game when Alt-Tab'd out"
 
 MAP SCANNER (Pro)
   Hold M while viewing the in-game map. BrightRaider automatically
@@ -410,6 +459,44 @@ AUTO-BRIGHTNESS (Pro)
     Set a zone to 0 to ignore it entirely (useful when HUD elements cover a corner).
     Default: Center=2, all corners=1.
 
+  See AutoBrightness_Guide.md for the full calibration walkthrough.
+
+ALT-TAB AUTO-SWITCH (Free) — NEW in V1.0
+  Per-game profile + FPS limit + crosshair, applied automatically when
+  a configured game enters the foreground. No more switching profiles
+  by hand or running VibranceGUI alongside.
+
+  How it works:
+    1. Add a game in Settings -> Game Profiles -> "Add..."
+    2. Pick a base profile (overrides optional: own Gamma/Contrast/
+       Vibrance/Hue/FPS-limit for this game only)
+    3. Launch the game — BrightRaider detects it, applies the profile,
+       enables the crosshair (if configured), sets the FPS limit
+    4. Alt-Tab out — original ramps + vibrance + hue restored, crosshair
+       hidden. Tab back in — game profile re-applied
+    5. Other games NOT in your list get neutral display state
+
+  FPS Limit per game:
+    - NVIDIA: NvAPI DRS (Driver Settings) — clean, no DirectX hook
+    - AMD: ADLX FRTC via amdadlx64.dll
+    - Intel: no public API — UI shows a note
+    - Power saving + lower fan noise: GPU stops rendering frames the
+      monitor can't display.
+
+PROCESS OPTIMIZER (Pro, opt-in) — NEW in V1.0
+  When a foreground game is detected, BrightRaider can boost its
+  Windows process priority and pin it to physical CPU cores only
+  (Hyperthreading off). Smoother frametimes on cores fighting with
+  background tasks.
+
+  Configure: Settings -> Performance
+    - "Run game as High priority" — Windows ProcessPriorityClass.High
+    - "Disable Hyperthreading (physical cores only)" — pins affinity
+      to cores 0, 2, 4, ... (skips SMT siblings)
+
+  Opt-in — both off by default. Reverts to Normal priority + full
+  affinity when you Alt-Tab out or close the game.
+
 HOTKEY PAUSE (Pro)
   Temporarily disables all BrightRaider hotkeys. The app keeps
   running — it just stops intercepting key presses.
@@ -471,9 +558,8 @@ WAS IST BRIGHTRAIDER?
   Die App laeuft leise im System-Tray und verbraucht kaum
   Ressourcen. Keine Installation noetig.
 
-  Zwei Versionen:
-  - BrightRaider.exe         (Numpad-Tasten)
-  - BrightRaider_Arrows.exe  (Pfeiltasten, fuer Laptops / TKL)
+  Eine EXE — Hotkeys voll konfigurierbar. Ein Setup-Assistent
+  setzt beim ersten Start sinnvolle Defaults (Numpad, TKL, AZERTY).
 
 KOSTENLOSE FUNKTIONEN
   - 3 umschaltbare Display-Profile ueber Numpad 1/2/3
@@ -534,8 +620,8 @@ PROFILE (Standard)
   Num 4-9: Benutzerdefiniert - Pro-Nutzer koennen alle Werte aendern
 
 SYSTEMVORAUSSETZUNGEN
-  - Windows 10 oder 11
-  - .NET Framework 4.7.2 (auf Windows 10/11 vorinstalliert)
+  - Windows 10 oder 11 (x64)
+  - Keine .NET-Runtime noetig (Native AOT — eine einzige EXE)
   - NVIDIA (GeForce, RTX, Quadro) oder AMD (Radeon, RX) GPU
   - Funktioniert auch auf Intel/anderen GPUs (nur Gamma + Kontrast)
 
@@ -571,8 +657,36 @@ ERSTER START - WICHTIG
   Die UAC-Abfrage kommt nur EINMAL. Danach laeuft die App
   ohne Admin-Rechte.
 
+MODIFIER-BELEGUNGEN (Strg / Alt / Shift)
+  Jedes belegbare Feld akzeptiert Modifier + Taste:
+    1. Auf das Feld klicken (zeigt "Taste druecken...")
+    2. Strg, Alt und/oder Shift halten
+    3. Trigger-Taste druecken — z.B. Shift+5, Strg+Numpad 5, Alt+F2
+    4. Esc bricht die Belegung ohne Aenderung ab
+
+  Belegbar: A-Z, 0-9, F1-F24, Numpad-Tasten, OEM-Zeichen,
+            Pfeil- und Navigationstasten, Maus MB3/MB4/MB5,
+            Mausrad hoch/runter.
+
+  NICHT belegbar als Einzeltaste (nur als Modifier): Shift, Strg,
+            Alt, Win, linke/rechte Modifier-Varianten, Esc, Tab,
+            Enter — diese sind fuer UI-Navigation reserviert.
+
+  OS-reservierte Kombinationen (belegbar, aber Windows fängt sie ab
+  bevor BrightRaider sie sieht): Win+L, Win+D, Win+E, Win+R, Win+S,
+  Win+I, Win+Tab, Alt+F4, Alt+Tab, Strg+Alt+Entf, Strg+Shift+Esc.
+  BrightRaider zeigt in diesen Faellen einen Warn-Toast.
+
+  Sprint-Konflikt: Wenn du Shift+ als Modifier verwendest waehrend
+  Sprint auf Shift belegt ist, feuert die Belegung bei jedem Sprint
+  im Spiel. Ein Warn-Toast erscheint. Entweder:
+    - Strg+ oder Alt+ als Modifier waehlen, oder
+    - Sprint umbelegen (Hotkeys-Tab -> Sprint-Taste).
+
 BEDIENUNG
-  Numpad-Version (BrightRaider.exe):
+  Alle Hotkeys sind konfigurierbar unter Einstellungen -> Hotkeys.
+  Standardbelegung (Numpad-Preset, vom Setup-Assistenten gesetzt):
+
     Numpad 1-3       ->  Profil 1-3 (Kostenlos)
     Numpad 4-9       ->  Profil 4-9 (Pro)
     Numpad 0 (kurz)  ->  Spiel stumm/laut (Pro)
@@ -584,24 +698,20 @@ BEDIENUNG
     4/5/6 (Standard) ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
     Numpad -         ->  QuickSelect an/aus (Pro)
     Numpad /         ->  QuickSave an/aus (Pro)
-    Numpad Entf      ->  ALLE BrightRaider-Hotkeys an/aus (unabhaengig von NumLock)
+    Numpad Entf      ->  ALLE BrightRaider-Hotkeys an/aus
 
     Funktioniert mit und ohne Shift, NumLock an oder aus.
 
-  Pfeiltasten-Version (BrightRaider_Arrows.exe):
-    Pfeil Links         ->  Profil 1 (Kostenlos)
-    Pfeil Unten         ->  Profil 2 (Kostenlos)
-    Pfeil Rechts        ->  Profil 3 (Kostenlos)
-    Pfeil Hoch (kurz)   ->  Spiel stumm/laut (Pro)
-    Pfeil Hoch (halten) ->  Audio Ducking an/aus (Pro)
-    Einfg               ->  Fadenkreuz-Overlay an/aus (Pro)
-    Entf                ->  Timer-Overlay an/aus (Pro)
-    CapsLock            ->  Autorun an/aus (Pro)
-    M (halten)          ->  Evakuierungs-Timer auf Karte scannen (Pro)
-    3/4/5 (Standard)    ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
-    Pos1 (Home)         ->  QuickSelect an/aus (Pro)
-    Ende                ->  QuickSave an/aus (Pro)
-    Bild↓               ->  ALLE BrightRaider-Hotkeys an/aus
+  TKL- / Laptop-Preset (Setup-Assistent-Option):
+    Profil-Tasten liegen auf F1-F9. Fuer Tastaturen ohne Numpad.
+    Alle Tasten weiterhin einzeln belegbar.
+
+  AZERTY-Preset (Setup-Assistent-Option):
+    Vorwaerts-Taste fuer Autorun ist Z statt W. Profil- und
+    Toggle-Tasten bleiben auf dem Numpad. Fuer franzoesische Layouts.
+
+  Setup-Assistent jederzeit erneut starten:
+    Einstellungen -> Hotkeys -> "Preset anwenden..."
 
   Tray-Icon (Rechtsklick):
     - Profile wechseln
@@ -674,6 +784,33 @@ AUDIO DUCKING (Pro)
   Konfigurieren: Rechtsklick Tray -> Einstellungen -> Audio Ducking: 20%...
     - Lautstaerke: 0-100% (wie laut das Spiel im gedaempften Zustand ist)
     - Haltezeit: 200-2000ms (wie lange halten bis Ducking ausgeloest wird)
+
+FOOTSTEP BOOSTER / LOUDNESS LIMITER (Pro) — NEU in V1.0
+  Begrenzt die Lautstaerke der Spiel-Audio-Session bei einem konfigurier-
+  baren Schwellwert. Du kannst die In-Game-Lautstaerke hochdrehen um
+  Schritte zu hoeren, ohne dass dir Schuesse das Trommelfell zerlegen.
+  Per-Prozess — nur das konfigurierte Spiel wird limitiert; Discord,
+  Musik, Browser bleiben unberuehrt.
+
+  Konfigurieren: Einstellungen -> Audio -> Footstep Booster
+    - Schwellwert (10-90 %): Lautstaerke ab der der Limiter eingreift.
+      Niedriger = staerkere Kompression. Start bei ~35-45 %.
+    - Attack (1-200 ms): wie schnell der Limiter bei einem lauten
+      Transienten herunterregelt. Niedriger = faengt scharfe Schuesse
+      ab; zu niedrig = hoerbare Klicks. Start bei ~10-20 ms.
+    - Release (50-2000 ms): wie schnell die Lautstaerke nach dem lauten
+      Geraeusch wieder hochfaehrt. Hoeher = sanfter, aber Schritte sind
+      langsamer wieder hoerbar. Start bei ~250-400 ms.
+
+  Siehe FootstepBooster_Guide.md fuer detaillierte Tuning-Schritte.
+
+BACKGROUND MUTE (Pro) — NEU in V1.0
+  Stummschaltet die Windows-Audio-Session des Spiels automatisch beim
+  Alt-Tab raus, hebt die Stummschaltung beim Fokus-Return wieder auf.
+  Spiel ist leise waehrend du surfst, ein Video schaust oder Discord
+  checkst. Per-Prozess — Musik + Discord laufen weiter.
+
+  Konfigurieren: Einstellungen -> Audio -> "Spiel beim Alt-Tab stumm"
 
 MAP SCANNER (Pro)
   M auf der Karte gedrückt halten. BrightRaider zoomt
@@ -830,6 +967,44 @@ AUTO-HELLIGKEIT (Pro)
     0 = Zone wird ignoriert (nuetzlich wenn HUD-Elemente eine Ecke verdecken).
     Standard: Mitte=2, alle Ecken=1.
 
+  Siehe AutoBrightness_Guide.md fuer die komplette Kalibrierungs-Anleitung.
+
+ALT-TAB AUTO-SWITCH (Kostenlos) — NEU in V1.0
+  Pro Spiel automatisch Profil + FPS-Limit + Fadenkreuz aktivieren,
+  sobald das Spiel in den Vordergrund kommt. Schluss mit manuellem
+  Profil-Wechsel oder parallelem VibranceGUI.
+
+  So funktioniert es:
+    1. Spiel hinzufuegen: Einstellungen -> Game Profiles -> "Hinzufuegen..."
+    2. Basis-Profil waehlen (Overrides optional: eigene Gamma/Kontrast/
+       Vibrance/Hue/FPS-Limit nur fuer dieses Spiel)
+    3. Spiel starten — BrightRaider erkennt es, wendet das Profil an,
+       blendet das Fadenkreuz ein (falls konfiguriert), setzt das FPS-Limit
+    4. Alt-Tab raus — Original-Ramps + Vibrance + Hue wiederhergestellt,
+       Fadenkreuz versteckt. Tab zurueck — Spiel-Profil wieder aktiv
+    5. Andere Spiele NICHT in der Liste bleiben im neutralen Zustand
+
+  FPS-Limit pro Spiel:
+    - NVIDIA: NvAPI DRS (Driver Settings) — sauber, kein DirectX-Hook
+    - AMD: ADLX FRTC via amdadlx64.dll
+    - Intel: keine oeffentliche API — UI zeigt einen Hinweis
+    - Spart Strom + reduziert Luefter-Geraeusche: GPU rendert keine
+      Frames mehr die der Monitor nicht darstellen kann.
+
+PROCESS OPTIMIZER (Pro, opt-in) — NEU in V1.0
+  Bei erkanntem Vordergrund-Spiel kann BrightRaider die Windows-
+  Prozess-Prioritaet anheben und das Spiel auf physische CPU-Kerne
+  pinnen (Hyperthreading aus). Glattere Frametimes wenn andere Tasks
+  die Kerne belegen.
+
+  Konfigurieren: Einstellungen -> Performance
+    - "Spiel mit hoher Prioritaet laufen lassen" — High-Priority-Class
+    - "Hyperthreading deaktivieren (nur physische Kerne)" — Affinitaet
+      auf Kerne 0, 2, 4, ... (ueberspringt SMT-Geschwister)
+
+  Opt-in — beide aus per Default. Setzt auf Normal-Prioritaet + volle
+  Affinitaet zurueck beim Alt-Tab raus oder Spiel-Ende.
+
 HOTKEY-PAUSE (Pro)
   Deaktiviert voruebergehend alle BrightRaider-Hotkeys.
   Die App laeuft weiter — sie fängt nur keine Tasten mehr ab.
@@ -875,8 +1050,16 @@ DEINSTALLATION
 
 ================================================================
   FILES / DATEIEN
-  BrightRaider.exe         - Numpad version / Numpad-Version
-  BrightRaider_Arrows.exe  - Arrow keys version / Pfeiltasten-Version
+  BrightRaider.exe                         - Single EXE / Einzelne EXE
   %APPDATA%\BrightRaider\BrightRaider.cfg  - Settings (auto) / Einstellungen
   %APPDATA%\BrightRaider\BrightRaider.lic  - License file / Lizenzdatei
+  %APPDATA%\BrightRaider\debug.log         - Diagnostic log / Diagnose-Log
+
+  GUIDES (docs/)
+  Manual.txt                  - This file / Diese Datei
+  QuickSelect_Guide.md        - QuickSelect (Pro) deep-dive
+  QuickSave_Guide.md          - QuickSave (Pro) deep-dive
+  MapScanner_Guide.md         - Map Scanner (Pro) deep-dive — NEW
+  AutoBrightness_Guide.md     - Auto-Brightness (Pro) walkthrough — NEW
+  FootstepBooster_Guide.md    - Footstep Booster (Pro) tuning — NEW
 ================================================================
