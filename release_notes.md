@@ -113,7 +113,7 @@ V1.x updates after this won't require another re-entry.
 ## SHA-256
 
 ```
-BrightRaider.exe              68E7B66B363134B2B8E2387405E16CA7F8F1C9B4C1A09AB7F18EE221E01EE678
+BrightRaider.exe              79B59B7FC3525BAEBD0CBDE8246BDCD6DF11CE6C07B59E69C9F48A39DDBE04B6
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
