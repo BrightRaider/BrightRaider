@@ -113,7 +113,7 @@ V1.x updates after this won't require another re-entry.
 ## SHA-256
 
 ```
-BrightRaider.exe              F70280A7BDD216F9EFCF459926085B130C75D6F2CC82CE9C08A1B234158DAE87
+BrightRaider.exe              BC1286C0F4883FC27E63EB486EAF94DCB21C619E5E7FEC86A3652300C2F144A7
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
@@ -136,7 +136,7 @@ Read directly on GitHub (no download needed):
 
 **Download `BrightRaider.exe` and double-click it.** That's it.
 
-On first launch the EXE extracts its runtime to `%LOCALAPPDATA%\BrightRaider\runtime\v1.0.0\` and starts the app from there. Subsequent launches skip extraction and start in ~150 ms — feels like any single-EXE tool.
+On first launch the EXE unpacks its runtime into `%LOCALAPPDATA%\BrightRaider\` and starts the app from there. Subsequent launches skip unpacking and start near-instantly — feels like any single-EXE tool.
 
 Want to fully uninstall? Delete the EXE and the folder `%LOCALAPPDATA%\BrightRaider\`.
 

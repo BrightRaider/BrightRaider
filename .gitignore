@@ -28,9 +28,12 @@ docs/V1.0_PLAN.txt
 docs/HANDOFF.md
 docs/V0_REFERENCE.md
 docs/IDEAS_BACKLOG.txt
+docs/WDSI_SUBMISSION.md
 
 # AOT build script (lives next to the source it builds — local only)
 build_aot.ps1
+# Single-EXE launcher packaging script (publish → zip → embed) — local only
+build_launcher.ps1
 
 # Build scripts + artifacts
 build/

@@ -156,7 +156,8 @@ USAGE
     4/5/6 (default)  ->  QuickSelect: auto-use slot item (Pro)
     Numpad -         ->  Toggle QuickSelect on/off (Pro)
     Numpad /         ->  Toggle QuickSave on/off (Pro)
-    Numpad Entf      ->  Toggle ALL BrightRaider hotkeys on/off
+    Numpad Entf      ->  Global ON/OFF (see GLOBAL ON/OFF section below
+                          for the two behaviours — full off vs hotkey pause)
 
     Works with or without Shift, NumLock on or off.
 
@@ -504,6 +505,23 @@ HOTKEY PAUSE (Pro)
   Toggle via: right-click tray -> Settings -> Pause Hotkeys
   A toast confirms when hotkeys are paused or resumed.
 
+GLOBAL ON/OFF (Numpad Entf — Free)
+  Two flavours, picked under Settings -> App ->
+  "Toggle OFF also resets the display":
+
+    Checked (default) = FULL OFF
+      Hides every overlay (crosshair, map scanner, brightness debug),
+      restores your original gamma / vibrance / hue, pauses Auto-
+      Brightness, and stops the Footstep Booster. The display behaves
+      as if BrightRaider weren't running. Press the toggle again to
+      re-apply the active profile.
+
+    Unchecked = HOTKEY PAUSE
+      Only the hotkeys are paused. Your active color profile, overlays
+      and FPS limit all stay in place. Useful when you just need the
+      keys back for chat / another app, without losing your tuned
+      display state. Same behaviour V9.x had on Page Down / Numpad Entf.
+
 VIBRANCE RESTORE
   BrightRaider reads your current GPU vibrance on startup and restores
   it when you exit — so your display always returns to its original state.
@@ -698,7 +716,8 @@ BEDIENUNG
     4/5/6 (Standard) ->  QuickSelect: Slot-Item automatisch benutzen (Pro)
     Numpad -         ->  QuickSelect an/aus (Pro)
     Numpad /         ->  QuickSave an/aus (Pro)
-    Numpad Entf      ->  ALLE BrightRaider-Hotkeys an/aus
+    Numpad Entf      ->  Globaler EIN/AUS-Schalter (siehe Sektion
+                          GLOBAL EIN/AUS weiter unten — zwei Modi)
 
     Funktioniert mit und ohne Shift, NumLock an oder aus.
 
@@ -1011,6 +1030,24 @@ HOTKEY-PAUSE (Pro)
 
   Umschalten: Rechtsklick Tray -> Einstellungen -> Hotkeys pausieren
   Ein Toast bestaetigt das Aktivieren/Deaktivieren.
+
+GLOBAL EIN/AUS (Numpad Entf — Kostenlos)
+  Zwei Modi, einstellbar unter Einstellungen -> App ->
+  "Toggle OFF also resets the display":
+
+    Angehakt (Default) = KOMPLETT AUS
+      Versteckt jedes Overlay (Fadenkreuz, Map Scanner, Brightness-
+      Debug), stellt deine Original-Gamma / -Vibrance / -Hue wieder
+      her, pausiert Auto-Helligkeit und stoppt den Footstep Booster.
+      Das Display verhaelt sich als waere BrightRaider gar nicht da.
+      Nochmaliges Druecken wendet das aktive Profil wieder an.
+
+    Nicht angehakt = NUR HOTKEYS PAUSIEREN
+      Nur die Hotkeys werden ausgeblendet. Dein aktives Farbprofil,
+      Overlays und FPS-Limit bleiben unangetastet. Nuetzlich wenn du
+      die Tasten kurz fuer Chat / eine andere App brauchst, ohne den
+      getunten Display-Zustand zu verlieren. Gleiches Verhalten wie
+      V9.x's Page Down / Numpad Entf.
 
 VIBRANCE RESTORE
   BrightRaider liest deine aktuelle GPU-Vibrance beim Start und stellt
