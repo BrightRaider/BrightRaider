@@ -34,6 +34,8 @@ docs/WDSI_SUBMISSION.md
 build_aot.ps1
 # Single-EXE launcher packaging script (publish → zip → embed) — local only
 build_launcher.ps1
+# App-icon generator (figure → multi-size .ico, BMP frames) — local only
+tools_make_icon.ps1
 
 # Build scripts + artifacts
 build/
