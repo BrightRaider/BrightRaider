@@ -35,6 +35,7 @@ VibranceGUI was free, single-purpose, and unmaintained. BrightRaider V1.0 picks 
 | **Crosshair Overlay** (6 styles) | ❌ | ❌ | ✅ |
 | **Footstep Booster** (per-process limiter) | ❌ | ❌ | ✅ |
 | **Background AutoMute** (Alt-Tab → mute) | ❌ | ❌ | ✅ |
+| **Audio Output Switcher** (hotkey + game auto-switch) | ❌ | ❌ | ✅ |
 | **Process Optimizer** (priority + affinity) | ❌ | ❌ | ✅ |
 | **Autorun** (CapsLock → auto-W + Sprint) | ❌ | ❌ | ✅ |
 | **Audio Ducking** (hold-to-dim) | ❌ | ❌ | ✅ |
@@ -75,6 +76,7 @@ For users who want the full Arc Raiders / power-user toolbox.
 - **Footstep Booster** — per-process audio limiter. Crank in-game volume to hear footsteps without going deaf on gunshots. Configurable threshold / attack / release.
 - **Background AutoMute** — the game's audio session is muted automatically when you Alt-Tab out, unmuted on return. Discord and music stay untouched.
 - **Process Optimizer** — opt-in High process priority + physical-cores-only affinity (Hyperthreading off) for the foreground game.
+- **Audio Output Switcher** — switch your default output device with one hotkey, cycling through the devices you choose (2, a few, or all). Optional auto-switch to a chosen device when a game starts, restoring the previous device when it closes (alt-tabbing out does **not** switch back). Switches all roles including communications, so Discord voice follows too.
 
 ### ⬆️ Significantly improved in V1.0
 
@@ -104,6 +106,18 @@ V1.x updates after this won't require another re-entry.
 
 ---
 
+## 🔧 Updated during pre-release week
+
+Thanks to everyone testing and sending feedback — here's what changed since the first pre-release build:
+
+- **🆕 Audio Output Switcher (Pro)** — switch speakers ↔ headphones (or any set of devices) with one hotkey, plus optional auto-switch when a game starts/closes. Switches all roles incl. communications.
+- **Brightness profiles fixed** — the gamma/contrast curve is back to how it felt in 9.6.1; "Brighter" is usable again. *(#60)*
+- **Hue now 0–359° on Nvidia** — matches the Control Panel exactly, no mental math. Range adapts to your GPU. *(#39)*
+- **Crosshair outline thickness** — new 1–5 slider next to the outline color. *(#61)*
+- **Sliders take the mouse wheel + type-in fields** — every slider can be scrolled or have an exact value typed. *(#59)*
+- **"Only run hotkeys while a game is focused"** — optional switch so BrightRaider's keys never interfere on the desktop. *(#58)*
+- Fixed a Setup-Wizard re-run that could be overwritten on the next Apply.
+
 ## System requirements
 
 - Windows 10 / 11 (64-bit)
@@ -113,7 +127,7 @@ V1.x updates after this won't require another re-entry.
 ## SHA-256
 
 ```
-BrightRaider.exe              62F0FB514CF1DDAAB8D289ADD2096719B9F367A988793C4694CA996346243396
+BrightRaider.exe              0FDAC541E9D894DDA693D9CD5574127346D1116C4E56353A723781BD7EA56490
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
