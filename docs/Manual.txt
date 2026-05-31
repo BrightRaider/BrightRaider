@@ -56,10 +56,15 @@ PRO FEATURES (€5.49 one-time)
     inside Map Scanner Settings.
   - Crosshair Overlay: click-through crosshair on screen,
     6 styles (Cross, DotRing, TShape, Dot, Ring, CrossGap),
-    custom color, size (4–50px), optional outline with own color
+    custom color, size (4–50px), optional outline with its own
+    color and adjustable thickness (1–5)
+  - Audio Output Switcher: switch the default output device
+    (speakers <-> headphones, or cycle any set you choose) with
+    one hotkey; optional auto-switch when a game starts/closes
   - Up to 9 profiles (Numpad 1-9)
-  - Custom profile editor: set your own Gamma, Contrast
-    and Vibrance values for each profile
+  - Custom profile editor: set your own Gamma, Contrast,
+    Vibrance and Hue values for each profile (on Nvidia the Hue
+    slider runs 0-359° like the Control Panel; range adapts per GPU)
   - Auto-Brightness: screen analysis detects dark scenes
     and automatically switches to a brighter profile
   - Game Mute toggle: instantly mute/unmute game audio
@@ -158,8 +163,10 @@ USAGE
     Numpad /         ->  Toggle QuickSave on/off (Pro)
     Numpad Entf      ->  Global ON/OFF (see GLOBAL ON/OFF section below
                           for the two behaviours — full off vs hotkey pause)
+    Numpad Enter     ->  Cycle audio output device (Pro)
 
     Works with or without Shift, NumLock on or off.
+    (TKL preset uses PageUp for "Cycle audio output device".)
 
   TKL / Laptop preset (Setup Wizard option):
     Profile keys map to F1-F9 by default. Pick this preset if your
@@ -270,6 +277,28 @@ BACKGROUND MUTE (Pro) — NEW in V1.0
   check Discord. Per-process — your music + Discord keep playing.
 
   Configure: Settings -> Audio -> "Auto-mute game when Alt-Tab'd out"
+
+AUDIO OUTPUT SWITCHER (Pro) — NEW in V1.0
+  Switch your default Windows output device on the fly — no more diving
+  into the sound settings before every session.
+
+  Cycle hotkey:
+    Tick the devices you want in the rotation (Settings -> Audio ->
+    Output device switcher), then press the "Cycle audio device" hotkey
+    to step through them. A toast shows the device you switched to.
+    Pick 2 devices for a simple speakers<->headphones toggle, or as many
+    as you like. Default key: Numpad Enter (numpad preset) / PageUp (TKL).
+
+  Auto-switch on game start:
+    Enable "Switch automatically while a game runs" and choose a game
+    device. When a configured game (Game Profiles tab) starts, the output
+    switches to that device; when the game closes, the device that was
+    active before is restored. Alt-Tabbing out does NOT switch back, so a
+    quick check on a second monitor never blasts your speakers.
+
+  Switching sets ALL roles (default playback AND communications), so apps
+  like Discord follow the device too. Configure: Settings -> Audio ->
+  Output device switcher. Bind the hotkey in Settings -> Hotkeys.
 
 MAP SCANNER (Pro)
   Hold M while viewing the in-game map. BrightRaider automatically
@@ -504,6 +533,14 @@ HOTKEY PAUSE (Pro)
 
   Toggle via: right-click tray -> Settings -> Pause Hotkeys
   A toast confirms when hotkeys are paused or resumed.
+
+ONLY RUN HOTKEYS WHILE A GAME IS FOCUSED — NEW in V1.0
+  Optional switch (Settings -> Hotkeys -> Behavior). When enabled, every
+  hotkey passes straight through on the desktop or in other apps, so
+  BrightRaider's keys never interfere with normal typing. They reactivate
+  automatically as soon as a fullscreen game is in the foreground.
+  Default off. Leave it off if you play in windowed mode (the game must be
+  detected as fullscreen for the keys to be active).
 
 GLOBAL ON/OFF (Numpad Entf — Free)
   Two flavours, picked under Settings -> App ->

@@ -65,6 +65,26 @@
   - Modifier-key bindings (Ctrl+, Alt+, Shift+ combinations) are
     fully supported and documented inline in the binding tabs.
 
+  Pre-release week updates:
+  - Audio Output Switcher (Pro): switch the default output device
+    (speakers <-> headphones, or cycle any set of devices you choose)
+    with one hotkey. Optional auto-switch to a chosen device when a game
+    starts, restoring the previous device when it closes (Alt-Tab does
+    NOT switch back). Switches all roles including communications, so
+    Discord voice follows too.
+  - Hotkeys: optional "only run hotkeys while a game is focused" mode so
+    BrightRaider's keys never interfere with normal desktop typing.
+  - Crosshair: outline thickness is now adjustable (1-5), separate from
+    the outline color.
+  - Every slider takes the mouse wheel, and each value now has a type-in
+    field for exact entry.
+  - Nvidia Hue runs 0-359 exactly like the Control Panel (was a centered
+    -180..+180). Range still adapts to your GPU.
+  - Fixed: brightness profiles match the V9.6.1 look again (gamma /
+    contrast curve order) — "Brighter" is usable again.
+  - Fixed: re-running the Setup Wizard from an open Settings window is no
+    longer overwritten by the dialog's next Apply.
+
 
 [ V9.6.1 ] - Previous Version
 
