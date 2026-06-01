@@ -116,7 +116,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Crosshair outline thickness** — new 1–5 slider next to the outline color. *(#61)*
 - **Sliders take the mouse wheel + type-in fields** — every slider can be scrolled or have an exact value typed. *(#59)*
 - **"Only run hotkeys while a game is focused"** — optional switch so BrightRaider's keys never interfere on the desktop. *(#58)*
-- **Overlays follow the monitor you pick** — when you select a specific display in the tray (or Settings → Display), the crosshair, map-scanner and timer overlays all stay on that monitor and no longer jump when you click another screen. Vibrance/Hue now apply only to the chosen monitor too. Leave it on "All Monitors" to keep the game-window-follow behaviour. *(#55)*
+- **Overlays follow the monitor you pick** — when you select a specific display in the tray (or Settings → Display), the crosshair, map-scanner and timer overlays all stay on that monitor and no longer jump when you click another screen. Vibrance/Hue now apply only to the chosen monitor too. On "All Monitors" the overlays anchor to the game's monitor instead of chasing whatever window you click, and (in Alt-Tab mode) hide cleanly when you tab out and return instantly when you tab back. *(#55)*
 - Fixed a Setup-Wizard re-run that could be overwritten on the next Apply.
 
 ## System requirements
@@ -128,7 +128,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              212DD4313B57AD90CE2BA903927BEF056D63FD0062C2DD3099236CFEECD3056F
+BrightRaider.exe              CF1C8909F51AB18F6A90D66F18F395B089633A474E01215A0644E56DB0733494
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
