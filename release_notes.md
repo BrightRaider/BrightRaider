@@ -1,6 +1,6 @@
 # BrightRaider V1.0.0 — Pre-Release
 
-> 🎉 **Pre-Release week:** V1.0 launches at the V9.x Pro price of **€5.49** for the first 7 days. After that the price moves to **€8.99** to reflect the new feature set (Footstep Booster, Background AutoMute, Process Optimizer, plus the upgraded Map Scanner / Auto-Brightness / QuickSelect / QuickSave).
+> 🎉 **Pre-release intro price:** V1.0 is in its final testing phase. For as long as it's in pre-release it stays at the V9.x Pro price of **€5.49** — buy now and you keep that price forever. Once every open report is closed and V1.0 ships as the final build, the price moves to **€8.99** to reflect the new feature set (Footstep Booster, Background AutoMute, Audio Output Switcher, Process Optimizer, plus the upgraded Map Scanner / Auto-Brightness / QuickSelect / QuickSave).
 >
 > **V9.x license holders:** your existing key works on V1.0 at no extra cost — just re-enter it once (see upgrade note below). The price change does not affect you either way.
 
