@@ -123,6 +123,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Duplicate-key warning is now visible** — binding a key that's already in use marks that rebind button with a red outline (the easy-to-miss toast wasn't enough). *(#62)*
 - **"Advanced" toggle** — a checkbox in the Settings footer hides the QuickSelect / QuickSave millisecond-timing fields for a simpler page. Off for new installs, on for existing users. *(#63)*
 - **Focus self-heal** — on a fast window switch (borderless multi-monitor) BrightRaider could briefly stop reacting until you hit Apply; it now re-syncs automatically. *(#58, #62)*
+- **"Only run hotkeys while a game is focused" + Settings window** — switching from the game into the BrightRaider Settings window now correctly counts as "not in game", so the gate releases the keys instead of staying stuck on. *(#58)*
 - **Settings layout fixes** — the QuickSelect tab no longer runs off the right edge (its cards stack instead of sitting side-by-side), QuickSave/QuickSelect checkbox columns are centered under their headers, the Audio sliders now shrink with the window instead of overlapping, the left tab bar is tighter, and the window has a sensible minimum size so tabs can't be squeezed into overlap. *(#55)*
 
 ## System requirements
@@ -134,7 +135,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              EAF91C581A2B313A7C17445F45FDA343EECF35F0029BEF7C7F98A1F91E0740A9
+BrightRaider.exe              23E8BCAA510E72BBC1BE7C5269C48F5BBFB2C67CDE74B086455324A988D8991A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
