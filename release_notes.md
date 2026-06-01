@@ -119,6 +119,10 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Overlays follow the monitor you pick** — when you select a specific display in the tray (or Settings → Display), the crosshair, map-scanner and timer overlays all stay on that monitor and no longer jump when you click another screen. Vibrance/Hue now apply only to the chosen monitor too. On "All Monitors" the overlays anchor to the game's monitor instead of chasing whatever window you click, and (in Alt-Tab mode) hide cleanly when you tab out and return instantly when you tab back. *(#55)*
 - Fixed a Setup-Wizard re-run that could be overwritten on the next Apply.
 - **License persistence fix** — in a rare case where the store didn't return an email with the activation, the saved license file could be dropped, sending you back to Free after a restart. The key alone now persists correctly.
+- **License activation now unlocks Pro live** — activating a key unlocks the features, the greyed-out controls **and** clears the gold PRO badges immediately, no restart needed. *(#62)*
+- **Duplicate-key warning is now visible** — binding a key that's already in use marks that rebind button with a red outline (the easy-to-miss toast wasn't enough). *(#62)*
+- **"Advanced" toggle** — a checkbox in the Settings footer hides the QuickSelect / QuickSave millisecond-timing fields for a simpler page. Off for new installs, on for existing users. *(#63)*
+- **Focus self-heal** — on a fast window switch (borderless multi-monitor) BrightRaider could briefly stop reacting until you hit Apply; it now re-syncs automatically. *(#58, #62)*
 
 ## System requirements
 
@@ -129,7 +133,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              2517EAF9DD7C7A7DA96B7901CB50E770985F5FC82184BC094A72A7C2E020EB30
+BrightRaider.exe              449BFF67C0BEDDE506DB73460C647A6C865646FA99C652CCA9109DC7842FE269
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
