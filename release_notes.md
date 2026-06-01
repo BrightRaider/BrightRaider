@@ -124,6 +124,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **"Advanced" toggle** — a checkbox in the Settings footer hides the QuickSelect / QuickSave millisecond-timing fields for a simpler page. Off for new installs, on for existing users. *(#63)*
 - **Focus self-heal** — on a fast window switch (borderless multi-monitor) BrightRaider could briefly stop reacting until you hit Apply; it now re-syncs automatically. *(#58, #62)*
 - **"Only run hotkeys while a game is focused" + Settings window** — switching from the game into the BrightRaider Settings window now correctly counts as "not in game", so the gate releases the keys instead of staying stuck on. *(#58)*
+- **Desktop no longer mistaken for a game** — the Windows desktop / taskbar (the full-screen shell windows) were sometimes classified as a fullscreen game when alt-tabbing around, which leaked your game profile onto the desktop and kept the hotkey gate "in-game". Shell windows are now excluded — this was the root cause behind the "binds/brightness don't turn off when the game loses focus" reports. *(#58)*
 - **Settings layout fixes** — the QuickSelect tab no longer runs off the right edge (its cards stack instead of sitting side-by-side), QuickSave/QuickSelect checkbox columns are centered under their headers, the Audio sliders now shrink with the window instead of overlapping, the left tab bar is tighter, and the window has a sensible minimum size so tabs can't be squeezed into overlap. *(#55)*
 
 ## System requirements
@@ -135,7 +136,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              23E8BCAA510E72BBC1BE7C5269C48F5BBFB2C67CDE74B086455324A988D8991A
+BrightRaider.exe              A18367FD42F8E2F06E2635607A89E59481CA462405C802B9C281E131014573E1
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
