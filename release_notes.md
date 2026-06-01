@@ -118,6 +118,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **"Only run hotkeys while a game is focused"** — optional switch so BrightRaider's keys never interfere on the desktop. *(#58)*
 - **Overlays follow the monitor you pick** — when you select a specific display in the tray (or Settings → Display), the crosshair, map-scanner and timer overlays all stay on that monitor and no longer jump when you click another screen. Vibrance/Hue now apply only to the chosen monitor too. On "All Monitors" the overlays anchor to the game's monitor instead of chasing whatever window you click, and (in Alt-Tab mode) hide cleanly when you tab out and return instantly when you tab back. *(#55)*
 - Fixed a Setup-Wizard re-run that could be overwritten on the next Apply.
+- **License persistence fix** — in a rare case where the store didn't return an email with the activation, the saved license file could be dropped, sending you back to Free after a restart. The key alone now persists correctly.
 
 ## System requirements
 
@@ -128,7 +129,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              CF1C8909F51AB18F6A90D66F18F395B089633A474E01215A0644E56DB0733494
+BrightRaider.exe              2517EAF9DD7C7A7DA96B7901CB50E770985F5FC82184BC094A72A7C2E020EB30
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
