@@ -123,6 +123,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Duplicate-key warning is now visible** — binding a key that's already in use marks that rebind button with a red outline (the easy-to-miss toast wasn't enough). *(#62)*
 - **"Advanced" toggle** — a checkbox in the Settings footer hides the QuickSelect / QuickSave millisecond-timing fields for a simpler page. Off for new installs, on for existing users. *(#63)*
 - **Focus self-heal** — on a fast window switch (borderless multi-monitor) BrightRaider could briefly stop reacting until you hit Apply; it now re-syncs automatically. *(#58, #62)*
+- **Settings layout fixes** — the QuickSelect tab no longer runs off the right edge (its cards stack instead of sitting side-by-side, and the default window is a little wider), and the QuickSave checkbox columns are aligned under their headers. *(#55)*
 
 ## System requirements
 
@@ -133,7 +134,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              932CCBBCC6C30B5222799880D6AA4688108A7BBFFAB71C544A57C39A90EAED78
+BrightRaider.exe              2A31AEEE808BB56508BA5A5746241559602E274830ADE85C5E5D4359846EC48A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
