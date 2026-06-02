@@ -132,6 +132,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Auto-Brightness center weight fixed** — the "Center" zone weight was being applied to the wrong screen zone, so turning it up didn't actually make the middle of the screen count more. Center now correctly counts double by default, as intended. *(#65)*
 - **QuickSave / QuickSelect slots labeled correctly** — the Safe Pocket slots are now clearly shown as 9 / 10 / 11 (= Pocket 1 / 2 / 3), QuickSelect no longer offers a non-existent 11th slot, and the slot meaning (1–2 weapons, 3–8 quick-deploy wheel, 9–10 mouse-only) is spelled out. *(#65)*
 - **"Slot layout" help button** — a new button in the QuickSave and QuickSelect tabs opens the in-game loadout screen with the slot numbers, so you can match BrightRaider's slots to the game at a glance. *(#65)*
+- **In-app thank-you** — the App tab now has a small thanks card crediting the testers who shaped this build. Grab the newest build and have a look. 💛
 
 ## System requirements
 
@@ -142,7 +143,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              FBB08A383A33ABAE138249C13B28DD6F4D9F317C0D9D53380D0873D430A7DB0D
+BrightRaider.exe              AF96954764DD23CA2BD71358ED338F99D891DD198D8915288DF87526461483AF
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
