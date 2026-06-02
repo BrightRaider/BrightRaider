@@ -110,6 +110,9 @@ V1.x updates after this won't require another re-entry.
 
 Thanks to everyone testing and sending feedback — here's what changed since the first pre-release build:
 
+> 💙 **Special thanks** to **@DBasic**, **@ggvelloso** and **@dawuus** — your detailed bug reports, ideas and patient back-and-forth shaped this pre-release more than anything else. A huge part of what's fixed and improved below came directly from you three. Thank you.
+
+
 - **🆕 Audio Output Switcher (Pro)** — switch speakers ↔ headphones (or any set of devices) with one hotkey, plus optional auto-switch when a game starts/closes. Switches all roles incl. communications.
 - **Brightness profiles fixed** — the gamma/contrast curve is back to how it felt in 9.6.1; "Brighter" is usable again. *(#60)*
 - **Hue now 0–359° on Nvidia** — matches the Control Panel exactly, no mental math. Range adapts to your GPU. *(#39)*
