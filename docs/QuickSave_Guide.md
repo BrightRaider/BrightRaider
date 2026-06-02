@@ -31,12 +31,18 @@ The direction can be reversed per preset, and each step's timing is configurable
 
 QuickSave can drag items between any of these positions:
 
-| Index | Position |
+| Index in BrightRaider | In-game position |
 |-------|----------|
-| Slot 1–8 | Fast Swap Slots (Quick-Wechsel-Slots) |
-| Pocket 1–3 | Safe Pocket slots 1–3 (Sicherheitstasche) |
+| Slot 1–5 | Quick-deploy slots (Schnelleinsatz 1–5) |
+| Slot 6 | Augment slot (Augment-Platz) |
+| Slot 7–8 | Weapon slots (Ausrüstung) |
+| 9 | Safe Pocket 1 (Sicherheitstasche 1) |
+| 10 | Safe Pocket 2 (Sicherheitstasche 2) |
+| 11 | Safe Pocket 3 (Sicherheitstasche 3) |
 
-![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)
+> The three Safe Pocket slots are entered as **9, 10, 11** in the settings.
+
+[![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)
 
 > **Tip:** Use it to move consumables (bandages, syringes) into your Safe Pocket before an extraction, or retrieve them quickly at the start of a raid.
 
@@ -49,8 +55,8 @@ QuickSave can drag items between any of these positions:
 3. Check **"Enable QuickSave"**
 4. For each preset you want to use:
    - Click **"Click to bind..."** and press your trigger key (keyboard key or MB3/4/5 or mouse wheel)
-   - Set **From** — the source position (slot 1–8 or Pocket 1–3)
-   - Set **To** — the destination position (slot 1–8 or Pocket 1–3)
+   - Set **From** — the source position (slot 1–8, or 9/10/11 for Safe Pocket 1/2/3)
+   - Set **To** — the destination position (slot 1–8, or 9/10/11 for Safe Pocket 1/2/3)
    - Check **Active** (✓) to enable this preset
    - Check **Tab open** if you want BrightRaider to open the inventory with Tab first
    - Check **Tab close** if you want BrightRaider to close the inventory with Tab after
@@ -78,8 +84,8 @@ This lets you store and retrieve the same item with the same key.
 | **Inventory key (Tab)** | The key used to open/close inventory (default: Tab). Rebind if your in-game binding is different. |
 | **Active (✓)** | Enable/disable each preset individually |
 | **Trigger key** | The key that triggers this preset (keyboard, MB3/4/5, or mouse wheel) |
-| **From** | Source position — slot 1–8 or Pocket 1–3 |
-| **To** | Destination position — slot 1–8 or Pocket 1–3 |
+| **From** | Source position — slot 1–8, or 9/10/11 for Safe Pocket 1/2/3 |
+| **To** | Destination position — slot 1–8, or 9/10/11 for Safe Pocket 1/2/3 |
 | **Tab open** | Press Tab before dragging (opens inventory) |
 | **Tab close** | Press Tab after dragging (closes inventory) |
 | **⇄ Toggle** | Reverse direction on alternating presses |

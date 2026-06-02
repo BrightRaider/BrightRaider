@@ -126,6 +126,9 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **"Only run hotkeys while a game is focused" + Settings window** — switching from the game into the BrightRaider Settings window now correctly counts as "not in game", so the gate releases the keys instead of staying stuck on. *(#58)*
 - **Desktop no longer mistaken for a game** — the Windows desktop / taskbar (the full-screen shell windows) were sometimes classified as a fullscreen game when alt-tabbing around, which leaked your game profile onto the desktop and kept the hotkey gate "in-game". Shell windows are now excluded — this was the root cause behind the "binds/brightness don't turn off when the game loses focus" reports. *(#58)*
 - **Settings layout fixes** — the QuickSelect tab no longer runs off the right edge (its cards stack instead of sitting side-by-side), QuickSave/QuickSelect checkbox columns are centered under their headers, the Audio sliders now shrink with the window instead of overlapping, the left tab bar is tighter, and the window has a sensible minimum size so tabs can't be squeezed into overlap. *(#55)*
+- **Auto-Brightness center weight fixed** — the "Center" zone weight was being applied to the wrong screen zone, so turning it up didn't actually make the middle of the screen count more. Center now correctly counts double by default, as intended. *(#65)*
+- **QuickSave / QuickSelect slots labeled correctly** — the Safe Pocket slots are now clearly shown as 9 / 10 / 11 (= Pocket 1 / 2 / 3), QuickSelect no longer offers a non-existent 11th slot, and the slot meaning (1–2 weapons, 3–8 quick-deploy wheel, 9–10 mouse-only) is spelled out. *(#65)*
+- **"Slot layout" help button** — a new button in the QuickSave and QuickSelect tabs opens the in-game loadout screen with the slot numbers, so you can match BrightRaider's slots to the game at a glance. *(#65)*
 
 ## System requirements
 
@@ -136,7 +139,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              A18367FD42F8E2F06E2635607A89E59481CA462405C802B9C281E131014573E1
+BrightRaider.exe              FBB08A383A33ABAE138249C13B28DD6F4D9F317C0D9D53380D0873D430A7DB0D
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`

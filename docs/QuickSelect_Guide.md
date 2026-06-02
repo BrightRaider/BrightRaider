@@ -73,7 +73,7 @@ Pick the timer that matches your item:
 | **Q-Hold** | How long Q is held before the slot key is pressed (50–2000 ms, default 200 ms). Increase if the wheel doesn't open reliably. |
 | **Active (✓)** | Enable/disable each slot individually without rebinding |
 | **Trigger key** | The key you press to trigger this slot |
-| **Slot** | Which wheel slot to select (1–9) |
+| **Wheel** | Which in-game wheel slot to select (1–10; 3–8 = quick-deploy, 9–10 = mouse-only) |
 | **Timer** | Which LMB duration preset to use |
 | **H (per slot)** | Whether to press H after item use for this specific slot |
 | **Q (per slot)** | Whether to open the wheel with Q + slot key. Uncheck if the item is already in hand. |
@@ -155,7 +155,7 @@ A: Increase Q-Hold (try +50ms). Default is 200ms; some systems need 250–350ms.
 A: Make sure QuickSelect is enabled and the slot is active (✓ checked). The key is suppressed only when active.
 
 **Q: The wrong slot is being selected.**  
-A: Check the Slot number — it must match your in-game quick-wheel assignment. Slots are numbered 1–9.
+A: Check the Wheel number — it must match your in-game quick-wheel assignment. Slots are numbered 1–10 (3–8 = quick-deploy, 9–10 = mouse-only).
 
 **Q: I don't want to press H every time.**  
 A: Uncheck the H box for that slot in the settings dialog.
@@ -176,9 +176,14 @@ A: The game keeps the item in a transitional state briefly after an H-cancel. Wa
 
 ## In-Game Wheel Slot Numbers
 
-In Arc Raiders, your quick-use wheel slots are numbered 4–6.  
-The number corresponds to the position on the wheel. Check your in-game keybindings  
-to see which number maps to which item slot, then set the Slot field accordingly.
+In Arc Raiders the slot numbers map like this:
+
+- **1–2** — weapons (not on the quick-use wheel)
+- **3–8** — quick-deploy wheel slots (have an in-game number key)
+- **9–10** — extra wheel positions reachable by mouse only (no number key, console-style layout)
+
+The number corresponds to the position on the wheel. Check your in-game keybindings
+to see which number maps to which item slot, then set the Wheel field accordingly.
 
 ---
 
