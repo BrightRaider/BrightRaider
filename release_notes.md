@@ -110,7 +110,7 @@ V1.x updates after this won't require another re-entry.
 
 Thanks to everyone testing and sending feedback — here's what changed since the first pre-release build:
 
-> 💙 **Special thanks** to **@DBasic**, **@ggvelloso** and **@dawuus** — your detailed bug reports, ideas and patient back-and-forth shaped this pre-release more than anything else. A huge part of what's fixed and improved below came directly from you three. Thank you.
+> 💙 **Special thanks** to **@DBasic**, **@Tia-Nastacia** and **@dawuus** — your detailed bug reports, ideas and patient back-and-forth shaped this pre-release more than anything else. A huge part of what's fixed and improved below came directly from you three. Thank you.
 
 
 - **🆕 Audio Output Switcher (Pro)** — switch speakers ↔ headphones (or any set of devices) with one hotkey, plus optional auto-switch when a game starts/closes. Switches all roles incl. communications.

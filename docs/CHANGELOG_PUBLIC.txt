@@ -198,7 +198,7 @@
   Map Scanner (Pro):
   - Fixed: 4:3 resolutions (e.g. 1920×1440) now work correctly.
     The game renders in a letterboxed 16:9 area on 4:3 screens — OCR regions
-    are now offset accordingly. (Thanks @ggvelloso for the report!)
+    are now offset accordingly. (Thanks @Tia-Nastacia for the report!)
 
   Autorun:
   - Fixed: pressing W while autorun is active now stops the injection
