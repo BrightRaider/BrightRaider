@@ -82,7 +82,7 @@ For users who want the full Arc Raiders / power-user toolbox.
 
 - **Map Scanner** (Arc Raiders) — now **~100 % OCR hit rate** with the new template-matching pipeline (replaces WinRT OCR). Detects all **13 current map conditions** including Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, and the base no-event state. Per-state threshold colors, configurable overlay background opacity, audible Evac alarm with separate min/sec threshold.
 - **Auto-Brightness** — Calibration Wizard streamlined to two captures (darkest / brightest), Profile ranges distribute automatically. 5-zone weighted screen sampler with per-zone weights and a debug overlay showing the actual sample rectangles in real time.
-- **QuickSelect** — 8 LMB-timer presets (was 6), per-slot Use/Q/H toggles, MB3/4/5 + scroll-wheel rebind, mouse-movement slot path for wheel positions 7 and 8.
+- **QuickSelect** — per-slot **LMB hold time in milliseconds** (the old preset table is gone), per-slot Use / Q / Holster toggles, MB3/4/5 + scroll-wheel rebind, and a mouse-movement slot path for the mouse-only wheel positions (7–10).
 - **QuickSave** — 5 drag presets with full timing controls, toggle-direction per preset, Tab-key rebindable, MB / wheel triggers supported.
 - **Crosshair Overlay** — 6 styles, separate outline color, configurable size 4–50 px.
 - **Autorun** — Sprint mode + Tap mode (CapsLock-hold 600 ms) for Looting Mk. 3, AZERTY (Z-forward) support.
@@ -130,7 +130,6 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Desktop no longer mistaken for a game** — the Windows desktop / taskbar (the full-screen shell windows) were sometimes classified as a fullscreen game when alt-tabbing around, which leaked your game profile onto the desktop and kept the hotkey gate "in-game". Shell windows are now excluded — this was the root cause behind the "binds/brightness don't turn off when the game loses focus" reports. *(#58)*
 - **Settings layout fixes** — the QuickSelect tab no longer runs off the right edge (its cards stack instead of sitting side-by-side), QuickSave/QuickSelect checkbox columns are centered under their headers, the Audio sliders now shrink with the window instead of overlapping, the left tab bar is tighter, and the window has a sensible minimum size so tabs can't be squeezed into overlap. *(#55)*
 - **Auto-Brightness center weight fixed** — the "Center" zone weight was being applied to the wrong screen zone, so turning it up didn't actually make the middle of the screen count more. Center now correctly counts double by default, as intended. *(#65)*
-- **QuickSave / QuickSelect slots labeled correctly** — the Safe Pocket slots are now clearly shown as 9 / 10 / 11 (= Pocket 1 / 2 / 3), QuickSelect no longer offers a non-existent 11th slot, and the slot meaning (1–2 weapons, 3–8 quick-deploy wheel, 9–10 mouse-only) is spelled out. *(#65)*
 - **"Slot layout" help button** — a new button in the QuickSave and QuickSelect tabs opens the in-game loadout screen with the slot numbers, so you can match BrightRaider's slots to the game at a glance. *(#65)*
 - **In-app thank-you** — the App tab now has a small thanks card crediting the testers who shaped this build. Grab the newest build and have a look. 💛
 - **QuickSelect / QuickSave fixed on multi-monitor** — the wheel cursor and inventory drag now land on the monitor your game is actually on, instead of always targeting the primary screen. (Fullscreen / borderless; windowed play stays fullscreen-calibrated as before.)
@@ -151,7 +150,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              664CC8F04519955BAD55B126365903C17A7E067620479C011A7807EDF5ED742D
+BrightRaider.exe              69ACF22EB14E37BAC47BBBD80AFD50F0BDFA41F82874F3F0EB81B2DA3509555E
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
