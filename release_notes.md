@@ -140,6 +140,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **"📖 Guide" buttons** — QuickSave, QuickSelect, Auto-Brightness and Map Scanner each have a button that opens that feature's full guide in your browser.
 - **Setup Wizard** — the forward key ("W") no longer shows a false "already bound" warning.
 - **QuickSelect settings now persist reliably** — fixed a case where the per-slot timer could reset when reopening Settings.
+- **Global ON/OFF simplified** — the extra "Global toggle OFF also resets the display" checkbox is gone. Turning BrightRaider off now always means *fully* off (overlays hidden, original display restored) — "off is off". This was already the default, so nothing changes for almost everyone.
 
 ## System requirements
 
@@ -150,7 +151,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              69ACF22EB14E37BAC47BBBD80AFD50F0BDFA41F82874F3F0EB81B2DA3509555E
+BrightRaider.exe              F33786E89FFBF6598FE243941860EDED2F6D69D57B924A6B89C7099B9F155012
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
