@@ -35,7 +35,7 @@ Each step is independently controllable. Everything happens in the background wh
 4. For each slot you want to use:
    - Click **"Click to bind..."** and press your trigger key (e.g. `4`, `5`, `6`)
    - Set the **Slot** number — this must match your in-game quick-use wheel slot
-   - Pick an **LMB Timer** that matches your item type (see table below)
+   - Type the **Timer (ms)** — how long LMB is held to use the item (see recommended values below; there's also a **⏱ Timing reference** button in the tab)
    - Check the **Active** box (✓) to enable this slot
    - Check **Q** if you want BrightRaider to open the wheel (uncheck if item is already in hand)
    - Check **Use** if you want the item auto-used after selection (uncheck for select-only)
@@ -44,21 +44,21 @@ Each step is independently controllable. Everything happens in the background wh
 
 ---
 
-## LMB Timer Presets
+## Recommended LMB hold times
 
-Each item type requires a different hold duration to be fully used.  
-Pick the timer that matches your item:
+Each item type needs a different hold duration to be fully used. Type the value
+directly into the slot's **Timer (ms)** field — these are solid starting points
+(the same list is behind the **⏱ Timing reference** button in the tab):
 
-| Timer | Duration | Item |
-|-------|----------|------|
-| T1 | 1150 ms | Adrenalin Syringe / Adrenalinspritze |
-| T2 | 1650 ms | Herb Bandage / Bandage (Kräuterverband / Verband) |
-| T3 | 2150 ms | Shield Charger / Schildauflader |
-| T4 | 4150 ms | Vita Syringe / Vita-Spritze |
-| T5 | 5150 ms | Instant Shield Charger / Sofort-Schildauflader |
-| T6 | custom | Free timer — set your own value (100–8000 ms) |
+| Item | Timer (ms) |
+|------|-----------|
+| Adrenaline Syringe | 1300 |
+| Herb Bandage | 1800 |
+| Shield Charger | 2300 |
+| Vita Syringe | 4300 |
+| Instant Shield Charger | 5300 |
 
-> **Tip:** If an item is only partially used, try the next timer up (e.g. T2 instead of T1).
+> **Tip:** If an item is only partially used, add 100–200 ms. Arc Raiders timing varies even on strong hardware.
 
 ---
 
@@ -73,8 +73,8 @@ Pick the timer that matches your item:
 | **Q-Hold** | How long Q is held before the slot key is pressed (50–2000 ms, default 200 ms). Increase if the wheel doesn't open reliably. |
 | **Active (✓)** | Enable/disable each slot individually without rebinding |
 | **Trigger key** | The key you press to trigger this slot |
-| **Wheel** | Which in-game wheel slot to select (1–10; 3–8 = quick-deploy, 9–10 = mouse-only) |
-| **Timer** | Which LMB duration preset to use |
+| **Wheel** | Which in-game wheel slot to select (1–2 = weapons, 3–6 = number-key wheel, 7–10 = mouse-only) |
+| **Timer (ms)** | LMB hold time in milliseconds — typed directly per slot |
 | **H (per slot)** | Whether to press H after item use for this specific slot |
 | **Q (per slot)** | Whether to open the wheel with Q + slot key. Uncheck if the item is already in hand. |
 | **Use (per slot)** | Whether to auto-use the item (LMB hold + H). Uncheck for select-only — picks the item without triggering use. |
@@ -83,18 +83,16 @@ Pick the timer that matches your item:
 
 ## Default Configuration
 
-| Slot | Trigger Key | Wheel Position | Default Timer |
-|------|-------------|----------------|---------------|
-| 1 | D4 (key 4) | 3 | T2 — Herb Bandage |
-| 2 | D5 (key 5) | 4 | T3 — Shield Charger |
-| 3 | D6 (key 6) | 5 | T1 — Adrenalin Syringe |
-| 4 | (unbound) | 6 | T4 — Vita Syringe |
-| 5 | (unbound) | 7 | T5 — Instant Shield Charger |
-| 6 | (unbound) | 7 | T6 — custom |
-| 7 | (unbound) | 8 | T6 — custom |
-| 8 | (unbound) | 9 | T6 — custom |
+| Slot | Name | Trigger Key | Wheel | Timer (ms) |
+|------|------|-------------|-------|-----------|
+| 1 | Herb Bandage | key 4 | 3 | 1800 |
+| 2 | Shield Charger | key 5 | 4 | 2300 |
+| 3 | Adrenaline | key 6 | 5 | 1300 |
+| 4 | Vita Syringe | (unbound) | 6 | 4300 |
+| 5 | Instant Shield Charger | (unbound) | 7 | 5300 |
+| 6–8 | (empty) | (unbound) | 8–10 | 1000–1300 |
 
-Slots 4–8 are disabled by default. Bind a key and check Active to use them.
+Slots 4–8 are disabled by default — they come pre-filled so you only need to bind a key and check Active.
 
 > **Note:** Slots 7 and 8 use mouse movement to select the wheel position while Q is held — no additional key press is required for slot selection.
 
@@ -146,7 +144,7 @@ Use this when:
 ## Tips & Troubleshooting
 
 **Q: The item is only partially used.**  
-A: Increase the LMB timer. Try the next preset up, or use T6 with a custom value.
+A: Increase the slot's **Timer (ms)** by 100–200 ms until the item is fully used.
 
 **Q: The wheel doesn't open / closes too quickly.**  
 A: Increase Q-Hold (try +50ms). Default is 200ms; some systems need 250–350ms.

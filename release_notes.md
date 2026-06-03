@@ -135,6 +135,11 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **In-app thank-you** — the App tab now has a small thanks card crediting the testers who shaped this build. Grab the newest build and have a look. 💛
 - **QuickSelect / QuickSave fixed on multi-monitor** — the wheel cursor and inventory drag now land on the monitor your game is actually on, instead of always targeting the primary screen. (Fullscreen / borderless; windowed play stays fullscreen-calibrated as before.)
 - **QuickSelect "After" action relabeled** — the post-use option is now correctly labeled **Holster (H)** (it was mislabeled "Heal"); same key, clearer name. *(#62)*
+- **QuickSelect — full rework for newcomers** *(#65)* — each slot now takes its **LMB hold time directly in ms** (the old "pick a preset T1–T6 + a separate preset table" is gone), the redundant "#" column is removed, the post-use dropdown shows **Holster (your actual key)**, there's a **⏱ Timing reference** button with recommended heal times, and the five common heals come pre-filled. Your existing timings are migrated automatically.
+- **QuickSave — full rework for newcomers** *(#65)* — From/To are now simple **S1–S8 / W1–W2 / P1–P3** dropdowns (inventory slots / weapons / safe pockets) instead of raw numbers, the model covers the current 10-slot + 3-pocket loadout, and the trigger toast reads e.g. "W1 → P1". Existing presets are migrated automatically so they keep pointing at the same items.
+- **"Slot layout" buttons** — QuickSave and QuickSelect each have a button that opens an annotated in-game screenshot showing exactly which label maps to which slot.
+- **Setup Wizard** — the forward key ("W") no longer shows a false "already bound" warning.
+- **QuickSelect settings now persist reliably** — fixed a case where the per-slot timer could reset when reopening Settings.
 
 ## System requirements
 
@@ -145,7 +150,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              BC378B4625FC39E9846498BFC55AA45E8AA9B0A8A3B75D3E8A5F03221645E8E3
+BrightRaider.exe              9117A14013735EAF6CDBBF7302252837EFFC9468E81407C7B3475A0915FAE4DD
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
