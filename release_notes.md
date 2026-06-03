@@ -138,6 +138,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **QuickSelect — full rework for newcomers** *(#65)* — each slot now takes its **LMB hold time directly in ms** (the old "pick a preset T1–T6 + a separate preset table" is gone), the redundant "#" column is removed, the post-use dropdown shows **Holster (your actual key)**, there's a **⏱ Timing reference** button with recommended heal times, and the five common heals come pre-filled. Your existing timings are migrated automatically.
 - **QuickSave — full rework for newcomers** *(#65)* — From/To are now simple **S1–S8 / W1–W2 / P1–P3** dropdowns (inventory slots / weapons / safe pockets) instead of raw numbers, the model covers the current 10-slot + 3-pocket loadout, and the trigger toast reads e.g. "W1 → P1". Existing presets are migrated automatically so they keep pointing at the same items.
 - **"Slot layout" buttons** — QuickSave and QuickSelect each have a button that opens an annotated in-game screenshot showing exactly which label maps to which slot.
+- **"📖 Guide" buttons** — QuickSave, QuickSelect, Auto-Brightness and Map Scanner each have a button that opens that feature's full guide in your browser.
 - **Setup Wizard** — the forward key ("W") no longer shows a false "already bound" warning.
 - **QuickSelect settings now persist reliably** — fixed a case where the per-slot timer could reset when reopening Settings.
 
@@ -150,7 +151,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              9117A14013735EAF6CDBBF7302252837EFFC9468E81407C7B3475A0915FAE4DD
+BrightRaider.exe              664CC8F04519955BAD55B126365903C17A7E067620479C011A7807EDF5ED742D
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`

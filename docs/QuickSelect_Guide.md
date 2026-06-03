@@ -177,11 +177,13 @@ A: The game keeps the item in a transitional state briefly after an H-cancel. Wa
 In Arc Raiders the slot numbers map like this:
 
 - **1–2** — weapons (not on the quick-use wheel)
-- **3–8** — quick-deploy wheel slots (have an in-game number key)
-- **9–10** — extra wheel positions reachable by mouse only (no number key, console-style layout)
+- **3–6** — wheel slots that have an in-game number key
+- **7–10** — wheel positions reachable by mouse only (no number key, console-style layout)
 
 The number corresponds to the position on the wheel. Check your in-game keybindings
 to see which number maps to which item slot, then set the Wheel field accordingly.
+
+[![QuickSelect wheel slot numbers](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quickselect.jpg)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quickselect.jpg)
 
 ---
 
