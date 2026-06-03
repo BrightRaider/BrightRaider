@@ -4,6 +4,11 @@
 Instead of manually opening the wheel, selecting an item, and holding Left Mouse Button —  
 **one key does everything.**
 
+[![QuickSelect wheel slot numbers](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quickselect.jpg)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quickselect.jpg)
+
+> The **Wheel** number you set per slot matches these in-game wheel positions:
+> **1–2** weapons · **3–6** number-key slots · **7–10** mouse-only. More detail at the bottom.
+
 ---
 
 ## How It Works
@@ -182,8 +187,7 @@ In Arc Raiders the slot numbers map like this:
 
 The number corresponds to the position on the wheel. Check your in-game keybindings
 to see which number maps to which item slot, then set the Wheel field accordingly.
-
-[![QuickSelect wheel slot numbers](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quickselect.jpg)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quickselect.jpg)
+(The wheel image is at the top of this guide.)
 
 ---
 
