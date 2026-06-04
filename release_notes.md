@@ -141,6 +141,8 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Setup Wizard** — the forward key ("W") no longer shows a false "already bound" warning.
 - **QuickSelect settings now persist reliably** — fixed a case where the per-slot timer could reset when reopening Settings.
 - **Global ON/OFF simplified** — the extra "Global toggle OFF also resets the display" checkbox is gone. Turning BrightRaider off now always means *fully* off (overlays hidden, original display restored) — "off is off". This was already the default, so nothing changes for almost everyone.
+- **Multi-monitor overlays fixed** — when you pin a specific monitor in the tray, the crosshair and Map Scanner overlays now reliably stay on that monitor instead of occasionally following another window onto a second screen.
+- **Map Scanner polish** — a map with no condition now just shows its name (no redundant "Normal" label), and condition-icon detection is more robust on non-16:9 resolutions (1920×1440, 2560×1600, etc.).
 
 ## System requirements
 
@@ -151,7 +153,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              F33786E89FFBF6598FE243941860EDED2F6D69D57B924A6B89C7099B9F155012
+BrightRaider.exe              F0FF9526B2600F039B2FB6650979223987875CEA9790CEB81F5B0381093F07B4
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
