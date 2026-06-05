@@ -148,6 +148,10 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Stop the break reminder from the tray** — while it's running, the tray menu shows a one-click **⏹ Stop break reminder**. It only appears when the reminder is active, so it never clutters the menu. *(#66)*
 - **Tray click toggles Settings** — left-clicking the tray icon now opens *and* closes the Settings window — a second click closes it instead of doing nothing.
 - **QuickSave layout tidy-up** — small spacing fix so the Trigger and From columns no longer touch. *(#66)*
+- **Evac alarm — now actually audible** — the alarm used the Windows system "Exclamation" sound, which is silent if you have that event set to "(None)". It now plays its own sharp synthesized tone, independent of your Windows sound scheme. *(#66)*
+- **Evac alarm — repeat option** — the toast + beep can now repeat a configurable number of times a few seconds apart (Map Scanner tab), so an evac warning isn't missed mid-firefight. *(#66)*
+- **Evac alarm — color-coded toast** — the alarm toast is now tinted to the timer's urgency, matching the map-scanner colors (orange as it nears, red under a minute). *(#66)*
+- **Evac alarm — fixed alarms going quiet after the first** — an expired evac point could keep its label "pinned" and silently swallow every later alarm for that point this session; each point now re-arms correctly. *(#66)*
 
 ## System requirements
 
@@ -158,7 +162,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              45C26355AB6FE731CBE86C62F264AFFA0F08B109DA1BD5AD3F3E369CD2C72115
+BrightRaider.exe              ED8DBE65AD671175BCAF2C197B8E18DD2E3A3035CD4A9E707A9BE408E9AF110A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
