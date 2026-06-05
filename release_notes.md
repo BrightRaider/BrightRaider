@@ -143,6 +143,11 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Global ON/OFF simplified** — the extra "Global toggle OFF also resets the display" checkbox is gone. Turning BrightRaider off now always means *fully* off (overlays hidden, original display restored) — "off is off". This was already the default, so nothing changes for almost everyone.
 - **Multi-monitor overlays fixed** — when you pin a specific monitor in the tray, the crosshair and Map Scanner overlays now reliably stay on that monitor instead of occasionally following another window onto a second screen.
 - **Map Scanner polish** — a map with no condition now just shows its name (no redundant "Normal" label), and condition-icon detection is more robust on non-16:9 resolutions (1920×1440, 2560×1600, etc.).
+- **Crosshair + Map Scanner respect "only run hotkeys while a game is focused"** — with that option on, both the crosshair *and* the map-scanner overlay now hide whenever no game is in focus (e.g. on the desktop), independent of Alt-Tab Auto-Switch. Previously the crosshair could stay stuck on the desktop and the two overlays behaved inconsistently. *(#66)*
+- **Break reminder — minutes *and* seconds** — the interval now has a seconds field too, so it doubles as a quick egg-timer (e.g. 0 min 30 sec). Existing settings are unchanged.
+- **Stop the break reminder from the tray** — while it's running, the tray menu shows a one-click **⏹ Stop break reminder**. It only appears when the reminder is active, so it never clutters the menu. *(#66)*
+- **Tray click toggles Settings** — left-clicking the tray icon now opens *and* closes the Settings window — a second click closes it instead of doing nothing.
+- **QuickSave layout tidy-up** — small spacing fix so the Trigger and From columns no longer touch. *(#66)*
 
 ## System requirements
 
@@ -153,7 +158,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              F0FF9526B2600F039B2FB6650979223987875CEA9790CEB81F5B0381093F07B4
+BrightRaider.exe              45C26355AB6FE731CBE86C62F264AFFA0F08B109DA1BD5AD3F3E369CD2C72115
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
