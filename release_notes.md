@@ -152,6 +152,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Evac alarm — repeat option** — the toast + beep can now repeat a configurable number of times a few seconds apart (Map Scanner tab), so an evac warning isn't missed mid-firefight. *(#66)*
 - **Evac alarm — color-coded toast** — the alarm toast is now tinted to the timer's urgency, matching the map-scanner colors (orange as it nears, red under a minute). *(#66)*
 - **Evac alarm — fixed alarms going quiet after the first** — an expired evac point could keep its label "pinned" and silently swallow every later alarm for that point this session; each point now re-arms correctly. *(#66)*
+- **Fixed a stuck Shift key** — with Autorun running, BrightRaider swallows your physical Shift so only its sprint state reaches the game. Key-repeat could leak the Shift-down to Windows while the release was still swallowed, leaving Shift "held" system-wide — even after closing BrightRaider. Shift handling is now symmetric, so it can't latch.
 
 ## System requirements
 
@@ -162,7 +163,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              ED8DBE65AD671175BCAF2C197B8E18DD2E3A3035CD4A9E707A9BE408E9AF110A
+BrightRaider.exe              A477836E1D0094E66CE3E85BF3D7ADC7814C68D94048602D93428C3EC441A26C
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
