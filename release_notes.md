@@ -23,7 +23,7 @@ VibranceGUI was free, single-purpose, and unmaintained. BrightRaider V1.0 picks 
 | Per-game Contrast | ❌ | ✅ | ✅ |
 | Per-game **Hue** | ❌ | ✅ | ✅ |
 | Per-game **FPS limit** | ❌ | ✅ | ✅ |
-| Alt-Tab Auto-Switch | ✅ | ✅ | ✅ |
+| Alt-Tab Auto-Switch (all color axes + FPS) | vibrance only | ✅ | ✅ |
 | Hotkey-switchable profiles | ❌ | 3 | **9** |
 | Original-gamma restore on exit | ❌ | ✅ | ✅ |
 | Configurable hotkeys + modifiers | ❌ | ✅ | ✅ |
