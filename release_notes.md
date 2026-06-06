@@ -165,7 +165,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              432FCD8DB3AFB2204151F52F9801971DCAA775E6AC0E4F4E0B0AF85C67486B16
+BrightRaider.exe              9618718729339B5843977F48AE7F3552B6511A9AA03DC65FD44FBB99C7FD1991
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
