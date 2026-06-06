@@ -7,6 +7,8 @@ docs/MASTERBRIEFING.txt
 docs/CHANGELOG.txt
 docs/Maps.txt
 docs/Timer_Rects.txt
+INTERNAL_*.md
+ga_known_issues_pin.md
 
 # Source code (local only) — never push to the public mirror
 src/

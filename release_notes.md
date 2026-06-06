@@ -157,6 +157,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Lower-overhead Auto-Brightness sampling** — the screen sampler now reuses one GDI surface + buffer across all five zones instead of recreating them per zone every tick, cutting the per-sample allocation and GDI churn ~5× (the sampler runs several times a second while Auto-Brightness is on).
 - **QuickSave toast shows a two-way arrow for toggle presets** — a preset with "toggle direction" on now reads e.g. "W1 ↔ P1", making it clear the trigger alternates both ways. *(#66)*
 - **Heads-up when binding a modifier to QuickSave/QuickSelect** — those run a macro that sends its own keys, and a physically-held modifier (the game uses Shift = Sprint, Ctrl = Crouch) gets mixed into the macro and makes it misfire. The rebind now warns and suggests a plain key or a mouse side button instead. *(#66)*
+- **Optional: restore your last profile when switching BrightRaider back on** — a new opt-in checkbox (Hotkeys tab → Behavior) makes the Global On/Off toggle bring your colours straight back to the profile you had active, instead of leaving the display neutral until you re-pick it. Off by default, so "off is off" stays the standard. *(#66)*
 
 ## System requirements
 
@@ -167,7 +168,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              168B1D4C2382B2EE2E35C46ECFE98E7C5A9646193E0129C1A9A5C295F15B28E6
+BrightRaider.exe              10F3BDBF89EEA4E1D56BE52AE686EEC15F36A047B07C7EE75D8AF0C38A3407A8
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
