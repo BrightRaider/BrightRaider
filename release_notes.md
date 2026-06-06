@@ -142,7 +142,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **"📖 Guide" buttons** — QuickSave, QuickSelect, Auto-Brightness and Map Scanner each have a button that opens that feature's full guide in your browser.
 - **Setup Wizard** — the forward key ("W") no longer shows a false "already bound" warning.
 - **QuickSelect settings now persist reliably** — fixed a case where the per-slot timer could reset when reopening Settings.
-- **Keep your colours when toggling off (optional)** — the **"Global toggle OFF also resets the display"** checkbox (Hotkeys tab → Behavior) controls what Global On/Off does. On by default = "off is off" (turning off restores your normal display). **Uncheck it** to keep your colour profile applied while BrightRaider is off — only the hotkeys and overlays turn off, so your colours stay until you switch back on (the classic PageDown behaviour). *(#66)*
+- **Keep your colours when toggling off (optional)** — the **"Global toggle OFF also resets the display"** checkbox (App tab, under "Hotkeys enabled") controls what Global On/Off does. On by default = "off is off" (turning off restores your normal display). **Uncheck it** to keep your colour profile applied while BrightRaider is off — only the hotkeys and overlays turn off, so your colours stay until you switch back on (the classic PageDown behaviour). *(#66)*
 - **Multi-monitor overlays fixed** — when you pin a specific monitor in the tray, the crosshair and Map Scanner overlays now reliably stay on that monitor instead of occasionally following another window onto a second screen.
 - **Map Scanner polish** — a map with no condition now just shows its name (no redundant "Normal" label), and condition-icon detection is more robust on non-16:9 resolutions (1920×1440, 2560×1600, etc.).
 - **Crosshair + Map Scanner respect "only run hotkeys while a game is focused"** — with that option on, both the crosshair *and* the map-scanner overlay now hide whenever no game is in focus (e.g. on the desktop), independent of Alt-Tab Auto-Switch. Previously the crosshair could stay stuck on the desktop and the two overlays behaved inconsistently. *(#66)*
@@ -169,7 +169,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              3F52B0659FF7D0DCF08A0CB6CCC965D0C5B40A1CA09B4E5BA49C70784794259A
+BrightRaider.exe              A319B0DBC452CED4907CBF4E7E049D06F0D4D77DBA9DAC4BE0A02A6459ADEB3A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
