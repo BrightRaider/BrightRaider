@@ -8,6 +8,8 @@
 
 BrightRaider V1.0 replaces VibranceGUI completely — and adds everything VibranceGUI never had: **per-game FPS limits, Hue control, Alt-Tab Auto-Switch**, and a real configurable hotkey system. **All free.**
 
+The free tier alone makes it one of the most complete color + FPS gaming tools out there — Vibrance, Gamma, Contrast, Hue, per-game FPS limits and Alt-Tab Auto-Switch, no strings.
+
 If you're still running VibranceGUI alongside a profile-switcher: uninstall both. V1.0 is the single tool you keep.
 
 ---
