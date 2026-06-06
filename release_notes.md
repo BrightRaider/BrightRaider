@@ -153,6 +153,8 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Evac alarm — color-coded toast** — the alarm toast is now tinted to the timer's urgency, matching the map-scanner colors (orange as it nears, red under a minute). *(#66)*
 - **Evac alarm — fixed alarms going quiet after the first** — an expired evac point could keep its label "pinned" and silently swallow every later alarm for that point this session; each point now re-arms correctly. *(#66)*
 - **Fixed a stuck Shift key** — with Autorun running, BrightRaider swallows your physical Shift so only its sprint state reaches the game. Key-repeat could leak the Shift-down to Windows while the release was still swallowed, leaving Shift "held" system-wide — even after closing BrightRaider. Shift handling is now symmetric, so it can't latch.
+- **Modifier + mouse bindings now work** — binding a modifier together with the wheel or a side button (e.g. "Ctrl + Wheel up", "Shift + MB4") was silently broken: the combo couldn't be captured, didn't install the mouse hook, and the modifier state was tracked unreliably. All three are fixed, so modifier+mouse bindings capture and fire reliably. *(#66)*
+- **Heads-up when binding a modifier to QuickSave/QuickSelect** — those run a macro that sends its own keys, and a physically-held modifier (the game uses Shift = Sprint, Ctrl = Crouch) gets mixed into the macro and makes it misfire. The rebind now warns and suggests a plain key or a mouse side button instead. *(#66)*
 
 ## System requirements
 
@@ -163,7 +165,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              A477836E1D0094E66CE3E85BF3D7ADC7814C68D94048602D93428C3EC441A26C
+BrightRaider.exe              CA17D5AC287DD809E9CDD237EB64F96E40D7CE5EA9A70B5AC8BD4405789C413E
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
