@@ -142,7 +142,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **"📖 Guide" buttons** — QuickSave, QuickSelect, Auto-Brightness and Map Scanner each have a button that opens that feature's full guide in your browser.
 - **Setup Wizard** — the forward key ("W") no longer shows a false "already bound" warning.
 - **QuickSelect settings now persist reliably** — fixed a case where the per-slot timer could reset when reopening Settings.
-- **Global ON/OFF simplified** — the extra "Global toggle OFF also resets the display" checkbox is gone. Turning BrightRaider off now always means *fully* off (overlays hidden, original display restored) — "off is off". This was already the default, so nothing changes for almost everyone.
+- **Keep your colours when toggling off (optional)** — the **"Global toggle OFF also resets the display"** checkbox (Hotkeys tab → Behavior) controls what Global On/Off does. On by default = "off is off" (turning off restores your normal display). **Uncheck it** to keep your colour profile applied while BrightRaider is off — only the hotkeys and overlays turn off, so your colours stay until you switch back on (the classic PageDown behaviour). *(#66)*
 - **Multi-monitor overlays fixed** — when you pin a specific monitor in the tray, the crosshair and Map Scanner overlays now reliably stay on that monitor instead of occasionally following another window onto a second screen.
 - **Map Scanner polish** — a map with no condition now just shows its name (no redundant "Normal" label), and condition-icon detection is more robust on non-16:9 resolutions (1920×1440, 2560×1600, etc.).
 - **Crosshair + Map Scanner respect "only run hotkeys while a game is focused"** — with that option on, both the crosshair *and* the map-scanner overlay now hide whenever no game is in focus (e.g. on the desktop), independent of Alt-Tab Auto-Switch. Previously the crosshair could stay stuck on the desktop and the two overlays behaved inconsistently. *(#66)*
@@ -159,7 +159,6 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Lower-overhead Auto-Brightness sampling** — the screen sampler now reuses one GDI surface + buffer across all five zones instead of recreating them per zone every tick, cutting the per-sample allocation and GDI churn ~5× (the sampler runs several times a second while Auto-Brightness is on).
 - **QuickSave toast shows a two-way arrow for toggle presets** — a preset with "toggle direction" on now reads e.g. "W1 ↔ P1", making it clear the trigger alternates both ways. *(#66)*
 - **Heads-up when binding a modifier to QuickSave/QuickSelect** — those run a macro that sends its own keys, and a physically-held modifier (the game uses Shift = Sprint, Ctrl = Crouch) gets mixed into the macro and makes it misfire. The rebind now warns and suggests a plain key or a mouse side button instead. *(#66)*
-- **Optional: restore your last profile when switching BrightRaider back on** — a new opt-in checkbox (Hotkeys tab → Behavior) makes the Global On/Off toggle bring your colours straight back to the profile you had active, instead of leaving the display neutral until you re-pick it. Off by default, so "off is off" stays the standard. *(#66)*
 
 ## System requirements
 
@@ -170,7 +169,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              10F3BDBF89EEA4E1D56BE52AE686EEC15F36A047B07C7EE75D8AF0C38A3407A8
+BrightRaider.exe              3F52B0659FF7D0DCF08A0CB6CCC965D0C5B40A1CA09B4E5BA49C70784794259A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
