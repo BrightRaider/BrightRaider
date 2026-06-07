@@ -157,6 +157,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Evac alarm follows the Map Scanner** — the beep + toast no longer fire while the Map Scanner overlay is hidden (toggled off, BrightRaider globally off, alt-tabbed out of the game, or the game-focus gate). The alarm is part of the scanner, so it stays silent whenever the scanner isn't shown. *(#66)*
 - **Fixed a stuck Shift key** — with Autorun running, BrightRaider swallows your physical Shift so only its sprint state reaches the game. Key-repeat could leak the Shift-down to Windows while the release was still swallowed, leaving Shift "held" system-wide — even after closing BrightRaider. Shift handling is now symmetric, so it can't latch.
 - **Modifier + mouse bindings now work** — binding a modifier together with the wheel or a side button (e.g. "Ctrl + Wheel up", "Shift + MB4") was silently broken: the combo couldn't be captured, didn't install the mouse hook, and the modifier state was tracked unreliably. All three are fixed, so modifier+mouse bindings capture and fire reliably. *(#66)*
+- **Global On/Off key no longer leaks to other apps** — the dedicated toggle key is now swallowed on every edge (press, auto-repeat, release) and works even with "only run hotkeys while a game is focused" on. Note: an app that captures keys globally on its own (e.g. TeamSpeak's hotkeys) can still see the same physical key — Windows lets two global captures coexist and one tool can't block another's. If your toggle key triggers something there (e.g. deleting a channel), rebind BrightRaider's toggle to another key, or change that app's hotkey. *(#66)*
 - **Lower-overhead Auto-Brightness sampling** — the screen sampler now reuses one GDI surface + buffer across all five zones instead of recreating them per zone every tick, cutting the per-sample allocation and GDI churn ~5× (the sampler runs several times a second while Auto-Brightness is on).
 - **QuickSave toast shows a two-way arrow for toggle presets** — a preset with "toggle direction" on now reads e.g. "W1 ↔ P1", making it clear the trigger alternates both ways. *(#66)*
 - **Heads-up when binding a modifier to QuickSave/QuickSelect** — those run a macro that sends its own keys, and a physically-held modifier (the game uses Shift = Sprint, Ctrl = Crouch) gets mixed into the macro and makes it misfire. The rebind now warns and suggests a plain key or a mouse side button instead. *(#66)*
@@ -170,7 +171,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              932854A3D733C5EC4481121EC4F0E16DF063C5A6A866B120880733A795CEEE91
+BrightRaider.exe              D30BEA9B1FFD4072CA0E28BD825580C5564964A27DAEE1D8D817D286F94C4D7F
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
