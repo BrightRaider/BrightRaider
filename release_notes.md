@@ -154,6 +154,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Evac alarm — repeat option** — the toast + beep can now repeat a configurable number of times a few seconds apart (Map Scanner tab), so an evac warning isn't missed mid-firefight. *(#66)*
 - **Evac alarm — color-coded toast** — the alarm toast is now tinted to the timer's urgency, matching the map-scanner colors (orange as it nears, red under a minute). *(#66)*
 - **Evac alarm — fixed alarms going quiet after the first** — an expired evac point could keep its label "pinned" and silently swallow every later alarm for that point this session; each point now re-arms correctly. *(#66)*
+- **Evac alarm follows the Map Scanner** — the beep + toast no longer fire while the Map Scanner overlay is hidden (toggled off, BrightRaider globally off, alt-tabbed out of the game, or the game-focus gate). The alarm is part of the scanner, so it stays silent whenever the scanner isn't shown. *(#66)*
 - **Fixed a stuck Shift key** — with Autorun running, BrightRaider swallows your physical Shift so only its sprint state reaches the game. Key-repeat could leak the Shift-down to Windows while the release was still swallowed, leaving Shift "held" system-wide — even after closing BrightRaider. Shift handling is now symmetric, so it can't latch.
 - **Modifier + mouse bindings now work** — binding a modifier together with the wheel or a side button (e.g. "Ctrl + Wheel up", "Shift + MB4") was silently broken: the combo couldn't be captured, didn't install the mouse hook, and the modifier state was tracked unreliably. All three are fixed, so modifier+mouse bindings capture and fire reliably. *(#66)*
 - **Lower-overhead Auto-Brightness sampling** — the screen sampler now reuses one GDI surface + buffer across all five zones instead of recreating them per zone every tick, cutting the per-sample allocation and GDI churn ~5× (the sampler runs several times a second while Auto-Brightness is on).
@@ -169,7 +170,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              A319B0DBC452CED4907CBF4E7E049D06F0D4D77DBA9DAC4BE0A02A6459ADEB3A
+BrightRaider.exe              932854A3D733C5EC4481121EC4F0E16DF063C5A6A866B120880733A795CEEE91
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
