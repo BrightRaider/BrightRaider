@@ -160,6 +160,8 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Global On/Off key no longer leaks to other apps** — the dedicated toggle key is now swallowed on every edge (press, auto-repeat, release) and works even with "only run hotkeys while a game is focused" on. Note: an app that captures keys globally on its own (e.g. TeamSpeak's hotkeys) can still see the same physical key — Windows lets two global captures coexist and one tool can't block another's. If your toggle key triggers something there (e.g. deleting a channel), rebind BrightRaider's toggle to another key, or change that app's hotkey. *(#66)*
 - **Rebinding no longer fires the key you press** — while a rebind field is waiting for input, all hotkeys and macros are paused, so pressing a key that's already bound to (say) QuickSelect now captures it cleanly instead of firing the macro. *(#66)*
 - **Ignore apps that aren't games** — BrightRaider treats any fullscreen window as a game so vibrance/FPS limits work without setup, which also caught things like fullscreen video in a browser. There's now an "Apps to ignore" list on the Game Profiles tab — anything on it is left completely alone (no overlays, no colour change, no FPS cap). Common browsers and media players are excluded out of the box, and you can add your own with one click. *(#66)*
+- **Version line in Settings is now live** — the version at the bottom of the Settings window shows your version and links to the website. When a newer release is out it turns into a gentle orange "update available" notice and links straight to the download — no more wondering if you're current.
+- **Right-click the version to copy your system info** — copies your version, OS, and GPU to the clipboard in one go, so reporting an issue (or checking which build you're on) takes a second.
 - **Lower-overhead Auto-Brightness sampling** — the screen sampler now reuses one GDI surface + buffer across all five zones instead of recreating them per zone every tick, cutting the per-sample allocation and GDI churn ~5× (the sampler runs several times a second while Auto-Brightness is on).
 - **QuickSave toast shows a two-way arrow for toggle presets** — a preset with "toggle direction" on now reads e.g. "W1 ↔ P1", making it clear the trigger alternates both ways. *(#66)*
 - **Heads-up when binding a modifier to QuickSave/QuickSelect** — those run a macro that sends its own keys, and a physically-held modifier (the game uses Shift = Sprint, Ctrl = Crouch) gets mixed into the macro and makes it misfire. The rebind now warns and suggests a plain key or a mouse side button instead. *(#66)*
@@ -173,7 +175,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              620661AAAF80DC289B9E8C388D08E22FE0A6DDC55A6E3265CA84F1A4CBFE3623
+BrightRaider.exe              2689243A90DCC6CD2C8D54170399BEC575FB4B6F5CB91962CDA6A5B563F5678B
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
