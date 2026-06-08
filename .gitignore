@@ -53,6 +53,9 @@ build_lmb_test.ps1
 release.ps1
 update_banners.ps1
 sync_arrows.ps1
+# One-shot RC deploy orchestrator — names the PRIVATE mirror path/remote, so it
+# must NEVER reach the public repo.
+deploy_rc.ps1
 
 # Internal checklists
 docs/RELEASE_CHECKLIST.md
