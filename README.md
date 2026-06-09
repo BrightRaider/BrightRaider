@@ -109,6 +109,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **Game Profiles + Alt-Tab Auto-Switch** — fully customizable **per-game color overrides (Gamma / Contrast / Vibrance / Hue)** *and* a per-game FPS limit, applied automatically when the game enters the foreground and reverted to your original ramps on Alt-Tab out. This is the free way to tune colors per game — replaces VibranceGUI completely.
 - **FPS Limit per game** — NVIDIA via NvAPI DRS, AMD via ADLX FRTC. Set Arc Raiders to 141, CS2 to unlimited — saved per profile. Saves GPU power, lowers fan noise. → [Optimal FPS cap settings (Blur Busters gsync 101)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **Configurable hotkeys with modifier support** — every key reassignable, supports `Ctrl+5`, `Alt+F2`, `Shift+Numpad 3`, mouse MB3/4/5, scroll wheel. Setup wizard on first launch (Numpad / TKL / AZERTY). Optional **"only run hotkeys while a game is focused"** mode so BrightRaider's keys never interfere with normal typing on the desktop.
+- **HDR toggle hotkey** — flip Windows HDR on/off with one key instead of digging through Windows Settings (especially painful on Windows 10). Works on the pinned monitor or all HDR-capable ones.
 - **Original gamma persistence** — your DisplayCAL / ICC calibration is saved on first launch and restored on every exit. Survives crashes — V1.0 stores the baseline to disk, can't be poisoned by a force-kill.
 - **Dark Mode** — full dark theme for the Settings window (Light / Dark / Follow OS in *Settings → App → Theme*).
 - **NVIDIA + AMD + Intel** support (GDI fallback for any GPU)
@@ -127,7 +128,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **QuickSave** — single keypress drags an item between inventory slots and Safe Pocket. Handles open → drag → close. 5 presets, configurable slots, optional toggle-direction. 📖 [Setup Guide](docs/QuickSave_Guide.md)
 - **Crosshair Overlay** — click-through crosshair directly on screen. 6 styles (Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap), custom color + outline (color **and** thickness), size 4–50 px. Same overlay mechanism as Discord and GeForce Experience.
 - **Background AutoMute** *(new in V1.0)* — the game's Windows audio session is muted automatically when you Alt-Tab out, unmuted on focus return. Per-process — your music + Discord keep playing.
-- **Audio Output Switcher** *(new in V1.0)* — switch your default output device (speakers ↔ headphones ↔ …) with one hotkey, cycling through the devices you pick. Optionally auto-switches to a chosen device when a game starts and restores the previous one when it closes — alt-tabbing out does **not** switch back. Switches all roles (incl. communications), so Discord voice follows too.
+- **Audio Output Switcher** *(new in V1.0)* — switch your default output device (speakers ↔ headphones ↔ …) with one hotkey, cycling through the devices you pick. Optionally auto-switches to a chosen device when a game starts and restores the previous one when it closes — alt-tabbing out does **not** switch back. Switches the game/media device by default; an opt-in *"Also switch the communications device"* makes Discord/voice follow too (off by default so it can't disrupt voice apps like TeamSpeak).
 - **Process Optimizer** *(new in V1.0)* — opt-in High process priority + physical-cores-only affinity (Hyperthreading off) for the foreground game. Smoother frametimes on cores fighting with background tasks.
 - **Autorun** — short press CapsLock to hold the forward key. Tap Mode (hold CapsLock 600 ms) pulses forward — built for the Looting Mk. 3 (Survivor) augment, keeps health at 75 % while moving. AZERTY support (Z forward).
 - **Audio Ducking** — hold the mute key 600 ms to duck game audio to a configurable %. Short press still mutes/unmutes.
@@ -329,6 +330,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - **FPS-Limit pro Spiel** — einmal einstellen, BrightRaider schaltet automatisch beim Alt-Tab um. Arc Raiders auf Monitor-Hz begrenzen, CS2 unlimitiert lassen. Reduziert GPU-Leistungsaufnahme und Wärmeentwicklung spürbar — leiser, kühler. → [Optimale FPS-Cap-Einstellungen (Blur Busters gsync 101)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **Automatisches Vibrance-Switching** — Spiel im Fokus → Gaming-Vibrance. Alt-Tab → normale Desktop-Vibrance. Ersetzt VibranceGUI vollständig.
 - **Belegbare Hotkeys** — alle Tasten in Einstellungen → Input konfigurierbar. Funktioniert mit Numpad, TKL, QWERTZ, AZERTY — jede Tastatur.
+- **HDR-Schalter per Hotkey** — Windows-HDR mit einer Taste an/aus, statt jedes Mal durch die Windows-Einstellungen zu klicken (unter Windows 10 besonders umständlich).
 - **NVIDIA + AMD + Intel** Unterstützung (GDI-Fallback für jede GPU)
 - **Multi-Monitor** Unterstützung
 - **Englisch / Deutsch** Oberfläche
@@ -346,7 +348,7 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 - **Crosshair-Overlay** — Click-through Fadenkreuz direkt auf dem Bildschirm. 6 Stile. EAC-sicher.
 - **Audio Ducking** — Mute-Taste 600ms halten um Spiel-Audio auf 20% zu reduzieren.
 - **Game Mute** — nur das Spiel stumm schalten. Discord, Musik, alles andere bleibt an.
-- **Audio-Ausgabe-Switcher** *(neu in V1.0)* — Standard-Ausgabegerät per Hotkey umschalten (Boxen ↔ Kopfhörer ↔ …), du wählst frei aus, welche Geräte durchrotiert werden. Optional automatischer Wechsel beim Spielstart und Rückkehr zum vorherigen Gerät beim Spiel-Ende — Alt-Tab schaltet **nicht** zurück. Schaltet alle Rollen inkl. Kommunikation, also folgt auch Discord-Voice mit.
+- **Audio-Ausgabe-Switcher** *(neu in V1.0)* — Standard-Ausgabegerät per Hotkey umschalten (Boxen ↔ Kopfhörer ↔ …), du wählst frei aus, welche Geräte durchrotiert werden. Optional automatischer Wechsel beim Spielstart und Rückkehr zum vorherigen Gerät beim Spiel-Ende — Alt-Tab schaltet **nicht** zurück. Schaltet standardmäßig nur das Spiel-/Medien-Gerät; per Opt-in *„Also switch the communications device"* folgt auch Discord/Voice (ab Werk aus, damit Voice-Apps wie TeamSpeak nicht gestört werden).
 - **Hue pro Profil** — Farbtemperatur pro Profil neben Vibrance. NVIDIA 0–359° wie im Control Panel, AMD im Treiber-Bereich.
 - **Bis zu 9 Profile** mit voller Anpassung
 - **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
