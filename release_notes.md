@@ -78,7 +78,7 @@ For users who want the full Arc Raiders / power-user toolbox.
 - **Footstep Booster** — per-process audio limiter. Crank in-game volume to hear footsteps without going deaf on gunshots. Configurable threshold / attack / release.
 - **Background AutoMute** — the game's audio session is muted automatically when you Alt-Tab out, unmuted on return. Discord and music stay untouched.
 - **Process Optimizer** — opt-in High process priority + physical-cores-only affinity (Hyperthreading off) for the foreground game.
-- **Audio Output Switcher** — switch your default output device with one hotkey, cycling through the devices you choose (2, a few, or all). Optional auto-switch to a chosen device when a game starts, restoring the previous device when it closes (alt-tabbing out does **not** switch back). Switches all roles including communications, so Discord voice follows too.
+- **Audio Output Switcher** — switch your default output device with one hotkey, cycling through the devices you choose (2, a few, or all). Optional auto-switch to a chosen device when a game starts, restoring the previous device when it closes (alt-tabbing out does **not** switch back). Switches the game/media device by default; an opt-in *"Also switch the communications device"* makes Discord/voice follow too (off by default so it can't disrupt voice apps like TeamSpeak).
 
 ### ⬆️ Significantly improved in V1.0
 
