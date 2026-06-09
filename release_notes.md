@@ -171,6 +171,10 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Audio device switch no longer crashes voice apps** — by default the switch now leaves your **communications** device alone and only moves game/media audio, so TeamSpeak (and other voice apps) no longer crash when you cycle devices. A new opt-in on the Audio tab — *"Also switch the communications device"* — restores the old "voice chat follows too" behaviour if you want it. Rapid hotkey presses are also handled cleanly now.
 - **License validation hardening + reliability fixes** — under-the-hood robustness improvements to license handling.
 - **No more input freeze on Alt-Tab (and no "stuck" mouse button)** — the keyboard/mouse hooks now run on their own thread, so switching in and out of the game can't briefly stall your input — and can't leave a mouse button latched (the "map drags / aim stays held after Alt-Tab" issue). The held-click macro path was hardened the same way.
+- **Settings backup now actually recovers** — if the config file is ever corrupted (crash, power loss mid-write), BrightRaider now restores your settings from its automatic backup instead of silently resetting everything to defaults.
+- **Newly connected monitors get their colors back** — a monitor plugged in after the first launch now correctly returns to its original gamma on Alt-Tab-out and on exit, instead of staying tinted until reboot.
+- **Pinned-monitor startup fix** — with a specific monitor selected, vibrance/hue no longer briefly land on *all* monitors during startup.
+- **Stability pass from a full code review** — additional hardening across input hooks, audio device switching, macro injection and the map scanner.
 
 ## System requirements
 
@@ -181,7 +185,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              430897794264BCD0ADD06CF4968DBDF75B2D32E25DEE4237A7FB17EF9142D2B7
+BrightRaider.exe              D36253052123BE2441F98E3CC019EA3E5A845348C0CEE68914688F569F3B11B2
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
