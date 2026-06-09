@@ -57,6 +57,7 @@ Everything in the **Free** column ships with the EXE. No license, no nag screen,
 - **Configurable hotkeys** — every key reassignable, modifier support (`Ctrl+5`, `Alt+F2`, `Shift+Numpad 3`, mouse MB3/4/5, scroll-wheel).
 - **Setup Wizard** — picks Numpad / TKL / AZERTY defaults on first launch, re-callable from Settings.
 - **One EXE for everyone** — Numpad and Arrow-key versions merged. AZERTY-friendly out of the box.
+- **HDR toggle hotkey** — flip Windows HDR on/off with one key instead of digging through Windows Settings (especially painful on Windows 10). Works on the pinned monitor or all HDR-capable ones.
 - **Update notifier in the tray** — one-line notice when a new release is published.
 - **Original gamma persistence** — your DisplayCAL / ICC calibration is saved to disk on first launch and restored on every exit, no matter how BrightRaider stops. Survives crashes.
 - **Native AOT** — no .NET runtime install needed, sub-second startup.
