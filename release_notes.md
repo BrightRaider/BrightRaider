@@ -170,6 +170,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Pro hotkeys behave consistently on Free** — pressing a Pro feature's hotkey (game mute, crosshair, map overlay, QuickSelect / QuickSave toggles) on the free version now shows the same "this is a Pro feature" notice as everything else, instead of silently doing nothing or quietly toggling the feature.
 - **Audio device switch no longer crashes voice apps** — by default the switch now leaves your **communications** device alone and only moves game/media audio, so TeamSpeak (and other voice apps) no longer crash when you cycle devices. A new opt-in on the Audio tab — *"Also switch the communications device"* — restores the old "voice chat follows too" behaviour if you want it. Rapid hotkey presses are also handled cleanly now.
 - **License validation hardening + reliability fixes** — under-the-hood robustness improvements to license handling.
+- **No more input freeze on Alt-Tab (and no "stuck" mouse button)** — the keyboard/mouse hooks now run on their own thread, so switching in and out of the game can't briefly stall your input — and can't leave a mouse button latched (the "map drags / aim stays held after Alt-Tab" issue). The held-click macro path was hardened the same way.
 
 ## System requirements
 
@@ -180,7 +181,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              2A6FD9D85CF183624BD1DE1C66272D6314D6BA42DC3AA7BBF5AAB152DE3F66C7
+BrightRaider.exe              430897794264BCD0ADD06CF4968DBDF75B2D32E25DEE4237A7FB17EF9142D2B7
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
