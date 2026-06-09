@@ -105,8 +105,8 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 ## Features
 
 ### Free
-- **3 hotkey-switchable display profiles** — fully customizable Gamma + Contrast + Vibrance + **Hue** per profile (V1.0 adds the Hue axis)
-- **Alt-Tab Auto-Switch** — per-game profile **and** per-game FPS limit applied automatically when the game enters foreground; reverts to your original ramps on Alt-Tab out. Replaces VibranceGUI completely.
+- **3 hotkey-switchable display presets** — Normal / Bright / Brighter, applied instantly with a keypress even in fullscreen. Editing the preset values is Pro; for fully custom colors per game use **Game Profiles** (below).
+- **Game Profiles + Alt-Tab Auto-Switch** — fully customizable **per-game color overrides (Gamma / Contrast / Vibrance / Hue)** *and* a per-game FPS limit, applied automatically when the game enters the foreground and reverted to your original ramps on Alt-Tab out. This is the free way to tune colors per game — replaces VibranceGUI completely.
 - **FPS Limit per game** — NVIDIA via NvAPI DRS, AMD via ADLX FRTC. Set Arc Raiders to 141, CS2 to unlimited — saved per profile. Saves GPU power, lowers fan noise. → [Optimal FPS cap settings (Blur Busters gsync 101)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **Configurable hotkeys with modifier support** — every key reassignable, supports `Ctrl+5`, `Alt+F2`, `Shift+Numpad 3`, mouse MB3/4/5, scroll wheel. Setup wizard on first launch (Numpad / TKL / AZERTY). Optional **"only run hotkeys while a game is focused"** mode so BrightRaider's keys never interfere with normal typing on the desktop.
 - **Original gamma persistence** — your DisplayCAL / ICC calibration is saved on first launch and restored on every exit. Survives crashes — V1.0 stores the baseline to disk, can't be poisoned by a force-kill.
@@ -132,7 +132,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **Autorun** — short press CapsLock to hold the forward key. Tap Mode (hold CapsLock 600 ms) pulses forward — built for the Looting Mk. 3 (Survivor) augment, keeps health at 75 % while moving. AZERTY support (Z forward).
 - **Audio Ducking** — hold the mute key 600 ms to duck game audio to a configurable %. Short press still mutes/unmutes.
 - **Game Mute** — mute only the game's audio session, leaves Discord / music untouched.
-- **Profiles 4–9** — six more hotkey-switchable color presets, all axes editable
+- **Display profile editing + Profiles 4–9** — edit the built-in display presets directly (Gamma / Contrast / Vibrance / Hue) and unlock six more profile slots (4–9). On Free the three presets are switch-only.
 - **Calibration Wizard** — two-step capture (darkest + brightest spot) distributes profiles across the range automatically
 
 ## Default Profiles
@@ -144,7 +144,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 | Num 3 | Brighter | 2.0 | 110% | 70% |
 | Num 4–9 | Custom [PRO] | Editable | Editable | Editable |
 
-All hotkeys are rebindable. Defaults shown above use the numpad preset.
+All hotkeys are rebindable. Defaults shown above use the numpad preset. On Free these three presets are **switch-only** — editing any display profile's values (and unlocking 4–9) is Pro. For fully custom colors per game, use the free **Game Profiles** tab.
 
 ## Download
 
