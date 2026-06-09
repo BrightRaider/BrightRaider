@@ -167,6 +167,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Heads-up when binding a modifier to QuickSave/QuickSelect** — those run a macro that sends its own keys, and a physically-held modifier (the game uses Shift = Sprint, Ctrl = Crouch) gets mixed into the macro and makes it misfire. The rebind now warns and suggests a plain key or a mouse side button instead. *(#66)*
 - **Browse the Pro tabs before you buy** — the Pro tabs (Auto-Brightness, Audio, Crosshair, Performance, Map Scanner, QuickSelect, QuickSave) now open on Free too, so you can see exactly what each feature looks like. The controls stay greyed out with a short "activate a license to enable" note until you go Pro.
 - **Free profile fixes** — profiles 4–9 can no longer be switched on without Pro (they're the Pro presets), and the **"Test on screen"** preview button on the Display tab now works on Free — flash a profile against neutral and see the effect instantly without launching a game.
+- **Pro hotkeys behave consistently on Free** — pressing a Pro feature's hotkey (game mute, crosshair, map overlay, QuickSelect / QuickSave toggles) on the free version now shows the same "this is a Pro feature" notice as everything else, instead of silently doing nothing or quietly toggling the feature.
 
 ## System requirements
 
@@ -177,7 +178,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              F38619B4B79EA00433ECE96BDFE3FA850B39A0D75C1EF0AD050BA1A008B907EC
+BrightRaider.exe              CD637467D6492AE206426C8DC38F45C0BF1B8B49ACC6686126BCD83F6DFB962F
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
