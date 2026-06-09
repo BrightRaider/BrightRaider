@@ -29,6 +29,7 @@ VibranceGUI was free, single-purpose, and unmaintained. BrightRaider V1.0 picks 
 | Hotkey-switchable profiles | ❌ | 3 | **9** |
 | Original-gamma restore on exit | ❌ | ✅ | ✅ |
 | Configurable hotkeys + modifiers | ❌ | ✅ | ✅ |
+| **HDR toggle hotkey** | ❌ | ✅ | ✅ |
 | Active development | ❌ | ✅ | ✅ |
 | **Auto-Brightness** with Calibration Wizard | ❌ | ❌ | ✅ |
 | **Map Scanner** (Arc Raiders, 13 events) | ❌ | ❌ | ✅ |
@@ -175,6 +176,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Newly connected monitors get their colors back** — a monitor plugged in after the first launch now correctly returns to its original gamma on Alt-Tab-out and on exit, instead of staying tinted until reboot.
 - **Pinned-monitor startup fix** — with a specific monitor selected, vibrance/hue no longer briefly land on *all* monitors during startup.
 - **Stability pass from a full code review** — additional hardening across input hooks, audio device switching, macro injection and the map scanner.
+- **NEW: HDR toggle hotkey (Free)** — flip Windows HDR on/off with one key instead of digging through Windows Settings every time (especially painful on Windows 10). Bind it on the Hotkeys tab ("HDR on/off", unbound by default), works on the pinned monitor or all HDR-capable ones. The short black flash when it switches is Windows changing the display mode — your color profile is re-applied automatically right after.
 
 ## System requirements
 
@@ -185,7 +187,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              D36253052123BE2441F98E3CC019EA3E5A845348C0CEE68914688F569F3B11B2
+BrightRaider.exe              0650CA6E501D17293AFE3C830A294E3E13B8D06EE9D356752C77EE8B7DF2CC0A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
