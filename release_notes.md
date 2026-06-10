@@ -178,6 +178,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Pinned-monitor startup fix** — with a specific monitor selected, vibrance/hue no longer briefly land on *all* monitors during startup.
 - **Stability pass from a full code review** — additional hardening across input hooks, audio device switching, macro injection and the map scanner.
 - **NEW: HDR toggle hotkey (Free)** — flip Windows HDR on/off with one key instead of digging through Windows Settings every time (especially painful on Windows 10). Bind it on the Hotkeys tab ("HDR on/off", unbound by default), works on the pinned monitor or all HDR-capable ones. The short black flash when it switches is Windows changing the display mode — your color profile is re-applied automatically right after.
+- **Sharper icon at small sizes** — the app icon now stays recognizable in Task Manager, Explorer detail view and window title bars instead of collapsing into a dark blob at 16px.
 
 ## System requirements
 
@@ -188,7 +189,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              0650CA6E501D17293AFE3C830A294E3E13B8D06EE9D356752C77EE8B7DF2CC0A
+BrightRaider.exe              1D1F8383FDB8FDC00696A9F3EE759C240B6C47D82C557A45978090C6FC3EBD2E
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
