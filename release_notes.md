@@ -181,6 +181,8 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Sharper icon at small sizes** — the app icon now stays recognizable in Task Manager, Explorer detail view and window title bars instead of collapsing into a dark blob at 16px.
 - **Quick Select more reliable on stutter frames** — if the game hiccups just as the wheel opens (asset loading, frame drops), the selection no longer misses; the wheel won't flick open and closed without equipping anything. (#66)
 - **QuickSave labels now match the in-game inventory** — the From/To dropdowns, the trigger toast and the Slot-layout reference now read **Slot 1–5 / Augment 1–3** instead of S1–S8 — exactly the names the game uses. Existing presets are unaffected.
+- **Crouch no longer blocked after taking over from Autorun** — pressing W during an Autorun sprint hands control over seamlessly as before, but the game no longer thinks Shift is still held afterwards (which silently blocked crouch until you tapped Shift once).
+- **Slide and keep running with Autorun** — tapping C during an Autorun sprint now slides and continues the run, exactly like a manual "sprint, tap crouch" slide. Previously a slide always cancelled Autorun. (S, the Autorun key or pressing W still stop it as before.)
 
 ## System requirements
 
@@ -191,7 +193,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              185201D2C9EE3AC1EBFB788E548F86A0755A1131A64504551482423D8718B654
+BrightRaider.exe              CB81EE366157A8B9B4C3630A20CC141B70F7B47B4CA5A2CF5FF5FA372F2DB43A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
