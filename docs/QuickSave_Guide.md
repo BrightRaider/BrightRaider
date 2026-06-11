@@ -40,7 +40,7 @@ QuickSave can drag items between any of these positions:
 
 > The **From** and **To** fields are simple dropdowns — the labels are named exactly like the in-game inventory groups, so just pick **Slot 1–5**, **Augment 1–3**, **W1/W2** or **P1–P3**.
 
-[![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)
+[![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg?v=2)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg?v=2)
 
 > **Tip:** Use it to move consumables (bandages, syringes) into your Safe Pocket before an extraction, or retrieve them quickly at the start of a raid.
 
