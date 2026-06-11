@@ -33,12 +33,12 @@ QuickSave can drag items between any of these positions:
 
 | Label | In-game position |
 |-------|----------|
-| S1–S5 | Quick-deploy slots (Schnelleinsatz 1–5) |
-| S6–S8 | Augment slots (Augment-Plätze 1–3) |
+| Slot 1–5 | Quick-deploy slots (Schnelleinsatz 1–5) |
+| Augment 1–3 | Augment slots (Augment-Plätze 1–3) |
 | W1–W2 | Weapon slots (Ausrüstung) |
 | P1–P3 | Safe Pockets (Sicherheitstasche 1–3) |
 
-> The **From** and **To** fields are simple dropdowns — just pick **S1–S8**, **W1**, **W2** or **P1–P3**. No need to remember numbers.
+> The **From** and **To** fields are simple dropdowns — the labels are named exactly like the in-game inventory groups, so just pick **Slot 1–5**, **Augment 1–3**, **W1/W2** or **P1–P3**.
 
 [![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg)
 
@@ -53,8 +53,8 @@ QuickSave can drag items between any of these positions:
 3. Check **"Enable QuickSave"**
 4. For each preset you want to use:
    - Click **"Click to bind..."** and press your trigger key (keyboard key or MB3/4/5 or mouse wheel)
-   - Pick **From** — the source position (S1–S8 slots, W1/W2 weapons, or P1–P3 pockets)
-   - Pick **To** — the destination position (S1–S8, W1/W2, or P1–P3)
+   - Pick **From** — the source position (Slot 1–5, Augment 1–3, W1/W2 weapons, or P1–P3 pockets)
+   - Pick **To** — the destination position (Slot 1–5, Augment 1–3, W1/W2, or P1–P3)
    - Check **Active** (✓) to enable this preset
    - Check **Tab open** if you want BrightRaider to open the inventory with Tab first
    - Check **Tab close** if you want BrightRaider to close the inventory with Tab after
@@ -67,8 +67,8 @@ QuickSave can drag items between any of these positions:
 
 When **Toggle** is checked for a preset:
 
-- **First press** → drags From → To (e.g. S3 → P1)
-- **Second press** → drags To → From (e.g. P1 → S3)
+- **First press** → drags From → To (e.g. Slot 3 → P1)
+- **Second press** → drags To → From (e.g. P1 → Slot 3)
 
 This lets you store and retrieve the same item with the same key.
 
@@ -82,8 +82,8 @@ This lets you store and retrieve the same item with the same key.
 | **Inventory key (Tab)** | The key used to open/close inventory (default: Tab). Rebind if your in-game binding is different. |
 | **Active (✓)** | Enable/disable each preset individually |
 | **Trigger key** | The key that triggers this preset (keyboard, MB3/4/5, or mouse wheel) |
-| **From** | Source position — pick S1–S8 (slots), W1/W2 (weapons) or P1–P3 (pockets) |
-| **To** | Destination position — pick S1–S8, W1/W2 or P1–P3 |
+| **From** | Source position — pick Slot 1–5 / Augment 1–3 (inventory), W1/W2 (weapons) or P1–P3 (pockets) |
+| **To** | Destination position — pick Slot 1–5 / Augment 1–3, W1/W2 or P1–P3 |
 | **Tab open** | Press Tab before dragging (opens inventory) |
 | **Tab close** | Press Tab after dragging (closes inventory) |
 | **⇄ Toggle** | Reverse direction on alternating presses |
