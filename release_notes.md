@@ -179,6 +179,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Stability pass from a full code review** — additional hardening across input hooks, audio device switching, macro injection and the map scanner.
 - **NEW: HDR toggle hotkey (Free)** — flip Windows HDR on/off with one key instead of digging through Windows Settings every time (especially painful on Windows 10). Bind it on the Hotkeys tab ("HDR on/off", unbound by default), works on the pinned monitor or all HDR-capable ones. The short black flash when it switches is Windows changing the display mode — your color profile is re-applied automatically right after.
 - **Sharper icon at small sizes** — the app icon now stays recognizable in Task Manager, Explorer detail view and window title bars instead of collapsing into a dark blob at 16px.
+- **Quick Select more reliable on stutter frames** — if the game hiccups just as the wheel opens (asset loading, frame drops), the selection no longer misses; the wheel won't flick open and closed without equipping anything. (#66)
 
 ## System requirements
 
@@ -189,7 +190,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              1D1F8383FDB8FDC00696A9F3EE759C240B6C47D82C557A45978090C6FC3EBD2E
+BrightRaider.exe              A514B0EB6AEB2F508AB5ABFF6A874911C5A35127ED2E793167D8B888F2FAFCDB
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
