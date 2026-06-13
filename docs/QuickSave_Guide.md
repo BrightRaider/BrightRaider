@@ -76,6 +76,8 @@ This lets you store and retrieve the same item with the same key.
 
 ## All Settings Explained
 
+> **Most important for reliability: Drop Hold.** This is the single setting that decides whether a save lands. It's the window where the game actually registers the drop — the item has to dwell on the destination slot long enough for Arc Raiders to accept it before the button releases. If your saves are inconsistent, raise **Drop** first. *Open delay* only matters if the inventory is still opening when the grab starts, so on a fast-opening setup it does nothing — Drop is the one that counts.
+
 | Setting | Description |
 |---------|-------------|
 | **Enable QuickSave** | Master on/off switch for all presets |
@@ -90,7 +92,7 @@ This lets you store and retrieve the same item with the same key.
 | **Open delay** | Wait after Tab before moving cursor (default: 250 ms). Increase if the inventory opens slowly. |
 | **Hover** | Extra wait after cursor arrives at source before picking up (default: 0 ms) |
 | **Hold** | How long LMB is held while dragging (default: 0 ms) |
-| **Drop** | Wait after cursor arrives at destination before releasing (default: 120 ms). Lower values (e.g. 20 ms) can work if **Cooldown** is set high enough to prevent back-to-back triggers before the inventory settles. |
+| **Drop** | **The key reliability setting.** Wait after the cursor arrives at the destination before releasing — this is the window the game uses to register the drop (default: 120 ms). If saves are inconsistent, raise this first. Lower values (e.g. 20 ms) can work if **Cooldown** is set high enough to prevent back-to-back triggers before the inventory settles. |
 | **Cooldown** | Minimum time between two triggers (default: 0 ms, disabled) |
 
 ---
