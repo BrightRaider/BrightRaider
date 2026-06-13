@@ -179,7 +179,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Stability pass from a full code review** — additional hardening across input hooks, audio device switching, macro injection and the map scanner.
 - **NEW: HDR toggle hotkey (Free)** — flip Windows HDR on/off with one key instead of digging through Windows Settings every time (especially painful on Windows 10). Bind it on the Hotkeys tab ("HDR on/off", unbound by default), works on the pinned monitor or all HDR-capable ones. The short black flash when it switches is Windows changing the display mode — your color profile is re-applied automatically right after.
 - **Sharper icon at small sizes** — the app icon now stays recognizable in Task Manager, Explorer detail view and window title bars instead of collapsing into a dark blob at 16px.
-- **Quick Select now holds its slot even while you're moving the mouse** — selecting an item mid-fight (while you're moving the mouse) no longer drags the selection onto the wrong slot or misses entirely. BrightRaider pins the cursor on the target for the brief moment the wheel is open, so it works no matter what your mouse is doing. Also fixes the wheel flicking open and closed on a stutter frame. (#66)
+- **Quick Select is reliable again while you're moving the mouse** — the wheel slots that have a number key (3–6: bandage / shield / adrenaline / grenade) are now selected by that key, like in 9.6.1, so moving the mouse mid-fight no longer pulls the selection onto the wrong slot. (Mouse-only wheel positions and AZERTY layouts use the cursor with a tighter hold.) Also fixes the wheel flicking open and closed on a stutter frame. (#66)
 - **QuickSave labels now match the in-game inventory** — the From/To dropdowns, the trigger toast and the Slot-layout reference now read **Slot 1–5 / Augment 1–3** instead of S1–S8 — exactly the names the game uses. Existing presets are unaffected.
 - **Crouch no longer blocked after taking over from Autorun** — pressing W during an Autorun sprint hands control over seamlessly as before, but the game no longer thinks Shift is still held afterwards (which silently blocked crouch until you tapped Shift once).
 - **Slide and keep running with Autorun** — tapping C during an Autorun sprint now slides and continues the run, exactly like a manual "sprint, tap crouch" slide. Previously a slide always cancelled Autorun. (S, the Autorun key or pressing W still stop it as before.)
@@ -194,7 +194,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              B96872A9AB2D546FBB9D54C1AC384B1DFD58B6C031F2F00CAF94436E860C160C
+BrightRaider.exe              B17EF858D17F736A84DCE68562FA6078E86DCE64F7BD2A2FF354578E037E9324
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
