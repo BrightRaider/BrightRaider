@@ -183,6 +183,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **QuickSave labels now match the in-game inventory** — the From/To dropdowns, the trigger toast and the Slot-layout reference now read **Slot 1–5 / Augment 1–3** instead of S1–S8 — exactly the names the game uses. Existing presets are unaffected.
 - **Crouch no longer blocked after taking over from Autorun** — pressing W during an Autorun sprint hands control over seamlessly as before, but the game no longer thinks Shift is still held afterwards (which silently blocked crouch until you tapped Shift once).
 - **Slide and keep running with Autorun** — tapping C during an Autorun sprint now slides and continues the run, exactly like a manual "sprint, tap crouch" slide. Previously a slide always cancelled Autorun. (S, the Autorun key or pressing W still stop it as before.)
+- **Number fields reject letters** — every timing / value field now ignores letters and other non-numeric keystrokes instead of accepting them and going blank.
 
 ## System requirements
 
@@ -193,7 +194,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              448DF09CF135E17C72BD8B6DDB1737913A399035C3DA38A8251B4BEB48FF44C4
+BrightRaider.exe              B96872A9AB2D546FBB9D54C1AC384B1DFD58B6C031F2F00CAF94436E860C160C
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
