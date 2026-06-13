@@ -117,7 +117,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 > 💙 **Special thanks** to **@DBasic**, **@Tia-Nastacia** and **@dawuus** — your detailed bug reports, ideas and patient back-and-forth shaped this pre-release more than anything else. A huge part of what's fixed and improved below came directly from you three. Thank you.
 
 
-- **🆕 Audio Output Switcher (Pro)** — switch speakers ↔ headphones (or any set of devices) with one hotkey, plus optional auto-switch when a game starts/closes. Switches all roles incl. communications.
+- **🆕 Audio Output Switcher (Pro)** — switch speakers ↔ headphones (or any set of devices) with one hotkey, plus optional auto-switch when a game starts/closes. Moves the game/media device by default; opt-in to also switch the communications device (see the refinement further down).
 - **Brightness profiles fixed** — the gamma/contrast curve is back to how it felt in 9.6.1; "Brighter" is usable again. *(#60)*
 - **Hue now 0–359° on Nvidia** — matches the Control Panel exactly, no mental math. Range adapts to your GPU. *(#39)*
 - **Crosshair outline thickness** — new 1–5 slider next to the outline color. *(#61)*

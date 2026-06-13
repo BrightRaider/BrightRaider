@@ -65,23 +65,96 @@
   - Modifier-key bindings (Ctrl+, Alt+, Shift+ combinations) are
     fully supported and documented inline in the binding tabs.
 
-  Pre-release week updates:
+  Pre-release updates (shaped by tester feedback — thanks @DBasic,
+  @Tia-Nastacia and @dawuus):
+
+  New in this window:
+  - HDR toggle hotkey (Free): flip Windows HDR on/off with one key
+    instead of digging through Windows Settings. Pinned-monitor aware,
+    unbound by default; your color profile is re-applied after the mode
+    switch.
   - Audio Output Switcher (Pro): switch the default output device
-    (speakers <-> headphones, or cycle any set of devices you choose)
-    with one hotkey. Optional auto-switch to a chosen device when a game
-    starts, restoring the previous device when it closes (Alt-Tab does
-    NOT switch back). Switches all roles including communications, so
-    Discord voice follows too.
-  - Hotkeys: optional "only run hotkeys while a game is focused" mode so
-    BrightRaider's keys never interfere with normal desktop typing.
-  - Crosshair: outline thickness is now adjustable (1-5), separate from
-    the outline color.
-  - Every slider takes the mouse wheel, and each value now has a type-in
-    field for exact entry.
-  - Nvidia Hue runs 0-359 exactly like the Control Panel (was a centered
+    (speakers <-> headphones, or cycle any set you choose) with one
+    hotkey. Optional auto-switch to a chosen device when a game starts,
+    restoring the previous one when it closes (Alt-Tab does NOT switch
+    back). Moves the game/media device only by default; an opt-in "Also
+    switch the communications device" makes Discord/voice follow too
+    (off by default so voice apps like TeamSpeak aren't disrupted).
+  - "Apps to ignore" list (Game Profiles tab): fullscreen windows that
+    aren't games (browser video, media players) are left completely
+    alone -- no overlays, no color change, no FPS cap. Common browsers
+    and players are excluded out of the box.
+  - "Only run hotkeys while a game is focused": optional gate so
+    BrightRaider's keys never interfere with desktop typing.
+
+  QuickSelect / QuickSave rework:
+  - QuickSelect: per-slot LMB hold time typed directly in ms (the old
+    T1-T6 preset table is gone), five common heals pre-filled, a Timing
+    reference button, and the post-use action correctly labeled Holster.
+    Wheel slots 3-6 are selected by their in-game number key (immune to
+    mouse movement); 7-10 use the cursor.
+  - QuickSave: From/To are plain dropdowns named like the in-game
+    inventory (Slot 1-5 / Augment 1-3 / W1-W2 / P1-P3); the trigger
+    toast reads e.g. "W1 -> P1" (or "W1 <-> P1" for toggle presets). An
+    in-app hint explains the timing (Drop hold is the key setting).
+  - Both tabs: a "Slot layout" button shows the annotated in-game
+    loadout and a "Guide" button opens the full guide. Existing presets
+    and timings migrate automatically.
+
+  Display & overlays:
+  - Brightness profiles match the V9.6.1 look again; "Brighter" is
+    usable.
+  - Nvidia Hue runs 0-359 like the Control Panel (was a centered
     -180..+180). Range still adapts to your GPU.
-  - Fixed: brightness profiles match the V9.6.1 look again (gamma /
-    contrast curve order) — "Brighter" is usable again.
+  - Overlays (crosshair, map scanner, timers) stay on the monitor you
+    pin, and anchor to the game's monitor on "All Monitors" instead of
+    chasing whatever window you click; vibrance/hue apply to the pinned
+    monitor only.
+  - Pinned-monitor startup fix (vibrance no longer flashes on all
+    monitors at launch); a monitor plugged in after launch restores its
+    original gamma on exit / Alt-Tab.
+
+  Input & hotkeys:
+  - No input freeze on Alt-Tab and no "stuck" mouse button -- the
+    keyboard/mouse hooks run on their own thread; the held-click macro
+    path was hardened too.
+  - Fixed a system-wide stuck Shift with Autorun running (symmetric
+    swallow so key-repeat can't latch Shift).
+  - Modifier + mouse bindings work (e.g. "Ctrl + Wheel up", "Shift+MB4").
+  - Global On/Off key is swallowed on every edge and no longer leaks to
+    the game or other apps.
+  - While a rebind field is waiting, hotkeys/macros pause so the key you
+    press is captured cleanly instead of firing.
+  - Autorun: crouch (C) is no longer blocked after you take over a
+    sprint with W; tapping C now slides and keeps running.
+  - Number fields reject letters and other non-numeric input.
+  - Crosshair outline thickness is adjustable (1-5), separate from the
+    outline color. Every slider takes the mouse wheel and has a type-in
+    field; an "Advanced" toggle hides the millisecond-timing fields.
+
+  Map Scanner:
+  - Verified 100% accurate across resolutions and aspect ratios
+    (16:9, 16:10, ultrawide, 2560x1600, etc.).
+  - A map with no condition shows just its name (no redundant "Normal").
+  - Evac alarm: plays its own audible tone (independent of your Windows
+    sound scheme), optional repeat, color-coded toast, re-arms per evac
+    point, and stays silent whenever the scanner overlay is hidden.
+
+  Reliability & polish:
+  - Full code-review stability pass across input hooks, audio device
+    switching, macro injection and the map scanner.
+  - Settings backup now actually recovers a corrupted config instead of
+    resetting to defaults.
+  - Audio device switch no longer crashes voice apps (game/media only by
+    default; rapid presses handled cleanly).
+  - License: activation unlocks Pro live (no restart); the saved license
+    persists even if the store omits the email.
+  - Lower-overhead Auto-Brightness sampling (reuses one GDI surface
+    across all five zones); the "Center" zone weight now applies to the
+    actual center zone.
+  - Sharper app icon at small sizes (Task Manager, Explorer, title bar).
+  - Right-click the version line to copy full system info for bug
+    reports; the version line flags when an update is available.
   - Fixed: re-running the Setup Wizard from an open Settings window is no
     longer overwritten by the dialog's next Apply.
 
