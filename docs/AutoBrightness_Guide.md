@@ -106,7 +106,7 @@ A: Your Dark and Bright profiles are too far apart, or your two calibration capt
 A: Lower that corner's zone weight to 0. The center + remaining three corners will carry the sampling.
 
 **Q: I want it to react faster / slower.**
-A: The sample rate is fixed at 1 Hz; the interpolation is direct (no smoothing curve). For a faster reaction, raise the Center weight (more dominated by the center which usually changes first). For slower, lower Center to 1.
+A: The sample rate defaults to 1 Hz (configurable down to 5 Hz / 200 ms); the interpolation is direct (no smoothing curve), so a change applies on the next tick. For a faster reaction, lower the sample interval and/or raise the Center weight (the center usually changes first). For slower, lower Center back to 1.
 
 **Q: Auto-Brightness fights my Alt-Tab Auto-Switch profile.**
 A: Auto-Brightness only runs while the configured game is in the foreground. If you have a per-game color profile in Game Profiles AND Auto-Brightness enabled, Auto-Brightness wins (it pushes interpolated values every second; the per-game profile is the static base before interpolation kicks in).

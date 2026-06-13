@@ -49,7 +49,7 @@ PRO FEATURES (€5.49 one-time)
   - Audio Ducking: hold mute key 600ms to reduce game audio to a
     set percentage. Short press still mutes/unmutes as before.
   - Map Scanner: hold M on the in-game map to automatically
-    scan all evacuation timers via OCR. Live color-coded
+    read all evacuation timers locally on your PC. Live color-coded
     countdown overlay directly on your screen.
   - Evac Alarm: red toast + sound when a timer drops below a
     configurable threshold (minutes + seconds). Configured
@@ -75,8 +75,9 @@ PRO FEATURES (€5.49 one-time)
     startup and restored when you exit
   - QuickSelect: press a key to automatically use a quick-wheel item
     (Q-hold → slot → LMB hold → H to free hand). 8 configurable slots
-    (slots 7–8 via mouse movement), 6 LMB timer presets. H-key bindable
-    to MB3/4/5. Apply button in settings. [PRO]
+    (slots 7–10 via mouse movement, 3–6 by number key), per-slot LMB
+    hold time in milliseconds. H-key bindable to MB3/4/5. Apply button
+    in settings. [PRO]
   - Offline license: no internet required after activation
 
 PROFILES (Default)
@@ -302,8 +303,8 @@ AUDIO OUTPUT SWITCHER (Pro) — NEW in V1.0
 
 MAP SCANNER (Pro)
   Hold M while viewing the in-game map. BrightRaider automatically
-  zooms out, scans all evacuation timer regions via Windows built-in
-  OCR, and shows a live countdown overlay on your screen.
+  zooms out, reads all evacuation timer regions locally on your PC,
+  and shows a live countdown overlay on your screen.
 
   Supported maps:
     Buried City, Stella Montis, Space Port, Blue Gate, Damm, Riven Tides
@@ -371,18 +372,18 @@ QUICKSELECT (Pro)
     1. Right-click tray -> Settings -> QuickSelect... [PRO]
     2. Check "Enable QuickSelect"
     3. Click a bind button and press your desired trigger key for each slot
-    4. Set the wheel slot number (1-9, matching your in-game slot assignment)
-    5. Choose an LMB timer matching your item type (see presets below)
+    4. Set the wheel slot number (1-10, matching your in-game slot assignment)
+    5. Type the LMB hold time in ms matching your item type (see values below)
     6. Enable H-key per slot if you want the hand freed after use
     7. Click OK
 
-  LMB TIMER PRESETS (how long Left Mouse Button is held):
-    T1  1150ms  —  Adrenalin Syringe
-    T2  1650ms  —  Herb Bandage / Bandage
-    T3  2150ms  —  Shield Charger
-    T4  4150ms  —  Vita Syringe
-    T5  5150ms  —  Instant Shield Charger
-    T6  custom  —  set your own value (default 1000ms, max 8000ms)
+  RECOMMENDED LMB HOLD TIMES (typed directly per slot, in ms):
+    Adrenaline Syringe        1300
+    Herb Bandage / Bandage    1800
+    Shield Charger            2300
+    Vita Syringe              4300
+    Instant Shield Charger    5300
+    (If an item is only partially used, add 100-200 ms.)
 
   CONFIGURATION OPTIONS:
     Toggle Key     — pause/resume QuickSelect (default: Numpad Minus)
@@ -391,19 +392,20 @@ QUICKSELECT (Pro)
     Q-Hold         — how long Q is held before slot selection (50-2000ms)
     Active (✓)     — enable/disable each slot individually
     Trigger key    — the key you press to trigger this slot
-    Slot           — which wheel slot to select (1-9)
-    Timer          — which LMB duration preset to use for this slot
+    Slot           — which wheel slot to select (1-10)
+    Timer          — LMB hold time in milliseconds for this slot
     H              — whether to press H after item use for this slot
 
   TIPS:
     - Test with a low-value item first before using in-game.
-    - If the item is only partially used, increase the LMB timer (T+1 or T+2).
+    - If the item is only partially used, increase the LMB hold time by 100-200 ms.
     - If the wheel closes too fast, increase Q-Hold by 50ms increments.
     - Toggle QuickSelect off (toggle key) when typing in chat to avoid
       accidentally triggering slots.
     - The Arrow version uses Pos1 (Home) as the toggle key by default.
-    - Slots 7–8 use mouse movement: Q is held, cursor moves to the wheel
+    - Slots 7–10 use mouse movement: Q is held, cursor moves to the wheel
       position, Q is released. No key press needed for slot selection.
+      Slots 3–6 are selected by their number key (immune to mouse movement).
     - H-Key can be bound to MB3, MB4, or MB5 in addition to keyboard keys.
     - Apply button saves settings without closing the dialog.
     - After pressing H to cancel an item mid-use, wait a moment before
@@ -641,7 +643,7 @@ PRO FUNKTIONEN (5,49 EUR einmalig)
     einen einstellbaren Prozentsatz zu reduzieren. Kurzer Druck
     schaltet wie gewohnt stumm/laut.
   - Map Scanner: M auf der Karte gedrueckt halten → alle
-    Evakuierungs-Timer werden automatisch per OCR ausgelesen.
+    Evakuierungs-Timer werden automatisch lokal auf deinem PC ausgelesen.
     Farbkodierter Live-Countdown direkt auf dem Bildschirm.
   - Evac-Alarm: roter Toast + Sound wenn ein Timer unter den
     Schwellwert faellt. Schwellwert in Min + Sek einstellbar.
@@ -663,9 +665,9 @@ PRO FUNKTIONEN (5,49 EUR einmalig)
     gespeichert und beim Beenden wiederhergestellt
   - QuickSelect: Taste druecken → Item automatisch nutzen
     (Q halten → Slot → LMB halten → H fuer freie Hand).
-    8 Slots (Slots 7–8 per Mausbewegung), 6 LMB-Timer-
-    Voreinstellungen. H-Taste auch mit MB3/4/5 belegbar.
-    Apply-Schaltflaeche in den Einstellungen. [PRO]
+    8 Slots (Slots 7–10 per Mausbewegung, 3–6 per Zifferntaste),
+    LMB-Haltezeit in Millisekunden pro Slot. H-Taste auch mit
+    MB3/4/5 belegbar. Apply-Schaltflaeche in den Einstellungen. [PRO]
   - Offline-Lizenz: nach Aktivierung kein Internet noetig
 
 PROFILE (Standard)
@@ -870,8 +872,8 @@ BACKGROUND MUTE (Pro) — NEU in V1.0
 
 MAP SCANNER (Pro)
   M auf der Karte gedrückt halten. BrightRaider zoomt
-  automatisch heraus, scannt alle Evakuierungspunkte per
-  Windows-OCR und zeigt einen Live-Countdown auf dem Bildschirm.
+  automatisch heraus, liest alle Evakuierungspunkte lokal
+  auf deinem PC aus und zeigt einen Live-Countdown auf dem Bildschirm.
 
   Unterstuetzte Karten:
     Buried City, Stella Montis, Space Port, Blue Gate, Damm, Riven Tides
@@ -935,8 +937,9 @@ QUICKSELECT (Pro)
     - Rad schliesst zu frueh? Q-Haltezeit um 50ms erhoehen.
     - QuickSelect per Toggle-Taste pausieren wenn du in der Lobby
       oder im Chat tipps.
-    - Slots 7–8 nutzen Mausbewegung: Q wird gehalten, Cursor faehrt auf
+    - Slots 7–10 nutzen Mausbewegung: Q wird gehalten, Cursor faehrt auf
       die Rad-Position, Q wird losgelassen. Kein Tastendruck noetig.
+      Slots 3–6 werden per Zifferntaste gewaehlt (immun gegen Mausbewegung).
     - H-Taste kann auch mit MB3, MB4 oder MB5 belegt werden.
     - Apply-Schaltflaeche speichert Einstellungen ohne Dialog zu schliessen.
     - Nach H-Druck (Holster) waehrend einer Nutzung kurz warten bevor

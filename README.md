@@ -63,7 +63,7 @@ Two hero shots — the rest is one click away.
 
 <img src="assets/screenshots/v1.0/settings-crosshair.png" alt="Crosshair tab" width="780">
 
-**QuickSelect (Pro).** 8 slots, 8 LMB timer presets, modifier-key bindings, MB3/4/5 + wheel triggers.
+**QuickSelect (Pro).** 8 slots, per-slot LMB hold time (ms), modifier-key bindings, MB3/4/5 + wheel triggers.
 
 <img src="assets/screenshots/v1.0/settings-quickselect.png" alt="QuickSelect tab" width="780">
 
@@ -124,7 +124,7 @@ BrightRaider uses standard Windows display APIs — the same way your NVIDIA Con
 - **Map Scanner** — long-press M on the in-game map → ~100 % OCR hit rate, detects all 13 current map conditions (Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, and the base no-event state). Color-coded timer overlay with per-state thresholds, configurable Evac alarm. 📖 [Setup Guide](docs/MapScanner_Guide.md)
 - **Auto-Brightness** — 5-zone screen sampling smoothly interpolates Gamma/Contrast/Vibrance across enabled profiles. Calibration Wizard sets it up in two clicks. Optional debug overlay with live zone values. 📖 [Setup Guide](docs/AutoBrightness_Guide.md)
 - **Footstep Booster** *(new in V1.0)* — per-process audio limiter so you can crank in-game volume to hear footsteps without going deaf on gunshots. Configurable threshold / attack / release. Per-game only — Discord, music, browser stay untouched. 📖 [Setup Guide](docs/FootstepBooster_Guide.md)
-- **QuickSelect** — single keypress automatically uses an item from your quick-use wheel: hold Q → select slot → release Q → hold LMB → press H. 8 independent slots, 8 LMB timer presets, modifier-key bindings (`Ctrl+5`, `Shift+Numpad 3`), MB3/4/5 + scroll-wheel triggers. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
+- **QuickSelect** — single keypress automatically uses an item from your quick-use wheel: hold Q → select slot → release Q → hold LMB → press H. 8 independent slots, per-slot LMB hold time in milliseconds, modifier-key bindings (`Ctrl+5`, `Shift+Numpad 3`), MB3/4/5 + scroll-wheel triggers. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
 - **QuickSave** — single keypress drags an item between inventory slots and Safe Pocket. Handles open → drag → close. 5 presets, configurable slots, optional toggle-direction. 📖 [Setup Guide](docs/QuickSave_Guide.md)
 - **Crosshair Overlay** — click-through crosshair directly on screen. 6 styles (Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap), custom color + outline (color **and** thickness), size 4–50 px. Same overlay mechanism as Discord and GeForce Experience.
 - **Background AutoMute** *(new in V1.0)* — the game's Windows audio session is muted automatically when you Alt-Tab out, unmuted on focus return. Per-process — your music + Discord keep playing.
@@ -232,7 +232,7 @@ BrightRaider does **NOT**:
 - Hook into the game
 - Read game data or game memory
 
-The Map Scanner takes a **screenshot of your screen** and reads it with Windows built-in OCR — the same as taking a photo of your monitor. No game files, no game memory, no game process is accessed.
+The Map Scanner takes a **screenshot of your screen** and reads it on your PC — the same as taking a photo of your monitor. No game files, no game memory, no game process is accessed.
 
 BrightRaider **ONLY** uses:
 - Windows GDI — same as your monitor settings
@@ -270,7 +270,7 @@ Deep-dives for the more advanced features:
 - 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all 13 conditions), threshold colors, Evac alarm setup
 - 🔆 **[Auto-Brightness Guide](docs/AutoBrightness_Guide.md)** — how the 5-zone sampler works, Calibration Wizard walkthrough, zone-weight tuning, debug overlay
 - 🔊 **[Footstep Booster Guide](docs/FootstepBooster_Guide.md)** — threshold / attack / release tuning, recommended starting values, troubleshooting
-- ⚡ **[QuickSelect Guide](docs/QuickSelect_Guide.md)** — LMB timer presets, modifier-key bindings, slot 7/8 mouse-movement path
+- ⚡ **[QuickSelect Guide](docs/QuickSelect_Guide.md)** — per-slot LMB hold time, modifier-key bindings, slots 7–10 mouse-movement path
 - 💾 **[QuickSave Guide](docs/QuickSave_Guide.md)** — 5 drag presets, toggle direction, timing controls
 
 ## Uninstall
@@ -311,7 +311,7 @@ No. BrightRaider V1.0 replaces it completely. Set your vibrance per game in Sett
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst. Entwickelt für Arc Raiders Spieler, die in dunklen Höhlen und Schatten nichts sehen — funktioniert aber mit jedem Spiel.
 
-Eine EXE, keine Abhängigkeiten, ~290 KB. Funktioniert mit jeder Tastatur — Numpad, TKL oder komplett selbst belegt.
+Eine EXE, keine Abhängigkeiten, ~21 MB (Native AOT — keine .NET-Runtime-Installation nötig). Funktioniert mit jeder Tastatur — Numpad, TKL oder komplett selbst belegt.
 
 ## Warum BrightRaider?
 
@@ -340,9 +340,9 @@ BrightRaider nutzt Standard-Windows-APIs — genau wie dein NVIDIA Control Panel
 
 ### Pro (5,49 €)
 - **QuickSave** — ein Tastendruck zieht ein Item aus dem Inventar in die Sicherheitstasche (oder zurück). Alles automatisch: Inventar öffnen → ziehen → schließen. 5 unabhängige Presets, Slots konfigurierbar. 📖 [Anleitung](docs/QuickSave_Guide.md)
-- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Q halten → Slot per Maus wählen → Q loslassen → LMB halten → H drücken. 8 Slots, 6 LMB-Timer-Presets, alle Tasten frei belegbar. 📖 [Anleitung](docs/QuickSelect_Guide.md)
+- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Q halten → Slot wählen → Q loslassen → LMB halten → H drücken. 8 Slots, LMB-Haltezeit in Millisekunden pro Slot, alle Tasten frei belegbar. 📖 [Anleitung](docs/QuickSelect_Guide.md)
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
-- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Screenshot → Windows-OCR → farbkodierter Live-Countdown. Erkennt aktive Events (Nacht, Hurrikan, Elektr. Sturm). Unterstützt Buried City, Stella Montis, Space Port, Blue Gate, Damm und Riven Tides.
+- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Screenshot → lokale Auswertung auf deinem PC → farbkodierter Live-Countdown. Erkennt aktive Events (Nacht, Hurrikan, Elektr. Sturm). Unterstützt Buried City, Stella Montis, Space Port, Blue Gate, Damm und Riven Tides.
 - **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt.
 - **Autorun** — kurz CapsLock drücken um die Vorwärtstaste zu halten. 600ms halten für Tap-Modus (ideal für Looting Mk. 3). Vorwärtstaste frei belegbar — funktioniert mit QWERTZ, AZERTY usw.
 - **Crosshair-Overlay** — Click-through Fadenkreuz direkt auf dem Bildschirm. 6 Stile. EAC-sicher.
@@ -387,7 +387,7 @@ Beim ersten Start erscheint ein kurzer Einrichtungsassistent: Tastaturtyp wähle
 
 ## Anti-Cheat Sicherheit
 
-BrightRaider verändert **KEINE** Spieldateien oder den Spielspeicher. Der Map Scanner macht einen Screenshot und liest ihn per Windows-OCR aus. Keine Injektion, kein Spielzugriff.
+BrightRaider verändert **KEINE** Spieldateien oder den Spielspeicher. Der Map Scanner macht einen Screenshot und liest ihn lokal auf deinem PC aus. Keine Injektion, kein Spielzugriff.
 
 BrightRaider nutzt **NUR** Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie das NVIDIA Control Panel oder AMD Radeon Software.
 

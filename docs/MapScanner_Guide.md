@@ -113,7 +113,7 @@ The toggle key is rebindable in **Settings → Hotkeys**.
 ## Tips & Troubleshooting
 
 **Q: The scan returns no timers / detects the wrong map.**
-A: Make sure you're at the default map zoom. Don't pan or zoom before holding <kbd>M</kbd> — BrightRaider scrolls the map out itself. If your monitor has a non-standard aspect ratio, the timer rectangles may need adjustment (open a GitHub issue with a screenshot).
+A: Make sure you're at the default map zoom. Don't pan or zoom before holding <kbd>M</kbd> — BrightRaider scrolls the map out itself. Reading is verified accurate across resolutions and aspect ratios (16:9, 16:10, ultrawide); if you ever do see a misread on an unusual setup, a screenshot of your map screen on a GitHub issue is the most useful thing to send.
 
 **Q: A timer reads `--:--` or jumps around.**
 A: The template matcher couldn't read those digits. Trigger another scan — usually OCR catches them on the next pass. If a specific digit always misreads, set the environment variable `BRIGHTRAIDER_DUMP=1` before launching BrightRaider — failed regions are dumped to `%APPDATA%\BrightRaider\debug\` as PNGs for diagnosis.

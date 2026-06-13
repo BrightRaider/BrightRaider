@@ -99,7 +99,7 @@ directly into the slot's **Timer (ms)** field — these are solid starting point
 
 Slots 4–8 are disabled by default — they come pre-filled so you only need to bind a key and check Active.
 
-> **Note:** Slots 7 and 8 use mouse movement to select the wheel position while Q is held — no additional key press is required for slot selection.
+> **Note:** Slots 7–10 use mouse movement to select the wheel position while Q is held — no additional key press is required for slot selection. Slots 3–6 are selected by their in-game number key (mouse-immune), so moving the mouse during the select can't pull them off-target.
 
 ---
 
@@ -158,7 +158,7 @@ A: Increase Q-Hold (try +50ms). Default is 200ms; some systems need 250–350ms.
 A: Make sure QuickSelect is enabled and the slot is active (✓ checked). The key is suppressed only when active.
 
 **Q: The wrong slot is being selected.**  
-A: Check the Wheel number — it must match your in-game quick-wheel assignment. Slots are numbered 1–10 (3–8 = quick-deploy, 9–10 = mouse-only).
+A: Check the Wheel number — it must match your in-game quick-wheel assignment. Slots are numbered 1–10 (1–2 = weapons, 3–6 = number-key wheel slots, 7–10 = mouse-only).
 
 **Q: I don't want to press H every time.**  
 A: Uncheck the H box for that slot in the settings dialog.
