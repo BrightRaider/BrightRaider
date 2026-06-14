@@ -185,6 +185,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Slide and keep running with Autorun** — tapping C during an Autorun sprint now slides and continues the run, exactly like a manual "sprint, tap crouch" slide. Previously a slide always cancelled Autorun. (S, the Autorun key or pressing W still stop it as before.)
 - **Number fields reject letters** — every timing / value field now ignores letters and other non-numeric keystrokes instead of accepting them and going blank.
 - **Only profiles 1–3 active by default** — the empty Pro profile slots 4–9 now ship disabled, so activating Pro no longer fills your tray with blank "Profile 4…9" entries. Enable a slot from the Display tab once you've set it up. (Existing configs are unchanged.)
+- **Hotkey release polish** — the Autorun key and the global on/off key now release symmetrically in two corner cases (the Autorun key on the free tier, and a global-toggle key bound together with a modifier), so neither can leave a key "stuck" in another app.
 
 ## System requirements
 
@@ -195,7 +196,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              EA8596629B7D65EC18B8F771B7F860F0F5A1D85A6766F1ACB15B3721A2B2412A
+BrightRaider.exe              DC10D47BAC56CCEBCE34595FE6A18E25B2DB73F1DDC9A6A2EEA24CC84D7AE0B9
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
