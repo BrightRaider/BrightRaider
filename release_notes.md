@@ -186,6 +186,10 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Number fields reject letters** — every timing / value field now ignores letters and other non-numeric keystrokes instead of accepting them and going blank.
 - **Only profiles 1–3 active by default** — the empty Pro profile slots 4–9 now ship disabled, so activating Pro no longer fills your tray with blank "Profile 4…9" entries. Enable a slot from the Display tab once you've set it up. (Existing configs are unchanged.)
 - **Hotkey release polish** — the Autorun key and the global on/off key now release symmetrically in two corner cases (the Autorun key on the free tier, and a global-toggle key bound together with a modifier), so neither can leave a key "stuck" in another app.
+- **NEW: Shadow Boost** — lift the dark areas so you can see into shadows and dim interiors without blowing out the bright parts. A new slider on each Display profile, and a per-game override on the Game Profiles tab. 0 = off; your image is untouched until you raise it.
+- **Activate a profile from Settings** — the Display tab now has an **Activate** toggle per profile: switch the live display to it without reaching for the tray, press again to set the display back to normal. The checkbox in the profile list is now purely enable/disable (tray + hotkeys).
+- **Process Optimizer: no more log spam + clearer feedback** — when a game runs elevated (anti-cheat / launcher-as-admin) and can't be optimized, BrightRaider now tells you once instead of retrying every second and filling the log. A **"Restart as administrator"** button on the Performance tab lets those games be optimized too.
+- **Small polish** — Auto-Brightness now explains the interval/FPS trade-off inline, and the Settings window's minimum height was raised so nothing gets clipped.
 
 ## System requirements
 
@@ -196,7 +200,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              DC10D47BAC56CCEBCE34595FE6A18E25B2DB73F1DDC9A6A2EEA24CC84D7AE0B9
+BrightRaider.exe              238B026E0A96D5EA5AB57D06027797AB13E9691794F1F80FAC387F73C889D63B
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
