@@ -184,6 +184,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Crouch no longer blocked after taking over from Autorun** — pressing W during an Autorun sprint hands control over seamlessly as before, but the game no longer thinks Shift is still held afterwards (which silently blocked crouch until you tapped Shift once).
 - **Slide and keep running with Autorun** — tapping C during an Autorun sprint now slides and continues the run, exactly like a manual "sprint, tap crouch" slide. Previously a slide always cancelled Autorun. (S, the Autorun key or pressing W still stop it as before.)
 - **Number fields reject letters** — every timing / value field now ignores letters and other non-numeric keystrokes instead of accepting them and going blank.
+- **Only profiles 1–3 active by default** — the empty Pro profile slots 4–9 now ship disabled, so activating Pro no longer fills your tray with blank "Profile 4…9" entries. Enable a slot from the Display tab once you've set it up. (Existing configs are unchanged.)
 
 ## System requirements
 
@@ -194,7 +195,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              6A4F28F9B98DD70C4EDB3A4AB4E264C0864B95D036105DBF76876DCFD88481EB
+BrightRaider.exe              EA8596629B7D65EC18B8F771B7F860F0F5A1D85A6766F1ACB15B3721A2B2412A
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
