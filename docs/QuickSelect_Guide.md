@@ -191,6 +191,19 @@ to see which number maps to which item slot, then set the Wheel field accordingl
 
 ---
 
+## Anti-Cheat & Detection
+
+QuickSelect sends input to the game, so unlike BrightRaider's display features it isn't purely passive — worth knowing if you play a title with kernel-level / behavioural anti-cheat (Arc Raiders now runs EAC + Denuvo Anti-Cheat + Anybrain). BrightRaider uses **no kernel driver and no injection**, but automated input is something behavioural detection can in principle flag, like any input-automation tool.
+
+The slot type matters here:
+
+- **Number-key slots (3–6)** are selected by their in-game digit — **no cursor movement at all**. Simulated mouse movement is the strongest thing behavioural detection keys on, so a keyboard-only selection is a weaker signal.
+- **Mouse slots (7–10)** position the cursor on the wheel for you — that *is* simulated mouse movement, the more exposed path. (AZERTY layouts fall back to the mouse path for 3–6 too, since the digits need Shift in-game.)
+
+If you want to keep your exposure as low as possible in an anti-cheat title, prefer the number-key slots (3–6). As always these features are optional — none of the display, FPS, overlay or Map Scanner features send any input to the game. Use input automation at your own discretion.
+
+---
+
 ## Safety Note
 
 QuickSelect only intercepts the configured trigger keys **while it is enabled and active**.  
