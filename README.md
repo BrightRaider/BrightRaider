@@ -102,8 +102,6 @@ BrightRaider's display and colour features use standard Windows display APIs —
 
 > **VibranceGUI is no longer needed.** BrightRaider V1.0 auto-switches vibrance and FPS limits per game as you alt-tab — everything VibranceGUI does, in one place. You can uninstall it.
 
-> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
-
 ## Features
 
 ### Free
@@ -162,6 +160,8 @@ A short setup wizard appears on first launch: choose your keyboard type (numpad 
 > **Previously released as two separate files** (`BrightRaider.exe` for numpad and `BrightRaider_Arrows.exe` for TKL keyboards). V1.0 combines both into one EXE with fully rebindable hotkeys.
 
 Just download and run. No installation needed.
+
+> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/0855b16a85026f926ef44765c12513d8a78b60239dc53ff3c24f54ee74ae2b33) — Microsoft Defender shows it clean; only a couple of the ~68 engines flag it heuristically. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
 
 ## Quick Start
 

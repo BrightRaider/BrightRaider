@@ -1,8 +1,8 @@
-# BrightRaider V1.0.0 — Pre-Release
+# BrightRaider V1.0.0
 
-> 🎉 **Pre-release intro price:** V1.0 is in its final testing phase. For as long as it's in pre-release it stays at the V9.x Pro price of **€5.49** — buy now and you keep that price forever. Once every open report is closed and V1.0 ships as the final build, the price moves to **€8.99** to reflect the new feature set (Footstep Booster, Background AutoMute, Audio Output Switcher, Process Optimizer, plus the upgraded Map Scanner / Auto-Brightness / QuickSelect / QuickSave).
+> 🎉 **V1.0 is here — the final build.** Every feature is in, and every report from the pre-release has been worked through. Pro is a one-time **€5.49** — no subscription, no time limit.
 >
-> **V9.x license holders:** your existing key works on V1.0 at no extra cost — just re-enter it once (see upgrade note below). The price change does not affect you either way.
+> **V9.x license holders:** your existing key works on V1.0 at no extra cost — just re-enter it once (see upgrade note below).
 
 **Goodbye VibranceGUI. Hello one tool that does it all.**
 
@@ -43,7 +43,7 @@ VibranceGUI was free, single-purpose, and unmaintained. BrightRaider V1.0 picks 
 | **Autorun** (CapsLock → auto-W + Sprint) | ❌ | ❌ | ✅ |
 | **Audio Ducking** (hold-to-dim) | ❌ | ❌ | ✅ |
 
-Everything in the **Free** column ships with the EXE. No license, no nag screen, no time limit. **Pro** is a one-time €5.49 (€8.99 after launch week) — see Pro feature details below.
+Everything in the **Free** column ships with the EXE. No license, no nag screen, no time limit. **Pro** is a one-time €5.49 — see Pro feature details below.
 
 ---
 
@@ -84,7 +84,7 @@ For users who want the full Arc Raiders / power-user toolbox.
 
 ### ⬆️ Significantly improved in V1.0
 
-- **Map Scanner** (Arc Raiders) — now **~100 % OCR hit rate** with the new template-matching pipeline (replaces WinRT OCR). Detects all **13 current map conditions** including Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, and the base no-event state. Per-state threshold colors, configurable overlay background opacity, audible Evac alarm with separate min/sec threshold.
+- **Map Scanner** (Arc Raiders) — now **~100 % OCR hit rate** with the new template-matching pipeline (replaces WinRT OCR). Detects **13 map conditions** including Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, and the base no-event state. Per-state threshold colors, configurable overlay background opacity, audible Evac alarm with separate min/sec threshold.
 - **Auto-Brightness** — Calibration Wizard streamlined to two captures (darkest / brightest), Profile ranges distribute automatically. 5-zone weighted screen sampler with per-zone weights and a debug overlay showing the actual sample rectangles in real time.
 - **QuickSelect** — per-slot **LMB hold time in milliseconds** (the old preset table is gone), per-slot Use / Q / Holster toggles, MB3/4/5 + scroll-wheel rebind, and a mouse-movement slot path for the mouse-only wheel positions (7–10).
 - **QuickSave** — 5 drag presets with full timing controls, toggle-direction per preset, Tab-key rebindable, MB / wheel triggers supported.
@@ -176,7 +176,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Settings backup now actually recovers** — if the config file is ever corrupted (crash, power loss mid-write), BrightRaider now restores your settings from its automatic backup instead of silently resetting everything to defaults.
 - **Newly connected monitors get their colors back** — a monitor plugged in after the first launch now correctly returns to its original gamma on Alt-Tab-out and on exit, instead of staying tinted until reboot.
 - **Pinned-monitor startup fix** — with a specific monitor selected, vibrance/hue no longer briefly land on *all* monitors during startup.
-- **Stability pass from a full code review** — additional hardening across input hooks, audio device switching, macro injection and the map scanner.
+- **Stability pass from a full code review** — additional hardening across input hooks, audio device switching and session handling, macro injection, license handling, the file-picker dialog and the map scanner.
 - **NEW: HDR toggle hotkey (Free)** — flip Windows HDR on/off with one key instead of digging through Windows Settings every time (especially painful on Windows 10). Bind it on the Hotkeys tab ("HDR on/off", unbound by default), works on the pinned monitor or all HDR-capable ones. The short black flash when it switches is Windows changing the display mode — your color profile is re-applied automatically right after.
 - **Sharper icon at small sizes** — the app icon now stays recognizable in Task Manager, Explorer detail view and window title bars instead of collapsing into a dark blob at 16px.
 - **Quick Select is reliable again while you're moving the mouse** — the wheel slots that have a number key (3–6: bandage / shield / adrenaline / grenade) are now selected by that key, like in 9.6.1, so moving the mouse mid-fight no longer pulls the selection onto the wrong slot. (Mouse-only wheel positions and AZERTY layouts use the cursor with a tighter hold.) Also fixes the wheel flicking open and closed on a stutter frame. (#66)
@@ -190,6 +190,17 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 - **Activate a profile from Settings** — the Display tab now has an **Activate** toggle per profile: switch the live display to it without reaching for the tray, press again to set the display back to normal. The checkbox in the profile list is now purely enable/disable (tray + hotkeys).
 - **Process Optimizer: no more log spam + clearer feedback** — when a game runs elevated (anti-cheat / launcher-as-admin) and can't be optimized, BrightRaider now tells you once instead of retrying every second and filling the log. A **"Restart as administrator"** button on the Performance tab lets those games be optimized too.
 - **Small polish** — Auto-Brightness now explains the interval/FPS trade-off inline, and the Settings window's minimum height was raised so nothing gets clipped.
+- **Map Scanner — reliable on low timers** — evac timers down to single-digit minutes (e.g. `4:02`) on busy maps (drawn route lines, overlapping event boxes) are now read correctly instead of occasionally showing `---` or a misread. The reader anchors on the colon and ignores stray marks on the map. *(#66)*
+- **QuickSelect off by default** — QuickSelect now ships disabled (your three heal slots stay pre-configured); switch it on from the QuickSelect tab whenever you want it. Existing setups are unchanged.
+- **QuickSave — input compatibility mode (opt-in)** — if a game doesn't register QuickSave's default inventory drag, launching BrightRaider with `--qs-sendinput` (or setting the `BRIGHTRAIDER_QS_SENDINPUT=1` environment variable) routes its clicks through a lower-level input path. Off by default — most players never need it.
+
+## 🛡️ If Windows Defender or SmartScreen flags it
+
+BrightRaider is an unsigned single-EXE, and that format can trip Defender's heuristic / SmartScreen reputation — it's a **known false positive**, not a real detection.
+
+- **Update:** I submitted this exact build to Microsoft for analysis — their verdict: *"Our scanners show no positive detection."* Microsoft Defender does not flag this build (confirmed both cloud and client side).
+- Verify it yourself — **VirusTotal scan of this build** (Microsoft Defender shows it clean; only a couple of ~68 engines heuristically flag it): https://www.virustotal.com/gui/file/0855b16a85026f926ef44765c12513d8a78b60239dc53ff3c24f54ee74ae2b33
+- If Windows blocks it: **More info → Run anyway**, or restore it from **Windows Security → Protection history**.
 
 ## System requirements
 
@@ -200,7 +211,7 @@ Thanks to everyone testing and sending feedback — here's what changed since th
 ## SHA-256
 
 ```
-BrightRaider.exe              238B026E0A96D5EA5AB57D06027797AB13E9691794F1F80FAC387F73C889D63B
+BrightRaider.exe              0855B16A85026F926EF44765C12513D8A78B60239DC53FF3C24F54EE74AE2B33
 ```
 
 Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
@@ -226,5 +237,7 @@ Read directly on GitHub (no download needed):
 On first launch the EXE unpacks its runtime into `%LOCALAPPDATA%\BrightRaider\` and starts the app from there. Subsequent launches skip unpacking and start near-instantly — feels like any single-EXE tool.
 
 Want to fully uninstall? Delete the EXE and the folder `%LOCALAPPDATA%\BrightRaider\`.
+
+**Troubleshooting (optional):** the `BrightRaider_tools.zip` asset contains two small launchers — one starts BrightRaider with Map Scanner diagnostics (writes a scan dump I can read), the other with QuickSave's alternate input path for games that ignore the default drag. Drop them next to `BrightRaider.exe` only if you're troubleshooting; normal use needs just the EXE.
 
 Documentation lives online — see the Documentation section below for clickable links.
