@@ -46,10 +46,43 @@
     change it.
   - The global hotkey-toggle binding is shown on the App tab.
   - Cleaner QuickSave slot list (dropped the redundant "#" column).
-  - Many under-the-hood reliability fixes from three rounds of code review:
-    safer restore of your FPS limit and display calibration on exit, macro
-    timing that no longer trips over Windows clock changes, and various race
-    fixes in hotkey handling, the evac countdown and startup/shutdown.
+  Fixed:
+  - The "Alt-Tab Auto-Switch" checkbox on the Game Profiles tab was ignored
+    when you pressed Apply (the App tab's copy won), and toggling it from the
+    tray while Settings was open got undone on Apply. Both work now.
+  - Game mute, audio ducking and the Footstep Booster only ever looked at your
+    DEFAULT playback device. If your game played on a different device — or
+    BrightRaider's own audio switcher had just changed the default — they
+    silently did nothing. They now find the game on any active output device.
+  - Audio ducking restored the game to 100 % volume instead of the level you
+    actually had. It now puts your own volume back.
+  - The Footstep Booster and audio ducking fought over the same volume: with
+    the Booster running, ducking was undone within a fraction of a second.
+    They now cooperate.
+  - The Process Optimizer now really does hand priority and CPU affinity back
+    when you Alt-Tab out or quit — as the manual has always described.
+  - Assigning a hotkey that clashes with the HDR toggle or the audio-device
+    key gave no warning at all, and the clashing key then did nothing. Those
+    two are now included in the conflict check.
+  - On some systems the first-launch admin prompt came back on EVERY start
+    (when another calibration tool had written its own value). It's a one-time
+    prompt again.
+  - The Auto-Brightness zone boxes were drawn in the wrong place on displays
+    with Windows scaling (125 % / 150 %), so they didn't mark the spots
+    actually being measured. They line up now, and they follow along when you
+    switch monitors.
+  - A stray timer overlay could reappear for a moment while BrightRaider was
+    closing.
+  - If you deleted your last game profile while the game was running, the
+    audio device never switched back.
+  - Much quieter debug log: BrightRaider no longer writes a line every time
+    ANY window on your PC gets focus.
+
+  - Many more under-the-hood reliability fixes from four rounds of code
+    review: safer restore of your FPS limit and display calibration on exit,
+    macro timing that no longer trips over Windows clock changes, hardened
+    handling of downloaded game packs, and various race fixes in hotkey
+    handling, the evac countdown and startup/shutdown.
 
   Everything from V1.0 carries over — settings, profiles and license are
   kept, no re-activation needed for this update.
