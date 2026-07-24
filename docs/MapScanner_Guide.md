@@ -50,6 +50,8 @@ Scanning takes ~1–2 seconds. The overlay refreshes from each fresh scan — lo
 | Locked Gate | Normal scan, event name displayed |
 | Launch Tower Loot | Normal scan, event name displayed |
 | Beachcombing | Normal scan, event name displayed |
+| Uncovered Caches | Normal scan, event name displayed *(new in V1.1)* |
+| Hidden Bunker (Space Port) | Marks 3 evac points active, rest CLOSED, hatches closed *(new in V1.1)* |
 
 The event name appears below the map name in the overlay.
 

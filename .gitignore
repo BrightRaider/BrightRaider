@@ -36,6 +36,8 @@ docs/WDSI_SUBMISSION.md
 build_aot.ps1
 # Single-EXE launcher packaging script (publish → zip → embed) — local only
 build_launcher.ps1
+# Tools-zip packaging script (zips .\tools → BrightRaider_tools.zip) — local only
+build_tools.ps1
 # App-icon generator (figure → multi-size .ico, BMP frames) — local only
 tools_make_icon.ps1
 

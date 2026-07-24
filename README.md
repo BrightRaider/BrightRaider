@@ -269,7 +269,7 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 
 ## Manual
 
-**📘 [Full Manual](docs/Manual.txt)** — English + German, every feature explained.
+**📘 [Full Manual](docs/Manual.md)** — English + German, every feature explained.
 
 ## Guides
 

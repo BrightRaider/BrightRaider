@@ -3,7 +3,59 @@
 ================================================================
 
 
-[ V1.0.0 ] - Pre-Release
+[ V1.1.0 ]
+
+  New in V1.1:
+  - Map Scanner now works with other games via downloadable data packs —
+    drop a game's pack into the packs folder and its maps, timers and
+    conditions are read the same way as Arc Raiders. (See the pack authoring
+    guide.)
+  - Map Scanner recognises more Arc Raiders map conditions, including
+    Uncovered Caches and Hidden Bunker (Spaceport). Hidden Bunker also
+    reduces the active evac points and marks the closed hatches.
+  - Per-game Auto-HDR: turn Windows HDR on automatically when a chosen game
+    launches, off again when it closes. Opt-in per game; Alt-Tabbing in and
+    out never flips HDR — it only switches on real game start/exit.
+  - New "Movement" tab: Autorun now lives in its own tab, separate from the
+    general hotkeys.
+  - QuickSave can now swap items to and from your backpack slots, not just
+    the Safe Pocket (Backpack 1-4).
+  - QuickSelect wheel: pick the target slot from a simple "Slot 1-10"
+    dropdown instead of typing a number.
+  - Arc Raiders features are now an optional module. A fresh install starts
+    as a pure display / FPS tool; enable the Arc Raiders module in the setup
+    wizard (or Settings -> App) to add the map scanner, QuickSelect,
+    QuickSave and Autorun helpers. Existing users keep it on. Free stays
+    free; Pro is unchanged.
+
+  - "Deactivate on this device" (Settings -> App, License): frees your
+    license's activation slot for this PC in one click, so you can move to
+    a new machine yourself — no support ticket needed.
+  - Color-conflict warning: if another tool that controls your display
+    colors is running (f.lux, Iris, Windows Night Light, ...), BrightRaider
+    now tells you at startup and on the Display tab. Those tools and
+    BrightRaider fight over the same gamma pipeline — this was the most
+    common cause of "my colors keep reverting".
+
+  Small fixes & polish:
+  - Notifications are now color-coded: green = good news (update
+    available), yellow = warning, red = risky mode active.
+  - Option to mute the QuickSelect / QuickSave confirmation toasts
+    (Settings -> App).
+  - The "Hotkeys enabled" toggle now stays in sync everywhere the moment you
+    change it.
+  - The global hotkey-toggle binding is shown on the App tab.
+  - Cleaner QuickSave slot list (dropped the redundant "#" column).
+  - Many under-the-hood reliability fixes from three rounds of code review:
+    safer restore of your FPS limit and display calibration on exit, macro
+    timing that no longer trips over Windows clock changes, and various race
+    fixes in hotkey handling, the evac countdown and startup/shutdown.
+
+  Everything from V1.0 carries over — settings, profiles and license are
+  kept, no re-activation needed for this update.
+
+
+[ V1.0.0 ]
 
   The V1.0 release. Major rewrite on .NET 9 + Native AOT + Avalonia UI.
   One EXE, no installer, no .NET runtime required.
