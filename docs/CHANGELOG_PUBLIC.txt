@@ -47,6 +47,9 @@
   - The global hotkey-toggle binding is shown on the App tab.
   - Cleaner QuickSave slot list (dropped the redundant "#" column).
   Fixed:
+  - QuickSave could stop working entirely if you had a cooldown set for a
+    preset — the trigger did nothing, whatever you rebound it to. (Found
+    during the V1.1 pre-release, never shipped in a stable build.)
   - The "Alt-Tab Auto-Switch" checkbox on the Game Profiles tab was ignored
     when you pressed Apply (the App tab's copy won), and toggling it from the
     tray while Settings was open got undone on Apply. Both work now.
