@@ -37,6 +37,16 @@
     BrightRaider fight over the same gamma pipeline — this was the most
     common cause of "my colors keep reverting".
 
+  - Autorun tap mode: new recommended timings. A recent Arc Raiders patch
+    nerfed the Looting Mk. 3 (Survivor) augment, and the old 990 / 169 ms
+    pair no longer got you anywhere. New defaults are 1300 ms interval /
+    160 ms press — you move forward again and regain some health. Existing
+    setups keep their own values (settings are never overwritten); set them
+    under Settings -> Movement -> Tap Interval, and BrightRaider reminds you
+    once after updating if you are still on the old pair. The nerf is still
+    harsh — taking "Crawl Before You Walk" (yellow skill tree, top middle)
+    is strongly recommended, crawling gets far faster with it.
+
   Small fixes & polish:
   - Notifications are now color-coded: green = good news (update
     available), yellow = warning, red = risky mode active.

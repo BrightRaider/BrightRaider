@@ -178,10 +178,18 @@ character moves (or sprints) forward automatically. While autorunning:
 | C        | Slide first (while moving), then stop                       |
 
 - **Sprint Mode** (*Movement → Mode: Sprint*) starts in sprint immediately.
-- **Tap Mode** (hold CapsLock 600 ms) pulses W: pressed briefly (default 169 ms),
-  then released (default 990 ms). Built for the **Looting Mk. 3 (Survivor)**
-  augment — during the pause your character is stationary and regens toward 75 %,
-  the brief tap keeps you moving. Configure under *Movement → Tap Interval…*.
+- **Tap Mode** (hold CapsLock 600 ms) pulses W: pressed briefly (default
+  **160 ms**), then released (default **1300 ms**). Built for the **Looting
+  Mk. 3 (Survivor)** augment — during the pause your character is stationary
+  and regenerates, the brief tap keeps you crawling forward. Configure under
+  *Movement → Tap Interval…*.
+
+  > **Retuned in V1.1.** A recent Arc Raiders patch nerfed the augment, and the
+  > old 990 / 169 pair stopped making progress. 1300 / 160 gets you moving
+  > *and* regenerating again. **Upgrading from V1.0?** Your saved values are
+  > kept — set them by hand under *Movement → Tap Interval…* if you want the
+  > new pair. The nerf still bites, so it's well worth taking **Crawl Before
+  > You Walk** (yellow skill tree, top middle) — crawling gets far faster.
 - **AZERTY:** enable *"Z = forward"* under Movement.
 
 ### Audio Ducking (Pro)
@@ -584,10 +592,19 @@ Charakter läuft (oder rennt) automatisch vorwärts. Während Autorun aktiv:
 | C        | Slide (während Bewegung), dann stoppen                       |
 
 - **Sprint-Modus** (*Movement → Modus: Sprint*) startet sofort im Sprint.
-- **Tap-Modus** (CapsLock 600 ms halten) tippt W: kurz gedrückt (Standard 169 ms),
-  dann losgelassen (Standard 990 ms). Gebaut fürs **Looting Mk. 3 (Survivor)**
-  Augment — in der Pause steht dein Charakter still und regeneriert Richtung 75 %,
-  der kurze Tipp bewegt dich weiter. Konfiguration: *Movement → Tap-Abstand…*.
+- **Tap-Modus** (CapsLock 600 ms halten) tippt W: kurz gedrückt (Standard
+  **160 ms**), dann losgelassen (Standard **1300 ms**). Gebaut fürs **Looting
+  Mk. 3 (Survivor)** Augment — in der Pause steht dein Charakter still und
+  regeneriert, der kurze Tipp hält dich am Kriechen. Konfiguration:
+  *Movement → Tap-Abstand…*.
+
+  > **Neu abgestimmt in V1.1.** Ein aktueller Arc-Raiders-Patch hat das Augment
+  > generft, und mit den alten 990 / 169 kam man nicht mehr voran. Mit
+  > 1300 / 160 bewegt man sich wieder *und* gewinnt Leben dazu. **Upgrade von
+  > V1.0?** Deine gespeicherten Werte bleiben erhalten — für das neue Paar
+  > trage sie unter *Movement → Tap-Abstand…* von Hand ein. Der Nerf ist
+  > trotzdem hart: Nimm unbedingt **Crawl Before You Walk** (gelber Skill-Baum,
+  > oben in der Mitte) — damit kriecht man deutlich schneller.
 - **AZERTY:** *„Z = vorwärts"* unter Movement aktivieren.
 
 ### Audio Ducking (Pro)
