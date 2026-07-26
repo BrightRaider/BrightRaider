@@ -46,6 +46,7 @@
     change it.
   - The global hotkey-toggle binding is shown on the App tab.
   - Cleaner QuickSave slot list (dropped the redundant "#" column).
+
   Fixed:
   - QuickSave could stop working entirely if you had a cooldown set for a
     preset — the trigger did nothing, whatever you rebound it to. (Found
