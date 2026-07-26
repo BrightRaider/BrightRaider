@@ -48,6 +48,9 @@
   - Cleaner QuickSave slot list (dropped the redundant "#" column).
 
   Fixed:
+  - Turning on one of the Pro profiles 4-9 did not survive a restart —
+    the profile was back to disabled on the next launch. (The setting was
+    only written to disk when a profile was switched OFF.)
   - QuickSave could stop working entirely if you had a cooldown set for a
     preset — the trigger did nothing, whatever you rebound it to. (Found
     during the V1.1 pre-release, never shipped in a stable build.)
