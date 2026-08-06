@@ -110,10 +110,14 @@ If you see *"This license key has reached the activation limit"*, an old install
 
 ## 🛡️ If Windows Defender or SmartScreen flags it
 
-BrightRaider is an unsigned single-EXE, and that format can trip Defender's heuristic / SmartScreen reputation — it's a **known false positive**, not a real detection (the same class every BrightRaider build has been in; Microsoft's analysis of the V1.0 build returned *"no positive detection"*).
+BrightRaider is an unsigned single-EXE, and that format can trip Defender's heuristic / SmartScreen reputation — it's a **known false positive**, not a real detection.
 
-- Verify it yourself — **VirusTotal scan of this exact build:** https://www.virustotal.com/gui/file/173b296bdd1aca3d22f44b7f7ee5b93872ee2cea30ca5ad64dd24e26ca558e33
-- If Windows blocks it: **More info → Run anyway**, or restore it from **Windows Security → Protection history**.
+**This exact build was submitted to Microsoft for analysis on 6 August 2026.** Their verdict:
+
+> Our scanners show no positive detection, and we have no telemetry indicators for the file(s) submitted either.
+
+- Verify it yourself too — **VirusTotal scan of this exact build:** https://www.virustotal.com/gui/file/173b296bdd1aca3d22f44b7f7ee5b93872ee2cea30ca5ad64dd24e26ca558e33
+- If Windows blocks it anyway: **More info → Run anyway**, or restore it from **Windows Security → Protection history**. A reputation warning on a fresh unsigned build is normal and fades as more people download it.
 
 ## System requirements
 
