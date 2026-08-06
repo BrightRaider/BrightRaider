@@ -116,6 +116,17 @@ BrightRaider is an unsigned single-EXE, and that format can trip Defender's heur
 
 > Our scanners show no positive detection, and we have no telemetry indicators for the file(s) submitted either.
 
+<details>
+<summary>📄 See the submission result</summary>
+
+<br>
+
+<img src="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/docs/assets/wdsi-v1.1.png" alt="Microsoft Security Intelligence submission result: no positive detection" width="840">
+
+<sub>Submission ID and submitter address redacted. "In progress" is how the portal labels a case being closed without action — the analyst comment is the verdict.</sub>
+
+</details>
+
 - Verify it yourself too — **VirusTotal scan of this exact build:** https://www.virustotal.com/gui/file/173b296bdd1aca3d22f44b7f7ee5b93872ee2cea30ca5ad64dd24e26ca558e33
 - If Windows blocks it anyway: **More info → Run anyway**, or restore it from **Windows Security → Protection history**. A reputation warning on a fresh unsigned build is normal and fades as more people download it.
 
