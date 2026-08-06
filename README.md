@@ -13,15 +13,11 @@ One EXE, zero dependencies, ~21 MB (Native AOT — no .NET runtime install requi
 
 ## 🆕 New in V1.1
 
-- 🎮 **A tool for any game** — the Arc Raiders features are now an optional module. A fresh install starts as a pure display / FPS tool; enable the module in the Setup Wizard or *Settings → App*. Existing users keep it on.
-- 🗺️ **Map Scanner data packs** — add other games' maps, timers and conditions with a drop-in pack. 📖 [Pack authoring guide](docs/pack-authoring.md)
-- 🌗 **Per-game Auto-HDR (Free)** — Windows HDR turns on when a chosen game launches and off when it closes. Opt-in per game; Alt-Tab never flips it mid-session.
-- 🏃 **New "Movement" tab** — Autorun has its own home, split out from the general hotkeys. Tap-mode defaults retuned for the Looting Mk. 3 nerf (1300 ms / 160 ms).
-- 🎒 **QuickSave backpack slots** — move items to and from your backpack top row (Backpack 1–4), not just the Safe Pocket.
-- 🔑 **Deactivate on this device** — free your license's activation slot for a new PC yourself, no support ticket needed.
-- 🎨 **Color-conflict warning** — a heads-up when f.lux, Iris or Windows Night Light is fighting over your display colours. The most common cause of *"my colours keep reverting."*
+Works with **any game** now — the Arc Raiders tools became an optional module.
+Plus per-game **Auto-HDR** (free), **Map Scanner data packs** for other games,
+and QuickSave **backpack slots**.
 
-Full details: **[Changelog](docs/CHANGELOG_PUBLIC.txt)** · **[Latest release](https://github.com/BrightRaider/BrightRaider/releases/latest)**
+**[Full release notes →](https://github.com/BrightRaider/BrightRaider/releases/latest)** · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
 
@@ -353,15 +349,11 @@ Eine EXE, keine Abhängigkeiten, ~21 MB (Native AOT — keine .NET-Runtime-Insta
 
 ## 🆕 Neu in V1.1
 
-- 🎮 **Ein Tool für jedes Spiel** — die Arc-Raiders-Funktionen sind jetzt ein optionales Modul. Eine frische Installation startet als reines Anzeige-/FPS-Tool; einschalten im Einrichtungsassistenten oder unter *Einstellungen → App*. Bestandsnutzer behalten es an.
-- 🗺️ **Map-Scanner-Datenpacks** — Karten, Timer und Bedingungen anderer Spiele per Drop-in-Pack ergänzen. 📖 [Pack-Anleitung](docs/pack-authoring.md)
-- 🌗 **Auto-HDR pro Spiel (Free)** — Windows-HDR geht an, wenn das gewählte Spiel startet, und wieder aus, wenn es endet. Pro Spiel aktivierbar; Alt-Tab schaltet HDR nie mitten in der Sitzung um.
-- 🏃 **Neuer „Movement"-Tab** — Autorun hat einen eigenen Platz, getrennt von den allgemeinen Hotkeys. Tap-Modus-Standardwerte an den Looting-Mk.-3-Nerf angepasst (1300 ms / 160 ms).
-- 🎒 **QuickSave mit Rucksack-Slots** — Items in die obere Rucksackreihe (Backpack 1–4) und zurück, nicht nur in die Sicherheitstasche.
-- 🔑 **„Auf diesem Gerät deaktivieren"** — den Aktivierungsplatz deiner Lizenz selbst für einen neuen PC freigeben, ohne Support-Anfrage.
-- 🎨 **Farbkonflikt-Warnung** — Hinweis, wenn f.lux, Iris oder Windows Nachtmodus um deine Anzeigefarben kämpft. Häufigste Ursache für *„meine Farben springen zurück"*.
+Funktioniert jetzt mit **jedem Spiel** — die Arc-Raiders-Werkzeuge sind ein
+optionales Modul geworden. Dazu **Auto-HDR pro Spiel** (kostenlos),
+**Map-Scanner-Datenpacks** für andere Spiele und **Rucksack-Slots** für QuickSave.
 
-Vollständig: **[Changelog](docs/CHANGELOG_PUBLIC.txt)** · **[Neuestes Release](https://github.com/BrightRaider/BrightRaider/releases/latest)**
+**[Vollständige Release Notes →](https://github.com/BrightRaider/BrightRaider/releases/latest)** · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Warum BrightRaider?
 
