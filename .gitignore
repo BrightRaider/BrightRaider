@@ -109,7 +109,10 @@ releases/v9.5/
 releases/v9.5.1/
 # V1.0+ release staging (build artifact for gh release create; the final
 # distribution channel is GitHub Releases, not the repo).
+# NOTE: the `!releases/*/BrightRaider.exe` negation above would otherwise pull
+# the ~19 MB AOT EXE back in — every new release dir needs its own line here.
 releases/v1.0.0/
+releases/v1.1.0/
 releases/BrightRaider-V*.zip
 
 # Per-build EXE archive (each AOT publish writes a uniquely-named copy here)
