@@ -172,6 +172,11 @@ A short setup wizard appears on first launch: choose your keyboard type (numpad 
 
 > **Previously released as two separate files** (`BrightRaider.exe` for numpad and `BrightRaider_Arrows.exe` for TKL keyboards). V1.0 combines both into one EXE with fully rebindable hotkeys.
 
+> ### ⬆️ Coming from V9.x?
+> **Your license key still works at no extra cost** — no re-purchase. Settings, profiles, hotkeys and game profiles migrate automatically on first launch; the key needs to be **re-entered once** under *Settings → App → Enter license*. Lemon Squeezy re-issues the activation instantly (same email, same key).
+>
+> The V9.x builds are no longer supported or downloadable. If you see *"This license key has reached the activation limit"*, an old install is still holding a slot — the [pinned known-issues post](https://github.com/BrightRaider/BrightRaider/issues/74) walks you through freeing it.
+
 Just download and run. No installation needed.
 
 > ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/173b296bdd1aca3d22f44b7f7ee5b93872ee2cea30ca5ad64dd24e26ca558e33) — only a couple of the ~68 engines flag it heuristically. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
