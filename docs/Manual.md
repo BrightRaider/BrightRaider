@@ -132,6 +132,28 @@ Every rebindable field accepts modifier + key combinations:
 - **Sprint conflict:** binding anything with `Shift+` while Sprint is Shift will
   fire on every sprint. Pick `Ctrl+`/`Alt+`, or rebind Sprint (Movement tab).
 
+### Playing with a controller?
+
+**Controller buttons cannot be bound directly.** BrightRaider listens to the
+keyboard and mouse through a low-level Windows hook, which lets it *swallow* a
+key — tapping CapsLock for Autorun never reaches the game as a CapsLock. A
+gamepad talks to Windows through a separate channel with no equivalent hook, so
+a button could only be observed, never intercepted: it would trigger BrightRaider
+**and** its in-game action at the same time. On a keyboard you can spare one of
+100+ keys for that; on a controller you can't.
+
+Two things work regardless:
+
+- **The display features need no hotkeys at all.** Per-game profiles with
+  Alt-Tab Auto-Switch apply themselves when the game comes to the foreground —
+  vibrance, gamma, contrast, hue and the FPS limit. This is the largest part of
+  BrightRaider and it is completely controller-agnostic.
+- **For the hotkey features, use a remapper.** Steam Input, DS4Windows or
+  reWASD consume the controller button on their side and send a keyboard key.
+  BrightRaider then sees a normal key press, swallowing included, and behaves
+  exactly as designed. This isn't a workaround — the remapper can intercept
+  where BrightRaider can't.
+
 ### Default hotkeys (Numpad preset)
 
 | Key              | Action                                    |
@@ -544,6 +566,29 @@ Jedes belegbare Feld akzeptiert Modifier + Taste:
   Alt+F4, Alt+Tab, Strg+Alt+Entf, Strg+Shift+Esc — BrightRaider zeigt einen Warn-Toast.
 - **Sprint-Konflikt:** `Shift+` als Modifier feuert bei jedem Sprint, wenn Sprint
   auf Shift liegt. `Strg+`/`Alt+` wählen oder Sprint umbelegen (Movement-Tab).
+
+### Du spielst mit Controller?
+
+**Controller-Tasten lassen sich nicht direkt belegen.** BrightRaider lauscht
+per Low-Level-Hook auf Tastatur und Maus und kann eine Taste dadurch
+*schlucken* — ein CapsLock-Tipp für Autorun kommt im Spiel nie als CapsLock an.
+Ein Gamepad spricht über einen getrennten Kanal mit Windows, für den es keinen
+solchen Hook gibt: Eine Taste ließe sich nur beobachten, nie abfangen. Sie würde
+also BrightRaider **und** ihre Spielfunktion gleichzeitig auslösen. Auf einer
+Tastatur opfert man dafür eine von über hundert Tasten, auf einem Controller
+gibt es keine freie.
+
+Zwei Dinge funktionieren trotzdem:
+
+- **Die Anzeigefunktionen brauchen überhaupt keine Hotkeys.** Spielprofile mit
+  Alt-Tab-Auto-Switch greifen von selbst, sobald das Spiel in den Vordergrund
+  kommt — Vibrance, Gamma, Kontrast, Hue und FPS-Limit. Das ist der größte Teil
+  von BrightRaider und völlig unabhängig vom Eingabegerät.
+- **Für die Hotkey-Funktionen einen Remapper nutzen.** Steam Input, DS4Windows
+  oder reWASD fangen die Controller-Taste auf ihrer Ebene ab und senden eine
+  Tastatureingabe. BrightRaider sieht dann einen normalen Tastendruck,
+  Schlucken inklusive, und verhält sich exakt wie vorgesehen. Das ist keine
+  Notlösung — der Remapper kann abfangen, wo BrightRaider es nicht kann.
 
 ### Standard-Hotkeys (Numpad-Preset)
 
