@@ -12,6 +12,25 @@ The free tier is unchanged in scope and grew again: per-game Auto-HDR joins Vibr
 
 ---
 
+## 🔎 At a glance
+
+| What's new in V1.1 | |
+|---|---|
+| **Per-game Auto-HDR** — HDR on when your game launches, off when it closes | ⚡ Free |
+| **Works with any game** — the Arc Raiders features became an optional module | ⚡ Free |
+| **Color-conflict warning** — f.lux / Iris / Night Light detection | ⚡ Free |
+| **Colour-coded notifications** — green / yellow / red by severity | ⚡ Free |
+| **Map Scanner data packs** — add other games with a drop-in pack | 🔓 Pro |
+| **QuickSave backpack slots** — Backpack 1–4 as swap targets | 🔓 Pro |
+| **Uncovered Caches + Hidden Bunker** — two more map conditions recognised | 🔓 Pro |
+| **Autorun retuned** for the Looting Mk. 3 nerf — new 1300 / 160 ms defaults | 🔓 Pro |
+| **New "Movement" tab** — Autorun split out from the general hotkeys | 🔓 Pro |
+| **Deactivate on this device** — free your own activation slot in one click | 🔑 License |
+
+> ⏱️ **Using Autorun in Arc Raiders? Read this one.** The Looting Mk. 3 (Survivor) nerf made the old **990 / 169 ms** timings useless — they get you nowhere now. The new defaults are **1300 ms / 160 ms**. Your saved values are never overwritten, so set them by hand under *Settings → Movement → Tap Interval*. Full explanation further down.
+
+---
+
 ## ⚡ Free in V1.1
 
 ### 🆕 New
