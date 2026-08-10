@@ -1,8 +1,6 @@
-# BrightRaider V1.1.1 — Pre-release 🧪
+# BrightRaider V1.1.1
 
-> 🧪 **This is a pre-release for testing.** It is **not** pushed to existing users; grab it here if you'd like to help check it before it ships.
->
-> **Everything carries over** — settings, profiles and your license are kept. No re-activation needed.
+> ✅ **Everything carries over** — settings, profiles and your license are kept. No re-activation needed, whether you come from V1.1 or V1.0.
 
 A bug-fix release. No new features.
 
@@ -30,7 +28,7 @@ If you don't use data packs, this doesn't affect you.
 
 BrightRaider is an unsigned single-EXE, and that format can trip Defender's heuristic / SmartScreen reputation — a **known false positive**, not a real detection.
 
-Unlike V1.1.0, **this build has not been submitted to Microsoft yet** — it's a pre-release. Choose **More info → Run anyway**, or restore it from **Windows Security → Protection history**.
+This exact build has been submitted to Microsoft for analysis, as V1.1.0 and V1.0.0 were before it — both came back with no detection. If it still gets flagged, choose **More info → Run anyway**, or restore it from **Windows Security → Protection history**. The SHA-256 below is there so you can check you have the build I published.
 
 ## System requirements
 
