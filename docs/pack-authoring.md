@@ -68,6 +68,11 @@ runtime, including letterbox/pillarbox handling for 16:10 and ultrawide).
    ```
    BrightRaider.exe --pack-train-event <packDir> "Night Raid" <screenshot>
    ```
+   > **Changed in V1.2:** event hashes are now 256-bit (64 hex characters) and
+   > are recognised at any screen resolution — the old 64-bit hashes only ever
+   > matched on the exact resolution they were trained at. Entries written by
+   > V1.1 or earlier are ignored with a warning in the log; re-run
+   > `--pack-train-event` once per event to update them.
 5. **Verify** — the same scan the app runs live, printed for your screenshot:
    ```
    BrightRaider.exe --pack-verify <packDir> <screenshot>
