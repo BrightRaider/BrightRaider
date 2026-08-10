@@ -41,7 +41,7 @@ Unlike V1.1.0, **this build has not been submitted to Microsoft yet** — it's a
 ## SHA-256
 
 ```
-BrightRaider.exe   170A5F470034E64393BBA719CF8E4D946523645C3F8F613DB065694EF8FAFABF
+BrightRaider.exe   5B4332A38B3CA225A7D142DF9F8EEE8F8D807236737A05C8BA7067180D78E3F8
 ```
 
 ## 📦 Download + install
