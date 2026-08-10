@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Read first — known issues
+    url: https://github.com/BrightRaider/BrightRaider/issues/74
+    about: A few things are already known and don't need a new report. Worth 30 seconds before you file.
   - name: Questions & help
     url: https://github.com/BrightRaider/BrightRaider/discussions
     about: Have a question or need help? Start a discussion here instead of opening an issue.

@@ -8,6 +8,8 @@ assignees: ''
 
 > This is a solo hobby project. Feature requests are read and considered, but there is no guarantee anything gets built. "Thanks, noted" is a complete answer.
 
+*Please search existing issues first — a good share of requests are already filed.*
+
 **What would you like to see?**
 A clear description of the feature or improvement.
 

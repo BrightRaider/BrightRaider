@@ -8,6 +8,8 @@ assignees: ''
 
 > This is a solo hobby project maintained in my free time. I read every report, but response times vary. No SLA, no support contract — just one person trying to make the tool better.
 
+*Please search existing issues first, and skim the [known issues](https://github.com/BrightRaider/BrightRaider/issues/74) — a good share of reports are already covered.*
+
 **System info — don't type it, copy it.**
 In BrightRaider open **Settings**, then **right-click the version number** at the bottom of the window → *Copy system info for bug reports*. Paste it below. That gives me your version, Windows build, GPU, FPS-limit support and every monitor with its resolution and scaling — all correct, nothing mistyped.
 
