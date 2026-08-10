@@ -8,17 +8,14 @@ assignees: ''
 
 > This is a solo hobby project maintained in my free time. I read every report, but response times vary. No SLA, no support contract — just one person trying to make the tool better.
 
-**BrightRaider version**
-e.g. V9.5.1 — Numpad / Arrow Keys
+**System info — don't type it, copy it.**
+In BrightRaider open **Settings**, then **right-click the version number** at the bottom of the window → *Copy system info for bug reports*. Paste it below. That gives me your version, Windows build, GPU, FPS-limit support and every monitor with its resolution and scaling — all correct, nothing mistyped.
 
-**Windows version**
-e.g. Windows 11 24H2
+```
+paste here
+```
 
-**GPU**
-e.g. NVIDIA RTX 3070 / AMD RX 6800 / Intel
-
-**Screen resolution**
-e.g. 1920×1080, 2560×1440, 3440×1440 (ultrawide), 1920×1440 (4:3)
+*Can't start the app? Then just tell me: BrightRaider version, Windows version, GPU, screen resolution.*
 
 ---
 
@@ -37,5 +34,9 @@ A clear description of the bug.
 - [ ] Often
 - [ ] Rarely / once
 
+**Log file**
+For crashes, odd behaviour, or anything to do with the display or the Map Scanner, attach `%APPDATA%\BrightRaider\debug.log`. It often saves a round of back-and-forth.
+
 **Any other context**
-Screenshots, additional observations, workarounds you found — anything that helps.
+Screenshots, observations, workarounds you found — anything that helps.
+Screenshots as **PNG**, not JPEG: compression alters exactly the pixels I need to check when something isn't being recognised.
