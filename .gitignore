@@ -10,11 +10,11 @@ docs/Timer_Rects.txt
 INTERNAL_*.md
 ga_known_issues_pin.md
 
-# Source code (local only) — never push to the public mirror
+# Source code (local only) â€” never push to the public mirror
 src/
 releases/v4-free/*.cs
 
-# V1.0 Avalonia source tree — local only. The whole subtree (code, XAML,
+# V1.0 Avalonia source tree â€” local only. The whole subtree (code, XAML,
 # project file, build artifacts) stays out of the public repo. Only
 # release artifacts (the published EXE) are tracked under releases/.
 BrightRaider.Avalonia/
@@ -24,7 +24,7 @@ BrightRaider.Avalonia/
 # local-only, same reason as BrightRaider.Avalonia/.
 BrightRaider.Launcher/
 
-# V1.0 internal planning + handoff docs — never push
+# V1.0 internal planning + handoff docs â€” never push
 V1.0_TODO.md
 docs/V1.0_PLAN.txt
 docs/HANDOFF.md
@@ -32,13 +32,15 @@ docs/V0_REFERENCE.md
 docs/IDEAS_BACKLOG.txt
 docs/WDSI_SUBMISSION.md
 
-# AOT build script (lives next to the source it builds — local only)
+# AOT build script (lives next to the source it builds â€” local only)
 build_aot.ps1
-# Single-EXE launcher packaging script (publish → zip → embed) — local only
+# Single-EXE launcher packaging script (publish â†’ zip â†’ embed) â€” local only
 build_launcher.ps1
-# Tools-zip packaging script (zips .\tools → BrightRaider_tools.zip) — local only
+# Tools-zip packaging script (zips .\tools â†’ BrightRaider_tools.zip) â€” local only
 build_tools.ps1
-# App-icon generator (figure → multi-size .ico, BMP frames) — local only
+# VirusTotal submission/report script (reads keys\virustotal.txt) — local only
+check_virustotal.ps1
+# App-icon generator (figure â†’ multi-size .ico, BMP frames) â€” local only
 tools_make_icon.ps1
 
 # Build scripts + artifacts
@@ -55,14 +57,14 @@ build_lmb_test.ps1
 release.ps1
 update_banners.ps1
 sync_arrows.ps1
-# One-shot RC deploy orchestrator — names the PRIVATE mirror path/remote, so it
+# One-shot RC deploy orchestrator â€” names the PRIVATE mirror path/remote, so it
 # must NEVER reach the public repo.
 deploy_rc.ps1
 
 # Internal checklists
 docs/RELEASE_CHECKLIST.md
 
-# EXE files — only release EXEs are tracked
+# EXE files â€” only release EXEs are tracked
 *.exe
 !releases/*/BrightRaider.exe
 !releases/*/BrightRaider_Arrows.exe
@@ -110,7 +112,7 @@ releases/v9.5.1/
 # V1.0+ release staging (build artifact for gh release create; the final
 # distribution channel is GitHub Releases, not the repo).
 # NOTE: the `!releases/*/BrightRaider.exe` negation above would otherwise pull
-# the ~19 MB AOT EXE back in — every new release dir needs its own line here.
+# the ~19 MB AOT EXE back in â€” every new release dir needs its own line here.
 releases/v1.0.0/
 releases/v1.1.0/
 releases/v1.1.1/
