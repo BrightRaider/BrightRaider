@@ -8,29 +8,19 @@ A bug-fix release. No new features.
 
 ---
 
-## 🗺️ The Map Scanner only recognised conditions at 2560×1440
+## Fixed
 
-If you play at **1920×1080, 4K, ultrawide** — anything other than 1440p — the Map Scanner never showed the map condition, and never showed whether the hatches were open. Evac timers worked fine, which is what made it look like "no event is running" rather than a fault.
-
-It has been this way **since V1.0**, on every resolution except the one BrightRaider is developed on. That's why it took six weeks and a good bug report ([#80](https://github.com/BrightRaider/BrightRaider/issues/80)) to surface.
-
-The condition is identified by fingerprinting the event icon, and that fingerprint was resolution-dependent. It now works at any resolution — verified against 53 captures taken at 1920×1080, 2560×1440 and 3840×2160.
-
-## 🔍 "Prospecting Probes" was never recognised
-
-The condition was missing from the lookup table entirely, so it showed as no event at all — on every resolution, including 1440p. It's in now.
-
-## Smaller fixes
-
-- **Riven Tides:** the evac point read *"Costal Lift"*; it's **Coastal Lift**.
-- **Diagnostics work from the shipped EXE.** `BrightRaider.exe --selftest` and the other `--test-*` switches printed nothing at all before — useful when a bug report needs more than a log.
-- **Settings → right-click the version number** now reads *"Copy system info for bug reports"*, which is what it does: version, Windows build, GPU and every monitor with its resolution and scaling, ready to paste into an issue.
+- **Map conditions now show at every resolution.** Unless you played at 2560×1440, the Map Scanner never showed the condition or the hatch state — the evac timers worked, which made it look like "no event running" rather than a fault. This had been the case since V1.0. Verified at 1080p, 1440p and 4K. ([#80](https://github.com/BrightRaider/BrightRaider/issues/80))
+- **"Prospecting Probes"** was missing from the condition list entirely and never showed for anyone.
+- **Riven Tides:** *"Costal Lift"* → **Coastal Lift**.
+- **`--selftest` and the other `--test-*` switches** printed nothing from the shipped EXE. They work now.
+- **Settings → right-click the version number** now reads *"Copy system info for bug reports"* — version, Windows build, GPU and every monitor, ready to paste into an issue.
 
 ---
 
-## 🎮 Map Scanner data packs — action needed
+## 🎮 Using Map Scanner data packs?
 
-Event fingerprints changed format. **Packs with events trained on V1.1 or earlier need those events retrained** with `--pack-train-event`; the old entries are skipped with a warning in the log. Maps, timers and digit templates are unaffected. See the [pack authoring guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/pack-authoring.md).
+Event fingerprints changed format. **Events trained on V1.1 or earlier need retraining** with `--pack-train-event`; old entries are skipped with a warning in the log. Maps, timers and digit templates are unaffected. See the [pack authoring guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/pack-authoring.md).
 
 If you don't use data packs, this doesn't affect you.
 
@@ -40,7 +30,7 @@ If you don't use data packs, this doesn't affect you.
 
 BrightRaider is an unsigned single-EXE, and that format can trip Defender's heuristic / SmartScreen reputation — a **known false positive**, not a real detection.
 
-Unlike the V1.1.0 build, **this one has not been submitted to Microsoft for analysis yet** — it's a pre-release. Expect a warning; choose **More info → Run anyway**, or restore it from **Windows Security → Protection history**.
+Unlike V1.1.0, **this build has not been submitted to Microsoft yet** — it's a pre-release. Choose **More info → Run anyway**, or restore it from **Windows Security → Protection history**.
 
 ## System requirements
 
@@ -53,8 +43,6 @@ Unlike the V1.1.0 build, **this one has not been submitted to Microsoft for anal
 ```
 BrightRaider.exe   170A5F470034E64393BBA719CF8E4D946523645C3F8F613DB065694EF8FAFABF
 ```
-
-Verify on Windows: `Get-FileHash BrightRaider.exe -Algorithm SHA256`
 
 ## 📦 Download + install
 
