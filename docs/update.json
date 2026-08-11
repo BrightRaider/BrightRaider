@@ -1,0 +1,12 @@
+{
+  "_comment": "BrightRaider update feed. Served by GitHub Pages from docs/. Edited by hand at release time; deploy_rc.ps1 does NOT touch it. Clients from V1.2 on read this first and fall back to the GitHub Releases API if it is unreachable. Older clients ignore it and keep polling GitHub. Channels are keyed by MAJOR version, so each generation can be pointed at its own release independently - that is the whole reason this file exists.",
+  "schema": 1,
+  "channels": {
+    "1": {
+      "version": "1.1.1",
+      "tag": "v1.1.1",
+      "url": "https://github.com/BrightRaider/BrightRaider/releases/tag/v1.1.1",
+      "notice": ""
+    }
+  }
+}
