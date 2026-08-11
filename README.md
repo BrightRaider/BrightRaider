@@ -175,16 +175,16 @@ A short setup wizard appears on first launch: choose your keyboard type (numpad 
 
 Just download and run. No installation needed.
 
-> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/173b296bdd1aca3d22f44b7f7ee5b93872ee2cea30ca5ad64dd24e26ca558e33) — only a couple of the ~68 engines flag it heuristically. This build was also submitted to **Microsoft** for analysis (6 Aug 2026); their scanners reported *"no positive detection"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
+> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/5b4332a38b3ca225a7d142df9f8eee8f8d807236737a05c8ba7067180d78e3f8) — only a couple of the ~68 engines flag it heuristically. This build was also submitted to **Microsoft** for analysis (11 Aug 2026); their scanners reported *"no positive detection"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
 
 <details>
 <summary>📄 <b>Microsoft's analysis of this exact build</b> (click to expand)</summary>
 
 <br>
 
-<img src="docs/assets/wdsi-v1.1.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.1.0: Our scanners show no positive detection" width="840">
+<img src="docs/assets/wdsi-v1.1.1.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.1.1: status Completed, Our scanners show no positive detection" width="840">
 
-<sub>Submitted 6 August 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Submission ID and submitter address redacted. The "In progress" status is how the portal labels a case that is being closed without action — the analyst comment below it is the verdict.</sub>
+<sub>Submitted 11 August 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>, and closed as <b>Completed</b> with no detection. Submission ID and submitter address redacted. The two releases before this one (V1.1.0 and V1.0.0) were submitted the same way and came back the same.</sub>
 
 </details>
 
