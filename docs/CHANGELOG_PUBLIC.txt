@@ -3,6 +3,109 @@
 ================================================================
 
 
+[ V1.2.0 ] - Pre-release
+
+  New: the Autoscrapper
+
+  - BrightRaider can now read your stash off the screen, work out what every
+    tile is, and show you a list of what it would scrap or sell. Around 300
+    slots over 80-odd rows in about ten seconds.
+  - Nothing happens until you press Run. The review screen cannot be skipped,
+    and an item that is not on your list is never touched — that is the whole
+    safety model in one sentence.
+  - The review screen IS the rule list. Set "keep 200, scrap the rest" while
+    looking at the actual item, with its picture, how many you have and what
+    one is worth. Pressing Run also writes those choices back as rules, so the
+    second run needs no editing at all.
+  - Two run modes, and the safe one is the default. Test run goes the whole
+    way — picks the tiles, presses the key, waits for the game's own
+    confirmation box — and then closes that box with Escape instead of
+    confirming it. Everything except the last click, and nothing is lost. Only
+    Live acts. (Two quieter modes, Probe and Rehearsal, are still reachable
+    through the config file for anyone who wants them.)
+  - The review screen tells you what your decision is worth. Beside every row
+    is "Worth of the rest": type 10 into the keep box and it shows, at once,
+    what the other 7 are worth altogether — before you have picked what happens
+    to them, and on a scrap row too, where it is what you are giving up. The
+    header adds the sales up for the whole run and tells you what everything on
+    the screen is worth in total. Only a sale is counted as money coming in:
+    scrapping returns materials, not credits, and a credit figure there would
+    be a number you never get.
+  - Some items are drawn identically by the game. The two Looting Mk. 3
+    blueprints are pixel for pixel the same picture, and a modification
+    blueprint carries neither a tier numeral nor a rarity crescent — there is
+    nothing on the tile to tell them apart, so BrightRaider does not guess. The
+    row shows both names, and asks a different question instead: do your rules
+    say the same thing about both? If they do, the name never mattered. If they
+    differ, the row is left alone and says why.
+  - Anything it cannot name goes into a naming queue with its picture. You name
+    it once and it is recognised from the next scan on. Names you give are kept
+    in your own file and no update ever overwrites them — and if the item is one
+    the built-in list has never heard of, you can simply type the name.
+  - Every resolution: 1080p to 5K, 16:10, 4:3 and 21:9 ultrawide. Checked in
+    game at 1080p, 1440p, 4K, 5K, 16:10 and 4:3 — every slot found, no wrong
+    names, no stack count off.
+  - Damaged items are recognised only from a picture of a damaged one. The red
+    triangle sits inside the artwork and changes the fingerprint by about fifty
+    bits, so an undamaged reference cannot match it. Until you have named one,
+    such a tile stays unidentified — which means untouched.
+
+  Also new:
+
+  - GPU picker and display index: choose which adapter and which monitor
+    BrightRaider drives.
+  - Autorun per game: the sprint key, hold-or-toggle, and the tap timings can
+    now differ per game profile.
+  - Map events are marked major or minor.
+  - BrightRaider checks for updates through its own endpoint, with a guard
+    against a stale feed serving an old version for ever.
+  - Controller support is answered in the README FAQ.
+
+
+  Fixed:
+  - Game mute, audio ducking and the Footstep Booster could quietly do
+    nothing if you listen through a headset that registers more than one
+    playback device — an Astro A50 shows up as both "Game" and "Voice", and
+    BrightRaider only ever changed the FIRST entry it came across, which was
+    often not the one you were hearing. The same thing happened when your
+    game had left an entry behind on a device you had since switched away
+    from. Mute and ducking now cover every output the game is using, and
+    ignore entries belonging to a device it has already left. This goes back
+    to V1.0 in one form or another — V1.1.0 fixed the half where your game
+    played on a device that wasn't your default one, this fixes the rest.
+  - The Footstep Booster could attach itself to a silent output of the game
+    instead of the one actually playing, on the same multi-device headsets.
+    It waits for the output that is really making sound now.
+  - Closing BrightRaider while a game sat in the background left that game
+    muted in Windows — permanently. Background mute only ever undid itself
+    when you Alt-Tabbed back into the game; shutting down in that state undid
+    nothing, and the game stayed silent with BrightRaider no longer running to
+    explain it. Shutdown now unmutes it.
+  - If BrightRaider is killed or crashes while a game is muted or ducked, that
+    game no longer stays quiet afterwards. The change is written down as it
+    happens and undone the next time BrightRaider starts — or the next time
+    that game comes to the front, if it isn't running yet — with a note saying
+    what was put back.
+
+  Small fixes & polish:
+  - New button, Settings -> Audio -> "Reset game audio": unmutes the running
+    game and, where BrightRaider recorded your level beforehand, puts that
+    level back. Mute, background mute, ducking and the Footstep Booster all
+    work by changing the game's entry in the Windows volume mixer, and a crash
+    at the wrong moment leaves that change behind — one click undoes it. It
+    never pushes your volume to 100% on a guess; if the old level isn't known
+    it tells you where the slider stands and leaves it to you.
+  - BrightRaider now speaks up on its own: if a game comes to the front while
+    its mixer entry is muted, or sits exactly at your ducking level, you get a
+    warning that names the reason and the fix instead of a silent game.
+  - The tap-timing fields under Movement were too narrow and cut off the
+    last digit — with the recommended 1300 ms interval you couldn't read
+    what you had set. Both fields, and their per-game copies, are wide
+    enough now.
+  - The debug log now records how many outputs mute and ducking changed, so
+    "it did nothing" is visible in the log instead of invisible.
+
+
 [ V1.1.0 ]
 
   New in V1.1:

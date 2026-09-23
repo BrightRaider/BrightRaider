@@ -1,53 +1,42 @@
-# BrightRaider V1.1.1
+# BrightRaider V1.2.0
 
-> ✅ **Everything carries over** — settings, profiles and your license are kept. No re-activation needed, whether you come from V1.1 or V1.0.
+> 🧪 **Pre-release.** Settings, profiles and license carry over — no re-activation needed.
 
-A bug-fix release. No new features.
+**The Autoscrapper release.** BrightRaider reads your Arc Raiders stash and clears out what you told it to — after you have seen the list and said yes.
 
----
-
-## Fixed
-
-- **Map conditions now show at every resolution.** Unless you played at 2560×1440, the Map Scanner never showed the condition or the hatch state — the evac timers worked, which made it look like "no event running" rather than a fault. This had been the case since V1.0. Verified at 1080p, 1440p and 4K. ([#80](https://github.com/BrightRaider/BrightRaider/issues/80))
-- **"Prospecting Probes"** was missing from the condition list entirely and never showed for anyone.
-- **Riven Tides:** *"Costal Lift"* → **Coastal Lift**.
-- **`--selftest` and the other `--test-*` switches** printed nothing from the shipped EXE. They work now.
-- **Settings → right-click the version number** now reads *"Copy system info for bug reports"* — version, Windows build, GPU and every monitor, ready to paste into an issue.
+| What's new | |
+|---|---|
+| **Autoscrapper** — scraps or sells by your rules, only after you confirm the list | 🔓 Pro |
+| **Autorun per game** — sprint key, hold/toggle and tap timings per game profile | 🔓 Pro |
+| **Map events** carry a major/minor category | 🔓 Pro |
+| **GPU picker and display index** — choose which adapter and monitor BrightRaider drives | ⚡ Free |
 
 ---
 
-## 🎮 Using Map Scanner data packs?
+## 🧹 Autoscrapper
 
-Event fingerprints changed format. **Events trained on V1.1 or earlier need retraining** with `--pack-train-event`; old entries are skipped with a warning in the log. Maps, timers and digit templates are unaffected. See the [pack authoring guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/pack-authoring.md).
+- **Nothing happens until you press Run it.** The review screen cannot be skipped, and an item without a rule is never touched.
+- **If it is not sure, it says nothing.** An unnamed tile is never scrapped or sold — name it once and it is known from then on.
+- **Test run first.** The default goes up to the game's confirmation box and cancels it. Switch to *Live* once it behaves; hold **Esc** to stop.
+- **Every resolution** from 1080p to 5K, including 16:10, 4:3 and 21:9.
 
-If you don't use data packs, this doesn't affect you.
+📖 **[Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md)**
+
+## 🔧 Fixed
+
+- **Headsets with two audio sessions** (e.g. Astro A50): mute, ducking and the Footstep Booster now hit the right one.
+- **Three UI fixes from [#65](https://github.com/BrightRaider/BrightRaider/issues/65)** — QuickSelect spinner, crosshair border, numeric step sizes.
 
 ---
-
-## 🛡️ If Windows Defender or SmartScreen flags it
-
-BrightRaider is an unsigned single-EXE, and that format can trip Defender's heuristic / SmartScreen reputation — a **known false positive**, not a real detection.
-
-This exact build has been submitted to Microsoft for analysis, as V1.1.0 and V1.0.0 were before it — both came back with no detection. If it still gets flagged, choose **More info → Run anyway**, or restore it from **Windows Security → Protection history**. The SHA-256 below is there so you can check you have the build I published.
-
-## System requirements
-
-- Windows 10 / 11 (64-bit)
-- NVIDIA or AMD GPU recommended (Intel: gamma + contrast only, no vibrance / hue / FPS-limit)
-- No .NET runtime install required (Native AOT — single EXE)
-
-## SHA-256
-
-```
-BrightRaider.exe   5B4332A38B3CA225A7D142DF9F8EEE8F8D807236737A05C8BA7067180D78E3F8
-```
 
 ## 📦 Download + install
 
-**Download `BrightRaider.exe` and double-click it.** On first launch the EXE unpacks its runtime into `%LOCALAPPDATA%\BrightRaider\` and starts from there. To uninstall, delete the EXE and that folder.
+**Download `BrightRaider.exe` and double-click it.** To uninstall, delete the EXE and `%LOCALAPPDATA%\BrightRaider\`.
 
-**Troubleshooting (optional):** `BrightRaider_tools.zip` holds two small launchers — one starts BrightRaider with Map Scanner diagnostics, the other with QuickSave's alternate input path. Drop them next to the EXE only if you're troubleshooting.
+If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a **known false positive**. Choose **More info → Run anyway**. Every release so far has been submitted to Microsoft and came back clean.
 
----
+```
+BrightRaider.exe   CC6665DFD81F305EEA5BDD9BB7BA502EA428F249AE9AE8340B412B2EDE3C3BE9
+```
 
-Thanks to @inf3rrno, whose report and debug log pinned down the resolution bug. 🙏
+Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt)
