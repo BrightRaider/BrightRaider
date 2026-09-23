@@ -133,3 +133,7 @@ Bild und Video/
 # Claude internal
 .claude/
 media/
+
+# Local build output and old builds - never in the public repo (cleanup 2026-09-24).
+# The per-version rules above predate this and are kept only as history.
+releases/
