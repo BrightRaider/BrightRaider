@@ -2,7 +2,7 @@
 
 **See enemies in the dark. No alt-tab, no game files modified.**
 
-BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress — per game, auto-applied when you Alt-Tab. It works with **any** PC game; the Arc Raiders toolbox (Map Scanner, QuickSelect, QuickSave, Autorun) is an **optional module** you switch on only if you want it.
+BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress — per game, auto-applied when you Alt-Tab. It works with **any** PC game; the Arc Raiders toolbox (Map Scanner, Autoscrapper, QuickSelect, QuickSave) is an **optional module** you switch on only if you want it.
 
 One EXE, zero dependencies, ~21 MB (Native AOT — no .NET runtime install required). Works with any keyboard — numpad, TKL, or fully custom bindings.
 
@@ -18,6 +18,8 @@ Plus per-game **Auto-HDR** (free), **Map Scanner data packs** for other games,
 and QuickSave **backpack slots**.
 
 **[Full release notes →](https://github.com/BrightRaider/BrightRaider/releases/latest)** · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+
+🧪 **V1.2 pre-release:** the **Autoscrapper** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.0)
 
 ## Before / After
 
@@ -130,11 +132,12 @@ BrightRaider's display and colour features use standard Windows display APIs —
 - **Native AOT** — no .NET runtime install needed, sub-second startup, single portable EXE
 
 ### Pro (€5.49)
-- **Map Scanner** — long-press M on the in-game map → ~100 % OCR hit rate, detects all current map conditions (Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, plus **Uncovered Caches** and **Hidden Bunker** *(new in V1.1)*, and the base no-event state). Hidden Bunker also reduces the active evac points and marks the closed hatches. Color-coded timer overlay with per-state thresholds, configurable Evac alarm. **Other games** can be added with drop-in data packs *(new in V1.1)*. 📖 [Setup Guide](docs/MapScanner_Guide.md) · 📖 [Pack authoring](docs/pack-authoring.md)
+One key unlocks everything below, in every game — the Arc Raiders tools included.
+
+#### For every game
+
 - **Auto-Brightness** — 5-zone screen sampling smoothly interpolates Gamma/Contrast/Vibrance across enabled profiles. Calibration Wizard sets it up in two clicks. Optional debug overlay with live zone values. 📖 [Setup Guide](docs/AutoBrightness_Guide.md)
 - **Footstep Booster** *(new in V1.0)* — per-process audio limiter so you can crank in-game volume to hear footsteps without going deaf on gunshots. Configurable threshold / attack / release. Per-game only — Discord, music, browser stay untouched. 📖 [Setup Guide](docs/FootstepBooster_Guide.md)
-- **QuickSelect** — single keypress automatically uses an item from your quick-use wheel: hold Q → select slot → release Q → hold LMB → press H. 8 independent slots, per-slot LMB hold time in milliseconds, modifier-key bindings (`Ctrl+5`, `Shift+Numpad 3`), MB3/4/5 + scroll-wheel triggers. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
-- **QuickSave** — single keypress drags an item between inventory slots and the Safe Pocket **or your backpack top row (Backpack 1–4)** *(new in V1.1)*. Handles open → drag → close. 5 presets, configurable slots, optional toggle-direction. 📖 [Setup Guide](docs/QuickSave_Guide.md)
 - **Crosshair Overlay** — click-through crosshair directly on screen. 6 styles (Cross, Dot+Ring, T-Shape, Dot, Ring, Cross-with-gap), custom color + outline (color **and** thickness), size 4–50 px. Same overlay mechanism as Discord and GeForce Experience.
 - **Background AutoMute** *(new in V1.0)* — the game's Windows audio session is muted automatically when you Alt-Tab out, unmuted on focus return. Per-process — your music + Discord keep playing.
 - **Audio Output Switcher** *(new in V1.0)* — switch your default output device (speakers ↔ headphones ↔ …) with one hotkey, cycling through the devices you pick. Optionally auto-switches to a chosen device when a game starts and restores the previous one when it closes — alt-tabbing out does **not** switch back. Switches the game/media device by default; an opt-in *"Also switch the communications device"* makes Discord/voice follow too (off by default so it can't disrupt voice apps like TeamSpeak).
@@ -144,6 +147,15 @@ BrightRaider's display and colour features use standard Windows display APIs —
 - **Game Mute** — mute only the game's audio session, leaves Discord / music untouched.
 - **Display profile editing + Profiles 4–9** — edit the built-in display presets directly (Gamma / Contrast / Vibrance / Hue) and unlock six more profile slots (4–9). On Free the three presets are switch-only.
 - **Calibration Wizard** — two-step capture (darkest + brightest spot) distributes profiles across the range automatically
+
+#### Arc Raiders module
+
+Part of the optional Arc Raiders module — switch it on in the Setup Wizard or *Settings → App*.
+
+- **Autoscrapper** *(new in V1.2, pre-release)* — press F5 with the stash open: BrightRaider reads the whole stash (~300 slots in about 10 seconds), shows what it would scrap or sell by your rules, and acts only after you confirm the list. Test run by default, quest items protected, anything it cannot name is left alone. Every resolution from 1080p to 5K, incl. 16:10, 4:3 and 21:9. 📖 [Setup Guide](docs/Autoscrapper_Guide.md)
+- **Map Scanner** — long-press M on the in-game map → ~100 % OCR hit rate, detects all current map conditions (Night Raid, Hurricane, Electromagnetic Storm, Harvester, Lush Blooms, Matriarch, Husk Graveyard, Close Scrutiny, Bird City, Locked Gate, Launch Tower Loot, Beachcombing, plus **Uncovered Caches** and **Hidden Bunker** *(new in V1.1)*, and the base no-event state). Hidden Bunker also reduces the active evac points and marks the closed hatches. Color-coded timer overlay with per-state thresholds, configurable Evac alarm. **Other games** can be added with drop-in data packs *(new in V1.1)*. 📖 [Setup Guide](docs/MapScanner_Guide.md) · 📖 [Pack authoring](docs/pack-authoring.md)
+- **QuickSelect** — single keypress automatically uses an item from your quick-use wheel: hold Q → select slot → release Q → hold LMB → press H. 8 independent slots, per-slot LMB hold time in milliseconds, modifier-key bindings (`Ctrl+5`, `Shift+Numpad 3`), MB3/4/5 + scroll-wheel triggers. 📖 [Setup Guide](docs/QuickSelect_Guide.md)
+- **QuickSave** — single keypress drags an item between inventory slots and the Safe Pocket **or your backpack top row (Backpack 1–4)** *(new in V1.1)*. Handles open → drag → close. 5 presets, configurable slots, optional toggle-direction. 📖 [Setup Guide](docs/QuickSave_Guide.md)
 
 ## Default Profiles
 
@@ -281,7 +293,9 @@ BrightRaider's crosshair works via a transparent Windows overlay — the exact s
 
 EAC (Easy Anti-Cheat) **explicitly allows** this type of overlay. It is not injected into the game, does not read game memory, and is not rendered inside the game engine. It is simply a transparent window drawn on top by Windows.
 
-EAC-safe — no injection, no game memory access, no rendering inside the engine.
+EAC agrees in practice, not only on paper: overlay crosshairs that EAC does block stop Arc Raiders from launching at all, and BrightRaider's does not.
+
+**That statement is about EAC specifically and does not carry over to other anti-cheats.** VAC is a separate system with its own tolerances, and players report bans connected to third-party crosshair overlays. **In Counter-Strike, leave the crosshair off.** Nothing else is affected — display, audio and movement stay clear of this question entirely.
 
 ## System Requirements
 
@@ -301,6 +315,7 @@ EAC-safe — no injection, no game memory access, no rendering inside the engine
 
 Deep-dives for the more advanced features:
 
+- 🧹 **[Autoscrapper Guide](docs/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles
 - 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all 13 conditions), threshold colors, Evac alarm setup
 - 🔆 **[Auto-Brightness Guide](docs/AutoBrightness_Guide.md)** — how the 5-zone sampler works, Calibration Wizard walkthrough, zone-weight tuning, debug overlay
 - 🔊 **[Footstep Booster Guide](docs/FootstepBooster_Guide.md)** — threshold / attack / release tuning, recommended starting values, troubleshooting
@@ -350,7 +365,7 @@ A remapper solves it properly: **Steam Input**, **DS4Windows** or **reWASD** con
 
 **Feinde im Dunkeln sehen. Kein Alt-Tab, keine Spieldateien verändert.**
 
-BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst — pro Spiel, automatisch beim Alt-Tab. Es funktioniert mit **jedem** PC-Spiel; die Arc-Raiders-Werkzeuge (Map Scanner, QuickSelect, QuickSave, Autorun) sind ein **optionales Modul**, das du nur bei Bedarf einschaltest.
+BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst — pro Spiel, automatisch beim Alt-Tab. Es funktioniert mit **jedem** PC-Spiel; die Arc-Raiders-Werkzeuge (Map Scanner, Autoscrapper, QuickSelect, QuickSave) sind ein **optionales Modul**, das du nur bei Bedarf einschaltest.
 
 Eine EXE, keine Abhängigkeiten, ~21 MB (Native AOT — keine .NET-Runtime-Installation nötig). Funktioniert mit jeder Tastatur — Numpad, TKL oder komplett selbst belegt.
 
@@ -361,6 +376,8 @@ optionales Modul geworden. Dazu **Auto-HDR pro Spiel** (kostenlos),
 **Map-Scanner-Datenpacks** für andere Spiele und **Rucksack-Slots** für QuickSave.
 
 **[Vollständige Release Notes →](https://github.com/BrightRaider/BrightRaider/releases/latest)** · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+
+🧪 **V1.2 Pre-release:** der **Autoscrapper** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.0)
 
 ## Warum BrightRaider?
 
@@ -389,11 +406,15 @@ BrightRaiders Anzeige- und Farbfunktionen nutzen Standard-Windows-Display-APIs �
 - Portabel — keine Installation, nur eine EXE
 
 ### Pro (5,49 €)
-- **QuickSave** — ein Tastendruck zieht ein Item aus dem Inventar in die Sicherheitstasche **oder in die obere Rucksackreihe (Backpack 1–4)** *(neu in V1.1)* — und zurück. Alles automatisch: Inventar öffnen → ziehen → schließen. 5 unabhängige Presets, Slots konfigurierbar. 📖 [Anleitung](docs/QuickSave_Guide.md)
-- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Q halten → Slot wählen → Q loslassen → LMB halten → H drücken. 8 Slots, LMB-Haltezeit in Millisekunden pro Slot, alle Tasten frei belegbar. 📖 [Anleitung](docs/QuickSelect_Guide.md)
+Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Werkzeuge eingeschlossen.
+
+#### Für jedes Spiel
+
 - **Auto-Helligkeit** — passt sich automatisch an den Bildschirminhalt an. Dunkler Bereich? Helligkeit geht hoch. Draußen? Zurück auf Normal. Sanfte Übergänge, kein Ruckeln.
-- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Screenshot → lokale Auswertung auf deinem PC → farbkodierter Live-Countdown. Erkennt aktive Events (Nacht, Hurrikan, Elektr. Sturm, seit V1.1 auch **Uncovered Caches** und **Hidden Bunker**). Unterstützt Buried City, Stella Montis, Space Port, Blue Gate, Damm und Riven Tides — **andere Spiele** lassen sich seit V1.1 per Datenpack ergänzen. 📖 [Pack-Anleitung](docs/pack-authoring.md)
-- **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt.
+- **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
+- **Footstep Booster** — Audio-Limiter nur für das Spiel: Lautstärke hochdrehen, um Schritte zu hören, ohne dass Schüsse zu laut werden. Discord, Musik und Browser bleiben unberührt. 📖 [Anleitung (EN)](docs/FootstepBooster_Guide.md)
+- **Background-AutoMute** — das Spiel wird beim Alt-Tab automatisch stummgeschaltet und bei Rückkehr wieder laut. Musik und Discord laufen weiter.
+- **Process Optimizer** — auf Wunsch hohe Prozesspriorität und nur physische Kerne (ohne Hyperthreading) für das Spiel im Vordergrund. Gleichmäßigere Frametimes.
 - **Autorun** — kurz CapsLock drücken um die Vorwärtstaste zu halten. 600ms halten für Tap-Modus (ideal für Looting Mk. 3). Seit V1.1 im eigenen **Movement**-Tab, mit an den Augment-Nerf angepassten Standardwerten (1300 ms / 160 ms). Vorwärtstaste frei belegbar — funktioniert mit QWERTZ, AZERTY usw.
 - **Crosshair-Overlay** — Click-through Fadenkreuz direkt auf dem Bildschirm. 6 Stile. EAC-sicher.
 - **Audio Ducking** — Mute-Taste 600ms halten um Spiel-Audio auf 20% zu reduzieren.
@@ -401,8 +422,17 @@ BrightRaiders Anzeige- und Farbfunktionen nutzen Standard-Windows-Display-APIs �
 - **Audio-Ausgabe-Switcher** *(neu in V1.0)* — Standard-Ausgabegerät per Hotkey umschalten (Boxen ↔ Kopfhörer ↔ …), du wählst frei aus, welche Geräte durchrotiert werden. Optional automatischer Wechsel beim Spielstart und Rückkehr zum vorherigen Gerät beim Spiel-Ende — Alt-Tab schaltet **nicht** zurück. Schaltet standardmäßig nur das Spiel-/Medien-Gerät; per Opt-in *„Also switch the communications device"* folgt auch Discord/Voice (ab Werk aus, damit Voice-Apps wie TeamSpeak nicht gestört werden).
 - **Hue pro Profil** — Farbtemperatur pro Profil neben Vibrance. NVIDIA 0–359° wie im Control Panel, AMD im Treiber-Bereich.
 - **Bis zu 9 Profile** mit voller Anpassung
-- **Kalibrierungs-Assistent** — zwei Klicks für die Auto-Helligkeit
 - **Profil-Editor** — Gamma, Kontrast, Vibrance, Hue pro Profil feintunen
+
+#### Arc-Raiders-Modul
+
+Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder unter *Einstellungen → App*.
+
+- **Autoscrapper** *(neu in V1.2, Pre-release)* — F5 bei offenem Lager: BrightRaider liest das ganze Lager (~300 Plätze in etwa 10 Sekunden), zeigt, was es nach deinen Regeln verschrotten oder verkaufen würde, und handelt erst, wenn du die Liste bestätigst. Ab Werk Testlauf, Quest-Gegenstände geschützt, was es nicht sicher erkennt, bleibt unangetastet. Jede Auflösung von 1080p bis 5K, auch 16:10, 4:3 und 21:9. 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
+- **Map Scanner** — M auf der Karte gedrückt halten, um alle Evakuierungs-Timer automatisch auszulesen. Screenshot → lokale Auswertung auf deinem PC → farbkodierter Live-Countdown. Erkennt aktive Events (Nacht, Hurrikan, Elektr. Sturm, seit V1.1 auch **Uncovered Caches** und **Hidden Bunker**). Unterstützt Buried City, Stella Montis, Space Port, Blue Gate, Damm und Riven Tides — **andere Spiele** lassen sich seit V1.1 per Datenpack ergänzen. 📖 [Pack-Anleitung](docs/pack-authoring.md)
+- **Evac-Alarm** — roter Toast + Sound wenn ein Evac-Timer unter den konfigurierten Schwellwert fällt.
+- **QuickSelect** — eine Taste drücken, um ein Item aus dem Schnellrad automatisch zu benutzen. Q halten → Slot wählen → Q loslassen → LMB halten → H drücken. 8 Slots, LMB-Haltezeit in Millisekunden pro Slot, alle Tasten frei belegbar. 📖 [Anleitung](docs/QuickSelect_Guide.md)
+- **QuickSave** — ein Tastendruck zieht ein Item aus dem Inventar in die Sicherheitstasche **oder in die obere Rucksackreihe (Backpack 1–4)** *(neu in V1.1)* — und zurück. Alles automatisch: Inventar öffnen → ziehen → schließen. 5 unabhängige Presets, Slots konfigurierbar. 📖 [Anleitung](docs/QuickSave_Guide.md)
 
 ## Download
 
@@ -444,6 +474,8 @@ BrightRaider nutzt **NUR** Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie 
 **Autorun** hält einfach deine Vorwärtstaste gedrückt — eine Komfort-Funktion, wie die Auto-Run-Taste, die viele Spiele nativ haben, oder die Tastenhalte-Funktion mancher Tastaturen. Ein einzelner gehaltener Tastendruck, ohne Timing-Muster oder Sequenz — praktisch nicht davon zu unterscheiden, dass du die Taste selbst hältst.
 
 **QuickSave und QuickSelect** sind der Teil, den man kennen sollte: Sie senden eine kurze Folge von Klicks/Tastendrücken, um ein Item zu bewegen, und sind damit eine andere Kategorie als die Anzeige-Funktionen oben. BrightRaider macht das **ohne Kernel-Treiber und ohne Injektion** — automatisierte mehrstufige Eingaben können von verhaltensbasiertem Anti-Cheat (z. B. Anybrain, jetzt in Arc Raiders) aber grundsätzlich erkannt werden, wie bei jedem Eingabe-Automatisierungs-Tool. Das stärkste Signal für solche Systeme ist *simulierte Mausbewegung* — reine Tastatur-Auswahl ist daher ein schwächeres Signal als alles, was den Cursor für dich bewegt. Beide sind **optional und standardmäßig aus** — wer kein Risiko eingehen will, lässt sie aus und nutzt alles andere: Anzeige, FPS, Overlay, Map Scanner und Autorun bleiben außerhalb dieser Kategorie.
+
+**Crosshair-Overlay:** ein transparentes Windows-Fenster, dieselbe Technik wie bei Discord- oder GeForce-Overlays — nicht injiziert, kein Speicherzugriff, nicht in der Engine gerendert. EAC erlaubt das ausdrücklich. **Diese Aussage gilt für EAC und lässt sich nicht auf andere Anti-Cheats übertragen** — VAC ist ein eigenes System, und aus der Counter-Strike-Szene werden Sperren im Zusammenhang mit fremden Crosshair-Overlays berichtet. **In Counter-Strike den Crosshair auslassen.**
 
 ## FAQ
 
