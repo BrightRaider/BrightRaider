@@ -65,6 +65,8 @@ EXE, no installation.** A Setup Wizard picks sensible defaults on first launch
 - **Map Scanner** — hold M on the in-game map to read all evacuation timers
   locally, with a live colour-coded overlay.
 - **Evac Alarm** — red toast + sound when a timer drops below your threshold.
+- **Autoscrapper** — press F5 with the stash open: reads the whole stash and
+  scraps or sells by your rules, only after you confirm the list.
 - **Crosshair Overlay** — click-through crosshair, 6 styles, custom colour, size
   (4–50 px), optional outline.
 - **Audio Output Switcher** — cycle the default output device with a hotkey;
@@ -327,6 +329,25 @@ or wheel scroll — no manual clicking.
 > Slate UI that ARC Raiders uses — the same thing happens with manual drag-drop.
 > It can't be fixed from outside the game; just trigger again.
 
+### Autoscrapper (Pro)
+
+Reads your stash from the screen and scraps or sells what your rules say —
+after you have seen the list and confirmed it. Full walkthrough:
+[Autoscrapper Guide](Autoscrapper_Guide.md).
+
+- **Rules:** *Settings → Autoscrapper* — an item (or a whole category), how
+  many to keep, and what happens to the rest: leave alone, scrap or sell.
+  Anything not listed is never touched.
+- **Run:** open the stash in game and press **F5**. Keep your hands off the
+  mouse while it scrolls (~10 s for 300 slots).
+- **Review:** the list comes up in stash order. **Enter** runs it, **Esc**
+  changes nothing; what you set there is saved as rules. Hold **Esc** to stop
+  a running pass.
+- **Test run** is the default: it goes up to the game's confirmation box and
+  cancels it. Switch to **Live** once it behaves.
+- **Unrecognised tiles** stay unnamed and untouched. Name them once with
+  *Name unrecognised items…* and they are known from the next scan on.
+
 ### Crosshair Overlay (Pro)
 
 A transparent, click-through crosshair drawn on screen (works in fullscreen; same
@@ -502,6 +523,8 @@ Defaults (Numpad, TKL, AZERTY).
 - **Map Scanner** — M auf der Karte halten, um alle Evakuierungs-Timer lokal
   auszulesen, mit farbkodiertem Live-Overlay.
 - **Evac-Alarm** — roter Toast + Sound, wenn ein Timer unter den Schwellwert fällt.
+- **Autoscrapper** — F5 bei offenem Lager: liest das ganze Lager und verschrottet
+  oder verkauft nach deinen Regeln, erst nachdem du die Liste bestätigt hast.
 - **Crosshair-Overlay** — Click-through-Fadenkreuz, 6 Stile, freie Farbe, Größe
   (4–50 px), optionaler Umriss.
 - **Audio-Ausgabe-Umschalter** — Standard-Ausgabegerät per Hotkey durchwechseln;
@@ -765,6 +788,25 @@ Tastendruck oder Mausradscrollen.
 > **Bekannte Einschränkung:** gelegentliche Drag-Fehler kommen vom Unreal-Engine-
 > Slate-UI, das ARC Raiders nutzt — dasselbe passiert beim manuellen Ziehen. Von
 > außen nicht behebbar; einfach nochmal auslösen.
+
+### Autoscrapper (Pro)
+
+Liest dein Lager vom Bildschirm und verschrottet oder verkauft, was deine Regeln
+sagen — nachdem du die Liste gesehen und bestätigt hast. Ausführlich:
+[Autoscrapper Guide (EN)](Autoscrapper_Guide.md).
+
+- **Regeln:** *Einstellungen → Autoscrapper* — ein Gegenstand (oder eine ganze
+  Kategorie), wie viele bleiben und was mit dem Rest passiert: liegen lassen,
+  verschrotten oder verkaufen. Was nicht in der Liste steht, wird nie angefasst.
+- **Start:** Lager im Spiel öffnen und **F5** drücken. Maus in Ruhe lassen,
+  solange gescrollt wird (~10 s für 300 Plätze).
+- **Prüfen:** Die Liste erscheint in Lager-Reihenfolge. **Enter** führt aus,
+  **Esc** ändert nichts; was du dort einstellst, wird als Regel gespeichert.
+  **Esc** gedrückt halten bricht einen laufenden Durchgang ab.
+- **Testlauf** ist voreingestellt: geht bis zur Bestätigungsbox des Spiels und
+  bricht dort ab. Auf **Live** umstellen, wenn alles passt.
+- **Unerkannte Kacheln** bleiben unbenannt und unangetastet. Einmal über
+  *Name unrecognised items…* benennen, ab dem nächsten Scan sind sie bekannt.
 
 ### Crosshair-Overlay (Pro)
 
