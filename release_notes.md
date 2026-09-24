@@ -36,7 +36,7 @@
 If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a **known false positive**. Choose **More info → Run anyway**. Every release so far has been submitted to Microsoft and came back clean.
 
 ```
-BrightRaider.exe   11DF1309631DD624297AE3AD54B1A48FDD40A0E1CDA52CC600FD0B436636FA3B
+BrightRaider.exe   5A63D62A399FC9AFFC73E1C54784AFB3B3F19343FD1C4AC333E9768F8F7440F4
 ```
 
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt)
