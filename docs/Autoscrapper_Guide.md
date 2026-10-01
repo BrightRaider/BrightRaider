@@ -2,14 +2,14 @@
 
 The **Autoscrapper** reads your ARC Raiders stash from the screen, works out what every tile is, and scraps or sells what you told it to — after you have seen the list and said yes.
 
-**Nothing happens until you confirm.** Every run ends in a review screen that cannot be skipped, and an item that is not on your list is never touched — including anything BrightRaider misreads.
+**Nothing happens until you confirm.** Every run ends in a review screen — unless you switch it off once your rules are settled — and an item that is not on your list is never touched, including anything BrightRaider misreads.
 
 ---
 
 ## Requirements
 
 - **BrightRaider Pro license**
-- BrightRaider V1.2 or later
+- BrightRaider V1.2 or later (running without the review: V1.2.1)
 - ARC Raiders running, with the **stash open** when you press the trigger key
 
 ---
@@ -65,6 +65,15 @@ After the scan you get your stash as a list, **in the same order as in the game*
 - **Keep everything** sets every row to *leave alone* in one click.
 - **What you set here is saved as rules.** The second run needs no editing at all.
 - To **stop a run** once it has started, hold **Esc**.
+
+### Running without the review
+
+Once your rules are settled, tick **Run without the review when my rules already decide everything** in the Autoscrapper tab. F5 then scans and runs your saved rules straight away.
+
+- Items without a rule and unnamed tiles are still never touched.
+- If the scan did not see the whole stash, the review comes up anyway.
+- If every rule is already met, you get *nothing to do* and the stash is left alone.
+- It respects **A run may:** — on *Test run* nothing is destroyed either way.
 
 ---
 

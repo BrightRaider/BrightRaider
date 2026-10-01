@@ -3,6 +3,31 @@
 ================================================================
 
 
+[ V1.2.1 ] - Pre-release
+
+  Autoscrapper
+  - New, optional: run without the review. Once your rules are settled, F5
+    scans and runs them straight away. Items without a rule and unnamed tiles
+    are still never touched; if the scan missed part of the stash, the review
+    comes up anyway. Off by default.
+  - After the scan it works upward from the end of the list instead of
+    scrolling all the way back to the top first.
+  - Damaged items are no longer mistaken for their blueprint.
+  - Stack counts: a 9 no longer reads as 8, a 4 no longer as 0 or 9.
+  - The review no longer warns that the scan missed part of the stash when
+    the stash is simply less than three-quarters full.
+
+  QuickSave
+  - Fixed on 4:3, 16:10 and stretched resolutions (#83): the inventory is
+    anchored at the top, not centred, so every target sat too low.
+  - W1/W2 grabbed the first attachment (the barrel) on weapons with four
+    attachments. All drops now land on the slot centre.
+
+  General
+  - Running an older version in between no longer loses your newer settings:
+    they are restored on the next start.
+
+
 [ V1.2.0 ] - Pre-release
 
   New: the Autoscrapper

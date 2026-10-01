@@ -13,7 +13,7 @@ One EXE, zero dependencies (Native AOT — no .NET runtime install required). Wo
 
 ## 🆕 What's new
 
-**V1.2 pre-release:** the **Autoscrapper** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.0) · **Latest stable:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2 pre-release:** the **Autoscrapper** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.1) · **Latest stable:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
 
