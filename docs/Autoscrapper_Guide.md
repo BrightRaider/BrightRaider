@@ -138,6 +138,12 @@ Only change the last two if you rebound them in ARC Raiders.
 
 ---
 
+## Anti-cheat
+
+The Autoscrapper clicks, moves the cursor and scrolls in the game for you, at machine-regular intervals — the input is marked by Windows as simulated. Behavioural anti-cheat (such as Anybrain in ARC Raiders) is built to look for automated input, so this is the most exposed feature in BrightRaider. It is off by default; use it at your own risk. More in the README's [Anti-Cheat Safety](https://github.com/BrightRaider/BrightRaider#anti-cheat-safety) section.
+
+---
+
 ## Troubleshooting
 
 | Problem | What to do |

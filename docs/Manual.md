@@ -332,8 +332,10 @@ or wheel scroll — no manual clicking.
 ### Autoscrapper (Pro)
 
 Reads your stash from the screen and scraps or sells what your rules say —
-after you have seen the list and confirmed it. Full walkthrough:
-[Autoscrapper Guide](Autoscrapper_Guide.md).
+by default after you have seen the list and confirmed it ("Run without the
+review" skips that). It sends simulated clicks, cursor moves and scrolling to
+the game — the most exposed input feature, see the README's anti-cheat
+section. Full walkthrough: [Autoscrapper Guide](Autoscrapper_Guide.md).
 
 - **Rules:** *Settings → Autoscrapper* — an item (or a whole category), how
   many to keep, and what happens to the rest: leave alone, scrap or sell.

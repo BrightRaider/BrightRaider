@@ -102,7 +102,7 @@ Two hero shots — the rest is one click away.
 
 NVIDIA Game Filters are blocked by anti-cheat (EAC). Monitor OSD is slow and clunky. Alt-tabbing to adjust settings gets you killed.
 
-BrightRaider's display and colour features use standard Windows display APIs — the same way your NVIDIA Control Panel or monitor settings work — and are **safe with all major anti-cheat systems** (EAC, BattlEye, Vanguard).
+BrightRaider's display and colour features use standard Windows display APIs — the same way your NVIDIA Control Panel or monitor settings work — and are **safe with all major anti-cheat systems** (EAC, BattlEye, Vanguard). The optional features that send input to the game are a different category — see [Anti-Cheat Safety](#anti-cheat-safety).
 
 > **VibranceGUI is no longer needed.** BrightRaider auto-switches vibrance and FPS limits per game as you alt-tab — everything VibranceGUI does, in one place. You can uninstall it.
 
@@ -137,7 +137,7 @@ One key unlocks everything below, in every game — the Arc Raiders tools includ
 
 Part of the optional Arc Raiders module — switch it on in the Setup Wizard or *Settings → App*.
 
-- **Autoscrapper** *(V1.2 pre-release)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules, only after you confirm the list. 📖 [Guide](docs/Autoscrapper_Guide.md)
+- **Autoscrapper** *(V1.2 pre-release)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules — by default only after you confirm the list. Sends simulated clicks to the game, see [Anti-Cheat Safety](#anti-cheat-safety). 📖 [Guide](docs/Autoscrapper_Guide.md)
 - **Map Scanner** — long-press M on the map: evac timers, map conditions and hatch states as a colour-coded overlay, plus an evac alarm. Other games via data packs. 📖 [Guide](docs/MapScanner_Guide.md) · [Pack authoring](docs/pack-authoring.md)
 - **QuickSelect** — one key uses an item from your quick-use wheel. 📖 [Guide](docs/QuickSelect_Guide.md)
 - **QuickSave** — one key drags an item into your Safe Pocket or backpack and back. 📖 [Guide](docs/QuickSave_Guide.md)
@@ -232,7 +232,7 @@ BrightRaider adjusts your display output using standard Windows APIs:
 - **ADL** — AMD Radeon saturation + hue control
 - **ADLX** — AMD per-game FPS limits via ADLX FRTC
 
-Nothing is modified in the game. Nothing is injected. It's the equivalent of changing your monitor brightness — just faster and with presets.
+Nothing in the game is modified and nothing is loaded into the game process. It's the equivalent of changing your monitor brightness — just faster and with presets.
 
 ### Auto-Brightness (Pro)
 
@@ -244,34 +244,54 @@ Calibrate in two steps: measure the darkest spot, measure the brightest spot, do
 
 BrightRaider does **NOT**:
 - Modify game files or memory
-- Inject DLLs into game processes
-- Hook into the game
+- Inject DLLs into game processes or hook into the game process
 - Read game data or game memory
 
-The Map Scanner takes a **screenshot of your screen** and reads it on your PC — the same as taking a photo of your monitor. No game files, no game memory, no game process is accessed.
+Your hotkeys work through Windows' standard low-level keyboard/mouse hooks — system-wide, the same mechanism macro and hotkey tools use — not through anything inside the game.
 
-BrightRaider **ONLY** uses:
+**The display and colour features** use only:
 - Windows GDI — same as your monitor settings
 - NVIDIA NvAPI — same as NVIDIA Control Panel
 - AMD ADL / ADLX — same as AMD Radeon Software
 
-Anti-cheat systems do not flag display adjustments.
+Anti-cheat systems do not flag display adjustments. **Some other features send input to the game**, and that is a different category — see below.
+
+### What each feature does, and the risk
+
+| Feature | What it does | Default | Risk (our estimate) |
+|---|---|---|---|
+| Gamma, contrast, shadows | Windows gamma ramp | on | none known |
+| Vibrance, hue, FPS limit | NVIDIA / AMD driver APIs | vibrance on | none known |
+| Auto-Brightness | Screenshots of your desktop | off (Pro) | none known |
+| Crosshair | Click-through window on top | off (Pro) | low — check league rules |
+| Map Scanner | Screenshot, plus cursor move and 6 mouse-wheel steps to zoom the map out | on with Arc module + Pro | low |
+| Autorun (walk/sprint) | Posted key messages: holds W / Shift | Pro, toggled with CapsLock | low |
+| Autorun **tap mode** | Presses and releases W on a fixed interval (e.g. 160 ms every 1.3 s) — a periodic macro | Pro, long-press CapsLock | medium |
+| QuickSelect | Posted keys, cursor move, mouse clicks | off (Pro) | medium |
+| QuickSave | Cursor drag of an item | off (Pro) | medium |
+| **Autoscrapper** *(V1.2 pre-release)* | Simulated mouse clicks (marked by Windows as injected), the cursor jumping to each tile, key presses and scrolling, at fixed intervals | off (Pro) | **highest** |
+
+"Risk" is our assessment of how input looks to behavioural anti-cheat (such as Anybrain, used by Arc Raiders). No anti-cheat vendor has confirmed or ruled out any of these.
 
 ### Input Automation
 
-**Autorun** just holds your forward key down — a comfort feature, the same as the auto-run key many games include natively or a keyboard's own key-hold. It's a single held keypress with no timing pattern or sequence to it, effectively indistinguishable from holding the key yourself.
+**The Autoscrapper is the most exposed feature.** It clicks, moves the cursor and scrolls in the game for you, for several seconds at a time, with machine-regular timing. Automated input like this is exactly what behavioural anti-cheat is built to look for. It is optional and off by default — use it at your own risk.
 
-**QuickSave** and **QuickSelect** are the part to be aware of: they send a short sequence of clicks/keystrokes to move an item, so they're not in the "display only" category. BrightRaider does this with **no kernel driver and no injection** — but automated multi-step input is something behavioural anti-cheat (such as Anybrain, now used by Arc Raiders) can in principle flag, like any input-automation tool. The strongest thing such detection keys on is *simulated mouse movement*, so keyboard-only selection is a weaker signal than anything that moves the cursor for you. Both are **optional and off by default** — if you want zero exposure, leave them off and use everything else: display, FPS, overlay, Map Scanner and Autorun all stay clear of that category.
+**QuickSave** and **QuickSelect** send a short sequence of clicks/keystrokes to move or use an item. BrightRaider does this with **no kernel driver and no injection into the game** — but automated multi-step input is something behavioural anti-cheat can in principle flag, like any input-automation tool. The strongest signal for such detection is *simulated mouse movement*, so keyboard-only selection is a weaker signal than anything that moves the cursor for you.
+
+**Autorun** holds your forward key (and sprint) with posted key messages. In **tap mode** it presses and releases forward on a fixed interval instead — that is a periodic macro with a regular timing pattern, not a single held key.
+
+**The Map Scanner** reads a screenshot of your screen on your PC, but before that it moves the cursor onto the map and scrolls the mouse wheel 6 times to zoom out. So it does send input, briefly.
+
+All input features are **optional**. If you want zero exposure, leave them off and use everything else: display, colour, FPS, Auto-Brightness and the overlay send no input at all.
 
 ### Crosshair Overlay
 
-BrightRaider's crosshair works via a transparent Windows overlay — the exact same mechanism used by Discord, GeForce Experience, and TeamSpeak overlays.
+BrightRaider's crosshair is a transparent, click-through Windows window drawn on top of the game — the same mechanism used by Discord, GeForce Experience and TeamSpeak overlays. It is not injected into the game, does not read game memory and is not rendered by the game engine.
 
-EAC (Easy Anti-Cheat) **explicitly allows** this type of overlay. It is not injected into the game, does not read game memory, and is not rendered inside the game engine. It is simply a transparent window drawn on top by Windows.
+**In Arc Raiders, EAC does not block it (our own test):** overlay crosshairs that EAC does block stop Arc Raiders from launching at all, and BrightRaider's does not. That is an observation, not a statement from EAC.
 
-EAC agrees in practice, not only on paper: overlay crosshairs that EAC does block stop Arc Raiders from launching at all, and BrightRaider's does not.
-
-**That statement is about EAC specifically and does not carry over to other anti-cheats.** VAC is a separate system with its own tolerances, and players report bans connected to third-party crosshair overlays. **In Counter-Strike, leave the crosshair off.** Nothing else is affected — display, audio and movement stay clear of this question entirely.
+**It does not carry over to other games or anti-cheats.** VAC is a separate system with its own tolerances, and players report bans connected to third-party crosshair overlays; leagues such as FACEIT and ESEA have their own rules. **In Counter-Strike, leave the crosshair off**, and check the rules of any game you play competitively.
 
 ## System Requirements
 
@@ -317,7 +337,7 @@ Found a bug or have an idea? [Open an issue](https://github.com/BrightRaider/Bri
 Yes. BrightRaider adjusts your display, not the game.
 
 **Will I get banned?**
-The display, colour, FPS and overlay features use the same Windows display APIs as your monitor settings — nothing injected, hooked, or read from the game — so they're anti-cheat-safe. The optional input-automation features (QuickSave / QuickSelect / Autorun) send keystrokes to the game, which is a different category; in titles with behavioural anti-cheat (e.g. Arc Raiders' Anybrain) use those at your own discretion.
+The display, colour, FPS and overlay features use the same Windows display APIs as your monitor settings — nothing injected into or read from the game — so they're anti-cheat-safe. The optional input features (Autoscrapper, QuickSave, QuickSelect, Autorun, and the Map Scanner's zoom-out) send input to the game, which is a different category; the Autoscrapper is the most exposed. In titles with behavioural anti-cheat (e.g. Arc Raiders' Anybrain) use them at your own risk. Details: [Anti-Cheat Safety](#anti-cheat-safety).
 
 **Do I need Pro?**
 Free is fully functional. Pro adds QuickSave (drag to Safe Pocket with one key), QuickSelect (auto-use items), auto-brightness, map scanner, and more — so you never take your hand off the mouse.
@@ -388,7 +408,7 @@ Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Wer
 
 Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder unter *Einstellungen → App*.
 
-- **Autoscrapper** *(V1.2 Pre-release)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln, erst nachdem du die Liste bestätigt hast. 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
+- **Autoscrapper** *(V1.2 Pre-release)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste bestätigt hast. Sendet simulierte Klicks ans Spiel, siehe [Anti-Cheat Sicherheit](#anti-cheat-sicherheit). 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
 - **Map Scanner** — M auf der Karte gedrückt halten: Evac-Timer, Kartenereignisse und Luken als farbiges Overlay, dazu ein Evac-Alarm. Andere Spiele per Datenpack. 📖 [Anleitung (EN)](docs/MapScanner_Guide.md) · [Datenpacks](docs/pack-authoring.md)
 - **QuickSelect** — eine Taste benutzt ein Item aus dem Schnellrad. 📖 [Anleitung (EN)](docs/QuickSelect_Guide.md)
 - **QuickSave** — eine Taste zieht ein Item in die Sicherheitstasche oder den Rucksack und zurück. 📖 [Anleitung (EN)](docs/QuickSave_Guide.md)
@@ -420,15 +440,36 @@ Eine `BrightRaider.exe` für jede Tastatur — Numpad, TKL oder eigene Belegung.
 
 ## Anti-Cheat Sicherheit
 
-BrightRaider verändert **KEINE** Spieldateien oder den Spielspeicher. Der Map Scanner macht einen Screenshot und liest ihn lokal auf deinem PC aus. Keine Injektion, kein Spielzugriff.
+BrightRaider verändert **KEINE** Spieldateien und keinen Spielspeicher, injiziert nichts ins Spiel und hängt sich nicht in den Spielprozess. Deine Hotkeys laufen über die normalen systemweiten Tastatur-/Maus-Hooks von Windows, wie bei Makro- und Hotkey-Tools.
 
-BrightRaider nutzt **NUR** Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie das NVIDIA Control Panel oder AMD Radeon Software.
+**Die Anzeige- und Farbfunktionen** nutzen nur Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie das NVIDIA Control Panel oder AMD Radeon Software. **Einige andere Funktionen senden Eingaben ans Spiel**, das ist eine andere Kategorie:
 
-**Autorun** hält einfach deine Vorwärtstaste gedrückt — eine Komfort-Funktion, wie die Auto-Run-Taste, die viele Spiele nativ haben, oder die Tastenhalte-Funktion mancher Tastaturen. Ein einzelner gehaltener Tastendruck, ohne Timing-Muster oder Sequenz — praktisch nicht davon zu unterscheiden, dass du die Taste selbst hältst.
+| Funktion | Was sie tut | Standard | Risiko (unsere Einschätzung) |
+|---|---|---|---|
+| Gamma, Kontrast, Schatten | Windows-Gamma-Rampe | an | keins bekannt |
+| Vibrance, Farbton, FPS-Limit | NVIDIA-/AMD-Treiber-APIs | Vibrance an | keins bekannt |
+| Auto-Helligkeit | Screenshots vom Desktop | aus (Pro) | keins bekannt |
+| Fadenkreuz | Durchklickbares Fenster obendrauf | aus (Pro) | niedrig — Liga-Regeln prüfen |
+| Map Scanner | Screenshot, dazu Cursor setzen und 6× Mausrad zum Rauszoomen | an mit Arc-Modul + Pro | niedrig |
+| Autorun (Gehen/Sprinten) | Gepostete Tastennachrichten: hält W / Shift | Pro, CapsLock | niedrig |
+| Autorun **Tap-Modus** | Drückt und löst W in festem Takt (z. B. 160 ms alle 1,3 s) — ein periodisches Makro | Pro, CapsLock lang drücken | mittel |
+| QuickSelect | Gepostete Tasten, Cursor setzen, Mausklicks | aus (Pro) | mittel |
+| QuickSave | Item per Cursor ziehen | aus (Pro) | mittel |
+| **Autoscrapper** *(V1.2 Pre-release)* | Simulierte Mausklicks (von Windows als injiziert markiert), Cursor springt auf jede Kachel, Tastendrücke und Scrollen, in festen Abständen | aus (Pro) | **am höchsten** |
 
-**QuickSave und QuickSelect** sind der Teil, den man kennen sollte: Sie senden eine kurze Folge von Klicks/Tastendrücken, um ein Item zu bewegen, und sind damit eine andere Kategorie als die Anzeige-Funktionen oben. BrightRaider macht das **ohne Kernel-Treiber und ohne Injektion** — automatisierte mehrstufige Eingaben können von verhaltensbasiertem Anti-Cheat (z. B. Anybrain, jetzt in Arc Raiders) aber grundsätzlich erkannt werden, wie bei jedem Eingabe-Automatisierungs-Tool. Das stärkste Signal für solche Systeme ist *simulierte Mausbewegung* — reine Tastatur-Auswahl ist daher ein schwächeres Signal als alles, was den Cursor für dich bewegt. Beide sind **optional und standardmäßig aus** — wer kein Risiko eingehen will, lässt sie aus und nutzt alles andere: Anzeige, FPS, Overlay, Map Scanner und Autorun bleiben außerhalb dieser Kategorie.
+„Risiko“ ist unsere Einschätzung, wie die Eingaben für verhaltensbasiertes Anti-Cheat (z. B. Anybrain in Arc Raiders) aussehen. Kein Anti-Cheat-Hersteller hat eine dieser Funktionen bestätigt oder ausgeschlossen.
 
-**Crosshair-Overlay:** ein transparentes Windows-Fenster, dieselbe Technik wie bei Discord- oder GeForce-Overlays — nicht injiziert, kein Speicherzugriff, nicht in der Engine gerendert. EAC erlaubt das ausdrücklich. **Diese Aussage gilt für EAC und lässt sich nicht auf andere Anti-Cheats übertragen** — VAC ist ein eigenes System, und aus der Counter-Strike-Szene werden Sperren im Zusammenhang mit fremden Crosshair-Overlays berichtet. **In Counter-Strike den Crosshair auslassen.**
+**Der Autoscrapper ist am stärksten exponiert:** Er klickt, bewegt den Cursor und scrollt sekundenlang für dich, in maschinell gleichmäßigem Takt — genau danach sucht verhaltensbasiertes Anti-Cheat. Optional, standardmäßig aus, Nutzung auf eigenes Risiko.
+
+**QuickSave und QuickSelect** senden eine kurze Folge von Klicks/Tastendrücken — **ohne Kernel-Treiber und ohne Injektion ins Spiel**, aber automatisierte mehrstufige Eingaben können grundsätzlich erkannt werden. Das stärkste Signal ist *simulierte Mausbewegung*; reine Tastatur-Auswahl ist ein schwächeres Signal.
+
+**Autorun** hält Vorwärts (und Sprint) per geposteter Tastennachricht. Im **Tap-Modus** drückt und löst es Vorwärts in festem Takt — ein periodisches Makro mit regelmäßigem Timing, kein einzelner gehaltener Tastendruck.
+
+**Der Map Scanner** liest einen Screenshot lokal aus, setzt aber vorher den Cursor auf die Karte und scrollt 6× mit dem Mausrad, um rauszuzoomen — er sendet also kurz Eingaben.
+
+Alle Eingabe-Funktionen sind **optional**. Wer kein Risiko will, lässt sie aus: Anzeige, Farbe, FPS, Auto-Helligkeit und Overlay senden keinerlei Eingaben.
+
+**Crosshair-Overlay:** ein transparentes, durchklickbares Windows-Fenster, dieselbe Technik wie bei Discord- oder GeForce-Overlays — nicht injiziert, kein Speicherzugriff, nicht in der Engine gerendert. **In Arc Raiders blockiert EAC es nicht (eigener Test)**: Crosshair-Overlays, die EAC blockiert, verhindern den Start von Arc Raiders, BrightRaiders nicht — eine Beobachtung, keine Aussage von EAC. **Das lässt sich nicht auf andere Spiele übertragen** — VAC ist ein eigenes System, aus der Counter-Strike-Szene werden Sperren im Zusammenhang mit fremden Crosshair-Overlays berichtet, und Ligen wie FACEIT oder ESEA haben eigene Regeln. **In Counter-Strike den Crosshair auslassen** und bei kompetitiven Spielen die Regeln prüfen.
 
 ## FAQ
 
@@ -436,7 +477,7 @@ BrightRaider nutzt **NUR** Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie 
 Ja. BrightRaider passt den Bildschirm an, nicht das Spiel.
 
 **Werde ich gebannt?**
-Die Anzeige-, Farb-, FPS- und Overlay-Funktionen nutzen die gleichen Windows-Display-APIs wie deine Monitor-Einstellungen — nichts wird injiziert, gehookt oder aus dem Spiel gelesen — sie sind also anti-cheat-sicher. Die optionalen Eingabe-Automatisierungs-Funktionen (QuickSave / QuickSelect / Autorun) senden Tastendrücke ans Spiel, das ist eine andere Kategorie; in Titeln mit verhaltensbasiertem Anti-Cheat (z. B. Arc Raiders' Anybrain) nutze diese nach eigenem Ermessen.
+Die Anzeige-, Farb-, FPS- und Overlay-Funktionen nutzen die gleichen Windows-Display-APIs wie deine Monitor-Einstellungen — nichts wird ins Spiel injiziert oder aus ihm gelesen — sie sind also anti-cheat-sicher. Die optionalen Eingabe-Funktionen (Autoscrapper, QuickSave, QuickSelect, Autorun und das Rauszoomen des Map Scanners) senden Eingaben ans Spiel, das ist eine andere Kategorie; am stärksten exponiert ist der Autoscrapper. In Titeln mit verhaltensbasiertem Anti-Cheat (z. B. Arc Raiders' Anybrain) auf eigenes Risiko. Details: [Anti-Cheat Sicherheit](#anti-cheat-sicherheit).
 
 **Brauche ich Pro?**
 Free ist voll funktionsfähig. Pro fügt QuickSave, QuickSelect, Auto-Helligkeit, Map Scanner und mehr hinzu.
