@@ -4,6 +4,8 @@
 
 **The Frozen Trail update.** The **Autoscrapper** reads your stash and does the scrapping for you, the **Map Scanner** knows Pendola Pass and the ARC Frigate, and your second screen finally stops blinding you.
 
+> **Using the Autoscrapper?** The Frozen Trail update brought a long list of new items that BrightRaider does not know yet. Please read the note in the Autoscrapper section below — in short: nothing it cannot name is ever touched, and you can teach it the new items yourself.
+
 ## 🌙 Dim other displays — the one you will feel at once
 
 A bright second screen — a browser, a map, a stream — sits in the corner of your eye and costs you contrast on the game. **Dim other displays** darkens every screen except the one you play on, **only while the game is in front**. Alt-Tab out and they are back to normal that instant; nothing stays dark on your desktop.
@@ -40,7 +42,15 @@ New in V1.2.0, better in V1.2.1 and V1.2.2.
 - Items the game draws identically are not guessed. Anything BrightRaider cannot name goes into a naming queue and is recognised from then on.
 - **V1.2.1:** optional run without the review once your rules are settled (off by default; unnamed tiles stay untouched, and an incomplete scan brings the review up anyway). It works upward from the end of the list, damaged items are no longer mistaken for their blueprint, and stack counts read right.
 - **V1.2.2:** **about twice as fast** — it scans only as far as your stash is filled and stops as soon as nothing more fits. **Exact amounts:** "keep 40" over stacks of 10, 10, 10, 10, 10, 10, 7 and 5 now leaves exactly 40, not 42.
-- **The new items from the Frozen Trail update are only partly known yet.** A tile BrightRaider cannot name is never touched, and the item data grows step by step.
+
+### A word from me, about the Frozen Trail update
+
+I have put a great many hours into the Autoscrapper — thousands of tiles checked against known answers, at every resolution, until it named what it saw. Then the Frozen Trail update arrived with a long list of new items, and part of what worked the day before does not work for them yet: BrightRaider has never seen them, so it cannot name them. I would rather tell you that plainly than hide it.
+
+- **Nothing breaks and nothing is lost.** A tile BrightRaider cannot name is never touched, whatever your rules say. Everything it already knew is still recognised, and your rules still apply to it.
+- **It can learn the new items — every one it can see.** Unnamed tiles go into the naming queue with their picture (**Settings → Autoscrapper → Name unrecognised items…**). Name an item once and it is recognised from the next scan on. Your names are kept in your own file and no update ever overwrites them; if an item is one the built-in list has never heard of, you can simply type its name.
+- **I will teach it the rest step by step**, the way I did with the Map Scanner: collect the pictures, name them, release. For the items you care about you do not have to wait for me.
+- **Weapons look odd right now.** The weapon picture gets smaller the more attachments sit on the weapon. As far as I can tell that is how the game draws it, but I am not sure it is meant to be that way — and for BrightRaider a smaller picture is a different picture, so the same weapon can come up unnamed once its attachments change. I am looking at it with real screenshots. Until then you can name the weapon in the queue, or leave it: weapons are rarely in anyone's rules.
 
 ## 🗺 Map Scanner
 
