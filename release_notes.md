@@ -47,6 +47,7 @@ New in V1.2.0, better in V1.2.1 and V1.2.2.
 
 I have put easily 100 hours into the Autoscrapper — thousands of tiles checked against known answers, at every resolution, until it named what it saw. Then the Frozen Trail update arrived with a long list of new items, and part of what worked the day before does not work for them yet: BrightRaider has never seen them, so it cannot name them. I would rather tell you that plainly than hide it.
 
+- **For the items it already knew, nothing has changed.** The everyday items — everything that is not a weapon — are recognised as reliably as before, and those are usually exactly the ones you want handled automatically.
 - **Nothing breaks and nothing is lost.** A tile BrightRaider cannot name is never touched, whatever your rules say. Everything it already knew is still recognised, and your rules still apply to it.
 - **It can learn the new items — every one it can see.** Unnamed tiles go into the naming queue with their picture (**Settings → Autoscrapper → Name unrecognised items…**). Name an item once and it is recognised from the next scan on. Your names are kept in your own file and no update ever overwrites them; if an item is one the built-in list has never heard of, you can simply type its name.
 - **I will teach it the rest step by step**, the way I did with the Map Scanner: collect the pictures, name them, release. For the items you care about you do not have to wait for me.

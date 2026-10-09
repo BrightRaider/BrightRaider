@@ -70,6 +70,9 @@
     graphics-driver libraries.
 
   Autoscrapper
+  - Everything it already knew that is not a weapon is recognised as
+    reliably as before - those are usually the items you want handled
+    automatically.
   - Items added by the Frozen Trail update are only partly known yet. A tile
     that cannot be named is never touched; the item data is extended step by
     step. You can teach it yourself: name an unrecognised item once under
