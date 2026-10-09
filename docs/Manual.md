@@ -1,8 +1,9 @@
 # BrightRaider — Manual
 
 **Switch Gamma, Contrast, Vibrance & Hue with one keypress.**
-Plus Auto-Brightness, Alt-Tab Auto-Switch, per-game Auto-HDR, Footstep Booster,
-Map Scanner, QuickSelect & QuickSave.
+Plus Auto-Brightness, Alt-Tab Auto-Switch, per-game Auto-HDR, dimming of your
+other screens, Footstep Booster, Map Scanner, QuickSelect, QuickSave & the
+Autoscrapper.
 
 > 🇬🇧 **English** below · 🇩🇪 **[Deutsch weiter unten](#deutsch)**
 

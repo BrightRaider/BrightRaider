@@ -92,7 +92,7 @@
   - A row skipped while scrolling is now fetched even when the stash is not
     full; the scan used to come back incomplete.
   - Clicks could land a row off when the list was still moving after a
-    scroll. The page is now checked again right before clicking.
+    scroll.
   - After a test run the item tooltip could cover the stash and stop the run.
   - The Windows lock screen was taken for a game and switched to the game
     profile, so it came up brighter.
