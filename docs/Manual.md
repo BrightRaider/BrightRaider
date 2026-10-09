@@ -173,6 +173,13 @@ Two things work regardless:
 | Numpad /         | Toggle QuickSave (Pro)                     |
 | Numpad Del       | Global ON/OFF (see below)                 |
 | Numpad Enter     | Cycle audio output device (Pro)           |
+| (unbound)        | Mute / unmute teammates — voice chat (Pro)|
+| (unbound)        | Dim other displays off / on (Free)        |
+
+On Free, the keys of Pro features are not used by BrightRaider: they go straight
+to whatever window is in front, in every program. The same goes for the Arc
+Raiders toggle keys while the Arc Raiders module is off. (QuickSelect and
+QuickSave keys only act inside the game; there Free still sees the Pro notice.)
 
 Works with or without Shift, NumLock on or off. **TKL/Laptop preset** maps
 profiles to F1–F9 (audio-device cycle on PageUp). **AZERTY preset** uses Z as the
@@ -240,6 +247,30 @@ Full tuning steps in `FootstepBooster_Guide.md`.
 Auto-mutes the game's audio session when you Alt-Tab out, unmutes on return.
 Per-process — your music + Discord keep playing. *Settings → Audio → "Auto-mute
 game when Alt-Tab'd out"*.
+
+### Mute Teammates (Pro)
+
+One key mutes or unmutes your voice chat while you play. Bind it under
+*Settings → Hotkeys → Mute teammates*; the apps it silences are in the list
+*Mute teammates — voice apps* right below. New installs start with Discord,
+TeamSpeak 3 and the new TeamSpeak, Mumble, Teams and Zoom in it; **+ Add app…**
+picks any running program, **− Remove** takes one out, and **Add voice apps**
+puts the usual ones back. Apps that are not running are skipped. Unbound
+by default. Only the listed apps are touched, every instance of them. If
+BrightRaider exits or crashes while they are muted they are unmuted again at the
+next start — Windows would otherwise remember the mute.
+
+### Mute Indicator (Pro)
+
+While the game is muted with the mute key, a small speaker-with-a-cross icon
+shows in the top-left corner of the game's screen, so you can see at a glance
+why it is quiet. While *Mute teammates* has your voice chat silenced, a headset
+struck through appears next to it; both can be up at once. It never takes clicks or focus and hides when you leave the
+game. It shows while the game runs fullscreen or borderless (BrightRaider's idea
+of "a game is in front"); in a normal window it stays hidden. On by default;
+switch it off under *Settings → Audio → Mute indicator*.
+The key reads the game's real mute state each time, so a game muted by
+something else (the Windows mixer, Background Mute) is unmuted by one press.
 
 ### Audio Output Switcher (Pro)
 
@@ -320,6 +351,9 @@ or wheel scroll — no manual clicking.
   **Backpack 1–4** (top row) — new in V1.1. Direction is fully configurable.
 - **How it works:** opens inventory (Tab) → moves cursor to source → holds LMB
   and drags to destination → releases → closes inventory (Tab).
+- **4:3 and 16:10 screens:** the game places the inventory at the top of such
+  a screen for some setups and in the centre for others. Once the inventory is
+  open, QuickSave looks at it and aims where it really is.
 - **Toggle direction (⇄):** first press moves From→To, second To→From.
 - **Timing** (if a drag fails): Open (250 ms), Hover (0 ms), Hold (0 ms), Drop
   (120 ms), Cooldown (0 ms).
@@ -364,6 +398,31 @@ Auto-Brightness*. Calibrate in two steps (darkest, then brightest spot); the
 calibration window sits below all zones so it doesn't skew results. Zone weights
 (0–10 each) under *Settings → Zones…*. Full walkthrough in
 `AutoBrightness_Guide.md`.
+
+### Dim Other Displays (Free)
+
+*Settings → Display → Dim other displays.* While a game is in front, every
+display except the one selected above is darkened by the slider's amount, so a
+bright second screen stops pulling your eye; Alt-Tab brings them straight back.
+*Tip:* set it so you can still read the other screen but it is clearly calmer —
+you get more focus and contrast on the game without losing the chat or a guide.
+Watching a film on the other screen? Bind *Settings → Hotkeys → Dim on/off*: one
+press brings the other screens back to normal, the next dims them again. The
+switch is for the current session only; the slider and the next start are not
+affected.
+It applies like the other colour settings: only while the game is in front, and
+only after Apply / OK. *Test on screen* flashes the dimming together with the
+profile, so you can judge it without a game. 0 = off. With "All Monitors"
+selected there is no other display, and the slider is greyed out. It dims the
+display's own calibrated curve, down to a tenth at the slider's end — it does
+not lower the backlight. Going that dark needs the extended gamma range (the
+one-time Windows permission, button further down on the same tab); without it
+Windows refuses very dark curves and the slider stops at about 60 %.
+
+If BrightRaider is killed or crashes while the other displays are dimmed, they
+stay dark until the next restore. Start BrightRaider again and exit it from the
+tray menu (or press the Global ON/OFF key to full OFF): that puts every display
+back to its original curve.
 
 ### Alt-Tab Auto-Switch (Free)
 
@@ -411,7 +470,9 @@ stops intercepting keys. *Settings → Pause Hotkeys*; a toast confirms.
 Optional switch (*Settings → Hotkeys → Behaviour*). When on, every hotkey passes
 straight through on the desktop or in other apps, and reactivates automatically
 when a fullscreen game is in the foreground. Default off — leave it off for
-windowed-mode play.
+windowed-mode play. The one exception is the Global ON/OFF key when it sits on
+the numpad (the default): it keeps working everywhere. If you move it to an
+ordinary key, it follows this switch too.
 
 ### Global ON/OFF (Numpad Del — Free)
 
@@ -456,12 +517,15 @@ that is automatic and needs no launcher.
 
 ### Uninstall
 
-1. Exit BrightRaider (tray → Exit)
-2. Delete the folder
-3. *Optional:* remove `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM →
-   GdiIcmGammaRange`
-4. *Optional:* remove `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run →
-   BrightRaider`
+1. Turn off *Settings → App → Start with Windows*, then exit BrightRaider
+   (tray → Exit)
+2. Delete `BrightRaider.exe`
+3. Delete the folders `%LOCALAPPDATA%\BrightRaider` (the program copy) and
+   `%APPDATA%\BrightRaider` (settings, license, log)
+4. *Optional:* remove `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM →
+   GdiIcmGammaRange` (the one-time gamma setting)
+5. *Optional:* remove `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run →
+   BrightRaider` if "Start with Windows" was still on
 
 ---
 

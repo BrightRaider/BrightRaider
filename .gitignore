@@ -137,3 +137,6 @@ media/
 # Local build output and old builds - never in the public repo (cleanup 2026-09-24).
 # The per-version rules above predate this and are kept only as history.
 releases/
+
+# Retired scripts (review A0, 2026-10-02): kept locally, never pushed
+_archiv_scripts/

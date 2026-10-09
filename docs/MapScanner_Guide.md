@@ -35,12 +35,13 @@ Scanning takes ~1–2 seconds. The overlay refreshes from each fresh scan — lo
 | Blue Gate | ✓ |
 | Damm | ✓ |
 | Riven Tides | ✓ (Coastal Lift, Customs Lift) |
+| Pendola Pass | ✓ recognised by its name; lists its four gondola points: open ones run the raid's remaining time (the gondola has no countdown of its own), closed ones show CLOSED *(new in V1.2.2; name recognition for the German game UI so far)* |
 
 | Event | Effect on overlay |
 |-------|-------------------|
-| Night Raid | Marks 2 evac points active, rest CLOSED. Shows "⚠ Raider Hatches closed" warning. |
+| Night Raid | Marks 2 evac points active, rest CLOSED. The overlay header adds "No Hatches". |
 | Hurricane | All evac points stay active. |
-| Electromagnetic Storm | Marks 3 active, rest CLOSED. Shows the hatch warning. |
+| Electromagnetic Storm | Marks 3 active, rest CLOSED. The overlay header adds "No Hatches". |
 | Harvester | Normal scan, event name displayed |
 | Lush Blooms | Normal scan, event name displayed |
 | Matriarch | Normal scan, event name displayed |
@@ -52,6 +53,7 @@ Scanning takes ~1–2 seconds. The overlay refreshes from each fresh scan — lo
 | Beachcombing | Normal scan, event name displayed |
 | Uncovered Caches | Normal scan, event name displayed *(new in V1.1)* |
 | Hidden Bunker (Space Port) | Marks 3 evac points active, rest CLOSED, hatches closed *(new in V1.1)* |
+| ARC Frigate | All evac points stay active. The overlay header adds "No Hatches" *(new in V1.2.2)* |
 
 The event name appears below the map name in the overlay.
 

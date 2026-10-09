@@ -3,6 +3,98 @@
 ================================================================
 
 
+[ V1.2.2 ] - Pre-release
+
+  Map Scanner
+  - New event: ARC Frigate (any map). All evac points stay open and there are
+    no Raider Hatches; the overlay header adds "No Hatches".
+  - The triangle in front of major events (Matriarch, Hurricane, Night Raid,
+    Electromagnetic Storm) is gone from the overlay header.
+  - Pendola Pass, the new map, is recognised by its name and the overlay lists
+    its four gondola points: open ones run the raid's remaining time (the same
+    on each), closed ones show CLOSED; at night only two are open. The gondola
+    has no countdown of its own, so the evac alarm follows the raid timer.
+    Recognised on its own in the German game UI so far; in other languages it
+    still shows up under the Redirection condition.
+
+  Display and audio
+  - Much faster Alt-Tab into and out of the game: the work BrightRaider does
+    on every focus change got much lighter.
+  - New: "Dim other displays" (Settings -> Display). A slider darkens every
+    screen except the one BrightRaider is pointed at while a game is in front;
+    Alt-Tab brings them back. Applies like the other colour settings: only
+    while the game is in front, after Apply / OK; "Test on screen" flashes it
+    together with the profile. A key (Settings -> Hotkeys -> Dim on/off)
+    switches the dimming off and on during the session, e.g. for a film on
+    the other screen. Goes down to a tenth of the normal brightness
+    with the extended gamma range, about 60 % without it. 0 = off. Free.
+  - New: "Mute teammates" (Settings -> Hotkeys, Pro). One key mutes or unmutes
+    your voice chat apps. Pick them from a list: Discord, TeamSpeak, Mumble,
+    Teams and Zoom are already in it, "+ Add app..." takes any running program.
+    Unbound by default. A mute left behind by an exit or crash is undone at the
+    next start.
+  - The Windows permission prompt for the extended gamma range is asked once;
+    after a "no" a button in Settings -> Display asks again.
+  - New: small mute icons in the top-left corner of the game's screen: a
+    speaker with a cross while the Mute hotkey has the game silenced, a
+    headset struck through while Mute teammates has your voice chat silenced.
+    Switch them off in Settings -> Audio. They never take clicks or focus.
+
+  Fixed
+  - QuickSave on 4:3 and 16:10 screens (#83, #85): the game puts the inventory
+    at the top of such a screen for some setups and in the centre for others.
+    QuickSave now looks at the open inventory and aims where it really is,
+    instead of assuming one of the two.
+  - Notifications (toasts) always appeared on the primary monitor (#85). They
+    now follow the monitor you picked in Settings, or the one the game runs on.
+  - Numbers in fields with up/down buttons were cut off when the field was
+    narrow ("72" showed as "7"); they keep room for the digits now, in every
+    window.
+  - The game mute key needed two presses to bring the sound back when the game
+    had been muted by something else (Alt-Tab background mute, the Windows
+    mixer, an earlier run). It now looks at the game's real mute state and the
+    toast reports what the audio actually is afterwards. Same for Mute
+    teammates.
+  - QuickSelect, QuickSave and the Map Scanner key only act while the game is
+    in front; elsewhere the key goes through untouched.
+  - On Free, the keys of Pro features (Num4-9, mute, crosshair, audio device,
+    ...) and the Arc toggle keys with Arc off no longer swallow the key in
+    other programs. The Global ON/OFF key follows "only while a game is
+    focused" unless it is on the numpad.
+  - A colour curve Windows does not take (HDR on, extended gamma range
+    missing) is reported once with the likely cause, instead of toasting
+    "Profile 2".
+  - A game profile without an FPS value no longer writes 0 into the driver.
+  - Autorun stops when hotkeys are switched off or the game is left.
+  - Under the hood: sturdier hooks and startup, and safer loading of
+    graphics-driver libraries.
+
+  Autoscrapper
+  - Items added by the Frozen Trail update are only partly known yet. A tile
+    that cannot be named is never touched; the item data is extended step by
+    step. You can teach it yourself: name an unrecognised item once under
+    Settings -> Autoscrapper -> Name unrecognised items... and it is
+    recognised from the next scan on. Weapon pictures get smaller the more
+    attachments a weapon carries and everybody runs different ones, so
+    weapons need a different approach; until then a weapon that cannot be
+    named is left untouched.
+  - About twice as fast. No scrolling at the start when the stash is already
+    at the top, and from further down it drags the scrollbar instead of
+    wheeling. The scan stops at your last item, and a run stops as soon as no
+    remaining stack fits what may still go.
+  - Picks the stacks that hit your keep amount: "keep 40" over stacks of
+    10,10,10,10,10,10,7,5 now leaves exactly 40, not 42.
+
+  Fixed
+  - A row skipped while scrolling is now fetched even when the stash is not
+    full; the scan used to come back incomplete.
+  - Clicks could land a row off when the list was still moving after a
+    scroll. The page is now checked again right before clicking.
+  - After a test run the item tooltip could cover the stash and stop the run.
+  - The Windows lock screen was taken for a game and switched to the game
+    profile, so it came up brighter.
+
+
 [ V1.2.1 ] - Pre-release
 
   Autoscrapper

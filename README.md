@@ -13,7 +13,7 @@ One EXE, zero dependencies (Native AOT — no .NET runtime install required). Wo
 
 ## 🆕 What's new
 
-**V1.2 pre-release:** the **Autoscrapper** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.1) · **Latest stable:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2.2 pre-release:** Map Scanner for **Pendola Pass** and the **ARC Frigate**, **dim other displays**, **mute teammates**, a much faster Alt-Tab — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.2) · **Latest stable:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
 
@@ -111,6 +111,7 @@ BrightRaider's display and colour features use standard Windows display APIs —
 ### Free
 - **Display presets on a hotkey** — Normal / Bright / Brighter, instant even in fullscreen.
 - **Game Profiles + Alt-Tab Auto-Switch** — per-game Gamma / Contrast / Vibrance / Hue and FPS limit, applied while the game is in front, reverted on Alt-Tab. Replaces VibranceGUI.
+- **Dim Other Displays** *(V1.2.2)* — darkens your other screens while the game is in front, so a bright second monitor stops pulling your eye. They come back on Alt-Tab.
 - **FPS limit per game** — NVIDIA via DRS, AMD via FRTC. → [Optimal FPS cap settings (Blur Busters)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **HDR hotkey + per-game Auto-HDR** — HDR on when the game launches, off when it closes.
 - **Hotkeys your way** — every key rebindable, with modifiers, mouse buttons and scroll wheel; optionally only while a game is focused. Controller players: see [the manual](docs/Manual.md#playing-with-a-controller).
@@ -128,6 +129,7 @@ One key unlocks everything below, in every game — the Arc Raiders tools includ
 - **Profile editor + profiles 4–9** — edit Gamma / Contrast / Vibrance / Hue of every preset.
 - **Footstep Booster** — per-game audio limiter: turn the game up for footsteps without gunshots blowing your ears. 📖 [Guide](docs/FootstepBooster_Guide.md)
 - **Game Mute, Audio Ducking, Background AutoMute** — silence or duck only the game; muted automatically on Alt-Tab. Discord and music keep playing.
+- **Mute Teammates** *(V1.2.2)* — one key silences your voice chat apps (Discord, TeamSpeak, ...) while you play; you pick the apps from a list.
 - **Audio Output Switcher** — cycle speakers ↔ headphones with one key, optionally on game start.
 - **Autorun** — CapsLock holds forward; tap mode for the Looting Mk. 3 augment.
 - **Crosshair Overlay** — click-through, 6 styles, custom colour, outline and size.
@@ -320,10 +322,11 @@ Deep-dives for the more advanced features:
 
 ## Uninstall
 
-1. Exit BrightRaider (right-click tray → Exit)
-2. Delete the folder
-3. Optional: Remove `GdiIcmGammaRange` from `HKLM\...\ICM`
-4. Optional: Remove auto-start from `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+1. Turn off "Start with Windows" in Settings → App, then exit BrightRaider (right-click tray → Exit)
+2. Delete `BrightRaider.exe`
+3. Delete the folders `%LOCALAPPDATA%\BrightRaider` and `%APPDATA%\BrightRaider`
+4. Optional: Remove `GdiIcmGammaRange` from `HKLM\...\ICM`
+5. Optional: Remove auto-start from `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` if it was still on
 
 ## Feedback & Issues
 
@@ -367,7 +370,7 @@ Eine EXE, keine Abhängigkeiten (Native AOT — keine .NET-Runtime-Installation 
 
 ## 🆕 Neu
 
-**V1.2 Pre-release:** der **Autoscrapper** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.0) · **Aktuelle stabile Version:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2.2 Pre-release:** Map Scanner für **Pendola Pass** und die **ARC-Fregatte**, **andere Bildschirme abdunkeln**, **Mitspieler stummschalten**, deutlich schnelleres Alt-Tab — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.2) · **Aktuelle stabile Version:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Warum BrightRaider?
 
@@ -382,6 +385,7 @@ BrightRaiders Anzeige- und Farbfunktionen nutzen Standard-Windows-Display-APIs �
 ### Free
 - **Helligkeitsprofile per Hotkey** — Normal / Hell / Heller, sofort, auch im Vollbild.
 - **Spielprofile + Alt-Tab-Automatik** — Gamma / Kontrast / Vibrance / Hue und FPS-Limit pro Spiel, aktiv solange das Spiel vorne ist, beim Alt-Tab zurückgesetzt. Ersetzt VibranceGUI.
+- **Andere Bildschirme abdunkeln** *(V1.2.2)* — dunkelt deine anderen Bildschirme, solange das Spiel vorne ist, damit ein heller Zweitmonitor nicht ablenkt. Beim Alt-Tab sind sie wieder normal.
 - **FPS-Limit pro Spiel** — NVIDIA über DRS, AMD über FRTC. → [Optimale FPS-Cap-Einstellungen (Blur Busters)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **HDR per Hotkey + Auto-HDR pro Spiel** — HDR an beim Spielstart, aus beim Beenden.
 - **Hotkeys nach Wunsch** — jede Taste frei belegbar, mit Modifikatoren, Maustasten und Mausrad; auf Wunsch nur, solange ein Spiel im Fokus ist.
@@ -399,6 +403,7 @@ Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Wer
 - **Profil-Editor + Profile 4–9** — Gamma / Kontrast / Vibrance / Hue jedes Profils anpassen.
 - **Footstep Booster** — Audio-Limiter nur fürs Spiel: laut genug für Schritte, ohne dass Schüsse zu laut werden. 📖 [Anleitung (EN)](docs/FootstepBooster_Guide.md)
 - **Game Mute, Audio Ducking, Background-AutoMute** — nur das Spiel stumm oder leiser; beim Alt-Tab automatisch stumm. Discord und Musik laufen weiter.
+- **Mitspieler stummschalten** *(V1.2.2)* — eine Taste schaltet deine Voice-Chat-Apps (Discord, TeamSpeak, ...) während des Spiels stumm; die Apps wählst du aus einer Liste.
 - **Audio-Ausgabe-Switcher** — Boxen ↔ Kopfhörer per Taste, auf Wunsch automatisch beim Spielstart.
 - **Autorun** — CapsLock hält die Vorwärtstaste; Tap-Modus für das Looting-Mk.-3-Augment.
 - **Crosshair-Overlay** — click-through, 6 Stile, Farbe, Umriss und Größe frei wählbar.
