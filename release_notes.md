@@ -24,6 +24,8 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 
 ## 🧹 Autoscrapper
 
+📖 **[Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles.
+
 - Reads the stash off the screen (around 300 slots in ten seconds, 1080p to 5K, 16:10, 4:3, 21:9) and shows what it would scrap or sell. **Nothing happens until you press Run, and an item not on your list is never touched.**
 - The review screen is the rule list: set "keep 200, scrap the rest" on the real item, Run saves it as a rule. *Test run* does everything except the last click.
 - V1.2.1: optional run without the review. V1.2.2: twice as fast, and **exact amounts** — "keep 40" over stacks of 10, 10, 10, 10, 10, 10, 7 and 5 leaves exactly 40, not 42.
@@ -34,6 +36,8 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 - **Weapons are the hard part.** The weapon picture shrinks with every attachment, and everybody runs different ones, so a weapon has no single picture to learn. That needs a new approach — recognising the weapon itself, whatever is attached — and it is the next big piece of work. Until then an unnamed weapon stays untouched.
 
 ## 🗺 Map Scanner and 🎧 audio
+
+📖 [Map Scanner Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/MapScanner_Guide.md)
 
 - **Pendola Pass** is recognised by name: open gondola points run the raid time, closed ones show **CLOSED**, at night only two are open. **ARC Frigate:** all evac points open, "No Hatches" in the header.
 - **Mute teammates** (Settings → Hotkeys): one key mutes your voice chat apps — pick them from a list, Discord, TeamSpeak, Mumble, Teams and Zoom are in it. **Mute icons** (Settings → Audio): a speaker while the game is muted, a headset while your voice chat is.
@@ -58,4 +62,4 @@ If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a 
 BrightRaider.exe   8F0376C6D5AFFF3D5FD3246F8B84B5B250CBEEA1A83BDD905A252BA879DD1B72
 ```
 
-Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.2.1 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.1)
+Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 🧹 [Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.2.1 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.1)
