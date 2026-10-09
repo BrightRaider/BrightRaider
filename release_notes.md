@@ -35,7 +35,7 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 - **A tile it cannot name is never touched.** Name it once under **Settings → Autoscrapper → Name unrecognised items…** and it is recognised from then on; your names stay in your own file. I will teach the rest step by step, like I did with the Map Scanner.
 - **Weapons are the hard part.** The weapon picture shrinks with every attachment, and everybody runs different ones, so a weapon has no single picture to learn. That needs a new approach — recognising the weapon itself, whatever is attached — and it is the next big piece of work. Until then an unnamed weapon stays untouched.
 
-## 🗺 Map Scanner and 🎧 audio
+## 🗺 Map Scanner and 🎧 Audio
 
 📖 [Map Scanner Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/MapScanner_Guide.md)
 
