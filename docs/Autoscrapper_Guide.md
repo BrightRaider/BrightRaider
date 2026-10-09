@@ -106,6 +106,15 @@ Some items share their picture. The two Looting Mk. 3 blueprints are pixel-for-p
 
 Instead the row shows **both** names and asks: do your rules say the same thing about both? If they do, the name does not matter and it acts. If they differ, the row is left alone and tells you why.
 
+### After the Frozen Trail update (V1.2.2)
+
+The update added a long list of new items that BrightRaider has not seen yet, so part of them shows up as unnamed for now.
+
+- **The everyday items it already knew — everything that is not a weapon — are recognised as reliably as before.** Those are usually the ones you want handled automatically.
+- **An unnamed tile is never touched**, whatever your rules say. Name it once with **Name unrecognised items…** and it is recognised from the next scan on. The built-in item data grows with updates as well, step by step.
+- **Weapons are the hard part.** The weapon picture gets smaller with every attachment and everybody runs different ones, so a weapon has no single picture to learn. BrightRaider needs a different approach for them — recognising the weapon itself, whatever is attached — and until then an unnamed weapon stays untouched. Weapons are rarely part of anyone's rules.
+- **Faster and more exact since V1.2.2:** the scan is about twice as fast, it stops at your last item and when nothing more fits, and it picks the stacks that hit your "keep" number whenever a combination exists ("keep 40" over stacks of 10, 10, 10, 10, 10, 10, 7 and 5 leaves exactly 40).
+
 ---
 
 ## Resolutions
