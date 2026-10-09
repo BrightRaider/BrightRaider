@@ -2,20 +2,20 @@
 
 > 🧪 **Pre-release.** Settings, profiles and license carry over. These notes cover **everything since V1.1.1** (V1.2.0, V1.2.1 and V1.2.2).
 
-**The Frozen Trail update:** the Autoscrapper does your scrapping, the Map Scanner learns Pendola Pass and the ARC Frigate, Alt-Tab got far quicker, and your second screen stops blinding you.
+**The Frozen Trail update:** your second screen stops blinding you, Alt-Tab got far quicker, the Autoscrapper does your scrapping, and the Map Scanner learns Pendola Pass and the ARC Frigate. **Free for everyone:** the first three rows below.
 
 ## ✨ What's new
 
 | | |
 |---|---|
-| 🧹 **Autoscrapper** — reads your stash and scraps or sells by your rules, only after you press Run. About twice as fast now | 🔓 Pro |
-| 🗺 **Map Scanner** — Pendola Pass with its four gondola points, and the ARC Frigate event | 🔓 Pro |
 | 🌙 **Dim other displays** — darkens the screens you don't play on, only while the game is in front | ⚡ Free |
 | ⚡ **Much faster Alt-Tab** — into and out of the game | ⚡ Free |
+| 🔔 **Notifications on your game's monitor**, no more swallowed keys on Free, no more lock-screen profile | ⚡ Free |
+| 🧹 **Autoscrapper** — reads your stash and scraps or sells by your rules, only after you press Run. About twice as fast now | 🔓 Pro |
+| 🗺 **Map Scanner** — Pendola Pass with its four gondola points, and the ARC Frigate event | 🔓 Pro |
 | 🎧 **Mute teammates** — one key for Discord, TeamSpeak & co., with mute icons on screen | 🔓 Pro |
 | 🔇 **Audio fixes** — game mute with one press, headsets with several devices, recovery after a crash | 🔓 Pro |
 | 🎯 **QuickSave on 4:3 and 16:10** — finds where the inventory sits | 🔓 Pro |
-| 🔔 **Notifications on your game's monitor**, no more swallowed keys on Free, no more lock-screen profile | ⚡ Free |
 
 ## 🌙 Dim other displays
 
