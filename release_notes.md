@@ -45,12 +45,12 @@ New in V1.2.0, better in V1.2.1 and V1.2.2.
 
 ### A word from me, about the Frozen Trail update
 
-I have put a great many hours into the Autoscrapper — thousands of tiles checked against known answers, at every resolution, until it named what it saw. Then the Frozen Trail update arrived with a long list of new items, and part of what worked the day before does not work for them yet: BrightRaider has never seen them, so it cannot name them. I would rather tell you that plainly than hide it.
+I have put easily 100 hours into the Autoscrapper — thousands of tiles checked against known answers, at every resolution, until it named what it saw. Then the Frozen Trail update arrived with a long list of new items, and part of what worked the day before does not work for them yet: BrightRaider has never seen them, so it cannot name them. I would rather tell you that plainly than hide it.
 
 - **Nothing breaks and nothing is lost.** A tile BrightRaider cannot name is never touched, whatever your rules say. Everything it already knew is still recognised, and your rules still apply to it.
 - **It can learn the new items — every one it can see.** Unnamed tiles go into the naming queue with their picture (**Settings → Autoscrapper → Name unrecognised items…**). Name an item once and it is recognised from the next scan on. Your names are kept in your own file and no update ever overwrites them; if an item is one the built-in list has never heard of, you can simply type its name.
 - **I will teach it the rest step by step**, the way I did with the Map Scanner: collect the pictures, name them, release. For the items you care about you do not have to wait for me.
-- **Weapons look odd right now.** The weapon picture gets smaller the more attachments sit on the weapon. As far as I can tell that is how the game draws it, but I am not sure it is meant to be that way — and for BrightRaider a smaller picture is a different picture, so the same weapon can come up unnamed once its attachments change. I am looking at it with real screenshots. Until then you can name the weapon in the queue, or leave it: weapons are rarely in anyone's rules.
+- **Weapons are the hard part.** The weapon picture gets smaller the more attachments sit on the weapon, and everybody runs different attachments, so a weapon has no single picture to learn. As far as I can tell that is how the game draws it, but I am not sure it is meant to be that way. Naming every look one by one does not scale, so weapons need a different approach — recognising the weapon itself, whatever is attached to it — and that is the next big piece of work on the Autoscrapper. Until then a weapon BrightRaider cannot name stays untouched, which is the safe side, and weapons are rarely in anyone's rules anyway.
 
 ## 🗺 Map Scanner
 
