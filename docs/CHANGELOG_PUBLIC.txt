@@ -3,6 +3,39 @@
 ================================================================
 
 
+[ V1.2.3 ] - Pre-release
+
+  Fixed (what you reported after V1.2.2)
+  - QuickSave finds the raid inventory (#85): the inventory sits in another
+    place in a raid than in the hideout, and on 4:3 and 16:10 at the top or in
+    the centre. QuickSave looks at the open inventory and aims where it really
+    is, on every screen shape.
+  - Game mute works again after you restart the game. The mute icon no longer
+    takes the focus off the game; in exclusive fullscreen Windows shows no
+    overlays, so the icon needs borderless.
+  - Once the mute icon had been shown, Alt-Tab could stop switching your colour
+    profile and the dimming until the next start. Fixed.
+  - Mute teammates ends by itself when the game closes or BrightRaider is
+    switched off. The tray menu has "Unmute teammates" while they are muted. A
+    voice app that starts after BrightRaider is unmuted as soon as it appears.
+    Free users now see which hotkeys are Pro.
+  - Dim other displays follows the screen the game is on, comes back after a
+    crash and with the Global ON/OFF key, and works with Alt-Tab auto-switch
+    off. "Re-capture original gamma" no longer saves a dimmed screen as its
+    original. After you enable the extended gamma range the dimming stops at
+    60 % until Windows has been restarted; the Display tab says so.
+  - FPS limit: BrightRaider puts back exactly what it changed. A cap you set
+    in the NVIDIA Control Panel is no longer removed. The driver reads the
+    limit when the game starts: after you add or change one, close the game
+    once and start it again.
+  - F5 for the Autoscrapper only works in the game. Other Unreal games are no
+    longer taken for Arc. Autorun stops when you switch to another program.
+  - A second screen with HDR no longer hides the profile notice. The Windows
+    question for the extended gamma range is not asked again and again.
+  - The "What's new" notice for people coming from V1.1.1 now describes the
+    Autoscrapper.
+
+
 [ V1.2.2 ] - Pre-release
 
   Map Scanner
@@ -21,7 +54,7 @@
   - Much faster Alt-Tab into and out of the game: the work BrightRaider does
     on every focus change got much lighter.
   - New: "Dim other displays" (Settings -> Display). A slider darkens every
-    screen except the one BrightRaider is pointed at while a game is in front;
+    screen except the one the game is on while a game is in front;
     Alt-Tab brings them back. Applies like the other colour settings: only
     while the game is in front, after Apply / OK; "Test on screen" flashes it
     together with the profile. A key (Settings -> Hotkeys -> Dim on/off)
@@ -41,10 +74,10 @@
     Switch them off in Settings -> Audio. They never take clicks or focus.
 
   Fixed
-  - QuickSave on 4:3 and 16:10 screens (#83, #85): the game puts the inventory
-    at the top of such a screen for some setups and in the centre for others.
-    QuickSave now looks at the open inventory and aims where it really is,
-    instead of assuming one of the two.
+  - QuickSave on 4:3 and 16:10 screens (#83, #85): the inventory is not in the
+    same place in the hideout and in a raid, and on such a screen it sits at
+    the top or in the centre. QuickSave now looks at the open inventory and
+    aims where it really is, instead of assuming one place.
   - Notifications (toasts) always appeared on the primary monitor (#85). They
     now follow the monitor you picked in Settings, or the one the game runs on.
   - Numbers in fields with up/down buttons were cut off when the field was

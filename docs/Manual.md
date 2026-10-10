@@ -209,6 +209,9 @@ character moves (or sprints) forward automatically. While autorunning:
 | S        | Cancel autorun fully                                        |
 | C        | Slide first (while moving), then stop                       |
 
+Autorun ends by itself when another program comes to the front, because its keys
+go to whatever is in front.
+
 - **Sprint Mode** (*Movement → Mode: Sprint*) starts in sprint immediately.
 - **Tap Mode** (hold CapsLock 600 ms) pulses W: pressed briefly (default
   **160 ms**), then released (default **1300 ms**). Built for the **Looting
@@ -257,9 +260,16 @@ One key mutes or unmutes your voice chat while you play. Bind it under
 TeamSpeak 3 and the new TeamSpeak, Mumble, Teams and Zoom in it; **+ Add app…**
 picks any running program, **− Remove** takes one out, and **Add voice apps**
 puts the usual ones back. Apps that are not running are skipped. Unbound
-by default. Only the listed apps are touched, every instance of them. If
+by default. Only the listed apps are touched, every instance of them; this is
+not the game's own voice chat.
+
+The mute stays until you press the key again. It also ends by itself when the
+game closes or when you switch BrightRaider off with the Global ON/OFF key, and
+the tray menu has **Unmute teammates** for as long as they are muted. If
 BrightRaider exits or crashes while they are muted they are unmuted again at the
-next start — Windows would otherwise remember the mute.
+next start — Windows would otherwise remember the mute. An app that is not
+running yet at that point (Discord starting after BrightRaider at logon) is
+unmuted as soon as it shows up.
 
 ### Mute Indicator (Pro)
 
@@ -267,8 +277,10 @@ While the game is muted with the mute key, a small speaker-with-a-cross icon
 shows in the top-left corner of the game's screen, so you can see at a glance
 why it is quiet. While *Mute teammates* has your voice chat silenced, a headset
 struck through appears next to it; both can be up at once. It never takes clicks or focus and hides when you leave the
-game. It shows while the game runs fullscreen or borderless (BrightRaider's idea
-of "a game is in front"); in a normal window it stays hidden. On by default;
+game. It shows while the game runs borderless (windowed fullscreen), which is
+BrightRaider's idea of "a game is in front"; in a normal window it stays hidden.
+In *exclusive* fullscreen Windows does not draw other windows over the game, so
+the icon cannot show there — switch the game to borderless. On by default;
 switch it off under *Settings → Audio → Mute indicator*.
 The key reads the game's real mute state each time, so a game muted by
 something else (the Windows mixer, Background Mute) is unmuted by one press.
@@ -352,9 +364,9 @@ or wheel scroll — no manual clicking.
   **Backpack 1–4** (top row) — new in V1.1. Direction is fully configurable.
 - **How it works:** opens inventory (Tab) → moves cursor to source → holds LMB
   and drags to destination → releases → closes inventory (Tab).
-- **4:3 and 16:10 screens:** the game places the inventory at the top of such
-  a screen for some setups and in the centre for others. Once the inventory is
-  open, QuickSave looks at it and aims where it really is.
+- **Where the inventory sits:** it is not in the same place in the hideout and
+  in a raid, and on 4:3 and 16:10 screens it sits at the top or in the centre.
+  Once the inventory is open, QuickSave looks at it and aims where it really is.
 - **Toggle direction (⇄):** first press moves From→To, second To→From.
 - **Timing** (if a drag fails): Open (250 ms), Hover (0 ms), Hold (0 ms), Drop
   (120 ms), Cooldown (0 ms).
@@ -403,7 +415,7 @@ calibration window sits below all zones so it doesn't skew results. Zone weights
 ### Dim Other Displays (Free)
 
 *Settings → Display → Dim other displays.* While a game is in front, every
-display except the one selected above is darkened by the slider's amount, so a
+display except the one the game is on is darkened by the slider's amount, so a
 bright second screen stops pulling your eye; Alt-Tab brings them straight back.
 *Tip:* set it so you can still read the other screen but it is clearly calmer —
 you get more focus and contrast on the game without losing the chat or a guide.
@@ -413,17 +425,15 @@ switch is for the current session only; the slider and the next start are not
 affected.
 It applies like the other colour settings: only while the game is in front, and
 only after Apply / OK. *Test on screen* flashes the dimming together with the
-profile, so you can judge it without a game. 0 = off. With "All Monitors"
-selected there is no other display, and the slider is greyed out. It dims the
-display's own calibrated curve, down to a tenth at the slider's end — it does
+profile, so you can judge it without a game (pick one display above for that).
+0 = off. With only one display connected there is nothing to dim, and the
+slider is greyed out. It dims the display's own calibrated curve, down to a tenth at the slider's end — it does
 not lower the backlight. Going that dark needs the extended gamma range (the
 one-time Windows permission, button further down on the same tab); without it
 Windows refuses very dark curves and the slider stops at about 60 %.
 
-If BrightRaider is killed or crashes while the other displays are dimmed, they
-stay dark until the next restore. Start BrightRaider again and exit it from the
-tray menu (or press the Global ON/OFF key to full OFF): that puts every display
-back to its original curve.
+If BrightRaider is killed or crashes while the other displays are dimmed, the
+next start puts them back to their original curve.
 
 ### Alt-Tab Auto-Switch (Free)
 
@@ -437,7 +447,11 @@ alongside.
 4. Alt-Tab out — original ramps + vibrance + hue restored, crosshair hidden
 
 **FPS limit per game:** NVIDIA via NvAPI DRS (no DirectX hook), AMD via ADLX FRTC
-(`amdadlx64.dll`), Intel has no public API (UI shows a note).
+(`amdadlx64.dll`), Intel has no public API (UI shows a note). BrightRaider sets
+the limit as soon as the game starts and puts back exactly what it changed when
+you leave the game; a cap you set yourself in the NVIDIA Control Panel is not
+touched. The driver reads the limit when the game starts, so **after you add or
+change a limit, close the game once and start it again.**
 
 ### Per-game Auto-HDR (Free) — new in V1.1
 
@@ -726,6 +740,9 @@ Charakter läuft (oder rennt) automatisch vorwärts. Während Autorun aktiv:
 | S        | Autorun komplett abbrechen                                   |
 | C        | Slide (während Bewegung), dann stoppen                       |
 
+Autorun endet von selbst, sobald ein anderes Programm in den Vordergrund kommt,
+denn seine Tasten gehen an das vorderste Fenster.
+
 - **Sprint-Modus** (*Movement → Modus: Sprint*) startet sofort im Sprint.
 - **Tap-Modus** (CapsLock 600 ms halten) tippt W: kurz gedrückt (Standard
   **160 ms**), dann losgelassen (Standard **1300 ms**). Gebaut fürs **Looting
@@ -847,6 +864,9 @@ Tastendruck oder Mausradscrollen.
   1–3 und **Rucksack 1–4** (oberste Reihe) — neu in V1.1. Richtung frei einstellbar.
 - **So funktioniert es:** Inventar öffnen (Tab) → Cursor zum Quell-Slot → LMB
   halten und zum Ziel ziehen → loslassen → Inventar schließen (Tab).
+- **Wo das Inventar sitzt:** in der Basis und im Raid nicht an derselben Stelle,
+  und bei 4:3 und 16:10 oben oder in der Mitte. Ist das Inventar offen, schaut
+  QuickSave hin und zielt dorthin, wo es wirklich ist.
 - **Richtung umkehren (⇄):** erster Druck Von→Nach, zweiter Nach→Von.
 - **Timing** (falls Drag fehlschlägt): Öffnen (250 ms), Hover (0 ms), Halten
   (0 ms), Ablegen (120 ms), Cooldown (0 ms).
