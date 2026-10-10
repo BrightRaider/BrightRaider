@@ -13,6 +13,7 @@
 - **FPS limit:** BrightRaider puts back exactly what it changed. Your own cap in the NVIDIA Control Panel is no longer wiped. The driver reads the limit when the game starts, so after you add or change one, close the game once and start it again.
 - **F5 for the Autoscrapper** only works in the game, other Unreal games are no longer taken for Arc, and Autorun stops when you switch to another program.
 - A second screen with HDR no longer hides the profile notice, and the Windows question for the extended gamma range is not asked again and again.
+- **First start:** the setup and the "ready" notice now say that Windows needs one restart for the full brightness range (#86). Until then strong profiles can be refused.
 
 ## ✨ What's new
 
@@ -50,7 +51,7 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 
 📖 [Map Scanner Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/MapScanner_Guide.md)
 
-- **Pendola Pass** is recognised by name: open gondola points run the raid time, closed ones show **CLOSED**, at night only two are open. **ARC Frigate:** all evac points open, "No Hatches" in the header. Major events (Matriarch, Hurricane, Night Raid, Electromagnetic Storm) are marked, and the triangle in front of them is gone from the overlay header.
+- **Pendola Pass** is recognised by name: open gondola points run the raid time, closed ones show **CLOSED**, at night only two are open. Its **Redirection** condition is recognised too and names the map in any game language. **ARC Frigate:** all evac points open, "No Hatches" in the header. Major events (Matriarch, Hurricane, Night Raid, Electromagnetic Storm) are marked, and the triangle in front of them is gone from the overlay header.
 - **Mute teammates** (Settings → Hotkeys): one key mutes your voice chat apps — pick them from a list, Discord, TeamSpeak, Mumble, Teams and Zoom are in it. **Mute icons** (Settings → Audio): a speaker while the game is muted, a headset while your voice chat is.
 - **Game mute** brings the sound back with one press, even if something else had muted the game. Headsets with several playback devices are covered, and a game never stays silent after a crash (**Reset game audio** undoes it by hand). The Footstep Booster attaches to the output that is really playing, and BrightRaider tells you when a game comes to the front muted or at your ducking level.
 
@@ -72,7 +73,7 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a **known false positive**. Choose **More info → Run anyway**. Earlier releases were submitted to Microsoft and came back clean.
 
 ```
-BrightRaider.exe   9311C699BF6320317264EBBB222AEF7ABE6C1A959B7CEFD735BE7C0B2B63FA5D
+BrightRaider.exe   73AB9C1F9F7A3D8BC02B759EDECE2BAE00090C85EBB164E4BA877591387C8827
 ```
 
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 🧹 [Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.2.2 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.2)
