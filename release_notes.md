@@ -6,7 +6,7 @@
 
 ## 🔧 New in V1.2.3 — what you reported after V1.2.2
 
-- **QuickSave finds the raid inventory** (#85): the inventory sits in another place in a raid than in the hideout, and on 4:3 and 16:10 at the top or in the centre. QuickSave now looks at the open one and aims where it really is, on every screen shape.
+- **QuickSave in a raid on 4:3 and 16:10** (#85) aims at the centred raid inventory again, as in V1.0. No cursor jump, no waiting before the drag.
 - **Game mute** works again after you restart the game, and the mute icon no longer takes the focus off the game. Once the icon had been shown, Alt-Tab could also stop switching your profile and the dimming — fixed. In *exclusive* fullscreen Windows shows no overlays: switch the game to borderless to see the icon.
 - **Mute teammates** ends by itself when the game closes or you switch BrightRaider off; the tray menu has **Unmute teammates** while they are muted, and a voice app that starts after BrightRaider is unmuted as soon as it shows up. On Free, the Pro keys are marked.
 - **Dim other displays** follows the screen the game is on, and also works with Alt-Tab auto-switch off. The other screens come back with the Global ON/OFF key, and at once after a crash or a kill: a small helper process takes care of it, also for an FPS limit set in the driver. "Re-capture original gamma" no longer saves a dimmed screen as its original, and after you enable the extended gamma range the dimming stops at 60 % until Windows has been restarted (the Display tab says so).
@@ -26,7 +26,7 @@
 | 🗺 **Map Scanner** — Pendola Pass with its four gondola points, and the ARC Frigate event | 🔓 Pro |
 | 🎧 **Mute teammates** — one key for Discord, TeamSpeak & co., with mute icons on screen | 🔓 Pro |
 | 🔇 **Audio fixes** — game mute with one press, headsets with several devices, recovery after a crash | 🔓 Pro |
-| 🎯 **QuickSave** — finds where the inventory sits, in the hideout and in a raid, on every screen shape | 🔓 Pro |
+| 🎯 **QuickSave** — W1/W2 grab the weapon, not its barrel | 🔓 Pro |
 
 ## 🌙 Dim other displays
 
@@ -73,7 +73,7 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a **known false positive**. Choose **More info → Run anyway**. Earlier releases were submitted to Microsoft and came back clean.
 
 ```
-BrightRaider.exe   73AB9C1F9F7A3D8BC02B759EDECE2BAE00090C85EBB164E4BA877591387C8827
+BrightRaider.exe   6511B932EDE70461746BB86E52EDE8FEDD1843784B6F6EE5862C87D256371903
 ```
 
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 🧹 [Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.2.2 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.2)
