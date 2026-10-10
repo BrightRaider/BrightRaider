@@ -6,6 +6,9 @@
 [ V1.2.3 ] - Pre-release
 
   Fixed (what you reported after V1.2.2)
+  - First start: the setup and the "ready" notice say that Windows needs one
+    restart for the full brightness range (#86). Until then strong profiles
+    can be refused.
   - QuickSave finds the raid inventory (#85): the inventory sits in another
     place in a raid than in the hideout, and on 4:3 and 16:10 at the top or in
     the centre. QuickSave looks at the open inventory and aims where it really

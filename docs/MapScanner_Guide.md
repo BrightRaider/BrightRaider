@@ -54,6 +54,7 @@ Scanning takes ~1–2 seconds. The overlay refreshes from each fresh scan — lo
 | Uncovered Caches | Normal scan, event name displayed *(new in V1.1)* |
 | Hidden Bunker (Space Port) | Marks 3 evac points active, rest CLOSED, hatches closed *(new in V1.1)* |
 | ARC Frigate | All evac points stay active. The overlay header adds "No Hatches" *(new in V1.2.2)* |
+| Redirection (Pendola Pass) | Event name displayed; also names the map when its title cannot be read (any game language) *(new in V1.2.2)* |
 
 The event name appears below the map name in the overlay.
 
