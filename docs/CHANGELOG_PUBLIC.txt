@@ -9,10 +9,8 @@
   - First start: the setup and the "ready" notice say that Windows needs one
     restart for the full brightness range (#86). Until then strong profiles
     can be refused.
-  - QuickSave finds the raid inventory (#85): the inventory sits in another
-    place in a raid than in the hideout, and on 4:3 and 16:10 at the top or in
-    the centre. QuickSave looks at the open inventory and aims where it really
-    is, on every screen shape.
+  - QuickSave in a raid on 4:3 and 16:10 (#85) aims at the centred raid
+    inventory again, as in V1.0. No cursor jump, no waiting before the drag.
   - Game mute works again after you restart the game. The mute icon no longer
     takes the focus off the game; in exclusive fullscreen Windows shows no
     overlays, so the icon needs borderless.
