@@ -19,9 +19,12 @@
     switched off. The tray menu has "Unmute teammates" while they are muted. A
     voice app that starts after BrightRaider is unmuted as soon as it appears.
     Free users now see which hotkeys are Pro.
-  - Dim other displays follows the screen the game is on, comes back after a
-    crash and with the Global ON/OFF key, and works with Alt-Tab auto-switch
-    off. "Re-capture original gamma" no longer saves a dimmed screen as its
+  - Dim other displays follows the screen the game is on, comes back with the
+    Global ON/OFF key, and works with Alt-Tab auto-switch off. If BrightRaider
+    is killed or crashes while the other screens are dimmed, a small helper
+    process (started with the dimming, gone after a normal exit) puts them back
+    within a second or two, and takes back an FPS limit set in the driver.
+    "Re-capture original gamma" no longer saves a dimmed screen as its
     original. After you enable the extended gamma range the dimming stops at
     60 % until Windows has been restarted; the Display tab says so.
   - FPS limit: BrightRaider puts back exactly what it changed. A cap you set

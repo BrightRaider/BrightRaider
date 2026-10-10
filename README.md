@@ -110,7 +110,7 @@ BrightRaider's display and colour features use standard Windows display APIs —
 
 ### Free
 - **Display presets on a hotkey** — Normal / Bright / Brighter, instant even in fullscreen.
-- **Game Profiles + Alt-Tab Auto-Switch** — per-game Gamma / Contrast / Vibrance / Hue and FPS limit, applied while the game is in front, reverted on Alt-Tab. Replaces VibranceGUI.
+- **Game Profiles + Alt-Tab Auto-Switch** — per-game Gamma / Contrast / Vibrance / Hue and FPS limit, applied while the game is in front; colours revert on Alt-Tab, the FPS limit when the game closes. Replaces VibranceGUI.
 - **Dim Other Displays** *(V1.2.2)* — darkens your other screens while the game is in front, so a bright second monitor stops pulling your eye. They come back on Alt-Tab.
 - **FPS limit per game** — NVIDIA via DRS, AMD via FRTC. → [Optimal FPS cap settings (Blur Busters)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **HDR hotkey + per-game Auto-HDR** — HDR on when the game launches, off when it closes.
@@ -384,7 +384,7 @@ BrightRaiders Anzeige- und Farbfunktionen nutzen Standard-Windows-Display-APIs �
 
 ### Free
 - **Helligkeitsprofile per Hotkey** — Normal / Hell / Heller, sofort, auch im Vollbild.
-- **Spielprofile + Alt-Tab-Automatik** — Gamma / Kontrast / Vibrance / Hue und FPS-Limit pro Spiel, aktiv solange das Spiel vorne ist, beim Alt-Tab zurückgesetzt. Ersetzt VibranceGUI.
+- **Spielprofile + Alt-Tab-Automatik** — Gamma / Kontrast / Vibrance / Hue und FPS-Limit pro Spiel, aktiv solange das Spiel vorne ist; die Farben gehen beim Alt-Tab zurück, das FPS-Limit, wenn das Spiel beendet wird. Ersetzt VibranceGUI.
 - **Andere Bildschirme abdunkeln** *(V1.2.2)* — dunkelt deine anderen Bildschirme, solange das Spiel vorne ist, damit ein heller Zweitmonitor nicht ablenkt. Beim Alt-Tab sind sie wieder normal.
 - **FPS-Limit pro Spiel** — NVIDIA über DRS, AMD über FRTC. → [Optimale FPS-Cap-Einstellungen (Blur Busters)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **HDR per Hotkey + Auto-HDR pro Spiel** — HDR an beim Spielstart, aus beim Beenden.

@@ -432,8 +432,11 @@ not lower the backlight. Going that dark needs the extended gamma range (the
 one-time Windows permission, button further down on the same tab); without it
 Windows refuses very dark curves and the slider stops at about 60 %.
 
-If BrightRaider is killed or crashes while the other displays are dimmed, the
-next start puts them back to their original curve.
+If BrightRaider is killed or crashes while the other displays are dimmed, a small
+helper process (`BrightRaider.exe --watchdog`, started with the dimming and gone
+when BrightRaider ends normally) puts them back to their original curve within a
+second or two. It does the same for an FPS limit BrightRaider had set in the
+NVIDIA driver. If even that did not run, the next start does it.
 
 ### Alt-Tab Auto-Switch (Free)
 
@@ -449,8 +452,9 @@ alongside.
 **FPS limit per game:** NVIDIA via NvAPI DRS (no DirectX hook), AMD via ADLX FRTC
 (`amdadlx64.dll`), Intel has no public API (UI shows a note). BrightRaider sets
 the limit as soon as the game starts and puts back exactly what it changed when
-you leave the game; a cap you set yourself in the NVIDIA Control Panel is not
-touched. The driver reads the limit when the game starts, so **after you add or
+the game closes (a limit on the shared base profile, when the game has no profile
+of its own, already when you tab out); a cap you set yourself in the NVIDIA
+Control Panel is not touched. The driver reads the limit when the game starts, so **after you add or
 change a limit, close the game once and start it again.**
 
 ### Per-game Auto-HDR (Free) — new in V1.1
