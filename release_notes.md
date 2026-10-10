@@ -9,7 +9,7 @@
 - **QuickSave finds the raid inventory** (#85): the inventory sits in another place in a raid than in the hideout, and on 4:3 and 16:10 at the top or in the centre. QuickSave now looks at the open one and aims where it really is, on every screen shape.
 - **Game mute** works again after you restart the game, and the mute icon no longer takes the focus off the game. Once the icon had been shown, Alt-Tab could also stop switching your profile and the dimming — fixed. In *exclusive* fullscreen Windows shows no overlays: switch the game to borderless to see the icon.
 - **Mute teammates** ends by itself when the game closes or you switch BrightRaider off; the tray menu has **Unmute teammates** while they are muted, and a voice app that starts after BrightRaider is unmuted as soon as it shows up. On Free, the Pro keys are marked.
-- **Dim other displays** follows the screen the game is on, comes back after a crash and with the Global ON/OFF key, and also works with Alt-Tab auto-switch off. "Re-capture original gamma" no longer saves a dimmed screen as its original, and after you enable the extended gamma range the dimming stops at 60 % until Windows has been restarted (the Display tab says so).
+- **Dim other displays** follows the screen the game is on, and also works with Alt-Tab auto-switch off. The other screens come back with the Global ON/OFF key, and at once after a crash or a kill: a small helper process takes care of it, also for an FPS limit set in the driver. "Re-capture original gamma" no longer saves a dimmed screen as its original, and after you enable the extended gamma range the dimming stops at 60 % until Windows has been restarted (the Display tab says so).
 - **FPS limit:** BrightRaider puts back exactly what it changed. Your own cap in the NVIDIA Control Panel is no longer wiped. The driver reads the limit when the game starts, so after you add or change one, close the game once and start it again.
 - **F5 for the Autoscrapper** only works in the game, other Unreal games are no longer taken for Arc, and Autorun stops when you switch to another program.
 - A second screen with HDR no longer hides the profile notice, and the Windows question for the extended gamma range is not asked again and again.
@@ -72,7 +72,7 @@ A bright second screen — a browser, a map, a stream — costs you contrast on 
 If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a **known false positive**. Choose **More info → Run anyway**. Earlier releases were submitted to Microsoft and came back clean.
 
 ```
-BrightRaider.exe   2567B00A82D93CB2D06956FACE3A6C9C49CBB8C218A29D16E07202E8B2D41F3C
+BrightRaider.exe   9311C699BF6320317264EBBB222AEF7ABE6C1A959B7CEFD735BE7C0B2B63FA5D
 ```
 
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 🧹 [Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.2.2 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.2)
