@@ -1,19 +1,8 @@
 # BrightRaider V1.2.3
 
-> 🧪 **Pre-release.** Settings, profiles and license carry over. These notes cover **everything since V1.1.1** (V1.2.0 to V1.2.3).
+> ✅ **Everything carries over** — settings, profiles and your license are kept, whether you come from V1.1.1 or V1.0. No re-activation needed.
 
-**The Frozen Trail update:** your second screen stops blinding you, Alt-Tab got far quicker, the Autoscrapper does your scrapping, and the Map Scanner learns Pendola Pass and the ARC Frigate. **Free for everyone:** the first three rows below.
-
-## 🔧 New in V1.2.3 — what you reported after V1.2.2
-
-- **QuickSave in a raid on 4:3 and 16:10** (#85) aims at the centred raid inventory again, as in V1.0. No cursor jump, no waiting before the drag.
-- **Game mute** works again after you restart the game, and the mute icon no longer takes the focus off the game. Once the icon had been shown, Alt-Tab could also stop switching your profile and the dimming — fixed. In *exclusive* fullscreen Windows shows no overlays: switch the game to borderless to see the icon.
-- **Mute teammates** ends by itself when the game closes or you switch BrightRaider off; the tray menu has **Unmute teammates** while they are muted, and a voice app that starts after BrightRaider is unmuted as soon as it shows up. On Free, the Pro keys are marked.
-- **Dim other displays** follows the screen the game is on, and also works with Alt-Tab auto-switch off. The other screens come back with the Global ON/OFF key, and at once after a crash or a kill: a small helper process takes care of it, also for an FPS limit set in the driver. "Re-capture original gamma" no longer saves a dimmed screen as its original, and after you enable the extended gamma range the dimming stops at 60 % until Windows has been restarted (the Display tab says so).
-- **FPS limit:** BrightRaider puts back exactly what it changed. Your own cap in the NVIDIA Control Panel is no longer wiped. The driver reads the limit when the game starts, so after you add or change one, close the game once and start it again.
-- **F5 for the Autoscrapper** only works in the game, other Unreal games are no longer taken for Arc, and Autorun stops when you switch to another program.
-- A second screen with HDR no longer hides the profile notice, and the Windows question for the extended gamma range is not asked again and again.
-- **First start:** the setup and the "ready" notice now say that Windows needs one restart for the full brightness range (#86). Until then strong profiles can be refused.
+**The Frozen Trail update:** your second screen stops blinding you, Alt-Tab is far quicker, the new Autoscrapper does your scrapping, and the Map Scanner knows Pendola Pass and the ARC Frigate.
 
 ## ✨ What's new
 
@@ -21,54 +10,63 @@
 |---|---|
 | 🌙 **Dim other displays** — darkens the screens you don't play on, only while the game is in front | ⚡ Free |
 | ⚡ **Much faster Alt-Tab** — into and out of the game | ⚡ Free |
-| 🔔 **Notifications on your game's monitor**, no more swallowed keys on Free, no more lock-screen profile | ⚡ Free |
-| 🧹 **Autoscrapper** — reads your stash and scraps or sells by your rules, only after you press Run. About twice as fast now | 🔓 Pro |
+| 🔔 **Notifications on your game's monitor** — and hotkeys no longer get in the way outside the game | ⚡ Free |
+| 🧹 **Autoscrapper** — reads your stash and scraps or sells by your rules | 🔓 Pro |
 | 🗺 **Map Scanner** — Pendola Pass with its four gondola points, and the ARC Frigate event | 🔓 Pro |
 | 🎧 **Mute teammates** — one key for Discord, TeamSpeak & co., with mute icons on screen | 🔓 Pro |
-| 🔇 **Audio fixes** — game mute with one press, headsets with several devices, recovery after a crash | 🔓 Pro |
-| 🎯 **QuickSave** — W1/W2 grab the weapon, not its barrel | 🔓 Pro |
+| 🎯 **QuickSave** — the weapon slots grab the weapon, not its barrel | 🔓 Pro |
 
 ## 🌙 Dim other displays
 
-A bright second screen — a browser, a map, a stream — costs you contrast on the game. **Dim other displays** darkens every screen except the one you play on, **only while the game is in front**; Alt-Tab out and they are back that instant. Set it so you can still read the other screen but it is clearly calmer: more focus, more contrast, and a white web page no longer blinds you next to a dark raid. It works on your display's own calibrated curve, down to a tenth of normal brightness (with the one-time extended gamma permission, asked once; about 60 % without).
-**Settings → Display.** *Test on screen* shows it without a game. Watching a film on the other screen? **Dim on/off** in Settings → Hotkeys switches it off and on for the session.
+A bright second screen — a browser, a map, a stream — costs you contrast on the game. **Dim other displays** darkens every screen except the one the game is on, **only while the game is in front**; Alt-Tab out and they are back at once. Set it so you can still read the other screen but it is clearly calmer.
+
+**Settings → Display.** *Test on screen* shows it without a game. Watching a film on the other screen? **Dim on/off** in Settings → Hotkeys switches it off for the session.
 
 ## 🧹 Autoscrapper
 
 📖 **[Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles.
 
-- Reads the stash off the screen (around 300 slots in ten seconds, 1080p to 5K, 16:10, 4:3, 21:9) and shows what it would scrap or sell. **Nothing happens until you press Run, and an item not on your list is never touched.**
-- The review screen is the rule list: set "keep 200, scrap the rest" on the real item, Run saves it as a rule. *Test run* does everything except the last click.
-- *Worth of the rest* shows what the part of a stack you do not keep is worth. Items the game draws exactly alike are never guessed: if your rules treat both the same it does not matter, otherwise the row is left alone.
-- V1.2.1: optional run without the review, and it works upward from the end of the list; damaged items are no longer taken for their blueprint and stack counts read right (a 9 is not an 8). V1.2.2: twice as fast, and **exact amounts** — "keep 40" over stacks of 10, 10, 10, 10, 10, 10, 7 and 5 leaves exactly 40, not 42.
+- Press **F5** with the stash open: BrightRaider reads the whole stash (around 300 slots in ten seconds, 1080p to 5K, 16:10, 4:3, 21:9) and lists what it would scrap or sell.
+- **By default nothing happens until you press Run**, and an item that is not on your list is never touched. *Test run* does everything except the last click. If you trust your rules, you can switch on *run without the review*.
+- The review screen is the rule list: set "keep 200, scrap the rest" on the real item and Run saves it as a rule. Amounts are exact — "keep 40" leaves exactly 40.
 
-**A word from me.** I have put easily 100 hours into the Autoscrapper. Then the Frozen Trail update added a long list of new items it has not seen yet.
-- **The everyday items it already knew — everything that is not a weapon — are recognised as reliably as before**, and those are usually the ones you want handled automatically.
-- **A tile it cannot name is never touched.** Name it once under **Settings → Autoscrapper → Name unrecognised items…** and it is recognised from then on; your names stay in your own file. I will teach the rest step by step, like I did with the Map Scanner.
-- **Weapons are the hard part.** The weapon picture shrinks with every attachment, and everybody runs different ones, so a weapon has no single picture to learn. That needs a new approach — recognising the weapon itself, whatever is attached — and it is the next big piece of work. Until then an unnamed weapon stays untouched.
+**A word from me.** The Frozen Trail update added a long list of new items the Autoscrapper has not seen yet. Everything it already knew — all items that are not weapons — is recognised as reliably as before. **A tile it cannot name is never touched**; name it once under **Settings → Autoscrapper → Name unrecognised items…** and it is recognised from then on. Weapons are the hard part, because the picture changes with every attachment — that is the next big piece of work. Until then an unnamed weapon stays untouched.
 
-## 🗺 Map Scanner and 🎧 Audio
+## 🗺 Map Scanner
 
 📖 [Map Scanner Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/MapScanner_Guide.md)
 
-- **Pendola Pass** is recognised by name: open gondola points run the raid time, closed ones show **CLOSED**, at night only two are open. Its **Redirection** condition is recognised too and names the map in any game language. **ARC Frigate:** all evac points open, "No Hatches" in the header. Major events (Matriarch, Hurricane, Night Raid, Electromagnetic Storm) are marked, and the triangle in front of them is gone from the overlay header.
-- **Mute teammates** (Settings → Hotkeys): one key mutes your voice chat apps — pick them from a list, Discord, TeamSpeak, Mumble, Teams and Zoom are in it. **Mute icons** (Settings → Audio): a speaker while the game is muted, a headset while your voice chat is.
-- **Game mute** brings the sound back with one press, even if something else had muted the game. Headsets with several playback devices are covered, and a game never stays silent after a crash (**Reset game audio** undoes it by hand). The Footstep Booster attaches to the output that is really playing, and BrightRaider tells you when a game comes to the front muted or at your ducking level.
+- **Pendola Pass** is recognised by name, and its **Redirection** condition names the map in any game language. Open gondola points run the raid time, closed ones show **CLOSED**; at night only two are open.
+- **ARC Frigate:** all evac points open, "No Hatches" in the header.
 
-## 🔧 Also fixed
+## 🎧 Audio
 
-- **QuickSave** (#83): W1/W2 land on the weapon, not its barrel.
-- **QuickSelect, QuickSave and the Map Scanner key** only act while the game is in front; elsewhere the key goes through untouched. Autorun stops when you switch hotkeys off or leave the game.
-- **Autoscrapper scans:** a row skipped while scrolling is fetched even when the stash is not full, clicks no longer land a row off after a scroll, and a tooltip can no longer stop a test run.
-- **Toasts** appear on the monitor you chose, not always the primary one. **Free users:** keys of Pro features no longer get eaten in other programs.
-- The **Windows lock screen** no longer switches to your game profile. **Cut-off numbers** in narrow fields are fixed everywhere. A colour curve Windows refuses (HDR on) now gets one clear notice.
-- **Autorun per game** (sprint key, hold or toggle, tap timings), a **GPU and monitor picker**, and a safer start with an older version in between. BrightRaider checks for updates through its own feed, with GitHub as the fallback.
+- **Mute teammates** (Settings → Hotkeys): one key mutes your voice chat apps — pick them from a list; Discord, TeamSpeak, Mumble, Teams and Zoom are in it. They are unmuted by themselves when the game closes, and the tray menu has **Unmute teammates** while they are muted.
+- **Mute icons** (Settings → Audio): a speaker while the game is muted, a headset while your voice chat is.
+- **Game mute** brings the sound back with one press, also after a restart of the game, and a game never stays silent after a crash.
+
+## 🔧 Fixes and improvements
+
+- **QuickSelect, QuickSave and the Map Scanner key only act while the game is in front** — everywhere else the key goes through untouched. Autorun stops when you switch to another program or switch hotkeys off.
+- **FPS limit:** BrightRaider puts back exactly what it changed; your own cap in the NVIDIA Control Panel stays.
+- **After a crash or a kill** your other screens and the FPS limit are put back at once. A small helper process does that — you may see BrightRaider twice in Task Manager; the second one ends with the app.
+- **QuickSave** (#83): W1/W2 land on the weapon, not its barrel. On 4:3 and 16:10 it aims at the centred raid inventory (#85).
+- **Notifications** appear on the monitor you chose or the one the game runs on. **Free:** keys of Pro features no longer get eaten in other programs.
+- The **Windows lock screen** no longer switches to your game profile.
+- When Windows refuses a colour curve (HDR on, or the extended gamma range not active yet) you get one clear notice instead of nothing.
+- **Autorun per game** (sprint key, hold or toggle, tap timings), a **GPU and monitor picker**, and a safe start when an older version ran in between.
+
+## 💡 Good to know
+
+- **First start:** BrightRaider asks once for admin rights to unlock the full brightness range. **Restart Windows once** after that — until then strong profiles may be refused.
+- **FPS limit:** the driver reads it when the game starts. After you add or change one, close the game once and start it again.
+- **Mute icons** need borderless or windowed mode; in *exclusive* fullscreen Windows shows no overlays.
 
 ---
 
 ## 📦 Download + install
 
-**Download `BrightRaider.exe` and double-click it.** To uninstall, turn off “Start with Windows”, exit BrightRaider, then delete the EXE and the folders `%LOCALAPPDATA%\BrightRaider` and `%APPDATA%\BrightRaider`. The one-time Windows setting for the extended gamma range stays until you remove it (see the Manual).
+**Download `BrightRaider.exe` and double-click it.** To uninstall, turn off "Start with Windows", exit BrightRaider, then delete the EXE and the folders `%LOCALAPPDATA%\BrightRaider` and `%APPDATA%\BrightRaider`.
 
 If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a **known false positive**. Choose **More info → Run anyway**. Earlier releases were submitted to Microsoft and came back clean.
 
@@ -76,4 +74,4 @@ If Windows Defender or SmartScreen flags it: it is an unsigned single-EXE — a 
 BrightRaider.exe   6511B932EDE70461746BB86E52EDE8FEDD1843784B6F6EE5862C87D256371903
 ```
 
-Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 🧹 [Autoscrapper Guide](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Autoscrapper_Guide.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.2.2 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.2)
+Windows 10 / 11 (64-bit) · NVIDIA or AMD recommended (Intel: gamma and contrast only) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · 📜 [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt) · [V1.1.1 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.1.1)

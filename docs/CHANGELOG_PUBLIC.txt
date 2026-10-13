@@ -3,7 +3,7 @@
 ================================================================
 
 
-[ V1.2.3 ] - Pre-release
+[ V1.2.3 ]
 
   Fixed (what you reported after V1.2.2)
   - First start: the setup and the "ready" notice say that Windows needs one

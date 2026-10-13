@@ -13,7 +13,7 @@ One EXE, zero dependencies (Native AOT — no .NET runtime install required). Wo
 
 ## 🆕 What's new
 
-**V1.2.3 pre-release:** Map Scanner for **Pendola Pass** and the **ARC Frigate**, **dim other displays**, **mute teammates**, a much faster Alt-Tab, **QuickSave in raids** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · **Latest stable:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2.3:** Map Scanner for **Pendola Pass** and the **ARC Frigate**, **dim other displays**, **mute teammates**, a much faster Alt-Tab, **QuickSave in raids** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
 
@@ -139,7 +139,7 @@ One key unlocks everything below, in every game — the Arc Raiders tools includ
 
 Part of the optional Arc Raiders module — switch it on in the Setup Wizard or *Settings → App*.
 
-- **Autoscrapper** *(V1.2 pre-release)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules — by default only after you confirm the list. Sends simulated clicks to the game, see [Anti-Cheat Safety](#anti-cheat-safety). 📖 [Guide](docs/Autoscrapper_Guide.md)
+- **Autoscrapper** *(new in V1.2)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules — by default only after you confirm the list. Sends simulated clicks to the game, see [Anti-Cheat Safety](#anti-cheat-safety). 📖 [Guide](docs/Autoscrapper_Guide.md)
 - **Map Scanner** — long-press M on the map: evac timers, map conditions and hatch states as a colour-coded overlay, plus an evac alarm. Other games via data packs. 📖 [Guide](docs/MapScanner_Guide.md) · [Pack authoring](docs/pack-authoring.md)
 - **QuickSelect** — one key uses an item from your quick-use wheel. 📖 [Guide](docs/QuickSelect_Guide.md)
 - **QuickSave** — one key drags an item into your Safe Pocket or backpack and back. 📖 [Guide](docs/QuickSave_Guide.md)
@@ -271,7 +271,7 @@ Anti-cheat systems do not flag display adjustments. **Some other features send i
 | Autorun **tap mode** | Presses and releases W on a fixed interval (e.g. 160 ms every 1.3 s) — a periodic macro | Pro, long-press CapsLock | medium |
 | QuickSelect | Posted keys, cursor move, mouse clicks | off (Pro) | medium |
 | QuickSave | Cursor drag of an item | off (Pro) | medium |
-| **Autoscrapper** *(V1.2 pre-release)* | Simulated mouse clicks (marked by Windows as injected), the cursor jumping to each tile, key presses and scrolling, at fixed intervals | off (Pro) | **highest** |
+| **Autoscrapper** *(new in V1.2)* | Simulated mouse clicks (marked by Windows as injected), the cursor jumping to each tile, key presses and scrolling, at fixed intervals | off (Pro) | **highest** |
 
 "Risk" is our assessment of how input looks to behavioural anti-cheat (such as Anybrain, used by Arc Raiders). No anti-cheat vendor has confirmed or ruled out any of these.
 
@@ -370,7 +370,7 @@ Eine EXE, keine Abhängigkeiten (Native AOT — keine .NET-Runtime-Installation 
 
 ## 🆕 Neu
 
-**V1.2.3 Pre-release:** Map Scanner für **Pendola Pass** und die **ARC-Fregatte**, **andere Bildschirme abdunkeln**, **Mitspieler stummschalten**, deutlich schnelleres Alt-Tab, **QuickSave im Raid** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · **Aktuelle stabile Version:** [V1.1.1](https://github.com/BrightRaider/BrightRaider/releases/latest) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2.3:** Map Scanner für **Pendola Pass** und die **ARC-Fregatte**, **andere Bildschirme abdunkeln**, **Mitspieler stummschalten**, deutlich schnelleres Alt-Tab, **QuickSave im Raid** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Warum BrightRaider?
 
@@ -413,7 +413,7 @@ Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Wer
 
 Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder unter *Einstellungen → App*.
 
-- **Autoscrapper** *(V1.2 Pre-release)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste bestätigt hast. Sendet simulierte Klicks ans Spiel, siehe [Anti-Cheat Sicherheit](#anti-cheat-sicherheit). 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
+- **Autoscrapper** *(neu in V1.2)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste bestätigt hast. Sendet simulierte Klicks ans Spiel, siehe [Anti-Cheat Sicherheit](#anti-cheat-sicherheit). 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
 - **Map Scanner** — M auf der Karte gedrückt halten: Evac-Timer, Kartenereignisse und Luken als farbiges Overlay, dazu ein Evac-Alarm. Andere Spiele per Datenpack. 📖 [Anleitung (EN)](docs/MapScanner_Guide.md) · [Datenpacks](docs/pack-authoring.md)
 - **QuickSelect** — eine Taste benutzt ein Item aus dem Schnellrad. 📖 [Anleitung (EN)](docs/QuickSelect_Guide.md)
 - **QuickSave** — eine Taste zieht ein Item in die Sicherheitstasche oder den Rucksack und zurück. 📖 [Anleitung (EN)](docs/QuickSave_Guide.md)
@@ -460,7 +460,7 @@ BrightRaider verändert **KEINE** Spieldateien und keinen Spielspeicher, injizie
 | Autorun **Tap-Modus** | Drückt und löst W in festem Takt (z. B. 160 ms alle 1,3 s) — ein periodisches Makro | Pro, CapsLock lang drücken | mittel |
 | QuickSelect | Gepostete Tasten, Cursor setzen, Mausklicks | aus (Pro) | mittel |
 | QuickSave | Item per Cursor ziehen | aus (Pro) | mittel |
-| **Autoscrapper** *(V1.2 Pre-release)* | Simulierte Mausklicks (von Windows als injiziert markiert), Cursor springt auf jede Kachel, Tastendrücke und Scrollen, in festen Abständen | aus (Pro) | **am höchsten** |
+| **Autoscrapper** *(neu in V1.2)* | Simulierte Mausklicks (von Windows als injiziert markiert), Cursor springt auf jede Kachel, Tastendrücke und Scrollen, in festen Abständen | aus (Pro) | **am höchsten** |
 
 „Risiko“ ist unsere Einschätzung, wie die Eingaben für verhaltensbasiertes Anti-Cheat (z. B. Anybrain in Arc Raiders) aussehen. Kein Anti-Cheat-Hersteller hat eine dieser Funktionen bestätigt oder ausgeschlossen.
 
