@@ -29,7 +29,7 @@ never break the app.
 PackFormat=1
 Id=my_game                    ; must equal the folder name
 Name=My Game
-ProcessNames=MyGame-Win64-Shipping;MyGameAlt
+ProcessNames=MyGame-Win64-Shipping;MyGameAlt   ; exact names from Task Manager → Details, without .exe
 SourceW=2560                  ; the resolution ALL coordinates below were measured at
 SourceH=1440
 Threshold=180                 ; optional: OCR brightness cutoff (bright text on dark map)
@@ -79,7 +79,7 @@ runtime, including letterbox/pillarbox handling for 16:10 and ultrawide).
    ```
    You want your map recognized with most timers read and the right event
    name. Adjust rects / retrain until it's clean.
-6. Restart BrightRaider. Long-press the Map-Scan key in game — done.
+6. Restart BrightRaider. Long-press the Map-Scan key in game — done. The key only acts while one of your `ProcessNames` is in front *(since V1.2.2)*, so the name has to match exactly.
 
 ## Tips
 

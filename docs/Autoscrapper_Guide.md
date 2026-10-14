@@ -21,7 +21,7 @@ The **Autoscrapper** reads your ARC Raiders stash from the screen, works out wha
 3. Leave **A run may:** on **Test run — nothing is destroyed** for now.
 4. Add a rule, for example *Metal Parts — keep 200 — scrap*. (More on rules below.)
 5. Click **OK**, switch to the game and open your stash.
-6. Press **F5**. Keep your hands off the mouse — BrightRaider scrolls through the whole stash (about 10 seconds for 300 slots).
+6. Press **F5** (it only acts while the game is in front). Keep your hands off the mouse — BrightRaider scrolls through the whole stash (about 10 seconds for 300 slots).
 7. The review screen opens. Check it, then press **Enter** to run or **Esc** to cancel.
 
 When the test run behaves, switch **A run may:** to **Live — really scrap and sell**.

@@ -35,7 +35,7 @@ Scanning takes ~1–2 seconds. The overlay refreshes from each fresh scan — lo
 | Blue Gate | ✓ |
 | Damm | ✓ |
 | Riven Tides | ✓ (Coastal Lift, Customs Lift) |
-| Pendola Pass | ✓ recognised by its name; lists its four gondola points: open ones run the raid's remaining time (the gondola has no countdown of its own), closed ones show CLOSED *(new in V1.2.2; name recognition for the German game UI so far)* |
+| Pendola Pass | ✓ recognised by its name; lists its four gondola points: open ones run the raid's remaining time (the gondola has no countdown of its own), closed ones show CLOSED *(new in V1.2; name recognition for the German game UI so far)* |
 
 | Event | Effect on overlay |
 |-------|-------------------|
@@ -51,10 +51,11 @@ Scanning takes ~1–2 seconds. The overlay refreshes from each fresh scan — lo
 | Locked Gate | Normal scan, event name displayed |
 | Launch Tower Loot | Normal scan, event name displayed |
 | Beachcombing | Normal scan, event name displayed |
+| Prospecting Probes | Normal scan, event name displayed *(new in V1.1.1)* |
 | Uncovered Caches | Normal scan, event name displayed *(new in V1.1)* |
 | Hidden Bunker (Space Port) | Marks 3 evac points active, rest CLOSED, hatches closed *(new in V1.1)* |
-| ARC Frigate | All evac points stay active. The overlay header adds "No Hatches" *(new in V1.2.2)* |
-| Redirection (Pendola Pass) | Event name displayed; also names the map when its title cannot be read (any game language) *(new in V1.2.2)* |
+| ARC Frigate | All evac points stay active. The overlay header adds "No Hatches" *(new in V1.2)* |
+| Redirection (Pendola Pass) | Event name displayed; also names the map when its title cannot be read (any game language) *(new in V1.2)* |
 
 The event name appears below the map name in the overlay.
 
@@ -71,7 +72,7 @@ The event name appears below the map name in the overlay.
 7. Open the **Timer colors** expander to set the 5 threshold colors (see below)
 8. Set the **Evac Alarm** threshold (minutes + seconds) and enable the sound
 
-Press <kbd>M</kbd> (long-press) in-game once — overlay should appear.
+Press <kbd>M</kbd> (long-press) in-game once — overlay should appear. The key only acts while ARC Raiders is in front; in any other window <kbd>M</kbd> goes through untouched *(since V1.2)*.
 
 ---
 
@@ -139,7 +140,7 @@ A: The alarm uses Windows' standard system sound — adjust via Windows Volume M
 
 ## How it works
 
-Map Scanner is **read-only** — it captures screen pixels and runs template matching. It only looks at what's already on your screen. Same approach as Discord overlays and OBS screen capture.
+Map Scanner reads your screen locally — it captures the screen and matches what it sees; nothing is read from the game itself. Before it reads, it moves the cursor onto the map and scrolls the mouse wheel to zoom out, so it does send a little input to the game. See the [Anti-Cheat section](../README.md#anti-cheat-safety) of the README.
 
 ---
 

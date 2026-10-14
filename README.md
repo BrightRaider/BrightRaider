@@ -33,7 +33,7 @@ Two hero shots — the rest is one click away.
   </td>
   <td valign="top" width="60%">
     <strong>Map Scanner overlay — in-game</strong><br>
-    Long-press M → ~100 % OCR hit rate, detects all 13 current map conditions, color-coded evac timers, audible alarm below threshold.
+    Long-press M → ~100 % OCR hit rate, detects every current map condition, color-coded evac timers, audible alarm below threshold.
     <br><br>
     <img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner Overlay" width="500">
   </td>
@@ -314,7 +314,7 @@ BrightRaider's crosshair is a transparent, click-through Windows window drawn on
 Deep-dives for the more advanced features:
 
 - 🧹 **[Autoscrapper Guide](docs/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles
-- 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all 13 conditions), threshold colors, Evac alarm setup
+- 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all map conditions), threshold colors, Evac alarm setup
 - 🔆 **[Auto-Brightness Guide](docs/AutoBrightness_Guide.md)** — how the 5-zone sampler works, Calibration Wizard walkthrough, zone-weight tuning, debug overlay
 - 🔊 **[Footstep Booster Guide](docs/FootstepBooster_Guide.md)** — threshold / attack / release tuning, recommended starting values, troubleshooting
 - ⚡ **[QuickSelect Guide](docs/QuickSelect_Guide.md)** — per-slot LMB hold time, modifier-key bindings, slots 7–10 mouse-movement path

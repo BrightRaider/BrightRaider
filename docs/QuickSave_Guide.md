@@ -115,6 +115,12 @@ A toast notification confirms the state: **QuickSave ON** / **QuickSave OFF**.
 **Q: The item lands in the wrong slot / the drag fails.**  
 A: Two options: increase **Drop** delay (120 ms is safe), or keep a low Drop delay and set a **Cooldown** instead (e.g. 500 ms). The Cooldown prevents back-to-back triggers before the inventory has settled — which has the same effect as a longer Drop delay but keeps the drag itself snappy.
 
+**Q: Which inventory does QuickSave aim at?**  
+A: The one you see in a raid. On 16:9 and wider screens the hideout looks the same. On 4:3 and 16:10 the hideout inventory sits one row higher, so there QuickSave lands a row low in the hideout — use it in raids. **W1/W2** grab the middle of the weapon, not an attachment *(since V1.2.1)*.
+
+**Q: The key does nothing on the desktop or in another game.**  
+A: That is on purpose: QuickSave only acts while ARC Raiders is in front *(since V1.2)*. Everywhere else the key goes through untouched.
+
 **Q: The item isn't being picked up.**  
 A: Increase **Open delay** (try 300–400 ms). The inventory may not be fully open when the cursor arrives.
 

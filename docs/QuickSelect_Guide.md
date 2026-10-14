@@ -200,7 +200,7 @@ The slot type matters here:
 - **Number-key slots (3–6)** are selected by their in-game digit — **no cursor movement at all**. Simulated mouse movement is the strongest thing behavioural detection keys on, so a keyboard-only selection is a weaker signal.
 - **Mouse slots (7–10)** position the cursor on the wheel for you — that *is* simulated mouse movement, the more exposed path. (AZERTY layouts fall back to the mouse path for 3–6 too, since the digits need Shift in-game.)
 
-If you want to keep your exposure as low as possible in an anti-cheat title, prefer the number-key slots (3–6). As always these features are optional — none of the display, FPS, overlay or Map Scanner features send any input to the game. Use input automation at your own discretion.
+If you want to keep your exposure as low as possible in an anti-cheat title, prefer the number-key slots (3–6). As always these features are optional — the display, FPS and overlay features send no input to the game. Use input automation at your own discretion.
 
 ---
 
@@ -208,7 +208,7 @@ If you want to keep your exposure as low as possible in an anti-cheat title, pre
 
 QuickSelect only intercepts the configured trigger keys **while it is enabled and active**.  
 It does **not** intercept keys in menus, the desktop, or other applications —  
-only when the trigger key is pressed and a game window is in focus.
+it only acts while ARC Raiders is in front *(since V1.2)*; in any other window the key goes through untouched.
 
 The H key and Q key are also only sent to the **currently focused window** (the game).
 

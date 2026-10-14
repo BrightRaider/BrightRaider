@@ -98,6 +98,9 @@ A: Two paths:
 **Q: Music / Discord get affected by the limiter.**
 A: They shouldn't — Footstep Booster operates only on the configured game's session. If you see other apps affected, file a GitHub issue with the game name and the audio device.
 
+**Q: I use a headset with several playback devices (e.g. Astro A50).**
+A: Since V1.2 the booster follows the output the game really plays on, so these work too.
+
 **Q: The limiter doesn't activate at all.**
 A: Check that:
 - Footstep Booster is enabled in Settings
