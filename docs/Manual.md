@@ -41,6 +41,7 @@ EXE, no installation.** A Setup Wizard picks sensible defaults on first launch
 - Per-monitor control (choose one or all monitors)
 - Alt-Tab Auto-Switch — per-game profile + FPS limit, applied automatically
 - Per-game Auto-HDR — turn Windows HDR on/off automatically per game
+- Dim other displays — darkens your other screens while the game is in front
 - Works with Shift held down (no conflicts)
 - Notifications can be turned on/off — with a **separate switch to mute just the
   QuickSelect / QuickSave confirmation toasts** (*Settings → App*), so those macros
@@ -57,7 +58,8 @@ EXE, no installation.** A Setup Wizard picks sensible defaults on first launch
 
 - **Autorun** — press CapsLock to hold W automatically. Sprint Mode starts
   sprinting directly; Tap Mode (hold CapsLock 600 ms) pulses W at intervals.
-  Fully configurable timing. Lives on its own **Movement** tab.
+  Fully configurable timing, and per game its own sprint key, hold or toggle and
+  tap timing. Lives on its own **Movement** tab.
 - **Audio Ducking** — hold the mute key 600 ms to drop game audio to a set
   percentage. Short press still mutes/unmutes.
 - **Footstep Booster / Loudness Limiter** — cap the game's audio session so you
@@ -67,7 +69,9 @@ EXE, no installation.** A Setup Wizard picks sensible defaults on first launch
   locally, with a live colour-coded overlay.
 - **Evac Alarm** — red toast + sound when a timer drops below your threshold.
 - **Autoscrapper** — press F5 with the stash open: reads the whole stash and
-  scraps or sells by your rules, only after you confirm the list.
+  scraps or sells by your rules — by default only after you confirm the list.
+- **Mute Teammates** — one key mutes your voice chat apps (Discord, TeamSpeak …),
+  with mute icons on screen.
 - **Crosshair Overlay** — click-through crosshair, 6 styles, custom colour, size
   (4–50 px), optional outline.
 - **Audio Output Switcher** — cycle the default output device with a hotkey;
@@ -225,6 +229,9 @@ go to whatever is in front.
   > kept — set them by hand under *Movement → Tap Interval…* if you want the
   > new pair. The nerf still bites, so it's well worth taking **Crawl Before
   > You Walk** (yellow skill tree, top middle) — crawling gets far faster.
+- **Per game** (*Movement → Per-game overrides*): a game can get its own forward
+  and sprint key, sprint as a held key or a toggle, start sprinting or walking,
+  and its own tap timing. It is the same game list as on the Game Profiles tab.
 - **AZERTY:** enable *"Z = forward"* under Movement.
 
 ### Audio Ducking (Pro)
@@ -582,6 +589,7 @@ Defaults (Numpad, TKL, AZERTY).
 - Einzelne Monitore oder alle gleichzeitig steuerbar
 - Alt-Tab Auto-Switch — Profil + FPS-Limit automatisch pro Spiel
 - Auto-HDR pro Spiel — Windows-HDR automatisch an/aus pro Spiel
+- Andere Bildschirme abdunkeln — dunkelt deine anderen Bildschirme, solange das Spiel vorne ist
 - Funktioniert auch mit gedrückter Shift-Taste
 - Benachrichtigungen ein/ausschaltbar — mit einem **separaten Schalter, nur die
   QuickSelect- / QuickSave-Bestätigungs-Toasts stummzuschalten** (*Einstellungen →
@@ -599,7 +607,8 @@ Defaults (Numpad, TKL, AZERTY).
 
 - **Autorun** — CapsLock kurz drücken, um W automatisch zu halten. Sprint-Modus
   startet direkt im Sprint; Tap-Modus (CapsLock 600 ms halten) tippt W in
-  Intervallen. Timing voll einstellbar. Eigener **Movement**-Tab.
+  Intervallen. Timing voll einstellbar, und pro Spiel eigene Sprint-Taste,
+  Halten oder Umschalten und eigenes Tap-Timing. Eigener **Movement**-Tab.
 - **Audio Ducking** — Stumm-Taste 600 ms halten, um Spiel-Audio auf einen
   Prozentsatz zu reduzieren. Kurzer Druck schaltet wie gewohnt stumm/laut.
 - **Footstep Booster / Loudness Limiter** — begrenzt die Spiel-Audio-Session,
@@ -609,7 +618,10 @@ Defaults (Numpad, TKL, AZERTY).
   auszulesen, mit farbkodiertem Live-Overlay.
 - **Evac-Alarm** — roter Toast + Sound, wenn ein Timer unter den Schwellwert fällt.
 - **Autoscrapper** — F5 bei offenem Lager: liest das ganze Lager und verschrottet
-  oder verkauft nach deinen Regeln, erst nachdem du die Liste bestätigt hast.
+  oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste
+  bestätigt hast.
+- **Mitspieler stummschalten** — eine Taste schaltet deine Voice-Chat-Apps
+  (Discord, TeamSpeak …) stumm, mit Stumm-Symbolen auf dem Bildschirm.
 - **Crosshair-Overlay** — Click-through-Fadenkreuz, 6 Stile, freie Farbe, Größe
   (4–50 px), optionaler Umriss.
 - **Audio-Ausgabe-Umschalter** — Standard-Ausgabegerät per Hotkey durchwechseln;
@@ -761,6 +773,10 @@ denn seine Tasten gehen an das vorderste Fenster.
   > trage sie unter *Movement → Tap-Abstand…* von Hand ein. Der Nerf ist
   > trotzdem hart: Nimm unbedingt **Crawl Before You Walk** (gelber Skill-Baum,
   > oben in der Mitte) — damit kriecht man deutlich schneller.
+- **Pro Spiel** (*Movement → Per-game overrides*): Ein Spiel kann eigene
+  Vorwärts- und Sprint-Tasten bekommen, Sprint als gehaltene Taste oder als
+  Umschalter, Start im Sprint oder im Gehen und ein eigenes Tap-Timing. Es ist
+  dieselbe Spieleliste wie im Reiter Game Profiles.
 - **AZERTY:** *„Z = vorwärts"* unter Movement aktivieren.
 
 ### Audio Ducking (Pro)
@@ -787,6 +803,40 @@ Detaillierte Schritte in `FootstepBooster_Guide.md`.
 Schaltet die Spiel-Audio-Session beim Alt-Tab raus automatisch stumm, hebt es beim
 Zurückwechseln auf. Per-Prozess — Musik + Discord laufen weiter. *Einstellungen →
 Audio → „Spiel beim Alt-Tab stumm"*.
+
+### Mitspieler stummschalten (Pro)
+
+Eine Taste schaltet deinen Voice-Chat während des Spiels stumm und wieder laut.
+Belegen unter *Einstellungen → Hotkeys → Mute teammates*; welche Apps stumm
+geschaltet werden, steht direkt darunter in der Liste *Mute teammates — voice
+apps*. Neuinstallationen starten mit Discord, TeamSpeak 3 und dem neuen
+TeamSpeak, Mumble, Teams und Zoom; **+ Add app…** wählt ein laufendes Programm,
+**− Remove** nimmt eines heraus, **Add voice apps** stellt die üblichen wieder
+her. Apps, die nicht laufen, werden übersprungen. Standardmäßig nicht belegt.
+Angefasst werden nur die gelisteten Apps (alle Instanzen davon) — nicht der
+Voice-Chat im Spiel selbst.
+
+Die Stummschaltung bleibt, bis du die Taste erneut drückst. Sie endet auch von
+selbst, wenn das Spiel geschlossen wird oder du BrightRaider mit der Global
+EIN/AUS-Taste ausschaltest, und das Tray-Menü hat **Unmute teammates**, solange
+sie stumm sind. Endet BrightRaider oder stürzt ab, während sie stumm sind, werden
+sie beim nächsten Start wieder laut — Windows würde sich die Stummschaltung sonst
+merken. Eine App, die dann noch nicht läuft (Discord startet nach BrightRaider),
+wird laut geschaltet, sobald sie auftaucht.
+
+### Stumm-Symbol (Pro)
+
+Solange das Spiel mit der Stumm-Taste stumm ist, zeigt ein kleines
+durchgestrichenes Lautsprecher-Symbol oben links auf dem Spielbildschirm, warum es
+still ist. Solange *Mute teammates* deinen Voice-Chat stumm hat, erscheint
+daneben ein durchgestrichenes Headset; beide können gleichzeitig zu sehen sein.
+Das Symbol nimmt nie Klicks oder den Fokus und verschwindet, wenn du das Spiel
+verlässt. Es erscheint, wenn das Spiel randlos (Vollbild im Fenster) läuft; im
+*exklusiven* Vollbild zeichnet Windows keine anderen Fenster über das Spiel —
+dafür das Spiel auf randlos stellen. Standardmäßig an; abschalten unter
+*Einstellungen → Audio → Mute indicator*. Die Taste liest jedes Mal den echten
+Stumm-Zustand des Spiels, ein von anderer Stelle stumm geschaltetes Spiel wird
+also mit einem Druck wieder laut.
 
 ### Audio-Ausgabe-Umschalter (Pro)
 
@@ -883,7 +933,10 @@ Tastendruck oder Mausradscrollen.
 ### Autoscrapper (Pro)
 
 Liest dein Lager vom Bildschirm und verschrottet oder verkauft, was deine Regeln
-sagen — nachdem du die Liste gesehen und bestätigt hast. Ausführlich:
+sagen — standardmäßig, nachdem du die Liste gesehen und bestätigt hast („Run
+without the review" überspringt das). Er sendet simulierte Klicks,
+Cursorbewegungen und Scrollen ans Spiel — die am stärksten exponierte
+Eingabe-Funktion, siehe den Anti-Cheat-Abschnitt der README. Ausführlich:
 [Autoscrapper Guide (EN)](Autoscrapper_Guide.md).
 
 - **Regeln:** *Einstellungen → Autoscrapper* — ein Gegenstand (oder eine ganze
@@ -913,6 +966,29 @@ wechselt sanft die Profile — dunkler Bildschirm = mehr Boost. Aktivieren über
 Stelle); das Fenster sitzt unter allen Zonen, um das Ergebnis nicht zu
 verfälschen. Zonen-Gewichte (0–10) unter *Einstellungen → Zonen…*. Komplette
 Anleitung in `AutoBrightness_Guide.md`.
+
+### Andere Bildschirme abdunkeln (Kostenlos)
+
+*Einstellungen → Display → Dim other displays.* Solange ein Spiel vorne ist, wird
+jeder Bildschirm außer dem, auf dem das Spiel läuft, um den eingestellten Wert
+abgedunkelt — ein heller Zweitmonitor zieht den Blick nicht mehr ab; beim Alt-Tab
+ist er sofort wieder normal. *Tipp:* so einstellen, dass du den anderen
+Bildschirm noch lesen kannst, er aber deutlich ruhiger ist.
+Film auf dem anderen Bildschirm? *Einstellungen → Hotkeys → Dim on/off* belegen:
+Ein Druck holt die anderen Bildschirme zurück, der nächste dunkelt sie wieder ab
+— nur für die laufende Sitzung. *Test on screen* zeigt die Wirkung ohne Spiel.
+0 = aus. Mit nur einem Bildschirm gibt es nichts abzudunkeln, der Regler ist
+dann ausgegraut. Ganz dunkel (bis ein Zehntel) geht nur mit dem erweiterten
+Gamma-Bereich (die einmalige Windows-Freigabe, Knopf weiter unten im selben
+Reiter, danach Windows einmal neu starten); ohne ihn endet der Regler bei etwa
+60 %.
+
+Wird BrightRaider hart beendet oder stürzt ab, während andere Bildschirme
+abgedunkelt sind, stellt ein kleiner Hilfsprozess (`BrightRaider.exe
+--watchdog`, startet mit dem Abdunkeln und endet mit BrightRaider) sie innerhalb
+von ein, zwei Sekunden zurück — ebenso ein FPS-Limit, das BrightRaider im
+NVIDIA-Treiber gesetzt hatte. Deshalb kann BrightRaider im Task-Manager zweimal
+erscheinen.
 
 ### Alt-Tab Auto-Switch (Kostenlos)
 
