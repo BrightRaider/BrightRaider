@@ -13,7 +13,7 @@ One EXE, zero dependencies (Native AOT — no .NET runtime install required). Wo
 
 ## 🆕 What's new
 
-**V1.2.3:** Map Scanner for **Pendola Pass** and the **ARC Frigate**, **dim other displays**, **mute teammates**, a much faster Alt-Tab, **QuickSave in raids** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2.3:** the new **Autoscrapper**, Map Scanner for **Pendola Pass** and the **ARC Frigate**, **dim other displays**, **mute teammates**, a much faster Alt-Tab, **QuickSave in raids** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
 
@@ -111,12 +111,12 @@ BrightRaider's display and colour features use standard Windows display APIs —
 ### Free
 - **Display presets on a hotkey** — Normal / Bright / Brighter, instant even in fullscreen.
 - **Game Profiles + Alt-Tab Auto-Switch** — per-game Gamma / Contrast / Vibrance / Hue and FPS limit, applied while the game is in front; colours revert on Alt-Tab, the FPS limit when the game closes. Replaces VibranceGUI.
-- **Dim Other Displays** *(V1.2.2)* — darkens your other screens while the game is in front, so a bright second monitor stops pulling your eye. They come back on Alt-Tab.
+- **Dim Other Displays** *(new in V1.2)* — darkens your other screens while the game is in front, so a bright second monitor stops pulling your eye. They come back on Alt-Tab.
 - **FPS limit per game** — NVIDIA via DRS, AMD via FRTC. → [Optimal FPS cap settings (Blur Busters)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **HDR hotkey + per-game Auto-HDR** — HDR on when the game launches, off when it closes.
 - **Hotkeys your way** — every key rebindable, with modifiers, mouse buttons and scroll wheel; optionally only while a game is focused. Controller players: see [the manual](docs/Manual.md#playing-with-a-controller).
 - **Your calibration stays safe** — DisplayCAL / ICC gamma is saved on first launch and restored on exit, even after a crash.
-- **NVIDIA, AMD and Intel** · multi-monitor · English / German · dark mode
+- **NVIDIA, AMD and Intel** · multi-monitor, with a GPU and monitor picker · English / German · dark mode
 - **Break reminder, update notifier, auto-start with Windows**
 - **Native AOT** — one portable EXE, no .NET install.
 
@@ -129,9 +129,9 @@ One key unlocks everything below, in every game — the Arc Raiders tools includ
 - **Profile editor + profiles 4–9** — edit Gamma / Contrast / Vibrance / Hue of every preset.
 - **Footstep Booster** — per-game audio limiter: turn the game up for footsteps without gunshots blowing your ears. 📖 [Guide](docs/FootstepBooster_Guide.md)
 - **Game Mute, Audio Ducking, Background AutoMute** — silence or duck only the game; muted automatically on Alt-Tab. Discord and music keep playing.
-- **Mute Teammates** *(V1.2.2)* — one key silences your voice chat apps (Discord, TeamSpeak, ...) while you play; you pick the apps from a list.
+- **Mute Teammates** *(new in V1.2)* — one key silences your voice chat apps (Discord, TeamSpeak, ...) while you play; you pick the apps from a list.
 - **Audio Output Switcher** — cycle speakers ↔ headphones with one key, optionally on game start.
-- **Autorun** — CapsLock holds forward; tap mode for the Looting Mk. 3 augment.
+- **Autorun** — CapsLock holds forward; tap mode for the Looting Mk. 3 augment. Sprint key, hold/toggle and tap timings per game *(new in V1.2)*.
 - **Crosshair Overlay** — click-through, 6 styles, custom colour, outline and size.
 - **Process Optimizer** — High priority and physical cores only for the game in front.
 
@@ -370,7 +370,7 @@ Eine EXE, keine Abhängigkeiten (Native AOT — keine .NET-Runtime-Installation 
 
 ## 🆕 Neu
 
-**V1.2.3:** Map Scanner für **Pendola Pass** und die **ARC-Fregatte**, **andere Bildschirme abdunkeln**, **Mitspieler stummschalten**, deutlich schnelleres Alt-Tab, **QuickSave im Raid** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.2.3:** der neue **Autoscrapper**, Map Scanner für **Pendola Pass** und die **ARC-Fregatte**, **andere Bildschirme abdunkeln**, **Mitspieler stummschalten**, deutlich schnelleres Alt-Tab, **QuickSave im Raid** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Warum BrightRaider?
 
@@ -385,12 +385,12 @@ BrightRaiders Anzeige- und Farbfunktionen nutzen Standard-Windows-Display-APIs �
 ### Free
 - **Helligkeitsprofile per Hotkey** — Normal / Hell / Heller, sofort, auch im Vollbild.
 - **Spielprofile + Alt-Tab-Automatik** — Gamma / Kontrast / Vibrance / Hue und FPS-Limit pro Spiel, aktiv solange das Spiel vorne ist; die Farben gehen beim Alt-Tab zurück, das FPS-Limit, wenn das Spiel beendet wird. Ersetzt VibranceGUI.
-- **Andere Bildschirme abdunkeln** *(V1.2.2)* — dunkelt deine anderen Bildschirme, solange das Spiel vorne ist, damit ein heller Zweitmonitor nicht ablenkt. Beim Alt-Tab sind sie wieder normal.
+- **Andere Bildschirme abdunkeln** *(neu in V1.2)* — dunkelt deine anderen Bildschirme, solange das Spiel vorne ist, damit ein heller Zweitmonitor nicht ablenkt. Beim Alt-Tab sind sie wieder normal.
 - **FPS-Limit pro Spiel** — NVIDIA über DRS, AMD über FRTC. → [Optimale FPS-Cap-Einstellungen (Blur Busters)](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/)
 - **HDR per Hotkey + Auto-HDR pro Spiel** — HDR an beim Spielstart, aus beim Beenden.
 - **Hotkeys nach Wunsch** — jede Taste frei belegbar, mit Modifikatoren, Maustasten und Mausrad; auf Wunsch nur, solange ein Spiel im Fokus ist.
 - **Deine Kalibrierung bleibt erhalten** — DisplayCAL-/ICC-Gamma wird beim ersten Start gesichert und beim Beenden wiederhergestellt, auch nach einem Absturz.
-- **NVIDIA, AMD und Intel** · Multi-Monitor · Deutsch / Englisch · Dark Mode
+- **NVIDIA, AMD und Intel** · Multi-Monitor, mit Grafikkarten- und Monitorauswahl · Deutsch / Englisch · Dark Mode
 - **Pausen-Erinnerung, Update-Hinweis, Autostart mit Windows**
 - **Native AOT** — eine portable EXE, keine .NET-Installation.
 
@@ -403,9 +403,9 @@ Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Wer
 - **Profil-Editor + Profile 4–9** — Gamma / Kontrast / Vibrance / Hue jedes Profils anpassen.
 - **Footstep Booster** — Audio-Limiter nur fürs Spiel: laut genug für Schritte, ohne dass Schüsse zu laut werden. 📖 [Anleitung (EN)](docs/FootstepBooster_Guide.md)
 - **Game Mute, Audio Ducking, Background-AutoMute** — nur das Spiel stumm oder leiser; beim Alt-Tab automatisch stumm. Discord und Musik laufen weiter.
-- **Mitspieler stummschalten** *(V1.2.2)* — eine Taste schaltet deine Voice-Chat-Apps (Discord, TeamSpeak, ...) während des Spiels stumm; die Apps wählst du aus einer Liste.
+- **Mitspieler stummschalten** *(neu in V1.2)* — eine Taste schaltet deine Voice-Chat-Apps (Discord, TeamSpeak, ...) während des Spiels stumm; die Apps wählst du aus einer Liste.
 - **Audio-Ausgabe-Switcher** — Boxen ↔ Kopfhörer per Taste, auf Wunsch automatisch beim Spielstart.
-- **Autorun** — CapsLock hält die Vorwärtstaste; Tap-Modus für das Looting-Mk.-3-Augment.
+- **Autorun** — CapsLock hält die Vorwärtstaste; Tap-Modus für das Looting-Mk.-3-Augment. Sprint-Taste, Halten/Umschalten und Tap-Timing pro Spiel *(neu in V1.2)*.
 - **Crosshair-Overlay** — click-through, 6 Stile, Farbe, Umriss und Größe frei wählbar.
 - **Process Optimizer** — hohe Priorität und nur physische Kerne für das Spiel im Vordergrund.
 
