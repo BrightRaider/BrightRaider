@@ -36,11 +36,12 @@ QuickSave can drag items between any of these positions:
 | Slot 1–5 | Quick-deploy slots (Schnelleinsatz 1–5) |
 | Augment 1–3 | Augment slots (Augment-Plätze 1–3) |
 | W1–W2 | Weapon slots (Ausrüstung) |
+| Backpack 1–4 | Top row of the backpack, left to right (Rucksack) |
 | P1–P3 | Safe Pockets (Sicherheitstasche 1–3) |
 
-> The **From** and **To** fields are simple dropdowns — the labels are named exactly like the in-game inventory groups, so just pick **Slot 1–5**, **Augment 1–3**, **W1/W2** or **P1–P3**.
+> The **From** and **To** fields are simple dropdowns — the labels are named exactly like the in-game inventory groups, so just pick **Slot 1–5**, **Augment 1–3**, **W1/W2**, **Backpack 1–4** or **P1–P3**.
 
-[![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg?v=2)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg?v=2)
+[![QuickSave Slot Overview](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg?v=3)](https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/assets/screenshots/Quicksave.jpg?v=3)
 
 > **Tip:** Use it to move consumables (bandages, syringes) into your Safe Pocket before an extraction, or retrieve them quickly at the start of a raid.
 
@@ -53,8 +54,8 @@ QuickSave can drag items between any of these positions:
 3. Check **"Enable QuickSave"**
 4. For each preset you want to use:
    - Click **"Click to bind..."** and press your trigger key (keyboard key or MB3/4/5 or mouse wheel)
-   - Pick **From** — the source position (Slot 1–5, Augment 1–3, W1/W2 weapons, or P1–P3 pockets)
-   - Pick **To** — the destination position (Slot 1–5, Augment 1–3, W1/W2, or P1–P3)
+   - Pick **From** — the source position (Slot 1–5, Augment 1–3, W1/W2 weapons, Backpack 1–4, or P1–P3 pockets)
+   - Pick **To** — the destination position (Slot 1–5, Augment 1–3, W1/W2, Backpack 1–4, or P1–P3)
    - Check **Active** (✓) to enable this preset
    - Check **Tab open** if you want BrightRaider to open the inventory with Tab first
    - Check **Tab close** if you want BrightRaider to close the inventory with Tab after
