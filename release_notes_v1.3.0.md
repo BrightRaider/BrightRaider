@@ -25,7 +25,7 @@ Every setting from V1.1 and V1.2 was checked key by key — if anything is not w
 **Download `BrightRaider.exe` and double-click it.** Unsigned single-EXE — if SmartScreen flags it, choose **More info → Run anyway** (known false positive).
 
 ```
-BrightRaider.exe   34DCFFA6E2356D7452A6E4A443C3EB9713612A921815C077719D9B7AF551D81A
+BrightRaider.exe   80662CF00C1E420A4E5851643A283EE60A9CEB1B4613BC66EAF4DA71C746DCAA
 ```
 
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) (V1.2 menus until the stable release) · [V1.2.3 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3)
