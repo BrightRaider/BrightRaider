@@ -165,16 +165,16 @@ One `BrightRaider.exe` for every keyboard — numpad, TKL or custom. A short set
 
 Just download and run. No installation needed.
 
-> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/5b4332a38b3ca225a7d142df9f8eee8f8d807236737a05c8ba7067180d78e3f8) — only a couple of the ~68 engines flag it heuristically. This build was also submitted to **Microsoft** for analysis (11 Aug 2026); their scanners reported *"no positive detection"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
+> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/5b4332a38b3ca225a7d142df9f8eee8f8d807236737a05c8ba7067180d78e3f8) — only a couple of the ~68 engines flag it heuristically. The V1.3 pre-release build was also submitted to **Microsoft** for analysis (18 Oct 2026); their verdict: it *"does not meet our criteria for malware or potentially unwanted applications"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
 
 <details>
-<summary>📄 <b>Microsoft's analysis of this exact build</b> (click to expand)</summary>
+<summary>📄 <b>Microsoft's analysis of the V1.3 build</b> (click to expand)</summary>
 
 <br>
 
-<img src="docs/assets/wdsi-v1.1.1.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.1.1: status Completed, Our scanners show no positive detection" width="840">
+<img src="docs/assets/wdsi-v1.3.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.3.0: does not meet the criteria for malware or potentially unwanted applications" width="840">
 
-<sub>Submitted 11 August 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>, and closed as <b>Completed</b> with no detection. Submission ID and submitter address redacted. The two releases before this one (V1.1.0 and V1.0.0) were submitted the same way and came back the same.</sub>
+<sub>Submitted 18 October 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Analyst verdict: the file does not meet the criteria for malware or potentially unwanted applications. Submission ID and submitter address redacted. Every release before it (V1.0 to V1.1.1) was submitted the same way and came back clean.</sub>
 
 </details>
 

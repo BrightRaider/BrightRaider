@@ -28,4 +28,17 @@ Every setting from V1.1 and V1.2 was checked key by key — if anything is not w
 BrightRaider.exe   80662CF00C1E420A4E5851643A283EE60A9CEB1B4613BC66EAF4DA71C746DCAA
 ```
 
+**🛡️ Checked by Microsoft.** I submitted this exact build to Microsoft for analysis. Their verdict: *"the submitted files do not meet our criteria for malware or potentially unwanted applications."* If Defender still flags it, update it once: **Windows Security → Virus & threat protection → Protection updates → Check for updates**.
+
+<details>
+<summary>📄 See the submission result</summary>
+
+<br>
+
+<img src="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/docs/assets/wdsi-v1.3.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.3.0: does not meet the criteria for malware or potentially unwanted applications" width="840">
+
+<sub>Submitted 18 October 2026. Submission ID and submitter address redacted. "In progress" is how the portal labels the case; the analyst comment is the verdict.</sub>
+
+</details>
+
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) (V1.2 menus until the stable release) · [V1.2.3 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3)
