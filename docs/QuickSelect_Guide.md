@@ -28,23 +28,22 @@ Each step is independently controllable. Everything happens in the background wh
 ## Requirements
 
 - **BrightRaider Pro license** (€5.49 one-time)
-- BrightRaider V9.6 or later
+- BrightRaider V1.3 or later for the steps below (the settings window changed in V1.3)
 
 ---
 
 ## Setup — Step by Step
 
-1. Right-click the BrightRaider tray icon  
-2. Go to **Settings → QuickSelect... [PRO]**  
-3. Check **"Enable QuickSelect"**  
-4. For each slot you want to use:
-   - Click **"Click to bind..."** and press your trigger key (e.g. `4`, `5`, `6`)
-   - Set the **Slot** number — this must match your in-game quick-use wheel slot
-   - Type the **Timer (ms)** — how long LMB is held to use the item (see recommended values below; there's also a **⏱ Timing reference** button in the tab)
-   - Check the **Active** box (✓) to enable this slot
-   - Check **Q** if you want BrightRaider to open the wheel (uncheck if item is already in hand)
-   - Check **Use** if you want the item auto-used after selection (uncheck for select-only)
-   - Check **H** if you want your hand freed after item use
+1. Right-click the BrightRaider tray icon → **Settings…**
+2. Go to **Modules → Arc Raiders → QuickSelect** and switch it on (top right). **Guide** next to it shows this in short.
+3. In **Setup — match your keys in Arc Raiders**, check once that *Wheel*, *Holster*, *Weapon 1* and *Weapon 2* match your in-game keys
+4. Under **Your items**, for each item you want:
+   - Click the **Key** field and press your trigger key (e.g. `4`, `5`, `6`)
+   - Type the **Item** name (just a label for you)
+   - Set the **Slot** — this must match your in-game quick-use wheel slot (**Slot layout** shows which is which)
+   - Type **Hold ms** — how long LMB is held to use the item (see recommended values below; **Timing reference** lists them too)
+   - Switch it **On**
+   - *All columns* also shows **Opens wheel** (uncheck if the item is already in hand), **Use (LMB)** (uncheck for select-only) and **After use** (holster or back to a weapon)
 5. Click **Apply** to save without closing, or **OK** to save and close
 
 ---
@@ -52,10 +51,10 @@ Each step is independently controllable. Everything happens in the background wh
 ## Recommended LMB hold times
 
 Each item type needs a different hold duration to be fully used. Type the value
-directly into the slot's **Timer (ms)** field — these are solid starting points
-(the same list is behind the **⏱ Timing reference** button in the tab):
+directly into the item's **Hold ms** field — these are solid starting points
+(the same list is behind the **Timing reference** button on the page):
 
-| Item | Timer (ms) |
+| Item | Hold ms |
 |------|-----------|
 | Adrenaline Syringe | 1300 |
 | Herb Bandage | 1800 |
@@ -71,24 +70,26 @@ directly into the slot's **Timer (ms)** field — these are solid starting point
 
 | Setting | Description |
 |---------|-------------|
-| **Enable QuickSelect** | Master on/off switch |
-| **Toggle Key** | Pause/resume QuickSelect without opening the dialog (Numpad: Numpad Minus, Arrow: Pos1/Home) |
-| **Q-Key** | The key that opens your quick-use wheel (default: Q). Rebind if your in-game binding is different. |
-| **H-Key** | The key that frees your hand after item use (default: H). Can also be bound to MB3, MB4, or MB5. |
-| **Q-Hold** | How long Q is held before the slot key is pressed (50–2000 ms, default 200 ms). Increase if the wheel doesn't open reliably. |
-| **Active (✓)** | Enable/disable each slot individually without rebinding |
-| **Trigger key** | The key you press to trigger this slot |
-| **Wheel** | Which in-game wheel slot to select (1–2 = weapons, 3–6 = number-key wheel, 7–10 = mouse-only) |
-| **Timer (ms)** | LMB hold time in milliseconds — typed directly per slot |
-| **H (per slot)** | Whether to press H after item use for this specific slot |
-| **Q (per slot)** | Whether to open the wheel with Q + slot key. Uncheck if the item is already in hand. |
-| **Use (per slot)** | Whether to auto-use the item (LMB hold + H). Uncheck for select-only — picks the item without triggering use. |
+| **On / off** (top right) | Master switch |
+| **On/off key** (top) | Pause/resume QuickSelect while you play (Numpad: Numpad Minus) |
+| **Wheel** (Setup) | The key that opens your quick-use wheel (default: Q). Rebind if your in-game binding is different. |
+| **Holster** (Setup) | The key that frees your hand after item use (default: H). Can also be bound to MB3, MB4, or MB5. |
+| **Weapon 1 / 2** (Setup) | Your weapon keys, for *After use → back to a weapon* |
+| **Hold wheel (ms)** (Setup) | How long the wheel key is held before the slot is picked (50–2000 ms, default 200 ms). Increase if the wheel doesn't open reliably. |
+| **Equip (ms)** (Setup) | Wait after picking before using (default 300 ms) |
+| **On** (per item) | Enable/disable each item individually without rebinding |
+| **Key** | The key you press to trigger this item |
+| **Slot** | Which in-game wheel slot to select (1–2 = weapons, 3–6 = number-key wheel, 7–10 = mouse-only) |
+| **Hold ms** | LMB hold time in milliseconds — typed directly per item |
+| **Opens wheel** *(All columns)* | Whether to open the wheel first. Uncheck if the item is already in hand. |
+| **Use (LMB)** *(All columns)* | Whether to auto-use the item. Uncheck for select-only — picks the item without triggering use. |
+| **After use** *(All columns)* | Nothing, holster, or back to weapon 1 / 2 |
 
 ---
 
 ## Default Configuration
 
-| Slot | Name | Trigger Key | Wheel | Timer (ms) |
+| Item | Name | Key | Slot | Hold ms |
 |------|------|-------------|-------|-----------|
 | 1 | Herb Bandage | key 4 | 3 | 1800 |
 | 2 | Shield Charger | key 5 | 4 | 2300 |
@@ -130,7 +131,7 @@ If you bind a Shift+ combo (e.g. `Shift+5`) **and** Sprint is bound to Shift (th
 
 Two ways out:
 - Use `Ctrl+` or `Alt+` instead of `Shift+`
-- Rebind Sprint to a non-Shift key in **Settings → Hotkeys → Sprint key**
+- Rebind Sprint to a non-Shift key under **Settings → Movement → Your game's keys**
 
 ---
 

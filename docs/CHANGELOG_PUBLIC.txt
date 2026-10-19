@@ -3,6 +3,57 @@
 ================================================================
 
 
+[ V1.3.0 ] - BrightRaider grows up
+
+  The core is a tool for every PC game; Arc Raiders becomes its first module.
+
+  Setup
+  - A setup walks you through everything at the first start: keyboard,
+    brightness, other screens, Alt-Tab, FPS limit, sound, crosshair,
+    notifications, modules, full brightness range, start with Windows.
+  - It also opens once after updating to 1.3. Every page shows what you
+    already have; Next keeps it, only what you change is changed. Pages with
+    something new are marked "New in 1.3", the last page shows what changed.
+    It never opens on top of a running game.
+  - Run it again any time: Settings -> App & License -> Run the setup...
+
+  Settings window
+  - A sidebar instead of tabs: App & License, Display, Tools, Modules, All
+    keys. It folds down to icons; a module's pages fold away under it.
+  - Every key sits on the page of its feature (the profile key next to the
+    profile, the mute key under Audio). All keys lists them in one place and
+    shows conflicts.
+  - A Guide beside every page: what happens, how to set it up, what to try
+    when something is off.
+  - Rarely used options are folded under "Advanced"; switches instead of
+    checkboxes; colour pickers for the crosshair and the Map Scanner.
+  - Pro pages can be opened and set up without Pro; the tools run in your
+    games once Pro is active. After activating a key, a short welcome shows
+    what is now unlocked.
+
+  G-SYNC / FreeSync setup (free)
+  - The Blur Busters way, done in the driver: V-SYNC on, low latency on and an
+    FPS limit just under your refresh rate (NVIDIA); FreeSync, Wait for
+    Vertical Refresh, Anti-Lag and the same limit (AMD).
+  - Competitive games can be left out on NVIDIA (V-SYNC off, no limit).
+  - Undo puts back exactly what was there before.
+  - In the setup, or under Games & FPS -> Advanced.
+
+  Arc Raiders module
+  - Map Scanner, Autoscrapper, QuickSelect and QuickSave on their own page
+    (Settings -> Modules -> Arc Raiders) with one switch for all of them.
+    Settings, keys and Autoscrapper rules carry over unchanged.
+
+  Also
+  - Notifications on the screen you choose (App & License -> Notifications).
+  - Strong profiles before the Windows restart (#86): Windows refuses strong
+    colour curves until it has been restarted once after the extended range
+    was unlocked. BrightRaider now applies the strongest part it accepts and
+    tells you once.
+  - Any FPS limit in the setup, not only the presets.
+  - Dark title bar on every BrightRaider window in the dark theme.
+
+
 [ V1.2.3 ]
 
   Fixed (what you reported after V1.2.2)

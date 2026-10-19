@@ -37,10 +37,9 @@ It's a feedback-based limiter, not a true lookahead compressor. This approach re
 
 ## Setup — Step by Step
 
-1. Right-click tray → **Settings → Audio [PRO]**
-2. Scroll to **Footstep Booster / Loudness Limiter**
-3. Check **Enable Footstep Booster**
-4. Set **Threshold**, **Attack**, **Release** — recommended starting values below
+1. Right-click tray → **Settings… → Audio**
+2. Switch on **Footstep Booster**
+3. Set **Cap loud sounds at** (the threshold) right below it; **Attack** and **Release** are under *Audio → Advanced → Footstep Booster attack / release* — recommended starting values below
 5. Launch the game — BrightRaider auto-attaches when the game is detected as foreground
 
 ---
@@ -73,8 +72,8 @@ Iterate over 2–3 sessions. Most players land at Threshold 35–50 %, Attack 10
 
 | Setting | Description |
 |---------|-------------|
-| **Enable Footstep Booster** | Master on/off. Off = no audio processing, session volume stays at user-set level. |
-| **Threshold (10–90 %)** | Peak level above which the limiter pulls volume down. Use percent of full scale. |
+| **Footstep Booster** (switch) | Master on/off. Off = no audio processing, session volume stays at user-set level. |
+| **Cap loud sounds at** (threshold, 10–90 %) | Peak level above which the limiter pulls volume down. Use percent of full scale. |
 | **Attack (1–200 ms)** | Time for the limiter to react to a loud transient. Faster = catches sharper sounds; too fast = audible click. |
 | **Release (50–2000 ms)** | Time for the volume to return to baseline after the loud sound. Faster = footsteps return quicker but with possible pumping. |
 
@@ -103,13 +102,13 @@ A: Since V1.2 the booster follows the output the game really plays on, so these 
 
 **Q: The limiter doesn't activate at all.**
 A: Check that:
-- Footstep Booster is enabled in Settings
-- The game has a Game Profile entry (auto-attach only fires for configured games)
+- Footstep Booster is switched on (*Audio* page)
+- The game is on your list under *Games & FPS* (auto-attach only fires for configured games)
 - The game has been the foreground window for at least one second (initial attach delay)
 - Check `%APPDATA%\BrightRaider\debug.log` for `AudioCompressor` lines
 
 **Q: Does this work for any game, or just Arc Raiders?**
-A: Any game. The compressor is process-name based — add the game in **Settings → Game Profiles** and Footstep Booster auto-attaches when that game is foreground.
+A: Any game. The compressor is process-name based — add the game under **Settings → Games & FPS** and Footstep Booster auto-attaches when that game is foreground.
 
 ---
 

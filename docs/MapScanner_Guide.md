@@ -63,14 +63,12 @@ The event name appears below the map name in the overlay.
 
 ## Setup — Step by Step
 
-1. Right-click the BrightRaider tray icon
-2. **Settings → Map Scanner [PRO]**
-3. Set the **Hold duration** — how long to hold <kbd>M</kbd> before the scan triggers (default 350 ms)
-4. Pick an **Overlay position** — 6 screen corners + center top / center bottom
-5. Adjust **Font size** and **Map name color** if you want
-6. Drag the **Background opacity** slider — fully transparent up to fully opaque
-7. Open the **Timer colors** expander to set the 5 threshold colors (see below)
-8. Set the **Evac Alarm** threshold (minutes + seconds) and enable the sound
+1. Right-click the BrightRaider tray icon → **Settings…**
+2. **Modules → Arc Raiders → Map Scanner** — the switch top right turns it on (the Arc Raiders module has to be on too). **Guide** next to it shows this in short.
+3. **Colours** — the map name and the 5 timer colours; the **Preview** beside it shows them at once
+4. **Position** (under the preview) — top or bottom, left / centre / right
+5. **Evac alarm** — switch it on, set *When the timer drops below* (seconds) and *With sound*
+6. *Advanced: overlay size, map key, alarm repeat* — **Background** (0 = no backdrop, the text floats over the game), **Font size**, **Hold the map key for** (default 600 ms; a short press opens the map as usual), **Map key** (if you rebound it in the game), **Repeat the alarm**
 
 Press <kbd>M</kbd> (long-press) in-game once — overlay should appear. The key only acts while ARC Raiders is in front; in any other window <kbd>M</kbd> goes through untouched *(since V1.2)*.
 
@@ -78,7 +76,7 @@ Press <kbd>M</kbd> (long-press) in-game once — overlay should appear. The key 
 
 ## Timer Color Thresholds
 
-The overlay color reflects the remaining time on each evac timer. You can tune each threshold + color independently:
+The overlay colour reflects the remaining time on each evac timer. The steps are fixed; the colour of each is yours to pick:
 
 | State | Default color | Default range |
 |-------|---------------|---------------|
@@ -88,7 +86,7 @@ The overlay color reflects the remaining time on each evac timer. You can tune e
 | **Critical** | Red | ≤ 1 min remaining (alarm window) |
 | **Closed** | Gray | Closed / unknown / expired |
 
-> **Tip:** If you find yourself missing the 1-minute warning, raise the **Critical** threshold to e.g. 90 seconds — gives you more lead time before the evac point closes.
+> **Tip:** If you find yourself missing the last minute, set the **Evac alarm** to e.g. 120 seconds — it gives you an audible cue with more lead time before the evac point closes.
 
 ---
 
@@ -96,9 +94,9 @@ The overlay color reflects the remaining time on each evac timer. You can tune e
 
 A separate audio alarm fires the first time a timer drops below your threshold. Useful when you're not constantly looking at the overlay — gives you an audible cue to start moving.
 
-- Configure in: **Settings → Map Scanner → Evac Alarm section**
-- Threshold: separate **minutes** (0–59) and **seconds** (0–59) fields
-- Sound toggle: on / off (off = silent, toast only)
+- Configure on the Map Scanner page, card **Evac alarm**
+- Threshold: *When the timer drops below* — 30 to 600 seconds
+- *With sound*: on / off (off = silent, toast only); *Repeat the alarm* under *Advanced*
 - Fires once per timer, then resets if the timer is re-scanned (long-press <kbd>M</kbd> again)
 - Map Scanner must be active for the alarm to fire
 
@@ -112,7 +110,7 @@ If you want to hide the overlay temporarily (e.g. it covers a menu element you w
 - A toast confirms the new state
 - A fresh scan (long-press <kbd>M</kbd>) re-enables the overlay automatically
 
-The toggle key is rebindable in **Settings → Hotkeys**.
+The toggle key is rebindable at the top of the Map Scanner page (*Overlay key*), on the Arc Raiders page, or under **All keys**.
 
 ---
 
@@ -131,7 +129,7 @@ A: The "Closed" state is set by event detection (Night Raid, Storm) or after a t
 A: V1.0 models Husk Graveyard as 4 EPs with Raider Hatches **open** — confirmed against the live game. If this changes in a future Arc Raiders update, open a GitHub issue.
 
 **Q: Overlay covers my chat / HUD.**
-A: Change the overlay position in Settings, or temporarily toggle it off with Numpad ★. The overlay is click-through — it does not block any input even when visible.
+A: Change the **Position** on the Map Scanner page, or temporarily toggle it off with Numpad ★. The overlay is click-through — it does not block any input even when visible.
 
 **Q: The alarm sound is too quiet / too loud.**
 A: The alarm uses Windows' standard system sound — adjust via Windows Volume Mixer → "System sounds". The toast itself respects your toast volume setting.

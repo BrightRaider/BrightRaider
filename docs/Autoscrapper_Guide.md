@@ -11,13 +11,14 @@ The **Autoscrapper** reads your ARC Raiders stash from the screen, works out wha
 - **BrightRaider Pro license**
 - BrightRaider V1.2 or later (running without the review: V1.2.1)
 - ARC Raiders running, with the **stash open** when you press the trigger key
+- The game on your **main display** (with several screens, the Autoscrapper reads the main one)
 
 ---
 
 ## Quick start
 
-1. Right-click the BrightRaider tray icon → **Settings** → tab **♻ Autoscrapper**.
-2. Tick **Autoscrapper**. While it is off, the trigger key does nothing.
+1. Right-click the BrightRaider tray icon → **Settings…** → **Modules → Arc Raiders → Autoscrapper**.
+2. Switch it on (top right). While it is off, the key does nothing. **Guide** next to it shows this page in short.
 3. Leave **A run may:** on **Test run — nothing is destroyed** for now.
 4. Add a rule, for example *Metal Parts — keep 200 — scrap*. (More on rules below.)
 5. Click **OK**, switch to the game and open your stash.
@@ -30,7 +31,7 @@ When the test run behaves, switch **A run may:** to **Live — really scrap and 
 
 ## Rules: what may go
 
-The table in the Autoscrapper tab is the list of everything BrightRaider is allowed to touch.
+The table **Your rules** on the Autoscrapper page is the list of everything BrightRaider is allowed to touch.
 
 | Column | Meaning |
 |---|---|
@@ -68,7 +69,7 @@ After the scan you get your stash as a list, **in the same order as in the game*
 
 ### Running without the review
 
-Once your rules are settled, tick **Run without the review when my rules already decide everything** in the Autoscrapper tab. F5 then scans and runs your saved rules straight away.
+Once your rules are settled, switch on **Run without the review** on the Autoscrapper page. F5 then scans and runs your saved rules straight away.
 
 - Items without a rule and unnamed tiles are still never touched.
 - If the scan did not see the whole stash, the review comes up anyway.
@@ -94,7 +95,7 @@ The test run is the only way to see that BrightRaider finds the game's confirm b
 
 You can teach it:
 
-1. In the review screen, click **Name this…** on a row — or in the tab, click **Name unrecognised items…**.
+1. In the review screen, click **Name this…** on a row — or on the Autoscrapper page, click **Name unrecognised items…**.
 2. The **Teach the scanner** window shows the tile exactly as it came off your screen. Type part of the name and click it. *Not an item — discard* and *Skip for now* are there too.
 3. Names take effect **from the next scan on**. They are compared against your own screen, which is why this is the best way to make it better for you.
 
@@ -135,7 +136,7 @@ After changing resolution, the first scan takes a few seconds longer while the r
 
 ## Setup — keys
 
-Open **Setup — trigger key and the game's own keys** at the bottom of the tab. The trigger key is always there; the two game keys show with *Advanced* on.
+The **trigger key** sits at the top of the Autoscrapper page (also on the Arc Raiders page and under *All keys*). The two game keys are under **Advanced: the game's own keys** at the bottom.
 
 | Setting | Default | Meaning |
 |---|---|---|

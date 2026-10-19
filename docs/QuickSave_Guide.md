@@ -49,24 +49,22 @@ QuickSave can drag items between any of these positions:
 
 ## Setup — Step by Step
 
-1. Right-click the BrightRaider tray icon
-2. Go to **Settings → QuickSave... [PRO]**
-3. Check **"Enable QuickSave"**
-4. For each preset you want to use:
-   - Click **"Click to bind..."** and press your trigger key (keyboard key or MB3/4/5 or mouse wheel)
-   - Pick **From** — the source position (Slot 1–5, Augment 1–3, W1/W2 weapons, Backpack 1–4, or P1–P3 pockets)
-   - Pick **To** — the destination position (Slot 1–5, Augment 1–3, W1/W2, Backpack 1–4, or P1–P3)
-   - Check **Active** (✓) to enable this preset
-   - Check **Tab open** if you want BrightRaider to open the inventory with Tab first
-   - Check **Tab close** if you want BrightRaider to close the inventory with Tab after
-   - Check **⇄ Toggle** if you want the direction to reverse on alternating presses
-5. Click **OK** — QuickSave is active immediately
+1. Right-click the BrightRaider tray icon → **Settings…**
+2. Go to **Modules → Arc Raiders → QuickSave** and switch it on (top right). **Guide** next to it shows this in short.
+3. For each preset you want to use:
+   - Switch it **On**
+   - Click the **Key** field and press your trigger key (keyboard key or MB3/4/5 or mouse wheel)
+   - Pick **From** — the source position (Slot 1–5, Augment 1–3, W1/W2 weapons, Backpack 1–4, or P1–P3 pockets; **Slot layout** shows where each one is)
+   - Pick **To** — the destination position (same choices)
+   - Tick **Back and forth** if the direction should reverse on every second press
+   - *All columns* also shows **Opens inventory** and **Closes it** (both on by default — BrightRaider presses your inventory key before and after)
+4. Click **OK** — QuickSave is active immediately
 
 ---
 
-## Toggle Direction (⇄)
+## Back and forth
 
-When **Toggle** is checked for a preset:
+When **Back and forth** is ticked for a preset:
 
 - **First press** → drags From → To (e.g. Slot 3 → P1)
 - **Second press** → drags To → From (e.g. P1 → Slot 3)
@@ -77,24 +75,24 @@ This lets you store and retrieve the same item with the same key.
 
 ## All Settings Explained
 
-> **Most important for reliability: Drop Hold.** This is the single setting that decides whether a save lands. It's the window where the game actually registers the drop — the item has to dwell on the destination slot long enough for Arc Raiders to accept it before the button releases. If your saves are inconsistent, raise **Drop** first. *Open delay* only matters if the inventory is still opening when the grab starts, so on a fast-opening setup it does nothing — Drop is the one that counts.
+> **Most important for reliability: Drop hold** (*Advanced: inventory key and timings*). This is the single setting that decides whether a save lands. It's the window where the game actually registers the drop — the item has to dwell on the destination slot long enough for Arc Raiders to accept it before the button releases. If your saves are inconsistent, raise **Drop** first. *Open delay* only matters if the inventory is still opening when the grab starts, so on a fast-opening setup it does nothing — Drop is the one that counts.
 
 | Setting | Description |
 |---------|-------------|
-| **Enable QuickSave** | Master on/off switch for all presets |
-| **Inventory key (Tab)** | The key used to open/close inventory (default: Tab). Rebind if your in-game binding is different. |
-| **Active (✓)** | Enable/disable each preset individually |
-| **Trigger key** | The key that triggers this preset (keyboard, MB3/4/5, or mouse wheel) |
-| **From** | Source position — pick Slot 1–5 / Augment 1–3 (inventory), W1/W2 (weapons) or P1–P3 (pockets) |
-| **To** | Destination position — pick Slot 1–5 / Augment 1–3, W1/W2 or P1–P3 |
-| **Tab open** | Press Tab before dragging (opens inventory) |
-| **Tab close** | Press Tab after dragging (closes inventory) |
-| **⇄ Toggle** | Reverse direction on alternating presses |
-| **Open delay** | Wait after Tab before moving cursor (default: 250 ms). Increase if the inventory opens slowly. |
-| **Hover** | Extra wait after cursor arrives at source before picking up (default: 0 ms) |
-| **Hold** | How long LMB is held while dragging (default: 0 ms) |
-| **Drop** | **The key reliability setting.** Wait after the cursor arrives at the destination before releasing — this is the window the game uses to register the drop (default: 120 ms). If saves are inconsistent, raise this first. Lower values (e.g. 20 ms) can work if **Cooldown** is set high enough to prevent back-to-back triggers before the inventory settles. |
-| **Cooldown** | Minimum time between two triggers (default: 0 ms, disabled) |
+| **On / off** (top right) and **On/off key** | Master switch for all presets; the key pauses/resumes QuickSave while you play (Numpad /) |
+| **On** (per preset) | Enable/disable each preset individually |
+| **Key** | The key that triggers this preset (keyboard, MB3/4/5, or mouse wheel) |
+| **From** | Source position — Slot 1–5 / Augment 1–3 (inventory), W1/W2 (weapons), Backpack 1–4 or P1–P3 (pockets) |
+| **To** | Destination position — same choices |
+| **Back and forth** | Reverse direction on every second press |
+| **Opens inventory** *(All columns)* | Press the inventory key before dragging |
+| **Closes it** *(All columns)* | Press the inventory key after dragging |
+| **Inventory key** *(Advanced)* | The key used to open/close inventory (default: Tab). Rebind if your in-game binding is different. |
+| **Wait after opening** *(Advanced)* | Wait after opening before moving the cursor (default: 250 ms). Increase if the inventory opens slowly. |
+| **Hover before grab** *(Advanced)* | Extra wait after the cursor arrives at the source before picking up (default: 0 ms) |
+| **Drag delay** *(Advanced)* | Extra time while dragging (default: 0 ms) |
+| **Drop hold** *(Advanced)* | **The key reliability setting.** Wait after the cursor arrives at the destination before releasing — this is the window the game uses to register the drop (default: 120 ms). If saves are inconsistent, raise this first. Lower values (e.g. 20 ms) can work if **Cooldown** is set high enough to prevent back-to-back triggers before the inventory settles. |
+| **Cooldown between presses** *(Advanced)* | Minimum time between two triggers (default: 0 ms, disabled) |
 
 ---
 
@@ -129,10 +127,10 @@ A: Increase **Open delay** (try 300–400 ms). The inventory may not be fully op
 A: This is a known behavior of the Unreal Engine Slate UI system used by Arc Raiders — the same thing that happens with normal manual drag-and-drop in the inventory. It cannot be fixed from outside the game. Just trigger again.
 
 **Q: I want to move the item without opening/closing the inventory manually.**  
-A: Make sure **Tab open** and **Tab close** are both checked, and the **Inventory key** is set to the correct key.
+A: Make sure **Opens inventory** and **Closes it** are both ticked (*All columns*), and the **Inventory key** (*Advanced*) is set to the correct key.
 
 **Q: I want to store an item and retrieve it with the same key.**  
-A: Check **⇄ Toggle** for that preset. First press stores, second press retrieves.
+A: Tick **Back and forth** for that preset. First press stores, second press retrieves.
 
 **Q: Can I bind a mouse button or mouse wheel?**  
 A: Yes. In the preset trigger bind, press **MB3** (middle click), **MB4**, **MB5**, or **scroll the wheel** up or down.
