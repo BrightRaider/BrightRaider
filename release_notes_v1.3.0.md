@@ -41,4 +41,6 @@ BrightRaider.exe   80662CF00C1E420A4E5851643A283EE60A9CEB1B4613BC66EAF4DA71C746D
 
 </details>
 
+**VirusTotal:** [1 of 70 engines](https://www.virustotal.com/gui/file/80662cf00c1e420a4e5851643a283ee60a9ceb1b4613bc66eaf4da71c746dcaa) flags it (Bkav Pro, a heuristic); Microsoft and all the others show it clean.
+
 Windows 10 / 11 (64-bit) · no .NET install needed · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) (V1.2 menus until the stable release) · [V1.2.3 notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3)
