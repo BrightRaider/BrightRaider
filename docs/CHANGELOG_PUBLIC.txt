@@ -54,6 +54,13 @@
   - Report a problem (App & License): puts your version, system and the end
     of the log together and opens a new issue for you to check and send.
 
+  Keys
+  - A key bound twice no longer goes unnoticed: at start and whenever you
+    change a key, BrightRaider checks its own keys and those of every module.
+    It tells you, the tray offers "A key is bound twice", and All keys shows
+    the pair at the top. Keys of two different games don't count - each only
+    works in its own game.
+
   Fixed
   - Footstep Booster: after a loud moment the game comes back to its full
     level again (it could stay at about 75 %).

@@ -152,6 +152,11 @@ layout).
 - **Every key sits on the page of its feature** — the profile key next to the
   profile, the mute key under Audio. **All keys** (bottom of the sidebar) lists
   them in one place and shows conflicts.
+- **A key bound twice** — BrightRaider checks its own keys and every module's
+  at start and whenever you change one. A key used twice is shown once as a
+  message and stays in the tray (*A key is bound twice*) until you change it;
+  All keys names the pair at the top. Keys of two different games don't
+  count — each only works in its own game.
 - **Guide** on every page opens a short guide beside it: what happens, how to
   set it up, what to try when something is off.
 - Rarely used options are folded under **Advanced: …**; what makes a feature
@@ -805,6 +810,11 @@ Run the setup…* (dort wählst du auch ein anderes Tastaturlayout).
 - **Jede Taste sitzt auf der Seite ihrer Funktion** — die Profiltaste beim
   Profil, die Stumm-Taste unter Audio. **All keys** (unten in der Seitenleiste)
   zeigt alle auf einen Blick, mit Konflikten.
+- **Doppelt belegte Tasten** — BrightRaider prüft beim Start und nach jeder
+  Änderung seine eigenen Tasten und die aller Module. Eine doppelte Taste meldet
+  es einmal und zeigt sie im Tray (*A key is bound twice*), bis du sie änderst;
+  All keys nennt das Paar ganz oben. Tasten zweier verschiedener Spiele zählen
+  nicht — jede wirkt nur in ihrem Spiel.
 - **Guide** auf jeder Seite öffnet daneben eine kurze Anleitung: was passiert, wie
   man es einrichtet, was hilft, wenn etwas nicht stimmt.
 - Selten Gebrauchtes ist unter **Advanced: …** eingeklappt; was eine Funktion
