@@ -3,7 +3,65 @@
 ================================================================
 
 
-[ V1.3.0 ] - BrightRaider grows up
+[ V1.4.0 ] - Lighter, faster, and Arc Raiders as a module
+
+  Coming from V1.2.3? V1.3.0 was a test version only - everything listed
+  under it below is part of this update as well. Settings, profiles, keys and
+  your license carry over.
+
+  Lighter and faster (V1.3 against V1.4, same settings, both with Arc Raiders)
+  - From start until your keys work: 0.58 s -> 0.11 s.
+  - Memory while it waits in the tray: 105 MB -> 21 MB.
+  - CPU while it waits: up to 0.26 % of one core -> 0.03 %.
+  - On disk: 74 MB -> 14 MB (the app 5.7 MB, the Arc Raiders module 8.1 MB).
+  - The files V1.3 unpacked on first start (47 MB) are cleared away by
+    themselves.
+
+  Arc Raiders as a module
+  - BrightRaider downloads the Arc Raiders module by itself when you use it
+    (switch it on in the setup or under Modules). Without Arc Raiders you
+    don't get it at all.
+  - Module updates come on their own: when Arc Raiders needs a fix, the tray
+    offers "Install Arc Raiders ..." and only the module is downloaded - no
+    new BrightRaider needed. As with app updates, nothing installs without
+    your click, and never while a game is in front.
+  - A module only loads when it carries BrightRaider's signature.
+  - Your Pro key keeps everything it unlocks today, Arc Raiders included.
+
+  Map Scanner
+  - Name the exits yourself (#80): Map Scanner -> Advanced -> "your own names
+    for the exits". The overlay and the evac alarm use your names; leave a
+    field empty for the game's name.
+  - No more made-up overlay when the map is not actually open (the XP screen,
+    the skill tree, a menu): checked against nearly 300 real screenshots, no
+    map lost.
+
+  Crosshair
+  - The crosshair is remembered per game. An overlay on top of a game can
+    cost it G-SYNC, so the crosshair you switch on in one game stays off in
+    the others until you want it there too.
+
+  QuickSave
+  - Toggle presets: a press while a move is still running no longer turns
+    the direction around - the next move brings the item back as it should.
+
+  Settings window
+  - A refreshed look for the settings and the setup - same places as in
+    V1.3, so nothing has to be found again.
+  - Search (Ctrl+F) jumps to any setting.
+  - Size slider for the settings and the setup (70-150 %, also Ctrl + / -);
+    on a wide window the cards sit side by side.
+  - Report a problem (App & License): puts your version, system and the end
+    of the log together and opens a new issue for you to check and send.
+
+  Fixed
+  - Footstep Booster: after a loud moment the game comes back to its full
+    level again (it could stay at about 75 %).
+  - Copying the system info or a problem report waits a moment if another
+    program is using the clipboard, instead of failing.
+
+
+[ V1.3.0 ] - BrightRaider grows up (test version)
 
   The core is a tool for every PC game; Arc Raiders becomes its first module.
 
