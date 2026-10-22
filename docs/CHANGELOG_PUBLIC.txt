@@ -49,6 +49,8 @@
   - A refreshed look for the settings and the setup - same places as in
     V1.3, so nothing has to be found again.
   - Search (Ctrl+F) jumps to any setting.
+  - The setup fits every page on the screen - no scrolling, every picture
+    the same size.
   - Size slider for the settings and the setup (70-150 %, also Ctrl + / -);
     on a wide window the cards sit side by side.
   - Report a problem (App & License): puts your version, system and the end
@@ -60,6 +62,9 @@
     It tells you, the tray offers "A key is bound twice", and All keys shows
     the pair at the top. Keys of two different games don't count - each only
     works in its own game.
+  - Give a key that is already in use, and it moves to its new place - the
+    other one then has none, and you are told (Cancel undoes it). Keys that
+    only say how your game is bound (map key, sprint) stay where they are.
 
   Fixed
   - Footstep Booster: after a loud moment the game comes back to its full

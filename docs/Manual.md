@@ -137,8 +137,8 @@ The UAC prompt appears only once. After that, the app runs without admin rights.
 from V1.3 or older. Every page already shows what you have: **Next** keeps it,
 only what you change is changed. Pages that are new since your version are
 marked *New in 1.3* or *New in 1.4*; the last page shows what changed and what
-stayed. Closing the window keeps everything as it
-is. It never opens on top of a running game. Run it again any time:
+stayed. Every page fits on the screen, nothing to scroll. Closing the window
+keeps everything as it is. It never opens on top of a running game. Run it again any time:
 *App & License → Run the setup…* (that is also where you pick another keyboard
 layout).
 
@@ -156,7 +156,11 @@ layout).
   at start and whenever you change one. A key used twice is shown once as a
   message and stays in the tray (*A key is bound twice*) until you change it;
   All keys names the pair at the top. Keys of two different games don't
-  count — each only works in its own game.
+  count — each only works in its own game. Give a key that is already in use
+  (in the settings or the setup), and it moves there: the other one has none
+  now and you are told (*Cancel* in the settings, or closing the setup without
+  *Finish*, undoes it). Keys that only say how your game is bound (map key,
+  sprint) stay.
 - **Guide** on every page opens a short guide beside it: what happens, how to
   set it up, what to try when something is off.
 - Rarely used options are folded under **Advanced: …**; what makes a feature
@@ -796,8 +800,8 @@ Die UAC-Abfrage kommt nur **einmal**. Danach läuft die App ohne Admin-Rechte.
 Update auf 1.4** von V1.3 oder älter. Jede Seite zeigt schon, was du hast:
 **Next** behält es, nur was du änderst, wird geändert. Seiten, die seit deiner
 Version neu sind, tragen *New in 1.3* oder *New in 1.4*; die letzte Seite zeigt,
-was sich geändert hat und was blieb. Schließen behält alles, wie es
-ist. Er öffnet nie über einem laufenden Spiel. Jederzeit wieder: *App & License →
+was sich geändert hat und was blieb. Jede Seite passt auf den Bildschirm, nichts
+zu scrollen. Schließen behält alles, wie es ist. Er öffnet nie über einem laufenden Spiel. Jederzeit wieder: *App & License →
 Run the setup…* (dort wählst du auch ein anderes Tastaturlayout).
 
 **Das Einstellungsfenster** (Tray → *Settings…*):
@@ -814,7 +818,12 @@ Run the setup…* (dort wählst du auch ein anderes Tastaturlayout).
   Änderung seine eigenen Tasten und die aller Module. Eine doppelte Taste meldet
   es einmal und zeigt sie im Tray (*A key is bound twice*), bis du sie änderst;
   All keys nennt das Paar ganz oben. Tasten zweier verschiedener Spiele zählen
-  nicht — jede wirkt nur in ihrem Spiel.
+  nicht — jede wirkt nur in ihrem Spiel. Vergibst du eine schon belegte Taste
+  (in den Einstellungen oder im Assistenten), wandert sie dorthin: die andere hat
+  dann keine, und du bekommst einen Hinweis (*Cancel* in den Einstellungen oder
+  den Assistenten ohne *Finish* schließen macht es rückgängig).
+  Tasten, die nur beschreiben, wie dein Spiel belegt ist (Kartentaste, Sprint),
+  bleiben.
 - **Guide** auf jeder Seite öffnet daneben eine kurze Anleitung: was passiert, wie
   man es einrichtet, was hilft, wenn etwas nicht stimmt.
 - Selten Gebrauchtes ist unter **Advanced: …** eingeklappt; was eine Funktion
