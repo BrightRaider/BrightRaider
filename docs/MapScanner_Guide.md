@@ -69,6 +69,7 @@ The event name appears below the map name in the overlay.
 4. **Position** (under the preview) — top or bottom, left / centre / right
 5. **Evac alarm** — switch it on, set *When the timer drops below* (seconds) and *With sound*
 6. *Advanced: overlay size, map key, alarm repeat* — **Background** (0 = no backdrop, the text floats over the game), **Font size**, **Hold the map key for** (default 600 ms; a short press opens the map as usual), **Map key** (if you rebound it in the game), **Repeat the alarm**
+7. *Advanced: your own names for the exits* *(new in V1.4)* — every exit of every map, with the game's name in grey. Type what you call it (a landmark, a building) and the overlay and the evac alarm use your name; leave a field empty to keep the game's.
 
 Press <kbd>M</kbd> (long-press) in-game once — overlay should appear. The key only acts while ARC Raiders is in front; in any other window <kbd>M</kbd> goes through untouched *(since V1.2)*.
 
@@ -119,8 +120,11 @@ The toggle key is rebindable at the top of the Map Scanner page (*Overlay key*),
 **Q: The scan returns no timers / detects the wrong map.**
 A: Make sure you're at the default map zoom. Don't pan or zoom before holding <kbd>M</kbd> — BrightRaider scrolls the map out itself. Reading is verified accurate across resolutions and aspect ratios (16:9, 16:10, ultrawide); if you ever do see a misread on an unusual setup, a screenshot of your map screen on a GitHub issue is the most useful thing to send.
 
+**Q: I held M and it says *no map detected*.**
+A: The map was not open yet, or a menu was in front (the XP screen, the skill tree). Since V1.4 the scanner says so instead of guessing — open the map and hold <kbd>M</kbd> again.
+
 **Q: A timer reads `--:--` or jumps around.**
-A: The template matcher couldn't read those digits. Trigger another scan — usually OCR catches them on the next pass. If a specific digit always misreads, set the environment variable `BRIGHTRAIDER_DUMP=1` before launching BrightRaider — failed regions are dumped to `%APPDATA%\BrightRaider\debug\` as PNGs for diagnosis.
+A: The template matcher couldn't read those digits. Trigger another scan — usually OCR catches them on the next pass. If a specific digit always misreads, start BrightRaider with the *debug scan* launcher from the tools download (it sets `BRIGHTRAIDER_DUMP=1`) — each scan is saved to `%LOCALAPPDATA%\BrightRaider\debug\` as a PNG plus a text file for diagnosis.
 
 **Q: Closed timers stay visible / show the wrong state.**
 A: The "Closed" state is set by event detection (Night Raid, Storm) or after a timer reaches 0. If the event auto-detect fails, you can long-press <kbd>M</kbd> again to retry. Event detection uses the map name region near the top of the in-game map.

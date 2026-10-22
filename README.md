@@ -4,16 +4,16 @@
 
 BrightRaider is a lightweight Windows tray tool that lets you switch display brightness, contrast and digital vibrance with a single keypress — per game, auto-applied when you Alt-Tab. It works with **any** PC game; the Arc Raiders toolbox (Map Scanner, Autoscrapper, QuickSelect, QuickSave) is an **optional module** with its own page and one switch.
 
-One EXE, zero dependencies (Native AOT — no .NET runtime install required). Works with any keyboard — numpad, TKL, or fully custom bindings.
+One small EXE, nothing to install — ready a tenth of a second after you start it. Works with any keyboard — numpad, TKL, or fully custom bindings.
 
-![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red) ![.NET](https://img.shields.io/badge/.NET-9%20AOT-purple)
+![Windows](https://img.shields.io/badge/Windows-10%2F11-blue) ![NVIDIA](https://img.shields.io/badge/NVIDIA-supported-green) ![AMD](https://img.shields.io/badge/AMD-supported-red)
 [![Downloads](https://img.shields.io/github/downloads/BrightRaider/BrightRaider/total?label=Downloads&color=brightgreen)](https://github.com/BrightRaider/BrightRaider/releases)
 
 **🌐 Website: [brightraider.github.io/BrightRaider](https://brightraider.github.io/BrightRaider/)**
 
 ## 🆕 What's new
 
-**V1.3 — BrightRaider grows up:** a **setup** that walks you through everything, a new settings window with a **guide beside every page**, a **G-SYNC / FreeSync setup** the Blur Busters way, notifications on the screen you choose, and Arc Raiders as its own **module** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.3.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.4 — lighter, faster, and Arc Raiders as a module:** ready in 0.11 s and 21 MB in the tray (V1.3: 0.58 s, 105 MB), the Arc Raiders module **downloads and updates by itself**, your **own names for the Map Scanner's exits**, the crosshair remembered **per game**, and search in the settings. Coming from V1.2.3, you also get everything V1.3 brought: the **setup**, the new settings window with a **guide beside every page**, and the **G-SYNC / FreeSync setup** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
 
@@ -41,41 +41,41 @@ Two hero shots — the rest is one click away.
 </table>
 
 <details>
-<summary><b>📸 See the settings window</b> (click to expand — 8 screenshots, V1.3)</summary>
+<summary><b>📸 See the settings window</b> (click to expand — 8 screenshots, V1.4)</summary>
 
 <br>
 
 **Games & FPS — the Free killer feature.** Per-game colours + FPS limit, auto-switched on Alt-Tab; the G-SYNC / FreeSync setup folded under *Advanced*.
 
-<img src="assets/screenshots/v1.3/settings-games-fps.png" alt="Games & FPS page" width="780">
+<img src="assets/screenshots/v1.4/settings-games-fps.png" alt="Games & FPS page" width="780">
 
 **Colour profiles.** 9 profiles, each with Gamma / Contrast / Vibrance / Shadow Boost, its key right next to it, and dimming for your other screens.
 
-<img src="assets/screenshots/v1.3/settings-colour-profiles.png" alt="Colour profiles page" width="780">
+<img src="assets/screenshots/v1.4/settings-colour-profiles.png" alt="Colour profiles page" width="780">
 
 **A guide beside every page.** What happens, how to set it up, what to try when something is off — here for the Map Scanner.
 
-<img src="assets/screenshots/v1.3/settings-mapscanner-guide.png" alt="Map Scanner page with its guide" width="780">
+<img src="assets/screenshots/v1.4/settings-mapscanner-guide.png" alt="Map Scanner page with its guide" width="780">
 
 **Audio (Pro).** Mute only the game, mute teammates, Footstep Booster, output switcher — every key on the page.
 
-<img src="assets/screenshots/v1.3/settings-audio.png" alt="Audio page" width="780">
+<img src="assets/screenshots/v1.4/settings-audio.png" alt="Audio page" width="780">
 
-**Crosshair (Pro).** Click-through overlay, 6 styles, colour, outline, live preview.
+**Crosshair (Pro).** Click-through overlay, 6 styles, colour, outline, live preview — remembered per game.
 
-<img src="assets/screenshots/v1.3/settings-crosshair.png" alt="Crosshair page" width="780">
+<img src="assets/screenshots/v1.4/settings-crosshair.png" alt="Crosshair page" width="780">
 
-**Arc Raiders module.** All four tools on one page with their keys and one switch.
+**Arc Raiders module.** All four tools on one page with their keys and one switch — the module downloads and updates by itself.
 
-<img src="assets/screenshots/v1.3/settings-arc-raiders.png" alt="Arc Raiders module page" width="780">
+<img src="assets/screenshots/v1.4/settings-arc-raiders.png" alt="Arc Raiders module page" width="780">
 
 **QuickSelect (Pro).** Your game keys once in *Setup*, then one row per item; *All columns* shows the rest.
 
-<img src="assets/screenshots/v1.3/settings-quickselect.png" alt="QuickSelect page" width="780">
+<img src="assets/screenshots/v1.4/settings-quickselect.png" alt="QuickSelect page" width="780">
 
 **All keys.** Every key in one place, with conflicts — each one is also on its feature's page.
 
-<img src="assets/screenshots/v1.3/settings-all-keys.png" alt="All keys page" width="780">
+<img src="assets/screenshots/v1.4/settings-all-keys.png" alt="All keys page" width="780">
 
 </details>
 
@@ -109,9 +109,9 @@ BrightRaider's display and colour features use standard Windows display APIs —
 - **HDR hotkey + per-game Auto-HDR** — HDR on when the game launches, off when it closes.
 - **Hotkeys your way** — every key rebindable, with modifiers, mouse buttons and scroll wheel; optionally only while a game is focused. Controller players: see [the manual](docs/Manual.md#playing-with-a-controller).
 - **Your calibration stays safe** — DisplayCAL / ICC gamma is saved on first launch and restored on exit, even after a crash.
-- **NVIDIA, AMD and Intel** · multi-monitor, with a GPU and monitor picker · English / German · dark mode
+- **NVIDIA, AMD and Intel** · multi-monitor, with a GPU and monitor picker · light and dark theme
 - **Break reminder, update notifier, auto-start with Windows** · notifications on the screen you choose
-- **Native AOT** — one portable EXE, no .NET install.
+- **Light and quick** — one portable EXE under 6 MB, nothing to install; the settings have a search (Ctrl+F) and a size slider.
 
 ### Pro (€5.49)
 One key unlocks everything below, in every game — the Arc Raiders tools included. Every Pro page can be opened and set up without Pro; the tools run in your games once Pro is active.
@@ -125,15 +125,15 @@ One key unlocks everything below, in every game — the Arc Raiders tools includ
 - **Mute Teammates** *(new in V1.2)* — one key silences your voice chat apps (Discord, TeamSpeak, ...) while you play; you pick the apps from a list.
 - **Audio Output Switcher** — cycle speakers ↔ headphones with one key, optionally on game start.
 - **Autorun** — CapsLock holds forward; tap mode for the Looting Mk. 3 augment. Sprint key, hold/toggle and tap timings per game *(new in V1.2)*.
-- **Crosshair Overlay** — click-through, 6 styles, custom colour, outline and size.
+- **Crosshair Overlay** — click-through, 6 styles, custom colour, outline and size; remembered per game, so G-SYNC stays on where you don't need it *(new in V1.4)*.
 - **Process Optimizer** — High priority and physical cores only for the game in front.
 
 #### Arc Raiders module
 
-Part of the optional Arc Raiders module — switch it on in the setup or on its own page, *Settings → Modules → Arc Raiders*.
+Part of the optional Arc Raiders module — switch it on in the setup or on its own page, *Settings → Modules → Arc Raiders*. It downloads by itself (8 MB) and updates by itself: when Arc needs a fix, the tray offers it, and only the module is downloaded *(new in V1.4)*.
 
 - **Autoscrapper** *(new in V1.2)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules — by default only after you confirm the list. Sends simulated clicks to the game, see [Anti-Cheat Safety](#anti-cheat-safety). 📖 [Guide](docs/Autoscrapper_Guide.md)
-- **Map Scanner** — long-press M on the map: evac timers, map conditions and hatch states as a colour-coded overlay, plus an evac alarm. Other games via data packs. 📖 [Guide](docs/MapScanner_Guide.md) · [Pack authoring](docs/pack-authoring.md)
+- **Map Scanner** — long-press M on the map: evac timers, map conditions and hatch states as a colour-coded overlay, plus an evac alarm; name the exits yourself if you like *(new in V1.4)*. Other games via data packs. 📖 [Guide](docs/MapScanner_Guide.md) · [Pack authoring](docs/pack-authoring.md)
 - **QuickSelect** — one key uses an item from your quick-use wheel. 📖 [Guide](docs/QuickSelect_Guide.md)
 - **QuickSave** — one key drags an item into your Safe Pocket or backpack and back. 📖 [Guide](docs/QuickSave_Guide.md)
 
@@ -156,12 +156,13 @@ One `BrightRaider.exe` for every keyboard — numpad, TKL or custom. A short set
 
 > **Coming from V9.x?** Your license key still works — re-enter it once under *Settings → App & License*. Activation limit reached? See the [known-issues post](https://github.com/BrightRaider/BrightRaider/issues/74).
 
-Just download and run. No installation needed.
+Just download and run. No installation needed. The Arc Raiders module comes by itself when you switch it on.
 
-> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the current build](https://www.virustotal.com/gui/file/80662cf00c1e420a4e5851643a283ee60a9ceb1b4613bc66eaf4da71c746dcaa) — 1 of 70 engines flags it (Bkav Pro, heuristic); Microsoft and all others show it clean. The current build was also submitted to **Microsoft** for analysis (18 Oct 2026); their verdict: it *"does not meet our criteria for malware or potentially unwanted applications"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
+<!-- TODO 1.4 release: VirusTotal link and Microsoft verdict for the V1.4.0 build; until then the V1.3.0 results stay, named as such. -->
+> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the V1.3.0 build](https://www.virustotal.com/gui/file/80662cf00c1e420a4e5851643a283ee60a9ceb1b4613bc66eaf4da71c746dcaa) — 1 of 70 engines flags it (Bkav Pro, heuristic); Microsoft and all others show it clean. The V1.3.0 build was also submitted to **Microsoft** for analysis (18 Oct 2026); their verdict: it *"does not meet our criteria for malware or potentially unwanted applications"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
 
 <details>
-<summary>📄 <b>Microsoft's analysis of this exact build</b> (click to expand)</summary>
+<summary>📄 <b>Microsoft's analysis of the V1.3.0 build</b> (click to expand)</summary>
 
 <br>
 
@@ -175,7 +176,7 @@ Just download and run. No installation needed.
 
 1. Run `BrightRaider.exe` — the setup appears
 2. Go through it: keyboard, brightness, other screens, Alt-Tab, FPS limit (or the G-SYNC / FreeSync setup), sound, crosshair, notifications
-3. Decide whether you want the **Arc Raiders module** (Map Scanner, Autoscrapper, QuickSelect, QuickSave). Off by default on a fresh install — flip it any time on its page, *Settings → Modules → Arc Raiders*.
+3. Decide whether you want the **Arc Raiders module** (Map Scanner, Autoscrapper, QuickSelect, QuickSave). Off by default on a fresh install — flip it any time on its page, *Settings → Modules → Arc Raiders*; it downloads by itself.
 4. Press your profile key — switch brightness instantly, even in fullscreen
 5. That's it. Every settings page has a **Guide** button if you want to know more.
 
@@ -291,7 +292,7 @@ BrightRaider's crosshair is a transparent, click-through Windows window drawn on
 ## System Requirements
 
 - Windows 10 / 11 (x64)
-- **No .NET runtime install required** — Native AOT, single self-contained EXE
+- **Nothing to install** — one self-contained EXE; the Arc Raiders module downloads when you switch it on
 - NVIDIA or AMD GPU recommended for full feature set (Vibrance, Hue, FPS limit). Intel + integrated GPUs work with Gamma + Contrast only.
 
 ## Changelog
@@ -307,7 +308,7 @@ BrightRaider's crosshair is a transparent, click-through Windows window drawn on
 Deep-dives for the more advanced features:
 
 - 🧹 **[Autoscrapper Guide](docs/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles
-- 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all map conditions), threshold colors, Evac alarm setup
+- 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all map conditions), threshold colors, Evac alarm setup, your own exit names
 - 🔆 **[Auto-Brightness Guide](docs/AutoBrightness_Guide.md)** — how the 5-zone sampler works, Calibration Wizard walkthrough, zone-weight tuning, debug overlay
 - 🔊 **[Footstep Booster Guide](docs/FootstepBooster_Guide.md)** — threshold / attack / release tuning, recommended starting values, troubleshooting
 - ⚡ **[QuickSelect Guide](docs/QuickSelect_Guide.md)** — per-slot LMB hold time, modifier-key bindings, slots 7–10 mouse-movement path
@@ -317,7 +318,7 @@ Deep-dives for the more advanced features:
 
 1. Turn off "Start with Windows" in *Settings → App & License*, then exit BrightRaider (right-click tray → Exit)
 2. Delete `BrightRaider.exe`
-3. Delete the folders `%LOCALAPPDATA%\BrightRaider` and `%APPDATA%\BrightRaider`
+3. Delete the folders `%LOCALAPPDATA%\BrightRaider` (downloaded modules) and `%APPDATA%\BrightRaider` (settings)
 4. Optional: Remove `GdiIcmGammaRange` from `HKLM\...\ICM`
 5. Optional: Remove auto-start from `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` if it was still on
 
@@ -359,11 +360,11 @@ A remapper solves it properly: **Steam Input**, **DS4Windows** or **reWASD** con
 
 BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontrast und Digital Vibrance per Tastendruck umschalten kannst — pro Spiel, automatisch beim Alt-Tab. Es funktioniert mit **jedem** PC-Spiel; die Arc-Raiders-Werkzeuge (Map Scanner, Autoscrapper, QuickSelect, QuickSave) sind ein **optionales Modul** mit eigener Seite und einem Schalter.
 
-Eine EXE, keine Abhängigkeiten (Native AOT — keine .NET-Runtime-Installation nötig). Funktioniert mit jeder Tastatur — Numpad, TKL oder komplett selbst belegt.
+Eine kleine EXE, nichts zu installieren — eine Zehntelsekunde nach dem Start bereit. Funktioniert mit jeder Tastatur — Numpad, TKL oder komplett selbst belegt.
 
 ## 🆕 Neu
 
-**V1.3 — BrightRaider wird erwachsen:** ein **Einrichtungsassistent**, der durch alles führt, ein neues Einstellungsfenster mit einem **Guide neben jeder Seite**, eine **G-SYNC-/FreeSync-Einrichtung** nach Blur Busters, Benachrichtigungen auf dem Bildschirm deiner Wahl und Arc Raiders als eigenes **Modul** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.3.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+**V1.4 — leichter, schneller, Arc Raiders als Modul:** bereit in 0,11 s und 21 MB im Tray (V1.3: 0,58 s, 105 MB), das Arc-Raiders-Modul **lädt und aktualisiert sich selbst**, **eigene Namen für die Ausgänge** im Map Scanner, das Fadenkreuz **pro Spiel** gemerkt und eine Suche in den Einstellungen. Wer von V1.2.3 kommt, bekommt alles aus V1.3 dazu: den **Einrichtungsassistenten**, das neue Einstellungsfenster mit **Guide neben jeder Seite** und die **G-SYNC-/FreeSync-Einrichtung** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Warum BrightRaider?
 
@@ -385,9 +386,9 @@ BrightRaiders Anzeige- und Farbfunktionen nutzen Standard-Windows-Display-APIs �
 - **HDR per Hotkey + Auto-HDR pro Spiel** — HDR an beim Spielstart, aus beim Beenden.
 - **Hotkeys nach Wunsch** — jede Taste frei belegbar, mit Modifikatoren, Maustasten und Mausrad; auf Wunsch nur, solange ein Spiel im Fokus ist.
 - **Deine Kalibrierung bleibt erhalten** — DisplayCAL-/ICC-Gamma wird beim ersten Start gesichert und beim Beenden wiederhergestellt, auch nach einem Absturz.
-- **NVIDIA, AMD und Intel** · Multi-Monitor, mit Grafikkarten- und Monitorauswahl · Deutsch / Englisch · Dark Mode
+- **NVIDIA, AMD und Intel** · Multi-Monitor, mit Grafikkarten- und Monitorauswahl · helles und dunkles Design
 - **Pausen-Erinnerung, Update-Hinweis, Autostart mit Windows** · Benachrichtigungen auf dem Bildschirm deiner Wahl
-- **Native AOT** — eine portable EXE, keine .NET-Installation.
+- **Leicht und schnell** — eine portable EXE unter 6 MB, nichts zu installieren; Suche (Strg+F) und Größenregler in den Einstellungen.
 
 ### Pro (5,49 €)
 Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Werkzeuge eingeschlossen. Jede Pro-Seite lässt sich auch ohne Pro öffnen und einrichten; im Spiel laufen die Werkzeuge, sobald Pro aktiv ist.
@@ -401,15 +402,15 @@ Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Wer
 - **Mitspieler stummschalten** *(neu in V1.2)* — eine Taste schaltet deine Voice-Chat-Apps (Discord, TeamSpeak, ...) während des Spiels stumm; die Apps wählst du aus einer Liste.
 - **Audio-Ausgabe-Switcher** — Boxen ↔ Kopfhörer per Taste, auf Wunsch automatisch beim Spielstart.
 - **Autorun** — CapsLock hält die Vorwärtstaste; Tap-Modus für das Looting-Mk.-3-Augment. Sprint-Taste, Halten/Umschalten und Tap-Timing pro Spiel *(neu in V1.2)*.
-- **Crosshair-Overlay** — click-through, 6 Stile, Farbe, Umriss und Größe frei wählbar.
+- **Crosshair-Overlay** — click-through, 6 Stile, Farbe, Umriss und Größe frei wählbar; pro Spiel gemerkt, damit G-SYNC dort an bleibt, wo du es nicht brauchst *(neu in V1.4)*.
 - **Process Optimizer** — hohe Priorität und nur physische Kerne für das Spiel im Vordergrund.
 
 #### Arc-Raiders-Modul
 
-Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder auf seiner Seite, *Einstellungen → Modules → Arc Raiders*.
+Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder auf seiner Seite, *Einstellungen → Modules → Arc Raiders*. Es lädt sich selbst herunter (8 MB) und aktualisiert sich selbst: Braucht Arc einen Fix, bietet ihn das Tray an, und nur das Modul wird geladen *(neu in V1.4)*.
 
 - **Autoscrapper** *(neu in V1.2)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste bestätigt hast. Sendet simulierte Klicks ans Spiel, siehe [Anti-Cheat Sicherheit](#anti-cheat-sicherheit). 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
-- **Map Scanner** — M auf der Karte gedrückt halten: Evac-Timer, Kartenereignisse und Luken als farbiges Overlay, dazu ein Evac-Alarm. Andere Spiele per Datenpack. 📖 [Anleitung (EN)](docs/MapScanner_Guide.md) · [Datenpacks](docs/pack-authoring.md)
+- **Map Scanner** — M auf der Karte gedrückt halten: Evac-Timer, Kartenereignisse und Luken als farbiges Overlay, dazu ein Evac-Alarm; die Ausgänge kannst du selbst benennen *(neu in V1.4)*. Andere Spiele per Datenpack. 📖 [Anleitung (EN)](docs/MapScanner_Guide.md) · [Datenpacks](docs/pack-authoring.md)
 - **QuickSelect** — eine Taste benutzt ein Item aus dem Schnellrad. 📖 [Anleitung (EN)](docs/QuickSelect_Guide.md)
 - **QuickSave** — eine Taste zieht ein Item in die Sicherheitstasche oder den Rucksack und zurück. 📖 [Anleitung (EN)](docs/QuickSave_Guide.md)
 
@@ -417,7 +418,7 @@ Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistente
 
 **[Neueste Version herunterladen](../../releases/latest)**
 
-Eine `BrightRaider.exe` für jede Tastatur — Numpad, TKL oder eigene Belegung. Beim ersten Start erscheint ein kurzer Einrichtungsassistent: Tastaturtyp wählen, Hotkeys werden automatisch gesetzt. Jederzeit wieder: *Einstellungen → App & License → Run the setup…*
+Eine `BrightRaider.exe` für jede Tastatur — Numpad, TKL oder eigene Belegung. Beim ersten Start erscheint ein kurzer Einrichtungsassistent: Tastaturtyp wählen, Hotkeys werden automatisch gesetzt. Jederzeit wieder: *Einstellungen → App & License → Run the setup…* Das Arc-Raiders-Modul kommt von selbst, sobald du es einschaltest.
 
 ## Tastenbelegung (Standard)
 

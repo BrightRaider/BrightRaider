@@ -84,7 +84,7 @@ This lets you store and retrieve the same item with the same key.
 | **Key** | The key that triggers this preset (keyboard, MB3/4/5, or mouse wheel) |
 | **From** | Source position — Slot 1–5 / Augment 1–3 (inventory), W1/W2 (weapons), Backpack 1–4 or P1–P3 (pockets) |
 | **To** | Destination position — same choices |
-| **Back and forth** | Reverse direction on every second press |
+| **Back and forth** | Reverse direction on every second press. A press while a move is still running is ignored and does not turn the direction *(since V1.4)* |
 | **Opens inventory** *(All columns)* | Press the inventory key before dragging |
 | **Closes it** *(All columns)* | Press the inventory key after dragging |
 | **Inventory key** *(Advanced)* | The key used to open/close inventory (default: Tab). Rebind if your in-game binding is different. |

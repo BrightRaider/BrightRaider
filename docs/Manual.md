@@ -54,7 +54,7 @@ launch.
   macros can run silently while other notifications stay on
 - Color-conflict warning — a heads-up when another tool (f.lux, Night Light, …)
   is fighting over your display colors
-- English and German
+- English interface (German follows in a later version)
 - Auto-Start with Windows · all settings saved automatically
 - Resets everything to normal on exit
 - Break Reminder — orange toast after a configurable interval; never interrupts gameplay
@@ -74,14 +74,14 @@ games once Pro is active.
   can crank volume for footsteps without going deaf on gunshots (see
   `FootstepBooster_Guide.md`).
 - **Map Scanner** — hold M on the in-game map to read all evacuation timers
-  locally, with a live colour-coded overlay.
+  locally, with a live colour-coded overlay; name the exits yourself (new in V1.4).
 - **Evac Alarm** — red toast + sound when a timer drops below your threshold.
 - **Autoscrapper** — press F5 with the stash open: reads the whole stash and
   scraps or sells by your rules — by default only after you confirm the list.
 - **Mute Teammates** — one key mutes your voice chat apps (Discord, TeamSpeak …),
   with mute icons on screen.
 - **Crosshair Overlay** — click-through crosshair, 6 styles, custom colour, size
-  (4–50 px), optional outline.
+  (1–50 px), optional outline; remembered per game (new in V1.4).
 - **Audio Output Switcher** — cycle the default output device with a hotkey;
   optional auto-switch when a game starts/closes.
 - **Up to 9 profiles** (Numpad 1–9) with a full custom editor (Gamma, Contrast,
@@ -104,7 +104,8 @@ games once Pro is active.
 ### System requirements
 
 - Windows 10 or 11 (x64)
-- No .NET runtime required (Native AOT — single EXE)
+- Nothing to install — one EXE under 6 MB; the Arc Raiders module downloads
+  when you switch it on
 - NVIDIA (GeForce, RTX, Quadro) or AMD (Radeon, RX) GPU
 - Also works on Intel / other GPUs (Gamma + Contrast only)
 
@@ -132,10 +133,11 @@ The UAC prompt appears only once. After that, the app runs without admin rights.
 
 ### Setup and the settings window (new in V1.3)
 
-**The setup** opens at the first start — and **once after updating to 1.3**.
-Every page already shows what you have: **Next** keeps it, only what you change
-is changed. Pages with something new are marked *New in 1.3*; the last page
-shows what changed and what stayed. Closing the window keeps everything as it
+**The setup** opens at the first start — and **once after updating to 1.4**
+from V1.3 or older. Every page already shows what you have: **Next** keeps it,
+only what you change is changed. Pages that are new since your version are
+marked *New in 1.3* or *New in 1.4*; the last page shows what changed and what
+stayed. Closing the window keeps everything as it
 is. It never opens on top of a running game. Run it again any time:
 *App & License → Run the setup…* (that is also where you pick another keyboard
 layout).
@@ -156,6 +158,21 @@ layout).
   work stays in view.
 - **Pro pages** can be set up without Pro; a quiet line on top says the tool
   runs in your games once Pro is active.
+- **Search** (Ctrl+F, top of the sidebar) jumps to any setting. **Size**
+  (*App & License*, also Ctrl + / −) makes everything 70–150 % as large; on a
+  wide window the cards sit side by side (new in V1.4).
+- **Report a problem…** (*App & License*) puts your version, system and the end
+  of the log together and opens a new issue for you to check and send
+  (new in V1.4).
+
+**Modules** (new in V1.4): the Arc Raiders tools are a module. Switch it on in
+the setup or on *Modules → Arc Raiders*, and BrightRaider downloads it (8 MB)
+into `%LOCALAPPDATA%\BrightRaider\modules` and loads it — only with
+BrightRaider's signature. When a newer Arc Raiders module is out, a notice and
+the tray line **Install Arc Raiders …** offer it: one click downloads only the
+module, and BrightRaider restarts as soon as no game is in front. Nothing
+installs without your click. Your Pro key keeps everything it unlocks,
+Arc Raiders included.
 
 ### Modifier bindings (Ctrl / Alt / Shift)
 
@@ -370,6 +387,14 @@ the number of open evacuation points: **Night Raid** (2 points, hatches closed),
 points, hatches closed), and the **ARC Frigate** event (all evac points open).
 The condition name appears in the overlay.
 
+**Your own names for the exits** (new in V1.4): *Advanced: your own names for
+the exits* lists every exit of every map. Type what you call it — a landmark, a
+building — and the overlay and the evac alarm use your name; an empty field keeps
+the game's.
+
+If the map is not actually open when you hold M (a menu, the XP screen), the
+scanner says *no map detected* instead of guessing.
+
 Configure under *Modules → Arc Raiders → Map Scanner*: the colours and the
 overlay position up front; background, font size, hold time, map key and alarm
 repeat under *Advanced*.
@@ -420,10 +445,11 @@ or wheel scroll — no manual clicking.
   **Backpack 1–4** (top row) — new in V1.1. Direction is fully configurable.
 - **How it works:** opens inventory (Tab) → moves cursor to source → holds LMB
   and drags to destination → releases → closes inventory (Tab).
-- **Where the inventory sits:** it is not in the same place in the hideout and
-  in a raid, and on 4:3 and 16:10 screens it sits at the top or in the centre.
-  Once the inventory is open, QuickSave looks at it and aims where it really is.
-- **Toggle direction (⇄):** first press moves From→To, second To→From.
+- **Where it aims:** at the raid inventory, as in V1.0 — on 4:3 and 16:10
+  screens too, where it sits in the centre. No look first, no cursor jump. In
+  the hideout the inventory sits elsewhere, so QuickSave is for raids.
+- **Toggle direction (⇄):** first press moves From→To, second To→From. A press
+  while a move is still running is ignored and does not turn the direction.
 - **Timing** (if a drag fails, *QuickSave → Advanced: inventory key and
   timings*): Open (250 ms), Hover (0 ms), Drag (0 ms), Drop (120 ms), Cooldown
   (0 ms).
@@ -458,8 +484,12 @@ section. Full walkthrough: [Autoscrapper Guide](Autoscrapper_Guide.md).
 
 A transparent, click-through crosshair drawn on screen (works in fullscreen; same
 overlay mechanism as Discord / GeForce Experience). Toggle with Numpad + (or
-Insert). 6 styles, custom colour and size (4–50 px), optional outline, and *Aim
+Insert). 6 styles, custom colour and size (1–50 px), optional outline, and *Aim
 pixel* for games that aim one pixel up and left. *Settings → Crosshair*.
+
+**Per game** (new in V1.4): any overlay on top of a game can cost it G-SYNC, so
+the crosshair is remembered per game — switched on in one game, it stays off in
+the others until you switch it on there too.
 
 ### Auto-Brightness (Pro)
 
@@ -612,7 +642,8 @@ that is automatic and needs no launcher.
 - Numpad keys are captured while the tool runs; regular number keys are not affected.
 - Vibrance (NVIDIA) / Saturation (AMD) changes show in the GPU control panel;
   Gamma/Contrast changes do not (different API — this is normal).
-- The tray menu shows your detected GPU at the bottom.
+- *Games & FPS* says so if your GPU's driver cannot be reached (then gamma and
+  contrast work, vibrance and FPS limits don't).
 - If something looks wrong: just exit the app — everything resets automatically.
 
 ### Uninstall
@@ -620,7 +651,7 @@ that is automatic and needs no launcher.
 1. Turn off *App & License → Start with Windows*, then exit BrightRaider
    (tray → Exit)
 2. Delete `BrightRaider.exe`
-3. Delete the folders `%LOCALAPPDATA%\BrightRaider` (the program copy) and
+3. Delete the folders `%LOCALAPPDATA%\BrightRaider` (downloaded modules) and
    `%APPDATA%\BrightRaider` (settings, license, log)
 4. *Optional:* remove `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM →
    GdiIcmGammaRange` (the one-time gamma setting)
@@ -677,7 +708,7 @@ durch alles.
   damit diese Makros lautlos laufen, während andere Meldungen anbleiben
 - Farbkonflikt-Warnung — Hinweis, wenn ein anderes Tool (f.lux, Night Light, …)
   um deine Display-Farben kämpft
-- Englisch und Deutsch
+- Englische Oberfläche (Deutsch folgt in einer späteren Version)
 - Autostart mit Windows · alle Einstellungen automatisch gespeichert
 - Setzt beim Beenden alles auf Normal zurück
 - Pausen-Erinnerung — oranger Toast nach einstellbarem Intervall; stört nie das Spiel
@@ -705,7 +736,7 @@ das Werkzeug, sobald Pro aktiv ist.
 - **Mitspieler stummschalten** — eine Taste schaltet deine Voice-Chat-Apps
   (Discord, TeamSpeak …) stumm, mit Stumm-Symbolen auf dem Bildschirm.
 - **Crosshair-Overlay** — Click-through-Fadenkreuz, 6 Stile, freie Farbe, Größe
-  (4–50 px), optionaler Umriss.
+  (1–50 px), optionaler Umriss; pro Spiel gemerkt (neu in V1.4).
 - **Audio-Ausgabe-Umschalter** — Standard-Ausgabegerät per Hotkey durchwechseln;
   optional automatisch beim Spielstart/-ende.
 - **Bis zu 9 Profile** (Numpad 1–9) mit vollem Editor (Gamma, Kontrast, Vibrance,
@@ -727,7 +758,8 @@ das Werkzeug, sobald Pro aktiv ist.
 ### Systemvoraussetzungen
 
 - Windows 10 oder 11 (x64)
-- Keine .NET-Runtime nötig (Native AOT — eine einzige EXE)
+- Nichts zu installieren — eine EXE unter 6 MB; das Arc-Raiders-Modul kommt,
+  wenn du es einschaltest
 - NVIDIA (GeForce, RTX, Quadro) oder AMD (Radeon, RX) GPU
 - Läuft auch auf Intel / anderen GPUs (nur Gamma + Kontrast)
 
@@ -756,9 +788,10 @@ Die UAC-Abfrage kommt nur **einmal**. Danach läuft die App ohne Admin-Rechte.
 ### Einrichtung und Einstellungsfenster (neu in V1.3)
 
 **Der Einrichtungsassistent** öffnet beim ersten Start — und **einmal nach dem
-Update auf 1.3**. Jede Seite zeigt schon, was du hast: **Next** behält es, nur
-was du änderst, wird geändert. Seiten mit Neuem tragen *New in 1.3*; die letzte
-Seite zeigt, was sich geändert hat und was blieb. Schließen behält alles, wie es
+Update auf 1.4** von V1.3 oder älter. Jede Seite zeigt schon, was du hast:
+**Next** behält es, nur was du änderst, wird geändert. Seiten, die seit deiner
+Version neu sind, tragen *New in 1.3* oder *New in 1.4*; die letzte Seite zeigt,
+was sich geändert hat und was blieb. Schließen behält alles, wie es
 ist. Er öffnet nie über einem laufenden Spiel. Jederzeit wieder: *App & License →
 Run the setup…* (dort wählst du auch ein anderes Tastaturlayout).
 
@@ -778,6 +811,21 @@ Run the setup…* (dort wählst du auch ein anderes Tastaturlayout).
   zum Laufen bringt, bleibt sichtbar.
 - **Pro-Seiten** lassen sich ohne Pro einrichten; eine ruhige Zeile oben sagt,
   dass das Werkzeug im Spiel läuft, sobald Pro aktiv ist.
+- **Suche** (Strg+F, oben in der Seitenleiste) springt zu jeder Einstellung.
+  **Größe** (*App & License*, auch Strg + / −) macht alles 70–150 % groß; im
+  breiten Fenster stehen die Karten nebeneinander (neu in V1.4).
+- **Report a problem…** (*App & License*) stellt Version, System und das Ende
+  des Logs zusammen und öffnet ein neues Issue, das du prüfst und abschickst
+  (neu in V1.4).
+
+**Module** (neu in V1.4): Die Arc-Raiders-Werkzeuge sind ein Modul. Im
+Einrichtungsassistenten oder unter *Modules → Arc Raiders* einschalten, und
+BrightRaider lädt es herunter (8 MB) nach `%LOCALAPPDATA%\BrightRaider\modules`
+und lädt es — nur mit BrightRaiders Signatur. Gibt es ein neueres
+Arc-Raiders-Modul, bieten es eine Meldung und die Tray-Zeile **Install Arc
+Raiders …** an: Ein Klick lädt nur das Modul, BrightRaider startet neu, sobald
+kein Spiel vorne ist. Ohne deinen Klick wird nichts installiert. Dein
+Pro-Schlüssel behält alles, was er freischaltet, Arc Raiders eingeschlossen.
 
 ### Modifier-Belegungen (Strg / Alt / Shift)
 
@@ -994,6 +1042,14 @@ Anzahl offener Evakuierungspunkte an: **Night Raid** (2 Punkte, Hatches zu),
 Hatches zu) und das Event **ARC Frigate** (alle Evakuierungspunkte offen). Der
 Name erscheint im Overlay.
 
+**Eigene Namen für die Ausgänge** (neu in V1.4): *Advanced: your own names for
+the exits* listet jeden Ausgang jeder Karte. Schreib hinein, wie du ihn nennst —
+ein Wahrzeichen, ein Gebäude —, und Overlay und Evac-Alarm nehmen deinen Namen;
+ein leeres Feld behält den Namen aus dem Spiel.
+
+Ist beim Halten von M gar keine Karte offen (ein Menü, der XP-Bildschirm), meldet
+der Scanner *no map detected*, statt zu raten.
+
 Konfiguration unter *Modules → Arc Raiders → Map Scanner*: Farben und
 Overlay-Position vorne; Hintergrund, Schriftgröße, Haltedauer, Kartentaste und
 Alarm-Wiederholung unter *Advanced*.
@@ -1045,10 +1101,11 @@ Tastendruck oder Mausradscrollen.
   1–3 und **Rucksack 1–4** (oberste Reihe) — neu in V1.1. Richtung frei einstellbar.
 - **So funktioniert es:** Inventar öffnen (Tab) → Cursor zum Quell-Slot → LMB
   halten und zum Ziel ziehen → loslassen → Inventar schließen (Tab).
-- **Wo das Inventar sitzt:** in der Basis und im Raid nicht an derselben Stelle,
-  und bei 4:3 und 16:10 oben oder in der Mitte. Ist das Inventar offen, schaut
-  QuickSave hin und zielt dorthin, wo es wirklich ist.
-- **Richtung umkehren (⇄):** erster Druck Von→Nach, zweiter Nach→Von.
+- **Wohin es zielt:** auf das Raid-Inventar, wie in V1.0 — auch bei 4:3 und
+  16:10, wo es in der Mitte sitzt. Kein Nachschauen, kein Cursor-Sprung. In der
+  Basis sitzt das Inventar woanders, QuickSave ist also für den Raid.
+- **Richtung umkehren (⇄):** erster Druck Von→Nach, zweiter Nach→Von. Ein Druck,
+  während noch ein Zug läuft, wird ignoriert und dreht die Richtung nicht um.
 - **Timing** (falls Drag fehlschlägt, *QuickSave → Advanced: inventory key and
   timings*): Öffnen (250 ms), Hover (0 ms), Ziehen (0 ms), Ablegen (120 ms),
   Cooldown (0 ms).
@@ -1084,9 +1141,14 @@ Eingabe-Funktion, siehe den Anti-Cheat-Abschnitt der README. Ausführlich:
 
 Ein transparentes, click-through Fadenkreuz auf dem Bildschirm (Vollbild-tauglich;
 gleicher Mechanismus wie Discord / GeForce Experience). Umschalten mit Numpad +
-(oder Einfg). 6 Stile, freie Farbe und Größe (4–50 px), optionaler Umriss und
+(oder Einfg). 6 Stile, freie Farbe und Größe (1–50 px), optionaler Umriss und
 *Aim pixel* für Spiele, die einen Pixel links oben zielen. *Einstellungen →
 Crosshair*.
+
+**Pro Spiel** (neu in V1.4): Jedes Overlay über einem Spiel kann ihm G-SYNC
+kosten, deshalb merkt sich BrightRaider das Fadenkreuz pro Spiel — in einem
+Spiel eingeschaltet, bleibt es in den anderen aus, bis du es dort auch
+einschaltest.
 
 ### Auto-Helligkeit (Pro)
 
@@ -1242,7 +1304,8 @@ Gamma-Registry-Eintrag — das ist automatisch und braucht keinen Starter.
 - Numpad-Tasten sind belegt, solange das Tool läuft; die normalen Zahlentasten nicht.
 - Vibrance (NVIDIA) / Sättigung (AMD) wird im GPU-Control-Panel angezeigt;
   Gamma/Kontrast nicht (andere API — das ist normal).
-- Im Tray-Menü wird unten die erkannte GPU angezeigt.
+- *Games & FPS* sagt Bescheid, wenn der Grafiktreiber nicht erreichbar ist
+  (dann gehen Gamma und Kontrast, Vibrance und FPS-Limit nicht).
 - Falls etwas komisch aussieht: einfach die App beenden — alles wird automatisch
   zurückgesetzt.
 
@@ -1251,7 +1314,7 @@ Gamma-Registry-Eintrag — das ist automatisch und braucht keinen Starter.
 1. *App & License → Start with Windows* ausschalten, dann BrightRaider beenden
    (Tray → Exit)
 2. `BrightRaider.exe` löschen
-3. Die Ordner `%LOCALAPPDATA%\BrightRaider` (die Programmkopie) und
+3. Die Ordner `%LOCALAPPDATA%\BrightRaider` (geladene Module) und
    `%APPDATA%\BrightRaider` (Einstellungen, Lizenz, Log) löschen
 4. *Optional:* `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM →
    GdiIcmGammaRange` entfernen (die einmalige Gamma-Einstellung)
@@ -1265,7 +1328,8 @@ Gamma-Registry-Eintrag — das ist automatisch und braucht keinen Starter.
 | Path | Purpose |
 |------|---------|
 | `BrightRaider.exe` | Single EXE / Einzelne EXE |
-| `%APPDATA%\BrightRaider\BrightRaider.cfg` | Settings (auto) / Einstellungen |
+| `%APPDATA%\BrightRaider\BrightRaider2.cfg` | Settings (V1.4, auto) / Einstellungen; `BrightRaider.cfg` = V1.3 and older, kept |
+| `%LOCALAPPDATA%\BrightRaider\modules\` | Downloaded modules (Arc Raiders) / Geladene Module |
 | `%APPDATA%\BrightRaider\BrightRaider.lic` | License / Lizenzdatei |
 | `%APPDATA%\BrightRaider\debug.log` | Diagnostic log / Diagnose-Log |
 
