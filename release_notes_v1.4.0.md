@@ -31,7 +31,7 @@ The 47 MB V1.3 unpacked on its first start are cleared away by themselves.
 
 **🎯 Crosshair per game** — an overlay on top of a game can cost it G-SYNC, so the crosshair is now remembered per game: on in one stays off in the others until you want it there too.
 
-**🗂 Settings window** — the setup fits every page on the screen, no scrolling. **Ctrl+F** finds any setting, a **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen, and **Report a problem** (App & License) puts your version, system and the end of the log together and opens a new issue for you to check and send.
+**🗂 Settings window** — the setup fits every page on the screen, no scrolling. An FPS limit you already set in your graphics driver now shows up (Games & FPS, setup, tray) instead of "No limit". **Ctrl+F** finds any setting, a **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen, and **Report a problem** (App & License) puts your version, system and the end of the log together and opens a new issue for you to check and send.
 
 **⌨ Keys** — a key bound twice no longer goes unnoticed: BrightRaider checks its own keys and every module's at start and whenever you change one, tells you, and **All keys** shows the pair at the top. Keys of two different games don't count — each only works in its own game. Give a key that is already in use, and it moves to its new place; the other one is told it has none now.
 

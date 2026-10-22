@@ -51,6 +51,8 @@
   - Search (Ctrl+F) jumps to any setting.
   - The setup fits every page on the screen - no scrolling, every picture
     the same size.
+  - An FPS limit you already set in your graphics driver is shown (Games &
+    FPS, the setup, the tray) instead of "No limit".
   - Size slider for the settings and the setup (70-150 %, also Ctrl + / -);
     on a wide window the cards sit side by side.
   - Report a problem (App & License): puts your version, system and the end
