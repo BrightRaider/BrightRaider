@@ -507,7 +507,8 @@ ordinary key, it follows this switch too.
 
 ### Windows key and mouse in games (Free) — new in V1.4
 
-Two switches on *All keys* (also in the setup), both off by default. They work
+Two switches on *All keys* and in the setup (page *Alt-Tab*; the mouse one only
+with two or more screens), both off by default. They work
 only while a game is in front; on the desktop and after Alt-Tab everything is as
 usual.
 
@@ -1086,7 +1087,8 @@ auch.
 
 ### Windows-Taste und Maus im Spiel (Kostenlos) — neu in V1.4
 
-Zwei Schalter auf *All keys* (auch in der Einrichtung), beide standardmäßig aus.
+Zwei Schalter auf *All keys* und in der Einrichtung (Seite *Alt-Tab*; der für die
+Maus nur mit zwei oder mehr Bildschirmen), beide standardmäßig aus.
 Sie wirken nur, solange ein Spiel vorne ist; auf dem Desktop und nach Alt-Tab ist
 alles wie gewohnt.
 
