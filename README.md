@@ -42,16 +42,6 @@ A module adds tools for one game. Switch it on and it downloads by itself; updat
 |---|---|
 | **[Arc Raiders](docs/modules/arc-raiders/README.md)** | Map Scanner with evac alarm · Autoscrapper · QuickSelect · QuickSave |
 
-<a name="anti-cheat-safety"></a>
-
-## Is it safe?
-
-The display features — colours, FPS, HDR — use the same Windows and driver APIs as your monitor settings and the NVIDIA / AMD control panel. Nothing is injected into a game, nothing is read from it.
-
-Features that send input to a game — Autorun and some module tools — are a different category: optional, and each one is listed with what it sends and our risk estimate. The most exposed one is the Arc Raiders Autoscrapper; use it at your own risk.
-
-**→ [Anti-cheat safety, feature by feature](docs/Safety.md)**
-
 ## Get started
 
 1. **[Download](../../releases/latest)** `BrightRaider.exe` and run it — nothing to install.
@@ -124,6 +114,12 @@ Features that send input to a game — Autorun and some module tools — are a d
 <img src="assets/screenshots/v1.4/settings-all-keys.png" alt="All keys page" width="780">
 
 </details>
+
+<a name="anti-cheat-safety"></a>
+
+## Anti-cheat
+
+BrightRaider works next to your game, never inside it — nothing injected, nothing read, no game file changed. Every tool is quality of life, optional, and its page says exactly what it does. [Details](docs/Safety.md)
 
 ## Feedback
 
