@@ -137,7 +137,7 @@ The UAC prompt appears only once. After that, the app runs without admin rights.
 **The setup** opens at the first start — and **once after updating to 1.4**
 from an older version. Every page already shows what you have: **Next** keeps it,
 only what you change is changed. Pages that are new since your version are
-marked *New in 1.3* or *New in 1.4*; the last page shows what changed and what
+marked *New in 1.4*; the last page shows what changed and what
 stayed. Every page fits on the screen, nothing to scroll. Closing the window
 keeps everything as it is. It never opens on top of a running game. Run it again any time:
 *App & License → Run the setup…* (that is also where you pick another keyboard
@@ -346,8 +346,8 @@ unmuted as soon as it shows up.
 
 One key mutes your microphone in Windows itself: Discord, TeamSpeak, the game's
 own voice chat — nobody hears you, in any app, until you press it again. A short
-notice says *Microphone muted: ON* or *OFF*. Bind it on *Audio* (*Mute my
-microphone*) or under *All keys*; unbound by default. It mutes the microphone
+notice says *Microphone muted: ON* or *OFF*. Bind it in the setup (page *Sound*), on *Audio*
+(*Mute my microphone*) or under *All keys*; unbound by default. It mutes the microphone
 your voice apps use (Windows' default communications device). BrightRaider turns
 the microphone back on when it exits, and after a crash at the latest at the
 next start.
@@ -711,7 +711,7 @@ Die UAC-Abfrage kommt nur **einmal**. Danach läuft die App ohne Admin-Rechte.
 **Der Einrichtungsassistent** öffnet beim ersten Start — und **einmal nach dem
 Update auf 1.4** von einer älteren Version. Jede Seite zeigt schon, was du hast:
 **Next** behält es, nur was du änderst, wird geändert. Seiten, die seit deiner
-Version neu sind, tragen *New in 1.3* oder *New in 1.4*; die letzte Seite zeigt,
+Version neu sind, tragen *New in 1.4*; die letzte Seite zeigt,
 was sich geändert hat und was blieb. Jede Seite passt auf den Bildschirm, nichts
 zu scrollen. Schließen behält alles, wie es ist. Er öffnet nie über einem laufenden Spiel. Jederzeit wieder: *App & License →
 Run the setup…* (dort wählst du auch ein anderes Tastaturlayout).
@@ -924,8 +924,9 @@ wird laut geschaltet, sobald sie auftaucht.
 
 Eine Taste schaltet dein Mikrofon in Windows selbst stumm: Discord, TeamSpeak,
 der Voice-Chat des Spiels — niemand hört dich, in keiner App, bis du wieder
-drückst. Eine kurze Meldung sagt *Microphone muted: ON* oder *OFF*. Belegen auf
-*Audio* (*Mute my microphone*) oder unter *All keys*; standardmäßig nicht belegt.
+drückst. Eine kurze Meldung sagt *Microphone muted: ON* oder *OFF*. Belegen in der
+Einrichtung (Seite *Sound*), auf *Audio* (*Mute my microphone*) oder unter
+*All keys*; standardmäßig nicht belegt.
 Stumm geschaltet wird das Mikrofon deiner Voice-Apps (das
 Standard-Kommunikationsgerät von Windows). Beim Beenden schaltet BrightRaider das
 Mikrofon wieder an, nach einem Absturz spätestens beim nächsten Start.
