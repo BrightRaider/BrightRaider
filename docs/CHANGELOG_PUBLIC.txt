@@ -30,6 +30,26 @@
   - The module has its own page now: keys, anti-cheat notes, manual and
     guides (docs/modules/arc-raiders). The old guide links lead there.
 
+  Updates in one click
+  - When a new version is out, the tray offers "Install update": one click
+    downloads it, checks its signature and restarts BrightRaider. Your
+    settings stay. Coming from V1.2.3 or V1.3, download V1.4 once by hand.
+  - App & License -> Advanced -> "Also offer test versions" brings test
+    versions early.
+
+  In your games
+  - Block the Windows key in games: no Start menu mid-fight, no Sticky Keys
+    pop-up from pressing Shift five times. On the desktop everything works
+    as usual.
+  - Keep the mouse on the game's screen: with two or more monitors a fast
+    flick can't slide onto the other screen and click the game away. Free
+    again on Alt-Tab.
+  - Mute my microphone: one key mutes the Windows microphone for every app
+    until you press again; BrightRaider turns it back on when it closes.
+  - Calmer colour switching: a game window that flashes up while loading no
+    longer flips your colours, and the game's launcher, its pop-ups and the
+    settings window keep the game's colours.
+
   Map Scanner
   - Name the exits yourself (#80): Map Scanner -> Advanced -> "your own names
     for the exits". The overlay and the evac alarm use your names; leave a
@@ -83,6 +103,8 @@
     a driver update or on another USB port.
   - Footstep Booster: after a loud moment the game comes back to its full
     level again (it could stay at about 75 %).
+  - Turning the game down by holding the mute key now says what it does: it
+    stays down until you hold again. The slider is called "Turned down to".
   - Copying the system info or a problem report waits a moment if another
     program is using the clipboard, instead of failing.
 
