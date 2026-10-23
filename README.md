@@ -11,7 +11,7 @@ See into dark corners, cap your FPS, hear footsteps over gunfire — set once pe
 
 ![Normal vs Bright](assets/screenshots/comparison2.png)
 
-> **New in V1.4:** five times lighter — ready in 0.11 s, 21 MB in the tray — updates in one click, the Windows key blocked in games, modules that download and update by themselves, the crosshair per game. — [Release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+> **New in V1.4:** back to light — ready in 0.2 s, 24 MB in the tray, 14 MB on disk — updates in one click, the Windows key blocked in games, modules that download and update by themselves, the crosshair per game. — [Release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## What it does
 

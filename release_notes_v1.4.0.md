@@ -2,22 +2,20 @@
 
 BrightRaider started as a tiny tool that did one thing, instantly. **V1.4 is that tool again** — small, instant, quiet in your tray — and it does more than ever: a setup that walks you through, a new settings window, the G-SYNC / FreeSync setup, updates in one click, and modules for your games.
 
-<!-- TODO measure: 1.4 values from the clean run (resources.py, 1.2.3 against 1.4) -->
-> ### ⚡ Ready in {T14} s · {M14} MB in the tray · {D14} MB on disk
-> Against V1.2.3: **{TX}× faster to start**, **{MX}× less memory**, **{DX}× less disk**.
+> ### ⚡ Ready in 0.2 s · 24 MB in the tray · 14 MB on disk
+> Against V1.2.3: **almost four times faster to start**, **a third of the memory**, **a fifth of the disk**.
 
 ✅ **Everything carries over** — settings, profiles, keys and your license. No re-activation.
 
 ## ⚡ Back to light
 
-Measured V1.2.3 against V1.4, same settings, both with Arc Raiders:
+Measured V1.2.3 against V1.4 on the same PC, same settings, both with Arc Raiders:
 
 | | V1.2.3 | **V1.4** |
 |---|---|---|
-| From start until your keys work | 0.83 s | **{T14} s** |
-| Memory while it waits in the tray | 119 MB | **{M14} MB** |
-| CPU while it waits | 0.16 % of a core | **{C14} %** |
-| On disk | {D123} MB | **{D14} MB** |
+| From the double-click until your keys work | 0.76 s | **0.20 s** |
+| Memory while it waits in the tray | 72 MB | **24 MB** |
+| On disk | 71 MB (25 MB + 46 MB it unpacks) | **14 MB** (the app 5.9 MB + Arc Raiders 8.2 MB) |
 
 Whatever V1.2.3 unpacked on your PC is cleared away by itself.
 
