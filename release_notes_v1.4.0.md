@@ -37,7 +37,7 @@ The 47 MB V1.3 unpacked on its first start are cleared away by themselves.
 
 **⌨ Keys** — a key bound twice no longer goes unnoticed: BrightRaider checks its own keys and every module's at start and whenever you change one, tells you, and **All keys** shows the pair at the top. Keys of two different games don't count — each only works in its own game. Give a key that is already in use, and it moves to its new place; the other one is told it has none now.
 
-**🔧 Fixed** — QuickSave toggle presets: a press while a move was still running turned the direction around, so the next move went the same way again. The Footstep Booster brings the game back to its full level after a loud moment (it could stay at about 75 %). Copying system info waits a moment if another program holds the clipboard.
+**🔧 Fixed** — Audio devices you picked are found again after a driver update or on another USB port. QuickSave toggle presets: a press while a move was still running turned the direction around, so the next move went the same way again. The Footstep Booster brings the game back to its full level after a loud moment (it could stay at about 75 %). Copying system info waits a moment if another program holds the clipboard.
 
 <details>
 <summary><b>New since V1.2.3 — what the V1.3 test version brought</b></summary>

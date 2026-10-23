@@ -76,6 +76,9 @@
     only say how your game is bound (map key, sprint) stay where they are.
 
   Fixed
+  - Audio devices you picked (for the switch key, or for when a game starts)
+    are found again by their name when Windows renames them inside - after
+    a driver update or on another USB port.
   - Footstep Booster: after a loud moment the game comes back to its full
     level again (it could stay at about 75 %).
   - Copying the system info or a problem report waits a moment if another
