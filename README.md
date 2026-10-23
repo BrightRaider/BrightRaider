@@ -44,26 +44,11 @@ A module adds tools for one game. Switch it on and it downloads by itself; updat
 
 ## Get started
 
-1. **[Download](../../releases/latest)** `BrightRaider.exe` and run it — nothing to install.
-2. The setup walks you through: keyboard, brightness, other screens, Alt-Tab, FPS, sound, crosshair — and whether you want a module.
-3. On the first start Windows asks once for admin rights, for one gamma registry entry; restart your PC once. [Why](docs/Manual.md#first-launch--important)
-4. **Pro:** *Settings → App & License → Activate Pro license…*, paste your key, done.
+1. **[Download](../../releases/latest)** `BrightRaider.exe` and start it — one file, nothing to install.
+2. The setup walks you through: keyboard, brightness, your games, FPS, sound, crosshair, modules. Windows asks once for admin rights, to unlock the full brightness range.
+3. **Pro:** *Settings → App & License → Activate Pro license…*
 
-> **Coming from V9.x?** Your license key still works — re-enter it once under *Settings → App & License*. Activation limit reached? See the [known-issues post](https://github.com/BrightRaider/BrightRaider/issues/74).
-
-<!-- TODO 1.4 release: VirusTotal link and Microsoft verdict for the V1.4.0 build; until then the V1.3.0 results stay, named as such. -->
-> ⚠️ **Antivirus false positive?** Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the V1.3.0 build](https://www.virustotal.com/gui/file/80662cf00c1e420a4e5851643a283ee60a9ceb1b4613bc66eaf4da71c746dcaa) — 1 of 70 engines flags it (Bkav Pro, heuristic); Microsoft and all others show it clean. The V1.3.0 build was also submitted to **Microsoft** for analysis (18 Oct 2026); their verdict: it *"does not meet our criteria for malware or potentially unwanted applications"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
-
-<details>
-<summary>📄 <b>Microsoft's analysis of the V1.3.0 build</b> (click to expand)</summary>
-
-<br>
-
-<img src="docs/assets/wdsi-v1.3.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.3.0: does not meet the criteria for malware or potentially unwanted applications" width="840">
-
-<sub>Submitted 18 October 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Analyst verdict: the file does not meet the criteria for malware or potentially unwanted applications. Submission ID and submitter address redacted. Every release before it (V1.0 to V1.1.1) was submitted the same way and came back clean.</sub>
-
-</details>
+Coming from V1.2.3 or V1.3? Download the new EXE — settings, keys and your Pro key carry over. Antivirus warning? A known false positive — [checked by VirusTotal and Microsoft](docs/Safety.md#antivirus).
 
 ## Docs
 
