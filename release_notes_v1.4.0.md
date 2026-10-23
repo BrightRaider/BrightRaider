@@ -1,34 +1,56 @@
-# BrightRaider V1.4 — Five times lighter. Ready for every game.
+# BrightRaider V1.4 — Back to light. Stronger than ever.
 
-> ### ⚡ Ready in 0.11 s · 21 MB in the tray · 14 MB on disk
-> BrightRaider starts **five times faster**, needs **a fifth of the memory** and **a fifth of the disk** — and from now on it **updates itself in one click**.
+BrightRaider started as a tiny tool that did one thing, instantly. **V1.4 is that tool again** — small, instant, quiet in your tray — and it does more than ever: a setup that walks you through, a new settings window, the G-SYNC / FreeSync setup, updates in one click, and modules for your games.
 
-✅ **Everything carries over** — settings, profiles, keys and your license, from V1.2.3 or the V1.3 test version. No re-activation.
+<!-- TODO measure: 1.4 values from the clean run (resources.py, 1.2.3 against 1.4) -->
+> ### ⚡ Ready in {T14} s · {M14} MB in the tray · {D14} MB on disk
+> Against V1.2.3: **{TX}× faster to start**, **{MX}× less memory**, **{DX}× less disk**.
+
+✅ **Everything carries over** — settings, profiles, keys and your license. No re-activation.
+
+## ⚡ Back to light
+
+Measured V1.2.3 against V1.4, same settings, both with Arc Raiders:
+
+| | V1.2.3 | **V1.4** |
+|---|---|---|
+| From start until your keys work | 0.83 s | **{T14} s** |
+| Memory while it waits in the tray | 119 MB | **{M14} MB** |
+| CPU while it waits | 0.16 % of a core | **{C14} %** |
+| On disk | {D123} MB | **{D14} MB** |
+
+Whatever V1.2.3 unpacked on your PC is cleared away by itself.
+
+## 🆕 What's new
 
 | | |
 |---|---|
-| ⚡ **Five times lighter** — ready in 0.11 s, 21 MB in the tray | ⚡ Free |
+| 🧭 **A setup that walks you through** — at the first start, and once after this update | ⚡ Free |
+| 🗂 **A new settings window** — a guide beside every page, search, every key where it belongs | ⚡ Free |
+| 🖥 **G-SYNC / FreeSync setup** — the Blur Busters way, with an exact undo | ⚡ Free |
 | ⬇️ **Updates in one click** — from the tray, signed and checked | ⚡ Free |
-| 🪟 **Windows key blocked in games** — and the mouse stays on the game's screen | ⚡ Free |
+| 🪟 **No Windows key in games** — and the mouse stays on the game's screen | ⚡ Free |
 | 🎙 **Mute your microphone** on one key | ⚡ Free |
 | ⌨ **No more double-bound keys** — found, shown, fixed in one click | ⚡ Free |
-| 🔎 **Find any setting** — Ctrl+F | ⚡ Free |
-| 🎮 **Arc Raiders as a module** — downloads and updates by itself | 🔓 Pro |
+| 🎮 **Modules** — Arc Raiders downloads, loads and updates by itself | 🔓 Pro |
 | 🎯 **Crosshair per game** — G-SYNC stays on where you don't need it | 🔓 Pro |
 | 🗺 **Name your own exits** in the Map Scanner (#80) | 🔓 Pro |
 
-## ⚡ Five times lighter
+## 🧭 A setup that walks you through
 
-Measured V1.3 against V1.4, same settings, both with Arc Raiders:
+At the first start — and once after this update — a short setup goes through everything: keyboard, brightness, your games, FPS, sound, crosshair, notifications, modules. Every page already shows what you have: *Next* keeps it, only what you change is changed, and what is new since V1.2.3 is marked. It never opens over a running game. Again any time: *App & License → Run the setup…*
 
-| | V1.3 | **V1.4** |
-|---|---|---|
-| From start until your keys work | 0.58 s | **0.11 s** |
-| Memory while it waits in the tray | 105 MB | **21 MB** |
-| CPU while it waits | up to 0.26 % of a core | **0.03 %** |
-| On disk | 74 MB | **14 MB** |
+## 🗂 A new settings window
 
-The 47 MB V1.3 unpacked on its first start are cleared away by themselves.
+- **A guide beside every page** — what happens, how to set it up, what to try when something is off.
+- **Every key on the page of its feature**, and **All keys** shows every one in one place.
+- **Ctrl+F finds any setting.** A **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen.
+- A sidebar instead of tabs, rarely used options under *Advanced*, colour pickers for the crosshair and the Map Scanner, dark title bars.
+- **Report a problem** (App & License) puts your version, system and log together and opens an issue for you to check and send.
+
+## 🖥 G-SYNC / FreeSync setup
+
+V-SYNC and low latency in the driver, an FPS limit just under your refresh rate — the way [Blur Busters](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/) recommends. Competitive games can be left out (NVIDIA), and *Undo* puts back exactly what was there. In the setup, or under *Games & FPS → Advanced*. An FPS limit you already set in your driver now shows up instead of "No limit".
 
 ## ⬇️ Updates in one click
 
@@ -41,13 +63,13 @@ A new version is out? The tray offers **Install update** — one click, and Brig
 - **Mute your microphone** — one key, and nobody hears you, in any app, until you press again.
 - **Crosshair per game** — an overlay can cost a game G-SYNC, so the crosshair is remembered per game: on in one, off in the others.
 - **Calmer colour switching** — a game window that flashes up while loading no longer flips your colours, and the game's launcher, its pop-ups and the settings window keep the game's colours.
-- **Your driver's FPS limit** shows up (Games & FPS, setup, tray) instead of "No limit".
+- **Notifications on the screen you choose.**
 
-## 🎮 Arc Raiders — now a module
+## 🎮 Modules — Arc Raiders
 
-Switch it on in the setup or under *Modules → Arc Raiders*, and it downloads by itself (8 MB). When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded — no new BrightRaider needed. It only loads with BrightRaider's signature, and your Pro key unlocks it as before. Everything about it — keys, guides, manual: **[Arc Raiders module](https://github.com/BrightRaider/BrightRaider/blob/main/docs/modules/arc-raiders/README.md)**.
+The tools for one game now come as a **module**. Switch Arc Raiders on in the setup or under *Modules → Arc Raiders*: it downloads by itself (8 MB) and is there at once — no restart. Switch it off, and it isn't loaded at all. When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded. It only loads with BrightRaider's signature, and your Pro key unlocks it as before. Keys, guides, manual: **[Arc Raiders module](https://github.com/BrightRaider/BrightRaider/blob/main/docs/modules/arc-raiders/README.md)**.
 
-- **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80); the overlay and the evac alarm use your names. And no made-up overlay when the map isn't actually open — checked against nearly 300 real screenshots, no map lost.
+- **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80); the overlay and the evac alarm use your names. No made-up overlay when the map isn't actually open — checked against nearly 300 real screenshots, no map lost.
 - **♻️ Autoscrapper** — recognises more of your stash (items with a symbol in their corner), never touches what you marked with the eye, and never scraps or sells a blueprint, whatever a rule says.
 - **💾 QuickSave** — a press while a move is still running no longer turns the direction around.
 
@@ -55,30 +77,15 @@ Switch it on in the setup or under *Modules → Arc Raiders*, and it downloads b
 
 A key bound twice no longer goes unnoticed: BrightRaider checks its own keys and every module's, tells you, and **All keys** shows the pair at the top. Give a key that is already in use, and it moves to its new place — the other one is told it has none now, and *Cancel* undoes it.
 
-## 🗂 Settings
-
-**Ctrl+F** finds any setting. A **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen. The setup fits every page on the screen — no scrolling. **Report a problem** (App & License) puts your version, system and log together and opens an issue for you to check and send.
-
 ## 🔧 Fixed
 
+- Strong profiles before the Windows restart (#86): BrightRaider applies the strongest part Windows accepts and tells you once.
 - Audio devices you picked are found again after a driver update or on another USB port.
 - The Footstep Booster brings the game back to its full level after a loud moment (it could stay at about 75 %).
 - Turning the game down by holding the mute key now says what it does: it stays down until you hold again — the slider is called *Turned down to*.
 - Copying system info waits a moment if another program holds the clipboard.
 
-<details>
-<summary><b>New since V1.2.3 — what the V1.3 test version brought</b></summary>
-
-<br>
-
-- **Setup** — every page already shows your settings: *Next* keeps them, only what you change is changed. Pages that are new since your version are marked. It never opens over a running game. Again any time: *App & License → Run the setup…*
-- **Settings window** — a sidebar instead of tabs, every key on the page of its feature, **All keys** with conflicts in one place, a **Guide** beside every page, rarely used options under *Advanced*, switches instead of checkboxes, colour pickers for the crosshair and the Map Scanner.
-- **G-SYNC / FreeSync** — V-SYNC and low latency in the driver, an FPS limit just under your refresh rate, competitive games can be left out (NVIDIA), Undo puts back exactly what was there. Why: [Blur Busters — G-SYNC 101](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/).
-- **Notifications** on the screen you choose; strong profiles apply as far as Windows allows before its restart (#86); dark title bars everywhere.
-
-</details>
-
-Every setting from V1.1 to V1.3 was checked key by key — if anything is not where you left it, tell me in the [Discussions](https://github.com/BrightRaider/BrightRaider/discussions). Thank you to everyone who tested and reported.
+Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not where you left it, tell me in the [Discussions](https://github.com/BrightRaider/BrightRaider/discussions). Thank you to everyone who tested and reported.
 
 <!-- STABLE ONLY - not in the pre-release (ADR 0030). At the stable release, put this line here, uncommented:
 🥚 **One more thing:** V1.4 hides a secret in the settings. The first one to find it gets Pro.
@@ -86,7 +93,7 @@ Every setting from V1.1 to V1.3 was checked key by key — if anything is not wh
 
 ---
 
-**Download `BrightRaider.exe` and double-click it.** Coming from V1.2.3 or V1.3: download it once more by hand — from V1.4 on, updates come in one click. Unsigned single EXE — if SmartScreen flags it, choose **More info → Run anyway** (known false positive).
+**Download `BrightRaider.exe` and double-click it.** Coming from V1.2.3: download it once more by hand — from V1.4 on, updates come in one click. Unsigned single EXE — if SmartScreen flags it, choose **More info → Run anyway** (known false positive).
 
 <!-- TODO 1.4 release: SHA-256 of the signed BrightRaider.exe and arc_raiders.dll -->
 ```
