@@ -11,7 +11,7 @@ See into dark corners, cap your FPS, hear footsteps over gunfire — set once pe
 
 ![Normal vs Bright](assets/screenshots/comparison2.png)
 
-> **New in V1.4:** ready in 0.11 s and 21 MB in the tray (V1.3: 0.58 s, 105 MB), modules that download and update by themselves, the crosshair remembered per game, search in the settings. — [Release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
+> **New in V1.4:** five times lighter — ready in 0.11 s, 21 MB in the tray — updates in one click, the Windows key blocked in games, modules that download and update by themselves, the crosshair per game. — [Release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## What it does
 
@@ -21,6 +21,7 @@ See into dark corners, cap your FPS, hear footsteps over gunfire — set once pe
 - **Every game its own** — colours and FPS limit per game, on while the game is in front, back to normal on Alt-Tab. Replaces VibranceGUI.
 - **G-SYNC / FreeSync setup** — V-SYNC, low latency and the right FPS limit in the driver, the [Blur Busters](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/) way, with an exact undo.
 - **HDR per game** and **dim your other screens** while you play.
+- **No Windows key in games**, the mouse kept on the game's screen, your microphone on one key.
 - A **setup** that walks you through, a **guide** beside every settings page, every key rebindable.
 - NVIDIA, AMD and Intel · multi-monitor · one portable EXE under 6 MB, nothing to install.
 
