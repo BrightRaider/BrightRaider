@@ -29,6 +29,8 @@ The 47 MB V1.3 unpacked on its first start are cleared away by themselves.
 
 **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80): *Map Scanner → Advanced → your own names for the exits*. The overlay and the evac alarm use your names; an empty field keeps the game's. And no more made-up overlay when the map is not actually open — the XP screen, the skill tree or a menu stay quiet. Checked against nearly 300 real screenshots, no map lost.
 
+**♻️ Autoscrapper** — recognises more of your stash (items with a symbol in their top corner are named now), never scraps what you marked with the eye in the game, and never scraps or sells a blueprint, whatever a rule says.
+
 **🎯 Crosshair per game** — an overlay on top of a game can cost it G-SYNC, so the crosshair is now remembered per game: on in one stays off in the others until you want it there too.
 
 **🗂 Settings window** — the setup fits every page on the screen, no scrolling. An FPS limit you already set in your graphics driver now shows up (Games & FPS, setup, tray) instead of "No limit". **Ctrl+F** finds any setting, a **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen, and **Report a problem** (App & License) puts your version, system and the end of the log together and opens a new issue for you to check and send.
