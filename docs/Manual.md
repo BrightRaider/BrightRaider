@@ -27,7 +27,7 @@ The app runs silently in your system tray and uses almost no resources. **One
 EXE, no installation.** A short setup walks you through everything on first
 launch.
 
-> **New in V1.3 — BrightRaider grows up.** The core is a tool for **every PC
+> **New in V1.4 — BrightRaider grows up.** The core is a tool for **every PC
 > game**: colours, FPS, sound, crosshair, autorun. The ARC Raiders helpers (Map
 > Scanner, Autoscrapper, QuickSelect, QuickSave) are its first **module**, with
 > their own page and one switch: *Settings → Modules → Arc Raiders*. Every
@@ -45,8 +45,12 @@ launch.
 - Per-game Auto-HDR — turn Windows HDR on/off automatically per game
 - Dim other displays — darkens your other screens while the game is in front
 - **G-SYNC / FreeSync setup** the Blur Busters way — V-SYNC, low latency and the
-  right FPS limit in the driver, with an exact Undo (new in V1.3)
-- **Setup assistant** and a **Guide** beside every settings page (new in V1.3)
+  right FPS limit in the driver, with an exact Undo (new in V1.4)
+- **Setup assistant** and a **Guide** beside every settings page (new in V1.4)
+- **Updates in one click** from the tray, signed and checked (new in V1.4)
+- **Windows key blocked in games** and **the mouse kept on the game's screen**,
+  both optional (new in V1.4)
+- **Microphone key** — mutes your microphone in every app (new in V1.4)
 - Works with Shift held down (no conflicts)
 - Notifications can be turned on/off and shown on **the screen you choose**
   (*App & License → Notifications*), **color-coded**: green = good news (update
@@ -128,10 +132,10 @@ allows gamma adjustments:
 
 The UAC prompt appears only once. After that, the app runs without admin rights.
 
-### Setup and the settings window (new in V1.3)
+### Setup and the settings window (new in V1.4)
 
 **The setup** opens at the first start — and **once after updating to 1.4**
-from V1.3 or older. Every page already shows what you have: **Next** keeps it,
+from an older version. Every page already shows what you have: **Next** keeps it,
 only what you change is changed. Pages that are new since your version are
 marked *New in 1.3* or *New in 1.4*; the last page shows what changed and what
 stayed. Every page fits on the screen, nothing to scroll. Closing the window
@@ -233,6 +237,7 @@ Two things work regardless:
 | Numpad Del       | Global ON/OFF (see below)                 |
 | Numpad Enter     | Cycle audio output device (Pro)           |
 | (unbound)        | Mute / unmute teammates — voice chat (Pro)|
+| (unbound)        | Mute / unmute your microphone (Free)      |
 | (unbound)        | Dim other displays off / on (Free)        |
 
 On Free, the keys of Pro features are not used by BrightRaider: they go straight
@@ -337,12 +342,23 @@ next start — Windows would otherwise remember the mute. An app that is not
 running yet at that point (Discord starting after BrightRaider at logon) is
 unmuted as soon as it shows up.
 
+### Microphone key (Free) — new in V1.4
+
+One key mutes your microphone in Windows itself: Discord, TeamSpeak, the game's
+own voice chat — nobody hears you, in any app, until you press it again. A short
+notice says *Microphone muted: ON* or *OFF*. Bind it on *Audio* (*Mute my
+microphone*) or under *All keys*; unbound by default. It mutes the microphone
+your voice apps use (Windows' default communications device). BrightRaider turns
+the microphone back on when it exits, and after a crash at the latest at the
+next start.
+
 ### Mute Indicator (Pro)
 
 While the game is muted with the mute key, a small speaker-with-a-cross icon
 shows in the top-left corner of the game's screen, so you can see at a glance
 why it is quiet. While *Mute teammates* has your voice chat silenced, a headset
-struck through appears next to it; both can be up at once. It never takes clicks or focus and hides when you leave the
+struck through appears next to it, and a microphone struck through while your
+microphone is muted; they can be up at once. It never takes clicks or focus and hides when you leave the
 game. It shows while the game runs borderless (windowed fullscreen), which is
 BrightRaider's idea of "a game is in front"; in a normal window it stays hidden.
 In *exclusive* fullscreen Windows does not draw other windows over the game, so
@@ -434,7 +450,7 @@ of its own, already when you tab out); a cap you set yourself in the NVIDIA
 Control Panel is not touched. The driver reads the limit when the game starts, so **after you add or
 change a limit, close the game once and start it again.**
 
-### G-SYNC / FreeSync setup (Free) — new in V1.3
+### G-SYNC / FreeSync setup (Free) — new in V1.4
 
 The variable-refresh setup the experts recommend ([Blur Busters — G-SYNC 101](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/)),
 done in the driver for you — in the setup, or under *Games & FPS → Advanced:
@@ -489,6 +505,22 @@ windowed-mode play. The one exception is the Global ON/OFF key when it sits on
 the numpad (the default): it keeps working everywhere. If you move it to an
 ordinary key, it follows this switch too.
 
+### Windows key and mouse in games (Free) — new in V1.4
+
+Two switches on *All keys* (also in the setup), both off by default. They work
+only while a game is in front; on the desktop and after Alt-Tab everything is as
+usual.
+
+- **Block the Windows key in games** — the Windows key does nothing in the
+  game: no Start menu mid-fight. The Sticky Keys, Filter Keys and Toggle Keys
+  shortcuts (Shift five times, holding Right Shift, holding NumLock) are off as
+  well, so no pop-up throws you out of the game. Windows' own settings are not
+  changed. With Global OFF the Windows key works again.
+- **Keep the mouse on the game's screen** — with two or more monitors the cursor
+  stays on the screen the game is on, so a fast flick can't slide onto the other
+  screen and click the game away. Alt-Tab frees it at once. With one monitor
+  there is nothing to do.
+
 ### Global ON/OFF (Numpad Del — Free)
 
 The key and an on/off switch sit on *App & License → Hotkeys*. Two flavours,
@@ -518,6 +550,23 @@ that is automatic and needs no launcher.
 - *Games & FPS* says so if your GPU's driver cannot be reached (then gamma and
   contrast work, vibrance and FPS limits don't).
 - If something looks wrong: just exit the app — everything resets automatically.
+
+### Updates in one click (Free) — new in V1.4
+
+BrightRaider looks for a new version a few seconds after it starts and then once
+a day (*App & License → Check for updates*, on by default). When one is out, a
+green notice says so, the version line on *App & License* turns orange, and the
+tray menu shows **Install update**. One click downloads it, checks BrightRaider's
+signature — a download without it is never installed — and restarts into the new
+version. Your settings and your license stay, and nothing installs without your
+click. If it cannot be installed in place, the download page opens instead.
+
+- **Test versions:** *App & License → Advanced → Also offer test versions*.
+  Pre-releases come before the stable version: newest features, less tested.
+- **Coming from V1.2.3:** download V1.4 once by hand; from then on updates come
+  this way.
+- **Modules** update the same way, on their own line in the tray (see
+  *Modules* above).
 
 ### Uninstall
 
@@ -552,7 +601,7 @@ Die App läuft leise im System-Tray und verbraucht kaum Ressourcen. **Eine EXE,
 keine Installation.** Ein kurzer Einrichtungsassistent führt beim ersten Start
 durch alles.
 
-> **Neu in V1.3 — BrightRaider wird erwachsen.** Der Kern ist ein Tool für
+> **Neu in V1.4 — BrightRaider wird erwachsen.** Der Kern ist ein Tool für
 > **jedes PC-Spiel**: Farben, FPS, Ton, Fadenkreuz, Autorun. Die
 > ARC-Raiders-Helfer (Map Scanner, Autoscrapper, QuickSelect, QuickSave) sind
 > sein erstes **Modul**, mit eigener Seite und einem Schalter: *Einstellungen →
@@ -570,8 +619,12 @@ durch alles.
 - Auto-HDR pro Spiel — Windows-HDR automatisch an/aus pro Spiel
 - Andere Bildschirme abdunkeln — dunkelt deine anderen Bildschirme, solange das Spiel vorne ist
 - **G-SYNC-/FreeSync-Einrichtung** nach Blur Busters — V-SYNC, niedrige Latenz
-  und das passende FPS-Limit im Treiber, mit exaktem Rückgängig (neu in V1.3)
-- **Einrichtungsassistent** und ein **Guide** neben jeder Einstellungsseite (neu in V1.3)
+  und das passende FPS-Limit im Treiber, mit exaktem Rückgängig (neu in V1.4)
+- **Einrichtungsassistent** und ein **Guide** neben jeder Einstellungsseite (neu in V1.4)
+- **Updates mit einem Klick** aus dem Tray, signiert und geprüft (neu in V1.4)
+- **Windows-Taste im Spiel gesperrt** und **die Maus bleibt auf dem
+  Spielbildschirm**, beides optional (neu in V1.4)
+- **Mikrofon-Taste** — schaltet dein Mikrofon in jeder App stumm (neu in V1.4)
 - Funktioniert auch mit gedrückter Shift-Taste
 - Benachrichtigungen ein/ausschaltbar und auf **dem Bildschirm deiner Wahl**
   (*App & License → Notifications*), **farbkodiert**: grün = gute Nachricht
@@ -652,10 +705,10 @@ damit Windows Gamma-Anpassungen erlaubt:
 
 Die UAC-Abfrage kommt nur **einmal**. Danach läuft die App ohne Admin-Rechte.
 
-### Einrichtung und Einstellungsfenster (neu in V1.3)
+### Einrichtung und Einstellungsfenster (neu in V1.4)
 
 **Der Einrichtungsassistent** öffnet beim ersten Start — und **einmal nach dem
-Update auf 1.4** von V1.3 oder älter. Jede Seite zeigt schon, was du hast:
+Update auf 1.4** von einer älteren Version. Jede Seite zeigt schon, was du hast:
 **Next** behält es, nur was du änderst, wird geändert. Seiten, die seit deiner
 Version neu sind, tragen *New in 1.3* oder *New in 1.4*; die letzte Seite zeigt,
 was sich geändert hat und was blieb. Jede Seite passt auf den Bildschirm, nichts
@@ -757,6 +810,7 @@ Zwei Dinge funktionieren trotzdem:
 | Numpad Entf      | Globaler EIN/AUS (siehe unten)             |
 | Numpad Enter     | Audio-Ausgabegerät wechseln (Pro)          |
 | (nicht belegt)   | Mitspieler stumm/laut — Voice-Chat (Pro)   |
+| (nicht belegt)   | Dein Mikrofon stumm/laut (Kostenlos)       |
 | (nicht belegt)   | Andere Bildschirme abdunkeln aus/an (Kostenlos) |
 
 Ohne Pro nutzt BrightRaider die Tasten der Pro-Funktionen nicht: Sie gehen
@@ -865,12 +919,23 @@ sie beim nächsten Start wieder laut — Windows würde sich die Stummschaltung 
 merken. Eine App, die dann noch nicht läuft (Discord startet nach BrightRaider),
 wird laut geschaltet, sobald sie auftaucht.
 
+### Mikrofon-Taste (Kostenlos) — neu in V1.4
+
+Eine Taste schaltet dein Mikrofon in Windows selbst stumm: Discord, TeamSpeak,
+der Voice-Chat des Spiels — niemand hört dich, in keiner App, bis du wieder
+drückst. Eine kurze Meldung sagt *Microphone muted: ON* oder *OFF*. Belegen auf
+*Audio* (*Mute my microphone*) oder unter *All keys*; standardmäßig nicht belegt.
+Stumm geschaltet wird das Mikrofon deiner Voice-Apps (das
+Standard-Kommunikationsgerät von Windows). Beim Beenden schaltet BrightRaider das
+Mikrofon wieder an, nach einem Absturz spätestens beim nächsten Start.
+
 ### Stumm-Symbol (Pro)
 
 Solange das Spiel mit der Stumm-Taste stumm ist, zeigt ein kleines
 durchgestrichenes Lautsprecher-Symbol oben links auf dem Spielbildschirm, warum es
 still ist. Solange *Mute teammates* deinen Voice-Chat stumm hat, erscheint
-daneben ein durchgestrichenes Headset; beide können gleichzeitig zu sehen sein.
+daneben ein durchgestrichenes Headset, und ein durchgestrichenes Mikrofon,
+solange dein Mikrofon stumm ist; sie können gleichzeitig zu sehen sein.
 Das Symbol nimmt nie Klicks oder den Fokus und verschwindet, wenn du das Spiel
 verlässt. Es erscheint, wenn das Spiel randlos (Vollbild im Fenster) läuft; im
 *exklusiven* Vollbild zeichnet Windows keine anderen Fenster über das Spiel —
@@ -959,7 +1024,7 @@ NVIDIA-Systemsteuerung gesetzt hast, bleibt unberührt. Der Treiber liest das
 Limit beim Spielstart — **nach dem Hinzufügen oder Ändern das Spiel einmal neu
 starten.**
 
-### G-SYNC-/FreeSync-Einrichtung (Kostenlos) — neu in V1.3
+### G-SYNC-/FreeSync-Einrichtung (Kostenlos) — neu in V1.4
 
 Die Variable-Refresh-Einrichtung, die die Experten empfehlen ([Blur Busters —
 G-SYNC 101](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/)),
@@ -1019,6 +1084,23 @@ ist die Global-EIN/AUS-Taste, solange sie auf dem Ziffernblock liegt (Standard):
 sie wirkt überall. Liegt sie auf einer normalen Taste, folgt sie dem Schalter
 auch.
 
+### Windows-Taste und Maus im Spiel (Kostenlos) — neu in V1.4
+
+Zwei Schalter auf *All keys* (auch in der Einrichtung), beide standardmäßig aus.
+Sie wirken nur, solange ein Spiel vorne ist; auf dem Desktop und nach Alt-Tab ist
+alles wie gewohnt.
+
+- **Block the Windows key in games** — die Windows-Taste tut im Spiel nichts:
+  kein Startmenü mitten im Gefecht. Die Kurzbefehle für Einrastfunktion,
+  Anschlagverzögerung und Statusanzeige (fünfmal Shift, rechte Shift halten,
+  NumLock halten) sind ebenfalls aus, kein Fenster wirft dich aus dem Spiel.
+  Die Einstellungen von Windows selbst bleiben unverändert. Mit Global AUS geht
+  die Windows-Taste wieder.
+- **Keep the mouse on the game's screen** — mit zwei oder mehr Monitoren bleibt
+  der Mauszeiger auf dem Bildschirm des Spiels, ein schneller Schwenk rutscht
+  nicht auf den anderen Bildschirm und klickt das Spiel weg. Alt-Tab gibt ihn
+  sofort frei. Mit einem Monitor gibt es nichts zu tun.
+
 ### Global EIN/AUS (Numpad Entf — Kostenlos)
 
 Taste und Ein/Aus-Schalter sitzen auf *App & License → Hotkeys*. Zwei Modi,
@@ -1051,6 +1133,24 @@ Gamma-Registry-Eintrag — das ist automatisch und braucht keinen Starter.
   (dann gehen Gamma und Kontrast, Vibrance und FPS-Limit nicht).
 - Falls etwas komisch aussieht: einfach die App beenden — alles wird automatisch
   zurückgesetzt.
+
+### Updates mit einem Klick (Kostenlos) — neu in V1.4
+
+BrightRaider sucht ein paar Sekunden nach dem Start und danach einmal am Tag nach
+einer neuen Version (*App & License → Check for updates*, standardmäßig an). Ist
+eine da, sagt es eine grüne Meldung, die Versionszeile auf *App & License* wird
+orange, und das Tray-Menü zeigt **Install update**. Ein Klick lädt sie, prüft
+BrightRaiders Signatur — ohne sie wird nie etwas installiert — und startet in die
+neue Version. Deine Einstellungen und deine Lizenz bleiben, und ohne deinen Klick
+installiert sich nichts. Geht das an Ort und Stelle nicht, öffnet sich stattdessen
+die Download-Seite.
+
+- **Testversionen:** *App & License → Advanced → Also offer test versions*.
+  Vorabversionen kommen vor der stabilen: neueste Funktionen, weniger getestet.
+- **Von V1.2.3 kommend:** V1.4 einmal von Hand herunterladen; danach kommen
+  Updates auf diesem Weg.
+- **Module** aktualisieren sich genauso, mit eigener Zeile im Tray (siehe
+  *Module* oben).
 
 ### Deinstallation
 
