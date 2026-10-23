@@ -25,7 +25,7 @@
 
 The 47 MB V1.3 unpacked on its first start are cleared away by themselves.
 
-**🎮 Arc Raiders as a module** — switch it on in the setup or under *Settings → Modules → Arc Raiders*, and BrightRaider downloads it (8 MB) and loads it. Without Arc Raiders you don't get it at all. When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded — nothing installs without your click, and never while a game is in front. A module only loads when it carries BrightRaider's signature. Your Pro key keeps everything it unlocks today, Arc Raiders included.
+**🎮 Arc Raiders as a module** — switch it on in the setup or under *Settings → Modules → Arc Raiders*, and BrightRaider downloads it (8 MB) and loads it. Without Arc Raiders you don't get it at all. When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded — nothing installs without your click, and never while a game is in front. A module only loads when it carries BrightRaider's signature. Your Pro key keeps everything it unlocks today, Arc Raiders included. The module now has its own page — keys, anti-cheat notes, manual and guides: [Arc Raiders module](https://github.com/BrightRaider/BrightRaider/blob/main/docs/modules/arc-raiders/README.md).
 
 **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80): *Map Scanner → Advanced → your own names for the exits*. The overlay and the evac alarm use your names; an empty field keeps the game's. And no more made-up overlay when the map is not actually open — the XP screen, the skill tree or a menu stay quiet. Checked against nearly 300 real screenshots, no map lost.
 

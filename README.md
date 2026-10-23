@@ -130,12 +130,12 @@ One key unlocks everything below, in every game — the Arc Raiders tools includ
 
 #### Arc Raiders module
 
-Part of the optional Arc Raiders module — switch it on in the setup or on its own page, *Settings → Modules → Arc Raiders*. It downloads by itself (8 MB) and updates by itself: when Arc needs a fix, the tray offers it, and only the module is downloaded *(new in V1.4)*.
+Part of the optional Arc Raiders module — switch it on in the setup or on its own page, *Settings → Modules → Arc Raiders*. It downloads by itself (8 MB) and updates by itself: when Arc needs a fix, the tray offers it, and only the module is downloaded *(new in V1.4)*. Keys, anti-cheat notes, manual and guides: **[Arc Raiders module](docs/modules/arc-raiders/README.md)**.
 
-- **Autoscrapper** *(new in V1.2)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules — by default only after you confirm the list. Sends simulated clicks to the game, see [Anti-Cheat Safety](#anti-cheat-safety). 📖 [Guide](docs/Autoscrapper_Guide.md)
-- **Map Scanner** — long-press M on the map: evac timers, map conditions and hatch states as a colour-coded overlay, plus an evac alarm; name the exits yourself if you like *(new in V1.4)*. Other games via data packs. 📖 [Guide](docs/MapScanner_Guide.md) · [Pack authoring](docs/pack-authoring.md)
-- **QuickSelect** — one key uses an item from your quick-use wheel. 📖 [Guide](docs/QuickSelect_Guide.md)
-- **QuickSave** — one key drags an item into your Safe Pocket or backpack and back. 📖 [Guide](docs/QuickSave_Guide.md)
+- **Autoscrapper** *(new in V1.2)* — press F5 with the stash open: it reads the whole stash and scraps or sells by your rules — by default only after you confirm the list. Sends simulated clicks to the game, see [the module's anti-cheat notes](docs/modules/arc-raiders/README.md#anti-cheat). 📖 [Guide](docs/modules/arc-raiders/Autoscrapper_Guide.md)
+- **Map Scanner** — long-press M on the map: evac timers, map conditions and hatch states as a colour-coded overlay, plus an evac alarm; name the exits yourself if you like *(new in V1.4)*. Other games via data packs. 📖 [Guide](docs/modules/arc-raiders/MapScanner_Guide.md) · [Pack authoring](docs/modules/arc-raiders/pack-authoring.md)
+- **QuickSelect** — one key uses an item from your quick-use wheel. 📖 [Guide](docs/modules/arc-raiders/QuickSelect_Guide.md)
+- **QuickSave** — one key drags an item into your Safe Pocket or backpack and back. 📖 [Guide](docs/modules/arc-raiders/QuickSave_Guide.md)
 
 ## Default Profiles
 
@@ -209,13 +209,11 @@ This tells Windows to allow gamma adjustments — used by many display calibrati
 | Numpad 0 (short) | ↑ (short) | Mute/unmute game | Pro |
 | Numpad 0 (hold 600ms) | ↑ (hold 600ms) | Audio Ducking on/off | Pro |
 | Numpad + | Insert | Toggle crosshair | Pro |
-| Numpad * | Delete | Toggle timer overlay | Pro |
-| Numpad − | Home | Toggle QuickSelect on/off | Pro |
-| Numpad / | End | Toggle QuickSave on/off | Pro |
 | Numpad Del | Page Down | Toggle ALL hotkeys on/off | Free |
 | Numpad Enter | Page Up | Cycle audio output device | Pro |
 | CapsLock | CapsLock | Toggle autorun | Pro |
-| M (hold on map) | M (hold on map) | Scan evacuation timers | Pro |
+
+The Arc Raiders module's keys (timer overlay, map scan, QuickSelect, QuickSave, Autoscrapper): [on its page](docs/modules/arc-raiders/README.md#keys-defaults).
 
 Works with NumLock on or off. **Tip: keep NumLock off while playing** — with NumLock on, Windows briefly interrupts the Shift key when you switch profiles, which can slow your character if Shift is your sprint key.
 
@@ -260,24 +258,18 @@ Anti-cheat systems do not flag display adjustments. **Some other features send i
 | Vibrance, hue, FPS limit | NVIDIA / AMD driver APIs | vibrance on | none known |
 | Auto-Brightness | Screenshots of your desktop | off (Pro) | none known |
 | Crosshair | Click-through window on top | off (Pro) | low — check league rules |
-| Map Scanner | Screenshot, plus cursor move and 6 mouse-wheel steps to zoom the map out | on with Arc module + Pro | low |
 | Autorun (walk/sprint) | Posted key messages: holds W / Shift | Pro, toggled with CapsLock | low |
 | Autorun **tap mode** | Presses and releases W on a fixed interval (e.g. 160 ms every 1.3 s) — a periodic macro | Pro, long-press CapsLock | medium |
-| QuickSelect | Posted keys, cursor move, mouse clicks | off (Pro) | medium |
-| QuickSave | Cursor drag of an item | off (Pro) | medium |
-| **Autoscrapper** *(new in V1.2)* | Simulated mouse clicks (marked by Windows as injected), the cursor jumping to each tile, key presses and scrolling, at fixed intervals | off (Pro) | **highest** |
 
 "Risk" is our assessment of how input looks to behavioural anti-cheat (such as Anybrain, used by Arc Raiders). No anti-cheat vendor has confirmed or ruled out any of these.
 
 ### Input Automation
 
-**The Autoscrapper is the most exposed feature.** It clicks, moves the cursor and scrolls in the game for you, for several seconds at a time, with machine-regular timing. Automated input like this is exactly what behavioural anti-cheat is built to look for. It is optional and off by default — use it at your own risk.
-
-**QuickSave** and **QuickSelect** send a short sequence of clicks/keystrokes to move or use an item. BrightRaider does this with **no kernel driver and no injection into the game** — but automated multi-step input is something behavioural anti-cheat can in principle flag, like any input-automation tool. The strongest signal for such detection is *simulated mouse movement*, so keyboard-only selection is a weaker signal than anything that moves the cursor for you.
-
 **Autorun** holds your forward key (and sprint) with posted key messages. In **tap mode** it presses and releases forward on a fixed interval instead — that is a periodic macro with a regular timing pattern, not a single held key.
 
-**The Map Scanner** reads a screenshot of your screen on your PC, but before that it moves the cursor onto the map and scrolls the mouse wheel 6 times to zoom out. So it does send input, briefly.
+### Modules
+
+A module sends input to its own game, and each module's page says what it sends and how exposed it is. **[Arc Raiders module](docs/modules/arc-raiders/README.md#anti-cheat)** — Map Scanner (low), QuickSelect and QuickSave (medium), and the **Autoscrapper, the most exposed feature in BrightRaider**: it clicks, moves the cursor and scrolls in the game for you, with machine-regular timing. Optional and off by default — use it at your own risk.
 
 All input features are **optional**. If you want zero exposure, leave them off and use everything else: display, colour, FPS, Auto-Brightness and the overlay send no input at all.
 
@@ -307,12 +299,15 @@ BrightRaider's crosshair is a transparent, click-through Windows window drawn on
 
 Deep-dives for the more advanced features:
 
-- 🧹 **[Autoscrapper Guide](docs/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles
-- 🗺️ **[Map Scanner Guide](docs/MapScanner_Guide.md)** — supported maps, event detection (all map conditions), threshold colors, Evac alarm setup, your own exit names
 - 🔆 **[Auto-Brightness Guide](docs/AutoBrightness_Guide.md)** — how the 5-zone sampler works, Calibration Wizard walkthrough, zone-weight tuning, debug overlay
 - 🔊 **[Footstep Booster Guide](docs/FootstepBooster_Guide.md)** — threshold / attack / release tuning, recommended starting values, troubleshooting
-- ⚡ **[QuickSelect Guide](docs/QuickSelect_Guide.md)** — per-slot LMB hold time, modifier-key bindings, slots 7–10 mouse-movement path
-- 💾 **[QuickSave Guide](docs/QuickSave_Guide.md)** — 5 drag presets, toggle direction, timing controls
+
+**Arc Raiders module** — [its page](docs/modules/arc-raiders/README.md) (keys, anti-cheat, manual, changelog):
+
+- 🧹 **[Autoscrapper Guide](docs/modules/arc-raiders/Autoscrapper_Guide.md)** — rules, the review screen, test run vs. live, naming unrecognised tiles
+- 🗺️ **[Map Scanner Guide](docs/modules/arc-raiders/MapScanner_Guide.md)** — supported maps, event detection (all map conditions), threshold colors, Evac alarm setup, your own exit names
+- ⚡ **[QuickSelect Guide](docs/modules/arc-raiders/QuickSelect_Guide.md)** — per-slot LMB hold time, modifier-key bindings, slots 7–10 mouse-movement path
+- 💾 **[QuickSave Guide](docs/modules/arc-raiders/QuickSave_Guide.md)** — 5 drag presets, toggle direction, timing controls
 
 ## Uninstall
 
@@ -407,12 +402,12 @@ Ein Schlüssel schaltet alles unten frei, in jedem Spiel — die Arc-Raiders-Wer
 
 #### Arc-Raiders-Modul
 
-Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder auf seiner Seite, *Einstellungen → Modules → Arc Raiders*. Es lädt sich selbst herunter (8 MB) und aktualisiert sich selbst: Braucht Arc einen Fix, bietet ihn das Tray an, und nur das Modul wird geladen *(neu in V1.4)*.
+Teil des optionalen Arc-Raiders-Moduls — einschalten im Einrichtungsassistenten oder auf seiner Seite, *Einstellungen → Modules → Arc Raiders*. Es lädt sich selbst herunter (8 MB) und aktualisiert sich selbst: Braucht Arc einen Fix, bietet ihn das Tray an, und nur das Modul wird geladen *(neu in V1.4)*. Tasten, Anti-Cheat-Hinweise, Handbuch und Anleitungen: **[Arc-Raiders-Modul](docs/modules/arc-raiders/README.md#deutsch)**.
 
-- **Autoscrapper** *(neu in V1.2)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste bestätigt hast. Sendet simulierte Klicks ans Spiel, siehe [Anti-Cheat Sicherheit](#anti-cheat-sicherheit). 📖 [Anleitung (EN)](docs/Autoscrapper_Guide.md)
-- **Map Scanner** — M auf der Karte gedrückt halten: Evac-Timer, Kartenereignisse und Luken als farbiges Overlay, dazu ein Evac-Alarm; die Ausgänge kannst du selbst benennen *(neu in V1.4)*. Andere Spiele per Datenpack. 📖 [Anleitung (EN)](docs/MapScanner_Guide.md) · [Datenpacks](docs/pack-authoring.md)
-- **QuickSelect** — eine Taste benutzt ein Item aus dem Schnellrad. 📖 [Anleitung (EN)](docs/QuickSelect_Guide.md)
-- **QuickSave** — eine Taste zieht ein Item in die Sicherheitstasche oder den Rucksack und zurück. 📖 [Anleitung (EN)](docs/QuickSave_Guide.md)
+- **Autoscrapper** *(neu in V1.2)* — F5 bei offenem Lager: liest das ganze Lager und verschrottet oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste bestätigt hast. Sendet simulierte Klicks ans Spiel, siehe [die Anti-Cheat-Hinweise des Moduls](docs/modules/arc-raiders/README.md#anti-cheat-de). 📖 [Anleitung (EN)](docs/modules/arc-raiders/Autoscrapper_Guide.md)
+- **Map Scanner** — M auf der Karte gedrückt halten: Evac-Timer, Kartenereignisse und Luken als farbiges Overlay, dazu ein Evac-Alarm; die Ausgänge kannst du selbst benennen *(neu in V1.4)*. Andere Spiele per Datenpack. 📖 [Anleitung (EN)](docs/modules/arc-raiders/MapScanner_Guide.md) · [Datenpacks](docs/modules/arc-raiders/pack-authoring.md)
+- **QuickSelect** — eine Taste benutzt ein Item aus dem Schnellrad. 📖 [Anleitung (EN)](docs/modules/arc-raiders/QuickSelect_Guide.md)
+- **QuickSave** — eine Taste zieht ein Item in die Sicherheitstasche oder den Rucksack und zurück. 📖 [Anleitung (EN)](docs/modules/arc-raiders/QuickSave_Guide.md)
 
 ## Download
 
@@ -431,13 +426,11 @@ Eine `BrightRaider.exe` für jede Tastatur — Numpad, TKL oder eigene Belegung.
 | Numpad 0 (kurz) | ↑ (kurz) | Spiel stumm/laut | Pro |
 | Numpad 0 (600ms) | ↑ (600ms) | Audio Ducking an/aus | Pro |
 | Numpad + | Einfg | Fadenkreuz an/aus | Pro |
-| Numpad * | Entf | Timer-Overlay an/aus | Pro |
-| Numpad − | Pos1 | QuickSelect an/aus | Pro |
-| Numpad / | Ende | QuickSave an/aus | Pro |
 | Numpad Entf | Bild↓ | ALLE Hotkeys an/aus | Free |
 | Numpad Enter | Bild↑ | Audio-Ausgabegerät umschalten | Pro |
 | CapsLock | CapsLock | Autorun an/aus | Pro |
-| M (halten auf Karte) | M (halten auf Karte) | Evakuierungs-Timer scannen | Pro |
+
+Die Tasten des Arc-Raiders-Moduls (Timer-Overlay, Karten-Scan, QuickSelect, QuickSave, Autoscrapper): [auf seiner Seite](docs/modules/arc-raiders/README.md#tasten-standard).
 
 ## Anti-Cheat Sicherheit
 
@@ -451,22 +444,14 @@ BrightRaider verändert **KEINE** Spieldateien und keinen Spielspeicher, injizie
 | Vibrance, Farbton, FPS-Limit | NVIDIA-/AMD-Treiber-APIs | Vibrance an | keins bekannt |
 | Auto-Helligkeit | Screenshots vom Desktop | aus (Pro) | keins bekannt |
 | Fadenkreuz | Durchklickbares Fenster obendrauf | aus (Pro) | niedrig — Liga-Regeln prüfen |
-| Map Scanner | Screenshot, dazu Cursor setzen und 6× Mausrad zum Rauszoomen | an mit Arc-Modul + Pro | niedrig |
 | Autorun (Gehen/Sprinten) | Gepostete Tastennachrichten: hält W / Shift | Pro, CapsLock | niedrig |
 | Autorun **Tap-Modus** | Drückt und löst W in festem Takt (z. B. 160 ms alle 1,3 s) — ein periodisches Makro | Pro, CapsLock lang drücken | mittel |
-| QuickSelect | Gepostete Tasten, Cursor setzen, Mausklicks | aus (Pro) | mittel |
-| QuickSave | Item per Cursor ziehen | aus (Pro) | mittel |
-| **Autoscrapper** *(neu in V1.2)* | Simulierte Mausklicks (von Windows als injiziert markiert), Cursor springt auf jede Kachel, Tastendrücke und Scrollen, in festen Abständen | aus (Pro) | **am höchsten** |
 
 „Risiko“ ist unsere Einschätzung, wie die Eingaben für verhaltensbasiertes Anti-Cheat (z. B. Anybrain in Arc Raiders) aussehen. Kein Anti-Cheat-Hersteller hat eine dieser Funktionen bestätigt oder ausgeschlossen.
 
-**Der Autoscrapper ist am stärksten exponiert:** Er klickt, bewegt den Cursor und scrollt sekundenlang für dich, in maschinell gleichmäßigem Takt — genau danach sucht verhaltensbasiertes Anti-Cheat. Optional, standardmäßig aus, Nutzung auf eigenes Risiko.
-
-**QuickSave und QuickSelect** senden eine kurze Folge von Klicks/Tastendrücken — **ohne Kernel-Treiber und ohne Injektion ins Spiel**, aber automatisierte mehrstufige Eingaben können grundsätzlich erkannt werden. Das stärkste Signal ist *simulierte Mausbewegung*; reine Tastatur-Auswahl ist ein schwächeres Signal.
-
 **Autorun** hält Vorwärts (und Sprint) per geposteter Tastennachricht. Im **Tap-Modus** drückt und löst es Vorwärts in festem Takt — ein periodisches Makro mit regelmäßigem Timing, kein einzelner gehaltener Tastendruck.
 
-**Der Map Scanner** liest einen Screenshot lokal aus, setzt aber vorher den Cursor auf die Karte und scrollt 6× mit dem Mausrad, um rauszuzoomen — er sendet also kurz Eingaben.
+**Module** senden Eingaben an ihr eigenes Spiel; die Seite jedes Moduls sagt, was es sendet und wie exponiert es ist. **[Arc-Raiders-Modul](docs/modules/arc-raiders/README.md#anti-cheat-de)** — Map Scanner (niedrig), QuickSelect und QuickSave (mittel) und der **Autoscrapper, die am stärksten exponierte Funktion von BrightRaider**: Er klickt, bewegt den Cursor und scrollt für dich, in maschinell gleichmäßigem Takt. Optional, standardmäßig aus, Nutzung auf eigenes Risiko.
 
 Alle Eingabe-Funktionen sind **optional**. Wer kein Risiko will, lässt sie aus: Anzeige, Farbe, FPS, Auto-Helligkeit und Overlay senden keinerlei Eingaben.
 

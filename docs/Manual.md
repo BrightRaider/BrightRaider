@@ -2,8 +2,9 @@
 
 **Switch Gamma, Contrast, Vibrance & Hue with one keypress.**
 Plus Auto-Brightness, Alt-Tab Auto-Switch, per-game Auto-HDR, dimming of your
-other screens, Footstep Booster, Map Scanner, QuickSelect, QuickSave & the
-Autoscrapper.
+other screens, Footstep Booster — and the Arc Raiders module (Map Scanner,
+QuickSelect, QuickSave, Autoscrapper) with
+[its own manual](modules/arc-raiders/README.md).
 
 > 🇬🇧 **English** below · 🇩🇪 **[Deutsch weiter unten](#deutsch)**
 
@@ -30,8 +31,8 @@ launch.
 > game**: colours, FPS, sound, crosshair, autorun. The ARC Raiders helpers (Map
 > Scanner, Autoscrapper, QuickSelect, QuickSave) are its first **module**, with
 > their own page and one switch: *Settings → Modules → Arc Raiders*. Every
-> settings page has a **Guide** beside it. The Map Scanner can also read **other
-> games** via downloadable data packs (see `pack-authoring.md`).
+> settings page has a **Guide** beside it. Everything about the module:
+> **[Arc Raiders module](modules/arc-raiders/README.md)**.
 
 ### Free features
 
@@ -73,11 +74,6 @@ games once Pro is active.
 - **Footstep Booster / Loudness Limiter** — cap the game's audio session so you
   can crank volume for footsteps without going deaf on gunshots (see
   `FootstepBooster_Guide.md`).
-- **Map Scanner** — hold M on the in-game map to read all evacuation timers
-  locally, with a live colour-coded overlay; name the exits yourself (new in V1.4).
-- **Evac Alarm** — red toast + sound when a timer drops below your threshold.
-- **Autoscrapper** — press F5 with the stash open: reads the whole stash and
-  scraps or sells by your rules — by default only after you confirm the list.
 - **Mute Teammates** — one key mutes your voice chat apps (Discord, TeamSpeak …),
   with mute icons on screen.
 - **Crosshair Overlay** — click-through crosshair, 6 styles, custom colour, size
@@ -88,9 +84,10 @@ games once Pro is active.
   Vibrance, Hue — on NVIDIA the Hue slider runs 0–359° like the Control Panel).
 - **Auto-Brightness** — screen analysis detects dark scenes and switches to a
   brighter profile.
-- **Game Mute**, **Background Mute**, **Process Optimizer**, **QuickSelect**,
-  **QuickSave**, and an **offline license** (no internet needed after
-  activation).
+- **Game Mute**, **Background Mute**, **Process Optimizer**, and an **offline
+  license** (no internet needed after activation).
+- **The Arc Raiders module** — Map Scanner, Evac Alarm, Autoscrapper,
+  QuickSelect and QuickSave: [its own manual](modules/arc-raiders/README.md).
 
 ### Default profiles
 
@@ -232,21 +229,16 @@ Two things work regardless:
 | Numpad 0 (short) | Mute / unmute game audio (Pro)            |
 | Numpad 0 (hold)  | Audio Ducking on/off (Pro)                |
 | Numpad +         | Toggle crosshair overlay (Pro)            |
-| Numpad *         | Toggle timer overlay (Pro)                |
 | CapsLock         | Toggle Autorun (Pro)                       |
-| M (hold)         | Scan evacuation timers on the map (Pro)   |
-| 4 / 5 / 6        | QuickSelect: auto-use slot item (Pro)     |
-| Numpad −         | Toggle QuickSelect (Pro)                   |
-| Numpad /         | Toggle QuickSave (Pro)                     |
 | Numpad Del       | Global ON/OFF (see below)                 |
 | Numpad Enter     | Cycle audio output device (Pro)           |
 | (unbound)        | Mute / unmute teammates — voice chat (Pro)|
 | (unbound)        | Dim other displays off / on (Free)        |
 
 On Free, the keys of Pro features are not used by BrightRaider: they go straight
-to whatever window is in front, in every program. The same goes for the Arc
-Raiders toggle keys while the Arc Raiders module is off. (QuickSelect and
-QuickSave keys only act inside the game; there Free still sees the Pro notice.)
+to whatever window is in front, in every program. The Arc Raiders module's keys
+(timer overlay, map scan, QuickSelect, QuickSave, Autoscrapper) are on
+[its page](modules/arc-raiders/README.md#keys-defaults).
 
 Works with or without Shift, NumLock on or off. **TKL/Laptop preset** puts
 profiles 1–3 on the arrow keys ← ↓ →, mute on ↑, the crosshair on Insert, Global
@@ -369,125 +361,11 @@ Voice chat (Discord …) stays on its device unless you switch on *Audio →
 Advanced → Voice chat follows the device switch* — leave that off with
 TeamSpeak.
 
-### Map Scanner (Pro)
+### Arc Raiders module (Pro)
 
-Hold **M** on the in-game map — BrightRaider zooms out, reads all evacuation
-timers locally on your PC, and shows a live countdown overlay.
-
-**Supported ARC Raiders maps:** Buried City, Stella Montis, Space Port, Blue
-Gate, Dam, Riven Tides, Pendola Pass (gondola points; closed ones show
-**CLOSED**). **Other games** can be added via data packs
-(`pack-authoring.md`).
-
-**Colour coding:**
-
-| Colour | Meaning              |
-|--------|----------------------|
-| Green  | more than 10 minutes |
-| Yellow | more than 5 minutes  |
-| Orange | more than 1 minute   |
-| Red    | less than 1 minute   |
-| Gray   | closed / unknown     |
-
-**Event detection** — the scanner recognises active map conditions and adjusts
-the number of open evacuation points: **Night Raid** (2 points, hatches closed),
-**Electromagnetic Storm** (3 points, hatches closed), **Husk Graveyard**,
-**Locked Gate**, **Uncovered Caches**, and **Hidden Bunker** (Spaceport — 3
-points, hatches closed), and the **ARC Frigate** event (all evac points open).
-The condition name appears in the overlay.
-
-**Your own names for the exits** (new in V1.4): *Advanced: your own names for
-the exits* lists every exit of every map. Type what you call it — a landmark, a
-building — and the overlay and the evac alarm use your name; an empty field keeps
-the game's.
-
-If the map is not actually open when you hold M (a menu, the XP screen), the
-scanner says *no map detected* instead of guessing.
-
-Configure under *Modules → Arc Raiders → Map Scanner*: the colours and the
-overlay position up front; background, font size, hold time, map key and alarm
-repeat under *Advanced*.
-
-### Evac Alarm (Pro)
-
-Alerts when a timer drops below your threshold: a red toast + a sound, once per
-timer, re-armed when the timer is re-scanned. Switch it on and set the
-threshold on the Map Scanner page (*Evac alarm*). Map Scanner must be active.
-
-### QuickSelect (Pro)
-
-Press one key to auto-use a quick-wheel item. BrightRaider runs the whole
-sequence: hold Q → select slot → release Q → hold LMB for the configured time →
-optionally press H to free the hand.
-
-**Setup:** *Modules → Arc Raiders → QuickSelect* → switch it on → match your
-game's keys once in the **Setup** block → per item: trigger key, slot (1–10),
-**hold time in ms**, on. *Timing reference* lists the times below, *Slot
-layout* shows which slot is which, *All columns* shows the after-use action.
-
-**Recommended LMB hold times (ms):**
-
-| Item                     | ms   |
-|--------------------------|------|
-| Adrenaline Syringe       | 1300 |
-| Herb Bandage / Bandage   | 1800 |
-| Shield Charger           | 2300 |
-| Vita Syringe             | 4300 |
-| Instant Shield Charger   | 5300 |
-
-*(If an item is only partially used, add 100–200 ms.)*
-
-**Tips:** test with a low-value item first · slots 7–10 use cursor movement,
-slots 3–6 use their number key (immune to mouse movement) · H can bind to
-MB3/4/5 · toggle QuickSelect off (Numpad −) when typing in chat · after pressing
-H mid-use, wait a moment before re-triggering (the game holds the item in a brief
-transitional state) · don't want the confirmation pop-up? Switch off *Confirm
-QuickSelect and QuickSave* on the Arc Raiders page (the macros still run, just
-silently).
-
-### QuickSave (Pro)
-
-Drags items between your inventory, Safe Pocket and **backpack** with one keypress
-or wheel scroll — no manual clicking.
-
-- **What can move:** inventory slots 1–8, weapons, Safe Pocket 1–3, and
-  **Backpack 1–4** (top row) — new in V1.1. Direction is fully configurable.
-- **How it works:** opens inventory (Tab) → moves cursor to source → holds LMB
-  and drags to destination → releases → closes inventory (Tab).
-- **Where it aims:** at the raid inventory, as in V1.0 — on 4:3 and 16:10
-  screens too, where it sits in the centre. No look first, no cursor jump. In
-  the hideout the inventory sits elsewhere, so QuickSave is for raids.
-- **Toggle direction (⇄):** first press moves From→To, second To→From. A press
-  while a move is still running is ignored and does not turn the direction.
-- **Timing** (if a drag fails, *QuickSave → Advanced: inventory key and
-  timings*): Open (250 ms), Hover (0 ms), Drag (0 ms), Drop (120 ms), Cooldown
-  (0 ms).
-- **Toggle on/off:** Numpad / (Numpad) or End (Arrow).
-
-> **Known limitation:** occasional drag failures come from the Unreal Engine
-> Slate UI that ARC Raiders uses — the same thing happens with manual drag-drop.
-> It can't be fixed from outside the game; just trigger again.
-
-### Autoscrapper (Pro)
-
-Reads your stash from the screen and scraps or sells what your rules say —
-by default after you have seen the list and confirmed it ("Run without the
-review" skips that). It sends simulated clicks, cursor moves and scrolling to
-the game — the most exposed input feature, see the README's anti-cheat
-section. Full walkthrough: [Autoscrapper Guide](Autoscrapper_Guide.md).
-
-- **Rules:** *Modules → Arc Raiders → Autoscrapper* — an item (or a whole category), how
-  many to keep, and what happens to the rest: leave alone, scrap or sell.
-  Anything not listed is never touched.
-- **Run:** open the stash in game and press **F5**. Keep your hands off the
-  mouse while it scrolls (~10 s for 300 slots).
-- **Review:** the list comes up in stash order. **Enter** runs it, **Esc**
-  changes nothing; what you set there is saved as rules. Hold **Esc** to stop
-  a running pass.
-- **Test run** is the default: it goes up to the game's confirmation box and
-  cancels it. Switch to **Live** once it behaves.
-- **Unrecognised tiles** stay unnamed and untouched. Name them once with
-  *Name unrecognised items…* and they are known from the next scan on.
+Map Scanner, Evac Alarm, QuickSelect, QuickSave and the Autoscrapper are the
+Arc Raiders module. Their manual, keys, anti-cheat notes and guides are on the
+module's own page: **[Arc Raiders module](modules/arc-raiders/README.md)**.
 
 ### Crosshair Overlay (Pro)
 
@@ -624,24 +502,10 @@ picked under *App & License → Advanced → Hotkeys off also resets the display
 
 ### Startup modes (the tools download)
 
-For everyday use, just run `BrightRaider.exe`. The optional **tools download**
-(`BrightRaider_tools.zip` on the releases page) adds two double-click launchers
-for special situations — put them in the same folder as `BrightRaider.exe` and
-run the one you need:
-
-- **`BrightRaider (debug scan).cmd`** — starts BrightRaider with Map Scanner
-  diagnostics enabled. Open the in-game map and scan once; it writes a PNG +
-  `.txt` into `%LocalAppData%\BrightRaider\debug`. Send me those files if a map
-  timer ever reads wrong.
-- **`BrightRaider (sendinput mode).cmd`** — starts QuickSave with its alternate,
-  lower-level input path. Use it only if a game doesn't register QuickSave's
-  default inventory drag. Off in normal use. It uses synthetic input, which
-  anti-cheat may flag — use at your own risk. The launcher shows this for 8 seconds
-  before it starts.
-
-Each launcher just sets an environment variable before starting the app, so you
-can open one in Notepad to see exactly what it does. You never need these for
-normal use — running `BrightRaider.exe` on its own is the standard way.
+For everyday use, just run `BrightRaider.exe`. The optional tools download
+(`BrightRaider_tools.zip`) has two launchers for the Arc Raiders module — a
+Map Scanner diagnosis and an alternate input path for QuickSave: see
+[the module's page](modules/arc-raiders/README.md#launchers).
 
 BrightRaider self-elevates once on first launch to set the gamma registry key —
 that is automatic and needs no launcher.
@@ -692,9 +556,8 @@ durch alles.
 > **jedes PC-Spiel**: Farben, FPS, Ton, Fadenkreuz, Autorun. Die
 > ARC-Raiders-Helfer (Map Scanner, Autoscrapper, QuickSelect, QuickSave) sind
 > sein erstes **Modul**, mit eigener Seite und einem Schalter: *Einstellungen →
-> Modules → Arc Raiders*. Jede Einstellungsseite hat einen **Guide** daneben. Der
-> Map Scanner liest per Daten-Pack auch **andere Spiele** (siehe
-> `pack-authoring.md`).
+> Modules → Arc Raiders*. Jede Einstellungsseite hat einen **Guide** daneben.
+> Alles zum Modul: **[Arc-Raiders-Modul](modules/arc-raiders/README.md#deutsch)**.
 
 ### Kostenlose Funktionen
 
@@ -736,12 +599,6 @@ das Werkzeug, sobald Pro aktiv ist.
 - **Footstep Booster / Loudness Limiter** — begrenzt die Spiel-Audio-Session,
   damit du Schritte hörst, ohne dass Schüsse dir das Trommelfell zerlegen
   (siehe `FootstepBooster_Guide.md`).
-- **Map Scanner** — M auf der Karte halten, um alle Evakuierungs-Timer lokal
-  auszulesen, mit farbkodiertem Live-Overlay.
-- **Evac-Alarm** — roter Toast + Sound, wenn ein Timer unter den Schwellwert fällt.
-- **Autoscrapper** — F5 bei offenem Lager: liest das ganze Lager und verschrottet
-  oder verkauft nach deinen Regeln — standardmäßig erst, nachdem du die Liste
-  bestätigt hast.
 - **Mitspieler stummschalten** — eine Taste schaltet deine Voice-Chat-Apps
   (Discord, TeamSpeak …) stumm, mit Stumm-Symbolen auf dem Bildschirm.
 - **Crosshair-Overlay** — Click-through-Fadenkreuz, 6 Stile, freie Farbe, Größe
@@ -751,9 +608,10 @@ das Werkzeug, sobald Pro aktiv ist.
 - **Bis zu 9 Profile** (Numpad 1–9) mit vollem Editor (Gamma, Kontrast, Vibrance,
   Hue — auf NVIDIA läuft der Hue-Regler 0–359° wie im Control Panel).
 - **Auto-Helligkeit** — Bildschirmanalyse erkennt dunkle Szenen und wechselt das Profil.
-- **Spiel stumm**, **Background Mute**, **Process Optimizer**, **QuickSelect**,
-  **QuickSave** und eine **Offline-Lizenz** (nach Aktivierung kein Internet
-  nötig).
+- **Spiel stumm**, **Background Mute**, **Process Optimizer** und eine
+  **Offline-Lizenz** (nach Aktivierung kein Internet nötig).
+- **Das Arc-Raiders-Modul** — Map Scanner, Evac-Alarm, Autoscrapper, QuickSelect
+  und QuickSave: [sein eigenes Handbuch](modules/arc-raiders/README.md#deutsch).
 
 ### Profile (Standard)
 
@@ -895,21 +753,16 @@ Zwei Dinge funktionieren trotzdem:
 | Numpad 0 (kurz)  | Spiel stumm/laut (Pro)                     |
 | Numpad 0 (halten)| Audio Ducking an/aus (Pro)                 |
 | Numpad +         | Fadenkreuz-Overlay an/aus (Pro)            |
-| Numpad *         | Timer-Overlay an/aus (Pro)                 |
 | CapsLock         | Autorun an/aus (Pro)                       |
-| M (halten)       | Evakuierungs-Timer scannen (Pro)           |
-| 4 / 5 / 6        | QuickSelect: Slot-Item automatisch (Pro)   |
-| Numpad −         | QuickSelect an/aus (Pro)                   |
-| Numpad /         | QuickSave an/aus (Pro)                     |
 | Numpad Entf      | Globaler EIN/AUS (siehe unten)             |
 | Numpad Enter     | Audio-Ausgabegerät wechseln (Pro)          |
 | (nicht belegt)   | Mitspieler stumm/laut — Voice-Chat (Pro)   |
 | (nicht belegt)   | Andere Bildschirme abdunkeln aus/an (Kostenlos) |
 
 Ohne Pro nutzt BrightRaider die Tasten der Pro-Funktionen nicht: Sie gehen
-unverändert an das Fenster, das vorne ist, in jedem Programm. Dasselbe gilt für
-die Arc-Raiders-Tasten, solange das Modul aus ist. (QuickSelect- und
-QuickSave-Tasten wirken nur im Spiel; dort sieht Free weiter den Pro-Hinweis.)
+unverändert an das Fenster, das vorne ist, in jedem Programm. Die Tasten des
+Arc-Raiders-Moduls (Timer-Overlay, Karten-Scan, QuickSelect, QuickSave,
+Autoscrapper) stehen auf [seiner Seite](modules/arc-raiders/README.md#tasten-standard).
 
 Funktioniert mit/ohne Shift, NumLock an oder aus. **TKL-/Laptop-Preset** legt
 Profil 1–3 auf die Pfeiltasten ← ↓ →, Stumm auf ↑, das Fadenkreuz auf Einfg,
@@ -1035,126 +888,11 @@ Spiel-Ende das vorherige Gerät wieder her. Der Voice-Chat (Discord …) bleibt 
 seinem Gerät, außer du schaltest *Audio → Advanced → Voice chat follows the
 device switch* ein — mit TeamSpeak aus lassen.
 
-### Map Scanner (Pro)
+### Arc-Raiders-Modul (Pro)
 
-**M** auf der Karte halten — BrightRaider zoomt heraus, liest alle
-Evakuierungs-Timer lokal auf deinem PC aus und zeigt einen Live-Countdown.
-
-**Unterstützte ARC-Raiders-Karten:** Buried City, Stella Montis, Space Port, Blue
-Gate, Dam, Riven Tides, Pendola Pass (Gondel-Punkte; geschlossene zeigen
-**CLOSED**). **Andere Spiele** per Daten-Pack (`pack-authoring.md`).
-
-**Farbkodierung:**
-
-| Farbe  | Bedeutung             |
-|--------|-----------------------|
-| Grün   | mehr als 10 Minuten   |
-| Gelb   | mehr als 5 Minuten    |
-| Orange | mehr als 1 Minute     |
-| Rot    | weniger als 1 Minute  |
-| Grau   | geschlossen / unbekannt |
-
-**Event-Erkennung** — der Scanner erkennt aktive Karten-Bedingungen und passt die
-Anzahl offener Evakuierungspunkte an: **Night Raid** (2 Punkte, Hatches zu),
-**Elektromagnetischer Sturm** (3 Punkte, Hatches zu), **Husk Graveyard**,
-**Locked Gate**, **Uncovered Caches** und **Hidden Bunker** (Spaceport — 3 Punkte,
-Hatches zu) und das Event **ARC Frigate** (alle Evakuierungspunkte offen). Der
-Name erscheint im Overlay.
-
-**Eigene Namen für die Ausgänge** (neu in V1.4): *Advanced: your own names for
-the exits* listet jeden Ausgang jeder Karte. Schreib hinein, wie du ihn nennst —
-ein Wahrzeichen, ein Gebäude —, und Overlay und Evac-Alarm nehmen deinen Namen;
-ein leeres Feld behält den Namen aus dem Spiel.
-
-Ist beim Halten von M gar keine Karte offen (ein Menü, der XP-Bildschirm), meldet
-der Scanner *no map detected*, statt zu raten.
-
-Konfiguration unter *Modules → Arc Raiders → Map Scanner*: Farben und
-Overlay-Position vorne; Hintergrund, Schriftgröße, Haltedauer, Kartentaste und
-Alarm-Wiederholung unter *Advanced*.
-
-### Evac-Alarm (Pro)
-
-Meldet, wenn ein Timer unter den Schwellwert fällt: roter Toast + Sound, einmal
-pro Timer, neu scharf beim erneuten Scan. Einschalten und Schwellwert auf der
-Map-Scanner-Seite (*Evac alarm*). Map Scanner muss aktiv sein.
-
-### QuickSelect (Pro)
-
-Eine Taste drücken, um ein Schnellrad-Item automatisch zu nutzen. BrightRaider
-führt die Sequenz aus: Q halten → Slot wählen → Q loslassen → LMB für die
-eingestellte Zeit halten → optional H für freie Hand.
-
-**Einrichten:** *Modules → Arc Raiders → QuickSelect* → einschalten → einmal im
-Block **Setup** deine Spieltasten eintragen → pro Item: Trigger-Taste, Slot
-(1–10), **Haltezeit in ms**, an. *Timing reference* zeigt die Zeiten unten,
-*Slot layout* zeigt, welcher Slot welcher ist, *All columns* zeigt die Aktion
-nach der Nutzung.
-
-**Empfohlene LMB-Haltezeiten (ms):**
-
-| Item                     | ms   |
-|--------------------------|------|
-| Adrenalinspritze         | 1300 |
-| Kräuterverband / Verband | 1800 |
-| Schildauflader           | 2300 |
-| Vita-Spritze             | 4300 |
-| Sofort-Schildauflader    | 5300 |
-
-*(Wird ein Item nur teilweise benutzt, 100–200 ms zugeben.)*
-
-**Tipps:** erst mit einem günstigen Item testen · Slots 7–10 per Cursor, Slots 3–6
-per Zifferntaste (immun gegen Mausbewegung) · H auch auf MB3/4/5 belegbar ·
-QuickSelect beim Tippen im Chat pausieren (Numpad −) · nach H mitten in der Nutzung
-kurz warten, bevor du neu triggerst (das Spiel hält das Item kurz in einem
-Übergangszustand) · kein Bestätigungs-Popup gewünscht? *Confirm QuickSelect and
-QuickSave* auf der Arc-Raiders-Seite ausschalten (die Makros laufen weiter, nur
-lautlos).
-
-### QuickSave (Pro)
-
-Zieht Items zwischen Inventar, Sicherheitstasche und **Rucksack** — mit einem
-Tastendruck oder Mausradscrollen.
-
-- **Was sich verschieben lässt:** Inventar-Slots 1–8, Waffen, Sicherheitstasche
-  1–3 und **Rucksack 1–4** (oberste Reihe) — neu in V1.1. Richtung frei einstellbar.
-- **So funktioniert es:** Inventar öffnen (Tab) → Cursor zum Quell-Slot → LMB
-  halten und zum Ziel ziehen → loslassen → Inventar schließen (Tab).
-- **Wohin es zielt:** auf das Raid-Inventar, wie in V1.0 — auch bei 4:3 und
-  16:10, wo es in der Mitte sitzt. Kein Nachschauen, kein Cursor-Sprung. In der
-  Basis sitzt das Inventar woanders, QuickSave ist also für den Raid.
-- **Richtung umkehren (⇄):** erster Druck Von→Nach, zweiter Nach→Von. Ein Druck,
-  während noch ein Zug läuft, wird ignoriert und dreht die Richtung nicht um.
-- **Timing** (falls Drag fehlschlägt, *QuickSave → Advanced: inventory key and
-  timings*): Öffnen (250 ms), Hover (0 ms), Ziehen (0 ms), Ablegen (120 ms),
-  Cooldown (0 ms).
-- **An/aus:** Numpad / (Numpad) oder Ende (Pfeiltasten).
-
-> **Bekannte Einschränkung:** gelegentliche Drag-Fehler kommen vom Unreal-Engine-
-> Slate-UI, das ARC Raiders nutzt — dasselbe passiert beim manuellen Ziehen. Von
-> außen nicht behebbar; einfach nochmal auslösen.
-
-### Autoscrapper (Pro)
-
-Liest dein Lager vom Bildschirm und verschrottet oder verkauft, was deine Regeln
-sagen — standardmäßig, nachdem du die Liste gesehen und bestätigt hast („Run
-without the review" überspringt das). Er sendet simulierte Klicks,
-Cursorbewegungen und Scrollen ans Spiel — die am stärksten exponierte
-Eingabe-Funktion, siehe den Anti-Cheat-Abschnitt der README. Ausführlich:
-[Autoscrapper Guide (EN)](Autoscrapper_Guide.md).
-
-- **Regeln:** *Modules → Arc Raiders → Autoscrapper* — ein Gegenstand (oder eine ganze
-  Kategorie), wie viele bleiben und was mit dem Rest passiert: liegen lassen,
-  verschrotten oder verkaufen. Was nicht in der Liste steht, wird nie angefasst.
-- **Start:** Lager im Spiel öffnen und **F5** drücken. Maus in Ruhe lassen,
-  solange gescrollt wird (~10 s für 300 Plätze).
-- **Prüfen:** Die Liste erscheint in Lager-Reihenfolge. **Enter** führt aus,
-  **Esc** ändert nichts; was du dort einstellst, wird als Regel gespeichert.
-  **Esc** gedrückt halten bricht einen laufenden Durchgang ab.
-- **Testlauf** ist voreingestellt: geht bis zur Bestätigungsbox des Spiels und
-  bricht dort ab. Auf **Live** umstellen, wenn alles passt.
-- **Unerkannte Kacheln** bleiben unbenannt und unangetastet. Einmal über
-  *Name unrecognised items…* benennen, ab dem nächsten Scan sind sie bekannt.
+Map Scanner, Evac-Alarm, QuickSelect, QuickSave und der Autoscrapper sind das
+Arc-Raiders-Modul. Handbuch, Tasten, Anti-Cheat-Hinweise und Anleitungen stehen
+auf seiner eigenen Seite: **[Arc-Raiders-Modul](modules/arc-raiders/README.md#deutsch)**.
 
 ### Crosshair-Overlay (Pro)
 
@@ -1297,23 +1035,9 @@ display*:
 ### Start-Modi (das Tools-Paket)
 
 Für den Alltag startest du einfach `BrightRaider.exe`. Das optionale
-**Tools-Paket** (`BrightRaider_tools.zip` auf der Releases-Seite) bringt zwei
-Doppelklick-Starter für Sonderfälle — leg sie in denselben Ordner wie
-`BrightRaider.exe` und starte den, den du brauchst:
-
-- **`BrightRaider (debug scan).cmd`** — startet BrightRaider mit
-  Map-Scanner-Diagnose. Öffne die Spielkarte und scanne einmal; es schreibt ein
-  PNG + `.txt` nach `%LocalAppData%\BrightRaider\debug`. Schick mir diese Dateien,
-  falls ein Karten-Timer mal falsch angezeigt wird.
-- **`BrightRaider (sendinput mode).cmd`** — startet QuickSave mit seinem
-  alternativen, tiefer liegenden Eingabepfad. Nur nutzen, wenn ein Spiel
-  QuickSaves Standard-Inventar-Drag nicht registriert. Im Normalbetrieb aus. Er
-  nutzt synthetische Eingaben, die Anti-Cheat erkennen kann — Nutzung auf eigenes
-  Risiko. Der Starter zeigt das 8 Sekunden lang vor dem Start.
-
-Jeder Starter setzt nur eine Umgebungsvariable vor dem App-Start — du kannst einen
-in Notepad öffnen, um genau zu sehen, was er tut. Für den Normalbetrieb brauchst
-du sie nie — `BrightRaider.exe` allein ist der Standardweg.
+Tools-Paket (`BrightRaider_tools.zip`) hat zwei Starter für das
+Arc-Raiders-Modul — eine Map-Scanner-Diagnose und einen anderen Eingabeweg
+für QuickSave: siehe [die Seite des Moduls](modules/arc-raiders/README.md#starter).
 
 BrightRaider eleviert sich beim ersten Start einmalig selbst für den
 Gamma-Registry-Eintrag — das ist automatisch und braucht keinen Starter.
@@ -1352,6 +1076,6 @@ Gamma-Registry-Eintrag — das ist automatisch und braucht keinen Starter.
 | `%APPDATA%\BrightRaider\BrightRaider.lic` | License / Lizenzdatei |
 | `%APPDATA%\BrightRaider\debug.log` | Diagnostic log / Diagnose-Log |
 
-**Guides (`docs/`):** `QuickSelect_Guide.md` · `QuickSave_Guide.md` ·
-`MapScanner_Guide.md` · `AutoBrightness_Guide.md` · `FootstepBooster_Guide.md` ·
-`pack-authoring.md` (add other games to the Map Scanner)
+**Guides (`docs/`):** `AutoBrightness_Guide.md` · `FootstepBooster_Guide.md`.
+The Arc Raiders module's guides and its manual: `docs/modules/arc-raiders/`
+([Arc Raiders module](modules/arc-raiders/README.md)).

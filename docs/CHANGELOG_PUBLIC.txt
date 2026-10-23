@@ -27,6 +27,8 @@
     your click, and never while a game is in front.
   - A module only loads when it carries BrightRaider's signature.
   - Your Pro key keeps everything it unlocks today, Arc Raiders included.
+  - The module has its own page now: keys, anti-cheat notes, manual and
+    guides (docs/modules/arc-raiders). The old guide links lead there.
 
   Map Scanner
   - Name the exits yourself (#80): Map Scanner -> Advanced -> "your own names
