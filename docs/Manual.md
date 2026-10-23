@@ -303,7 +303,7 @@ go to whatever is in front.
 
 The mute key has two modes: a **short press** mutes/unmutes; a **hold** (default
 600 ms) ducks game audio to a set percentage (default 20 %) so you can hear
-Discord or music. It stays down until you hold the key again. Set the volume under *Audio → Game volume while held*
+Discord or music. It stays down until you hold the key again. Set the volume under *Audio → Turned down to (%)*
 (0–100 %) and the hold time under *Audio → Advanced* (200–2000 ms).
 
 ### Footstep Booster / Loudness Limiter (Pro)
@@ -879,7 +879,7 @@ denn seine Tasten gehen an das vorderste Fenster.
 
 Die Stumm-Taste hat zwei Modi: **kurzer Druck** = stumm/laut; **Halten** (Standard
 600 ms) = Spiel-Audio auf einen Prozentsatz reduzieren (Standard 20 %), damit du
-Discord oder Musik hörst. Es bleibt leise, bis du die Taste erneut hältst. Lautstärke unter *Audio → Game volume while held*
+Discord oder Musik hörst. Es bleibt leise, bis du die Taste erneut hältst. Lautstärke unter *Audio → Turned down to (%)*
 (0–100 %), Haltezeit unter *Audio → Advanced* (200–2000 ms).
 
 ### Footstep Booster / Loudness Limiter (Pro)
