@@ -86,7 +86,7 @@ cursor onto the map and scrolls the mouse wheel 6 times to zoom out — so it do
 send input, briefly.
 
 BrightRaider's own features (display, colour, FPS, crosshair, autorun):
-[Anti-Cheat Safety](../../../README.md#anti-cheat-safety).
+[Anti-cheat safety](../../Safety.md#english).
 
 ### Guides
 
@@ -339,7 +339,7 @@ Cursor auf die Karte und scrollt 6× mit dem Mausrad, um rauszuzoomen — er
 sendet also kurz Eingaben.
 
 BrightRaiders eigene Funktionen (Anzeige, Farbe, FPS, Fadenkreuz, Autorun):
-[Anti-Cheat Sicherheit](../../../README.md#anti-cheat-sicherheit).
+[Anti-Cheat-Sicherheit](../../Safety.md#deutsch).
 
 ### Anleitungen (englisch)
 
