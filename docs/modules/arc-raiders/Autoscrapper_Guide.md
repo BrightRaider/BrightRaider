@@ -118,6 +118,13 @@ The update added a long list of new items that BrightRaider has not seen yet, so
 - **Weapons are the hard part.** The weapon picture gets smaller with every attachment and everybody runs different ones, so a weapon has no single picture to learn. BrightRaider needs a different approach for them — recognising the weapon itself, whatever is attached — and until then an unnamed weapon stays untouched. Weapons are rarely part of anyone's rules.
 - **Faster and more exact since V1.2.2:** the scan is about twice as fast, it stops at your last item and when nothing more fits, and it picks the stacks that hit your "keep" number whenever a combination exists ("keep 40" over stacks of 10, 10, 10, 10, 10, 10, 7 and 5 leaves exactly 40).
 
+### The 2.0 update (V1.4)
+
+BrightRaider knows the items the 2.0 update added — their names, values and types, so your rules can list them.
+
+- **About 50 of them are recognised from their picture right away.**
+- **The others stay unnamed and untouched** until you name them once with **Name unrecognised items…**: weapon variants that differ only in their attachments, the tiers of one weapon, keys of one area and colour variants share one picture, and no picture can tell them apart.
+
 ---
 
 ## Resolutions

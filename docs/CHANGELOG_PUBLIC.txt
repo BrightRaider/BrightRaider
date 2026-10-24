@@ -59,6 +59,8 @@
     map lost.
 
   Autoscrapper
+  - Knows the items of the 2.0 update: about 50 are recognised right away,
+    the rest you name once with "Name unrecognised items...".
   - Recognises more of your stash: items with a small symbol in their top
     corner (the eye, a tick) are now named too.
   - Items you marked with the eye in the game are never scrapped.

@@ -68,7 +68,7 @@ A new version is out? The tray offers **Install update** — one click, and Brig
 The tools for one game now come as a **module**. Switch Arc Raiders on in the setup or under *Modules → Arc Raiders*: it downloads by itself (8 MB) and is there at once — no restart. Switch it off, and it isn't loaded at all. When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded. It only loads with BrightRaider's signature, and your Pro key unlocks it as before. Keys, guides, manual: **[Arc Raiders module](https://github.com/BrightRaider/BrightRaider/blob/main/docs/modules/arc-raiders/README.md)**.
 
 - **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80); the overlay and the evac alarm use your names. No made-up overlay when the map isn't actually open — checked against nearly 300 real screenshots, no map lost.
-- **♻️ Autoscrapper** — recognises more of your stash (items with a symbol in their corner), never touches what you marked with the eye, and never scraps or sells a blueprint, whatever a rule says.
+- **♻️ Autoscrapper** — knows the items of the 2.0 update (about 50 recognised right away, the rest you name once), recognises more of your stash (items with a symbol in their corner), never touches what you marked with the eye, and never scraps or sells a blueprint, whatever a rule says.
 - **💾 QuickSave** — a press while a move is still running no longer turns the direction around.
 
 ## ⌨ Keys

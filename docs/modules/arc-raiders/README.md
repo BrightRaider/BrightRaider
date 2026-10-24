@@ -248,9 +248,11 @@ Everything before: the [app's changelog](../../CHANGELOG_PUBLIC.txt).
   with BrightRaider's signature.
 - Map Scanner: name the exits yourself (#80); no made-up overlay when the map
   is not actually open.
-- Autoscrapper: items with a small symbol in their corner are recognised; items
-  you marked with the eye are never scrapped; blueprints are never scrapped or
-  sold, whatever a rule says.
+- Autoscrapper: knows the items of the 2.0 update - about 50 are recognised
+  right away, the rest you name once with *Name unrecognised items…*; items
+  with a small symbol in their corner are recognised; items you marked with the
+  eye are never scrapped; blueprints are never scrapped or sold, whatever a
+  rule says.
 - QuickSave: a press while a move is still running no longer turns the
   direction around.
 
@@ -503,8 +505,10 @@ davor: der [Changelog der App](../../CHANGELOG_PUBLIC.txt) (englisch).
   nur mit BrightRaiders Signatur geladen.
 - Map Scanner: Ausgänge selbst benennen (#80); kein erfundenes Overlay, wenn die
   Karte gar nicht offen ist.
-- Autoscrapper: Items mit kleinem Symbol in der Ecke werden erkannt; mit dem Auge
-  markierte Items werden nie verschrottet; Blaupausen werden nie verschrottet oder
-  verkauft, egal was eine Regel sagt.
+- Autoscrapper: kennt die Items aus dem Update 2.0 - rund 50 erkennt er sofort,
+  die übrigen benennst du einmal über *Name unrecognised items…*; Items mit
+  kleinem Symbol in der Ecke werden erkannt; mit dem Auge markierte Items werden
+  nie verschrottet; Blaupausen werden nie verschrottet oder verkauft, egal was
+  eine Regel sagt.
 - QuickSave: Ein Druck, während noch ein Zug läuft, dreht die Richtung nicht mehr
   um.
