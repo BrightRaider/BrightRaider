@@ -64,8 +64,6 @@
   - Recognises more of your stash: items with a small symbol in their top
     corner (the eye, a tick) are now named too.
   - Items you marked with the eye in the game are never scrapped.
-  - Blueprints are never scrapped or sold, whatever a rule says - the rules
-    no longer offer them.
 
   Crosshair
   - The crosshair is remembered per game. An overlay on top of a game can

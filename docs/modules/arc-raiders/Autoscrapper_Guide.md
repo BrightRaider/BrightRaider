@@ -45,7 +45,6 @@ The table **Your rules** on the Autoscrapper page is the list of everything Brig
 - **A category row counts per item**, not across the category: *All Recyclable — keep 10* keeps ten of each.
 - **A row for a single item always wins** over the category it belongs to.
 - **Quest items are protected** and are never scrapped or sold, whatever the rules say.
-- **Blueprints are never scrapped or sold** either — the rules don't offer them, and no rule can reach them.
 - **Items you marked with the eye in the game** (the ones you are searching for) are never scrapped — every stack of that item stays.
 - **While the list is empty, a scan does nothing.**
 

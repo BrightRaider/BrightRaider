@@ -251,8 +251,7 @@ Everything before: the [app's changelog](../../CHANGELOG_PUBLIC.txt).
 - Autoscrapper: knows the items of the 2.0 update - about 50 are recognised
   right away, the rest you name once with *Name unrecognised items…*; items
   with a small symbol in their corner are recognised; items you marked with the
-  eye are never scrapped; blueprints are never scrapped or sold, whatever a
-  rule says.
+  eye are never scrapped.
 - QuickSave: a press while a move is still running no longer turns the
   direction around.
 
@@ -508,7 +507,6 @@ davor: der [Changelog der App](../../CHANGELOG_PUBLIC.txt) (englisch).
 - Autoscrapper: kennt die Items aus dem Update 2.0 - rund 50 erkennt er sofort,
   die übrigen benennst du einmal über *Name unrecognised items…*; Items mit
   kleinem Symbol in der Ecke werden erkannt; mit dem Auge markierte Items werden
-  nie verschrottet; Blaupausen werden nie verschrottet oder verkauft, egal was
-  eine Regel sagt.
+  nie verschrottet.
 - QuickSave: Ein Druck, während noch ein Zug läuft, dreht die Richtung nicht mehr
   um.
