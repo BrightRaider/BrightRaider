@@ -121,7 +121,7 @@ The update added a long list of new items that BrightRaider has not seen yet, so
 
 BrightRaider knows the items the 2.0 update added — their names, values and types, so your rules can list them.
 
-- **About 50 of them are recognised from their picture right away.**
+- **About 60 of them are recognised from their picture right away**, furniture designs among them. In a real stash after the update, nearly 9 of 10 tiles are named right away.
 - **The others stay unnamed and untouched** until you name them once with **Name unrecognised items…**: weapon variants that differ only in their attachments, the tiers of one weapon, keys of one area and colour variants share one picture, and no picture can tell them apart.
 
 ---

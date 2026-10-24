@@ -43,7 +43,7 @@ At the first start — and once after this update — a short setup goes through
 - **A guide beside every page** — what happens, how to set it up, what to try when something is off.
 - **Every key on the page of its feature**, and **All keys** shows every one in one place.
 - **Ctrl+F finds any setting.** A **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen.
-- A sidebar instead of tabs, rarely used options under *Advanced*, colour pickers for the crosshair and the Map Scanner, dark title bars.
+- A sidebar instead of tabs, rarely used options under *Advanced*, colour pickers for the crosshair and the Map Scanner, dark title bars — and clean text with smooth edges, in the notifications too.
 - **Report a problem** (App & License) puts your version, system and log together and opens an issue for you to check and send.
 
 ## 🖥 G-SYNC / FreeSync setup
@@ -58,7 +58,7 @@ A new version is out? The tray offers **Install update** — one click, and Brig
 
 - **Windows key blocked in games** — no Start menu mid-fight, no Sticky Keys pop-up from pressing Shift five times. On the desktop everything works as usual.
 - **The mouse stays on the game's screen** — with two or more monitors, a fast flick can't slide onto the other screen and click the game away. Free again on Alt-Tab.
-- **Mute your microphone** — one key, and nobody hears you, in any app, until you press again.
+- **Mute your microphone** — one key, and nobody hears you, in any app, until you press again. Set it in the setup or on *Audio*.
 - **Crosshair per game** — an overlay can cost a game G-SYNC, so the crosshair is remembered per game: on in one, off in the others.
 - **Calmer colour switching** — a game window that flashes up while loading no longer flips your colours, and the game's launcher, its pop-ups and the settings window keep the game's colours.
 - **Notifications on the screen you choose.**
@@ -68,7 +68,7 @@ A new version is out? The tray offers **Install update** — one click, and Brig
 The tools for one game now come as a **module**. Switch Arc Raiders on in the setup or under *Modules → Arc Raiders*: it downloads by itself (8 MB) and is there at once — no restart. Switch it off, and it isn't loaded at all. When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded. It only loads with BrightRaider's signature, and your Pro key unlocks it as before. Keys, guides, manual: **[Arc Raiders module](https://github.com/BrightRaider/BrightRaider/blob/main/docs/modules/arc-raiders/README.md)**.
 
 - **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80); the overlay and the evac alarm use your names. No made-up overlay when the map isn't actually open — checked against nearly 300 real screenshots, no map lost.
-- **♻️ Autoscrapper** — knows the items of the 2.0 update (about 50 recognised right away, the rest you name once), recognises more of your stash (items with a symbol in their corner), and never touches what you marked with the eye.
+- **♻️ Autoscrapper** — knows the items of the 2.0 update (about 60 recognised right away, the rest you name once), names nearly 9 of 10 tiles of a real stash right away — furniture designs and items with a symbol in their corner among them, and never touches what you marked with the eye.
 - **💾 QuickSave** — a press while a move is still running no longer turns the direction around.
 
 ## ⌨ Keys

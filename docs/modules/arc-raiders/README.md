@@ -248,10 +248,11 @@ Everything before: the [app's changelog](../../CHANGELOG_PUBLIC.txt).
   with BrightRaider's signature.
 - Map Scanner: name the exits yourself (#80); no made-up overlay when the map
   is not actually open.
-- Autoscrapper: knows the items of the 2.0 update - about 50 are recognised
-  right away, the rest you name once with *Name unrecognised items…*; items
-  with a small symbol in their corner are recognised; items you marked with the
-  eye are never scrapped.
+- Autoscrapper: knows the items of the 2.0 update - about 60 are recognised
+  right away, the rest you name once with *Name unrecognised items…*; nearly 9
+  of 10 tiles of a real stash are named right away, furniture designs and items
+  with a small symbol in their corner among them; items you marked with the eye
+  are never scrapped.
 - QuickSave: a press while a move is still running no longer turns the
   direction around.
 
@@ -504,9 +505,10 @@ davor: der [Changelog der App](../../CHANGELOG_PUBLIC.txt) (englisch).
   nur mit BrightRaiders Signatur geladen.
 - Map Scanner: Ausgänge selbst benennen (#80); kein erfundenes Overlay, wenn die
   Karte gar nicht offen ist.
-- Autoscrapper: kennt die Items aus dem Update 2.0 - rund 50 erkennt er sofort,
-  die übrigen benennst du einmal über *Name unrecognised items…*; Items mit
-  kleinem Symbol in der Ecke werden erkannt; mit dem Auge markierte Items werden
-  nie verschrottet.
+- Autoscrapper: kennt die Items aus dem Update 2.0 - rund 60 erkennt er sofort,
+  die übrigen benennst du einmal über *Name unrecognised items…*; in einem echten
+  Lager benennt er fast 9 von 10 Kacheln sofort, auch Möbel-Baupläne und Items
+  mit kleinem Symbol in der Ecke; mit dem Auge markierte Items werden nie
+  verschrottet.
 - QuickSave: Ein Druck, während noch ein Zug läuft, dreht die Richtung nicht mehr
   um.
