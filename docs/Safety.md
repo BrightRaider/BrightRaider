@@ -77,17 +77,16 @@ The display, colour, FPS and overlay features use the same Windows display APIs 
 
 ### Antivirus
 
-<!-- TODO 1.4: Microsoft's verdict for V1.4.0 (submitted 26 Oct 2026); until it is in, the V1.3.0 analysis below stays, named as such. -->
-Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the V1.4.0 build](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) — 2 of 69 engines flag it (SecureAge and Webroot, both heuristics); Microsoft and all others show it clean. The V1.4.0 build is with **Microsoft** for analysis (submitted 26 Oct 2026); the build before it, V1.3.0, came back with the verdict that it *"does not meet our criteria for malware or potentially unwanted applications"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
+Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the V1.4.0 build](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) — 2 of 69 engines flag it (SecureAge and Webroot, both heuristics); Microsoft and all others show it clean. The V1.4.0 build was also submitted to **Microsoft** for analysis (26 Oct 2026); their verdict: *"our scanners show no positive detection, and we have no telemetry indicators for the file(s) submitted."* 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
 
 <details>
-<summary>📄 <b>Microsoft's analysis of the V1.3.0 build</b> (click to expand)</summary>
+<summary>📄 <b>Microsoft's analysis of the V1.4.0 build</b> (click to expand)</summary>
 
 <br>
 
-<img src="assets/wdsi-v1.3.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.3.0: does not meet the criteria for malware or potentially unwanted applications" width="840">
+<img src="assets/wdsi-v1.4.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.4.0: no positive detection, no telemetry indicators" width="840">
 
-<sub>Submitted 18 October 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Analyst verdict: the file does not meet the criteria for malware or potentially unwanted applications. Submission ID and submitter address redacted. Every release before it (V1.0 to V1.1.1) was submitted the same way and came back clean.</sub>
+<sub>Submitted 26 October 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Analyst verdict: no positive detection and no telemetry indicators. Submission ID and submitter address redacted. Every release before it (V1.0 to V1.1.1) was submitted the same way and came back clean.</sub>
 
 </details>
 

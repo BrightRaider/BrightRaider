@@ -100,8 +100,18 @@ BrightRaider.exe   DC889B63EEE1F5DF4594DB04664C8AF177D4DEE52B1C86514878C1F794E8A
 arc_raiders.dll    642B83449861F01743B6172F4A5F758C108FAD1E198D73D7B18275657DC8AF3D
 ```
 
-<!-- TODO 1.4: Microsoft's verdict (submitted 26 Oct 2026) - when it is in, put it here as in 1.3 with docs/assets/wdsi-v1.4.0.png -->
-**🛡️ Sent to Microsoft.** I submitted this exact build to Microsoft for analysis on 26 October 2026; their verdict goes here as soon as it is in. If Defender flags it meanwhile, update it once: **Windows Security → Virus & threat protection → Protection updates → Check for updates**.
+**🛡️ Checked by Microsoft.** I submitted this exact build to Microsoft for analysis. Their verdict: *"our scanners show no positive detection, and we have no telemetry indicators for the file(s) submitted."* If Defender still flags it, update it once: **Windows Security → Virus & threat protection → Protection updates → Check for updates**.
+
+<details>
+<summary>📄 See the submission result</summary>
+
+<br>
+
+<img src="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/docs/assets/wdsi-v1.4.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.4.0: no positive detection, no telemetry indicators" width="840">
+
+<sub>Submitted 26 October 2026. Submission ID and submitter address redacted.</sub>
+
+</details>
 
 **VirusTotal:** [2 of 69 engines](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) flag it (SecureAge and Webroot, both heuristics); Microsoft and all the others show it clean.
 The Arc Raiders module: [3 of 69 engines](https://www.virustotal.com/gui/file/642b83449861f01743b6172f4a5f758c108fad1e198d73d7b18275657dc8af3d) (Bkav, Skyhigh and Cynet, all heuristics); Microsoft and all the others show it clean.
