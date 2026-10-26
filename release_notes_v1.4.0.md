@@ -45,10 +45,11 @@ At the first start — and once after this update — a short setup goes through
 - **Ctrl+F finds any setting.** A **size** slider (70–150 %, also Ctrl + / −) fits the window to your screen.
 - A sidebar instead of tabs, rarely used options under *Advanced*, colour pickers for the crosshair and the Map Scanner, dark title bars — and clean text with smooth edges, in the notifications too.
 - **Report a problem** (App & License) puts your version, system and log together and opens an issue for you to check and send.
+- **Pro pages open without Pro** — look at everything and set it up first; the tools run in your games once Pro is active, and a short welcome shows what is unlocked.
 
 ## 🖥 G-SYNC / FreeSync setup
 
-V-SYNC and low latency in the driver, an FPS limit just under your refresh rate — the way [Blur Busters](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/) recommends. Competitive games can be left out (NVIDIA), and *Undo* puts back exactly what was there. In the setup, or under *Games & FPS → Advanced*. An FPS limit you already set in your driver now shows up instead of "No limit".
+V-SYNC and low latency in the driver, an FPS limit just under your refresh rate — the way [Blur Busters](https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/) recommends. Competitive games can be left out (NVIDIA), and *Undo* puts back exactly what was there. In the setup (any FPS limit, not only the presets), or under *Games & FPS → Advanced*. An FPS limit you already set in your driver now shows up instead of "No limit".
 
 ## ⬇️ Updates in one click
 
