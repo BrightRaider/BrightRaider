@@ -94,10 +94,10 @@ Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not 
 
 **Download `BrightRaider.exe` and double-click it.** Coming from V1.2.3: download it once more by hand — from V1.4 on, updates come in one click. Unsigned single EXE — if SmartScreen flags it, choose **More info → Run anyway** (known false positive).
 
-<!-- TODO 1.4 release: SHA-256 of the signed BrightRaider.exe and arc_raiders.dll -->
+SHA-256 (check on Windows: `Get-FileHash BrightRaider.exe`)
 ```
-BrightRaider.exe   TODO-SHA256
-arc_raiders.dll    TODO-SHA256
+BrightRaider.exe   DC889B63EEE1F5DF4594DB04664C8AF177D4DEE52B1C86514878C1F794E8AE48
+arc_raiders.dll    5E8D92CDE17A8C07D4AAE1ABC46F2E44340CAA9FF02803E4010DEDBEE0757F84
 ```
 
 <!-- TODO 1.4 release: Microsoft submission result (docs/assets/wdsi-v1.4.0.png) and VirusTotal link for this build -->
