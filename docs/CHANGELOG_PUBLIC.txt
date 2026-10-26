@@ -13,7 +13,7 @@
   Arc Raiders)
   - From the double-click until your keys work: 0.76 s -> 0.20 s.
   - Memory while it waits in the tray: 72 MB -> 24 MB.
-  - On disk: 71 MB -> 14 MB (the app 5.9 MB, the Arc Raiders module 8.2 MB).
+  - On disk: 71 MB -> 14 MB (the app 5.9 MB, the Arc Raiders module 8.6 MB).
   - The files V1.2.3 and V1.3 unpacked on their first start are cleared away
     by themselves.
 

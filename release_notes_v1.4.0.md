@@ -15,7 +15,7 @@ Measured V1.2.3 against V1.4 on the same PC, same settings, both with Arc Raider
 |---|---|---|
 | From the double-click until your keys work | 0.76 s | **0.20 s** |
 | Memory while it waits in the tray | 72 MB | **24 MB** |
-| On disk | 71 MB (25 MB + 46 MB it unpacks) | **14 MB** (the app 5.9 MB + Arc Raiders 8.2 MB) |
+| On disk | 71 MB (25 MB + 46 MB it unpacks) | **14 MB** (the app 5.9 MB + Arc Raiders 8.6 MB) |
 
 Whatever V1.2.3 unpacked on your PC is cleared away by itself.
 
