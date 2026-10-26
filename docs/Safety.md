@@ -77,7 +77,7 @@ The display, colour, FPS and overlay features use the same Windows display APIs 
 
 ### Antivirus
 
-<!-- TODO 1.4: Microsoft's verdict for V1.4.0 (submission 76871112-d625-4d22-8634-f35cf9953fbf, 26 Oct 2026); until it is in, the V1.3.0 analysis below stays, named as such. -->
+<!-- TODO 1.4: Microsoft's verdict for V1.4.0 (submitted 26 Oct 2026); until it is in, the V1.3.0 analysis below stays, named as such. -->
 Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism as Logitech GHub, Razer Synapse, Discord Push-to-Talk). No data is logged or transmitted. **Verify it yourself:** [VirusTotal scan of the V1.4.0 build](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) — 2 of 69 engines flag it (SecureAge and Webroot, both heuristics); Microsoft and all others show it clean. The V1.4.0 build is with **Microsoft** for analysis (submitted 26 Oct 2026); the build before it, V1.3.0, came back with the verdict that it *"does not meet our criteria for malware or potentially unwanted applications"*. 100–200 downloads daily, zero reports — [see stats](https://github-release-stats.ghostbyte.dev/BrightRaider/BrightRaider).
 
 <details>

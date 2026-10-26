@@ -100,7 +100,7 @@ BrightRaider.exe   DC889B63EEE1F5DF4594DB04664C8AF177D4DEE52B1C86514878C1F794E8A
 arc_raiders.dll    5E8D92CDE17A8C07D4AAE1ABC46F2E44340CAA9FF02803E4010DEDBEE0757F84
 ```
 
-<!-- TODO 1.4: Microsoft's verdict (submission 76871112-d625-4d22-8634-f35cf9953fbf, 26 Oct 2026) - when it is in, put it here as in 1.3 with docs/assets/wdsi-v1.4.0.png -->
+<!-- TODO 1.4: Microsoft's verdict (submitted 26 Oct 2026) - when it is in, put it here as in 1.3 with docs/assets/wdsi-v1.4.0.png -->
 **🛡️ Sent to Microsoft.** I submitted this exact build to Microsoft for analysis on 26 October 2026; their verdict goes here as soon as it is in. If Defender flags it meanwhile, update it once: **Windows Security → Virus & threat protection → Protection updates → Check for updates**.
 
 **VirusTotal:** [2 of 69 engines](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) flag it (SecureAge and Webroot, both heuristics); Microsoft and all the others show it clean.
