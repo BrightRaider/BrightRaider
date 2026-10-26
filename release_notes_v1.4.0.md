@@ -88,7 +88,7 @@ A key bound twice no longer goes unnoticed: BrightRaider checks its own keys and
 Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not where you left it, tell me in the [Discussions](https://github.com/BrightRaider/BrightRaider/discussions). Thank you to everyone who tested and reported.
 
 <!-- STABLE ONLY - not in the pre-release (ADR 0030). At the stable release, put this line here, uncommented:
-🥚 **One more thing:** V1.4 hides a secret in the settings. The first one to find it gets Pro.
+🥚 **One more thing:** V1.4 hides a secret in the settings. The first three to find it get Pro.
 -->
 
 ---
