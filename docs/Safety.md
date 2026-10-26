@@ -86,7 +86,7 @@ Some AV tools flag BrightRaider due to its global keyboard hook (same mechanism 
 
 <img src="assets/wdsi-v1.4.0.png" alt="Microsoft Security Intelligence submission result for BrightRaider V1.4.0: no positive detection, no telemetry indicators" width="840">
 
-<sub>Submitted 26 October 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Analyst verdict: no positive detection and no telemetry indicators. Submission ID and submitter address redacted. Every release before it (V1.0 to V1.1.1) was submitted the same way and came back clean.</sub>
+<sub>Submitted 26 October 2026 through the <a href="https://www.microsoft.com/en-us/wdsi/filesubmission">Microsoft Security Intelligence file submission portal</a>. Analyst verdict: no positive detection and no telemetry indicators. Submission ID and submitter address redacted. Every release before it (V1.0 to V1.3.0) was submitted the same way and came back clean.</sub>
 
 </details>
 
