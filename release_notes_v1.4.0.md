@@ -55,6 +55,8 @@ V-SYNC and low latency in the driver, an FPS limit just under your refresh rate 
 
 A new version is out? The tray offers **Install update** — one click, and BrightRaider downloads it, checks its signature and restarts. Your settings stay, and nothing installs without your click. Want test versions early? *App & License → Advanced → Also offer test versions*.
 
+**And this is only the start:** from V1.4 on, a new version comes about every two weeks — each one adds more, and getting it takes one click.
+
 ## 🎮 In your games
 
 - **Windows key blocked in games** — no Start menu mid-fight, no Sticky Keys pop-up from pressing Shift five times. On the desktop everything works as usual.
