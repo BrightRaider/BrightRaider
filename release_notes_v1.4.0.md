@@ -100,7 +100,9 @@ BrightRaider.exe   DC889B63EEE1F5DF4594DB04664C8AF177D4DEE52B1C86514878C1F794E8A
 arc_raiders.dll    5E8D92CDE17A8C07D4AAE1ABC46F2E44340CAA9FF02803E4010DEDBEE0757F84
 ```
 
-<!-- TODO 1.4 release: Microsoft submission result (docs/assets/wdsi-v1.4.0.png) and VirusTotal link for this build -->
-**🛡️ Checked.** TODO: Microsoft analysis and VirusTotal result for this build.
+<!-- TODO 1.4 release: Microsoft submission result (docs/assets/wdsi-v1.4.0.png) -->
+**🛡️ Checked.** TODO: Microsoft analysis for this build.
+
+**VirusTotal:** [2 of 69 engines](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) flag it (SecureAge and Webroot, both heuristics); Microsoft and all the others show it clean.
 
 Windows 10 / 11 (64-bit) · nothing to install · 📘 [Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md) · [Changelog](https://github.com/BrightRaider/BrightRaider/blob/main/docs/CHANGELOG_PUBLIC.txt)
