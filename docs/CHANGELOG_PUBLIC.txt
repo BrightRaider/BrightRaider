@@ -111,6 +111,9 @@
     level again (it could stay at about 75 %).
   - Turning the game down by holding the mute key now says what it does: it
     stays down until you hold again. The slider is called "Turned down to".
+  - The mute icon also shows when the game was muted elsewhere - in the
+    Windows mixer, or because Windows kept the mute from last time - so you
+    see why it is quiet. One press of the mute key brings the sound back.
   - Copying the system info or a problem report waits a moment if another
     program is using the clipboard, instead of failing.
 

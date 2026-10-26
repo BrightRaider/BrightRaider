@@ -354,7 +354,7 @@ next start.
 
 ### Mute Indicator (Pro)
 
-While the game is muted with the mute key, a small speaker-with-a-cross icon
+While the game is muted, a small speaker-with-a-cross icon
 shows in the top-left corner of the game's screen, so you can see at a glance
 why it is quiet. While *Mute teammates* has your voice chat silenced, a headset
 struck through appears next to it, and a microphone struck through while your
@@ -364,8 +364,10 @@ BrightRaider's idea of "a game is in front"; in a normal window it stays hidden.
 In *exclusive* fullscreen Windows does not draw other windows over the game, so
 the icon cannot show there — switch the game to borderless. On by default;
 switch it off under *Audio → Mute icons on screen*.
-The key reads the game's real mute state each time, so a game muted by
-something else (the Windows mixer, Background Mute) is unmuted by one press.
+The icon follows the game's real state: it also shows when the game was muted
+elsewhere, for example in the Windows mixer, or because Windows kept the mute
+from last time. BrightRaider never lifts such a mute by itself; the key reads
+the real state each time, so one press brings the sound back.
 
 ### Audio Output Switcher (Pro)
 
@@ -933,7 +935,7 @@ Mikrofon wieder an, nach einem Absturz spätestens beim nächsten Start.
 
 ### Stumm-Symbol (Pro)
 
-Solange das Spiel mit der Stumm-Taste stumm ist, zeigt ein kleines
+Solange das Spiel stumm ist, zeigt ein kleines
 durchgestrichenes Lautsprecher-Symbol oben links auf dem Spielbildschirm, warum es
 still ist. Solange *Mute teammates* deinen Voice-Chat stumm hat, erscheint
 daneben ein durchgestrichenes Headset, und ein durchgestrichenes Mikrofon,
@@ -942,9 +944,11 @@ Das Symbol nimmt nie Klicks oder den Fokus und verschwindet, wenn du das Spiel
 verlässt. Es erscheint, wenn das Spiel randlos (Vollbild im Fenster) läuft; im
 *exklusiven* Vollbild zeichnet Windows keine anderen Fenster über das Spiel —
 dafür das Spiel auf randlos stellen. Standardmäßig an; abschalten unter
-*Audio → Mute icons on screen*. Die Taste liest jedes Mal den echten
-Stumm-Zustand des Spiels, ein von anderer Stelle stumm geschaltetes Spiel wird
-also mit einem Druck wieder laut.
+*Audio → Mute icons on screen*. Das Symbol folgt dem echten Zustand: Es
+erscheint auch, wenn das Spiel anderswo stumm geschaltet wurde, etwa im
+Windows-Mixer oder weil Windows die Stummschaltung vom letzten Mal behalten hat.
+BrightRaider hebt so eine Stummschaltung nie von selbst auf; die Taste liest
+jedes Mal den echten Zustand, ein Druck macht das Spiel wieder laut.
 
 ### Audio-Ausgabe-Umschalter (Pro)
 

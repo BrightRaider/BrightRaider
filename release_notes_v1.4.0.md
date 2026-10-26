@@ -81,6 +81,7 @@ A key bound twice no longer goes unnoticed: BrightRaider checks its own keys and
 - Audio devices you picked are found again after a driver update or on another USB port.
 - The Footstep Booster brings the game back to its full level after a loud moment (it could stay at about 75 %).
 - Turning the game down by holding the mute key now says what it does: it stays down until you hold again — the slider is called *Turned down to*.
+- The mute icon also shows when the game was muted elsewhere — in the Windows mixer, or because Windows kept the mute from last time. One press of the mute key brings the sound back.
 - Copying system info waits a moment if another program holds the clipboard.
 
 Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not where you left it, tell me in the [Discussions](https://github.com/BrightRaider/BrightRaider/discussions). Thank you to everyone who tested and reported.
