@@ -116,6 +116,19 @@ arc_raiders.dll    642B83449861F01743B6172F4A5F758C108FAD1E198D73D7B18275657DC8A
 
 </details>
 
+**🛡️ The Arc Raiders module too.** I submitted it to Microsoft as well — same verdict: *"no positive detection, and no telemetry indicators."*
+
+<details>
+<summary>📄 See the module's result</summary>
+
+<br>
+
+<img src="https://raw.githubusercontent.com/BrightRaider/BrightRaider/main/docs/assets/wdsi-v1.4.0-arc-raiders.png" alt="Microsoft Security Intelligence submission result for the Arc Raiders module of BrightRaider V1.4.0: no positive detection, no telemetry indicators" width="840">
+
+<sub>Submitted 27 October 2026. Submission ID and submitter address redacted.</sub>
+
+</details>
+
 **VirusTotal:** [2 of 69 engines](https://www.virustotal.com/gui/file/dc889b63eee1f5df4594db04664c8af177d4dee52b1c86514878c1f794e8ae48) flag it (SecureAge and Webroot, both heuristics); Microsoft and all the others show it clean.
 The Arc Raiders module: [3 of 69 engines](https://www.virustotal.com/gui/file/642b83449861f01743b6172f4a5f758c108fad1e198d73d7b18275657dc8af3d) (Bkav, Skyhigh and Cynet, all heuristics); Microsoft and all the others show it clean.
 
