@@ -13,6 +13,8 @@ One EXE, zero dependencies (Native AOT — no .NET runtime install required). Wo
 
 ## 🆕 What's new
 
+**Test version V1.4.0:** back to light — ready in 0.2 s, updates in one click, modules that download by themselves. [Try it](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) — stable soon.
+
 **V1.2.3:** the new **Autoscrapper**, Map Scanner for **Pendola Pass** and the **ARC Frigate**, **dim other displays**, **mute teammates**, a much faster Alt-Tab, **QuickSave in raids** — [release notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
 ## Before / After
@@ -369,6 +371,8 @@ BrightRaider ist ein schlankes Windows-Tray-Tool, mit dem du Helligkeit, Kontras
 Eine EXE, keine Abhängigkeiten (Native AOT — keine .NET-Runtime-Installation nötig). Funktioniert mit jeder Tastatur — Numpad, TKL oder komplett selbst belegt.
 
 ## 🆕 Neu
+
+**Testversion V1.4.0:** wieder leicht — in 0,2 s bereit, Updates mit einem Klick, Module, die sich selbst laden. [Ausprobieren](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0) — der Stable folgt bald.
 
 **V1.2.3:** der neue **Autoscrapper**, Map Scanner für **Pendola Pass** und die **ARC-Fregatte**, **andere Bildschirme abdunkeln**, **Mitspieler stummschalten**, deutlich schnelleres Alt-Tab, **QuickSave im Raid** — [Release Notes](https://github.com/BrightRaider/BrightRaider/releases/tag/v1.2.3) · [Changelog](docs/CHANGELOG_PUBLIC.txt)
 
