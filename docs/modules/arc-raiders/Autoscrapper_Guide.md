@@ -1,0 +1,173 @@
+# BrightRaider — Autoscrapper Guide
+
+The **Autoscrapper** reads your ARC Raiders stash from the screen, works out what every tile is, and scraps or sells what you told it to — after you have seen the list and said yes.
+
+**Nothing happens until you confirm.** Every run ends in a review screen — unless you switch it off once your rules are settled — and an item that is not on your list is never touched, including anything BrightRaider misreads.
+
+---
+
+## Requirements
+
+- **BrightRaider Pro license**
+- BrightRaider V1.2 or later (running without the review: V1.2.1)
+- ARC Raiders running, with the **stash open** when you press the trigger key
+- The game on your **main display** (with several screens, the Autoscrapper reads the main one)
+
+---
+
+## Quick start
+
+1. Right-click the BrightRaider tray icon → **Settings…** → **Modules → Arc Raiders → Autoscrapper**.
+2. Switch it on (top right). While it is off, the key does nothing. **Guide** next to it shows this page in short.
+3. Leave **A run may:** on **Test run — nothing is destroyed** for now.
+4. Add a rule, for example *Metal Parts — keep 200 — scrap*. (More on rules below.)
+5. Click **OK**, switch to the game and open your stash.
+6. Press **F5** (it only acts while the game is in front). Keep your hands off the mouse — BrightRaider scrolls through the whole stash (about 10 seconds for 300 slots).
+7. The review screen opens. Check it, then press **Enter** to run or **Esc** to cancel.
+
+When the test run behaves, switch **A run may:** to **Live — really scrap and sell**.
+
+---
+
+## Rules: what may go
+
+The table **Your rules** on the Autoscrapper page is the list of everything BrightRaider is allowed to touch.
+
+| Column | Meaning |
+|---|---|
+| **Item** | One item, or a whole category — type "All" to see them, e.g. *All Recyclable* |
+| **Keep this many** | How many stay. Everything above that number is what the action applies to |
+| **With the rest** | *leave alone*, *scrap* or *sell* |
+
+**"Keep 200 / scrap"** means 200 stay and everything above that is scrapped.
+
+- **Only whole stacks are touched.** The game cannot act on part of a stack, so when the number cannot be hit exactly, one stack too many stays — never one too few.
+- **A category row counts per item**, not across the category: *All Recyclable — keep 10* keeps ten of each.
+- **A row for a single item always wins** over the category it belongs to.
+- **Quest items are protected** and are never scrapped or sold, whatever the rules say.
+- **Items you marked with the eye in the game** (the ones you are searching for) are never scrapped — every stack of that item stays.
+- **While the list is empty, a scan does nothing.**
+
+---
+
+## The review screen
+
+After the scan you get your stash as a list, **in the same order as in the game**, so you can follow it alongside the stash.
+
+| Column | Meaning |
+|---|---|
+| **Item** | What the scanner read |
+| **Count** | Items on that row, all stacks together |
+| **Value** | What *one* is worth, from the item data |
+| **Keep this many** | Edit it right here |
+| **With the rest** | Click to cycle: leave alone → scrap → sell |
+| **Worth of the rest** | What everything above your keep count is worth — on a scrap row, that is what you are giving up |
+
+- **Enter / Run it** carries out the list. **Esc / Cancel** changes nothing.
+- **Keep everything** sets every row to *leave alone* in one click.
+- **What you set here is saved as rules.** The second run needs no editing at all.
+- To **stop a run** once it has started, hold **Esc**.
+
+### Running without the review
+
+Once your rules are settled, switch on **Run without the review** on the Autoscrapper page. F5 then scans and runs your saved rules straight away.
+
+- Items without a rule and unnamed tiles are still never touched.
+- If the scan did not see the whole stash, the review comes up anyway.
+- If every rule is already met, you get *nothing to do* and the stash is left alone.
+- It respects **A run may:** — on *Test run* nothing is destroyed either way.
+
+---
+
+## Test run and Live
+
+| Mode | What it does |
+|---|---|
+| **Test run** *(default)* | Goes all the way — selects the tiles, presses the scrap/sell key and lets the game's confirmation box appear — then presses **Escape instead of confirming**. Nothing is destroyed. |
+| **Live** | Does what the review said. **Scrapping cannot be undone.** |
+
+The test run is the only way to see that BrightRaider finds the game's confirm button before a live run depends on it. **Run it once after changing your resolution.**
+
+---
+
+## When it cannot name something
+
+**If it is not sure, it says nothing.** A tile it cannot name with confidence gets no name — and a tile with no name is never scrapped or sold.
+
+You can teach it:
+
+1. In the review screen, click **Name this…** on a row — or on the Autoscrapper page, click **Name unrecognised items…**.
+2. The **Teach the scanner** window shows the tile exactly as it came off your screen. Type part of the name and click it. *Not an item — discard* and *Skip for now* are there too.
+3. Names take effect **from the next scan on**. They are compared against your own screen, which is why this is the best way to make it better for you.
+
+Your names are kept in `items_named.txt`. **No update ever overwrites that file.**
+
+### Items that look identical
+
+Some items share their picture. The two Looting Mk. 3 blueprints are pixel-for-pixel identical, and a Modification blueprint shows neither a tier numeral nor a rarity crescent. No picture can tell those apart, so BrightRaider does not guess.
+
+Instead the row shows **both** names and asks: do your rules say the same thing about both? If they do, the name does not matter and it acts. If they differ, the row is left alone and tells you why.
+
+### After the Frozen Trail update (V1.2.2)
+
+The update added a long list of new items that BrightRaider has not seen yet, so part of them shows up as unnamed for now.
+
+- **The everyday items it already knew — everything that is not a weapon — are recognised as reliably as before.** Those are usually the ones you want handled automatically.
+- **An unnamed tile is never touched**, whatever your rules say. Name it once with **Name unrecognised items…** and it is recognised from the next scan on. The built-in item data grows with updates as well, step by step.
+- **Weapons are the hard part.** The weapon picture gets smaller with every attachment and everybody runs different ones, so a weapon has no single picture to learn. BrightRaider needs a different approach for them — recognising the weapon itself, whatever is attached — and until then an unnamed weapon stays untouched. Weapons are rarely part of anyone's rules.
+- **Faster and more exact since V1.2.2:** the scan is about twice as fast, it stops at your last item and when nothing more fits, and it picks the stacks that hit your "keep" number whenever a combination exists ("keep 40" over stacks of 10, 10, 10, 10, 10, 10, 7 and 5 leaves exactly 40).
+
+### The 2.0 update (V1.4)
+
+BrightRaider knows the items the 2.0 update added — their names, values and types, so your rules can list them.
+
+- **About 60 of them are recognised from their picture right away**, furniture designs among them. In a real stash after the update, nearly 9 of 10 tiles are named right away.
+- **The others stay unnamed and untouched** until you name them once with **Name unrecognised items…**: weapon variants that differ only in their attachments, the tiers of one weapon, keys of one area and colour variants share one picture, and no picture can tell them apart.
+
+---
+
+## Resolutions
+
+Every resolution works, including 16:10, 4:3 and 21:9 ultrawide.
+
+| Checked in game | |
+|---|---|
+| 1920×1080, 2560×1440, 3840×2160, 5120×2880 | ✓ |
+| 1920×1200 (16:10), 1920×1440 (4:3) | ✓ |
+| 21:9 ultrawide | supported, not yet checked on a real ultrawide |
+
+On every resolution checked, every slot was found, nothing was named wrong and no stack count was off. Well over 90 % of tiles are named on a fresh install; the rest stay unnamed until you name them.
+
+After changing resolution, the first scan takes a few seconds longer while the reference pictures are prepared for the new size.
+
+---
+
+## Setup — keys
+
+The **trigger key** sits at the top of the Autoscrapper page (also on the Arc Raiders page and under *All keys*). The two game keys are under **Advanced: the game's own keys** at the bottom.
+
+| Setting | Default | Meaning |
+|---|---|---|
+| **Trigger key** | F5 | Press it with the stash open. With the stash closed, nothing happens. |
+| **Scrap (in game)** | R | Sent to the game after a selection is right-clicked |
+| **Sell (in game)** | S | Same, for selling |
+
+Only change the last two if you rebound them in ARC Raiders.
+
+---
+
+## Anti-cheat
+
+The Autoscrapper clicks, moves the cursor and scrolls in the game for you, at machine-regular intervals — the input is marked by Windows as simulated. Behavioural anti-cheat (such as Anybrain in ARC Raiders) is built to look for automated input, so this is the most exposed feature in BrightRaider. It is off by default; use it at your own risk. More in the module's [anti-cheat notes](README.md#anti-cheat).
+
+---
+
+## Troubleshooting
+
+| Problem | What to do |
+|---|---|
+| F5 does nothing | Is the Autoscrapper ticked, and is the stash open? Is your rule list empty? |
+| A scan stops early or misses rows | Don't touch the mouse while it scrolls, and keep the game in front |
+| Clicks land in the wrong window | The game has to be in front — if it does not come back by itself after the review, click into it |
+| Many tiles unnamed | Name them once with **Name unrecognised items…** — it learns from your own screen |
+| Something went wrong | The log is at `%APPDATA%\BrightRaider\debug.log` — please attach it to a GitHub issue |
