@@ -89,6 +89,10 @@ A key bound twice no longer goes unnoticed: BrightRaider checks its own keys and
 
 Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not where you left it, tell me in the [Discussions](https://github.com/BrightRaider/BrightRaider/discussions). Thank you to everyone who tested and reported.
 
+<!-- STABLE ONLY (ADR 0025, Nachtrag 28.10.). At the stable release, put this line here, uncommented:
+💶 **Pricing:** Until 1.5, Pro costs €5.49 and includes the Arc Raiders module for good. From 1.5 there will be Pro (€5.99) and Pro + All Modules (€7.99, every future module included); prices only go up with big steps, like Helldivers 2 in 1.6.
+-->
+
 <!-- STABLE ONLY - not in the pre-release (ADR 0030). At the stable release, put this line here, uncommented:
 🥚 **One more thing:** V1.4 hides a secret in the settings. The first three to find it get Pro.
 -->
