@@ -52,7 +52,7 @@
     settings window keep the game's colours.
 
   Map Scanner
-  - Name the exits yourself (#80): Map Scanner -> Advanced -> "your own names
+  - Name the exits yourself (#80, thanks @inf3rrno): Map Scanner -> Advanced -> "your own names
     for the exits". The overlay and the evac alarm use your names; leave a
     field empty for the game's name.
   - No more made-up overlay when the map is not actually open (the XP screen,
@@ -161,7 +161,8 @@
 
   Also
   - Notifications on the screen you choose (App & License -> Notifications).
-  - Strong profiles before the Windows restart (#86): Windows refuses strong
+  - Strong profiles before the Windows restart (#86, thanks
+    @defeusers): Windows refuses strong
     colour curves until it has been restarted once after the extended range
     was unlocked. BrightRaider now applies the strongest part it accepts and
     tells you once.
@@ -173,9 +174,9 @@
 
   Fixed (what you reported after V1.2.2)
   - First start: the setup and the "ready" notice say that Windows needs one
-    restart for the full brightness range (#86). Until then strong profiles
+    restart for the full brightness range (#86, thanks @defeusers). Until then strong profiles
     can be refused.
-  - QuickSave in a raid on 4:3 and 16:10 (#85) aims at the centred raid
+  - QuickSave in a raid on 4:3 and 16:10 (#85, thanks @Tia-Nastacia) aims at the centred raid
     inventory again, as in V1.0. No cursor jump, no waiting before the drag.
   - Game mute works again after you restart the game. The mute icon no longer
     takes the focus off the game; in exclusive fullscreen Windows shows no
@@ -244,11 +245,13 @@
     Switch them off in Settings -> Audio. They never take clicks or focus.
 
   Fixed
-  - QuickSave on 4:3 and 16:10 screens (#83, #85): the inventory is not in the
+  - QuickSave on 4:3 and 16:10 screens (#83, thanks @NeighborhoodNerd;
+    #85, thanks @Tia-Nastacia): the inventory is not in the
     same place in the hideout and in a raid, and on such a screen it sits at
     the top or in the centre. QuickSave now looks at the open inventory and
     aims where it really is, instead of assuming one place.
-  - Notifications (toasts) always appeared on the primary monitor (#85). They
+  - Notifications (toasts) always appeared on the primary monitor (#85, thanks
+    @Tia-Nastacia). They
     now follow the monitor you picked in Settings, or the one the game runs on.
   - Numbers in fields with up/down buttons were cut off when the field was
     narrow ("72" showed as "7"); they keep room for the digits now, in every
@@ -316,7 +319,8 @@
     the stash is simply less than three-quarters full.
 
   QuickSave
-  - Fixed on 4:3, 16:10 and stretched resolutions (#83): the inventory is
+  - Fixed on 4:3, 16:10 and stretched resolutions (#83, thanks
+    @NeighborhoodNerd): the inventory is
     anchored at the top, not centred, so every target sat too low.
   - W1/W2 grabbed the first attachment (the barrel) on weapons with four
     attachments. All drops now land on the slot centre.

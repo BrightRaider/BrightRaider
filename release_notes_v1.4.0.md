@@ -32,7 +32,7 @@ Whatever V1.2.3 unpacked on your PC is cleared away by itself.
 | ⌨ **No more double-bound keys** — found, shown, fixed in one click | ⚡ Free |
 | 🎮 **Modules** — Arc Raiders downloads, loads and updates by itself | 🔓 Pro |
 | 🎯 **Crosshair per game** — G-SYNC stays on where you don't need it | 🔓 Pro |
-| 🗺 **Name your own exits** in the Map Scanner (#80) | 🔓 Pro |
+| 🗺 **Name your own exits** in the Map Scanner (#80, thanks @inf3rrno) | 🔓 Pro |
 
 ## 🧭 A setup that walks you through
 
@@ -70,7 +70,7 @@ A new version is out? The tray offers **Install update** — one click, and Brig
 
 The tools for one game now come as a **module**. Switch Arc Raiders on in the setup or under *Modules → Arc Raiders*: it downloads by itself (8 MB) and is there at once — no restart. Switch it off, and it isn't loaded at all. When Arc needs a fix, the tray offers **Install Arc Raiders …** and only the module is downloaded. It only loads with BrightRaider's signature, and your Pro key unlocks it as before. Keys, guides, manual: **[Arc Raiders module](https://github.com/BrightRaider/BrightRaider/blob/main/docs/modules/arc-raiders/README.md)**.
 
-- **🗺 Map Scanner** — call the exits what you call them (thanks @inf3rrno, #80); the overlay and the evac alarm use your names. No made-up overlay when the map isn't actually open — checked against nearly 300 real screenshots, no map lost.
+- **🗺 Map Scanner** — call the exits what you call them (#80, thanks @inf3rrno); the overlay and the evac alarm use your names. No made-up overlay when the map isn't actually open — checked against nearly 300 real screenshots, no map lost.
 - **♻️ Autoscrapper** — knows the items of the 2.0 update (about 60 recognised right away, the rest you name once), names nearly 9 of 10 tiles of a real stash right away — furniture designs and items with a symbol in their corner among them, and never touches what you marked with the eye.
 - **💾 QuickSave** — a press while a move is still running no longer turns the direction around.
 
@@ -80,7 +80,7 @@ A key bound twice no longer goes unnoticed: BrightRaider checks its own keys and
 
 ## 🔧 Fixed
 
-- Strong profiles before the Windows restart (#86): BrightRaider applies the strongest part Windows accepts and tells you once.
+- Strong profiles before the Windows restart (#86, thanks @defeusers): BrightRaider applies the strongest part Windows accepts and tells you once.
 - Audio devices you picked are found again after a driver update or on another USB port.
 - The Footstep Booster brings the game back to its full level after a loud moment (it could stay at about 75 %).
 - Turning the game down by holding the mute key now says what it does: it stays down until you hold again — the slider is called *Turned down to*.

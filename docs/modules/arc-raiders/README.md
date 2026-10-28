@@ -246,7 +246,7 @@ Everything before: the [app's changelog](../../CHANGELOG_PUBLIC.txt).
 **1.4.0** — with BrightRaider 1.4, the first version as a module
 - Downloads by itself when you switch it on, updates on its own, loads only
   with BrightRaider's signature.
-- Map Scanner: name the exits yourself (#80); no made-up overlay when the map
+- Map Scanner: name the exits yourself (#80, thanks @inf3rrno); no made-up overlay when the map
   is not actually open.
 - Autoscrapper: knows the items of the 2.0 update - about 60 are recognised
   right away, the rest you name once with *Name unrecognised items…*; nearly 9
@@ -503,7 +503,7 @@ davor: der [Changelog der App](../../CHANGELOG_PUBLIC.txt) (englisch).
 **1.4.0** — mit BrightRaider 1.4, die erste Version als Modul
 - Lädt sich selbst, sobald du es einschaltest, aktualisiert sich selbst, wird
   nur mit BrightRaiders Signatur geladen.
-- Map Scanner: Ausgänge selbst benennen (#80); kein erfundenes Overlay, wenn die
+- Map Scanner: Ausgänge selbst benennen (#80, danke @inf3rrno); kein erfundenes Overlay, wenn die
   Karte gar nicht offen ist.
 - Autoscrapper: kennt die Items aus dem Update 2.0 - rund 60 erkennt er sofort,
   die übrigen benennst du einmal über *Name unrecognised items…*; in einem echten
