@@ -10,7 +10,7 @@ body:
 
         *Please search existing issues first, and skim the [known issues](https://github.com/BrightRaider/BrightRaider/issues/74) — a good share of reports are already covered.*
 
-        **Quickest way:** *Settings → App & License → Report a problem…* opens this form with your version and system filled in and the end of your log in the clipboard.
+        **Quickest way:** *Settings → App & License → Report a problem…* puts the end of your log in the clipboard — and from V1.5 opens this form with your system already filled in.
   - type: textarea
     id: system
     attributes:
