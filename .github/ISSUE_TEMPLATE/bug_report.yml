@@ -1,0 +1,69 @@
+name: Bug Report
+description: Something isn't working as expected
+title: "[BUG] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > This is a solo hobby project maintained in my free time. I read every report, but response times vary. No SLA, no support contract — just one person trying to make the tool better.
+
+        *Please search existing issues first, and skim the [known issues](https://github.com/BrightRaider/BrightRaider/issues/74) — a good share of reports are already covered.*
+
+        **Quickest way:** *Settings → App & License → Report a problem…* opens this form with your version and system filled in and the end of your log in the clipboard.
+  - type: textarea
+    id: system
+    attributes:
+      label: System info — don't type it, copy it
+      description: In BrightRaider open **Settings**, then **right-click the version number** at the bottom → *Copy system info for bug reports*. Can't start the app? Then just write your BrightRaider version, Windows version, GPU and screen resolution.
+      render: shell
+      placeholder: |
+        BrightRaider 1.4.0
+        Windows: Windows 11 Pro 24H2 (build 26100)
+        GPU: NVIDIA GeForce RTX 4070 (driver 581.57)
+        Displays: 2
+        Licence: Pro
+        Plugins: Arc Raiders 1.4.0
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      placeholder: |
+        After Alt-Tab back into Arc Raiders my profile stays on "Normal" instead of "Bright".
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: The game's own profile ("Bright") comes back with the game.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start Arc Raiders (borderless), press Numpad 2
+        2. Alt-Tab to the desktop
+        3. Alt-Tab back into the game
+  - type: dropdown
+    id: often
+    attributes:
+      label: How often does it happen?
+      options:
+        - Always
+        - Often
+        - Rarely / once
+  - type: textarea
+    id: log
+    attributes:
+      label: Log file
+      description: For crashes, odd behaviour, or anything to do with the display or the Map Scanner, drag `%APPDATA%\BrightRaider\debug.log` in here. It often saves a round of back-and-forth.
+      placeholder: Drop debug.log here - a plain text file, a few hundred KB.
+  - type: textarea
+    id: more
+    attributes:
+      label: Any other context
+      description: Screenshots as **PNG**, not JPEG — compression alters exactly the pixels I need to check when something isn't being recognised.
+      placeholder: e.g. a screenshot of the moment it happens, a workaround you found.

@@ -1,0 +1,42 @@
+name: Feature Request
+description: Suggest an idea or improvement
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > This is a solo hobby project. Feature requests are read and considered, but there is no guarantee anything gets built. "Thanks, noted" is a complete answer.
+
+        *Please search existing issues first — a good share of requests are already filed.* If an idea makes it in, the release notes name you with it.
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like to see?
+      placeholder: Find my installed games, so I don't have to start each one before I can add it.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would this be useful?
+      placeholder: I have 30 games in Steam; adding them one by one while they run takes ages.
+  - type: textarea
+    id: how
+    attributes:
+      label: How should it work?
+      description: Behaviour, keys, where in the settings — if you have an idea.
+      placeholder: A button "Find my games" next to "+ Add game" that lists everything from Steam and Epic.
+  - type: dropdown
+    id: game
+    attributes:
+      label: For which game?
+      options:
+        - Every game
+        - Arc Raiders
+        - Another game (say which below)
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else?
+      placeholder: e.g. a screenshot of another tool that does it, a link.
