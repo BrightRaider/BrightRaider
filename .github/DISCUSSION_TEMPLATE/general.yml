@@ -10,6 +10,8 @@ body:
     attributes:
       label: What would you like to talk about?
       description: A question, an experience, a problem - if it is a problem, what you did, what you expected and what happened instead.
+      placeholder: |
+        e.g. "How do you set up Auto-Brightness for night maps?" or "My profiles for Arc Raiders, if anyone wants them".
     validations:
       required: true
   - type: textarea
@@ -18,6 +20,13 @@ body:
       label: System info — don't type it, copy it
       description: In BrightRaider open **Settings**, **right-click the version number** at the bottom → *Copy system info*. Paste it here — version, Windows, GPU and every screen, all correct.
       render: shell
+      placeholder: |
+        BrightRaider 1.4.0
+        Windows: Windows 11 Pro 24H2 (build 26100)
+        GPU: NVIDIA GeForce RTX 4070 (driver 581.57)
+        Displays: 2
+        Licence: Pro
+        Plugins: Arc Raiders 1.4.0
   - type: dropdown
     id: game
     attributes:
@@ -41,8 +50,10 @@ body:
     attributes:
       label: Log file
       description: Drag `%APPDATA%\BrightRaider\debug.log` in here (paste the path into Explorer's address bar). It usually answers the questions I would ask next.
+      placeholder: Drop debug.log here - a plain text file, a few hundred KB.
   - type: textarea
     id: more
     attributes:
       label: Anything else
       description: Screenshots as PNG, workarounds you found.
+      placeholder: e.g. a screenshot of the game with BrightRaider's settings beside it.
