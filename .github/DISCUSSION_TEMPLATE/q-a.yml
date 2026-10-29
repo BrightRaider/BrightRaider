@@ -1,0 +1,49 @@
+title: "[Help] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > A solo hobby project — I read every post, response times vary.
+
+        Most answers are already in the **[Manual](https://github.com/BrightRaider/BrightRaider/blob/main/docs/Manual.md)** and the **[known issues](https://github.com/BrightRaider/BrightRaider/issues/74)** — worth 30 seconds first.
+  - type: textarea
+    id: question
+    attributes:
+      label: What do you need help with?
+      description: What you did, what you expected, what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: system
+    attributes:
+      label: System info — don't type it, copy it
+      description: In BrightRaider open **Settings**, **right-click the version number** at the bottom → *Copy system info*. Paste it here — version, Windows, GPU and every screen, all correct.
+      render: shell
+  - type: dropdown
+    id: game
+    attributes:
+      label: Which game?
+      options:
+        - Arc Raiders
+        - Another game
+        - Not about a game
+  - type: dropdown
+    id: display
+    attributes:
+      label: The game's display mode
+      description: Overlays (crosshair, mute icons) only show in borderless.
+      options:
+        - Borderless / Windowed fullscreen
+        - Exclusive fullscreen
+        - Windowed
+        - Don't know
+  - type: textarea
+    id: log
+    attributes:
+      label: Log file
+      description: Drag `%APPDATA%\BrightRaider\debug.log` in here (paste the path into Explorer's address bar). It usually answers the questions I would ask next.
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Screenshots as PNG, workarounds you found.
