@@ -7,6 +7,8 @@ BrightRaider started as a tiny tool that did one thing, instantly. **V1.4 is tha
 
 ✅ **Everything carries over** — settings, profiles, keys and your license. No re-activation.
 
+⚠️ **Coming from an older version?** Exit it in the tray first (right-click the BrightRaider icon → **Exit**), then start the new `BrightRaider.exe` — that's the only file you need. While the old one runs, the new one closes again.
+
 ## ⚡ Back to light
 
 Measured V1.2.3 against V1.4 on the same PC, same settings, both with Arc Raiders:
@@ -95,7 +97,7 @@ Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not 
 
 ---
 
-**Download `BrightRaider.exe` and double-click it.** Coming from V1.2.3: download it once more by hand — from V1.4 on, updates come in one click. Unsigned single EXE — if SmartScreen flags it, choose **More info → Run anyway** (known false positive).
+**Download `BrightRaider.exe` and double-click it** — the other files are for the app itself. Coming from V1.2.3: exit the old one in the tray first (right-click → **Exit**) and download this one by hand — from V1.4 on, updates come in one click. Unsigned single EXE — if SmartScreen flags it, choose **More info → Run anyway** (known false positive).
 
 SHA-256 (check on Windows: `Get-FileHash BrightRaider.exe`)
 ```

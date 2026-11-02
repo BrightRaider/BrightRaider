@@ -166,7 +166,7 @@ On Free, profiles 1–3 switch as they are; for your own colours per game, use *
 3. Press a profile key — the brightness switches at once, even in fullscreen.
 4. **Pro:** buy a key at **[Lemon Squeezy (€5.49)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)**, then *Settings → App & License → Activate Pro license…* and paste it. No subscription; internet once for activation, offline after that.
 
-**Coming from an older version?** Download the new EXE — settings, profiles, keys and your Pro key carry over. Keys from V9.x still work; enter them once. Key not arrived, or activation limit reached? See the [known-issues post](https://github.com/BrightRaider/BrightRaider/issues/74).
+**Coming from an older version?** Exit it in the tray first (right-click → **Exit**), then start the new `BrightRaider.exe` — settings, profiles, keys and your Pro key carry over. Keys from V9.x still work; enter them once. Key not arrived, or activation limit reached? See the [known-issues post](https://github.com/BrightRaider/BrightRaider/issues/74).
 
 **First start:** Windows asks once for admin rights. BrightRaider sets one registry value that lets Windows apply the full brightness range — the same one display calibration tools use, harmless, removable any time:
 
@@ -359,7 +359,7 @@ Die Tasten des Arc-Moduls stehen [beim Modul](docs/modules/arc-raiders/README.md
 2. Der Assistent führt durch alles: Tastatur, Helligkeit, deine Spiele, FPS, Sound, Fadenkreuz, Meldungen, Module.
 3. **Pro:** Schlüssel bei **[Lemon Squeezy (5,49 €)](https://brightraider.lemonsqueezy.com/checkout/buy/9b93d8c0-262f-43a4-bd41-167557efb156)** kaufen, dann *Settings → App & License → Activate Pro license…*. Kein Abo; Internet einmal zur Aktivierung.
 
-Von einer älteren Version? Neue EXE laden — Einstellungen, Profile, Tasten und Pro-Schlüssel werden übernommen. Beim ersten Start fragt Windows einmal nach Adminrechten, für den vollen Helligkeitsbereich; ganz wirkt er nach einem Windows-Neustart. Virenscanner-Warnung? Ein bekannter Fehlalarm — geprüft von Microsoft und VirusTotal: **[Sicherheit](docs/Safety.md#deutsch)**.
+Von einer älteren Version? Erst die alte im Tray beenden (Rechtsklick → **Exit**), dann die neue `BrightRaider.exe` starten — Einstellungen, Profile, Tasten und Pro-Schlüssel werden übernommen. Beim ersten Start fragt Windows einmal nach Adminrechten, für den vollen Helligkeitsbereich; ganz wirkt er nach einem Windows-Neustart. Virenscanner-Warnung? Ein bekannter Fehlalarm — geprüft von Microsoft und VirusTotal: **[Sicherheit](docs/Safety.md#deutsch)**.
 
 <a name="anti-cheat-de"></a>
 
