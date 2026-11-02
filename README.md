@@ -27,7 +27,7 @@ Free covers what most players need. Pro adds the extras for €5.49, once — [w
 
 ## As seen on YouTube
 
-<a href="https://www.youtube.com/watch?v=r0BuBpUfnPU"><img src="https://img.youtube.com/vi/r0BuBpUfnPU/hqdefault.jpg" alt="JagsFPS — COD MW4 & DMZ Best PC Settings, with a BrightRaider tutorial" width="420"></a>
+<a href="https://www.youtube.com/watch?v=r0BuBpUfnPU"><img src="https://img.youtube.com/vi/r0BuBpUfnPU/hqdefault.jpg" alt="JagsFPS — COD MW4 & DMZ Best PC Settings, with a BrightRaider tutorial" width="560"></a>
 
 [JagsFPS](https://www.youtube.com/@JagsFPS) puts BrightRaider in his settings guides — with a tutorial and a side-by-side comparison in [COD MW4 & DMZ](https://www.youtube.com/watch?v=r0BuBpUfnPU), and in [Arc Raiders](https://www.youtube.com/watch?v=bUHTWiMde_A) ([earlier guide](https://www.youtube.com/watch?v=XX_tYYqnB7w)).
 
@@ -46,22 +46,13 @@ Screen recorders can't capture the brightness — BrightRaider changes the displ
 
 ## Screenshots
 
-<table>
-<tr>
-  <td valign="top" width="60%">
-    <strong>Games & FPS</strong><br>
-    Colours and FPS limit per game, switched by themselves on Alt-Tab; the G-SYNC / FreeSync setup under <em>Advanced</em>.
-    <br><br>
-    <img src="assets/screenshots/v1.4/settings-games-fps.png" alt="Games & FPS page" width="500">
-  </td>
-  <td valign="top" width="40%">
-    <strong>Map Scanner — in the game</strong><br>
-    Hold M on the map: every evac timer, colour-coded, plus the map condition and an evac alarm.
-    <br><br>
-    <img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner overlay in the game" width="320">
-  </td>
-</tr>
-</table>
+**Games & FPS.** Colours and FPS limit per game, switched by themselves on Alt-Tab; the G-SYNC / FreeSync setup under *Advanced*.
+
+<img src="assets/screenshots/v1.4/settings-games-fps.png" alt="Games & FPS page" width="100%">
+
+**Map Scanner — in the game.** Hold M on the map: every evac timer, colour-coded, plus the map condition and an evac alarm.
+
+<img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner overlay in the game" width="476">
 
 <details>
 <summary><b>📸 See the whole settings window</b> (7 more screenshots)</summary>
@@ -70,31 +61,31 @@ Screen recorders can't capture the brightness — BrightRaider changes the displ
 
 **Colour profiles.** 9 profiles, each with Gamma / Contrast / Vibrance / Shadow Boost, its key right next to it, and dimming for your other screens.
 
-<img src="assets/screenshots/v1.4/settings-colour-profiles.png" alt="Colour profiles page" width="780">
+<img src="assets/screenshots/v1.4/settings-colour-profiles.png" alt="Colour profiles page" width="100%">
 
 **A guide beside every page.** What happens, how to set it up, what to try when something is off — here for the Map Scanner.
 
-<img src="assets/screenshots/v1.4/settings-mapscanner-guide.png" alt="Map Scanner page with its guide" width="780">
+<img src="assets/screenshots/v1.4/settings-mapscanner-guide.png" alt="Map Scanner page with its guide" width="100%">
 
 **Audio (Pro).** Mute only the game, mute teammates, Footstep Booster, output switcher — every key on the page.
 
-<img src="assets/screenshots/v1.4/settings-audio.png" alt="Audio page" width="780">
+<img src="assets/screenshots/v1.4/settings-audio.png" alt="Audio page" width="100%">
 
 **Crosshair (Pro).** Click-through overlay, 6 styles, colour, outline, live preview — remembered per game.
 
-<img src="assets/screenshots/v1.4/settings-crosshair.png" alt="Crosshair page" width="780">
+<img src="assets/screenshots/v1.4/settings-crosshair.png" alt="Crosshair page" width="100%">
 
 **Arc Raiders module.** All four tools on one page with their keys and one switch — the module downloads and updates by itself.
 
-<img src="assets/screenshots/v1.4/settings-arc-raiders.png" alt="Arc Raiders module page" width="780">
+<img src="assets/screenshots/v1.4/settings-arc-raiders.png" alt="Arc Raiders module page" width="100%">
 
 **QuickSelect.** Your game keys once in *Setup*, then one row per item; *All columns* shows the rest.
 
-<img src="assets/screenshots/v1.4/settings-quickselect.png" alt="QuickSelect page" width="780">
+<img src="assets/screenshots/v1.4/settings-quickselect.png" alt="QuickSelect page" width="100%">
 
 **All keys.** Every key in one place, with conflicts — each one is also on its feature's page.
 
-<img src="assets/screenshots/v1.4/settings-all-keys.png" alt="All keys page" width="780">
+<img src="assets/screenshots/v1.4/settings-all-keys.png" alt="All keys page" width="100%">
 
 </details>
 
