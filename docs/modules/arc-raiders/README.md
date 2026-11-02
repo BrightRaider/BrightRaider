@@ -58,14 +58,14 @@ The module reads your screen on your PC and sends input to the game. Nothing in
 the game is modified, nothing is injected into it, nothing is read from its
 memory. What each tool sends:
 
-| Tool | What it does | Default | Risk (our estimate) |
+| Tool | What it does | Default | Risk (my estimate) |
 |---|---|---|---|
 | Map Scanner | Screenshot, plus cursor move and 6 mouse-wheel steps to zoom the map out | on with the module + Pro | low |
 | QuickSelect | Posted keys, cursor move, mouse clicks | off (Pro) | medium |
 | QuickSave | Cursor drag of an item | off (Pro) | medium |
 | **Autoscrapper** | Simulated mouse clicks (marked by Windows as injected), the cursor jumping to each tile, key presses and scrolling, at fixed intervals | off (Pro) | **highest** |
 
-"Risk" is our assessment of how input looks to behavioural anti-cheat (such as
+"Risk" is my assessment of how input looks to behavioural anti-cheat (such as
 Anybrain, used by ARC Raiders). No anti-cheat vendor has confirmed or ruled out
 any of these.
 
@@ -315,14 +315,14 @@ Das Modul liest deinen Bildschirm auf deinem PC und sendet Eingaben ans Spiel.
 Am Spiel wird nichts verändert, nichts hineininjiziert, nichts aus seinem
 Speicher gelesen. Was jedes Werkzeug sendet:
 
-| Werkzeug | Was es tut | Standard | Risiko (unsere Einschätzung) |
+| Werkzeug | Was es tut | Standard | Risiko (meine Einschätzung) |
 |---|---|---|---|
 | Map Scanner | Screenshot, dazu Cursor setzen und 6× Mausrad zum Rauszoomen | an mit Modul + Pro | niedrig |
 | QuickSelect | Gepostete Tasten, Cursor setzen, Mausklicks | aus (Pro) | mittel |
 | QuickSave | Item per Cursor ziehen | aus (Pro) | mittel |
 | **Autoscrapper** | Simulierte Mausklicks (von Windows als injiziert markiert), Cursor springt auf jede Kachel, Tastendrücke und Scrollen, in festen Abständen | aus (Pro) | **am höchsten** |
 
-„Risiko“ ist unsere Einschätzung, wie die Eingaben für verhaltensbasiertes
+„Risiko“ ist meine Einschätzung, wie die Eingaben für verhaltensbasiertes
 Anti-Cheat (z. B. Anybrain in ARC Raiders) aussehen. Kein Anti-Cheat-Hersteller
 hat eine dieser Funktionen bestätigt oder ausgeschlossen.
 

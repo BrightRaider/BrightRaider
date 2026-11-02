@@ -40,7 +40,7 @@ Anti-cheat systems do not flag display adjustments. **Some other features send i
 
 #### What each feature does, and the risk
 
-| Feature | What it does | Default | Risk (our estimate) |
+| Feature | What it does | Default | Risk (my estimate) |
 |---|---|---|---|
 | Gamma, contrast, shadows | Windows gamma ramp | on | none known |
 | Vibrance, hue, FPS limit | NVIDIA / AMD driver APIs | vibrance on | none known |
@@ -49,7 +49,7 @@ Anti-cheat systems do not flag display adjustments. **Some other features send i
 | Autorun (walk/sprint) | Posted key messages: holds W / Shift | Pro, toggled with CapsLock | low |
 | Autorun **tap mode** | Presses and releases W on a fixed interval (e.g. 160 ms every 1.3 s) — a periodic macro | Pro, long-press CapsLock | medium |
 
-"Risk" is our assessment of how input looks to behavioural anti-cheat (such as Anybrain, used by Arc Raiders). No anti-cheat vendor has confirmed or ruled out any of these.
+"Risk" is my assessment of how input looks to behavioural anti-cheat (such as Anybrain, used by Arc Raiders). No anti-cheat vendor has confirmed or ruled out any of these.
 
 #### Input Automation
 
@@ -65,7 +65,7 @@ All input features are **optional**. If you want zero exposure, leave them off a
 
 BrightRaider's crosshair is a transparent, click-through Windows window drawn on top of the game — the same mechanism used by Discord, GeForce Experience and TeamSpeak overlays. It is not injected into the game, does not read game memory and is not rendered by the game engine.
 
-**In Arc Raiders, EAC does not block it (our own test):** overlay crosshairs that EAC does block stop Arc Raiders from launching at all, and BrightRaider's does not. That is an observation, not a statement from EAC.
+**In Arc Raiders, EAC does not block it (my own test):** overlay crosshairs that EAC does block stop Arc Raiders from launching at all, and BrightRaider's does not. That is an observation, not a statement from EAC.
 
 **It does not carry over to other games or anti-cheats.** VAC is a separate system with its own tolerances, and players report bans connected to third-party crosshair overlays; leagues such as FACEIT and ESEA have their own rules. **In Counter-Strike, leave the crosshair off**, and check the rules of any game you play competitively.
 
@@ -114,7 +114,7 @@ BrightRaider verändert **KEINE** Spieldateien und keinen Spielspeicher, injizie
 
 **Die Anzeige- und Farbfunktionen** nutzen nur Standard-Windows-APIs (GDI, NvAPI, ADL/ADLX) — wie das NVIDIA Control Panel oder AMD Radeon Software. **Einige andere Funktionen senden Eingaben ans Spiel**, das ist eine andere Kategorie:
 
-| Funktion | Was sie tut | Standard | Risiko (unsere Einschätzung) |
+| Funktion | Was sie tut | Standard | Risiko (meine Einschätzung) |
 |---|---|---|---|
 | Gamma, Kontrast, Schatten | Windows-Gamma-Rampe | an | keins bekannt |
 | Vibrance, Farbton, FPS-Limit | NVIDIA-/AMD-Treiber-APIs | Vibrance an | keins bekannt |
@@ -123,7 +123,7 @@ BrightRaider verändert **KEINE** Spieldateien und keinen Spielspeicher, injizie
 | Autorun (Gehen/Sprinten) | Gepostete Tastennachrichten: hält W / Shift | Pro, CapsLock | niedrig |
 | Autorun **Tap-Modus** | Drückt und löst W in festem Takt (z. B. 160 ms alle 1,3 s) — ein periodisches Makro | Pro, CapsLock lang drücken | mittel |
 
-„Risiko“ ist unsere Einschätzung, wie die Eingaben für verhaltensbasiertes Anti-Cheat (z. B. Anybrain in Arc Raiders) aussehen. Kein Anti-Cheat-Hersteller hat eine dieser Funktionen bestätigt oder ausgeschlossen.
+„Risiko“ ist meine Einschätzung, wie die Eingaben für verhaltensbasiertes Anti-Cheat (z. B. Anybrain in Arc Raiders) aussehen. Kein Anti-Cheat-Hersteller hat eine dieser Funktionen bestätigt oder ausgeschlossen.
 
 **Autorun** hält Vorwärts (und Sprint) per geposteter Tastennachricht. Im **Tap-Modus** drückt und löst es Vorwärts in festem Takt — ein periodisches Makro mit regelmäßigem Timing, kein einzelner gehaltener Tastendruck.
 

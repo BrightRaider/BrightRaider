@@ -193,7 +193,7 @@ Nothing in the game is changed and nothing is loaded into the game. It's the sam
 
 BrightRaider does **not** change game files or memory, does not inject anything into the game and reads no game data. Its keys work through Windows' standard keyboard and mouse hooks, like any hotkey tool.
 
-| Feature | What it does | Risk (our estimate) |
+| Feature | What it does | Risk (my estimate) |
 |---|---|---|
 | Brightness, colours, FPS limit, HDR | Windows and the graphics driver, like their control panels | none known |
 | Auto-Brightness | Reads a picture of your screen | none known |
