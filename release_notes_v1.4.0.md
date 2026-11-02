@@ -2,9 +2,6 @@
 
 BrightRaider started as a tiny tool that did one thing, instantly. **V1.4 is that tool again** — small, instant, quiet in your tray — and it does more than ever: a setup that walks you through, a new settings window, the G-SYNC / FreeSync setup, updates in one click, and modules for your games.
 
-> ### ⚡ Ready in 0.2 s · 24 MB in the tray · 14 MB on disk
-> Against V1.2.3: **almost four times faster to start**, **a third of the memory**, **a fifth of the disk**.
-
 ✅ **Everything carries over** — settings, profiles, keys and your license. No re-activation.
 
 ⚠️ **Coming from an older version?** Exit it in the tray first (right-click the BrightRaider icon → **Exit**), then start the new `BrightRaider.exe` — that's the only file you need. While the old one runs, the new one closes again.
