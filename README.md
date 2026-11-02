@@ -21,22 +21,13 @@ One EXE under 6 MB, nothing to install, ready 0.2 s after you start it. Works wi
 
 ## Screenshots
 
-<table>
-<tr>
-  <td valign="top" width="60%">
-    <strong>Games & FPS — the Free killer feature</strong><br>
-    Colours and FPS limit per game, switched by themselves on Alt-Tab; the G-SYNC / FreeSync setup under <em>Advanced</em>.
-    <br><br>
-    <img src="assets/screenshots/v1.4/settings-games-fps.png" alt="Games & FPS page" width="500">
-  </td>
-  <td valign="top" width="40%">
-    <strong>Map Scanner — in the game</strong><br>
-    Hold M on the map: every evac timer, colour-coded, plus the map condition and an evac alarm.
-    <br><br>
-    <img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner overlay in the game" width="320">
-  </td>
-</tr>
-</table>
+**Games & FPS — the Free killer feature.** Colours and FPS limit per game, switched by themselves on Alt-Tab; the G-SYNC / FreeSync setup under *Advanced*.
+
+<img src="assets/screenshots/v1.4/settings-games-fps.png" alt="Games & FPS page" width="780">
+
+**Map Scanner — in the game.** Hold M on the map: every evac timer, colour-coded, plus the map condition and an evac alarm.
+
+<img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner overlay in the game" width="476">
 
 <details>
 <summary><b>📸 See the settings window</b> (click to expand — 7 more screenshots)</summary>
@@ -133,6 +124,9 @@ Switch a module on in the setup or under *Modules*: it downloads by itself, upda
 
 ## Keys and profiles (default)
 
+<details>
+<summary><b>Show the default keys and profiles</b></summary>
+
 The setup asks for your keyboard — full-size, no numpad, or French — and sets the keys to match. Every key can be changed on its feature's page or under *All keys*. Works with NumLock on or off. Full-size defaults:
 
 | Key | Action | |
@@ -156,6 +150,8 @@ The setup asks for your keyboard — full-size, no numpad, or French — and set
 
 On Free, profiles 1–3 switch as they are; for your own colours per game, use *Games & FPS*.
 
+</details>
+
 ## Get started
 
 1. **[Download](../../releases/latest)** `BrightRaider.exe` and start it — no installation.
@@ -177,6 +173,9 @@ It takes full effect after one Windows restart; until then BrightRaider applies 
 
 ## How it works
 
+<details>
+<summary><b>How BrightRaider changes your display</b></summary>
+
 BrightRaider changes your display output through standard Windows and driver interfaces:
 
 - **Windows GDI** — gamma and contrast, on every GPU
@@ -188,6 +187,8 @@ Nothing in the game is changed and nothing is loaded into the game. It's the sam
 **Auto-Brightness** (Pro) looks at five small zones of your screen — the centre and four corners — and moves smoothly between your profiles: darker scene, more boost. Set up in two steps: show it a dark spot and a bright one.
 
 <a name="anti-cheat-safety"></a>
+
+</details>
 
 ## Anti-cheat
 
@@ -203,17 +204,16 @@ BrightRaider does **not** change game files or memory, does not inject anything 
 
 Every tool that sends input is optional and off until you switch it on. In games with behavioural anti-cheat, use those at your own risk; no anti-cheat vendor has confirmed or ruled out anything. **In Counter-Strike, leave the crosshair off**, and check the rules of any league you play in. Everything in detail: **[Anti-cheat safety](docs/Safety.md)**.
 
-## System requirements
-
-- Windows 10 / 11, 64-bit — one EXE, nothing to install, no runtime.
-- NVIDIA or AMD for everything (vibrance, hue, FPS limit); Intel and integrated graphics get gamma and contrast.
-
-## Docs
+## Docs and requirements
 
 - 📘 **[Manual](docs/Manual.md)** — every feature, English and Deutsch
 - 🧩 **[Arc Raiders module](docs/modules/arc-raiders/README.md)** — its tools, keys, guides and anti-cheat notes
 - 🔆 [Auto-Brightness Guide](docs/AutoBrightness_Guide.md) · 🔊 [Footstep Booster Guide](docs/FootstepBooster_Guide.md)
 - 🛡️ [Anti-cheat and antivirus](docs/Safety.md) · 📜 [Changelog](docs/CHANGELOG_PUBLIC.txt)
+
+**System requirements:**
+- Windows 10 / 11, 64-bit — one EXE, nothing to install, no runtime.
+- NVIDIA or AMD for everything (vibrance, hue, FPS limit); Intel and integrated graphics get gamma and contrast.
 
 ## FAQ
 
@@ -237,10 +237,15 @@ The display side needs no key at all: profiles, colours, FPS limit and HDR switc
 
 ## Uninstall
 
+<details>
+<summary><b>Show the steps</b></summary>
+
 1. *Settings → App & License* → turn off **Start with Windows**, then right-click the tray icon → **Exit**.
 2. Delete `BrightRaider.exe`.
 3. Delete the folders `%APPDATA%\BrightRaider` and `%LOCALAPPDATA%\BrightRaider` (modules live there).
 4. Optional: remove `GdiIcmGammaRange` from `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ICM`.
+
+</details>
 
 ## Feedback
 
