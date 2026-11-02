@@ -3,13 +3,180 @@
 ================================================================
 
 
+[ V1.4.0 ] - Lighter, faster, and Arc Raiders as a module
+
+  Coming from V1.2.3? V1.3.0 was a test version only - everything listed
+  under it below is part of this update as well. Settings, profiles, keys and
+  your license carry over.
+
+  Back to light (V1.2.3 against V1.4, same PC, same settings, both with
+  Arc Raiders)
+  - From the double-click until your keys work: 0.76 s -> 0.20 s.
+  - Memory while it waits in the tray: 72 MB -> 24 MB.
+  - On disk: 71 MB -> 14 MB (the app 5.9 MB, the Arc Raiders module 8.6 MB).
+  - The files V1.2.3 and V1.3 unpacked on their first start are cleared away
+    by themselves.
+
+  Arc Raiders as a module
+  - BrightRaider downloads the Arc Raiders module by itself when you use it
+    (switch it on in the setup or under Modules). Without Arc Raiders you
+    don't get it at all.
+  - Module updates come on their own: when Arc Raiders needs a fix, the tray
+    offers "Install Arc Raiders ..." and only the module is downloaded - no
+    new BrightRaider needed. As with app updates, nothing installs without
+    your click, and never while a game is in front.
+  - A module only loads when it carries BrightRaider's signature.
+  - Your Pro key keeps everything it unlocks today, Arc Raiders included.
+  - The module has its own page now: keys, anti-cheat notes, manual and
+    guides (docs/modules/arc-raiders). The old guide links lead there.
+
+  Updates in one click
+  - When a new version is out, the tray offers "Install update": one click
+    downloads it, checks its signature and restarts BrightRaider. Your
+    settings stay. Coming from V1.2.3 or V1.3, download V1.4 once by hand.
+  - App & License -> Advanced -> "Also offer test versions" brings test
+    versions early.
+
+  In your games
+  - Block the Windows key in games: no Start menu mid-fight, no Sticky Keys
+    pop-up from pressing Shift five times. On the desktop everything works
+    as usual.
+  - Keep the mouse on the game's screen: with two or more monitors a fast
+    flick can't slide onto the other screen and click the game away. Free
+    again on Alt-Tab.
+  - Mute my microphone: one key mutes the Windows microphone for every app
+    until you press again; BrightRaider turns it back on when it closes. Set
+    it in the setup (page Sound), on Audio or under All keys.
+  - Calmer colour switching: a game window that flashes up while loading no
+    longer flips your colours, and the game's launcher, its pop-ups and the
+    settings window keep the game's colours.
+
+  Map Scanner
+  - Name the exits yourself (#80, thanks @inf3rrno): Map Scanner -> Advanced -> "your own names
+    for the exits". The overlay and the evac alarm use your names; leave a
+    field empty for the game's name.
+  - No more made-up overlay when the map is not actually open (the XP screen,
+    the skill tree, a menu): checked against nearly 300 real screenshots, no
+    map lost.
+
+  Autoscrapper
+  - Knows the items of the 2.0 update: about 60 are recognised right away,
+    the rest you name once with "Name unrecognised items...".
+  - Recognises much more of a stash after the 2.0 update: in a real stash
+    nearly 9 of 10 tiles are named right away, furniture designs among them.
+  - Recognises more of your stash: items with a small symbol in their top
+    corner (the eye, a tick) are now named too.
+  - Items you marked with the eye in the game are never scrapped.
+
+  Crosshair
+  - The crosshair is remembered per game. An overlay on top of a game can
+    cost it G-SYNC, so the crosshair you switch on in one game stays off in
+    the others until you want it there too.
+
+  QuickSave
+  - Toggle presets: a press while a move is still running no longer turns
+    the direction around - the next move brings the item back as it should.
+
+  Settings window
+  - A refreshed look for the settings and the setup - same places as in
+    V1.3, so nothing has to be found again.
+  - Clean text: the letters in the settings, the setup and the notifications
+    have smooth edges instead of a frayed light rim.
+  - The setup marks what is new since V1.2.3 ("New in 1.4").
+  - Search (Ctrl+F) jumps to any setting.
+  - The setup fits every page on the screen - no scrolling, every picture
+    the same size.
+  - An FPS limit you already set in your graphics driver is shown (Games &
+    FPS, the setup, the tray) instead of "No limit".
+  - Size slider for the settings and the setup (70-150 %, also Ctrl + / -);
+    on a wide window the cards sit side by side.
+  - Report a problem (App & License): puts your version, system and the end
+    of the log together and opens a new issue for you to check and send.
+
+  Keys
+  - A key bound twice no longer goes unnoticed: at start and whenever you
+    change a key, BrightRaider checks its own keys and those of every module.
+    It tells you, the tray offers "A key is bound twice", and All keys shows
+    the pair at the top. Keys of two different games don't count - each only
+    works in its own game.
+  - Give a key that is already in use, and it moves to its new place - the
+    other one then has none, and you are told (Cancel undoes it). Keys that
+    only say how your game is bound (map key, sprint) stay where they are.
+
+  Fixed
+  - Audio devices you picked (for the switch key, or for when a game starts)
+    are found again by their name when Windows renames them inside - after
+    a driver update or on another USB port.
+  - Footstep Booster: after a loud moment the game comes back to its full
+    level again (it could stay at about 75 %).
+  - Turning the game down by holding the mute key now says what it does: it
+    stays down until you hold again. The slider is called "Turned down to".
+  - The mute icon also shows when the game was muted elsewhere - in the
+    Windows mixer, or because Windows kept the mute from last time - so you
+    see why it is quiet. One press of the mute key brings the sound back.
+  - Copying the system info or a problem report waits a moment if another
+    program is using the clipboard, instead of failing.
+
+
+[ V1.3.0 ] - BrightRaider grows up (test version)
+
+  The core is a tool for every PC game; Arc Raiders becomes its first module.
+
+  Setup
+  - A setup walks you through everything at the first start: keyboard,
+    brightness, other screens, Alt-Tab, FPS limit, sound, crosshair,
+    notifications, modules, full brightness range, start with Windows.
+  - It also opens once after updating to 1.3. Every page shows what you
+    already have; Next keeps it, only what you change is changed. Pages with
+    something new are marked "New in 1.3", the last page shows what changed.
+    It never opens on top of a running game.
+  - Run it again any time: Settings -> App & License -> Run the setup...
+
+  Settings window
+  - A sidebar instead of tabs: App & License, Display, Tools, Modules, All
+    keys. It folds down to icons; a module's pages fold away under it.
+  - Every key sits on the page of its feature (the profile key next to the
+    profile, the mute key under Audio). All keys lists them in one place and
+    shows conflicts.
+  - A Guide beside every page: what happens, how to set it up, what to try
+    when something is off.
+  - Rarely used options are folded under "Advanced"; switches instead of
+    checkboxes; colour pickers for the crosshair and the Map Scanner.
+  - Pro pages can be opened and set up without Pro; the tools run in your
+    games once Pro is active. After activating a key, a short welcome shows
+    what is now unlocked.
+
+  G-SYNC / FreeSync setup (free)
+  - The Blur Busters way, done in the driver: V-SYNC on, low latency on and an
+    FPS limit just under your refresh rate (NVIDIA); FreeSync, Wait for
+    Vertical Refresh, Anti-Lag and the same limit (AMD).
+  - Competitive games can be left out on NVIDIA (V-SYNC off, no limit).
+  - Undo puts back exactly what was there before.
+  - In the setup, or under Games & FPS -> Advanced.
+
+  Arc Raiders module
+  - Map Scanner, Autoscrapper, QuickSelect and QuickSave on their own page
+    (Settings -> Modules -> Arc Raiders) with one switch for all of them.
+    Settings, keys and Autoscrapper rules carry over unchanged.
+
+  Also
+  - Notifications on the screen you choose (App & License -> Notifications).
+  - Strong profiles before the Windows restart (#86, thanks
+    @defeusers): Windows refuses strong
+    colour curves until it has been restarted once after the extended range
+    was unlocked. BrightRaider now applies the strongest part it accepts and
+    tells you once.
+  - Any FPS limit in the setup, not only the presets.
+  - Dark title bar on every BrightRaider window in the dark theme.
+
+
 [ V1.2.3 ]
 
   Fixed (what you reported after V1.2.2)
   - First start: the setup and the "ready" notice say that Windows needs one
-    restart for the full brightness range (#86). Until then strong profiles
+    restart for the full brightness range (#86, thanks @defeusers). Until then strong profiles
     can be refused.
-  - QuickSave in a raid on 4:3 and 16:10 (#85) aims at the centred raid
+  - QuickSave in a raid on 4:3 and 16:10 (#85, thanks @Tia-Nastacia) aims at the centred raid
     inventory again, as in V1.0. No cursor jump, no waiting before the drag.
   - Game mute works again after you restart the game. The mute icon no longer
     takes the focus off the game; in exclusive fullscreen Windows shows no
@@ -78,11 +245,13 @@
     Switch them off in Settings -> Audio. They never take clicks or focus.
 
   Fixed
-  - QuickSave on 4:3 and 16:10 screens (#83, #85): the inventory is not in the
+  - QuickSave on 4:3 and 16:10 screens (#83, thanks @NeighborhoodNerd;
+    #85, thanks @Tia-Nastacia): the inventory is not in the
     same place in the hideout and in a raid, and on such a screen it sits at
     the top or in the centre. QuickSave now looks at the open inventory and
     aims where it really is, instead of assuming one place.
-  - Notifications (toasts) always appeared on the primary monitor (#85). They
+  - Notifications (toasts) always appeared on the primary monitor (#85, thanks
+    @Tia-Nastacia). They
     now follow the monitor you picked in Settings, or the one the game runs on.
   - Numbers in fields with up/down buttons were cut off when the field was
     narrow ("72" showed as "7"); they keep room for the digits now, in every
@@ -150,7 +319,8 @@
     the stash is simply less than three-quarters full.
 
   QuickSave
-  - Fixed on 4:3, 16:10 and stretched resolutions (#83): the inventory is
+  - Fixed on 4:3, 16:10 and stretched resolutions (#83, thanks
+    @NeighborhoodNerd): the inventory is
     anchored at the top, not centred, so every target sat too low.
   - W1/W2 grabbed the first attachment (the barrel) on weapons with four
     attachments. All drops now land on the slot centre.
