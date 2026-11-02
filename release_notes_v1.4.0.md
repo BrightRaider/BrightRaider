@@ -9,6 +9,8 @@ BrightRaider started as a tiny tool that did one thing, instantly. **V1.4 is tha
 
 ⚠️ **Coming from an older version?** Exit it in the tray first (right-click the BrightRaider icon → **Exit**), then start the new `BrightRaider.exe` — that's the only file you need. While the old one runs, the new one closes again.
 
+🥚 **One more thing:** V1.4 hides a secret in the settings. The code inside works **three times** — first come, first served, even if the app says "once".
+
 ## ⚡ Back to light
 
 Measured V1.2.3 against V1.4 on the same PC, same settings, both with Arc Raiders:
@@ -92,8 +94,6 @@ A key bound twice no longer goes unnoticed: BrightRaider checks its own keys and
 Every setting from V1.1 to V1.2.3 was checked key by key — if anything is not where you left it, tell me in the [Discussions](https://github.com/BrightRaider/BrightRaider/discussions). Thank you to everyone who tested and reported.
 
 💶 **Pricing:** Until 1.5, Pro costs €5.49 and includes every module for good — Arc Raiders now, Helldivers 2 and every one after it. From 1.5 there will be Pro (€5.99) and Pro + All Modules (€7.99); prices only go up with big steps, like Helldivers 2 in 1.6. Everyone who already has Pro keeps every module too.
-
-🥚 **One more thing:** V1.4 hides a secret in the settings. The first three to find it get Pro.
 
 ---
 
