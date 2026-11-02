@@ -25,14 +25,14 @@ One EXE under 6 MB, nothing to install, ready 0.2 s after you start it. Works wi
 
 <img src="assets/screenshots/v1.4/settings-games-fps.png" alt="Games & FPS page" width="780">
 
+<details>
+<summary><b>📸 See the settings window</b> (click to expand — 8 more screenshots)</summary>
+
+<br>
+
 **Map Scanner — in the game.** Hold M on the map: every evac timer, colour-coded, plus the map condition and an evac alarm.
 
 <img src="assets/screenshots/v1.0/mapscanner-overlay.png" alt="Map Scanner overlay in the game" width="476">
-
-<details>
-<summary><b>📸 See the settings window</b> (click to expand — 7 more screenshots)</summary>
-
-<br>
 
 **Colour profiles.** 9 profiles, each with Gamma / Contrast / Vibrance / Shadow Boost, its key right next to it, and dimming for your other screens.
 
@@ -69,11 +69,18 @@ One EXE under 6 MB, nothing to install, ready 0.2 s after you start it. Works wi
 **Seen on YouTube** — BrightRaider in the settings guides of [JagsFPS](https://www.youtube.com/@JagsFPS):
 [Arc Raiders — Best PC Settings](https://www.youtube.com/watch?v=XX_tYYqnB7w) · [Arc Raiders — Best *NEW* PC Settings](https://www.youtube.com/watch?v=bUHTWiMde_A) · [COD MW4 & DMZ — Best PC Settings](https://www.youtube.com/watch?v=r0BuBpUfnPU) (with a BrightRaider tutorial and comparison)
 
+<details>
+<summary><b>▶ My own demos</b></summary>
+
+<br>
+
 **My own demos.** Screen recorders can't capture the brightness — BrightRaider changes the display output, nothing inside the game — so these were filmed with a phone pointed at the monitor.
 
 | Free — switching profiles on a key | Pro — Auto-Brightness in action |
 |---|---|
 | [![BrightRaider Free - Profile Switching](https://img.youtube.com/vi/ZjRZKfPi7Ok/0.jpg)](https://youtu.be/ZjRZKfPi7Ok?t=6) | [![BrightRaider Pro - Auto-Brightness](https://img.youtube.com/vi/q4DPRjHs24g/0.jpg)](https://youtu.be/q4DPRjHs24g?t=4) |
+
+</details>
 
 ## Why BrightRaider?
 
@@ -194,6 +201,11 @@ Nothing in the game is changed and nothing is loaded into the game. It's the sam
 
 BrightRaider does **not** change game files or memory, does not inject anything into the game and reads no game data. Its keys work through Windows' standard keyboard and mouse hooks, like any hotkey tool.
 
+<details>
+<summary><b>What each feature does, and the risk</b></summary>
+
+<br>
+
 | Feature | What it does | Risk (my estimate) |
 |---|---|---|
 | Brightness, colours, FPS limit, HDR | Windows and the graphics driver, like their control panels | none known |
@@ -201,6 +213,8 @@ BrightRaider does **not** change game files or memory, does not inject anything 
 | Crosshair | A click-through window on top | low — check league rules |
 | Autorun | Holds W / Shift for you; tap mode presses on a fixed rhythm | low · tap mode medium |
 | Module tools that press keys (QuickSelect, QuickSave, Autoscrapper) | Keys, clicks and cursor moves in the game | medium to highest — see the [module](docs/modules/arc-raiders/README.md) |
+
+</details>
 
 Every tool that sends input is optional and off until you switch it on. In games with behavioural anti-cheat, use those at your own risk; no anti-cheat vendor has confirmed or ruled out anything. **In Counter-Strike, leave the crosshair off**, and check the rules of any league you play in. Everything in detail: **[Anti-cheat safety](docs/Safety.md)**.
 
@@ -217,23 +231,47 @@ Every tool that sends input is optional and off until you switch it on. In games
 
 ## FAQ
 
-**Does it work with other games?**
+<details>
+<summary><b>Does it work with other games?</b></summary>
+
 Yes — BrightRaider changes your display, not the game.
 
-**Will I get banned?**
+</details>
+
+<details>
+<summary><b>Will I get banned?</b></summary>
+
 Brightness, colours, FPS limit and the overlays work next to the game, not in it. The module tools that press keys for you are a different kind, and each one says so on its page. Details: [Anti-cheat](#anti-cheat-safety).
 
-**Do I need Pro?**
+</details>
+
+<details>
+<summary><b>Do I need Pro?</b></summary>
+
 No. Free covers what most players need: profiles on a key, colours and FPS limit per game, the G-SYNC / FreeSync setup. Pro adds sound, crosshair, Auto-Brightness, Autorun and every module.
 
-**I used VibranceGUI. Do I still need it?**
+</details>
+
+<details>
+<summary><b>I used VibranceGUI. Do I still need it?</b></summary>
+
 No. Set vibrance per game under *Games & FPS*; BrightRaider switches it by itself.
 
-**The crosshair or the Map Scanner doesn't show.**
+</details>
+
+<details>
+<summary><b>The crosshair or the Map Scanner doesn't show.</b></summary>
+
 Set the game to **borderless** — Windows draws nothing over a game in exclusive fullscreen.
 
-**I play with a controller.**
+</details>
+
+<details>
+<summary><b>I play with a controller.</b></summary>
+
 The display side needs no key at all: profiles, colours, FPS limit and HDR switch by themselves when the game comes to the front. The keys can't sit on a controller button directly — Windows' keyboard hooks don't see the gamepad. Let **Steam Input**, **DS4Windows** or **reWASD** send a keyboard key from the button instead. More in the [Manual](docs/Manual.md).
+
+</details>
 
 ## Uninstall
 
