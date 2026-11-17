@@ -8,5 +8,12 @@
       "url": "https://github.com/BrightRaider/BrightRaider/releases/tag/v1.4.0",
       "notice": ""
     }
+  },
+  "modules": {
+    "arc_raiders": {
+      "version": "1.5.0",
+      "min_app": "1.4.0",
+      "api": 1
+    }
   }
 }
